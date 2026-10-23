@@ -20,14 +20,14 @@ export async function login(_prev: ActionState, fd: FormData): Promise<ActionSta
   const code = str(fd, "code", 200);
   const name = str(fd, "name", 120);
   const organization = str(fd, "organization", 200);
-  const next = str(fd, "next", 500) || "/";
+  const next = str(fd, "next", 500) || "/rt";
   if (!process.env.ACCESS_CODE) return { error: "Přístupový kód není nastaven na serveru." };
   if (code !== process.env.ACCESS_CODE) return { error: "Nesprávný přístupový kód." };
   if (name.length < 2) return { error: "Zadejte jméno, pod kterým se budou vaše připomínky evidovat." };
   const token = await sealSession({ name, organization, role: "rt" });
   (await cookies()).set(SESSION_COOKIE, token, sessionCookieOptions);
   // jen lokální absolutní cesta; "//host" nebo "/\\host" by byl otevřený redirect
-  redirect(/^\/(?![\/\\])/.test(next) ? next : "/");
+  redirect(/^\/(?![\/\\])/.test(next) ? next : "/rt");
 }
 
 export async function logout() {
@@ -88,7 +88,7 @@ export async function addComment(_prev: ActionState, fd: FormData): Promise<Acti
 
   revalidatePath(`/d/${slug}`);
   revalidatePath("/pripominky");
-  revalidatePath("/");
+  revalidatePath("/rt");
   return { ok: true };
 }
 

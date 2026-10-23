@@ -4,7 +4,7 @@ export const metadata = { title: "Vstup" };
 
 export default async function VstupPage({ searchParams }: PageProps<"/vstup">) {
   const sp = await searchParams;
-  const next = typeof sp.next === "string" ? sp.next : "/";
+  const next = typeof sp.next === "string" ? sp.next : "/rt";
   return (
     <main className="mx-auto max-w-md px-4 py-16">
       <h1 className="text-2xl font-semibold tracking-tight">Vstup pro resortní tým</h1>
