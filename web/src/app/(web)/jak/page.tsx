@@ -163,7 +163,7 @@ export default function JakPage() {
         id="ukazatele"
         eyebrow="Jak poznáte, že to funguje"
         title="Osm čísel, podle kterých se bude reforma hodnotit"
-        lead="Měří je státní statistický ústav ÚZIS s univerzitou, ne my. Cílové hodnoty jsou návrh k diskusi. Předchozí verze měla cíle, které model neunesl, a my jsme je snížili nebo škrtli."
+        lead="Měří je státní statistický ústav ÚZIS s univerzitou, a ne my. Cílové hodnoty jsou návrh k diskusi. Předchozí verze měla cíle, které model neunesl, a my jsme je snížili nebo škrtli."
       >
         <div className="rounded-card border border-line bg-paper p-2 md:p-4">
           <DataTable

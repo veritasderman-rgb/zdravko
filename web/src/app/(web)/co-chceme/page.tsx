@@ -108,7 +108,7 @@ export default function CoPage() {
           {c.n === FIVE_CHANGES.length && (
             <div className="mt-12 max-w-[52em]">
               <Callout title="Jedno pravidlo o penězích">
-                Všech pět změn drží pohromadě jedno pravidlo o penězích: stát bude platit zdravotní pojištění za děti, důchodce a studenty podle toho, kolik péče skutečně potřebují, ne podle dnešního vzorce. Nový vzorec přijme vláda s platností od 1. 1. 2031.
+                Všech pět změn drží pohromadě jedno pravidlo o penězích: stát bude platit zdravotní pojištění za děti, důchodce a studenty podle toho, kolik péče skutečně potřebují, a ne podle dnešního vzorce. Nový vzorec přijme vláda s platností od 1. 1. 2031.
               </Callout>
             </div>
           )}

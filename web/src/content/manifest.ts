@@ -119,7 +119,7 @@ const SHORT: Record<string, { label: string; when: string }> = {
   "M4.1": { label: "Otevřená anonymizovaná data na úrovni poskytovatele", when: "od 2027" },
   "M4.2": { label: "Informace pro pacienta před zákrokem a volné kapacity v reálném čase", when: "od 2027" },
   "M4.3": { label: "Rámec HSPA jako oficiální měřítko v zákoně (viz P5)", when: "platí od 1. 1. 2033" },
-  "M4.4": { label: "Reformu hodnotí ÚZIS s univerzitou, ne autoři studie", when: "jmenovat do konce 2027, zpráva 2033" },
+  "M4.4": { label: "Reformu hodnotí ÚZIS s univerzitou, a ne autoři studie", when: "jmenovat do konce 2027, zpráva 2033" },
   "M4.5": { label: "Střet zájmů v komisích ministerstva: veřejná prohlášení o zájmech, vyloučení z hlasování, veřejné zápisy", when: "podnět 2027, příkaz ministra 2030, zákon 2033 a později" },
   "M5.1": { label: "Seznam základních léků se zajištěnou dostupností a pravidla pro výpadky", when: "bez zákona kdykoli, zákon 2032–2033" },
   "M5.2": { label: "Online srovnávač doplatků", when: "termín zatím není" },
@@ -241,12 +241,13 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     slug: "transparence",
     title: "Transparence",
     promise:
-      "Anonymizovaná data o nemocnicích a ordinacích budou otevřená, aktuální a použitelná pro každého. Pacient před zákrokem uvidí čekací dobu, kvalitu péče i vzdálenost, lékař volné kapacity.",
+      "Anonymizovaná data o nemocnicích a ordinacích budou otevřená, aktuální a použitelná pro každého. Pacient před zákrokem uvidí čekací dobu, kvalitu péče i vzdálenost, lékař volné kapacity. Komise, které ministerstvu radí o úhradách, přístrojích a dotacích, budou bez střetu zájmů, nebo aspoň zcela průhledné.",
     layer: "doprovod",
     studyArea: "Oblast 4 (brief Části XI), P5",
     measures: pick(["M4.1", "M4.2", "M4.3", "M4.4", "M4.5", "P5", "Pil3.3"]),
     manifestSteps: [
       { year: "Rok 1", text: "Zákonná povinnost otevřených dat od ÚZIS včetně rozhraní pro programy; rámec HSPA jako oficiální měřítko." },
+      { year: "Rok 1", text: "Příkaz ministra a nové statuty komisí: veřejná prohlášení o zájmech, vyloučení z hlasování u vlastní věci, jmenovitá hlasování a zápisy do 30 dnů." },
       { year: "Rok 2", text: "Ukazatele kvality za nemocnice pro deset oblastí péče (infarkt, mrtvice, rakovina a další)." },
       { year: "Rok 3", text: "Srovnávací list pro pacienta před plánovaným zákrokem." },
       { year: "Rok 5", text: "Úplná auditní stopa všech ukazatelů kvality na celostátní úrovni." },
@@ -390,7 +391,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     slug: "data",
     title: "Data ve službách pacienta",
     promise:
-      "Elektronizace má ulehčit lékařům a pacientům, ne přidat papíry. Lékař uvidí aktuální záznam a volné kapacity, pacient se přihlásí bankovní identitou a uvidí, kdo se na jeho data díval.",
+      "Elektronizace má lékařům a pacientům ulehčit, a ne jim přidat papírování. Lékař uvidí aktuální záznam a volné kapacity, pacient se přihlásí bankovní identitou a uvidí, kdo se na jeho data díval.",
     layer: "jadro",
     studyArea: "Pilíř 3 (digitální nástroje), J5",
     measures: pick(["J5", "Pil3.1", "Pil3.2", "Pil3.3", "M4.1", "M4.2"]),
@@ -407,7 +408,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     inspiration: "Estonsko má od roku 2008 národní elektronické zdravotnictví, dánský portál sundhed.dk funguje od roku 2003 a finská Kanta spojuje osobní záznam, e-recept a archiv vyšetření.",
     gaps: "Jednotné datové standardy (FHIR) zbývá rozpracovat; Pilíř 3 zatím navazuje na portál pacienta, který ministerstvo spustilo v lednu 2026, a na evropský prostor pro zdravotní data (EHDS).",
     dispute:
-      "Lékaři se bojí, že sdílení dat poslouží ke kontrole, ne k péči. Rychlé zavedení navíc stojí proti ochraně citlivých dat a kybernetické bezpečnosti: ransomware už české nemocnice vyřadil.",
+      "Lékaři se bojí, že sdílení dat poslouží ke kontrole, a ne k péči. Rychlé zavedení navíc stojí proti ochraně citlivých dat a kybernetické bezpečnosti: ransomware už české nemocnice vyřadil.",
   },
   {
     n: 11,
@@ -439,14 +440,16 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     slug: "prava-pacientu",
     title: "Práva pacientů",
     promise:
-      "Stížnost pacienta se vyřídí rychle a má váhu. Chceme zdravotnického ombudsmana, který vyšetřuje a jehož doporučení nezůstane bez odpovědi, a porodnice i nemocnice, které respektují práva pacientů.",
+      "Stížnost pacienta se vyřídí rychle a má váhu. Chceme zdravotnického ombudsmana, který vyšetřuje a jehož doporučení nezůstane bez odpovědi, a porodnice i nemocnice, které respektují práva pacientů. Místo pouhého rušení porodnic chceme porodní asistentky, které se o ženu postarají doma i v porodnici.",
     layer: "doprovod",
     studyArea: "Oblast 9 (brief Části XI)",
     measures: pick(["M9.1", "M9.2", "M9.3", "M9.4", "M9.5", "Pil2.6"]),
     manifestSteps: [
       { year: "Rok 1", text: "Nemocniční ombudsman v každé nemocnici (zákon 290/2025 Sb., od 1. 7. 2026)." },
+      { year: "Rok 1", text: "Výkony porodní asistentky v seznamu výkonů a smlouvy pojišťoven s komunitními porodními asistentkami." },
       { year: "Rok 2", text: "Jednotné stížnostní řízení s lhůtou 30 dnů a pokutami." },
       { year: "Rok 3", text: "Pilot hlášení pacientských incidentů ve třech fakultních nemocnicích." },
+      { year: "Rok 3", text: "Žádná porodnice se nesloučí ani nezavře bez sítě komunitních porodních asistentek v území a plánu dojezdu (zákon o síti)." },
       { year: "Rok 4", text: "Pacientský advokát pro onkologii a vážné diagnózy." },
       { year: "Rok 5+", text: "Odškodnění bez prokazování viny podle skandinávského vzoru." },
     ],
@@ -455,7 +458,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     ],
     inspiration: "Švédsko a Norsko mají ombudsmana pro pacienty, Dánsko a Švédsko odškodnění bez prokazování viny, Británie síť Healthwatch a Nizozemsko inspekci, která zveřejňuje výsledky po pracovištích.",
     gaps:
-      "Hlášení incidentů, mediaci a odškodnění bez prokazování viny zbývá rozpracovat. Nemocniční ombudsman podle zákona 290/2025 Sb. už platí; k němu přidáváme zdravotnického ombudsmana u veřejného ochránce práv. Nad rámec Manifestu přidáváme hrazenou péči porodních asistentek a pravidlo, že se žádná porodnice nezavře bez jejich sítě v území (Pil2.6).",
+      "Hlášení incidentů, mediaci a odškodnění bez prokazování viny zbývá rozpracovat. Nemocniční ombudsman podle zákona 290/2025 Sb. už platí; k němu přidáváme zdravotnického ombudsmana u veřejného ochránce práv. Péči porodních asistentek a pravidlo, že se žádná porodnice nezavře bez jejich sítě v území, rozpracovává Pil2.6.",
     dispute:
       "Odškodnění bez viny zrychluje kompenzaci, ale kritici se bojí, že oslabí odpovědnost za chyby. Hlášení incidentů funguje jen v kultuře bez trestání, kterou je těžké vybudovat tam, kde se hledá viník.",
   },
@@ -508,14 +511,6 @@ export const BEYOND_MANIFEST: { title: string; text: string }[] = [
   {
     title: "Personální bilance a rezidenční místa (P1, P2)",
     text: "Bez lidí reforma nebude. Proto studie po krajích zveřejní, kolik sester a lékařů je potřeba, a každý rok spočítá, kolik rezidenčních míst pro praktiky a pediatry se má vypsat.",
-  },
-  {
-    title: "Porodní asistentky místo pouhého rušení porodnic (Pil2.6)",
-    text: "Porodů ubývá a malé porodnice se zavírají, dnes ale bez odpovědi, co dál. Studie navrhuje hrazenou péči porodních asistentek v těhotenství, u fyziologického porodu a v šestinedělí, doma i v centrech při porodnicích, a pravidlo, že se žádná porodnice nesloučí ani nezavře, dokud v území nemá pojišťovna smlouvu s komunitními porodními asistentkami a kraj plán dojezdu.",
-  },
-  {
-    title: "Komise ministerstva bez střetu zájmů (M4.5)",
-    text: "O úhradách, seznamu výkonů, přístrojích a dotacích radí ministerstvu komise, jejichž členové dnes prohlášení o zájmech nezveřejňují. Studie chce komise bez střetu zájmů, a kde se bez odborníků z praxe neobejdou, aspoň úplnou průhlednost: veřejná prohlášení o zájmech, vyloučení z hlasování o vlastní věci, jmenovitá hlasování a zápisy do 30 dnů.",
   },
   {
     title: "Čtyři kontrolní body a tři varianty",
