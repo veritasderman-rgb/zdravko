@@ -2,7 +2,7 @@ import Link from "next/link";
 import { MANIFEST_AREAS } from "@/content/manifest";
 import { Section, TextLink } from "@/components/web/ui";
 
-const LAYER_LABEL = { jadro: "jádro reformy", doprovod: "doprovod" } as const;
+const LAYER_LABEL = { jadro: "nosná část plánu", doprovod: "doplňkové opatření" } as const;
 
 /**
  * Pás pro úvodní stránku: třináct oblastí Manifestu, každá vede na /plan#oblast-N.

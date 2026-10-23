@@ -1,5 +1,7 @@
 # Manifest reformy (13 oblastí) a studie „Zdraví blíž lidem“ v3
 
+> Studie z Manifestu vychází a je jeho rozpracováním do opatření, termínů a peněz. Tento dokument neslouží k hledání rozdílů, ale k evidenci toho, co z Manifestu je už rozpracované do kroků a co zbývá doplnit v dalších verzích.
+
 Přehled pro redakci a resortní tým: co Manifest z 7. 5. 2026 slibuje, kam to ve studii v3 patří, kdy to začíná a kde se obě znění liší. Na webu stejný obsah stojí na stránce `/plan`, data jsou v `web/src/content/manifest.ts`. Opatření jsou označena kódy z registru (`registr.json`): J = jádro, P = podmínka, Pil = doplněk pilíře, M = doprovod (oblasti 1 až 10 Části XI).
 
 **Jak číst termíny.** Manifest počítá „Rok 1“ od nástupu vlády. Ve studii je Rok 1 = 2030 (základní scénář „Vláda 2030“), Rok 5 = 2034. Termíny v tabulce jsou termíny studie.
@@ -24,7 +26,7 @@ Přehled pro redakci a resortní tým: co Manifest z 7. 5. 2026 slibuje, kam to 
 | 12. Práva pacientů | doprovod (oblast 9) | M9.1–M9.5 | Dříve vyslovené přání jako poslanecký návrh 2028–2029 (M9.5); zdravotnický ombudsman od 1. 1. 2032 (M9.1) | Hlášení incidentů, mediace a odškodnění bez viny studie nemá; nemocniční ombudsman (zák. 290/2025 Sb.) už platí |
 | 13. Dostupná péče o duševní zdraví | doprovod (oblast 10) | M10.1–M10.5, J1 | Roční mapa center duševního zdraví od 2027 (M10.5); psycholog v týmu v pilotu 2028 (M10.1, J1) | Zákon o psychoterapii chce Manifest v roce 1 (2030), studie novelami s účinností 1. 1. 2034 (M10.3); dětská psychiatrie jen přes rezidenční místa |
 
-## Co studie přidává
+## Nástroje, kterými studie Manifest naplňuje
 
 Tyto věci Manifest výslovně neřeší nebo jen naznačuje a bez nich by se jeho cíle nedaly uskutečnit:
 
@@ -36,7 +38,7 @@ Tyto věci Manifest výslovně neřeší nebo jen naznačuje a bez nich by se je
 - **Ukazatele reformy (H1–H8)** a nezávislé hodnocení ÚZIS s univerzitou; pilotní týmy se vyhodnocují jako studie s kontrolní skupinou (M6.4).
 - **Daňové jádro prevence (J8, J9, P4)** s pevným zákonným příjmem Národního fondu prevence, aby se výnos nerozpustil v rozpočtu.
 
-## Co studie zužuje
+## Kde studie zatím rozpracovala jen část
 
 | Manifest | Studie v3 | Důvod ve studii |
 | --- | --- | --- |
@@ -53,7 +55,7 @@ Tyto věci Manifest výslovně neřeší nebo jen naznačuje a bez nich by se je
 | Zákony v Roce 1 až 2 (mezirezortní zákon, psychoterapie, ombudsman) | Účinnost 2032–2034 (P3, M10.3, M9.1) | Ministerstvo zvládne za volební období jen dvě velké předlohy a několik středních |
 | Kompetence sester v Roce 1 | Samostatná indikace sestry 1. 1. 2032, sestra s rozšířenou praxí 1. 1. 2033 (J2) | Kompetence přibývají ve třech krocích: poradny podle protokolu, samostatná indikace, sestra v pokročilé praxi |
 
-## Co Manifest má a studie zatím ne
+## Co z Manifestu zbývá rozpracovat
 
 Souhrn bodů označených v `gaps` na stránce `/plan`. Ověřeno hledáním v textu studie v3 (20. 10. 2026).
 
