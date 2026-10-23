@@ -3,7 +3,7 @@ import type { schema } from "@/db";
 
 type Block = typeof schema.blocks.$inferSelect;
 
-export function Outline({ headings, slug, counts, current }: { headings: Block[]; slug: string; counts: Map<string, { n: number; open: number }>; current: string | null }) {
+export function Outline({ headings, slug, counts, current, basePath = "/d" }: { headings: Block[]; slug: string; counts: Map<string, { n: number; open: number }>; current: string | null; basePath?: string }) {
   // počet připomínek v sekci = součet bloků se stejným prefixem sekce
   const sectionCounts = new Map<string, number>();
   for (const [key, c] of counts) {
@@ -22,7 +22,7 @@ export function Outline({ headings, slug, counts, current }: { headings: Block[]
           return (
             <li key={h.blockKey} style={{ paddingLeft: `${((h.level ?? 1) - 1) * 10}px` }}>
               <Link
-                href={`/d/${slug}#${encodeURIComponent(h.blockKey)}`}
+                href={`${basePath}/${slug}#${encodeURIComponent(h.blockKey)}`}
                 className={`flex items-start gap-1 rounded px-2 py-0.5 hover:bg-accent-soft ${active ? "bg-accent-soft text-accent" : ""} ${(h.level ?? 1) <= 2 ? "font-medium" : "text-muted"}`}
               >
                 <span className="min-w-0 flex-1 truncate">{h.text}</span>

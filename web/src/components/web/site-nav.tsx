@@ -7,6 +7,7 @@ export const SITE_LINKS = [
   { href: "/penize", label: "Peníze" },
   { href: "/pro-koho", label: "Pro koho" },
   { href: "/otazky", label: "Otázky" },
+  { href: "/studie", label: "Studie" },
 ];
 
 export function SiteNav() {
@@ -23,9 +24,10 @@ export function SiteNav() {
             </Link>
           ))}
         </nav>
-        <Link href="/rt" className="ml-auto text-xs text-muted hover:text-foreground">
-          Pro resortní tým
-        </Link>
+        <div className="ml-auto flex items-center gap-4 text-xs text-muted">
+          <Link href="/slovnicek" className="hover:text-foreground">Slovníček</Link>
+          <Link href="/rt" className="hover:text-foreground">Pro resortní tým</Link>
+        </div>
       </div>
     </header>
   );
@@ -37,15 +39,15 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-[1100px] gap-6 px-4 py-10 text-sm text-muted md:grid-cols-3">
         <div>
           <div className="font-semibold text-foreground">Zdraví blíž lidem</div>
-          <p className="mt-1">Plán reformy zdravotnictví, konzultační verze 3 z 20. 10. 2026. Josef Pavlovic, resortní tým Zdravotnictví. Verze 3 je konzultační dokument, ne program strany.</p>
+          <p className="mt-1">Plán reformy zdravotnictví, verze 3 ke konzultaci z 20. 10. 2026. Josef Pavlovic, resortní tým Zdravotnictví. Je to návrh k diskusi, ne program strany.</p>
         </div>
         <div>
           <div className="font-semibold text-foreground">Připomínky</div>
-          <p className="mt-1">Představujeme plán a hledáme pro něj podporu. První kolo připomínek končí 31. 3. 2027. Každou připomínku vypořádáme písemně a vypořádání zveřejníme před červnem 2028.</p>
+          <p className="mt-1">Představujeme plán a hledáme pro něj podporu. První kolo připomínek končí 31. 3. 2027. Ke každé připomínce napíšeme, jak jsme s ní naložili, a zveřejníme to před červnem 2028. <Link href="/studie" className="underline">Plné znění studie</Link> · <Link href="/slovnicek" className="underline">Slovníček pojmů</Link></p>
         </div>
         <div>
           <div className="font-semibold text-foreground">Střet zájmů</div>
-          <p className="mt-1">Autor je členem Správní rady VZP, členem PEER a autorem HSPA Monitoru. O smlouvě pilotu rozhoduje vedení VZP, výsledky hodnotí nezávislý hodnotitel a autor se z hlasování o pilotu vyloučí.</p>
+          <p className="mt-1">Autor plánu je členem Správní rady VZP, členem ekonomické rady PEER a autorem HSPA Monitoru. O smlouvě na zkoušku rozhoduje vedení VZP, výsledky hodnotí nezávislý hodnotitel a autor se z hlasování o zkoušce vyloučí.</p>
         </div>
       </div>
     </footer>
