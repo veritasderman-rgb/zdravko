@@ -7,9 +7,9 @@ export const metadata = { title: "Pro koho" };
 export default function ProKohoPage() {
   return (
     <>
-      <PageHero eyebrow="Pro koho" title="Reforma na tři volební období nemůže být reformou jedné strany" lead="Proto nejdřív hledáme podporu u těch, kteří budou péči poskytovat, platit a dostávat. Bez nich se plán neprosadí ani s vládní většinou." />
+      <PageHero eyebrow="Pro koho" title="Reforma na tři volební období nemůže být reformou jedné strany" lead="Proto plán nejdřív projednáme s těmi, kteří budou péči poskytovat, platit a dostávat. Bez nich se neprosadí ani s vládní většinou." />
 
-      <Section eyebrow="Podpora" title="Potřebujeme šest z deseti">
+      <Section eyebrow="Projednání" title="Projednáme to se všemi deseti">
         <SupportMeter />
       </Section>
 
