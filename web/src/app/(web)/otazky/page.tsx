@@ -65,7 +65,7 @@ export default function OtazkyPage() {
         </p>
       </Section>
 
-      <NextStep title="Přečíst studii" text="Plné znění odborné studie, verze 3 ke konzultaci. Každé číslo na tomto webu v ní má svůj výpočet a zdroj." href="/studie" label="Číst studii" />
+      <NextStep title="Přečíst studii" text="Plné znění odborné studie, verze 3.1 ke konzultaci. Každé číslo na tomto webu v ní má svůj výpočet a zdroj." href="/studie" label="Číst studii" />
     </>
   );
 }

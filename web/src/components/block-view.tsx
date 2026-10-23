@@ -2,6 +2,9 @@ import Link from "next/link";
 import type { schema } from "@/db";
 import { renderInline, stripBlockMarker } from "@/lib/md";
 import { Chip } from "@/components/web/ui";
+import { StudyFigureSlot } from "@/components/study-figures/slot";
+import { PLACEHOLDER_RE, findFigure } from "@/components/study-figures/registry";
+import { STUDY_FIGURES } from "@/components/study-figures";
 
 type Block = typeof schema.blocks.$inferSelect;
 
@@ -81,8 +84,14 @@ export function BlockView({ block, slug, count, selected, query, readOnly = fals
     case "code":
       content = <pre className={`overflow-x-auto rounded bg-stone p-2 ${readOnly ? "text-[15px]" : "text-xs"}`}>{block.text}</pre>;
       break;
-    default:
-      content = <p>{inline(body)}</p>;
+    default: {
+      const ph = body.match(PLACEHOLDER_RE);
+      if (ph && findFigure(STUDY_FIGURES, ph[1])) {
+        content = <StudyFigureSlot desc={ph[1]} compact={!readOnly} />;
+      } else {
+        content = <p>{inline(body)}</p>;
+      }
+    }
   }
 
   return (

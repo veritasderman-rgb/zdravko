@@ -25,7 +25,7 @@ const ROOT = path.resolve(__dirname, "../..");
 
 // Připomínkuje se jen odborná studie; ostatní dokumenty slouží jako zdroj pro veřejný web.
 const DOCS: { slug: string; title: string; kind: string; file: string; label: string }[] = [
-  { slug: "studie", title: "Zdraví blíž lidem — studie v3", kind: "studie", file: "01-studie-zdravi-bliz-lidem-v3.md", label: "v3 (20. 10. 2026)" },
+  { slug: "studie", title: "Zdraví blíž lidem — studie v3.1", kind: "studie", file: "01-studie-zdravi-bliz-lidem-v3.1.md", label: "v3.1 (23. 10. 2026)" },
 ];
 
 type BlockRow = typeof schema.blocks.$inferInsert;
