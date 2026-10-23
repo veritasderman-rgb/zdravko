@@ -1,0 +1,75 @@
+import Link from "next/link";
+import { requireSession } from "@/lib/auth";
+import { listVerifications } from "@/lib/queries";
+import { VERIFICATION_LABEL } from "@/lib/labels";
+import { updateVerification } from "@/app/actions";
+
+export const dynamic = "force-dynamic";
+export const metadata = { title: "Ověřit" };
+
+export default async function VerifyPage({ searchParams }: PageProps<"/overit">) {
+  await requireSession();
+  const sp = await searchParams;
+  const status = typeof sp.status === "string" && sp.status ? sp.status : undefined;
+  const rows = await listVerifications(status);
+
+  // seskupit podle dokumentu a části
+  const groups = new Map<string, typeof rows>();
+  for (const r of rows) {
+    const key = `${r.docTitle} › ${r.headingPath?.split(" › ").slice(0, 2).join(" › ") ?? ""}`;
+    groups.set(key, [...(groups.get(key) ?? []), r]);
+  }
+
+  return (
+    <main className="mx-auto max-w-[1100px] px-4 py-6">
+      <div className="flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <h1 className="text-2xl font-semibold tracking-tight">Otevřená ověření</h1>
+          <p className="text-sm text-muted">
+            Místa označená ve studii slovem „Ověřit“. Kdo má přístup ke zdroji, údaj ověří, zapíše výsledek a stav. Rozdělení osob a termínů je na schůzce 9. 11. 2026.
+          </p>
+        </div>
+        <form className="flex items-center gap-2 text-sm">
+          <select name="status" defaultValue={status ?? ""} className="!w-auto">
+            <option value="">Všechny stavy</option>
+            {Object.entries(VERIFICATION_LABEL).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
+          </select>
+          <button className="btn btn-ghost" type="submit">Filtrovat</button>
+          <span className="text-muted">{rows.length} položek</span>
+        </form>
+      </div>
+
+      {[...groups.entries()].map(([group, items]) => (
+        <section key={group} className="mt-6">
+          <h2 className="text-sm font-semibold text-muted">{group}</h2>
+          <ul className="mt-2 divide-y divide-line rounded-lg border border-line bg-paper">
+            {items.map(({ v, docSlug }) => (
+              <li key={v.id} className="px-4 py-3 text-sm">
+                <div className="flex flex-wrap items-start gap-2">
+                  <span className={`chip mt-0.5 ${v.status === "otevreno" ? "border-amber-300 bg-amber-50 text-amber-900" : v.status === "neoveritelne" ? "border-rose-200 bg-rose-50 text-rose-900" : "border-emerald-200 bg-emerald-50 text-emerald-900"}`}>
+                    {VERIFICATION_LABEL[v.status]}
+                  </span>
+                  <p className="min-w-0 flex-1">
+                    <b>Ověřit:</b> {v.text}{" "}
+                    <Link href={`/d/${docSlug}?b=${encodeURIComponent(v.blockKey)}#${encodeURIComponent(v.blockKey)}`} className="text-xs text-accent underline">
+                      v textu
+                    </Link>
+                  </p>
+                </div>
+                <form action={updateVerification} className="mt-2 grid grid-cols-1 gap-2 text-xs md:grid-cols-[180px_160px_1fr_auto]">
+                  <input type="hidden" name="id" value={v.id} />
+                  <select name="status" defaultValue={v.status}>
+                    {Object.entries(VERIFICATION_LABEL).map(([k, l]) => <option key={k} value={k}>{l}</option>)}
+                  </select>
+                  <input name="assignee" defaultValue={v.assignee ?? ""} placeholder="kdo ověří" />
+                  <input name="note" defaultValue={v.note ?? ""} placeholder="výsledek, zdroj, nové znění" />
+                  <button className="btn !py-1 !px-3 !text-xs" type="submit">Uložit</button>
+                </form>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </main>
+  );
+}
