@@ -279,35 +279,3 @@ export function Callout({ title, children, tone = "sand" }: { title: string; chi
 // Implementováno nad novými tokeny. Smaže koordinátor po migraci.
 // ---------------------------------------------------------------------------
 
-/** @deprecated Použijte BigNumber z blocks.tsx. */
-export function Stat({ value, label, note }: { value: string; label: string; note?: string }) {
-  return (
-    <div className="rounded-card border border-line bg-paper p-5">
-      <div className="font-serif text-4xl font-semibold leading-none tracking-[-0.02em] tabular-nums md:text-5xl">{value}</div>
-      <div className="mt-2 text-base text-ink">{label}</div>
-      {note && <div className="mt-1 text-sm text-muted">{note}</div>}
-    </div>
-  );
-}
-
-/** @deprecated Použijte Callout nebo vlastní blok. */
-export function Card({ title, children, tone = "paper" }: { title?: ReactNode; children: ReactNode; tone?: "paper" | "accent" | "warm" }) {
-  const cls = tone === "accent" ? "border-sage bg-sage-soft" : tone === "warm" ? "border-line-strong bg-stone" : "border-line bg-paper";
-  return (
-    <div className={cx("rounded-card border p-5", cls)}>
-      {title && <div className="font-serif text-xl font-semibold leading-snug">{title}</div>}
-      <div className={cx(!!title && "mt-2", "text-base leading-relaxed text-ink-2")}>{children}</div>
-    </div>
-  );
-}
-
-/** @deprecated Použijte NextStep. */
-export function NextLink({ href, title, text }: { href: string; title: string; text: string }) {
-  return (
-    <Link href={href} className="group block rounded-card border border-line bg-paper p-5 text-ink no-underline transition-colors hover:bg-sage-soft">
-      <Eyebrow>Pokračovat</Eyebrow>
-      <div className="mt-1 font-serif text-xl font-semibold group-hover:underline">{title}</div>
-      <div className="mt-1 text-base text-muted">{text}</div>
-    </Link>
-  );
-}

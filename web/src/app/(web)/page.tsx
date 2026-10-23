@@ -2,6 +2,7 @@ import { AUDIENCES, FIVE_CHANGES, GP_DECLINE, HONEST_CHANGES, KEY_NUMBERS, SPEND
 import { AudienceEntry, BigNumber, CalculatorFrame, ChangeRow, FearFact, MilestoneColumns, OrgList, PatientJourney, Waffle } from "@/components/web/blocks";
 import { HomeWineCalculator } from "@/components/web/home-wine-calculator";
 import { HomeVisit } from "@/components/web/illustrations";
+import { ManifestStrip } from "@/components/web/manifest-strip";
 import { Button, Callout, Container, Eyebrow, NextStep, Section, TextLink } from "@/components/web/ui";
 
 // Barvy waffle a obarvených čísel ve výroku (stejné jako SERIES[0], SERIES[1] a ON_DARK v charts/theme.ts).
@@ -99,6 +100,9 @@ export default function HomePage() {
         <ChangeRow items={FIVE_CHANGES} />
       </Section>
 
+      {/* 4b. Z čeho vycházíme: 13 oblastí Manifestu */}
+      <ManifestStrip />
+
       {/* 5. Cesta pacienta */}
       <Section eyebrow="Cesta pacienta" title="Jak to bude vypadat, když…" className="pt-3! md:pt-0!">
         <PatientJourney defaultStep={4} />
@@ -167,8 +171,6 @@ export default function HomePage() {
           <OrgList />
         </Container>
       </section>
-
-      {/* ManifestStrip vloží koordinátor */}
 
       {/* 10. Další krok */}
       <NextStep

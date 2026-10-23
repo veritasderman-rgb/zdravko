@@ -201,29 +201,6 @@ label.field {
  * nepřejdou na komponenty z components/web/ui.tsx. Smaže je koordinátor.
  * ------------------------------------------------------------------------- */
 
-.font-display {
-  font-family: var(--font-serif-src), Georgia, serif;
-}
-.display-title {
-  font-family: var(--font-serif-src), Georgia, serif;
-  font-weight: 600;
-  line-height: 1.1;
-  letter-spacing: -0.015em;
-}
-.eyebrow {
-  font-family: var(--font-sans-src), "Segoe UI", system-ui, sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-size: 0.85rem;
-}
-.big-number {
-  font-family: var(--font-serif-src), Georgia, serif;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  font-variant-numeric: lining-nums tabular-nums;
-}
 
 .code-ref {
   font-family: var(--font-geist-mono), ui-monospace, monospace;

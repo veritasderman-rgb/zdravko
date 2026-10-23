@@ -39,7 +39,7 @@ export const SPENDING_SHARE = {
 
 export const GP_DECLINE = {
   title: "Praktických lékařů pro dospělé ubývá: v roce 2035 jich bude 3 900 až 4 500 místo dnešních 5 500",
-  source: "ÚZIS; ročně ubude 110 až 180 lékařů, téměř polovina (43,6 %) je starší 60 let",
+  source: "ÚZIS, NRZP a NRHZS, stav k 31. 3. 2023; ročně ubude 110 až 180 lékařů, téměř polovina (43,6 %) je starší 60 let",
   points: Array.from({ length: 10 }, (_, i) => {
     const year = 2026 + i;
     return { year, low: 5500 - 180 * i, high: 5500 - 110 * i };
@@ -58,7 +58,7 @@ export const BEDS = {
 
 export const AVOIDABLE = {
   title: "Zbytečných hospitalizací máme o čtvrtinu víc než průměr vyspělých zemí",
-  source: "OECD Health at a Glance; hospitalizace na 100 000 obyvatel, kterým by předešla dobrá péče mimo nemocnici",
+  source: "OECD Health at a Glance 2025, data 2021/2022; hospitalizace na 100 000 obyvatel, kterým by předešla dobrá péče mimo nemocnici",
   rows: [
     { label: "Česko dnes", value: 592, highlight: true },
     { label: "Náš cíl pro rok 2033", value: 550 },

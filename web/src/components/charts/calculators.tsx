@@ -1,39 +1,30 @@
 "use client";
 
+import { CalcOutput, CalculatorFrame, RangeInput } from "@/components/web/blocks";
 import { useState } from "react";
 import { TAXES } from "@/content/reforma";
-import { csNumber } from "./theme";
+import { SERIES, csNumber } from "./theme";
 
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <label className="block">
-      <span className="field">{label}</span>
-      {children}
-    </label>
-  );
-}
+/** Zaokrouhlí na desítky (Kč) – výsledky kalkulaček jsou orientační, proto „asi“. */
+const tens = (v: number) => Math.round(v / 10) * 10;
+/** Miliardy: nad 10 na celé, pod 10 na desetiny. */
+const bn = (v: number) => (v >= 10 ? csNumber(Math.round(v), 0) : csNumber(Math.round(v * 10) / 10, 1));
 
 /** Platba státu: Kč měsíčně na státního pojištěnce ↔ mld. Kč ročně. 100 Kč = 7,2 mld. Kč. */
 export function StatePaymentCalculator() {
   const [kc, setKc] = useState(180);
   const mld = (kc * TAXES.statePayees * 12) / 1000;
   return (
-    <div className="rounded-xl border border-line bg-paper p-5">
-      <h3 className="display-title text-2xl">Kolik stojí vyšší platba státu</h3>
-      <p className="mt-1 text-sm text-muted">Stát platí zdravotní pojištění za asi 6 milionů dětí, důchodců a studentů. Každých 100 Kč měsíčně na osobu stojí státní rozpočet 7,2 mld. Kč ročně. Posuňte, o kolik má stát platit víc.</p>
-      <Field label={`Navýšení platby: ${kc} Kč měsíčně na státního pojištěnce`}>
-        <input type="range" min={0} max={500} step={10} value={kc} onChange={(e) => setKc(Number(e.target.value))} className="w-full accent-[#1f6f5f]" />
-      </Field>
-      <div className="mt-3 flex flex-wrap items-baseline gap-x-6 gap-y-1">
-        <div>
-          <div className="text-3xl font-semibold">{csNumber(mld, 1)} mld. Kč</div>
-          <div className="text-xs text-muted">ročně ze státního rozpočtu</div>
-        </div>
-        <div className="text-sm text-muted">
-          Reforma počítá s asi 180 Kč měsíčně (13 mld. Kč ročně). Jen zacelit díru v pojištění v roce 2038 by stálo asi 1 150 Kč měsíčně (83 mld. Kč), i bez reformy.
-        </div>
-      </div>
-    </div>
+    <CalculatorFrame
+      question="Kolik stojí vyšší platba státu?"
+      note="Reforma počítá s asi 180 Kč měsíčně (13 mld. Kč ročně). Jen zacelit díru v pojištění v roce 2038 by stálo asi 1 150 Kč měsíčně (83 mld. Kč), i bez reformy."
+    >
+      <p className="text-[18px] leading-relaxed text-ink-2">
+        Stát platí zdravotní pojištění za asi 6 milionů dětí, důchodců a studentů. Každých 100 Kč měsíčně na osobu stojí státní rozpočet 7,2 mld. Kč ročně. Posuňte, o kolik má stát platit víc.
+      </p>
+      <RangeInput id="calc-platba" label="Navýšení platby za státního pojištěnce" value={kc} min={0} max={500} step={10} onChange={setKc} format={(v) => `${csNumber(v, 0)} Kč měsíčně`} />
+      <CalcOutput value={`asi ${bn(mld)} mld. Kč`} text="ročně ze státního rozpočtu" />
+    </CalculatorFrame>
   );
 }
 
@@ -45,28 +36,27 @@ export function PersonalTaxCalculator() {
   const sugarLow = litres * TAXES.sugarPerLitreLow * 52;
   const sugarHigh = litres * TAXES.sugarPerLitreHigh * 52;
   return (
-    <div className="rounded-xl border border-line bg-paper p-5">
-      <h3 className="display-title text-2xl">Kolik zaplatím já</h3>
-      <p className="mt-1 text-sm text-muted">Tiché víno bude zdaněné 23,40 Kč na litr jako šumivé. Slazené nápoje s hodně cukru zdraží asi o 6 až 8 Kč na litr, pokud výrobce cukr nesníží. Kdo takové nápoje nepije, nezaplatí nic. Posuňte podle své spotřeby.</p>
-      <div className="mt-3 grid gap-3 sm:grid-cols-2">
-        <Field label={`Sklenek tichého vína (0,2 l) týdně: ${glasses}`}>
-          <input type="range" min={0} max={14} step={1} value={glasses} onChange={(e) => setGlasses(Number(e.target.value))} className="w-full accent-[#1f6f5f]" />
-        </Field>
-        <Field label={`Litrů slazených nápojů nad hranicí cukru týdně: ${litres}`}>
-          <input type="range" min={0} max={10} step={0.5} value={litres} onChange={(e) => setLitres(Number(e.target.value))} className="w-full accent-[#1f6f5f]" />
-        </Field>
-      </div>
-      <div className="mt-3 grid gap-3 sm:grid-cols-2">
-        <div>
-          <div className="text-3xl font-semibold">{csNumber(Math.round(wine), 0)} Kč</div>
-          <div className="text-xs text-muted">ročně za víno</div>
+    <CalculatorFrame
+      question="Kolik zaplatím já?"
+      note="Zjednodušeno: daň z vína 23,40 Kč na litr, 52 týdnů v roce. Malí vinaři platí poloviční sazbu, takže jejich víno zdraží méně."
+    >
+      <p className="text-[18px] leading-relaxed text-ink-2">
+        Tiché víno bude zdaněné 23,40 Kč na litr jako šumivé. Slazené nápoje s hodně cukru zdraží asi o 6 až 8 Kč na litr, pokud výrobce cukr nesníží. Kdo takové nápoje nepije, nezaplatí nic. Posuňte podle své spotřeby.
+      </p>
+      <div className="grid gap-6 md:grid-cols-2">
+        <div className="flex flex-col gap-4">
+          <RangeInput id="calc-vino" label="Sklenek tichého vína (2 dl) týdně" value={glasses} min={0} max={14} step={1} onChange={setGlasses} format={(v) => `${csNumber(v, 0)} ${v === 1 ? "sklenka" : v >= 2 && v <= 4 ? "sklenky" : "sklenek"}`} />
+          <CalcOutput value={`asi ${csNumber(tens(wine), 0)} Kč`} text="ročně navíc za víno" />
         </div>
-        <div>
-          <div className="text-3xl font-semibold">{csNumber(Math.round(sugarLow), 0)} až {csNumber(Math.round(sugarHigh), 0)} Kč</div>
-          <div className="text-xs text-muted">ročně za slazené nápoje, pokud zůstanou neodslazené</div>
+        <div className="flex flex-col gap-4">
+          <RangeInput id="calc-napoje" label="Litrů slazených nápojů nad hranicí cukru týdně" value={litres} min={0} max={10} step={0.5} onChange={setLitres} format={(v) => `${csNumber(v, 1)} l`} />
+          <CalcOutput
+            value={litres === 0 ? "0 Kč" : `asi ${csNumber(tens(sugarLow), 0)} až ${csNumber(tens(sugarHigh), 0)} Kč`}
+            text="ročně navíc za slazené nápoje, pokud zůstanou neodslazené"
+          />
         </div>
       </div>
-    </div>
+    </CalculatorFrame>
   );
 }
 
@@ -75,21 +65,35 @@ export function TaxSplitCalculator() {
   const [revenue, setRevenue] = useState(5);
   const fund = Math.min(2, revenue);
   const state = Math.max(0, revenue - fund);
+  const parts = [
+    { label: "Národní fond prevence", value: fund, color: SERIES[2] },
+    { label: "Do zdravotního pojištění", value: state, color: SERIES[0] },
+  ];
   return (
-    <div className="rounded-xl border border-line bg-paper p-5">
-      <h3 className="display-title text-2xl">Kam jdou peníze z daní za zdraví</h3>
-      <p className="mt-1 text-sm text-muted">Počítáme s 5 mld. Kč ročně (může to být 5 až 7). Národní fond prevence dostane vždy první 2 mld. Kč, i kdyby daně vynesly méně. Zbytek jde do zdravotního pojištění. Odvody z mezd se nemění. Posuňte, kolik by daně vynesly.</p>
-      <Field label={`Výnos daní za zdraví: ${csNumber(revenue, 1)} mld. Kč ročně`}>
-        <input type="range" min={3} max={7} step={0.5} value={revenue} onChange={(e) => setRevenue(Number(e.target.value))} className="w-full accent-[#1f6f5f]" />
-      </Field>
-      <div className="mt-3 flex h-[26px] w-full gap-[2px] overflow-hidden rounded">
-        <div className="h-full rounded-l bg-[#1baf7a]" style={{ width: `${(fund / revenue) * 100}%` }} title={`Fond prevence ${csNumber(fund)} mld. Kč`} />
-        <div className="h-full rounded-r bg-[#2a78d6]" style={{ width: `${(state / revenue) * 100}%` }} title={`Platba státu ${csNumber(state)} mld. Kč`} />
+    <CalculatorFrame
+      question="Kam jdou peníze z daní za zdraví?"
+      note="Odvody z mezd se nemění. Počítáme s 5 mld. Kč ročně, může to být 5 až 7."
+    >
+      <p className="text-[18px] leading-relaxed text-ink-2">
+        Národní fond prevence dostane vždy první 2 mld. Kč, i kdyby daně vynesly méně. Zbytek jde do zdravotního pojištění. Posuňte, kolik by daně vynesly.
+      </p>
+      <RangeInput id="calc-vynos" label="Výnos daní za zdraví ročně" value={revenue} min={3} max={7} step={0.5} onChange={setRevenue} format={(v) => `${csNumber(v, 1)} mld. Kč`} />
+      <CalcOutput value={`${csNumber(state, 1)} mld. Kč`} text={`půjde do zdravotního pojištění; Národní fond prevence dostane ${csNumber(fund, 1)} mld. Kč`} />
+      <div>
+        <div className="flex h-6 w-full gap-[2px]" aria-hidden>
+          {parts.map((p, i) => (
+            <div key={p.label} className="h-full" style={{ width: `${(p.value / revenue) * 100}%`, background: p.color, borderRadius: i === parts.length - 1 ? "0 4px 4px 0" : undefined }} />
+          ))}
+        </div>
+        <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-1.5 text-[16px] text-ink-2">
+          {parts.map((p) => (
+            <li key={p.label} className="flex items-center gap-2">
+              <span aria-hidden className="inline-block h-3.5 w-3.5 rounded-[3px]" style={{ background: p.color }} />
+              {p.label}: <span className="font-semibold tabular-nums text-ink">{csNumber(p.value, 1)} mld. Kč</span>
+            </li>
+          ))}
+        </ul>
       </div>
-      <ul className="mt-2 flex flex-wrap gap-x-6 text-sm">
-        <li className="flex items-center gap-1.5"><span className="inline-block h-2.5 w-2.5 rounded-sm bg-[#1baf7a]" /> Národní fond prevence: {csNumber(fund)} mld. Kč</li>
-        <li className="flex items-center gap-1.5"><span className="inline-block h-2.5 w-2.5 rounded-sm bg-[#2a78d6]" /> Do zdravotního pojištění: {csNumber(state)} mld. Kč</li>
-      </ul>
-    </div>
+    </CalculatorFrame>
   );
 }

@@ -1,25 +1,66 @@
 import { GLOSSARY } from "@/content/reforma";
-import { NextLink, PageHero, Section } from "@/components/web/ui";
+import { NextStep, PageHero, Section } from "@/components/web/ui";
+import { slug } from "../_lib/slug";
+import { BackStep } from "./back-step";
 
 export const metadata = { title: "Slovníček pojmů" };
+
+const TERMS = [...GLOSSARY].sort((a, b) => a.term.localeCompare(b.term, "cs"));
+const LETTERS = TERMS.reduce<{ letter: string; items: typeof TERMS }[]>((acc, g) => {
+  const letter = g.term.charAt(0).toLocaleUpperCase("cs");
+  const last = acc[acc.length - 1];
+  if (last && last.letter === letter) last.items.push(g);
+  else acc.push({ letter, items: [g] });
+  return acc;
+}, []);
+const letterId = (l: string) => `pismeno-${slug(l) || l}`;
 
 export default function SlovnicekPage() {
   return (
     <>
       <PageHero eyebrow="Slovníček" title="Pojmy, které v plánu potkáte" lead="Snažíme se psát bez odborných výrazů. Tam, kde se jim nevyhneme, je tady vysvětlujeme." />
-      <Section title="Od primární péče po rozpočtovou radu">
-        <dl className="grid gap-3 md:grid-cols-2">
-          {GLOSSARY.map((g) => (
-            <div key={g.term} className="rounded-xl border border-line bg-paper p-5">
-              <dt className="font-semibold">{g.term}</dt>
-              <dd className="mt-1 text-sm leading-relaxed text-muted">{g.text}</dd>
-            </div>
+
+      <Section id="pojmy" tone="paper" title="Od primární péče po rozpočtovou radu">
+        <nav aria-label="Písmena" className="mb-10">
+          <ul className="flex flex-wrap gap-2">
+            {LETTERS.map((l) => (
+              <li key={l.letter}>
+                <a
+                  href={`#${letterId(l.letter)}`}
+                  className="inline-flex h-11 min-w-11 items-center justify-center rounded-full border border-line-strong bg-paper px-3 font-serif text-[20px] font-semibold text-forest hover:border-forest hover:bg-sage-soft"
+                >
+                  {l.letter}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div className="flex max-w-[52em] flex-col gap-10">
+          {LETTERS.map((l) => (
+            <section key={l.letter} id={letterId(l.letter)} aria-labelledby={`${letterId(l.letter)}-h`} className="scroll-mt-6">
+              <h3 id={`${letterId(l.letter)}-h`} className="border-b-2 border-forest pb-2 font-serif text-[32px] font-semibold leading-none text-forest">
+                {l.letter}
+              </h3>
+              <dl>
+                {l.items.map((g) => (
+                  <div key={g.term} id={slug(g.term)} className="scroll-mt-6 border-b border-line py-5">
+                    <dt className="font-serif text-[22px] font-semibold leading-snug text-ink">
+                      <a href={`#${slug(g.term)}`} className="hover:underline hover:decoration-2 hover:underline-offset-4">
+                        {g.term}
+                      </a>
+                    </dt>
+                    <dd className="mt-1.5 max-w-[38em] text-[19px] leading-relaxed text-ink-2">{g.text}</dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
           ))}
-        </dl>
+        </div>
       </Section>
-      <div className="mx-auto max-w-[1100px] px-4">
-        <NextLink href="/studie" title="Plné znění studie" text="Odborná studie, verze 3 ke konzultaci, ke čtení." />
-      </div>
+
+      <BackStep>
+        <NextStep title="Vraťte se ke čtení" text="Pojem máte vysvětlený. Tlačítko vás vrátí tam, odkud jste přišli; když jste přišli rovnou sem, zavede vás na úvod." href="/" label="Zpět" />
+      </BackStep>
     </>
   );
 }

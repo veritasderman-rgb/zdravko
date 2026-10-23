@@ -13,6 +13,7 @@ export const SITE_LINKS = [
 
 /** Položky menu „Více“. */
 export const MORE_LINKS = [
+  { href: "/plan", label: "13 oblastí Manifestu" },
   { href: "/otazky", label: "Otázky" },
   { href: "/slovnicek", label: "Slovníček" },
   { href: "/studie", label: "Studie" },
