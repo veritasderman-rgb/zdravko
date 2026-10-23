@@ -159,6 +159,9 @@ export const comments = pgTable(
     authorName: text("author_name").notNull(), // nikdy se nezveřejňuje
     organization: text("organization"), // jediné, co jde do veřejného vypořádání
     onBehalf: text("on_behalf").notNull().default("osoba"), // osoba | organizace
+    email: text("email"), // jen u připomínek veřejnosti; nikdy se nezveřejňuje
+    channel: text("channel").notNull().default("rt"), // rt | verejnost
+    priority: text("priority").notNull().default("bezna"), // nizka | bezna | vysoka (veřejnost začíná na nízké)
     visibility: commentVisibility("visibility").notNull().default("interni"),
     status: commentStatus("status").notNull().default("nova"),
     assignee: text("assignee"),

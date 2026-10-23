@@ -126,18 +126,79 @@ export async function updateCommentStatus(fd: FormData): Promise<void> {
   const status = str(fd, "status", 30);
   const assignee = str(fd, "assignee", 120);
   const topic = str(fd, "topic", 120);
+  const priorityRaw = str(fd, "priority", 20);
+  const priority = PRIORITIES.has(priorityRaw) ? priorityRaw : undefined;
   if (!id || !STATUSES.has(status)) return;
   await db
     .update(schema.comments)
-    .set({ status: status as never, assignee: assignee || null, topic: topic || null, updatedAt: new Date() })
+    .set({ status: status as never, assignee: assignee || null, topic: topic || null, ...(priority ? { priority } : {}), updatedAt: new Date() })
     .where(eq(schema.comments.id, id));
-  await db.insert(schema.events).values({ entity: "comment", entityId: id, action: "status", actor: session.name, payload: { status, assignee, topic } });
+  await db.insert(schema.events).values({ entity: "comment", entityId: id, action: "status", actor: session.name, payload: { status, assignee, topic, priority } });
   revalidatePath("/pripominky");
   const slug = str(fd, "slug", 100);
   if (slug) revalidatePath(`/d/${slug}`);
 }
 
 const VSTATUS = new Set(["otevreno", "overeno_potvrzeno", "overeno_opraveno", "neoveritelne"]);
+const PRIORITIES = new Set(["nizka", "bezna", "vysoka"]);
+const PUBLIC_KINDS = new Set(["vecna", "cislo", "zneni", "zdroj", "otazka", "podpora"]);
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+/**
+ * Veřejná připomínka bez přihlášení: libovolné jméno a e-mail (nikdy se nezveřejňují).
+ * Ukládá se s kanálem „verejnost“ a nízkou prioritou; tým ji může povýšit.
+ */
+export async function addPublicComment(_prev: ActionState, fd: FormData): Promise<ActionState> {
+  // Past na roboty a příliš rychlé odeslání.
+  if (str(fd, "website", 200)) return { ok: true };
+  const ts = Number(fd.get("ts"));
+  if (ts && Date.now() - ts < 2500) return { error: "Formulář byl odeslán příliš rychle. Zkuste to prosím znovu." };
+
+  const documentId = Number(fd.get("documentId"));
+  const versionId = Number(fd.get("versionId"));
+  const blockKey = str(fd, "blockKey", 300) || "obecne";
+  const quote = str(fd, "quote", 600);
+  const name = str(fd, "name", 80);
+  const email = str(fd, "email", 200).toLowerCase();
+  const organization = str(fd, "organization", 200);
+  const kind = str(fd, "kind", 20);
+  const body = str(fd, "body", 5000);
+
+  if (!documentId || !versionId) return { error: "Chybí vazba na dokument. Obnovte prosím stránku." };
+  if (name.length < 2) return { error: "Uveďte jméno nebo přezdívku (aspoň dva znaky)." };
+  if (!EMAIL_RE.test(email)) return { error: "Zadejte platný e-mail." };
+  if (!PUBLIC_KINDS.has(kind)) return { error: "Vyberte typ připomínky." };
+  if (body.length < 10) return { error: "Napište připomínku (aspoň deset znaků)." };
+
+  const [version] = await db.select({ id: schema.documentVersions.id, documentId: schema.documentVersions.documentId }).from(schema.documentVersions).where(eq(schema.documentVersions.id, versionId));
+  if (!version || version.documentId !== documentId) return { error: "Verze dokumentu neodpovídá. Obnovte prosím stránku." };
+
+  const codes = [...new Set([...body.matchAll(CODE_RE)].map((m) => m[1]))];
+  const [row] = await db
+    .insert(schema.comments)
+    .values({
+      documentId,
+      versionId,
+      blockKey,
+      quote: quote || null,
+      kind: kind as never,
+      severity: "doporucujici",
+      body,
+      codes,
+      authorName: name,
+      email,
+      organization: organization || null,
+      onBehalf: "osoba",
+      channel: "verejnost",
+      priority: "nizka",
+    })
+    .returning({ id: schema.comments.id });
+  await db.insert(schema.events).values({ entity: "comment", entityId: row.id, action: "created", actor: `verejnost: ${name}`, payload: { blockKey, kind, channel: "verejnost" } });
+
+  revalidatePath("/pripominky");
+  revalidatePath("/rt");
+  return { ok: true };
+}
 
 export async function updateVerification(fd: FormData): Promise<void> {
   const session = await getSession();

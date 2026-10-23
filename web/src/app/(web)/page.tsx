@@ -172,7 +172,20 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* 10. Další krok */}
+      {/* 10. Komentovat studii */}
+      <Section tone="paper" eyebrow="Komentovat studii" title="Řekněte nám, co je špatně" lead="Studie je ke konzultaci, ne hotová. Když víte o chybě v čísle, lepším zdroji nebo o něčem, co chybí, napište to k odstavci přímo ve studii. Stačí jakékoli jméno a e-mail, nic z toho nezveřejňujeme.">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+          <Button href="/studie" icon="arrow">
+            Číst a komentovat studii
+          </Button>
+          <TextLink href="/studie#pripominka" className="inline-flex min-h-12 items-center">
+            Napsat obecnou připomínku
+          </TextLink>
+        </div>
+        <p className="mt-4 max-w-[52em] text-[16px] text-muted sm:text-[17px]">Připomínky odborných organizací vyřizujeme přednostně, připomínky veřejnosti po nich. Ve vypořádání uvádíme jen názvy organizací, nikdy jména lidí.</p>
+      </Section>
+
+      {/* 11. Další krok */}
       <NextStep
         title="Co se změní pro vás a vaše blízké"
         text="Pět změn a devět situací, dnes a po reformě. Čtení na pět minut."

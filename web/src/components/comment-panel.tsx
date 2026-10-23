@@ -60,6 +60,7 @@ export function CommentPanel({ doc, version, block, comments, session, codeLabel
                 <span className="chip">{KIND_LABEL[c.kind]}</span>
                 <span className={`chip border-transparent ${STATUS_CLASS[c.status]}`}>{STATUS_LABEL[c.status]}</span>
                 {c.needsVerification && <span className="chip border-amber-300 bg-amber-50 text-amber-900">Ověřit</span>}
+                {c.channel === "verejnost" && <span className="chip border-sky-200 bg-sky-50 text-sky-900">veřejnost · {c.priority === "nizka" ? "nízká priorita" : c.priority === "vysoka" ? "vysoká priorita" : "běžná priorita"}</span>}
                 {c.codes.map((k) => (
                   <Link key={k} href={`/kody/${k}`} className="code-ref">{k}</Link>
                 ))}

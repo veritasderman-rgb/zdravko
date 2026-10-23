@@ -90,6 +90,7 @@ export function SiteFooter() {
           label="Studie"
           links={[
             { href: "/studie", label: "Číst studii" },
+            { href: "/studie#pripominka", label: "Napsat připomínku" },
             { href: STUDY_PDF_HREF, label: "Stáhnout PDF" },
             { href: "/otazky", label: "Otázky" },
             { href: "/slovnicek", label: "Slovníček" },

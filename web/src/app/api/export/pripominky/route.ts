@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { getSession } from "@/lib/auth";
 import { listComments } from "@/lib/queries";
-import { KIND_LABEL, SEVERITY_LABEL, STATUS_LABEL } from "@/lib/labels";
+import { CHANNEL_LABEL, KIND_LABEL, PRIORITY_LABEL, SEVERITY_LABEL, STATUS_LABEL } from "@/lib/labels";
 
 export const dynamic = "force-dynamic";
 
@@ -18,15 +18,15 @@ export async function GET(req: NextRequest) {
   if (!session) return new NextResponse("Unauthorized", { status: 401 });
   const sp = req.nextUrl.searchParams;
   const g = (k: string) => sp.get(k) || undefined;
-  const rows = await listComments({ doc: g("doc"), status: g("status"), severity: g("severity"), kind: g("kind"), code: g("code"), q: g("q") });
+  const rows = await listComments({ doc: g("doc"), status: g("status"), severity: g("severity"), kind: g("kind"), code: g("code"), q: g("q"), channel: g("channel") });
   const publicMode = sp.get("verejne") === "1";
 
-  const header = ["ID", "Dokument", "Část", "Klíč bloku", "Kódy", "Typ", "Závažnost", "Stav", "Téma", "Garant", "Připomínkové místo", "Úryvek", "Připomínka", "Návrh znění", "Zdroj", "Ověřit", "Vloženo"];
+  const header = ["ID", "Dokument", "Část", "Klíč bloku", "Kódy", "Typ", "Závažnost", "Stav", "Téma", "Garant", "Připomínkové místo", "Kanál", "Priorita", ...(publicMode ? [] : ["E-mail"]), "Úryvek", "Připomínka", "Návrh znění", "Zdroj", "Ověřit", "Vloženo"];
   const lines = [header.join(";")];
   for (const { c, docTitle, headingPath } of rows) {
     const place = publicMode ? c.organization ?? "jednotlivec" : `${c.authorName}${c.organization ? ` (${c.organization})` : ""}`;
     lines.push(
-      [c.id, docTitle, headingPath ?? "", c.blockKey, c.codes.join(" "), KIND_LABEL[c.kind], SEVERITY_LABEL[c.severity], STATUS_LABEL[c.status], c.topic ?? "", c.assignee ?? "", place, c.quote ?? "", c.body, c.proposedText ?? "", c.source ?? "", c.needsVerification ? "ano" : "", c.createdAt.toISOString()]
+      [c.id, docTitle, headingPath ?? "", c.blockKey, c.codes.join(" "), KIND_LABEL[c.kind], SEVERITY_LABEL[c.severity], STATUS_LABEL[c.status], c.topic ?? "", c.assignee ?? "", place, CHANNEL_LABEL[c.channel] ?? c.channel, PRIORITY_LABEL[c.priority] ?? c.priority, ...(publicMode ? [] : [c.email ?? ""]), c.quote ?? "", c.body, c.proposedText ?? "", c.source ?? "", c.needsVerification ? "ano" : "", c.createdAt.toISOString()]
         .map(csv)
         .join(";"),
     );

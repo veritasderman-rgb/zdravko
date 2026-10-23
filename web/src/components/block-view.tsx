@@ -17,11 +17,12 @@ function hrefFor(slug: string, key: string, query: { kod: string | null; s: stri
 }
 
 /**
- * `readOnly` = veřejná čtečka bez připomínek: žádné ikony komentářů ani odkazy do interní části.
+ * `readOnly` = veřejná čtečka: žádné odkazy do interní části. S `commentable` má každý odstavec
+ * tlačítko „Připomínka“ (`data-comment-for`), které obsluhuje klientský obal PublicComments.
  * Veřejná čtečka má větší čtecí typografii (serifové nadpisy, text 19 px); interní čtečka
  * zachovává dnešní hustotu a jen přebírá tokeny. Chování (id bloků, data-selected, odkazy) je stejné.
  */
-export function BlockView({ block, slug, count, selected, query, readOnly = false }: { block: Block; slug: string; count?: { n: number; open: number }; selected: boolean; query: { kod: string | null; s: string | null }; readOnly?: boolean }) {
+export function BlockView({ block, slug, count, selected, query, readOnly = false, commentable = false }: { block: Block; slug: string; count?: { n: number; open: number }; selected: boolean; query: { kod: string | null; s: string | null }; readOnly?: boolean; commentable?: boolean }) {
   const href = hrefFor(slug, block.blockKey, query);
   const body = stripBlockMarker(block.md, block.kind);
   const inline = (t: string) => renderInline(t, readOnly ? { codeHref: () => null } : {});
@@ -106,6 +107,17 @@ export function BlockView({ block, slug, count, selected, query, readOnly = fals
         >
           {count?.n ? `💬 ${count.n}` : "💬"}
         </Link>}
+        {readOnly && commentable && block.kind !== "heading" && (
+          <button
+            type="button"
+            data-comment-for={block.blockKey}
+            data-comment-quote={block.text.slice(0, 300)}
+            aria-label="Napsat připomínku k tomuto místu"
+            className="mt-1 shrink-0 rounded-full border border-line-strong px-2.5 py-0.5 text-[13px] font-semibold text-muted opacity-50 transition-opacity hover:bg-sage-soft hover:text-forest hover:opacity-100 focus-visible:opacity-100 group-hover:opacity-100"
+          >
+            Připomínka
+          </button>
+        )}
       </div>
       {(block.hasVerify || block.codes.length > 0) && (
         readOnly ? (
