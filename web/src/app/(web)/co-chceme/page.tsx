@@ -1,108 +1,166 @@
-import Link from "next/link";
-import { FIVE_CHANGES, HONEST_CHANGES, NOT_DOING, PATIENT_JOURNEY } from "@/content/reforma";
-import { Card, NextLink, PageHero, Section } from "@/components/web/ui";
+import type { ReactNode } from "react";
+import { FIVE_CHANGES, HONEST_CHANGES, INSPIRATION } from "@/content/reforma";
+import { Callout, Chip, CodeRef, NextStep, PageHero, Section, TextLink } from "@/components/web/ui";
+import { FearFact, PatientJourney } from "@/components/web/blocks";
+import { EReferral, HealthCentre, HomeVisit, SeniorTaxi } from "@/components/web/illustrations";
 import { BedWaffle, TeamOrganigram, TriageLanes } from "@/components/web/visuals";
 import { TaxSplitCalculator } from "@/components/charts/calculators";
 
 export const metadata = { title: "Co chceme" };
 
-const VISUALS: Record<number, React.ReactNode> = {
-  1: <TeamOrganigram />,
-  2: <TriageLanes />,
+function Figure({ children, caption }: { children: ReactNode; caption: string }) {
+  return (
+    <figure className="flex flex-col gap-2.5">
+      {children}
+      <figcaption className="text-[16px] text-muted">{caption}</figcaption>
+    </figure>
+  );
+}
+
+/** Vizuál ke každé změně: ilustrace s lidmi, kde to jde, jinak schéma nebo kalkulačka. */
+const VISUALS: Record<number, ReactNode> = {
+  1: (
+    <div className="flex flex-col gap-8">
+      <div className="grid gap-5 sm:grid-cols-2">
+        <Figure caption="Obecní zdravotní centrum: budova patří obci">
+          <HealthCentre />
+        </Figure>
+        <Figure caption="Senior taxi: obec objedná odvoz k lékaři">
+          <SeniorTaxi />
+        </Figure>
+      </div>
+      <TeamOrganigram />
+    </div>
+  ),
+  2: (
+    <div className="flex flex-col gap-8">
+      <Figure caption="eŽádanka: lékař označí, jak to spěchá">
+        <EReferral />
+      </Figure>
+      <TriageLanes />
+    </div>
+  ),
   3: <BedWaffle />,
   4: <TaxSplitCalculator />,
+  5: (
+    <Figure caption="Sestra z týmu jezdí za křehkými seniory domů">
+      <HomeVisit />
+    </Figure>
+  ),
 };
+
+const blockTitle = "text-[16px] font-bold uppercase tracking-[0.06em] text-forest";
 
 export default function CoPage() {
   return (
     <>
-      <PageHero eyebrow="Co chceme" title="Pět změn, které lidé pocítí" lead="Kolem roku 2038 má mít každý člověk v Česku svého lékaře a svou sestru blízko domova. Ke specialistovi se dostane podle toho, jak to spěchá. A v nemocnici na akutním lůžku leží jen tehdy, když to opravdu potřebuje." />
+      <PageHero
+        eyebrow="Co chceme"
+        title="Pět změn, které lidé pocítí"
+        lead="Kolem roku 2038 má mít každý člověk v Česku svého lékaře a svou sestru blízko domova. Ke specialistovi se dostane podle toho, jak to spěchá. A v nemocnici na akutním lůžku leží jen tehdy, když to opravdu potřebuje."
+        aside={
+          <nav aria-label="Pět změn">
+            <ol className="border-t border-line-strong">
+              {FIVE_CHANGES.map((c) => (
+                <li key={c.n}>
+                  <a href={`#zmena-${c.n}`} className="group flex min-h-11 items-baseline gap-4 border-b border-line-strong py-3 text-ink">
+                    <span className="w-8 shrink-0 font-serif text-[32px] font-semibold leading-none text-forest">{c.n}</span>
+                    <span className="text-[18px] font-semibold leading-snug underline decoration-line-strong decoration-2 underline-offset-[5px] group-hover:decoration-forest">{c.title}</span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        }
+      />
 
-      <Section title="Změna po změně">
-        <ol className="space-y-6">
-          {FIVE_CHANGES.map((c) => (
-            <li key={c.n} className="overflow-hidden rounded-2xl border border-line bg-paper">
-              <div className="grid gap-6 p-6 lg:grid-cols-[1.1fr_1fr]">
-                <div>
-                  <div className="flex items-baseline gap-3">
-                    <span className="big-number text-5xl text-accent">{c.n}</span>
-                    <h3 className="display-title text-3xl md:text-4xl">{c.title}</h3>
-                  </div>
-                  <div className="mt-4 eyebrow text-muted">Co uděláme</div>
-                  <p className="mt-1 text-base leading-relaxed">{c.what}</p>
-                  <div className="mt-4 eyebrow text-muted">Co to přinese</div>
-                  <p className="mt-1 text-base leading-relaxed">{c.brings}</p>
-                  <div className="mt-4 rounded-lg bg-accent-soft/60 px-4 py-3 text-sm leading-relaxed">
-                    <span className="eyebrow text-accent">Kdy</span>
-                    <div className="mt-1">{c.when}</div>
-                  </div>
-                  <div className="mt-3 flex flex-wrap gap-1 text-xs text-muted">
-                    ve studii: {c.codes.map((k) => <span key={k} className="code-ref">{k}</span>)}
-                  </div>
-                </div>
-                <div className="flex items-center">{VISUALS[c.n] ?? <HomeCareVisual />}</div>
+      {FIVE_CHANGES.map((c, i) => (
+        <Section key={c.n} id={`zmena-${c.n}`} tone={i % 2 === 0 ? "paper" : "sand"} eyebrow={`Změna ${c.n} z 5`} title={c.title}>
+          <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className={i % 2 === 1 ? "lg:order-last" : ""}>{VISUALS[c.n]}</div>
+            <div className="flex flex-col gap-7">
+              <div>
+                <h3 className={blockTitle}>Co uděláme</h3>
+                <p className="mt-2 max-w-[38em] text-[19px] leading-relaxed text-ink md:text-[20px]">{c.what}</p>
               </div>
-            </li>
-          ))}
-        </ol>
-        <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted">
-          Všech pět změn drží pohromadě jedno pravidlo o penězích: stát bude platit zdravotní pojištění za děti, důchodce a studenty podle toho, kolik péče skutečně potřebují, ne podle dnešního vzorce. Nový vzorec přijme vláda s platností od 1. 1. 2031.
-        </p>
-      </Section>
-
-      <Section eyebrow="Cesta pacienta" title="Co se změní pro vás, krok za krokem" lead="Největší změnu pocítí dlouhodobě nemocný člověk, křehký senior a ten, kdo dnes nemá praktika. Pro zdravého třicátníka se změní málo.">
-        <ol className="relative space-y-4 border-l-2 border-line pl-6">
-          {PATIENT_JOURNEY.map((r, i) => (
-            <li key={r.step} className="relative">
-              <span className="absolute -left-[33px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-accent text-xs font-semibold text-white">{i + 1}</span>
-              <div className="rounded-xl border border-line bg-paper p-4">
-                <div className="display-title text-xl">{r.step}</div>
-                <div className="mt-2 grid gap-3 md:grid-cols-2">
-                  <div className="rounded-lg bg-stone-50 p-3 text-sm leading-relaxed text-muted"><span className="eyebrow text-muted">Dnes</span><div className="mt-1">{r.today}</div></div>
-                  <div className="rounded-lg bg-accent-soft/50 p-3 text-sm leading-relaxed"><span className="eyebrow text-accent">Po reformě</span><div className="mt-1">{r.after}</div></div>
-                </div>
+              <div className="rounded-card bg-sage-soft p-6">
+                <h3 className={blockTitle}>Co to přinese</h3>
+                <p className="mt-2 text-[19px] leading-relaxed text-ink md:text-[20px]">{c.brings}</p>
               </div>
-            </li>
-          ))}
-        </ol>
-        <div className="mt-6 grid gap-3 md:grid-cols-2">
-          <Card title="Co se změní, i když se vám to nebude líbit" tone="warm">
-            <ul className="list-disc space-y-1 pl-5">
-              {HONEST_CHANGES.map((h) => <li key={h}>{h}</li>)}
-            </ul>
-          </Card>
-          <Card title="Co se nezmění" tone="accent">
-            Svobodná volba lékaře i pojišťovny zůstává. Ke specialistovi může každý dál i bez doporučení. O léčbě vždy rozhoduje člověk; technika zapisuje a měří, nerozhoduje.
-          </Card>
-        </div>
-      </Section>
-
-      <Section eyebrow="Co reforma nedělá" title="Šest věcí, které se nám přisuzují a v plánu nejsou" lead="Každá z nich by podkopala důvěru pacientů nebo zdravotníků, bez které reforma nejde udělat.">
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {NOT_DOING.map((n) => <Card key={n.title} title={n.title}>{n.text}</Card>)}
-        </div>
-        <p className="mt-4 text-sm text-muted">
-          Podrobnosti k jednotlivým opatřením najdete v <Link href="/studie" className="underline">plném znění studie</Link>.
-        </p>
-      </Section>
-
-      <div className="mx-auto max-w-[1100px] px-4">
-        <NextLink href="/jak" title="Jak a kdy" text="Časová osa, čtyři kontrolní body a čtyři pravidla, která platí bez ohledu na to, kdo vládne." />
-      </div>
-    </>
-  );
-}
-
-function HomeCareVisual() {
-  const steps = ["Sestra přijede domů", "Domácí péče na delší dobu", "Rozhovor o plánu péče", "Paliativní tým v okrese", "Dříve vyslovené přání v registru"];
-  return (
-    <ol className="w-full space-y-2">
-      {steps.map((s, i) => (
-        <li key={s} className="flex items-center gap-3 rounded-lg border border-line bg-paper px-4 py-3 text-sm">
-          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#1baf7a] text-xs font-semibold text-white">{i + 1}</span>
-          {s}
-        </li>
+              <div>
+                <h3 className={blockTitle}>Kdy</h3>
+                <ul className="mt-3 flex flex-wrap gap-2">
+                  {c.when.split(" · ").map((w) => (
+                    <li key={w}>
+                      <Chip className="whitespace-normal text-left">{w}</Chip>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <p className="flex flex-wrap items-center gap-2 text-[16px] text-muted">
+                Ve studii:
+                {c.codes.map((k) => (
+                  <CodeRef key={k} code={k} link={false} />
+                ))}
+              </p>
+            </div>
+          </div>
+          {c.n === FIVE_CHANGES.length && (
+            <div className="mt-12 max-w-[52em]">
+              <Callout title="Jedno pravidlo o penězích">
+                Všech pět změn drží pohromadě jedno pravidlo o penězích: stát bude platit zdravotní pojištění za děti, důchodce a studenty podle toho, kolik péče skutečně potřebují, ne podle dnešního vzorce. Nový vzorec přijme vláda s platností od 1. 1. 2031.
+              </Callout>
+            </div>
+          )}
+        </Section>
       ))}
-    </ol>
+
+      <Section
+        id="cesta-pacienta"
+        tone="paper"
+        eyebrow="Cesta pacienta"
+        title="Co se změní pro vás, krok za krokem"
+        lead="Největší změnu pocítí dlouhodobě nemocný člověk, křehký senior a ten, kdo dnes nemá praktika. Pro zdravého třicátníka se změní málo."
+      >
+        <PatientJourney defaultStep={1} />
+        <div className="mt-12 grid gap-5 md:grid-cols-2">
+          <Callout title="Co se změní, i když se vám to nebude líbit">
+            <ul className="flex list-disc flex-col gap-2 pl-5">
+              {HONEST_CHANGES.map((h) => (
+                <li key={h}>{h}</li>
+              ))}
+            </ul>
+          </Callout>
+          <Callout title="Co se nezmění" tone="sage">
+            Svobodná volba lékaře i pojišťovny zůstává. Ke specialistovi může každý dál i bez doporučení. O léčbě vždy rozhoduje člověk; technika zapisuje a měří, nerozhoduje.
+          </Callout>
+        </div>
+      </Section>
+
+      <Section
+        id="co-reforma-nedela"
+        eyebrow="Co reforma nedělá"
+        title="Šest věcí, které se nám přisuzují a v plánu nejsou"
+        lead="Každá z nich by podkopala důvěru pacientů nebo zdravotníků, bez které reforma nejde udělat."
+      >
+        <FearFact full />
+        <p className="mt-8 text-[18px] text-ink-2">
+          Podrobnosti k jednotlivým opatřením najdete v <TextLink href="/studie">plném znění studie</TextLink>.
+        </p>
+      </Section>
+
+      <Section tone="paper" eyebrow="Nevymýšlíme nic nového" title="Půjčujeme si, co už jinde funguje">
+        <ul className="grid gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
+          {INSPIRATION.map((x, i) => (
+            <li key={x.country} className={`flex flex-col gap-1.5 border-t-2 border-forest pt-4 sm:pr-6 ${i > 0 ? "lg:border-l lg:border-l-line lg:pl-6" : ""}`}>
+              <span className="font-serif text-[24px] font-semibold leading-tight text-ink">{x.country}</span>
+              <span className="text-[17px] text-muted">{x.what}</span>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <NextStep title="Kdy a jak" text="Časová osa, čtyři kontrolní body a čtyři pravidla, která platí bez ohledu na to, kdo vládne." href="/jak" label="Jak a kdy" />
+    </>
   );
 }
