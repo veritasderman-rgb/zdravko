@@ -196,6 +196,27 @@ export const PILLAR_ROWS: PillarRow[] = [
     items: [{ t: "mark", at: 2031, kind: "eff", title: "úhradová vyhláška nové vlády (2031)" }],
   },
   {
+    code: "Pil4.11", label: "Tabák a nikotin: postupný růst", pillar: 4,
+    short: "podnět 2027 · 2030 → 1. 1. 2031",
+    term: "Podnět současné vládě 2027; předložení 2030, účinnost 1. 1. 2031 (doplňkový scénář: prodloužení dnešního plánu od 2028)",
+    src: "ř. 1092 a násl., registr Pil4.11",
+    items: [
+      { t: "mark", at: 2027, kind: "eff", title: "podnět současné vládě, aby prodloužila plán zvyšování po roce 2027" },
+      { t: "bar", from: 2030, to: 2031, kind: "law", title: "novela zákona o spotřebních daních s J8: předložení 2030, účinnost 1. 1. 2031" },
+      { t: "mark", at: 2031, kind: "eff", title: "účinnost 1. 1. 2031" },
+    ],
+  },
+  {
+    code: "Pil4.12", label: "Podpora těch, kdo chodí na prevenci", pillar: 4,
+    short: "2031 · příspěvek 2032",
+    term: "S Národním fondem prevence od 1. 1. 2031; příspěvek za prevenci od 1. 1. 2032",
+    src: "ř. 1092 a násl., registr Pil4.12",
+    items: [
+      { t: "mark", at: 2031, kind: "eff", title: "hrazené odvykání kouření z přírůstku daně, od 1. 1. 2031" },
+      { t: "mark", at: 2032, kind: "eff", title: "příspěvek pojišťovny vázaný na preventivní prohlídku, od 1. 1. 2032" },
+    ],
+  },
+  {
     code: "Pil5.1", label: "Domácí péče: indikace", pillar: 5,
     short: "2030 → 1. 1. 2032",
     term: "Zákon předložit 2030, účinnost 1. 1. 2032",

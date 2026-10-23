@@ -2503,7 +2503,7 @@ Verze 3 vede v registru 89 řádků, tedy 82 různých opatření a 7 odkazů, k
 
 Jádro tvoří 10 opatření (J1–J10), podmínky 5 (P1–P5), doplňková opatření pilířů 33 (Pil1 pět, Pil2 šest, Pil3 tři, Pil4 dvanáct, Pil5 sedm) a Doprovod 45 řádků ze 10 oblastí Manifestu, z toho 38 vlastních opatření.
 
-Zákon potřebuje 34 opatření, vyhlášku 15 a smlouvu nebo úhradu pojišťovny 7. Zbylých 26 opatření nepotřebuje žádný předpis: jde o metodiku nebo Věstník (14), rozpočet (6) a jiný nástroj (6). Část VII sdružuje zákonná opatření do 20 předloh.
+Zákon potřebuje 36 opatření, vyhlášku 16 a smlouvu nebo úhradu pojišťovny 7. Zbylých 27 opatření nepotřebuje žádný předpis: jde o metodiku nebo Věstník (14), rozpočet (6) a jiný nástroj (7). Část VII sdružuje zákonná opatření do 20 předloh.
 
 ### Počty podle vrstvy a nástroje
 
@@ -2511,9 +2511,9 @@ Zákon potřebuje 34 opatření, vyhlášku 15 a smlouvu nebo úhradu pojišťov
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Jádro J1–J10 | 7 | 3 | 0 | 0 | 0 | 0 | 10 | 0 |
 | Podmínky P1–P5 | 3 | 0 | 0 | 1 | 1 | 0 | 5 | 0 |
-| Pilíře, doplňková opatření | 9 | 9 | 5 | 4 | 1 | 2 | 30 | 0 |
-| Doprovod, 10 oblastí Manifestu | 15 | 3 | 2 | 9 | 4 | 4 | 37 | 7 |
-| Celkem | 34 | 15 | 7 | 14 | 6 | 6 | 82 | 7 |
+| Pilíře, doplňková opatření | 11 | 10 | 5 | 4 | 1 | 2 | 33 | 0 |
+| Doprovod, 10 oblastí Manifestu | 15 | 3 | 2 | 9 | 4 | 5 | 38 | 7 |
+| Celkem | 36 | 16 | 7 | 14 | 6 | 7 | 86 | 7 |
 
 Každé opatření je zařazeno podle svého hlavního kroku; vedlejší nástroje, jako pilot smlouvou před pozdějším zákonem, stojí ve sloupci Nástroj. Vyhláška znamená úhradovou vyhlášku nebo vyhlášku o seznamu výkonů.
 
