@@ -18,7 +18,7 @@ export const META = {
 export const KEY_NUMBERS = [
   { value: "21,5 mld. Kč", label: "ročně navíc, až reforma poběží naplno (kolem roku 2038)", note: "odhad 15 až 25 mld. Kč; necelá 4 % toho, co dnes stojí zdravotní pojištění" },
   { value: "520 týmů", label: "lékařů a sester blízko domova, s asi 4 000 sestrami navíc", note: "jeden tým pro 10 až 25 tisíc lidí" },
-  { value: "8 000 lůžek", label: "v nemocnicích změní účel: z akutních na lůžka pro doléčení a rehabilitaci", note: "ze 48 036 na asi 40 000; nic nerušíme dřív, než je náhrada" },
+  { value: "8 000 lůžek", label: "v nemocnicích změní účel: z akutních na lůžka pro doléčení a rehabilitaci", note: "ze 48 036 na asi 40 000; nic nerušíme dřív, než je náhrada. Ministerstvo zdravotnictví odhaduje, že do roku 2035 bude potřeba nejméně 8 tisíc lůžek následné a dlouhodobé péče navíc (MZ ČR, Koncepce 2025, s. 65)" },
   { value: "5 mld. Kč", label: "ročně z daní na tiché víno a slazené nápoje", note: "2 mld. Kč na prevenci, 3 mld. Kč do zdravotního pojištění" },
 ];
 
@@ -48,7 +48,7 @@ export const GP_DECLINE = {
 
 export const BEDS = {
   title: "Akutní lůžka jsou obsazená z 56 %, lůžka pro doléčení z 85 %",
-  source: "ÚZIS 2024. V osmi krajích je následná péče obsazená nad 85 %, tedy prakticky plná",
+  source: "ÚZIS 2024. V osmi krajích je následná péče obsazená nad 85 %, tedy prakticky plná. Produkce akutní lůžkové péče klesá asi o 1,5 % ročně a řada nemocnic má oddělení s obložností pod 50 % (MZ ČR, Koncepce 2025, s. 61 a 75)",
   rows: [
     { label: "Akutní lůžka (48 036)", value: 56 },
     { label: "Lůžka následné péče (doléčení, rehabilitace)", value: 85 },
@@ -78,11 +78,11 @@ export const GAP = {
 };
 
 export const NURSES = {
-  title: "Sester chybí už dnes: do roku 2037 je třeba nahradit přes 30 000 úvazků",
-  source: "Studie v3, Část V. Vysoké školy vychovají asi 1 300 sester ročně",
+  title: "Sester chybí už dnes: jen všeobecných sester je do 12 let potřeba nejméně 24 000 nových úvazků",
+  source: "MZ ČR, Koncepce 2025, s. 111, 112 a 114. Ve zdravotnictví pracuje asi 83 tisíc sester, 3 tisíce chybí, přes 12 tisíc je starších 60 let. Ročně vystuduje asi 680 sester na vysokých a 570 na vyšších odborných školách",
   rows: [
-    { label: "Kolik sester ročně odchází a je třeba nahradit", value: 2500 },
-    { label: "Kolik jich ročně vystuduje", value: 1300 },
+    { label: "Kolik nových všeobecných sester je ročně potřeba (24 000 za 12 let)", value: 2000 },
+    { label: "Kolik všeobecných sester ročně vystuduje (VŠ a VOŠ)", value: 1250 },
     { label: "Kolik navíc ročně potřebuje reforma (průměr)", value: 440, highlight: true },
   ],
 };
@@ -90,7 +90,8 @@ export const NURSES = {
 export const PREVENTION_FACTS = [
   { value: "10,6 litru", label: "čistého alkoholu vypije průměrný Čech starší 15 let za rok. Průměr vyspělých zemí je 8,4 litru." },
   { value: "+43 %", label: "víc úmrtí na nemoci jater než v průměru Evropské unie." },
-  { value: "31 %", label: "lidí chodí na vyšetření tlustého střeva, které včas odhalí rakovinu. Ve vyspělých zemích 42 %." },
+  { value: "31 %", label: "lidí chodí na vyšetření tlustého střeva, které včas odhalí rakovinu. Ve vyspělých zemích 42 %. Ministerstvo uvádí asi 30 % (MZ ČR, Koncepce 2025, s. 36)." },
+  { value: "60 až 70 %", label: "lidí s pozitivním testem na krev ve stolici dojde na kolonoskopii (MZ ČR, Koncepce 2025, s. 36)." },
   { value: "25 %", label: "seniorů je očkováno proti chřipce." },
   { value: "60 %", label: "žen chodí na mamografii, víc než ve většině vyspělých zemí. Kam systém lidi aktivně zve, tam prevence funguje." },
   { value: "0 Kč", label: "je dnes daň z tichého vína i ze slazených nápojů." },
@@ -99,6 +100,7 @@ export const PREVENTION_FACTS = [
 export const PROBLEM_FACTS = [
   { value: "14,9 mld. Kč", label: "schodek plánují pojišťovny na rok 2026. Jejich rezervy klesly ze 69,9 na 43,2 mld. Kč." },
   { value: "182 tisíc", label: "dětí nemělo v roce 2022 svého dětského lékaře." },
+  { value: "68 %", label: "seniorů nad 65 let má aspoň jednu vážnou chronickou nemoc. Diabetiků je přes milion (MZ ČR, Koncepce 2025, s. 20 a 22)." },
   { value: "428 : 291", label: "v malých obcích do 2 000 obyvatel zaniklo za čtyři roky 428 ordinací praktiků a jen 291 vzniklo." },
   { value: "5 914 : 22", label: "v letech 2010 až 2013 ubylo 5 914 akutních lůžek a přibylo jen 22 lůžek pro doléčení. Přesně tohle se nesmí opakovat." },
 ];
@@ -112,7 +114,7 @@ export const FIVE_CHANGES = [
     n: 1,
     title: "Svůj lékař a svoje sestra blízko domova",
     what: "Praktici se mohou dobrovolně spojit do týmu, který se stará o 10 až 25 tisíc lidí v okolí. V týmu je víc sester, k tomu nutriční terapeut, fyzioterapeut a psycholog, sestra jezdí za pacienty domů a obec zajistí odvoz k lékaři (senior taxi). Tým dostane od pojišťovny smlouvu na pět let, ne jen roční bonus, a platí se za to, co tým skutečně zajišťuje. Praktik bude smět víc než dnes: předepsat léky, kvůli kterým dnes posílá pacienta ke specialistovi, a udělat ultrazvuk přímo v ordinaci.",
-    brings: "Lékaře i pro lidi, kteří ho dnes nemají. Péči o dlouhodobě nemocné, která nečeká, až se stav zhorší. A každý má v týmu svého jmenovitého lékaře a svou sestru, kteří ho znají.",
+    brings: "Lékaře i pro lidi, kteří ho dnes nemají. Péči o dlouhodobě nemocné, která nečeká, až se stav zhorší. A každý má v týmu svého jmenovitého lékaře a svou sestru, kteří ho znají. Ministerstvo zdravotnictví v Koncepci 2025 označuje týmové praxe za první krok a centra primární péče za další (s. 77). Jdeme stejným směrem; přidáváme sestry, smlouvu na pět let a pravidla.",
     when: "zkouška ve třech regionech 2028 a 2029 · zákon o primární péči platí od 1. 1. 2032 · asi 520 týmů a 4 000 sester navíc kolem roku 2038",
     codes: ["J1", "J2", "J3"],
     /** Jedna věta pro úvodní stránku (ChangeRow). */
@@ -134,7 +136,7 @@ export const FIVE_CHANGES = [
     n: 3,
     title: "Nemocnice se mění, neruší",
     what: "Každý kraj dostane podle nového zákona desetiletý plán své sítě nemocnic. Akutní lůžko se změní na lůžko pro doléčení, rehabilitaci nebo péči na konci života jen tehdy, když kraj doloží, že pacienti mají kam jít a že záchranka dojede včas. Nemocnici, která plán plní, dorovná fond přeměny po dobu změny příjem.",
-    brings: "Okresní nemocnice dostane jistou roli blízko domova: doléčení, rehabilitaci, jednodenní chirurgii a ambulance. Náročný zákrok se udělá tam, kde ho dělají často a dobře.",
+    brings: "Okresní nemocnice dostane jistou roli blízko domova: doléčení, rehabilitaci, jednodenní chirurgii a ambulance. Náročný zákrok se udělá tam, kde ho dělají často a dobře. Stejným směrem jde i Koncepce MZ 2025: méně akutních lůžek, víc následné péče (s. 61 a 66). Evropské peníze z IROP už dnes dostane jen nemocnice, která zruší 20 akutních lůžek a zřídí 20 následných (s. 148).",
     when: "zákon předložen 2031, přijat 2032, platí nejpozději od 1. 1. 2033 · první krajské plány 2033 · 8 000 změněných lůžek do roku 2038",
     codes: ["J6", "J7"],
     /** Jedna věta pro úvodní stránku (ChangeRow). */
@@ -172,7 +174,7 @@ export const PATIENT_JOURNEY = [
   { step: "Potřebuji specialistu", today: "Objednávám se sám. Dřív jde ten, kdo dřív zavolá. Čekací doby nikdo neměří.", after: "Lékař v žádance zaškrtne, jak to spěchá (do 2 týdnů, do 6 týdnů, plánované), a objedná mě přímo. Pojišťovna ručí za termín. Bez žádanky mohu jít dál. Ke gynekologovi, očnímu, zubaři, psychiatrovi a do onkologie bez doporučení jako dnes." },
   { step: "Musím do nemocnice", today: "Zákrok i doléčení v nejbližší nemocnici, ať ho tam dělají dvacetkrát, nebo dvakrát ročně.", after: "Náročný zákrok v nemocnici, která ho dělá často. Doléčení a rehabilitace blízko domova, kam za mnou může rodina. Každý plán sítě musí zaručit, že 95 % obyvatel kraje má urgentní příjem do 30 minut jízdy." },
   { step: "Nedojdu k lékaři", today: "Záchranka a chodba urgentu, nebo nic.", after: "Lékař nebo sestra z týmu přijedou. Odvoz k lékaři (senior taxi) objedná obec a sladí ho s termínem vyšetření." },
-  { step: "Vracím se z nemocnice", today: "Domácí péči předepíše praktik na tři měsíce, jiný lékař jen na 14 dnů. Plán nikdo nekoordinuje.", after: "Domácí péče na delší dobu, může ji předepsat i sestra se specializací. V týmu je koordinátor péče. Jedno šetření stačí pro příspěvek na péči i pro plán péče." },
+  { step: "Vracím se z nemocnice", today: "Domácí péči předepíše praktik na tři měsíce, jiný lékař jen na 14 dnů. Sestra ji od roku 2026 smí jen upravit, pokud to lékař dovolí (MZ ČR, Koncepce 2025, s. 121). Plán nikdo nekoordinuje.", after: "Domácí péče na delší dobu, může ji předepsat i sestra se specializací. V týmu je koordinátor péče. Jedno šetření stačí pro příspěvek na péči i pro plán péče." },
   { step: "Konec života", today: "Rozhovor o přáních nikdo nehradí. Dříve vyslovené přání je těžké platně sepsat a nikdo ho nenajde.", after: "Pojišťovna hradí rozhovor o plánu péče. Plán vidí i záchranka. V okrese je mobilní paliativní tým. Dříve vyslovené přání bez úředně ověřeného podpisu, uložené v registru. Domov je možnost, ne povinnost." },
   { step: "Platím", today: "Doplatky za léky a zubaře dnes pětinu nejchudších domácností finančně ničí.", after: "U lékaře nic nového neplatím: žádné poplatky, žádné příplatky za pořadí. Hlídáme, aby domácností, které zdravotní výdaje finančně ničí, nepřibývalo." },
 ];
@@ -331,7 +333,7 @@ export const TEN_NUMBERS = [
   { n: "21,5 mld. Kč (15 až 25)", t: "ročně navíc, až reforma poběží naplno kolem roku 2038; necelá 4 % dnešních výdajů zdravotního pojištění" },
   { n: "6 mld. Kč", t: "ročně dostanou týmy (za registrované pacienty, za výsledky a za návštěvy doma); odhad 4,8 až 7,5" },
   { n: "520 týmů, 4 000 sester", t: "kolem roku 2038; dvě sestry na jednoho lékaře v týmu, do roku 2050 tři" },
-  { n: "440 sester ročně", t: "potřebuje reforma navíc; zhruba třetina sester, které ročně vystudují vysokou školu" },
+  { n: "440 sester ročně", t: "potřebuje reforma navíc; asi čtvrtina všeobecných sester, které podle ministerstva vyjdou ze škol v letech 2026 až 2037" },
   { n: "A 21,5 · B 18 · C 11", t: "miliard ročně stojí plná varianta, varianta bez nových center a minimální varianta" },
   { n: "8 000 lůžek", t: "změní účel do roku 2038; fond přeměny stojí 5 až 10 mld. Kč jednorázově a asi 1 mld. Kč ročně na dorovnání příjmu nemocnic" },
   { n: "5 mld. Kč daní", t: "ročně z tichého vína, slazených nápojů a valorizace lihu a piva: 2 mld. Kč prevence, 3 mld. Kč do pojištění" },
@@ -388,7 +390,7 @@ export const ROUND_TABLES = [
 export const FAQ = [
   { q: "Rušíte nemocnice?", a: "Ne. Z 48 036 akutních lůžek jich 8 000 změní účel na doléčení, rehabilitaci a péči na konci života, a to až od roku 2033 podle krajských plánů. Žádné lůžko se nezmění dřív, než kraj doloží, že pacienti mají kam jít a že 95 % obyvatel má urgentní příjem do 30 minut. Okresní nemocnice dostane jistou roli místo boje o přežití, a když plán plní, dorovnáme jí příjem. V letech 2010 až 2013 ubylo 5 914 akutních lůžek a lůžek pro doléčení přibylo jen 22. Přesně tohle se nesmí opakovat." },
   { q: "Zvýšíte daně?", a: "Tiché víno zdaníme stejně jako šumivé (23,40 Kč na litr, malí vinaři polovinu), zavedeme daň ze slazených nápojů podle množství cukru a daň z lihu a piva se bude zvyšovat s inflací. Dohromady 5 mld. Kč ročně, a zákon řekne, na co: 2 mld. Kč na prevenci, zbytek do zdravotního pojištění. Odvody z mezd se nemění a vyšší pojistné nenavrhujeme. Kdo si dá sklenku vína týdně, zaplatí asi 240 Kč ročně. Kdo nepije slazené nápoje, nezaplatí nic." },
-  { q: "Kde vezmete sestry?", a: "Reforma potřebuje do roku 2038 asi 4 000 sester navíc, v průměru 440 ročně, tedy zhruba třetinu těch, které ročně vystudují. Je to nejslabší místo plánu a říkáme to otevřeně: zdravotnictví musí zároveň nahradit přes 30 000 úvazků do roku 2037. Proto tým dostane zaplaceno jen za obsazené místo, plat je jako v nemocnici bez nočních služeb, počítáme s návraty do oboru i s náborem ze zahraničí. A když do konce roku 2031 přijde jen polovina sester, nové budovy se nestaví a reforma se zmenší, ne zastaví." },
+  { q: "Kde vezmete sestry?", a: "Reforma potřebuje do roku 2038 asi 4 000 sester navíc, v průměru 440 ročně, tedy asi čtvrtinu všeobecných sester, které podle ministerstva vyjdou ze škol v letech 2026 až 2037. Je to nejslabší místo plánu a říkáme to otevřeně: zdravotnictví musí zároveň nahradit jen všeobecných sester nejméně 24 000 úvazků (MZ ČR, Koncepce 2025, s. 114). Proto tým dostane zaplaceno jen za obsazené místo, plat je jako v nemocnici bez nočních služeb, počítáme s návraty do oboru i s náborem ze zahraničí. A když do konce roku 2031 přijde jen polovina sester, nové budovy se nestaví a reforma se zmenší, ne zastaví." },
   { q: "Proč ne hned?", a: "Protože z opozice nelze přijmout zákon a protože velký zákon trvá od prvního podkladu po účinnost dva až tři a půl roku. Předchozí verze slibovala zákony od roku 2029 a nezávislý posudek správně řekl, že se to stihnout nedá. Co jde hned, děláme hned: zkoušku ve třech regionech od roku 2028, návrhy do pravidel úhrad do 30. 6. 2027, návrhy ke vládním zákonům a hotové podklady zákonů před volbami. Kdyby dnešní vláda zaplatila sestry v týmových ordinacích už od roku 2028, podpoříme to jako první." },
   { q: "Není to drahé?", a: "Až reforma poběží naplno kolem roku 2038, bude stát čistě asi 21,5 mld. Kč ročně, tedy necelá 4 % dnešních výdajů zdravotního pojištění. Říkáme rozpětí 15 až 25 mld. Kč, protože jedno přesné číslo by bylo předstírání. Pro srovnání: i bez reformy bude zdravotnímu pojištění v roce 2038 chybět 70 mld. Kč. Za 21,5 mld. Kč dostanete 520 týmů, 4 000 sester, návštěvy doma, paliativní týmy ve všech okresech, konzultace se specialisty a prevenci se stálými penězi. Nebude to levné a nebude to úspora. Bude to víc péče blíž lidem za peníze, které do zdravotnictví půjdou tak jako tak." },
   { q: "Nutíte praktiky do týmů?", a: "Ne. Vstup je dobrovolný. Kdo zůstane sám, dostane od pojišťovny stejně jako dnes, ne méně. Síť samostatných ordinací, které se domluví, dostane totéž co jeden velký tým, pokud zajistí stejné služby. Praktikům dáváme, o co žádají léta: zrušení omezení, které léky smí předepsat, ultrazvuk, zástup, sestru s vlastními pacienty, jistotu na pět let a vzorovou smlouvu, aby odcházející lékař dostal za ordinaci zaplaceno a mladý nemusel shánět miliony. Dětské praktiky nerušíme a povinné doporučení ke specialistovi nezavádíme." },
@@ -410,6 +412,7 @@ export const INSPIRATION = [
 // ---------------------------------------------------------------------------
 
 export const GLOSSARY = [
+  { term: "Koncepce MZ 2025", text: "Dokument Ministerstva zdravotnictví z 1. 8. 2025 (Strategické analýzy potřeb rezortu zdravotnictví, verze 2.0), který popisuje stav a cíle zdravotnictví a hodnotí jejich plnění. Není schválený vládou. Ve většině bodů jde stejným směrem jako tento plán; kde se lišíme, říkáme to." },
   { term: "Primární péče", text: "První kontakt s lékařem: praktik pro dospělé, praktik pro děti a dorost, sestra v ordinaci. Odtud pacient jde dál ke specialistům nebo do nemocnice." },
   { term: "Tým sdružené péče", text: "Několik praktiků a sester, kteří se spojí a společně se starají o 10 až 25 tisíc lidí v okolí. Mají jednu smlouvu s pojišťovnou, víc sester a další profese (nutriční terapeut, fyzioterapeut, psycholog)." },
   { term: "Centrum primární péče", text: "Budova, kde tým sídlí pod jednou střechou. Vlastní ji obec nebo kraj. Varianta B reformy je bez nových center: týmy fungují v dnešních ordinacích." },
