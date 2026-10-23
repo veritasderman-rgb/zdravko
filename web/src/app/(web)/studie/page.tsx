@@ -4,12 +4,18 @@ import { Outline } from "@/components/outline";
 import { BlockView } from "@/components/block-view";
 
 // Veřejná čtečka odborné studie: jen ke čtení, bez připomínek. Text se načítá z databáze
-// a obnovuje nejpozději po pěti minutách, aby nová verze nepotřebovala nový build.
-export const revalidate = 300;
+// při každém požadavku, takže build nepotřebuje DATABASE_URL a nová verze studie se
+// objeví bez nového buildu.
+export const dynamic = "force-dynamic";
 export const metadata = { title: "Odborná studie", description: "Plné znění konzultační verze 3 studie Zdraví blíž lidem ke čtení." };
 
 export default async function StudiePage() {
-  const found = await getDocumentBySlug("studie");
+  let found: Awaited<ReturnType<typeof getDocumentBySlug>> = null;
+  try {
+    found = await getDocumentBySlug("studie");
+  } catch (e) {
+    console.error("Studie: databáze není dostupná", e);
+  }
   if (!found) {
     return (
       <main className="mx-auto max-w-[800px] px-4 py-16">
