@@ -5,7 +5,7 @@ import { getBlocks, getCommentCountsByBlock, getCommentsForBlock, getDocumentByS
 import { Outline } from "@/components/outline";
 import { BlockView } from "@/components/block-view";
 import { CommentPanel } from "@/components/comment-panel";
-import { CODE_RE } from "@/lib/codes";
+import { isCode } from "@/lib/codes";
 
 export const dynamic = "force-dynamic";
 
@@ -20,7 +20,7 @@ export default async function DocumentPage({ params, searchParams }: PageProps<"
   const { slug } = await params;
   const sp = await searchParams;
   const selected = typeof sp.b === "string" ? sp.b : null;
-  const codeFilter = typeof sp.kod === "string" && CODE_RE.test(sp.kod) ? sp.kod : null;
+  const codeFilter = isCode(sp.kod) ? sp.kod : null;
   const sectionFilter = typeof sp.s === "string" ? sp.s : null;
 
   const found = await getDocumentBySlug(slug);

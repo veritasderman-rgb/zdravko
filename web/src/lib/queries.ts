@@ -101,33 +101,40 @@ export async function commentStats() {
 }
 
 export async function listVerifications(status?: string) {
-  const conds = [];
+  // jen položky navázané na aktuální verzi dokumentu; zmizelé zůstávají v tabulce jako historie
+  const conds = [eq(schema.documentVersions.isCurrent, true)];
   if (status) conds.push(eq(schema.verifications.status, status as never));
   return db
     .select({ v: schema.verifications, docSlug: schema.documents.slug, docTitle: schema.documents.title, headingPath: schema.blocks.headingPath })
     .from(schema.verifications)
+    .innerJoin(schema.documentVersions, eq(schema.verifications.versionId, schema.documentVersions.id))
     .innerJoin(schema.documents, eq(schema.verifications.documentId, schema.documents.id))
     .leftJoin(schema.blocks, and(eq(schema.blocks.versionId, schema.verifications.versionId), eq(schema.blocks.blockKey, schema.verifications.blockKey)))
-    .where(conds.length ? and(...conds) : undefined)
+    .where(and(...conds))
     .orderBy(asc(schema.documents.sort), asc(schema.blocks.ordinal));
 }
 
 export async function listCodesWithCounts() {
   const codes = await db.select().from(schema.codes);
-  const blockCounts = await db
-    .select({ code: dsql<string>`c`, n: count() })
-    .from(dsql`${schema.blocks}, unnest(${schema.blocks.codes}) as c`)
-    .innerJoin(schema.documentVersions, eq(schema.blocks.versionId, schema.documentVersions.id))
-    .where(eq(schema.documentVersions.isCurrent, true))
-    .groupBy(dsql`c`);
-  const commentCounts = await db
-    .select({ code: dsql<string>`c`, n: count() })
-    .from(dsql`${schema.comments}, unnest(${schema.comments.codes}) as c`)
-    .groupBy(dsql`c`);
+  // unnest až po joinu na verze; čárkový FROM před JOIN by v ON neviděl tabulku blocks
+  const blockRows = (await db.execute(dsql`
+    select c.code as code, count(*)::int as n
+    from ${schema.blocks} b
+    join ${schema.documentVersions} v on v.id = b.version_id and v.is_current = true
+    cross join lateral unnest(b.codes) as c(code)
+    group by c.code`)).rows as { code: string; n: number }[];
+  const commentRows = (await db.execute(dsql`
+    select c.code as code, count(*)::int as n
+    from ${schema.comments} k
+    cross join lateral unnest(k.codes) as c(code)
+    where k.parent_id is null
+    group by c.code`)).rows as { code: string; n: number }[];
+  const blockCounts = new Map(blockRows.map((r) => [r.code, r.n]));
+  const commentCounts = new Map(commentRows.map((r) => [r.code, r.n]));
   return codes.map((c) => ({
     ...c,
-    blocks: blockCounts.find((b) => b.code === c.code)?.n ?? 0,
-    comments: commentCounts.find((b) => b.code === c.code)?.n ?? 0,
+    blocks: blockCounts.get(c.code) ?? 0,
+    comments: commentCounts.get(c.code) ?? 0,
   }));
 }
 

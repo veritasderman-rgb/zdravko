@@ -1,8 +1,8 @@
 /**
  * Import Markdown dokumentů reformy do databáze.
  *
- *   pnpm import            # naimportuje jen dokumenty, jejichž obsah se změnil
- *   pnpm import --force    # znovu naimportuje všechny
+ *   pnpm import:docs            # naimportuje jen dokumenty, jejichž obsah se změnil
+ *   pnpm import:docs --force    # založí novou verzi i u nezměněných dokumentů
  *
  * Každý dokument se rozseká na bloky (nadpis, odstavec, odrážka, tabulka, citace)
  * se stabilním klíčem `cesta-nadpisů#druhN`. Připomínky se vážou na tento klíč,
@@ -232,30 +232,23 @@ async function main() {
       continue;
     }
 
-    if (current && current.sourceHash === sourceHash && force) {
-      // stejný obsah: smažeme bloky této verze a vložíme znovu
-      await db.delete(schema.blocks).where(eq(schema.blocks.versionId, current.id));
-    } else {
-      await db
-        .update(schema.documentVersions)
-        .set({ isCurrent: false })
-        .where(eq(schema.documentVersions.documentId, doc.id));
-    }
-
-    const version =
-      current && current.sourceHash === sourceHash
-        ? current
-        : (
-            await db
-              .insert(schema.documentVersions)
-              .values({ documentId: doc.id, label: d.label, sourceHash, isCurrent: true })
-              .returning()
-          )[0];
+    // Nová verze vzniká jako neaktuální; aktuální se stane až po úspěšném uložení všech bloků.
+    // Při selhání uprostřed importu tak zůstává viditelná předchozí úplná verze.
+    const [version] = await db
+      .insert(schema.documentVersions)
+      .values({ documentId: doc.id, label: d.label, sourceHash, isCurrent: false })
+      .returning();
 
     const rows: BlockRow[] = parsed.blocks.map((b) => ({ ...b, versionId: version.id, documentId: doc.id }));
     for (let k = 0; k < rows.length; k += 150) {
       await db.insert(schema.blocks).values(rows.slice(k, k + 150));
     }
+
+    await db
+      .update(schema.documentVersions)
+      .set({ isCurrent: false })
+      .where(and(eq(schema.documentVersions.documentId, doc.id), eq(schema.documentVersions.isCurrent, true)));
+    await db.update(schema.documentVersions).set({ isCurrent: true }).where(eq(schema.documentVersions.id, version.id));
 
     // Ověřit: zachovat stav existujících položek, nové přidat, zmizelé ponechat (historie)
     for (const v of parsed.verifications) {

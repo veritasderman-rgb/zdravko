@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { requireSession } from "@/lib/auth";
 import { getCode } from "@/lib/queries";
-import { CODE_RE, FAMILY_CLASS, FAMILY_LABEL, familyOf } from "@/lib/codes";
+import { FAMILY_CLASS, FAMILY_LABEL, familyOf, isCode } from "@/lib/codes";
 import { SEVERITY_CLASS, SEVERITY_LABEL, STATUS_CLASS, STATUS_LABEL } from "@/lib/labels";
 
 export const dynamic = "force-dynamic";
@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 export default async function CodePage({ params }: PageProps<"/kody/[code]">) {
   await requireSession();
   const { code } = await params;
-  if (!new RegExp(`^${CODE_RE.source.replace(/^\(\?<!.*?\)/, "").replace(/\(\?!.*\)$/, "")}$`).test(code)) notFound();
+  if (!isCode(code)) notFound();
   const { code: c, blocks, comments } = await getCode(code);
   const fam = familyOf(code);
   const meta = (c?.meta ?? {}) as Record<string, string>;

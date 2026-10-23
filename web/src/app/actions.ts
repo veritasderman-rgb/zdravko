@@ -26,7 +26,8 @@ export async function login(_prev: ActionState, fd: FormData): Promise<ActionSta
   if (name.length < 2) return { error: "Zadejte jméno, pod kterým se budou vaše připomínky evidovat." };
   const token = await sealSession({ name, organization, role: "rt" });
   (await cookies()).set(SESSION_COOKIE, token, sessionCookieOptions);
-  redirect(next.startsWith("/") ? next : "/");
+  // jen lokální absolutní cesta; "//host" nebo "/\\host" by byl otevřený redirect
+  redirect(/^\/(?![\/\\])/.test(next) ? next : "/");
 }
 
 export async function logout() {

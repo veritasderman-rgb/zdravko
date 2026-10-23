@@ -5,6 +5,12 @@
 export const CODE_RE =
   /(?<![A-Za-z0-9ÁČĎÉĚÍŇÓŘŠŤÚŮÝŽáčďéěíňóřšťúůýž])(J(?:10|[1-9])|P[1-5]|Pil[1-5]\.\d{1,2}|M(?:10|[1-9])\.\d{1,2}|H[1-8]|D(?:1[0-2]|[1-9])|R(?:1[0-9]|[1-9])|B[1-4])(?![0-9A-Za-z.])/g;
 
+/** Přesná kontrola jednoho kódu bez sdíleného stavu globálního výrazu. */
+const CODE_EXACT_RE = /^(J(?:10|[1-9])|P[1-5]|Pil[1-5]\.\d{1,2}|M(?:10|[1-9])\.\d{1,2}|H[1-8]|D(?:1[0-2]|[1-9])|R(?:1[0-9]|[1-9])|B[1-4])$/;
+export function isCode(s: unknown): s is string {
+  return typeof s === "string" && CODE_EXACT_RE.test(s);
+}
+
 export type CodeFamily = "J" | "P" | "Pil" | "M" | "H" | "D" | "R" | "B";
 
 export function familyOf(code: string): CodeFamily {
