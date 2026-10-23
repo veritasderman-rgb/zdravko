@@ -23,14 +23,9 @@ import { CODE_RE, familyOf } from "../src/lib/codes";
 
 const ROOT = path.resolve(__dirname, "../..");
 
+// Připomínkuje se jen odborná studie; ostatní dokumenty slouží jako zdroj pro veřejný web.
 const DOCS: { slug: string; title: string; kind: string; file: string; label: string }[] = [
   { slug: "studie", title: "Zdraví blíž lidem — studie v3", kind: "studie", file: "01-studie-zdravi-bliz-lidem-v3.md", label: "v3 (20. 10. 2026)" },
-  { slug: "politicka-verze", title: "Politická verze 3 (konzultační)", kind: "politicka", file: "02-politicka-verze-v3.md", label: "v3 (20. 10. 2026)" },
-  { slug: "one-pager", title: "One-pager pro předsedu", kind: "one-pager", file: "03-one-pager-pro-predsedu.md", label: "20. 10. 2026" },
-  { slug: "podklad-peer", title: "Podklad pro PEER", kind: "peer", file: "04-podklad-pro-PEER.md", label: "20. 10. 2026" },
-  { slug: "prezentace-co-chceme", title: "Prezentace: co chceme a proč", kind: "prezentace", file: "05-prezentace-co-chceme-a-proc.md", label: "20. 10. 2026" },
-  { slug: "prezentace-rt", title: "Prezentace pro resortní tým", kind: "prezentace", file: "06-prezentace-pro-RT.md", label: "20. 10. 2026" },
-  { slug: "navrh-platformy", title: "Návrh konzultační platformy", kind: "navrh", file: "docs/navrh-konzultacni-platformy.md", label: "23. 10. 2026" },
 ];
 
 type BlockRow = typeof schema.blocks.$inferInsert;
