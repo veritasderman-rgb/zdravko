@@ -41,6 +41,23 @@ export const STATUS_CLASS: Record<string, string> = {
   zverejnena: "bg-stone-200 text-stone-800",
 };
 
+export const CHANNEL_LABEL: Record<string, string> = {
+  rt: "resortní tým",
+  verejnost: "veřejnost",
+};
+
+export const PRIORITY_LABEL: Record<string, string> = {
+  nizka: "nízká priorita",
+  bezna: "běžná priorita",
+  vysoka: "vysoká priorita",
+};
+
+export const PRIORITY_CLASS: Record<string, string> = {
+  nizka: "bg-stone-100 text-stone-600 border-stone-200",
+  bezna: "",
+  vysoka: "bg-rose-100 text-rose-900 border-rose-200",
+};
+
 export const VERIFICATION_LABEL: Record<string, string> = {
   otevreno: "Otevřeno",
   overeno_potvrzeno: "Ověřeno, potvrzeno",

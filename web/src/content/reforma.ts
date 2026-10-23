@@ -97,6 +97,32 @@ export const PREVENTION_FACTS = [
   { value: "0 Kč", label: "je dnes daň z tichého vína i ze slazených nápojů." },
 ];
 
+// Proč teď: demografie a co znamená dostupnost. Čísla ze studie (Část I a Část III, pilíř 5; ÚZIS).
+export const WHY_NOW = {
+  eyebrow: "Proč to děláme",
+  title: "Blíží se demografická vlna. Chceme udržet péči na dnešní úrovni, a to bez změn nejde.",
+  lead: "Lidí nad 85 let je dnes 200 tisíc, v roce 2050 jich bude půl milionu. Těch, kdo se o ně postarají a kdo na péči vydělají, bude méně. To není názor, o kterém se dá diskutovat. Ti lidé už se narodili.",
+  points: [
+    {
+      title: "Roky ve zdraví",
+      text: "Péče na dnešní úrovni se udrží jen tehdy, když budeme stonat později a méně. Proto prevence dostává stálé peníze a praktik se sestrou mají čas na dlouhodobě nemocné dřív, než skončí v nemocnici.",
+    },
+    {
+      title: "Dostupnost není ordinace v každé obci",
+      text: "Praktik nebude v každé z více než 6 000 obcí; není tam ani dnes. Dostupná péče znamená, že se k lékaři dostanete do několika desítek minut, že vás tam odveze senior taxi objednané obcí, když sami nemůžete, a že sestra z týmu přijede za vámi domů.",
+    },
+    {
+      title: "Vybavená ordinace místo prázdné",
+      text: "Vybavit každou ordinaci v každé obci ultrazvukem, EKG a laboratoří není finančně možné. Přístroje proto mají být tam, kam se lidé dostanou: v centru primární péče pro 10 až 25 tisíc lidí, kde slouží celý den místo hodiny týdně.",
+    },
+  ],
+  facts: [
+    { value: "200 → 509 tisíc", label: "lidí nad 85 let v letech 2024 a 2050 (ÚZIS)" },
+    { value: "115 → 241 tisíc", label: "lidí nad 75 let s vysokou potřebou péče, příspěvek III a IV, v letech 2024 a 2050 (ÚZIS)" },
+    { value: "2,5 vs 5,6", label: "pracovníků dlouhodobé péče na 100 seniorů u nás a v průměru OECD" },
+  ],
+};
+
 export const PROBLEM_FACTS = [
   { value: "14,9 mld. Kč", label: "schodek plánují pojišťovny na rok 2026. Jejich rezervy klesly ze 69,9 na 43,2 mld. Kč." },
   { value: "182 tisíc", label: "dětí nemělo v roce 2022 svého dětského lékaře." },
@@ -389,6 +415,7 @@ export const ROUND_TABLES = [
 
 export const FAQ = [
   { q: "Rušíte nemocnice?", a: "Ne. Z 48 036 akutních lůžek jich 8 000 změní účel na doléčení, rehabilitaci a péči na konci života, a to až od roku 2033 podle krajských plánů. Žádné lůžko se nezmění dřív, než kraj doloží, že pacienti mají kam jít a že 95 % obyvatel má urgentní příjem do 30 minut. Okresní nemocnice dostane jistou roli místo boje o přežití, a když plán plní, dorovnáme jí příjem. V letech 2010 až 2013 ubylo 5 914 akutních lůžek a lůžek pro doléčení přibylo jen 22. Přesně tohle se nesmí opakovat." },
+  { q: "Proč něco měnit, když to funguje?", a: "Protože se blíží demografická vlna, kterou nelze oddiskutovat: lidí nad 85 let bude v roce 2050 půl milionu, dnes je jich 200 tisíc, a těch, kdo se o ně postarají a kdo na péči vydělají, bude méně. Když chceme udržet péči na dnešní úrovni, musíme přidat roky ve zdraví (prevence a čas praktika na dlouhodobě nemocné) a zařídit dostupnost jinak než ordinací v každé obci: do několika desítek minut, se senior taxi objednaným obcí a s vybavenou ordinací v centru, protože vybavit plnými přístroji každou z více než 6 000 obcí není možné." },
   { q: "Zavřete naši porodnici?", a: "Ne bez náhrady. Porodů ubývá a některé malé porodnice dnes neudrží ani personál, ani bezpečný počet porodů. Zavřít je ale bez odpovědi, co dál, odmítáme. Nejdřív musí mít pojišťovna v území smlouvu s komunitními porodními asistentkami, které se o ženu starají v těhotenství, u fyziologického porodu i v šestinedělí doma, a kraj plán dojezdu k nejbližší porodnici. Péče porodní asistentky je nejlevnější a u zdravých těhotenství nejlépe doložená; u rizikových těhotenství zůstává porodnice s lékařem." },
   { q: "Zvýšíte daně?", a: "Tiché víno zdaníme stejně jako šumivé (23,40 Kč na litr, malí vinaři polovinu), zavedeme daň ze slazených nápojů podle množství cukru a daň z lihu a piva se bude zvyšovat s inflací. Dohromady 5 mld. Kč ročně, a zákon řekne, na co: 2 mld. Kč na prevenci, zbytek do zdravotního pojištění. Odvody z mezd se nemění a vyšší pojistné nenavrhujeme. Kdo si dá sklenku vína týdně, zaplatí asi 240 Kč ročně. Kdo nepije slazené nápoje, nezaplatí nic." },
   { q: "Kde vezmete sestry?", a: "Reforma potřebuje do roku 2038 asi 4 000 sester navíc, v průměru 440 ročně, tedy asi čtvrtinu všeobecných sester, které podle ministerstva vyjdou ze škol v letech 2026 až 2037. Je to nejslabší místo plánu a říkáme to otevřeně: zdravotnictví musí ve stejné době jen u všeobecných sester nahradit nejméně 24 000 úvazků (odhad MZ ČR, 2025). Proto tým dostane zaplaceno jen za obsazené místo, plat je jako v nemocnici bez nočních služeb, počítáme s návraty do oboru i s náborem ze zahraničí. Kdyby do konce roku 2031 přišla jen polovina potřebných sester, nové budovy se stavět nebudou a reforma poběží v menším rozsahu. Nezastaví se." },

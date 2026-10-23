@@ -1,4 +1,4 @@
-import { AVOIDABLE, BEDS, GAP, GP_DECLINE, NURSES, PREVENTION_FACTS, PROBLEM_FACTS, SPENDING_SHARE } from "@/content/reforma";
+import { AVOIDABLE, BEDS, GAP, GP_DECLINE, NURSES, PREVENTION_FACTS, PROBLEM_FACTS, SPENDING_SHARE, WHY_NOW } from "@/content/reforma";
 import { ChartFrame } from "@/components/charts/chart-frame";
 import { DataTable } from "@/components/charts/data-table";
 import { HBarChart } from "@/components/charts/hbar-chart";
@@ -56,6 +56,20 @@ export default function ProcPage() {
         lead="Hodně věcí funguje a zachováme je: pojištění hradí 85 % výdajů na zdraví a jen půl procenta lidí říká, že se k potřebné péči nedostalo. Těžiště systému je ale v nemocnicích. A na to naráží stárnutí: lidí nad 85 let bude v roce 2050 půl milionu, dnes je jich 200 tisíc."
         aside={<HeroAside />}
       />
+
+      <Section eyebrow={WHY_NOW.eyebrow} title={WHY_NOW.title} lead={WHY_NOW.lead}>
+        <ul className="grid gap-6 md:grid-cols-3 md:gap-10">
+          {WHY_NOW.points.map((p) => (
+            <li key={p.title} className="flex flex-col gap-2 border-t border-line-strong pt-5">
+              <h3 className="font-serif text-[22px] font-semibold leading-tight text-ink sm:text-[24px]">{p.title}</h3>
+              <p className="text-[17px] leading-relaxed text-ink-2 sm:text-[18px]">{p.text}</p>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-8">
+          <Facts items={WHY_NOW.facts} />
+        </div>
+      </Section>
 
       <Section
         tone="paper"

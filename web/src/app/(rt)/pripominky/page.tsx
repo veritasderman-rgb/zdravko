@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { requireSession } from "@/lib/auth";
 import { listComments, listDocumentsWithStats } from "@/lib/queries";
-import { KIND_LABEL, SEVERITY_CLASS, SEVERITY_LABEL, STATUS_CLASS, STATUS_LABEL, fmtDate } from "@/lib/labels";
+import { CHANNEL_LABEL, KIND_LABEL, PRIORITY_CLASS, PRIORITY_LABEL, SEVERITY_CLASS, SEVERITY_LABEL, STATUS_CLASS, STATUS_LABEL, fmtDate } from "@/lib/labels";
 import { updateCommentStatus } from "@/app/actions";
 
 export const dynamic = "force-dynamic";
@@ -14,7 +14,7 @@ function one(v: string | string[] | undefined) {
 export default async function CommentsPage({ searchParams }: PageProps<"/pripominky">) {
   await requireSession();
   const sp = await searchParams;
-  const filter = { doc: one(sp.doc), status: one(sp.status), severity: one(sp.severity), kind: one(sp.kind), code: one(sp.code), q: one(sp.q) };
+  const filter = { doc: one(sp.doc), status: one(sp.status), severity: one(sp.severity), kind: one(sp.kind), code: one(sp.code), q: one(sp.q), channel: one(sp.channel) };
   const [rows, docs] = await Promise.all([listComments(filter), listDocumentsWithStats()]);
 
   const exportHref = `/api/export/pripominky?${new URLSearchParams(Object.entries(filter).filter(([, v]) => v) as [string, string][]).toString()}`;
@@ -29,7 +29,7 @@ export default async function CommentsPage({ searchParams }: PageProps<"/pripomi
         <a href={exportHref} className="btn btn-ghost">Export CSV</a>
       </div>
 
-      <form className="mt-4 grid grid-cols-2 gap-2 rounded-lg border border-line bg-paper p-3 text-sm md:grid-cols-6">
+      <form className="mt-4 grid grid-cols-2 gap-2 rounded-lg border border-line bg-paper p-3 text-sm md:grid-cols-7">
         <select name="doc" defaultValue={filter.doc ?? ""}>
           <option value="">Všechny dokumenty</option>
           {docs.map((d) => <option key={d.slug} value={d.slug}>{d.title}</option>)}
@@ -45,6 +45,10 @@ export default async function CommentsPage({ searchParams }: PageProps<"/pripomi
         <select name="kind" defaultValue={filter.kind ?? ""}>
           <option value="">Všechny typy</option>
           {Object.entries(KIND_LABEL).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
+        </select>
+        <select name="channel" defaultValue={filter.channel ?? ""}>
+          <option value="">Tým i veřejnost</option>
+          {Object.entries(CHANNEL_LABEL).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
         </select>
         <input name="code" defaultValue={filter.code ?? ""} placeholder="Kód (J2, H5…)" />
         <div className="flex gap-2">
@@ -62,21 +66,27 @@ export default async function CommentsPage({ searchParams }: PageProps<"/pripomi
               <span className="chip">{KIND_LABEL[c.kind]}</span>
               <span className={`chip border-transparent ${STATUS_CLASS[c.status]}`}>{STATUS_LABEL[c.status]}</span>
               {c.needsVerification && <span className="chip border-amber-300 bg-amber-50 text-amber-900">Ověřit</span>}
+              {c.channel === "verejnost" && <span className="chip border-sky-200 bg-sky-50 text-sky-900">veřejnost</span>}
+              {c.priority !== "bezna" && <span className={`chip ${PRIORITY_CLASS[c.priority] ?? ""}`}>{PRIORITY_LABEL[c.priority] ?? c.priority}</span>}
               {c.codes.map((k) => <Link key={k} href={`/kody/${k}`} className="code-ref">{k}</Link>)}
               {c.topic && <span className="chip">téma: {c.topic}</span>}
               {c.assignee && <span className="chip">garant: {c.assignee}</span>}
             </div>
             <div className="mt-1 text-xs text-muted">
-              <Link href={`/d/${docSlug}?b=${encodeURIComponent(c.blockKey)}#${encodeURIComponent(c.blockKey)}`} className="underline">
-                {docTitle}{headingPath ? ` › ${headingPath}` : ""}
-              </Link>
+              {c.blockKey === "obecne" ? (
+                <span>{docTitle} › obecná připomínka</span>
+              ) : (
+                <Link href={`/d/${docSlug}?b=${encodeURIComponent(c.blockKey)}#${encodeURIComponent(c.blockKey)}`} className="underline">
+                  {docTitle}{headingPath ? ` › ${headingPath}` : ""}
+                </Link>
+              )}
             </div>
             {c.quote && <div className="mt-1 border-l-2 border-line pl-2 text-xs italic text-muted">„{c.quote}“</div>}
             <p className="mt-1 whitespace-pre-wrap">{c.body}</p>
             {c.proposedText && <p className="mt-1 rounded bg-emerald-50 p-2 text-xs whitespace-pre-wrap"><b>Návrh znění:</b> {c.proposedText}</p>}
             {c.source && <p className="mt-1 text-xs text-muted">Zdroj: {c.source}</p>}
             <div className="mt-2 flex flex-wrap items-center justify-between gap-2 text-[11px] text-muted">
-              <span>{c.authorName}{c.organization ? ` · ${c.organization}` : ""} · {fmtDate(c.createdAt)}</span>
+              <span>{c.authorName}{c.organization ? ` · ${c.organization}` : ""}{c.email ? ` · ${c.email}` : ""} · {fmtDate(c.createdAt)}</span>
               <form action={updateCommentStatus} className="flex flex-wrap items-center gap-1">
                 <input type="hidden" name="id" value={c.id} />
                 <input type="hidden" name="slug" value={docSlug} />
@@ -85,6 +95,9 @@ export default async function CommentsPage({ searchParams }: PageProps<"/pripomi
                 </select>
                 <input name="assignee" defaultValue={c.assignee ?? ""} placeholder="garant" className="!w-28 !py-0.5 !text-[11px]" />
                 <input name="topic" defaultValue={c.topic ?? ""} placeholder="téma" className="!w-28 !py-0.5 !text-[11px]" />
+                <select name="priority" defaultValue={c.priority} className="!w-auto !py-0.5 !text-[11px]">
+                  {Object.entries(PRIORITY_LABEL).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
+                </select>
                 <button className="btn !py-0.5 !px-2 !text-[11px]" type="submit">Uložit</button>
               </form>
             </div>

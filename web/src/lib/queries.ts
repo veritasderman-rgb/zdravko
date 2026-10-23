@@ -69,6 +69,7 @@ export interface CommentFilter {
   kind?: string;
   code?: string;
   q?: string;
+  channel?: string;
 }
 
 export async function listComments(f: CommentFilter) {
@@ -78,6 +79,7 @@ export async function listComments(f: CommentFilter) {
   if (f.severity) conds.push(eq(schema.comments.severity, f.severity as never));
   if (f.kind) conds.push(eq(schema.comments.kind, f.kind as never));
   if (f.code) conds.push(dsql`${f.code} = any(${schema.comments.codes})`);
+  if (f.channel) conds.push(eq(schema.comments.channel, f.channel));
   if (f.q) conds.push(dsql`(${schema.comments.body} ilike ${"%" + f.q + "%"} or ${schema.comments.quote} ilike ${"%" + f.q + "%"})`);
   return db
     .select({
