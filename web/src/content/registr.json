@@ -375,6 +375,21 @@
   "section": "Pilíře: doplňková opatření (Pil1.1–Pil5.7)"
  },
  {
+  "code": "Pil2.6",
+  "label": "Komunitní porodní asistence: hrazená péče porodní asistentky v těhotenství, u fyziologického porodu a v šestinedělí; podmínka každé změny v síti porodnic",
+  "layer": "Pilíř (dopl.)",
+  "area": "Pilíř 2",
+  "tool": "Vyhláška: Seznam výkonů (vyhl. 134/1998 Sb.) a úhr. vyhláška; smlouvy podle § 17 zák. 48/1997 Sb.; metodika centra porodní asistence ve Věstníku MZ; podmínka v zákoně o síti (J6)",
+  "wave": "0 → 2",
+  "cost": "nevyčísleno (propočet pro v4)",
+  "who": "MZ; pojišťovny; odborné společnosti porodníků a porodních asistentek; kraje",
+  "termBase": "Podnět do 30. 6. 2027; smlouvy od úhr. vyhlášky 2031; podmínka v zákoně o síti od 2033",
+  "termAlt": "Výkony od 1. 1. 2028",
+  "indicator": "—",
+  "evidence": "silná až střední (E21, E22)",
+  "section": "Pilíře: doplňková opatření (Pil1.1–Pil5.7)"
+ },
+ {
   "code": "Pil3.1",
   "label": "Dálkové sledování (srdeční selhání první, hypertenze s měřením doma, CHOPN a diabetes jen v pilotu)",
   "layer": "Pilíř (dopl.)",
@@ -910,6 +925,21 @@
   "who": "ÚZIS; univerzita",
   "termBase": "Jmenován před startem pilotu (do konce 2027); zpráva pro B4 2033",
   "termAlt": "—",
+  "indicator": "—",
+  "evidence": "není",
+  "section": "Doprovod: 10 oblastí Manifestu (M1.1–M10.5)"
+ },
+ {
+  "code": "M4.5",
+  "label": "Střet zájmů v komisích a poradních orgánech ministerstva: veřejná prohlášení o zájmech, vyloučení z hlasování, jmenovitá hlasování a veřejné zápisy",
+  "layer": "Doprovod",
+  "area": "Oblast 4",
+  "tool": "Jiné: Příkaz ministra a statuty komisí bez zákona (F0); zákon: nové ustanovení o poradních orgánech v zák. 372/2011 Sb. (vlna 4)",
+  "wave": "0 → 4",
+  "cost": "nevyčísleno (bez nového papírování pro poskytovatele)",
+  "who": "MZ; SÚKL; ÚZIS",
+  "termBase": "Podnět 2027; příkaz ministra po nástupu vlády 2030; zákon 2033 a později",
+  "termAlt": "Příkaz ministra kdykoli",
   "indicator": "—",
   "evidence": "není",
   "section": "Doprovod: 10 oblastí Manifestu (M1.1–M10.5)"
