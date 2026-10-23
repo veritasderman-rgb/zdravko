@@ -3,7 +3,7 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
-import { eq } from "drizzle-orm";
+import { and, count, eq, gt, sql } from "drizzle-orm";
 import { db, schema } from "@/db";
 import { getSession } from "@/lib/auth";
 import { sealSession, SESSION_COOKIE, sessionCookieOptions } from "@/lib/session";
@@ -150,15 +150,18 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
  * Ukládá se s kanálem „verejnost“ a nízkou prioritou; tým ji může povýšit.
  */
 export async function addPublicComment(_prev: ActionState, fd: FormData): Promise<ActionState> {
-  // Past na roboty a příliš rychlé odeslání.
+  // Past na roboty a příliš rychlé odeslání. Čas otevření formuláře musí být přítomný,
+  // ne starší než den a aspoň 2,5 s před odesláním.
   if (str(fd, "website", 200)) return { ok: true };
   const ts = Number(fd.get("ts"));
-  if (ts && Date.now() - ts < 2500) return { error: "Formulář byl odeslán příliš rychle. Zkuste to prosím znovu." };
+  const age = Date.now() - ts;
+  if (!Number.isFinite(ts) || ts <= 0 || age < 2500 || age > 24 * 60 * 60 * 1000) {
+    return { error: "Formulář byl odeslán příliš rychle nebo vypršel. Obnovte prosím stránku a zkuste to znovu." };
+  }
 
   const documentId = Number(fd.get("documentId"));
   const versionId = Number(fd.get("versionId"));
   const blockKey = str(fd, "blockKey", 300) || "obecne";
-  const quote = str(fd, "quote", 600);
   const name = str(fd, "name", 80);
   const email = str(fd, "email", 200).toLowerCase();
   const organization = str(fd, "organization", 200);
@@ -171,8 +174,31 @@ export async function addPublicComment(_prev: ActionState, fd: FormData): Promis
   if (!PUBLIC_KINDS.has(kind)) return { error: "Vyberte typ připomínky." };
   if (body.length < 10) return { error: "Napište připomínku (aspoň deset znaků)." };
 
+  // Omezení na straně serveru: nejvýš 5 připomínek z jednoho e-mailu za 10 minut
+  // a nejvýš 30 veřejných připomínek celkem za minutu.
+  const verejnost = eq(schema.comments.channel, "verejnost");
+  const [{ n: perEmail }] = await db
+    .select({ n: count() })
+    .from(schema.comments)
+    .where(and(verejnost, eq(schema.comments.email, email), gt(schema.comments.createdAt, sql`now() - interval '10 minutes'`)));
+  if (perEmail >= 5) return { error: "Z této adresy přišlo za posledních deset minut hodně připomínek. Zkuste to prosím později." };
+  const [{ n: perMinute }] = await db
+    .select({ n: count() })
+    .from(schema.comments)
+    .where(and(verejnost, gt(schema.comments.createdAt, sql`now() - interval '1 minute'`)));
+  if (perMinute >= 30) return { error: "Právě přichází hodně připomínek najednou. Zkuste to prosím za chvíli." };
+
   const [version] = await db.select({ id: schema.documentVersions.id, documentId: schema.documentVersions.documentId, label: schema.documentVersions.label }).from(schema.documentVersions).where(eq(schema.documentVersions.id, versionId));
   if (!version || version.documentId !== documentId) return { error: "Verze dokumentu neodpovídá. Obnovte prosím stránku." };
+
+  // Vazba na blok: buď obecná připomínka, nebo existující blok této verze; úryvek bereme
+  // z uloženého textu bloku, ne z formuláře.
+  let quote: string | null = null;
+  if (blockKey !== "obecne") {
+    const [block] = await db.select({ text: schema.blocks.text }).from(schema.blocks).where(and(eq(schema.blocks.versionId, versionId), eq(schema.blocks.blockKey, blockKey)));
+    if (!block) return { error: "Odstavec, ke kterému píšete, v této verzi studie není. Obnovte prosím stránku." };
+    quote = block.text.slice(0, 300);
+  }
 
   const codes = [...new Set([...body.matchAll(CODE_RE)].map((m) => m[1]))];
   const [row] = await db
@@ -181,7 +207,7 @@ export async function addPublicComment(_prev: ActionState, fd: FormData): Promis
       documentId,
       versionId,
       blockKey,
-      quote: quote || null,
+      quote,
       kind: kind as never,
       severity: "doporucujici",
       body,

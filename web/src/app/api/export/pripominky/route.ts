@@ -24,7 +24,9 @@ export async function GET(req: NextRequest) {
   const header = ["ID", "Dokument", "Část", "Klíč bloku", "Kódy", "Typ", "Závažnost", "Stav", "Téma", "Garant", "Připomínkové místo", "Kanál", "Priorita", ...(publicMode ? [] : ["E-mail"]), "Úryvek", "Připomínka", "Návrh znění", "Zdroj", "Ověřit", "Vloženo"];
   const lines = [header.join(";")];
   for (const { c, docTitle, headingPath } of rows) {
-    const place = publicMode ? c.organization ?? "jednotlivec" : `${c.authorName}${c.organization ? ` (${c.organization})` : ""}`;
+    // Veřejně se uvádí jen organizace ověřená přihlášením týmu; organizace, kterou napsal
+    // nepřihlášený člověk z veřejnosti, je jen orientační a nezveřejňuje se.
+    const place = publicMode ? (c.channel === "verejnost" ? "jednotlivec (veřejnost)" : c.organization ?? "jednotlivec") : `${c.authorName}${c.organization ? ` (${c.organization})` : ""}`;
     lines.push(
       [c.id, docTitle, headingPath ?? "", c.blockKey, c.codes.join(" "), KIND_LABEL[c.kind], SEVERITY_LABEL[c.severity], STATUS_LABEL[c.status], c.topic ?? "", c.assignee ?? "", place, CHANNEL_LABEL[c.channel] ?? c.channel, PRIORITY_LABEL[c.priority] ?? c.priority, ...(publicMode ? [] : [c.email ?? ""]), c.quote ?? "", c.body, c.proposedText ?? "", c.source ?? "", c.needsVerification ? "ano" : "", c.createdAt.toISOString()]
         .map(csv)

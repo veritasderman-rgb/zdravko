@@ -78,7 +78,7 @@ export function PublicCommentForm({ documentId, versionId, blockKey, quote = "",
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label className={LABEL} htmlFor={`${idp}-org`}>
-            Organizace <span className="font-normal text-muted">(nepovinné)</span>
+            Organizace <span className="font-normal text-muted">(nepovinné, jen pro orientaci týmu)</span>
           </label>
           <input id={`${idp}-org`} name="organization" maxLength={200} autoComplete="organization" className={INPUT} data-ui />
         </div>
