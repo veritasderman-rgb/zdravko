@@ -6,7 +6,7 @@ export default function RtLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Nav />
-      <div className="flex-1">{children}</div>
+      <div className="flex-1 text-base">{children}</div>
     </>
   );
 }

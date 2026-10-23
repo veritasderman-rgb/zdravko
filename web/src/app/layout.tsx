@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
-import { Barlow_Condensed, Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Source_Sans_3, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin", "latin-ext"] });
+// Patkové titulky (Source Serif 4), bezpatkový text (Source Sans 3), kódy opatření (Geist Mono).
+// Proměnné se v globals.css skládají do --font-serif a --font-sans (utility font-serif, font-sans).
+const serif = Source_Serif_4({
+  variable: "--font-serif-src",
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "600", "700"],
+  style: ["normal", "italic"],
+});
+const sans = Source_Sans_3({ variable: "--font-sans-src", subsets: ["latin", "latin-ext"], weight: ["400", "600", "700"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin", "latin-ext"] });
-const display = Barlow_Condensed({ variable: "--font-display", subsets: ["latin", "latin-ext"], weight: ["500", "600", "700"] });
 
 export const metadata: Metadata = {
   title: { default: "Zdraví blíž lidem", template: "%s · Zdraví blíž lidem" },
@@ -13,8 +20,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="cs" className={`${geistSans.variable} ${geistMono.variable} ${display.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="cs" className={`${serif.variable} ${sans.variable} ${geistMono.variable} h-full antialiased`}>
+      <body className="flex min-h-full flex-col">
+        <a
+          href="#obsah"
+          className="sr-only z-50 rounded-full bg-ink px-5 py-3 text-lg font-bold text-on-dark focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+        >
+          Přeskočit na obsah
+        </a>
+        {children}
+      </body>
     </html>
   );
 }

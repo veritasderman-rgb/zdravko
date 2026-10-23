@@ -1,0 +1,156 @@
+/*
+ * Tiskový styl veřejného webu (hlavně /studie): bez hlavičky, patičky, osnovy a tlačítek,
+ * serif 11 pt, černá na bílé, za odkazy se vypíše adresa, tabulky se nedělí, čísla stránek přes @page.
+ * Vše je jen v @media print, na obrazovce se nic nemění.
+ */
+@media print {
+  @page {
+    size: A4;
+    margin: 18mm 16mm 20mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 9pt;
+    }
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  body {
+    font-family: var(--font-serif, Georgia), Georgia, serif !important;
+    font-size: 11pt !important;
+    line-height: 1.45 !important;
+  }
+
+  /* Navigace a ovládání pryč */
+  body > header,
+  body > footer,
+  header[role="banner"],
+  footer[role="contentinfo"],
+  nav,
+  button,
+  [role="group"],
+  .study-toc-bar,
+  .study-toc-panel,
+  .study-outline,
+  .study-actions,
+  .chart-toggle,
+  a[href^="#"].sr-only,
+  a[href="#obsah"],
+  a[href="#main"] {
+    display: none !important;
+  }
+
+  /* Plochy a barvy: černá na bílé, bez podkladů. Prvky s barvou v inline stylu
+     (pruhy, waffle, vzorky legendy) si ji nechají, jinak by zmizela informace. */
+  *:not([style*="background"]),
+  *::before,
+  *::after {
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  * {
+    color: #000 !important;
+  }
+  [style*="background"],
+  svg,
+  svg * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  [role="heading"] {
+    font-family: var(--font-serif, Georgia), Georgia, serif !important;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  p,
+  li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Čtečka studie: plná šířka, bez sloupců */
+  .study-reader > div {
+    display: block !important;
+    max-width: none !important;
+    padding: 0 !important;
+  }
+  .study-text {
+    max-width: none !important;
+    font-size: 11pt !important;
+  }
+  .block-row {
+    margin: 0 !important;
+    padding: 0.15em 0 !important;
+  }
+  .block-row[data-selected="true"],
+  .block-row:target {
+    box-shadow: none !important;
+  }
+
+  /* Tabulky: celé na jedné stránce, bez posuvníků */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    font-size: 9.5pt !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  th,
+  td {
+    border: 0.5pt solid #000 !important;
+    padding: 2pt 4pt !important;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  figure,
+  .chart-frame {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  [class*="overflow-x-auto"],
+  .doc-table-box {
+    overflow: visible !important;
+    border: 0 !important;
+  }
+
+  /* Za odkazy adresa */
+  a {
+    text-decoration: underline !important;
+  }
+  a[href^="http"]::after,
+  a[href^="/"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    word-break: break-all;
+  }
+  a[href^="/kody/"]::after,
+  .code-ref::after {
+    content: none !important;
+  }
+
+  /* Rozbalit FAQ a rizika */
+  details > :not(summary) {
+    display: block !important;
+  }
+  details::details-content {
+    display: block !important;
+    content-visibility: visible !important;
+  }
+  summary {
+    list-style: none;
+  }
+}

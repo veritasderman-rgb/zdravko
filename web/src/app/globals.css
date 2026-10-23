@@ -1,13 +1,23 @@
 @import "tailwindcss";
 
+/*
+ * Vizuální směr B „Vysvětlující příběh“ (zadání kap. 3).
+ * Sémantické názvy (background, foreground, muted, line, paper, accent, accent-soft)
+ * zůstávají, aby se interní část (rt) přebarvila sama. Nové tokeny jsou v @theme níže.
+ */
 :root {
-  --background: #fbfaf7;
-  --foreground: #1c1b18;
-  --muted: #6b6760;
-  --line: #e6e2d9;
-  --accent: #1f6f5f;
-  --accent-soft: #e4f1ed;
-  --paper: #ffffff;
+  --background: #f3eee4;
+  --foreground: #1c2321;
+  --muted: #52594f;
+  --line: #ddd5c6;
+  --accent: #1f4a3d;
+  --accent-soft: #dce8e0;
+  --paper: #fbf8f2;
+
+  /* Písma: proměnné z next/font (layout.tsx) se skládají do celých stacků.
+     --font-serif-src a --font-sans-src nastavuje next/font na <html>. */
+  --font-serif: var(--font-serif-src), Georgia, serif;
+  --font-sans: var(--font-sans-src), "Segoe UI", system-ui, sans-serif;
 }
 
 @theme inline {
@@ -15,38 +25,37 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-line: var(--line);
+  --color-paper: var(--paper);
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
-  --color-paper: var(--paper);
-  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
-  --font-display: var(--font-display), "Arial Narrow", sans-serif;
-  --color-ink: #0f3d35;
-  --color-ink-soft: #16524a;
-}
 
-.font-display {
-  font-family: var(--font-display);
-  letter-spacing: -0.01em;
-}
-.display-title {
-  font-family: var(--font-display);
-  font-weight: 700;
-  line-height: 0.98;
-  letter-spacing: -0.01em;
-}
-.eyebrow {
-  font-family: var(--font-display);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.9rem;
-}
-.big-number {
-  font-family: var(--font-display);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.01em;
+  --color-sand: #f3eee4;
+  --color-stone: #eae3d6;
+  --color-line-strong: #cfc5b3;
+  --color-ink: #1c2321;
+  --color-ink-2: #3c4340;
+  --color-forest: #1f4a3d;
+  --color-forest-deep: #143229;
+  --color-forest-mid: #2e4f46;
+  --color-sage: #a9c4b5;
+  --color-sage-soft: #dce8e0;
+  --color-on-dark: #f3eee4;
+  --color-on-dark-muted: #c9d9cf;
+  /* action: JEN výplň primárního tlačítka (Button variant="primary"). */
+  --color-action: #9a5a12;
+  --color-action-hover: #7d4810;
+  --color-verify-bg: #f6e9c8;
+  --color-verify-fg: #6b4a00;
+  /* honey: jen ilustrace. */
+  --color-honey: #f2d29b;
+
+  --font-sans: var(--font-sans-src), "Segoe UI", system-ui, sans-serif;
+  --font-serif: var(--font-serif-src), Georgia, serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --radius-card: 16px;
+  --radius-panel: 20px;
+  --radius-band: 24px;
 }
 
 html {
@@ -56,44 +65,94 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
+  font-family: var(--font-sans-src), "Segoe UI", system-ui, sans-serif;
+  font-size: 1.1875rem; /* 19 px na mobilu */
+  line-height: 1.55;
 }
+@media (min-width: 640px) {
+  body {
+    font-size: 1.25rem; /* 20 px */
+  }
+}
+
+@layer base {
+  h1,
+  h2,
+  h3 {
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
+
+  /* Fokus na všem interaktivním (kap. 3.1). Na tmavém pásu (.tone-dark) světlý. */
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 3px solid #1c2321;
+    outline-offset: 3px;
+  }
+  .tone-dark :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline-color: #f3eee4;
+  }
+
+  /* Posuvník (RangeInput): dráha 6 px line-strong, palec 28 px forest. */
+  input[type="range"].range-input {
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    height: 44px;
+    cursor: pointer;
+  }
+  input[type="range"].range-input::-webkit-slider-runnable-track {
+    height: 6px;
+    border-radius: 999px;
+    background: #cfc5b3;
+  }
+  input[type="range"].range-input::-moz-range-track {
+    height: 6px;
+    border-radius: 999px;
+    background: #cfc5b3;
+  }
+  input[type="range"].range-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 28px;
+    height: 28px;
+    margin-top: -11px;
+    border-radius: 999px;
+    background: #1f4a3d;
+    border: 4px solid #fbf8f2;
+  }
+  input[type="range"].range-input::-moz-range-thumb {
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    background: #1f4a3d;
+    border: 4px solid #fbf8f2;
+    box-sizing: border-box;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Sdílené s interní částí a čtečkou studie (zachovat, jen přebarveno)
+ * ------------------------------------------------------------------------- */
 
 .prose-block p,
 .prose-block li {
   line-height: 1.6;
 }
 
-.code-ref {
-  font-family: var(--font-mono);
-  font-size: 0.8em;
-  padding: 0 0.3em;
-  border-radius: 0.3em;
-  background: var(--accent-soft);
-  color: var(--accent);
-  text-decoration: none;
-  white-space: nowrap;
-}
-.code-ref:hover {
-  text-decoration: underline;
-}
-
 .block-row:target,
 .block-row[data-selected="true"] {
-  background: #fff7dc;
-  box-shadow: inset 3px 0 0 #d9a400;
-}
-
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 0.05rem 0.5rem;
-  font-size: 0.72rem;
-  line-height: 1.2rem;
-  white-space: nowrap;
+  background: #f6e9c8;
+  box-shadow: inset 3px 0 0 #6b4a00;
 }
 
 table.doc-table {
@@ -109,13 +168,14 @@ table.doc-table td {
   text-align: left;
 }
 table.doc-table th {
-  background: #f3f1ea;
+  background: #eae3d6;
   font-weight: 600;
 }
 
-input,
-select,
-textarea {
+/* Formuláře interní části. Vstupy komponent veřejného webu mají data-ui a styl si nesou samy. */
+input:not([data-ui]),
+select:not([data-ui]),
+textarea:not([data-ui]) {
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 0.375rem;
@@ -123,10 +183,10 @@ textarea {
   font-size: 0.9rem;
   width: 100%;
 }
-input:focus,
-select:focus,
-textarea:focus {
-  outline: 2px solid var(--accent);
+input:not([data-ui]):focus,
+select:not([data-ui]):focus,
+textarea:not([data-ui]):focus {
+  outline: 3px solid #1c2321;
   outline-offset: 1px;
 }
 label.field {
@@ -135,22 +195,81 @@ label.field {
   color: var(--muted);
   margin-bottom: 0.15rem;
 }
+
+/* ---------------------------------------------------------------------------
+ * LEGACY: tenké aliasy na nová písma a barvy, dokud podstránky a interní část
+ * nepřejdou na komponenty z components/web/ui.tsx. Smaže je koordinátor.
+ * ------------------------------------------------------------------------- */
+
+.font-display {
+  font-family: var(--font-serif-src), Georgia, serif;
+}
+.display-title {
+  font-family: var(--font-serif-src), Georgia, serif;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+.eyebrow {
+  font-family: var(--font-sans-src), "Segoe UI", system-ui, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+}
+.big-number {
+  font-family: var(--font-serif-src), Georgia, serif;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.code-ref {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.8em;
+  padding: 0 0.3em;
+  border-radius: 6px;
+  background: #eae3d6;
+  color: #1c2321;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.code-ref:hover {
+  text-decoration: underline;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border: 1px solid #cfc5b3;
+  border-radius: 999px;
+  padding: 0.05rem 0.5rem;
+  font-size: 0.72rem;
+  line-height: 1.2rem;
+  white-space: nowrap;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
   background: var(--accent);
   color: white;
-  border-radius: 0.375rem;
+  border-radius: 999px;
   padding: 0.45rem 0.9rem;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 .btn:hover {
-  filter: brightness(1.1);
+  background: #143229;
 }
 .btn-ghost {
   background: transparent;
   color: var(--accent);
-  border: 1px solid var(--line);
+  border: 1px solid #cfc5b3;
+}
+.btn-ghost:hover {
+  background: var(--accent-soft);
 }

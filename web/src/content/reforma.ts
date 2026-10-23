@@ -115,6 +115,9 @@ export const FIVE_CHANGES = [
     brings: "Lékaře i pro lidi, kteří ho dnes nemají. Péči o dlouhodobě nemocné, která nečeká, až se stav zhorší. A každý má v týmu svého jmenovitého lékaře a svou sestru, kteří ho znají.",
     when: "zkouška ve třech regionech 2028 a 2029 · zákon o primární péči platí od 1. 1. 2032 · asi 520 týmů a 4 000 sester navíc kolem roku 2038",
     codes: ["J1", "J2", "J3"],
+    /** Jedna věta pro úvodní stránku (ChangeRow). */
+    short: "Praktici se mohou dobrovolně spojit do týmu s víc sestrami. Sestra jezdí i za pacienty domů.",
+    icon: "team" as const,
   },
   {
     n: 2,
@@ -123,6 +126,9 @@ export const FIVE_CHANGES = [
     brings: "Poprvé bude vidět, kdo a jak dlouho čeká. Dřív se dostane na řadu ten, kdo to víc potřebuje, ne ten, kdo dřív zavolal.",
     when: "pozměňovací návrh k vládní novele o eŽádance 2027 až 2028 · zákonná záruka termínu od 1. 1. 2032",
     codes: ["J5"],
+    /** Jedna věta pro úvodní stránku (ChangeRow). */
+    short: "Lékař v žádance zaškrtne: do 2 týdnů, do 6 týdnů, nebo plánované. Pojišťovna ručí za termín.",
+    icon: "clock" as const,
   },
   {
     n: 3,
@@ -131,6 +137,9 @@ export const FIVE_CHANGES = [
     brings: "Okresní nemocnice dostane jistou roli blízko domova: doléčení, rehabilitaci, jednodenní chirurgii a ambulance. Náročný zákrok se udělá tam, kde ho dělají často a dobře.",
     when: "zákon předložen 2031, přijat 2032, platí nejpozději od 1. 1. 2033 · první krajské plány 2033 · 8 000 změněných lůžek do roku 2038",
     codes: ["J6", "J7"],
+    /** Jedna věta pro úvodní stránku (ChangeRow). */
+    short: "Okresní nemocnice dostane jistou roli: doléčení, rehabilitaci, jednodenní chirurgii a ambulance.",
+    icon: "hospital" as const,
   },
   {
     n: 4,
@@ -139,6 +148,9 @@ export const FIVE_CHANGES = [
     brings: "Výrobci sníží cukr v nápojích dřív, než daň začne platit. Sestra zavolá, když vyjde pozitivní test. Očkovat bude moci i lékárna. Prevence přestane záviset na tom, co zbude.",
     when: "víno a valorizace od 1. 1. 2031 (víno zprvu poloviční sazbou, plná od 2033) · daň ze slazených nápojů přijata 2030, platí od 1. 1. 2032",
     codes: ["J8", "J9", "P4"],
+    /** Jedna věta pro úvodní stránku (ChangeRow). */
+    short: "Daně z tichého vína a slazených nápojů: 5 mld. Kč ročně, z toho 2 mld. Kč do Národního fondu prevence.",
+    icon: "leaf" as const,
   },
   {
     n: 5,
@@ -147,6 +159,9 @@ export const FIVE_CHANGES = [
     brings: "Doma místo chodby urgentního příjmu. Rodina, která ví, komu zavolat. Domov jako možnost, ne povinnost.",
     when: "dříve vyslovené přání jako poslanecký návrh 2028 až 2029 · domácí péče předepsaná sestrou od 1. 1. 2032 · paliativní týmy 2031 až 2034",
     codes: ["J4", "P3"],
+    /** Jedna věta pro úvodní stránku (ChangeRow). */
+    short: "Domov jako možnost, ne povinnost. V každém okrese mobilní paliativní tým.",
+    icon: "home" as const,
   },
 ];
 
@@ -163,12 +178,19 @@ export const PATIENT_JOURNEY = [
 ];
 
 export const NOT_DOING = [
-  { title: "Žádné nové poplatky u lékaře", text: "Nezavádíme regulační poplatky ani příplatky za to, že se někdo dostane na řadu dřív. Hlídáme, aby lidé neplatili ze své kapsy víc než dnes." },
-  { title: "Dětští lékaři zůstávají", text: "Nerušíme praktické lékaře pro děti a dorost. Děti budou mít svoje dětské týmy. Jen tam, kde dětský lékař chybí, bude moci dítě zaregistrovat praktik pro dospělé, který pracuje v týmu." },
-  { title: "Nemocnice nerušíme, měníme jejich roli", text: "Část akutních lůžek se změní na lůžka pro doléčení, rehabilitaci a péči na konci života. Žádné lůžko se nezmění dřív, než kraj doloží, že pacienti mají kam jít a že záchranka dojede včas." },
-  { title: "Nic neprodáváme", text: "Nemocnice ani pojišťovny se neprivatizují. Praktici zůstávají soukromými lékaři a o hodnotu své ordinace nepřijdou. Budovy zdravotních center budou patřit obci nebo kraji." },
-  { title: "Nikoho nenutíme", text: "Praktik se do týmu zapojí jen dobrovolně. Kdo zůstane sám, dostane od pojišťovny stejně jako dnes, ne méně. Ke specialistovi může každý dál i bez doporučení." },
-  { title: "Daně za zdraví nejsou úleva z práce", text: "Výnos z daní na víno a slazené nápoje jde na prevenci a do zdravotního pojištění. Odvody z mezd se nemění. Slibujeme jen 5 mld. Kč ročně, ne víc." },
+  { title: "Žádné nové poplatky u lékaře", fear: "Budu u lékaře platit víc?", short: "Žádné nové poplatky.", text: "Nezavádíme regulační poplatky ani příplatky za to, že se někdo dostane na řadu dřív. Hlídáme, aby lidé neplatili ze své kapsy víc než dnes." },
+  { title: "Dětští lékaři zůstávají", fear: "Zruší dětské lékaře?", short: "Dětští lékaři zůstávají.", text: "Nerušíme praktické lékaře pro děti a dorost. Děti budou mít svoje dětské týmy. Jen tam, kde dětský lékař chybí, bude moci dítě zaregistrovat praktik pro dospělé, který pracuje v týmu." },
+  { title: "Nemocnice nerušíme, měníme jejich roli", fear: "Zavřou nám nemocnici?", short: "Měníme roli, nerušíme.", text: "Část akutních lůžek se změní na lůžka pro doléčení, rehabilitaci a péči na konci života. Žádné lůžko se nezmění dřív, než kraj doloží, že pacienti mají kam jít a že záchranka dojede včas." },
+  { title: "Nic neprodáváme", fear: "Bude se privatizovat?", short: "Nic neprodáváme.", text: "Nemocnice ani pojišťovny se neprivatizují. Praktici zůstávají soukromými lékaři a o hodnotu své ordinace nepřijdou. Budovy zdravotních center budou patřit obci nebo kraji." },
+  { title: "Nikoho nenutíme", fear: "Budu potřebovat doporučení?", short: "Nikoho nenutíme.", text: "Praktik se do týmu zapojí jen dobrovolně. Kdo zůstane sám, dostane od pojišťovny stejně jako dnes, ne méně. Ke specialistovi může každý dál i bez doporučení." },
+  { title: "Daně za zdraví nejsou úleva z práce", fear: "Zvednou se mi odvody?", short: "Odvody z mezd se nemění.", text: "Výnos z daní na víno a slazené nápoje jde na prevenci a do zdravotního pojištění. Odvody z mezd se nemění. Slibujeme jen 5 mld. Kč ročně, ne víc." },
+];
+
+// Rozcestník pod hero úvodní stránky (AudienceEntry)
+export const AUDIENCES = [
+  { title: "Pacient a rodina", text: "Co se změní pro vás a vaše blízké", href: "/co-chceme", icon: "home" as const },
+  { title: "Lékař a sestra", text: "Co reforma znamená pro vaši ordinaci", href: "/pro-koho#prakticti-lekari", icon: "team" as const },
+  { title: "Obec, kraj, pojišťovna", text: "Co nabízíme a co potřebujeme", href: "/pro-koho", icon: "building" as const },
 ];
 
 export const HONEST_CHANGES = [
