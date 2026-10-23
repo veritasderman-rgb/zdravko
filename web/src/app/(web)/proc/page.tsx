@@ -47,17 +47,30 @@ function HeroAside() {
   );
 }
 
+function WhyAside() {
+  return (
+    <ul className="flex flex-col gap-5">
+      {WHY_NOW.facts.map((f) => (
+        <li key={f.value} className="flex flex-col gap-1 border-t border-line-strong pt-4">
+          <span className="font-serif text-[34px] font-semibold leading-none tracking-[-0.02em] text-ink [font-variant-numeric:lining-nums_tabular-nums] md:text-[40px]">{f.value}</span>
+          <span className="text-[16px] leading-snug text-ink-2">{f.label}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export default function ProcPage() {
   return (
     <>
       <PageHero
-        eyebrow="Proč"
-        title="Peníze tečou tam, kde jsou postele, a ne tam, kde jsou lidé nejvíc nemocní."
-        lead="Hodně věcí funguje a zachováme je: pojištění hradí 85 % výdajů na zdraví a jen půl procenta lidí říká, že se k potřebné péči nedostalo. Těžiště systému je ale v nemocnicích. A na to naráží stárnutí: lidí nad 85 let bude v roce 2050 půl milionu, dnes je jich 200 tisíc."
-        aside={<HeroAside />}
+        eyebrow={WHY_NOW.eyebrow}
+        title={WHY_NOW.title}
+        lead={WHY_NOW.lead}
+        aside={<WhyAside />}
       />
 
-      <Section eyebrow={WHY_NOW.eyebrow} title={WHY_NOW.title} lead={WHY_NOW.lead}>
+      <Section eyebrow="Co z toho plyne" title="Tři věci, které z toho plynou">
         <ul className="grid gap-6 md:grid-cols-3 md:gap-10">
           {WHY_NOW.points.map((p) => (
             <li key={p.title} className="flex flex-col gap-2 border-t border-line-strong pt-5">
@@ -66,9 +79,6 @@ export default function ProcPage() {
             </li>
           ))}
         </ul>
-        <div className="mt-8">
-          <Facts items={WHY_NOW.facts} />
-        </div>
       </Section>
 
       <Section
@@ -77,6 +87,13 @@ export default function ProcPage() {
         title="Na akutní lůžka jde téměř sedmkrát víc než na praktiky pro dospělé"
         lead="Ze 571 miliard, které pojišťovny ročně zaplatí, jde asi 170 miliard na akutní lůžka v nemocnicích. Ta jsou přitom obsazená jen z 56 %. Lůžka pro doléčení a rehabilitaci jsou naopak skoro plná."
       >
+        <div className="mb-10 grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-start">
+          <div className="flex flex-col gap-4">
+            <p className="text-balance font-serif text-[26px] font-semibold leading-[1.2] text-ink sm:text-[30px]">Peníze tečou tam, kde jsou postele, a ne tam, kde jsou lidé nejvíc nemocní.</p>
+            <p className="text-[18px] leading-relaxed text-ink-2">Hodně věcí funguje a zachováme je: pojištění hradí 85 % výdajů na zdraví a jen půl procenta lidí říká, že se k potřebné péči nedostalo. Těžiště systému je ale v nemocnicích. A na to naráží stárnutí: lidí nad 85 let bude v roce 2050 půl milionu, dnes je jich 200 tisíc.</p>
+          </div>
+          <HeroAside />
+        </div>
         <div className="grid gap-6 lg:grid-cols-2">
           <ChartFrame
             title={SPENDING_SHARE.title}
