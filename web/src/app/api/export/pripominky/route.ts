@@ -6,7 +6,9 @@ import { KIND_LABEL, SEVERITY_LABEL, STATUS_LABEL } from "@/lib/labels";
 export const dynamic = "force-dynamic";
 
 function csv(v: unknown): string {
-  const s = v == null ? "" : String(v);
+  let s = v == null ? "" : String(v);
+  // Excel by text začínající = + - @ nebo tabulátorem vyhodnotil jako vzorec; apostrof ho nechá jako text.
+  if (/^[=+\-@\t\r]/.test(s)) s = "'" + s;
   return /[";\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
 }
 
