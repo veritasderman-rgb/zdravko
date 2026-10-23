@@ -2,7 +2,7 @@
 
 > Studie z Manifestu vychází a je jeho rozpracováním do opatření, termínů a peněz. Tento dokument neslouží k hledání rozdílů, ale k evidenci toho, co z Manifestu je už rozpracované do kroků a co zbývá doplnit v dalších verzích.
 
-Přehled pro redakci a resortní tým: co Manifest z 7. 5. 2026 slibuje, kam to ve studii v3 patří, kdy to začíná a kde se obě znění liší. Na webu stejný obsah stojí na stránce `/plan`, data jsou v `web/src/content/manifest.ts`. Opatření jsou označena kódy z registru (`registr.json`): J = jádro, P = podmínka, Pil = doplněk pilíře, M = doprovod (oblasti 1 až 10 Části XI).
+Přehled pro redakci a resortní tým: co Manifest z 7. 5. 2026 slibuje, kam to ve studii v3 patří, kdy to začíná a co zbývá rozpracovat. Na webu stejný obsah stojí na stránce `/plan`, data jsou v `web/src/content/manifest.ts`. Opatření jsou označena kódy z registru (`registr.json`): J = jádro, P = podmínka, Pil = doplněk pilíře, M = doprovod (oblasti 1 až 10 Části XI).
 
 **Jak číst termíny.** Manifest počítá „Rok 1“ od nástupu vlády. Ve studii je Rok 1 = 2030 (základní scénář „Vláda 2030“), Rok 5 = 2034. Termíny v tabulce jsou termíny studie.
 
@@ -10,7 +10,7 @@ Přehled pro redakci a resortní tým: co Manifest z 7. 5. 2026 slibuje, kam to 
 
 ## Přehled třinácti oblastí
 
-| Oblast Manifestu | Vrstva ve studii | Opatření (kódy) | První krok a termín | Kde se lišíme |
+| Oblast Manifestu | Vrstva ve studii | Opatření (kódy) | První krok a termín | Co zbývá rozpracovat |
 | --- | --- | --- | --- | --- |
 | 1. Více muziky za peníze | doprovod (oblast 1) | M1.1–M1.4, J1, Pil2.2 | Metodika hodnocení modelů péče pod ÚZIS, 2027 (M1.1); platba týmům za funkce v pilotu 2028 (J1) | Bonus 5–15 % k DRG vázaný na výsledek studie nemá; platí za funkce a odměnu za výsledky stropuje |
 | 2. Volba bez úplatků | doprovod (oblast 2) | M2.1–M2.4, J5, M3.1, M4.2 | Čekání a naléhavost v eŽádance, dobrovolně od 2027 (J5); zákon o rozšířené péči účinný 1. 1. 2032 (M2.1) | Trestnost neformálních plateb a hrazený druhý názor studie neřeší; garanci specialisty do 30 dnů nahrazují lhůty podle naléhavosti (2 a 6 týdnů) |

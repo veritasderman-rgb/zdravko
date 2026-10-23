@@ -14,7 +14,7 @@ export function ManifestStrip() {
       tone="paper"
       eyebrow="Z čeho vycházíme"
       title="Manifest reformy: třináct oblastí, které postupně měníme v kroky"
-      lead="Vycházíme z Manifestu reformy z května 2026. Naše studie ho rozpracovává do opatření, zákonů, termínů a peněz a u každé oblasti říká, kde se od něj liší."
+      lead="Vycházíme z Manifestu reformy z května 2026. Naše studie ho rozpracovává do opatření, zákonů, termínů a peněz a u každé oblasti říká, co z něj zbývá rozpracovat."
     >
       <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {MANIFEST_AREAS.map((a) => (
