@@ -90,6 +90,9 @@ export default function PenizePage() {
             <Callout title="Vyšší platba státu nejsou nové peníze">
               Je to přesun ze státního rozpočtu do zdravotního pojištění. Aby stát mohl platit víc za děti, důchodce a studenty, musí peníze jinde přibýt, nebo ubýt. Tuhle volbu nezametáme pod koberec: patří do volebního programu 2029.
             </Callout>
+            <Callout title="Tabák a nikotin: víc, ale postupně">
+              Od roku 2028 porostou daně z tabáku a nikotinu každý rok o 5 % nad inflaci, bez skoků; nikotinové sáčky a e-cigarety se zdaní podle obsahu nikotinu. Do 5 mld. Kč tyhle peníze nepočítáme, protože cílem je méně kouření. Co z nich přibude, jde těm, kdo chodí na prevenci: hrazené odvykání a příspěvek pojišťovny na pohyb nebo výživu po preventivní prohlídce.
+            </Callout>
             <Callout title="Když peníze nepřijdou" tone="sage">
               Když neprojde nová platba státu, reforma se zmenší na variantu bez nových center (asi 18 miliard) a při dalším nedostatku na minimální variantu (asi 11 miliard). Prevence, paliativní péče, konzultace lékařů a fond přeměny nemocnic zůstávají ve všech variantách.
             </Callout>

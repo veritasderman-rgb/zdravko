@@ -96,6 +96,8 @@ const SHORT: Record<string, { label: string; when: string }> = {
   "Pil4.8": { label: "Navigace po pozitivním screeningu: sestra provede člověka vyšetřením", when: "pilot ve dvou krajích, start ověříme" },
   "Pil4.9": { label: "Krátká intervence u praktika (stručné poradenství k rizikovým zvykům)", when: "od úhradové vyhlášky 2031" },
   "Pil4.10": { label: "Strava a pohyb: školní stravování, reklama dětem, nutriční terapeut", when: "termín ověříme, vyhodnocení po třech letech" },
+  "Pil4.11": { label: "Daň z tabáku a nikotinu: každý rok o 5 % nad inflaci, bez skoků; sáčky a e-cigarety podle nikotinu", when: "podnět 2027, platí od 1. 1. 2031" },
+  "Pil4.12": { label: "Pro ty, kdo chodí na prevenci: hrazené odvykání kouření a příspěvek pojišťovny na pohyb nebo výživu", when: "platí od 1. 1. 2031, příspěvek od 2032" },
   "Pil5.1": { label: "Domácí péče na delší dobu, může ji předepsat sestra se specializací", when: "platí od 1. 1. 2032" },
   "Pil5.2": { label: "Mobilní paliativní tým v každém okrese", when: "úhrada 2031, náběh 2031–2034" },
   "Pil5.3": { label: "Společný plán péče, koordinátor a hrazené plánování péče", when: "úhrada od 2031" },
@@ -342,7 +344,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
       "Prevence dostane stálé peníze, aktivní zvaní na screening a bonus pro praktiky za zlepšení zdraví jejich pacientů. Zdaníme alkohol a tabák, děti dostanou hrazenou zubní prevenci.",
     layer: "jadro",
     studyArea: "Pilíř 4 (prevence), J8, J9, P4, J1",
-    measures: pick(["J8", "J9", "P4", "Pil4.1", "Pil4.2", "Pil4.3", "Pil4.4", "Pil4.5", "Pil4.6", "Pil4.7", "Pil4.8", "Pil4.9", "Pil4.10", "J1"]),
+    measures: pick(["J8", "J9", "P4", "Pil4.11", "Pil4.12", "Pil4.1", "Pil4.2", "Pil4.3", "Pil4.4", "Pil4.5", "Pil4.6", "Pil4.7", "Pil4.8", "Pil4.9", "Pil4.10", "J1"]),
     manifestSteps: [
       { year: "Rok 1", text: "Vyšší daň z tabáku a minimální cena alkoholu (skotský vzor)." },
       { year: "Rok 2", text: "Automatické pozvánky na screening tlustého střeva, děložního čípku a prsu." },
@@ -357,7 +359,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     ],
     inspiration: "Finská severní Karélie od roku 1972 snížila úmrtnost na srdeční nemoci o desítky procent, Skotsko zavedlo od roku 2018 minimální cenu alkoholu a severské země mají účast na screeningu kolem 70 %.",
     gaps:
-      "Manifest chce prevenci aspoň na 5 % výdajů; zatím máme pevně 2 mld. Kč pro Národní fond prevence z daní za zdraví a 1,3 mld. Kč na prevenci v týmech, cestu k 5 % zbývá dopočítat. Hrazenou dentální hygienu do 18 let zatím pokrývá fluoridový lak a zalití rýh (0,3 až 0,5 mld. Kč); zdanění tabáku a pozvánky na všechny screeningy zbývá doplnit.",
+      "Manifest chce prevenci aspoň na 5 % výdajů; zatím máme pevně 2 mld. Kč pro Národní fond prevence z daní za zdraví a 1,3 mld. Kč na prevenci v týmech, cestu k 5 % zbývá dopočítat. Hrazenou dentální hygienu do 18 let zatím pokrývá fluoridový lak a zalití rýh (0,3 až 0,5 mld. Kč). Daň z tabáku a nikotinu roste postupně a její přírůstek jde na podporu těch, kdo chodí na prevenci (Pil4.11, Pil4.12); pozvánky na všechny screeningy zbývá doplnit.",
     dispute:
       "Daně z alkoholu a tabáku fungují na celou populaci, ale jsou politicky nepopulární a dopadají víc na lidi s nízkými příjmy. Automatické pozvánky zvyšují účast, ale i náklady a riziko zbytečné diagnostiky; kde končí prevence a začíná poručnický přístup státu, je otevřená otázka.",
   },
