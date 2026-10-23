@@ -1,4 +1,4 @@
-import { AUDIENCES, FIVE_CHANGES, GP_DECLINE, HONEST_CHANGES, KEY_NUMBERS, SPENDING_SHARE } from "@/content/reforma";
+import { AUDIENCES, FIVE_CHANGES, GP_DECLINE, HONEST_CHANGES, KEY_NUMBERS, SPENDING_SHARE, WHY_NOW } from "@/content/reforma";
 import { AudienceEntry, BigNumber, CalculatorFrame, ChangeRow, FearFact, MilestoneColumns, OrgList, PatientJourney, Waffle } from "@/components/web/blocks";
 import { HomeWineCalculator } from "@/components/web/home-wine-calculator";
 import { HomeVisit } from "@/components/web/illustrations";
@@ -61,7 +61,27 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* 3. Proč */}
+      {/* 3. Proč teď: demografie a dostupnost */}
+      <Section tone="paper" eyebrow={WHY_NOW.eyebrow} title={WHY_NOW.title} lead={WHY_NOW.lead}>
+        <ul className="grid gap-6 md:grid-cols-3 md:gap-10">
+          {WHY_NOW.points.map((p) => (
+            <li key={p.title} className="flex flex-col gap-2 border-t border-line-strong pt-5">
+              <h3 className="font-serif text-[22px] font-semibold leading-tight text-ink sm:text-[24px]">{p.title}</h3>
+              <p className="text-[17px] leading-relaxed text-ink-2 sm:text-[18px]">{p.text}</p>
+            </li>
+          ))}
+        </ul>
+        <dl className="mt-8 grid gap-x-10 gap-y-5 sm:grid-cols-3">
+          {WHY_NOW.facts.map((f) => (
+            <div key={f.value} className="flex flex-col gap-1">
+              <dt className="font-serif text-[30px] font-semibold leading-none tracking-[-0.02em] text-forest [font-variant-numeric:lining-nums_tabular-nums] sm:text-[34px]">{f.value}</dt>
+              <dd className="text-[16px] leading-snug text-muted">{f.label}</dd>
+            </div>
+          ))}
+        </dl>
+      </Section>
+
+      {/* 3b. Proč: peníze */}
       <section aria-labelledby="proc-vyrok" className="tone-dark bg-forest-deep py-12 text-on-dark md:py-24">
         <Container className="flex flex-col gap-5 lg:grid lg:grid-cols-2 lg:grid-rows-[auto_auto] lg:items-center lg:gap-x-16 lg:gap-y-6">
           <div className="flex flex-col gap-5 sm:gap-[22px]">
@@ -174,10 +194,28 @@ export default function HomePage() {
 
       {/* 10. Komentovat studii */}
       <Section tone="paper" eyebrow="Komentovat studii" title="Řekněte nám, co je špatně" lead="Studie je ke konzultaci, ne hotová. Když víte o chybě v čísle, lepším zdroji nebo o něčem, co chybí, napište to k odstavci přímo ve studii. Stačí jakékoli jméno a e-mail, nic z toho nezveřejňujeme.">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
-          <Button href="/studie" icon="arrow">
-            Číst a komentovat studii
-          </Button>
+        <form action="/studie" method="get" role="search" className="flex max-w-[52em] flex-col gap-3 sm:flex-row sm:items-end">
+          <div className="min-w-0 flex-1">
+            <label htmlFor="hledat-studii" className="mb-1 block text-[15px] font-semibold text-ink">
+              Najděte svou část studie
+            </label>
+            <input
+              id="hledat-studii"
+              name="q"
+              type="search"
+              placeholder="např. sestry, porodnice, prevence, J1"
+              className="w-full rounded-[10px] border border-line-strong bg-sand px-3.5 py-3 text-[17px] text-ink"
+              data-ui
+            />
+          </div>
+          <button type="submit" className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-action px-7 text-[18px] font-bold text-white hover:bg-action-hover">
+            Hledat ve studii
+          </button>
+        </form>
+        <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
+          <TextLink href="/studie" arrow className="inline-flex min-h-12 items-center">
+            Číst a komentovat celou studii
+          </TextLink>
           <TextLink href="/studie#pripominka" className="inline-flex min-h-12 items-center">
             Napsat obecnou připomínku
           </TextLink>

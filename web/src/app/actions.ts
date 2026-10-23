@@ -8,6 +8,7 @@ import { db, schema } from "@/db";
 import { getSession } from "@/lib/auth";
 import { sealSession, SESSION_COOKIE, sessionCookieOptions } from "@/lib/session";
 import { CODE_RE } from "@/lib/codes";
+import { commentConfirmation, sendMail } from "@/lib/mail";
 
 export type ActionState = { error?: string; ok?: boolean };
 
@@ -170,7 +171,7 @@ export async function addPublicComment(_prev: ActionState, fd: FormData): Promis
   if (!PUBLIC_KINDS.has(kind)) return { error: "Vyberte typ připomínky." };
   if (body.length < 10) return { error: "Napište připomínku (aspoň deset znaků)." };
 
-  const [version] = await db.select({ id: schema.documentVersions.id, documentId: schema.documentVersions.documentId }).from(schema.documentVersions).where(eq(schema.documentVersions.id, versionId));
+  const [version] = await db.select({ id: schema.documentVersions.id, documentId: schema.documentVersions.documentId, label: schema.documentVersions.label }).from(schema.documentVersions).where(eq(schema.documentVersions.id, versionId));
   if (!version || version.documentId !== documentId) return { error: "Verze dokumentu neodpovídá. Obnovte prosím stránku." };
 
   const codes = [...new Set([...body.matchAll(CODE_RE)].map((m) => m[1]))];
@@ -194,6 +195,15 @@ export async function addPublicComment(_prev: ActionState, fd: FormData): Promis
     })
     .returning({ id: schema.comments.id });
   await db.insert(schema.events).values({ entity: "comment", entityId: row.id, action: "created", actor: `verejnost: ${name}`, payload: { blockKey, kind, channel: "verejnost" } });
+
+  // Potvrzení e-mailem; když selže, připomínka zůstává uložená.
+  const site = process.env.NEXT_PUBLIC_SITE_URL ?? "https://web-b5qk.vercel.app";
+  const studyUrl = blockKey === "obecne" ? `${site}/studie` : `${site}/studie#${encodeURIComponent(blockKey)}`;
+  const mail = commentConfirmation({ name, id: row.id, body, quote: quote || null, studyUrl, versionLabel: version.label });
+  const sent = await sendMail({ to: email, ...mail });
+  if (sent) await db.insert(schema.events).values({ entity: "comment", entityId: row.id, action: "confirmation_sent", actor: "system", payload: { to: email } });
+  const notify = process.env.COMMENT_NOTIFY_TO;
+  if (notify) await sendMail({ to: notify, subject: `Nová veřejná připomínka č. ${row.id}`, text: `${name}${organization ? ` (${organization})` : ""}, ${email}\n\n${quote ? `K místu: „${quote}“\n\n` : ""}${body}\n\n${site}/pripominky?channel=verejnost` });
 
   revalidatePath("/pripominky");
   revalidatePath("/rt");

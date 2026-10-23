@@ -6,6 +6,7 @@ import { Button, Callout, Container, Eyebrow, NextStep, PageHero, TextLink } fro
 import { StudyReader } from "./study-reader";
 import { PublicComments } from "@/components/web/public-comments";
 import { PublicCommentForm } from "@/components/web/public-comment-form";
+import { StudySearch } from "@/components/web/study-search";
 
 // Veřejná čtečka odborné studie s připomínkami bez přihlášení (jméno a e-mail). Text se načítá z databáze
 // při každém požadavku, takže build nepotřebuje DATABASE_URL a nová verze studie se
@@ -52,7 +53,7 @@ export default async function StudiePage() {
       <PageHero
         eyebrow="Odborná studie"
         title={doc.title}
-        lead="Plné znění odborné studie ke čtení. Místa označená „Ověřujeme“ jsou údaje, které autoři zatím neověřili v primárním zdroji. Komentovat může každý: u odstavce klikněte na „Připomínka“, obecnou připomínku napište dole. Stačí jakékoli jméno a e-mail, nic z toho nezveřejňujeme."
+        lead="Plné znění odborné studie ke čtení. Místa označená „Ověřujeme“ jsou údaje, které autoři zatím neověřili v primárním zdroji. Komentovat může každý: najděte svou část hledáním, u odstavce klikněte na „Připomínka“, obecnou připomínku napište dole. Stačí jakékoli jméno a e-mail, nic z toho nezveřejňujeme."
         aside={
           <div className="flex flex-col gap-5">
             <dl className="grid grid-cols-[auto_1fr] gap-x-5 gap-y-2 text-[17px]">
@@ -66,6 +67,9 @@ export default async function StudiePage() {
               <dd className="text-ink">{blocks.length} odstavců, tabulek a odrážek</dd>
             </dl>
             <div className="study-actions flex flex-wrap gap-3">
+              <Button href="#studie-text" variant="secondary">
+                Hledat ve studii
+              </Button>
               <Button href="#pripominka" variant="secondary">
                 Napsat připomínku
               </Button>
@@ -78,8 +82,9 @@ export default async function StudiePage() {
       />
 
       <StudyReader outline={<Outline headings={headings} slug="studie" counts={empty} current={null} basePath="" />} headingKeys={headings.map((h) => h.blockKey)}>
+        <StudySearch scope="#studie-text" />
         <PublicComments documentId={doc.id} versionId={version.id}>
-          <article className="prose-block study-text max-w-[70ch] text-[19px] leading-[1.6] text-ink">
+          <article id="studie-text" className="prose-block study-text max-w-[70ch] text-[19px] leading-[1.6] text-ink">
             {blocks.map((b) => (
               <BlockView key={b.blockKey} block={b} slug="studie" selected={false} query={{ kod: null, s: null }} readOnly commentable />
             ))}

@@ -154,6 +154,9 @@ body {
   background: #f6e9c8;
   box-shadow: inset 3px 0 0 #6b4a00;
 }
+.block-row[data-search-hit="true"] {
+  box-shadow: inset 3px 0 0 var(--forest);
+}
 
 table.doc-table {
   border-collapse: collapse;
