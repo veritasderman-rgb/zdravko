@@ -6,7 +6,7 @@ import { CODE_RE } from "./codes";
  * Minimalistické vykreslení inline markdownu (tučné, kurzíva, kód, odkazy)
  * a zvýraznění kódů opatření (J1, H5…) jako odkazů do registru.
  */
-export function renderInline(src: string, opts: { linkCodes?: boolean } = {}): ReactNode[] {
+export function renderInline(src: string, opts: { linkCodes?: boolean; codeHref?: (code: string) => string | null } = {}): ReactNode[] {
   const out: ReactNode[] = [];
   const re = /(\*\*([^*]+)\*\*)|(\*([^*]+)\*)|(`([^`]+)`)|(\[([^\]]+)\]\(([^)]+)\))/g;
   let last = 0;
@@ -22,10 +22,15 @@ export function renderInline(src: string, opts: { linkCodes?: boolean } = {}): R
     for (const c of t.matchAll(CODE_RE)) {
       const i = c.index ?? 0;
       if (i > l) out.push(t.slice(l, i));
+      const href = opts.codeHref ? opts.codeHref(c[1]) : `/kody/${c[1]}`;
       out.push(
-        <Link key={`c${k++}`} href={`/kody/${c[1]}`} className="code-ref">
-          {c[1]}
-        </Link>,
+        href ? (
+          <Link key={`c${k++}`} href={href} className="code-ref">
+            {c[1]}
+          </Link>
+        ) : (
+          <span key={`c${k++}`} className="code-ref">{c[1]}</span>
+        ),
       );
       l = i + c[0].length;
     }

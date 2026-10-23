@@ -1,22 +1,25 @@
 /**
- * Obsah veřejného webu. Všechna čísla pocházejí ze studie „Zdraví blíž lidem“ v3
- * (20. 10. 2026), z politické verze 3 a z prezentace „Co chceme a proč“.
- * Částky jsou v mld. Kč ročně, ceny 2026, pokud není uvedeno jinak.
+ * Obsah veřejného webu. Čísla pocházejí ze studie „Zdraví blíž lidem“ v3 (20. 10. 2026),
+ * z politické verze 3 a z prezentace „Co chceme a proč“. Částky jsou v mld. Kč ročně,
+ * ceny roku 2026, pokud není uvedeno jinak.
+ *
+ * Jazyk: píšeme „my“ (navrhovatelé), krátké věty, odborné pojmy vysvětlujeme při prvním
+ * použití a ve slovníčku (GLOSSARY).
  */
 
 export const META = {
   title: "Zdraví blíž lidem",
-  subtitle: "Plán reformy zdravotnictví · konzultační verze 3 · 20. 10. 2026",
+  subtitle: "Plán reformy zdravotnictví · verze 3 ke konzultaci · 20. 10. 2026",
   author: "Josef Pavlovic, resortní tým Zdravotnictví",
   claim: "Představujeme plán a hledáme pro něj podporu.",
   deadline: "31. 3. 2027",
 };
 
 export const KEY_NUMBERS = [
-  { value: "21,5 mld. Kč", label: "čistý roční náklad v plném náběhu kolem roku 2038", note: "rozpětí 15 až 25 mld. Kč, necelá 4 % dnešních výdajů pojištění" },
-  { value: "520 týmů", label: "sdružené péče a asi 4 000 sester navíc", note: "každý tým pro 10 až 25 tisíc lidí" },
-  { value: "8 000 lůžek", label: "přeměněných z akutní na následnou péči do roku 2038", note: "ze 48 036 na asi 40 000, nic se neruší bez náhrady" },
-  { value: "5 mld. Kč", label: "ročně z daní za zdraví", note: "2 mld. Kč prevence, 3 mld. Kč platba státu do pojištění" },
+  { value: "21,5 mld. Kč", label: "ročně navíc, až reforma poběží naplno (kolem roku 2038)", note: "odhad 15 až 25 mld. Kč; necelá 4 % toho, co dnes stojí zdravotní pojištění" },
+  { value: "520 týmů", label: "lékařů a sester blízko domova, s asi 4 000 sestrami navíc", note: "jeden tým pro 10 až 25 tisíc lidí" },
+  { value: "8 000 lůžek", label: "v nemocnicích změní účel: z akutních na lůžka pro doléčení a rehabilitaci", note: "ze 48 036 na asi 40 000; nic nerušíme dřív, než je náhrada" },
+  { value: "5 mld. Kč", label: "ročně z daní na tiché víno a slazené nápoje", note: "2 mld. Kč na prevenci, 3 mld. Kč do zdravotního pojištění" },
 ];
 
 // ---------------------------------------------------------------------------
@@ -24,10 +27,10 @@ export const KEY_NUMBERS = [
 // ---------------------------------------------------------------------------
 
 export const SPENDING_SHARE = {
-  title: "Akutní lůžka čerpají téměř sedmkrát víc peněz než praktici pro dospělé",
-  source: "ÚZIS, úhrady zdravotního pojištění 2024",
+  title: "Na akutní lůžka jde téměř sedmkrát víc peněz než na praktické lékaře pro dospělé",
+  source: "ÚZIS, platby zdravotních pojišťoven za rok 2024, podíl v procentech",
   rows: [
-    { label: "Akutní lůžková péče", value: 29.7, highlight: true },
+    { label: "Akutní lůžka v nemocnicích", value: 29.7, highlight: true },
     { label: "Ambulantní specialisté", value: 20.3 },
     { label: "Všichni praktici (dospělí i děti)", value: 6.4 },
     { label: "Praktici pro dospělé", value: 4.3, highlight: true },
@@ -35,8 +38,8 @@ export const SPENDING_SHARE = {
 };
 
 export const GP_DECLINE = {
-  title: "Praktiků pro dospělé ubývá: v roce 2035 jich bude 3 900 až 4 500 místo 5 500",
-  source: "ÚZIS; úbytek 110 až 180 ročně, 43,6 % praktiků je starších 60 let",
+  title: "Praktických lékařů pro dospělé ubývá: v roce 2035 jich bude 3 900 až 4 500 místo dnešních 5 500",
+  source: "ÚZIS; ročně ubude 110 až 180 lékařů, téměř polovina (43,6 %) je starší 60 let",
   points: Array.from({ length: 10 }, (_, i) => {
     const year = 2026 + i;
     return { year, low: 5500 - 180 * i, high: 5500 - 110 * i };
@@ -44,29 +47,29 @@ export const GP_DECLINE = {
 };
 
 export const BEDS = {
-  title: "Akutní lůžka jsou obsazená z 56 %, lůžka následné péče z 85 %",
-  source: "ÚZIS 2024; v osmi krajích je následná péče nad 85 %",
+  title: "Akutní lůžka jsou obsazená z 56 %, lůžka pro doléčení z 85 %",
+  source: "ÚZIS 2024. V osmi krajích je následná péče obsazená nad 85 %, tedy prakticky plná",
   rows: [
     { label: "Akutní lůžka (48 036)", value: 56 },
-    { label: "Lůžka následné péče", value: 85 },
+    { label: "Lůžka následné péče (doléčení, rehabilitace)", value: 85 },
   ],
   threshold: 85,
 };
 
 export const AVOIDABLE = {
-  title: "Odvratitelných hospitalizací máme o 25 % víc než průměr OECD",
+  title: "Zbytečných hospitalizací máme o čtvrtinu víc než průměr vyspělých zemí",
   source: "OECD Health at a Glance; hospitalizace na 100 000 obyvatel, kterým by předešla dobrá péče mimo nemocnici",
   rows: [
     { label: "Česko dnes", value: 592, highlight: true },
-    { label: "Cíl 2033", value: 550 },
-    { label: "Cíl kolem 2038", value: 530 },
-    { label: "Průměr OECD", value: 473 },
+    { label: "Náš cíl pro rok 2033", value: 550 },
+    { label: "Náš cíl kolem roku 2038", value: 530 },
+    { label: "Průměr zemí OECD", value: 473 },
   ],
 };
 
 export const GAP = {
-  title: "Při dnešních pravidlech bude pojištění chybět 60 až 104 mld. Kč ročně",
-  source: "Národní rozpočtová rada, září 2026, tab. D.1; ceny 2026. Reforma mezeru nezpůsobuje ani nezavírá.",
+  title: "Zdravotnímu pojištění bude chybět 60 až 104 miliard ročně, i kdyby se nic neměnilo",
+  source: "Národní rozpočtová rada, září 2026; ceny roku 2026. Reforma tuto díru nezpůsobuje ani nezaceluje.",
   rows: [
     { year: "2035", gap: 59.7, reform: 16.9 },
     { year: "2038", gap: 70.0, reform: 21.5 },
@@ -76,28 +79,28 @@ export const GAP = {
 
 export const NURSES = {
   title: "Sester chybí už dnes: do roku 2037 je třeba nahradit přes 30 000 úvazků",
-  source: "Studie v3, Část V; vysoké školy dodají asi 1 300 absolventek ročně",
+  source: "Studie v3, Část V. Vysoké školy vychovají asi 1 300 sester ročně",
   rows: [
-    { label: "Náhrada odchodů, ročně", value: 2500 },
-    { label: "Absolventky VŠ, ročně", value: 1300 },
-    { label: "Reforma navíc, průměr ročně", value: 440, highlight: true },
+    { label: "Kolik sester ročně odchází a je třeba nahradit", value: 2500 },
+    { label: "Kolik jich ročně vystuduje", value: 1300 },
+    { label: "Kolik navíc ročně potřebuje reforma (průměr)", value: 440, highlight: true },
   ],
 };
 
 export const PREVENTION_FACTS = [
-  { value: "10,6 l", label: "čistého alkoholu na osobu 15+ ročně (OECD 8,4 l)" },
-  { value: "+43 %", label: "úmrtí na chronické nemoci jater proti průměru EU" },
-  { value: "31 %", label: "lidí chodí na screening tlustého střeva (OECD 42 %)" },
-  { value: "25 %", label: "seniorů je očkováno proti chřipce" },
-  { value: "60 %", label: "žen chodí na mamografii, víc než průměr OECD: kde systém zve, prevence funguje" },
-  { value: "0 Kč", label: "daň z tichého vína a ze slazených nápojů" },
+  { value: "10,6 litru", label: "čistého alkoholu vypije průměrný Čech starší 15 let za rok. Průměr vyspělých zemí je 8,4 litru." },
+  { value: "+43 %", label: "víc úmrtí na nemoci jater než v průměru Evropské unie." },
+  { value: "31 %", label: "lidí chodí na vyšetření tlustého střeva, které včas odhalí rakovinu. Ve vyspělých zemích 42 %." },
+  { value: "25 %", label: "seniorů je očkováno proti chřipce." },
+  { value: "60 %", label: "žen chodí na mamografii, víc než ve většině vyspělých zemí. Kam systém lidi aktivně zve, tam prevence funguje." },
+  { value: "0 Kč", label: "je dnes daň z tichého vína i ze slazených nápojů." },
 ];
 
 export const PROBLEM_FACTS = [
-  { value: "14,9 mld. Kč", label: "plánovaný schodek pojišťoven na rok 2026; zůstatek fondů klesl ze 69,9 na 43,2 mld. Kč" },
-  { value: "182 tisíc", label: "dětí nemělo v roce 2022 dětského praktika" },
-  { value: "428 : 291", label: "míst praktiků zaniklo proti vzniklým v obcích do 2 000 obyvatel (2018 až 2022)" },
-  { value: "5 914 : 22", label: "akutních lůžek ubylo proti přibylým následným v letech 2010 až 2013. Přesně to se nesmí opakovat" },
+  { value: "14,9 mld. Kč", label: "schodek plánují pojišťovny na rok 2026. Jejich rezervy klesly ze 69,9 na 43,2 mld. Kč." },
+  { value: "182 tisíc", label: "dětí nemělo v roce 2022 svého dětského lékaře." },
+  { value: "428 : 291", label: "v malých obcích do 2 000 obyvatel zaniklo za čtyři roky 428 ordinací praktiků a jen 291 vzniklo." },
+  { value: "5 914 : 22", label: "v letech 2010 až 2013 ubylo 5 914 akutních lůžek a přibylo jen 22 lůžek pro doléčení. Přesně tohle se nesmí opakovat." },
 ];
 
 // ---------------------------------------------------------------------------
@@ -107,71 +110,71 @@ export const PROBLEM_FACTS = [
 export const FIVE_CHANGES = [
   {
     n: 1,
-    title: "Svůj lékař a sestra blízko domova",
-    what: "Praktici se dobrovolně spojí do týmů sdružené péče pro 10 až 25 tisíc lidí: víc sester, nutriční terapeut, fyzioterapeut, psycholog, návštěvní služba a senior taxi. Tým dostane pětiletou smlouvu místo ročního bonusu a platí se za funkce, ne za formu. Praktik smí víc: předepisovat léky, kvůli kterým dnes posílá ke specialistovi, a dělat ultrazvuk v ordinaci.",
-    brings: "Lékař i pro ty, kdo ho dnes nemají; péče o chroniky, která nečeká na zhoršení; každý pacient má jmenovitého lékaře a svou sestru i v týmu.",
-    when: "pilot ve třech ORP 2028 až 2029; zákon o primární péči účinný 1. 1. 2032; asi 520 týmů a 4 000 sester navíc kolem roku 2038",
+    title: "Svůj lékař a svoje sestra blízko domova",
+    what: "Praktici se mohou dobrovolně spojit do týmu, který se stará o 10 až 25 tisíc lidí v okolí. V týmu je víc sester, k tomu nutriční terapeut, fyzioterapeut a psycholog, sestra jezdí za pacienty domů a obec zajistí odvoz k lékaři (senior taxi). Tým dostane od pojišťovny smlouvu na pět let, ne jen roční bonus, a platí se za to, co tým skutečně zajišťuje. Praktik bude smět víc než dnes: předepsat léky, kvůli kterým dnes posílá pacienta ke specialistovi, a udělat ultrazvuk přímo v ordinaci.",
+    brings: "Lékaře i pro lidi, kteří ho dnes nemají. Péči o dlouhodobě nemocné, která nečeká, až se stav zhorší. A každý má v týmu svého jmenovitého lékaře a svou sestru, kteří ho znají.",
+    when: "zkouška ve třech regionech 2028 a 2029 · zákon o primární péči platí od 1. 1. 2032 · asi 520 týmů a 4 000 sester navíc kolem roku 2038",
     codes: ["J1", "J2", "J3"],
   },
   {
     n: 2,
-    title: "Ke specialistovi podle naléhavosti",
-    what: "Lékař vyplní v elektronické žádance naléhavost: do 2 týdnů, do 6 týdnů, plánované. Pojišťovna garantuje termín podle kategorie. Přímý přístup bez žádanky zůstává; sankce nikdy nedopadá na pacienta.",
-    brings: "Poprvé bude vidět, kdo a jak dlouho čeká; nemocnější jde dřív, ne ten, kdo dřív zavolá.",
-    when: "pozměňovací návrh k vládní novele eŽádanky 2027 až 2028; zákonná garance termínu od 1. 1. 2032",
+    title: "Ke specialistovi podle toho, jak to spěchá",
+    what: "Lékař v elektronické žádance zaškrtne, jak je vyšetření naléhavé: do 2 týdnů, do 6 týdnů, nebo plánované. Pojišťovna pak ručí za to, že pacient termín v této lhůtě dostane. Kdo chce jít ke specialistovi bez žádanky, může dál. Když lhůtu někdo nedodrží, nikdy to neodnese pacient.",
+    brings: "Poprvé bude vidět, kdo a jak dlouho čeká. Dřív se dostane na řadu ten, kdo to víc potřebuje, ne ten, kdo dřív zavolal.",
+    when: "pozměňovací návrh k vládní novele o eŽádance 2027 až 2028 · zákonná záruka termínu od 1. 1. 2032",
     codes: ["J5"],
   },
   {
     n: 3,
-    title: "Nemocnice, která se přeměňuje, ne ruší",
-    what: "Zákon o síti lůžkové péče: každý kraj má desetiletý plán. Akutní lůžko se přemění na následnou, rehabilitační nebo paliativní péči až tehdy, když kraj prokáže, že pacient má kam jít a záchranka dojede včas. Fond přeměny dorovná nemocnici příjem po dobu změny.",
-    brings: "Okresní nemocnice dostane stabilní roli blízko domova: doléčení, rehabilitace, jednodenní chirurgie, ambulance; zákrok se dělá tam, kde ho dělají často a dobře.",
-    when: "zákon předložen 2031, přijat 2032, účinný nejpozději 1. 1. 2033; první krajské plány 2033; 8 000 přeměněných lůžek do roku 2038",
+    title: "Nemocnice se mění, neruší",
+    what: "Každý kraj dostane podle nového zákona desetiletý plán své sítě nemocnic. Akutní lůžko se změní na lůžko pro doléčení, rehabilitaci nebo péči na konci života jen tehdy, když kraj doloží, že pacienti mají kam jít a že záchranka dojede včas. Nemocnici, která plán plní, dorovná fond přeměny po dobu změny příjem.",
+    brings: "Okresní nemocnice dostane jistou roli blízko domova: doléčení, rehabilitaci, jednodenní chirurgii a ambulance. Náročný zákrok se udělá tam, kde ho dělají často a dobře.",
+    when: "zákon předložen 2031, přijat 2032, platí nejpozději od 1. 1. 2033 · první krajské plány 2033 · 8 000 změněných lůžek do roku 2038",
     codes: ["J6", "J7"],
   },
   {
     n: 4,
-    title: "Prevence a daně za zdraví",
-    what: "Tiché víno zdaníme jako šumivé (23,40 Kč na litr, malí vinaři polovinu), zavedeme pásmovou daň ze slazených nápojů po britském vzoru a automatickou valorizaci daní z lihu a piva. Výnos 5 mld. Kč ročně: 2 mld. Kč dostane Národní fond prevence, zbytek zvýší platbu státu do zdravotního pojištění.",
-    brings: "Méně cukru v nápojích dřív, než daň začne platit; sestra, která zavolá po pozitivním testu; očkování v lékárně; stálý zdroj prevence.",
-    when: "valorizace a víno od 1. 1. 2031 (plná sazba vína 2033); daň ze slazených nápojů přijata 2030, účinná 1. 1. 2032",
+    title: "Prevence, která má stálé peníze",
+    what: "Tiché víno zdaníme stejně jako šumivé (23,40 Kč na litr, malí vinaři polovinu), zavedeme daň ze slazených nápojů podle množství cukru po britském vzoru a daň z lihu a piva se bude každý rok zvyšovat s inflací. Dohromady to přinese 5 mld. Kč ročně: 2 mld. Kč půjdou do Národního fondu prevence, zbytek do zdravotního pojištění.",
+    brings: "Výrobci sníží cukr v nápojích dřív, než daň začne platit. Sestra zavolá, když vyjde pozitivní test. Očkovat bude moci i lékárna. Prevence přestane záviset na tom, co zbude.",
+    when: "víno a valorizace od 1. 1. 2031 (víno zprvu poloviční sazbou, plná od 2033) · daň ze slazených nápojů přijata 2030, platí od 1. 1. 2032",
     codes: ["J8", "J9", "P4"],
   },
   {
     n: 5,
-    title: "Důstojné stárnutí a závěr života doma",
-    what: "Návštěvní služba týmu za křehkými seniory, domácí péče s delší indikací, mobilní paliativní tým v každém okrese, hrazený rozhovor o plánu péče, jednodušší dříve vyslovené přání. Dlouhodobá péče dostane vlastní, veřejně sledovaný účet.",
-    brings: "Doma místo chodby urgentu; rodina, která ví, komu zavolat; domov je možnost, ne povinnost.",
-    when: "dříve vyslovené přání jako poslanecký návrh 2028 až 2029; indikace domácí péče sestrou od 1. 1. 2032; paliativní týmy 2031 až 2034",
+    title: "Stáří a konec života doma, ne na chodbě urgentu",
+    what: "Sestra z týmu jezdí za křehkými seniory domů. Domácí péči půjde předepsat na delší dobu. V každém okrese bude mobilní tým paliativní péče, který se stará o lidi na konci života u nich doma. Pojišťovna zaplatí lékaři rozhovor o tom, jakou péči si člověk přeje, a sepsat „dříve vyslovené přání“ bude jednodušší. Dlouhodobá péče dostane vlastní veřejně sledovaný účet.",
+    brings: "Doma místo chodby urgentního příjmu. Rodina, která ví, komu zavolat. Domov jako možnost, ne povinnost.",
+    when: "dříve vyslovené přání jako poslanecký návrh 2028 až 2029 · domácí péče předepsaná sestrou od 1. 1. 2032 · paliativní týmy 2031 až 2034",
     codes: ["J4", "P3"],
   },
 ];
 
 export const PATIENT_JOURNEY = [
-  { step: "Hledám praktika", today: "Obvolávám ordinace; kolik lidí praktika nemá, nikdo neměří.", after: "Tým odpovídá za své spádové území a přijímá nové pacienty. Komu pojišťovna do 30 dnů nezařídí registraci, tomu zajistí vyšetření lékařem nebo sestrou smluvního týmu. Počet lidí bez praktika se zveřejňuje čtvrtletně po ORP." },
-  { step: "Mám svou dvojici", today: "Jeden lékař a jedna sestra; když lékař onemocní, ordinace zavře.", after: "Jmenovitý ošetřující lékař a sestra, kteří mě znají, i v týmu; zástup je výjimka, ne pravidlo. Kontinuitu měří index UPC a platí se za ni." },
-  { step: "Jsem chronik", today: "Kontrola jednou za půl roku; kvůli receptu s omezením musím ke specialistovi.", after: "Sestra mě zve na kontrolu podle protokolu, nutriční terapeut se mnou sestaví plán, který zvládnu; praktik smí léčbu zahájit a upravit sám. U srdečního selhání hlídá váhu a tlak doma dálkové sledování, upozornění třídí sestra, ne stroj." },
-  { step: "Potřebuji specialistu", today: "Objednávám se sám; dřív jde ten, kdo dřív zavolá; čekací doby nikdo neměří.", after: "Lékař vyplní v eŽádance naléhavost (do 2 týdnů, do 6 týdnů, plánované) a objedná mě přímo. Pojišťovna garantuje termín podle kategorie. Bez žádanky mohu jít dál; ke gynekologovi, očnímu, zubaři, psychiatrovi a do onkologie bez doporučení jako dnes." },
-  { step: "Musím do nemocnice", today: "Zákrok i doléčení v nejbližší nemocnici, ať ho tam dělají dvacetkrát, nebo dvakrát ročně.", after: "Náročný zákrok v centru, které ho dělá často; doléčení a rehabilitace v nemocnici blízko domova, kam za mnou může rodina. Urgentní příjem do 30 minut jízdy pro 95 % obyvatel kraje je podmínkou každého plánu sítě." },
-  { step: "Nedojdu k lékaři", today: "Záchranka a chodba urgentu, nebo nic.", after: "Lékař nebo sestra týmu přijedou; senior taxi objednává obec a sladí odvoz s termínem vyšetření." },
-  { step: "Po propuštění z nemocnice", today: "Domácí péči indikuje praktik na tři měsíce, jiný lékař na 14 dnů; plán nikdo nekoordinuje.", after: "Domácí péče s delší indikací, i sestrou se specializací; koordinátor péče v týmu; jedno šetření pro příspěvek na péči i plán péče." },
-  { step: "Závěr života", today: "Rozhovor o přáních nikdo nehradí; dříve vyslovené přání je těžké platně vyslovit a nikdo ho nenajde.", after: "Hrazený rozhovor o plánu péče; plán vidí i záchranka; mobilní paliativní tým v okrese; dříve vyslovené přání bez úředně ověřeného podpisu, v registru. Domov je možnost, ne povinnost." },
-  { step: "Platím", today: "Doplatky na léky a zubař způsobují katastrofické výdaje u 21 % nejchudší pětiny domácností.", after: "Nic nového u lékaře neplatím: žádné poplatky, žádné příplatky za pořadí. Podíl domácností s katastrofickými výdaji se nesmí zhoršit a hlídáme ho jako hlavní ukazatel." },
+  { step: "Hledám praktika", today: "Obvolávám ordinace. Kolik lidí nemá lékaře, nikdo neměří.", after: "Tým odpovídá za lidi ve svém okolí a nové pacienty přijímá. Komu pojišťovna do 30 dnů nezajistí registraci, tomu zajistí vyšetření u lékaře nebo sestry smluvního týmu. Počet lidí bez lékaře se zveřejňuje každé čtvrtletí za každý region." },
+  { step: "Mám svou dvojici", today: "Jeden lékař a jedna sestra. Když lékař onemocní, ordinace zavře.", after: "Mám svého jmenovitého lékaře a svou sestru, kteří mě znají, i když pracují v týmu. Zástup je výjimka, ne pravidlo. Pojišťovna měří, jak často se pacient dostane ke svému lékaři, a platí za to." },
+  { step: "Jsem dlouhodobě nemocný", today: "Kontrola jednou za půl roku. Kvůli receptu s omezením musím ke specialistovi.", after: "Sestra mě zve na kontroly podle plánu, nutriční terapeut se mnou sestaví jídelníček, který zvládnu. Praktik smí léčbu zahájit a upravit sám. U srdečního selhání hlídá váhu a tlak přístroj u mě doma a upozornění vyhodnocuje sestra, ne stroj." },
+  { step: "Potřebuji specialistu", today: "Objednávám se sám. Dřív jde ten, kdo dřív zavolá. Čekací doby nikdo neměří.", after: "Lékař v žádance zaškrtne, jak to spěchá (do 2 týdnů, do 6 týdnů, plánované), a objedná mě přímo. Pojišťovna ručí za termín. Bez žádanky mohu jít dál. Ke gynekologovi, očnímu, zubaři, psychiatrovi a do onkologie bez doporučení jako dnes." },
+  { step: "Musím do nemocnice", today: "Zákrok i doléčení v nejbližší nemocnici, ať ho tam dělají dvacetkrát, nebo dvakrát ročně.", after: "Náročný zákrok v nemocnici, která ho dělá často. Doléčení a rehabilitace blízko domova, kam za mnou může rodina. Každý plán sítě musí zaručit, že 95 % obyvatel kraje má urgentní příjem do 30 minut jízdy." },
+  { step: "Nedojdu k lékaři", today: "Záchranka a chodba urgentu, nebo nic.", after: "Lékař nebo sestra z týmu přijedou. Odvoz k lékaři (senior taxi) objedná obec a sladí ho s termínem vyšetření." },
+  { step: "Vracím se z nemocnice", today: "Domácí péči předepíše praktik na tři měsíce, jiný lékař jen na 14 dnů. Plán nikdo nekoordinuje.", after: "Domácí péče na delší dobu, může ji předepsat i sestra se specializací. V týmu je koordinátor péče. Jedno šetření stačí pro příspěvek na péči i pro plán péče." },
+  { step: "Konec života", today: "Rozhovor o přáních nikdo nehradí. Dříve vyslovené přání je těžké platně sepsat a nikdo ho nenajde.", after: "Pojišťovna hradí rozhovor o plánu péče. Plán vidí i záchranka. V okrese je mobilní paliativní tým. Dříve vyslovené přání bez úředně ověřeného podpisu, uložené v registru. Domov je možnost, ne povinnost." },
+  { step: "Platím", today: "Doplatky za léky a zubaře dnes pětinu nejchudších domácností finančně ničí.", after: "U lékaře nic nového neplatím: žádné poplatky, žádné příplatky za pořadí. Hlídáme, aby domácností, které zdravotní výdaje finančně ničí, nepřibývalo." },
 ];
 
 export const NOT_DOING = [
-  { title: "Nezavádí poplatky", text: "Žádné regulační poplatky ani příplatky za kratší čekání. Katastrofické výdaje domácností se nesmí zhoršit." },
-  { title: "Neruší dětské praktiky", text: "Dětské týmy zůstávají. Kde dětský praktik chybí, může se dítě registrovat u praktika pro dospělé v týmu." },
-  { title: "Neruší nemocnice", text: "Mění účel části akutních lůžek. Žádné lůžko se nepřemění, dokud kraj neprokáže kapacitu následné péče a dojezd záchranky." },
-  { title: "Neprivatizuje", text: "Praktici zůstávají soukromí a hodnotu praxe neztratí; budovy center vlastní obec nebo kraj. Pojišťovny ani nemocnice se neprodávají." },
-  { title: "Nikoho nenutí", text: "Vstup praktika do týmu je dobrovolný; kdo nevstoupí, zůstává u dnešní úhrady, ne u nižší. Povinné doporučení ke specialistovi nezavádíme." },
-  { title: "Nesnižuje odvody z práce", text: "Daně za zdraví jdou do prevence a do platby státu. Neslibujeme víc než 5 mld. Kč ročně." },
+  { title: "Žádné nové poplatky u lékaře", text: "Nezavádíme regulační poplatky ani příplatky za to, že se někdo dostane na řadu dřív. Hlídáme, aby lidé neplatili ze své kapsy víc než dnes." },
+  { title: "Dětští lékaři zůstávají", text: "Nerušíme praktické lékaře pro děti a dorost. Děti budou mít svoje dětské týmy. Jen tam, kde dětský lékař chybí, bude moci dítě zaregistrovat praktik pro dospělé, který pracuje v týmu." },
+  { title: "Nemocnice nerušíme, měníme jejich roli", text: "Část akutních lůžek se změní na lůžka pro doléčení, rehabilitaci a péči na konci života. Žádné lůžko se nezmění dřív, než kraj doloží, že pacienti mají kam jít a že záchranka dojede včas." },
+  { title: "Nic neprodáváme", text: "Nemocnice ani pojišťovny se neprivatizují. Praktici zůstávají soukromými lékaři a o hodnotu své ordinace nepřijdou. Budovy zdravotních center budou patřit obci nebo kraji." },
+  { title: "Nikoho nenutíme", text: "Praktik se do týmu zapojí jen dobrovolně. Kdo zůstane sám, dostane od pojišťovny stejně jako dnes, ne méně. Ke specialistovi může každý dál i bez doporučení." },
+  { title: "Daně za zdraví nejsou úleva z práce", text: "Výnos z daní na víno a slazené nápoje jde na prevenci a do zdravotního pojištění. Odvody z mezd se nemění. Slibujeme jen 5 mld. Kč ročně, ne víc." },
 ];
 
 export const HONEST_CHANGES = [
-  "Ordinace ve vsi po odchodu lékaře nevznikne; nahradí ji služba týmu, detašované pracoviště jeden nebo dva dny v týdnu a senior taxi.",
-  "K některým náročným zákrokům se pojede dál.",
-  "Tiché víno zdraží o 23,40 Kč na litr a slazené nápoje nad hranicí cukru asi o 6 až 8 Kč na litr, pokud je výrobce neodsladí.",
+  "Když z malé obce odejde lékař, nová ordinace tam nejspíš nevznikne. Nahradí ji tým z okolí: sestra, která přijede, ordinace otevřená jeden nebo dva dny v týdnu a odvoz k lékaři.",
+  "Za některými náročnými zákroky se pojede dál než dnes.",
+  "Tiché víno zdraží o 23,40 Kč na litr. Slazené nápoje s hodně cukru zdraží asi o 6 až 8 Kč na litr, pokud výrobce cukr nesníží.",
 ];
 
 // ---------------------------------------------------------------------------
@@ -179,76 +182,76 @@ export const HONEST_CHANGES = [
 // ---------------------------------------------------------------------------
 
 export const PHASES = [
-  { id: "F0", name: "Konzultace", from: 2026.85, to: 2028.5, text: "Kulaté stoly, memoranda o podpoře, pozměňovací návrhy k vládním předlohám, dohoda o pilotu." },
-  { id: "F1", name: "Příprava vládnutí", from: 2028.5, to: 2030, text: "Věcné záměry zákonů, volební program, běžící pilot." },
-  { id: "F2", name: "První roky ve vládě", from: 2030, to: 2032, text: "Předložení zákonů; peníze a daně účinné od 1. 1. 2031." },
-  { id: "F3", name: "Náběh", from: 2032, to: 2034, text: "Zákon o primární péči, zákon o síti, první krajské plány." },
-  { id: "F4", name: "Přeměna a ukotvení", from: 2034, to: 2039, text: "Náběh týmů na 520, přeměna 8 000 lůžek, nezávislé hodnocení." },
+  { id: "F0", name: "Konzultace", from: 2026.85, to: 2028.5, text: "Kulaté stoly s odborníky, dohody o podpoře, návrhy ke vládním zákonům, dohoda o zkoušce ve třech regionech." },
+  { id: "F1", name: "Příprava", from: 2028.5, to: 2030, text: "Hotové podklady zákonů, volební program, běžící zkouška." },
+  { id: "F2", name: "První roky vlády", from: 2030, to: 2032, text: "Předložení zákonů. Peníze a daně platí od 1. 1. 2031." },
+  { id: "F3", name: "Rozjezd", from: 2032, to: 2034, text: "Zákon o primární péči, zákon o síti nemocnic, první krajské plány." },
+  { id: "F4", name: "Přeměna", from: 2034, to: 2039, text: "Týmů přibývá na 520, 8 000 lůžek mění účel, nezávislé hodnocení." },
 ];
 
 export const GATES = [
-  { id: "B1", name: "Mandát", at: 2028.45, when: "červen 2028", must: "Připomínky vypořádané a zveřejněné; jádro podporuje aspoň 6 z 10 klíčových subjektů; pilot podepsán; strana přijala jedno číslo daní za zdraví.", ifNot: "Volební program nese jen části, které podporu mají; místo pilotu náhradní smluvní model u jedné pojišťovny." },
-  { id: "B2", name: "Koaliční smlouva", at: 2030, when: "prosinec 2029 až leden 2030", must: "Jádro v koaliční smlouvě a programovém prohlášení; předlohy v legislativním plánu vlády 2030.", ifNot: "Do plánu jde jen dohodnuté jádro; zbytek zůstává programem pro další období." },
-  { id: "B3", name: "Lidé a data", at: 2032, when: "prosinec 2031", must: "Obsazena aspoň polovina míst sester v týmech první vlny; zákon o primární péči schválen; krajské plány rozpracované.", ifNot: "Varianta B: týmy bez center. Vše, co na centrech nezávisí, běží dál." },
-  { id: "B4", name: "Nezávislé hodnocení", at: 2033.5, when: "2033, před volbami", must: "Zpráva nezávislého hodnotitele (ÚZIS s univerzitou) nad osmi hlavními ukazateli.", ifNot: "Hodnotitel doporučí pokračovat, upravit, nebo zmenšit; rozhodnutí i důvody se zveřejní." },
+  { id: "B1", name: "Mandát", at: 2028.45, when: "červen 2028", must: "Připomínky jsou vypořádané a zveřejněné. Plán podporuje aspoň 6 z 10 klíčových organizací (praktici, sestry, lékařská komora, pojišťovny, kraje, obce, pacienti, odbory). Zkouška ve třech regionech je podepsaná. Strana přijala jedno číslo daní za zdraví.", ifNot: "Do volebního programu jde jen to, co má podporu. Místo zkoušky s krajem náhradní smlouva s jednou pojišťovnou." },
+  { id: "B2", name: "Koaliční smlouva", at: 2030, when: "přelom let 2029 a 2030", must: "Jádro plánu je v koaliční smlouvě a v programu vlády. Zákony jsou v plánu vlády na rok 2030.", ifNot: "Do plánu vlády jde jen dohodnuté jádro. Zbytek zůstává programem pro další období." },
+  { id: "B3", name: "Lidé a data", at: 2032, when: "prosinec 2031", must: "V prvních týmech je obsazená aspoň polovina míst pro sestry. Zákon o primární péči je schválený. Kraje pracují na plánech sítě.", ifNot: "Reforma pokračuje bez nových budov zdravotních center (varianta B). Všechno, co na budovách nezávisí, běží dál." },
+  { id: "B4", name: "Nezávislé hodnocení", at: 2033.5, when: "rok 2033, před volbami", must: "Nezávislý hodnotitel (statistický ústav ÚZIS s univerzitou) vyhodnotí osm hlavních ukazatelů.", ifNot: "Hodnotitel doporučí pokračovat, upravit, nebo zmenšit. Rozhodnutí i důvody se zveřejní." },
 ];
 
 export const MILESTONES = [
-  { at: 2026.93, label: "Schválení v3 ke konzultaci", detail: "7. 12. 2026" },
-  { at: 2027.25, label: "Konec 1. kola připomínek", detail: "31. 3. 2027" },
-  { at: 2027.5, label: "Dohoda o pilotu, podněty do úhrad 2028", detail: "30. 6. 2027" },
-  { at: 2028, label: "Start pilotu ve třech ORP", detail: "1. 1. 2028" },
+  { at: 2026.93, label: "Schválení verze 3 ke konzultaci", detail: "7. 12. 2026" },
+  { at: 2027.25, label: "Konec prvního kola připomínek", detail: "31. 3. 2027" },
+  { at: 2027.5, label: "Dohoda o zkoušce, návrhy do úhrad na rok 2028", detail: "30. 6. 2027" },
+  { at: 2028, label: "Start zkoušky ve třech regionech", detail: "1. 1. 2028" },
   { at: 2029.8, label: "Volby do Sněmovny", detail: "říjen 2029" },
-  { at: 2031, label: "Platba státu, daně, fond prevence účinné", detail: "1. 1. 2031" },
-  { at: 2032, label: "Zákon o primární péči účinný", detail: "1. 1. 2032" },
-  { at: 2033, label: "Zákon o síti účinný, první krajské plány", detail: "1. 1. 2033" },
-  { at: 2038, label: "520 týmů, 8 000 přeměněných lůžek", detail: "kolem roku 2038" },
+  { at: 2031, label: "Nová platba státu, daně a fond prevence platí", detail: "1. 1. 2031" },
+  { at: 2032, label: "Zákon o primární péči platí", detail: "1. 1. 2032" },
+  { at: 2033, label: "Zákon o síti nemocnic platí, první krajské plány", detail: "1. 1. 2033" },
+  { at: 2038, label: "520 týmů, 8 000 změněných lůžek", detail: "kolem roku 2038" },
 ];
 
 export const RULES = [
-  { title: "Žádná brána bez dat", text: "Chybí-li data, brána se odkládá; nerozhoduje se podle odhadu ani podle kalendáře." },
-  { title: "Neúspěch nástroje zastaví jen ten nástroj", text: "Neprojde-li například daň ze slazených nápojů, týmy a sestry pokračují." },
-  { title: "Málo sester znamená variantu B", text: "Když do konce roku 2031 nebude obsazena aspoň polovina míst sester v týmech první vlny, centra se nestavějí a reforma pokračuje bez nich." },
-  { title: "Lůžko se nepřemění bez náhrady", text: "Kraj musí nejdřív prokázat kapacitu následné a dlouhodobé péče a dojezd záchranky. Obložnost akutních lůžek nad 85 % přeměnu v kraji zastaví." },
+  { title: "Bez dat se nerozhoduje", text: "Každý kontrolní bod stojí na číslech, která v tu chvíli existují. Když chybí, rozhodnutí se odloží a důvod se zveřejní. Nerozhoduje odhad ani kalendář." },
+  { title: "Když selže jedna část, zastaví se jen ta část", text: "Když třeba neprojde daň ze slazených nápojů, týmy a sestry pokračují. Reforma kvůli jednomu neúspěchu nekončí." },
+  { title: "Málo sester znamená menší reformu", text: "Když do konce roku 2031 nebude v prvních týmech obsazená aspoň polovina míst pro sestry, nové budovy zdravotních center se nestaví a reforma pokračuje bez nich." },
+  { title: "Lůžko se nemění bez náhrady", text: "Kraj musí nejdřív doložit, že má dost míst pro doléčení a dlouhodobou péči a že záchranka dojede včas. Když jsou akutní lůžka v kraji obsazená nad 85 %, přeměna se tam zastaví." },
 ];
 
 export const STEPS_2029 = [
-  { title: "Konzultace verze 3", when: "od prosince 2026", text: "Schválení resortním týmem 7. 12. 2026, první kolo připomínek do 31. 3. 2027, devět kulatých stolů, zveřejněné vypořádání před červnem 2028." },
-  { title: "Pilot ve třech ORP", when: "provoz 2028 a 2029", text: "Město, venkov a ORP bez praktiků v jednom kraji, 100 až 150 tisíc obyvatel, 30 až 50 mil. Kč ročně. Ověřuje proveditelnost týmu: zda praktici vstoupí, zda se obsadí místa sester, kolik to stojí." },
-  { title: "Úhrady a výkony", when: "podněty do 30. 6. 2027", text: "Sesterská složka u týmových praxí, ultrazvuk pro praktiky, telemonitoring, konzultace lékař–lékař, navigace po screeningu." },
-  { title: "Pozměňovací návrhy", when: "2027 a 2028", text: "Vláda otevírá stejné paragrafy: víceleté smlouvy i pro týmy, triážní údaj v eŽádance, zpráva o zdraví podle rámce HSPA. Navazujeme, nepředkládáme protinávrh." },
-  { title: "Poslanecké návrhy", when: "2028 a 2029", text: "Dříve vyslovené přání bez úředně ověřeného podpisu, s registrem; dobrovolné zveřejňování počtu lidí bez praktika po ORP." },
-  { title: "Věcné záměry zákonů", when: "7/2028 až 12/2029", text: "Zákon o primární péči, zákon o síti, finanční novela, daňové zákony, zákon o Národním fondu prevence. Bez hotových záměrů při nástupu vlády nemůže zákon platit od roku 2032." },
-  { title: "Jedno číslo daní za zdraví", when: "do června 2028", text: "Strana přijme jako svůj veřejný slib 5 mld. Kč ročně a pravidlo rozdělení. Daň ze slazených nápojů ohlásíme dva roky předem, aby výrobci stihli odsladit." },
+  { title: "Konzultace verze 3", when: "od prosince 2026", text: "Resortní tým schválí verzi 3 k veřejné konzultaci 7. 12. 2026. První kolo připomínek končí 31. 3. 2027. Následuje devět kulatých stolů. Jak jsme s každou připomínkou naložili, zveřejníme před červnem 2028." },
+  { title: "Zkouška ve třech regionech", when: "2028 a 2029", text: "Město, venkov a region bez lékařů v jednom kraji, dohromady 100 až 150 tisíc lidí, 30 až 50 mil. Kč ročně. Ověříme, jestli lékaři do týmů vstoupí, jestli se najdou sestry a kolik to stojí." },
+  { title: "Návrhy do pravidel úhrad", when: "do 30. 6. 2027", text: "Navrhneme, aby pojišťovny už od roku 2028 platily sestry v týmových ordinacích, ultrazvuk u praktika, sledování pacientů na dálku a konzultaci lékaře s lékařem. Rozhodne dnešní ministerstvo." },
+  { title: "Návrhy ke vládním zákonům", when: "2027 a 2028", text: "Vláda právě otevírá stejné zákony, které potřebujeme. Navrhneme do nich víceleté smlouvy pro týmy a údaj o naléhavosti v elektronické žádance. Nepředkládáme protinávrh, navazujeme." },
+  { title: "Poslanecké návrhy", when: "2028 a 2029", text: "Jednodušší „dříve vyslovené přání“ s registrem. Dobrovolné zveřejňování počtu lidí bez praktika po regionech." },
+  { title: "Podklady zákonů", when: "7/2028 až 12/2029", text: "Zákon o primární péči, zákon o síti nemocnic, nová platba státu, daňové zákony a zákon o Národním fondu prevence. Bez hotových podkladů při nástupu vlády nemůže zákon platit od roku 2032." },
+  { title: "Jedno číslo daní za zdraví", when: "do června 2028", text: "Strana veřejně slíbí 5 mld. Kč ročně a pravidlo, jak se rozdělí. Daň ze slazených nápojů ohlásíme dva roky předem, aby výrobci stihli snížit cukr." },
 ];
 
 export const VARIANTS = {
   rows: [
-    { key: "A", name: "A: plná, s centry", cost: 21.5, invest: "22 až 33", nurses: 4000, teams: "75 % praktiků", rural: "ano: obec nebo kraj založí tým", when: "základní varianta" },
-    { key: "B", name: "B: bez center", cost: 17.8, invest: "6 až 11", nurses: 3450, teams: "65 %, jen kde je praxe", rural: "jen kde praxe je", when: "brána B3 nesplněna" },
-    { key: "C", name: "C: minimální", cost: 11.3, invest: "5 až 10", nurses: 0, teams: "žádné týmy", rural: "ne", when: "srovnávací základ" },
+    { key: "A", name: "A: plná, s novými centry", cost: 21.5, invest: "22 až 33", nurses: 4000, teams: "75 % praktiků", rural: "ano, obec nebo kraj založí tým", when: "základní varianta" },
+    { key: "B", name: "B: bez nových center", cost: 17.8, invest: "6 až 11", nurses: 3450, teams: "65 %, jen kde ordinace je", rural: "jen tam, kde ordinace je", when: "když v roce 2031 chybí sestry" },
+    { key: "C", name: "C: minimální", cost: 11.3, invest: "5 až 10", nurses: 0, teams: "žádné týmy", rural: "ne", when: "pro srovnání" },
   ],
-  note: "Prevence, paliativa, konzultace a fond přeměny jsou ve všech třech variantách (společný základ 7,6 mld. Kč). Rozdíl A proti B kupuje budovy, další profese a schopnost vstoupit tam, kde praxe zanikla.",
+  note: "Prevence, paliativní péče, konzultace lékařů a fond přeměny nemocnic jsou ve všech třech variantách. Rozdíl mezi A a B kupuje budovy, další profese v týmu a možnost, aby obec nebo kraj založily tým tam, kde ordinace zanikla.",
 };
 
 export const INDICATORS = [
-  { code: "H1", name: "Lidé bez registrujícího praktika", today: "neměří se; děti: asi 182 tisíc bez dětského praktika (2022)", y2033: "měří se od 2028; v ORP s týmem pokles aspoň o polovinu", y2038: "v ORP s týmem nikdo bez jmenovitého lékaře" },
-  { code: "H2", name: "Týmy a obsazená místa sester", today: "0 týmů podle standardu (241 týmových praxí)", y2033: "plán týmů splněn aspoň z 90 %; obsazeno aspoň 50 % míst", y2038: "520 týmů; obsazeno aspoň 80 % míst" },
-  { code: "H3", name: "Čekání podle naléhavosti v eŽádance", today: "neměří se; na kolonoskopii po pozitivním testu 84 dní", y2033: "aspoň 80 % urgentních do 2 týdnů", y2038: "aspoň 90 % ve všech kategoriích" },
-  { code: "H4", name: "Kontinuita péče (index UPC)", today: "neměří se", y2033: "aspoň 0,7 v týmech první a druhé vlny", y2038: "aspoň 0,7 ve všech týmech" },
-  { code: "H5", name: "Odvratitelné hospitalizace na 100 000", today: "592 (OECD 473)", y2033: "550", y2038: "530" },
-  { code: "H6", name: "Podíl akutní lůžkové péče na výdajích", today: "29,7 % (2024)", y2033: "28 %", y2038: "26 %" },
-  { code: "H7", name: "Odvratitelná úmrtnost", today: "léčitelná 107 na 100 000 (EU 87)", y2033: "sledujeme bez cíle", y2038: "sledujeme bez cíle" },
-  { code: "H8", name: "Katastrofické výdaje domácností", today: "6 % domácností; nejchudší pětina 21 %", y2033: "nezhoršit", y2038: "nezhoršit" },
+  { code: "H1", name: "Lidé bez svého praktika", today: "neměří se; dětí bez dětského lékaře bylo 182 tisíc (2022)", y2033: "měří se od 2028; tam, kde je tým, aspoň o polovinu méně", y2038: "tam, kde je tým, nikdo bez jmenovitého lékaře" },
+  { code: "H2", name: "Týmy a obsazená místa sester", today: "0 týmů podle standardu (241 týmových ordinací)", y2033: "aspoň 90 % plánovaných týmů; aspoň 50 % míst sester obsazeno", y2038: "520 týmů; aspoň 80 % míst obsazeno" },
+  { code: "H3", name: "Čekání podle naléhavosti", today: "neměří se; na kolonoskopii po pozitivním testu se čeká 84 dní", y2033: "aspoň 80 % urgentních pacientů do 2 týdnů", y2038: "aspoň 90 % ve všech kategoriích" },
+  { code: "H4", name: "Jak často se pacient dostane ke svému lékaři", today: "neměří se", y2033: "aspoň 7 z 10 návštěv u svého lékaře v prvních týmech", y2038: "aspoň 7 z 10 ve všech týmech" },
+  { code: "H5", name: "Zbytečné hospitalizace na 100 000 lidí", today: "592 (průměr OECD 473)", y2033: "550", y2038: "530" },
+  { code: "H6", name: "Podíl akutních lůžek na výdajích pojištění", today: "29,7 % (2024)", y2033: "28 %", y2038: "26 %" },
+  { code: "H7", name: "Úmrtí, kterým šlo předejít", today: "léčitelná úmrtí 107 na 100 000 (EU 87)", y2033: "sledujeme bez cíle", y2038: "sledujeme bez cíle" },
+  { code: "H8", name: "Domácnosti, které zdravotní výdaje finančně ničí", today: "6 % domácností; mezi nejchudšími 21 %", y2033: "nesmí přibýt", y2038: "nesmí přibýt" },
 ];
 
 export const RISKS = [
-  { risk: "Sestry nepřijdou nebo odejdou z nemocnic", signal: "obsazenost míst sester v pilotu a volná místa v nemocnicích kraje, čtvrtletně", safeguard: "náběh v etapách; plat na úrovni nemocniční sestry; platí se jen obsazené místo; při polovině sester varianta bez center" },
-  { risk: "Náklady jsou vyšší", signal: "skutečné platby týmům v pilotu mimo rozpětí; čistý náklad mimo 15 až 25 mld. Kč", safeguard: "plánujeme rozpětím, ne bodem; otevřený model; přepočet z nákladů pilotu před koaliční smlouvou" },
-  { risk: "Ministerstvo nestihne zákony", signal: "věcné záměry nehotové k 12/2029; v plánu vlády víc než dvě velké předlohy", safeguard: "jen dvě velké předlohy za období; záměry psát už v opozici; posílit legislativní odbor" },
-  { risk: "Ministerstvo financí odmítne vzorec platby státu", signal: "záporné stanovisko v připomínkovém řízení; zmrazení platby se opakuje", safeguard: "výpočet v jedné tabulce; jednání s MF a NRR od roku 2028; při odmítnutí zůstávají daně za zdraví a reforma se zmenšuje" },
-  { risk: "Přeměna lůžek zhorší dostupnost", signal: "obložnost v kraji nad 85 %; méně než 95 % obyvatel s urgentním příjmem do 30 minut", safeguard: "stop přeměny v kraji; kapacita následné péče předem; posílení záchranky před sloučením" },
-  { risk: "Řetězce ovládnou primární péči", signal: "podíl praxí pod jedním skutečným vlastníkem v ORP roste", safeguard: "veřejní skuteční vlastníci; strop 20 % spádových území kraje pro jednoho vlastníka; dotace na budovu jen obci nebo kraji" },
+  { risk: "Sestry nepřijdou nebo odejdou z nemocnic", signal: "každé čtvrtletí sledujeme, kolik míst pro sestry je v týmech obsazených a kolik volných míst mají nemocnice v kraji", safeguard: "týmy rostou postupně; plat jako v nemocnici, bez nočních; pojišťovna platí jen obsazené místo; když je sester polovina, nové budovy se nestaví" },
+  { risk: "Bude to dražší", signal: "skutečné platby týmům ve zkoušce vybočí z odhadu; celkový náklad vybočí z 15 až 25 mld. Kč", safeguard: "počítáme s rozpětím, ne s jedním číslem; model je veřejný; před koaliční smlouvou přepočítáme podle skutečných nákladů zkoušky" },
+  { risk: "Ministerstvo nestihne napsat zákony", signal: "podklady zákonů nejsou hotové do konce roku 2029; vláda plánuje víc než dva velké zákony", safeguard: "jen dva velké zákony za volební období; podklady napíšeme už v opozici; ministerstvo posílí o dva legislativní týmy" },
+  { risk: "Ministerstvo financí odmítne vyšší platbu státu", signal: "záporné stanovisko v připomínkovém řízení; platba se znovu zmrazí", safeguard: "výpočet v jedné tabulce; jednání s ministerstvem a rozpočtovou radou od roku 2028; při odmítnutí zůstávají daně za zdraví a reforma se zmenší" },
+  { risk: "Změna lůžek zhorší dostupnost péče", signal: "akutní lůžka v kraji obsazená nad 85 %; méně než 95 % lidí má urgentní příjem do 30 minut", safeguard: "přeměna se v kraji zastaví; místa pro doléčení musí být připravená předem; záchranka se posílí dřív, než se cokoli slučuje" },
+  { risk: "Ordinace skoupí velké řetězce", signal: "podíl ordinací v regionu pod jedním vlastníkem roste", safeguard: "skuteční vlastníci jsou veřejní; jeden vlastník smí mít nejvýš 20 % území kraje; dotaci na budovu dostane jen obec nebo kraj" },
 ];
 
 // ---------------------------------------------------------------------------
@@ -256,32 +259,32 @@ export const RISKS = [
 // ---------------------------------------------------------------------------
 
 export const COST_2038 = {
-  title: "Na co jde 22,8 mld. Kč provozu v roce 2038",
-  source: "Ekonomický model studie v3 (Část V); provoz včetně rezervy, ceny 2026",
+  title: "Na co půjde 22,8 mld. Kč ročně, až reforma poběží naplno (2038)",
+  source: "Ekonomický model studie v3; provoz včetně rezervy, ceny roku 2026",
   rows: [
     { label: "Sestry navíc v týmech", value: 3.97, group: "lidé v ordinacích" },
-    { label: "Platby týmům: lékařská složka", value: 3.73, group: "lidé v ordinacích" },
+    { label: "Platby týmům za registrované pacienty", value: 3.73, group: "lidé v ordinacích" },
     { label: "Rezerva 10 % (IT, vzdělávání, nábor)", value: 2.07, group: "ostatní" },
     { label: "Další profese v týmu (nutriční terapeut, fyzioterapeut, psycholog, recepce)", value: 1.73, group: "lidé v ordinacích" },
-    { label: "Platby týmům: odměna za výsledky", value: 1.6, group: "lidé v ordinacích" },
-    { label: "Konzultace lékař–lékař, zpětná zpráva", value: 1.5, group: "ostatní" },
-    { label: "Fond přeměny: garance příjmu nemocnic", value: 1.31, group: "nemocnice" },
+    { label: "Odměna týmům za výsledky", value: 1.6, group: "lidé v ordinacích" },
+    { label: "Konzultace lékaře s lékařem, zpráva zpět praktikovi", value: 1.5, group: "ostatní" },
+    { label: "Dorovnání příjmu nemocnic po dobu přeměny", value: 1.31, group: "nemocnice" },
     { label: "Prevence: screening, navigace, očkování, zuby", value: 1.3, group: "prevence" },
     { label: "Paliativní týmy", value: 0.9, group: "péče doma" },
-    { label: "Platby týmům: příplatek za návštěvy", value: 0.8, group: "péče doma" },
-    { label: "Pohotovost a prodloužená ordinační doba", value: 0.75, group: "lidé v ordinacích" },
+    { label: "Příplatek za návštěvy doma", value: 0.8, group: "péče doma" },
+    { label: "Večerní a víkendové ordinační hodiny", value: 0.75, group: "lidé v ordinacích" },
     { label: "Prevence: komunitní programy", value: 0.7, group: "prevence" },
-    { label: "Zapisovatel a dálkové sledování", value: 0.66, group: "ostatní" },
-    { label: "Provoz center (nájem)", value: 0.53, group: "ostatní" },
-    { label: "Kompetence praktiků: výkony, ultrazvuk", value: 0.5, group: "lidé v ordinacích" },
-    { label: "Koordinace a nezávislé hodnocení", value: 0.4, group: "ostatní" },
-    { label: "Senior taxi", value: 0.34, group: "péče doma" },
+    { label: "Zapisovatel a sledování pacientů na dálku", value: 0.66, group: "ostatní" },
+    { label: "Provoz budov center", value: 0.53, group: "ostatní" },
+    { label: "Nové výkony praktiků, ultrazvuk", value: 0.5, group: "lidé v ordinacích" },
+    { label: "Řízení reformy a nezávislé hodnocení", value: 0.4, group: "ostatní" },
+    { label: "Odvoz k lékaři (senior taxi)", value: 0.34, group: "péče doma" },
   ],
 };
 
+export const COST_GROUPS = ["lidé v ordinacích", "péče doma", "prevence", "nemocnice", "ostatní"];
+
 export const NET_COST = {
-  title: "Čistý náklad po letech",
-  source: "Model v3: provoz včetně rezervy minus úspory počítané bez překryvů",
   rows: [
     { year: "2035", provoz: 17.6, uspory: 0.7, net: 16.9, share: "3,0 %" },
     { year: "2038", provoz: 22.8, uspory: 1.2, net: 21.5, share: "3,8 %" },
@@ -290,28 +293,29 @@ export const NET_COST = {
 };
 
 export const FUNDING = {
-  title: "Kdo zaplatí 21,5 mld. Kč v roce 2038",
-  source: "Model v3, Část V. Vyšší platba státu je přesun ze státního rozpočtu, ne nový peníz.",
+  title: "Kdo zaplatí 21,5 mld. Kč ročně",
+  source: "Model studie v3. Vyšší platba státu nejsou nové peníze, ale přesun ze státního rozpočtu.",
   rows: [
-    { label: "Platba státu za děti, důchodce a studenty (nový vzorec)", value: 13.0, group: "stát" },
-    { label: "Státní rozpočet přímo (koordinace, fond přeměny, dálkové sledování)", value: 2.6, group: "stát" },
-    { label: "Daně za zdraví → platba státu do pojištění", value: 3.0, group: "daně za zdraví" },
-    { label: "Daně za zdraví → Národní fond prevence", value: 2.0, group: "daně za zdraví" },
-    { label: "Obce a kraje (senior taxi, provoz center)", value: 1.0, group: "obce" },
+    { label: "Stát: vyšší platba za děti, důchodce a studenty", value: 13.0, group: "stát" },
+    { label: "Stát: přímé výdaje (řízení, fond přeměny, sledování na dálku)", value: 2.6, group: "stát" },
+    { label: "Daně za zdraví: do zdravotního pojištění", value: 3.0, group: "daně za zdraví" },
+    { label: "Daně za zdraví: Národní fond prevence", value: 2.0, group: "daně za zdraví" },
+    { label: "Obce a kraje: odvoz k lékaři, provoz center", value: 1.0, group: "obce" },
   ],
 };
+export const FUND_GROUPS = ["stát", "daně za zdraví", "obce"];
 
 export const TEN_NUMBERS = [
-  { n: "21,5 mld. Kč (15–25)", t: "čistý roční náklad reformy v plném náběhu kolem roku 2038, necelá 4 % dnešních výdajů pojištění" },
-  { n: "6 mld. Kč", t: "platby týmům ročně (lékařská složka, odměna za výsledky, příplatek za návštěvy), rozpětí 4,8 až 7,5" },
-  { n: "520 týmů, 4 000 sester", t: "kolem roku 2038; dvě sestry na lékaře v týmu, tři jako směr k roku 2050" },
-  { n: "440 sester ročně", t: "průměrná potřeba reformy, zhruba třetina vysokoškolských absolventek" },
-  { n: "A 21,5 / B 18 / C 11", t: "čistý náklad plné varianty, varianty bez center a minimální varianty" },
-  { n: "8 000 lůžek", t: "přeměněných do roku 2038; fond přeměny 5 až 10 mld. Kč investic a asi 1 mld. Kč ročně na garanci" },
-  { n: "5 mld. Kč daní", t: "ročně z daní za zdraví: 2 mld. Kč prevence, zbytek platba státu do pojištění" },
-  { n: "60 / 70 / 104 mld. Kč", t: "mezera pojištění v letech 2035, 2038 a 2050 při dnešních pravidlech; řeší ji každá vláda" },
-  { n: "180 Kč", t: "měsíčně na státního pojištěnce navíc za reformu; 100 Kč měsíčně znamená 7,2 mld. Kč ročně" },
-  { n: "22–33 mld. Kč", t: "jednorázové investice do center a přeměny lůžek; po evropských fondech zbývá 15 až 26" },
+  { n: "21,5 mld. Kč (15 až 25)", t: "ročně navíc, až reforma poběží naplno kolem roku 2038; necelá 4 % dnešních výdajů zdravotního pojištění" },
+  { n: "6 mld. Kč", t: "ročně dostanou týmy (za registrované pacienty, za výsledky a za návštěvy doma); odhad 4,8 až 7,5" },
+  { n: "520 týmů, 4 000 sester", t: "kolem roku 2038; dvě sestry na jednoho lékaře v týmu, do roku 2050 tři" },
+  { n: "440 sester ročně", t: "potřebuje reforma navíc; zhruba třetina sester, které ročně vystudují vysokou školu" },
+  { n: "A 21,5 · B 18 · C 11", t: "miliard ročně stojí plná varianta, varianta bez nových center a minimální varianta" },
+  { n: "8 000 lůžek", t: "změní účel do roku 2038; fond přeměny stojí 5 až 10 mld. Kč jednorázově a asi 1 mld. Kč ročně na dorovnání příjmu nemocnic" },
+  { n: "5 mld. Kč daní", t: "ročně z tichého vína, slazených nápojů a valorizace lihu a piva: 2 mld. Kč prevence, 3 mld. Kč do pojištění" },
+  { n: "60 · 70 · 104 mld. Kč", t: "bude chybět zdravotnímu pojištění v letech 2035, 2038 a 2050, i kdyby se nic neměnilo; to musí řešit každá vláda" },
+  { n: "180 Kč měsíčně", t: "navíc zaplatí stát za každého svého pojištěnce kvůli reformě; každých 100 Kč měsíčně znamená 7,2 mld. Kč ročně" },
+  { n: "22 až 33 mld. Kč", t: "jednorázově na budovy center a přeměnu lůžek; po evropských fondech zbývá najít 15 až 26" },
 ];
 
 export const TAXES = {
@@ -319,43 +323,40 @@ export const TAXES = {
   glassLitres: 0.2,
   sugarPerLitreLow: 6,
   sugarPerLitreHigh: 8,
-  statePayees: 6.0, // mil. státních pojištěnců
-  planned: [
-    { label: "Tiché víno", low: 3.3, high: 4.3 },
-    { label: "Slazené nápoje", low: 1.3, high: 1.8 },
-    { label: "Valorizace lihu a piva", low: 0, high: 1 },
-  ],
+  statePayees: 6.0,
 };
 
 // ---------------------------------------------------------------------------
 // PRO KOHO
 // ---------------------------------------------------------------------------
 
+export const KEY_SUBJECTS = ["Sdružení praktických lékařů", "Sdružení dětských praktiků", "Česká asociace sester", "Česká lékařská komora", "VZP", "Svaz zdravotních pojišťoven", "Asociace krajů", "Svaz měst a obcí", "Pacientské organizace", "Odbory"];
+
 export const STAKEHOLDERS = [
-  { who: "Praktici", org: "SPL ČR, SPLDD ČR, Mladí praktici", offer: "Sesterskou složku úhrady, pětiletou smlouvu, zrušení preskripčních omezení, ultrazvuk v ordinaci, vzorovou smlouvu o výkupu praxe; dětské praktiky nerušíme.", need: "Spolutvorbu standardu týmu a podporu pilotu.", step: "Pracovní skupina ke standardu týmu, 1. čtvrtletí 2027" },
-  { who: "Sestry", org: "ČAS", offer: "Rozšířené kompetence, samostatnou indikaci, plat na úrovni nemocniční sestry bez nočních služeb, sestru v pokročilé praxi od roku 2033.", need: "Spolutvorbu kompetencí a protokolů poraden.", step: "Společná pracovní skupina, 1. čtvrtletí 2027" },
-  { who: "Lékařská komora", org: "ČLK", offer: "Jmenovitého ošetřujícího lékaře v týmu, klinickou nezávislost vůči vlastníkovi, méně administrativy.", need: "Aspoň neutralitu ke kompetencím sester a k triážnímu údaji.", step: "Jednání nad verzí 3, 1. pololetí 2027" },
-  { who: "Pojišťovny", org: "VZP, SZP ČR", offer: "Měřitelné výsledky, data pro řízení sítě, méně odvratitelných hospitalizací, víceleté smlouvy.", need: "Pilot, sesterskou složku v dohodovacím řízení, stejný standard smlouvy u zaměstnaneckých pojišťoven.", step: "Návrh smlouvy pilotu vedení VZP, dohoda do 30. 6. 2027" },
-  { who: "Kraje", org: "Asociace krajů ČR", offer: "Fond přeměny, garanci příjmu, krajský plán místo centrálního rozhodnutí, spoluodpovědnost místo samoty hejtmana.", need: "Kraj, který se k pilotu přihlásí; pravidla krajského plánu.", step: "Výzva krajům, 1. čtvrtletí 2027" },
-  { who: "Obce", org: "SMO ČR", offer: "Lékaře blíž lidem, spolufinancování dopravy, dotaci na budovu centra jen se smlouvou s týmem.", need: "Obecní prostory, senior taxi.", step: "Setkání s novými vedeními obcí, 1. čtvrtletí 2027" },
-  { who: "Nemocnice a odbory", org: "AČMN, Asociace krajských nemocnic, LOK-SČL, OSZSP ČR", offer: "Přeměnu místo rušení, investice 5 až 10 mld. Kč, garanci příjmu, pojistku obložnosti 85 %, nabídku každému dotčenému zdravotníkovi předem.", need: "Spolupráci na pravidlech plánu sítě.", step: "Kulatý stůl k síti lůžek, 2028" },
-  { who: "Poskytovatelé sociálních služeb", org: "APSS ČR", offer: "Kapacitu dlouhodobé péče jako podmínku každé přeměny, veřejný sociální účet.", need: "Data o kapacitě po krajích.", step: "Společná bilance kapacit, 2028" },
-  { who: "Pacienti", org: "pacientské organizace", offer: "Garanci termínu podle naléhavosti, jmenovitého lékaře, zdravotnického ombudsmana, žádné poplatky.", need: "Připomínky k cestě pacienta a k ukazatelům.", step: "Veřejná konzultace verze 3, od prosince 2026" },
-  { who: "Vinaři a výrobci nápojů", org: "", offer: "Poloviční sazbu pro malé vinaře, dvouletý náběh, valorizaci místo skoků, ohlášení daně ze slazených nápojů dva roky předem.", need: "Přijatelnost náběhu, reformulaci nápojů.", step: "Konzultace 2028" },
-  { who: "Ministerstvo financí a Národní rozpočtová rada", org: "", offer: "Otevřený model, rozpětí nákladu místo jednoho čísla, přiznání, že platba státu je přesun.", need: "Technickou oponenturu vzorce platby státu a fondu prevence.", step: "Předání modelu, 2028" },
-  { who: "Potenciální koaliční partneři", org: "", offer: "Společné autorství, sdílený harmonogram, varianty A, B a C.", need: "Jádro v koaliční smlouvě.", step: "Setkání zdravotních expertů stran, 2028 až 2029" },
+  { who: "Praktičtí lékaři", org: "SPL ČR, SPLDD ČR, Mladí praktici", offer: "Zaplacenou sestru navíc, smlouvu na pět let, zrušení omezení, které léky smíte předepsat, ultrazvuk v ordinaci a vzorovou smlouvu pro prodej ordinace při odchodu do důchodu. Dětské praktiky nerušíme.", need: "Pomoc s tím, jak má tým vypadat, a podporu zkoušky ve třech regionech.", step: "Pracovní skupina k podobě týmu, začátek roku 2027" },
+  { who: "Sestry", org: "Česká asociace sester", offer: "Víc pravomocí, možnost samostatně předepsat domácí péči, plat jako v nemocnici bez nočních služeb a od roku 2033 novou roli sestry s rozšířenou praxí.", need: "Pomoc s tím, co sestra smí a jak mají vypadat poradny pro dlouhodobě nemocné.", step: "Společná pracovní skupina, začátek roku 2027" },
+  { who: "Lékařská komora", org: "ČLK", offer: "Každý pacient má v týmu svého jmenovitého lékaře. Lékař rozhoduje o léčbě nezávisle na vlastníkovi ordinace a má méně papírování.", need: "Aspoň neutrální postoj k větším pravomocem sester a k údaji o naléhavosti v žádance.", step: "Jednání o verzi 3, první pololetí 2027" },
+  { who: "Zdravotní pojišťovny", org: "VZP, Svaz zdravotních pojišťoven", offer: "Měřitelné výsledky, data pro řízení sítě, méně zbytečných hospitalizací, víceleté smlouvy.", need: "Smlouvu na zkoušku ve třech regionech, zaplacení sester v týmech a stejnou smlouvu u všech pojišťoven.", step: "Návrh smlouvy vedení VZP, dohoda do 30. 6. 2027" },
+  { who: "Kraje", org: "Asociace krajů ČR", offer: "Fond přeměny nemocnic, dorovnání příjmu, vlastní krajský plán místo rozhodnutí z Prahy a spoluodpovědnost místo samoty hejtmana.", need: "Kraj, který se přihlásí ke zkoušce, a pravidla pro krajský plán.", step: "Výzva krajům, začátek roku 2027" },
+  { who: "Obce", org: "Svaz měst a obcí ČR", offer: "Lékaře blíž lidem, spolufinancování odvozu k lékaři a dotaci na budovu centra, pokud má smlouvu s týmem.", need: "Prostory pro ordinace a provoz senior taxi.", step: "Setkání s novými vedeními obcí po volbách, začátek roku 2027" },
+  { who: "Nemocnice a odbory", org: "AČMN, Asociace krajských nemocnic, LOK-SČL, OSZSP ČR", offer: "Změnu role místo rušení, 5 až 10 mld. Kč na přestavbu, dorovnání příjmu, pojistku: nad 85 % obsazenosti se nic nemění, a každému dotčenému zdravotníkovi nabídku předem.", need: "Spolupráci na pravidlech, podle kterých vzniknou krajské plány.", step: "Kulatý stůl k síti nemocnic, 2028" },
+  { who: "Poskytovatelé sociálních služeb", org: "APSS ČR", offer: "Dost míst pro dlouhodobou péči jako podmínku každé změny lůžek a veřejný účet dlouhodobé péče.", need: "Údaje o volných místech po krajích.", step: "Společná bilance kapacit, 2028" },
+  { who: "Pacienti", org: "pacientské organizace", offer: "Zaručený termín podle naléhavosti, jmenovitého lékaře, zdravotnického ombudsmana a žádné poplatky.", need: "Připomínky k cestě pacienta a k tomu, co měříme.", step: "Veřejná konzultace verze 3, od prosince 2026" },
+  { who: "Vinaři a výrobci nápojů", org: "", offer: "Poloviční sazbu pro malé vinaře, postupný náběh během dvou let, zvyšování s inflací místo skoků a daň ze slazených nápojů ohlášenou dva roky předem.", need: "Přijetí postupného náběhu a snížení cukru v nápojích.", step: "Konzultace 2028" },
+  { who: "Ministerstvo financí a Národní rozpočtová rada", org: "", offer: "Veřejný ekonomický model, rozpětí nákladů místo jednoho čísla a otevřené přiznání, že vyšší platba státu je přesun peněz, ne nový zdroj.", need: "Odborné posouzení nové platby státu a fondu prevence.", step: "Předání modelu, 2028" },
+  { who: "Možní koaliční partneři", org: "", offer: "Společné autorství, společný harmonogram a tři varianty podle toho, co se podaří.", need: "Jádro plánu v koaliční smlouvě.", step: "Setkání zdravotních expertů stran, 2028 až 2029" },
 ];
 
 export const ROUND_TABLES = [
-  { when: "2/2027", topic: "Standard týmu a pětiletá smlouva" },
+  { when: "2/2027", topic: "Jak má vypadat tým a smlouva na pět let" },
   { when: "4/2027", topic: "Sestry v primární péči" },
-  { when: "5/2027", topic: "Pilot ve třech ORP" },
-  { when: "9/2027", topic: "Cesta pacienta a eŽádanka" },
-  { when: "11/2027", topic: "Financování, platba státu a daně za zdraví" },
-  { when: "2/2028", topic: "Síť lůžkové péče a přeměna" },
-  { when: "4/2028", topic: "Dlouhodobá a sociálně-zdravotní péče" },
+  { when: "5/2027", topic: "Zkouška ve třech regionech" },
+  { when: "9/2027", topic: "Cesta pacienta a elektronická žádanka" },
+  { when: "11/2027", topic: "Peníze: platba státu a daně za zdraví" },
+  { when: "2/2028", topic: "Síť nemocnic a změna lůžek" },
+  { when: "4/2028", topic: "Dlouhodobá péče a pomezí zdravotní a sociální péče" },
   { when: "5/2028", topic: "Prevence a daně za zdraví" },
-  { when: "6/2028", topic: "Bilanční konference a memoranda" },
+  { when: "6/2028", topic: "Závěrečná konference a dohody o podpoře" },
 ];
 
 // ---------------------------------------------------------------------------
@@ -363,21 +364,69 @@ export const ROUND_TABLES = [
 // ---------------------------------------------------------------------------
 
 export const FAQ = [
-  { q: "Rušíte nemocnice?", a: "Ne. Přeměňujeme 8 000 z 48 036 akutních lůžek na následnou, rehabilitační a paliativní péči, a to až od roku 2033 podle krajských plánů. Žádné lůžko se nepřemění, dokud kraj neprokáže, že pacient má kam jít a že 95 % obyvatel má urgentní příjem do 30 minut. Okresní nemocnice dostane stabilní roli místo boje o přežití a nemocnice, která plán plní, dostane dorovnání příjmu. V letech 2010 až 2013 ubylo 5 914 akutních lůžek a následných přibylo 22; přesně tohle se nesmí opakovat." },
-  { q: "Zvýšíte daně?", a: "Zdaníme tiché víno stejně jako šumivé (23,40 Kč na litr, malí vinaři polovinu), zavedeme daň ze slazených nápojů nad hranicí cukru a budeme valorizovat daň z lihu a piva o inflaci. Dohromady 5 mld. Kč ročně, s účelem v zákoně: 2 mld. Kč prevence, zbytek do zdravotního pojištění. Odvody z práce z těchto daní nesnižujeme a vyšší pojistné samostatně nenavrhujeme. Kdo si dá sklenku vína týdně, zaplatí asi 240 Kč ročně; kdo neodslazené nápoje nepije, nezaplatí nic." },
-  { q: "Kde vezmete sestry?", a: "Reforma potřebuje asi 4 000 sester navíc do roku 2038, v průměru 440 ročně, tedy zhruba třetinu vysokoškolských absolventek. Je to nejslabší místo plánu a přiznáváme ho: systém musí zároveň nahradit přes 30 000 úvazků do roku 2037. Proto tým dostane zaplaceno jen za obsazené místo, plat je na úrovni nemocniční sestry bez nočních služeb, personální bilance po krajích počítá i s návraty do oboru a náborem ze zahraničí, a když do konce roku 2031 přijde jen polovina sester, centra se nestavějí a reforma se zmenší, nezastaví." },
-  { q: "Proč ne hned?", a: "Protože v opozici nelze přijmout zákon a protože velká předloha trvá od záměru po účinnost dva až tři a půl roku. Verze 2 slibovala zákony od roku 2029 a oponentura správně označila takový harmonogram za nestihnutelný. Co jde hned, děláme hned: pilot od roku 2028, podněty do úhrad do 30. 6. 2027, pozměňovací návrhy k vládním předlohám a věcné záměry hotové před volbami. Kdyby dnešní vláda převzala sestry u týmových praxí už do úhradové vyhlášky 2028, budeme první, kdo to podpoří." },
-  { q: "Není to drahé?", a: "Čistě 21,5 mld. Kč ročně v plném náběhu kolem roku 2038, tedy necelá 4 % dnešních výdajů zdravotního pojištění; rozpětí 15 až 25 mld. Kč říkáme nahlas, protože bodový odhad by byl předstírání přesnosti. Pro srovnání: při dnešních pravidlech bude systému v roce 2038 chybět 70 mld. Kč i bez reformy. Za 21,5 mld. Kč dostanete 520 týmů, 4 000 sester, návštěvy doma, paliativní týmy ve všech okresech, konzultace se specialisty a prevenci se stálým zdrojem. Nebude to levné a nebude to úspora; bude to víc péče blíž lidem za peníze, které do zdravotnictví půjdou tak jako tak." },
-  { q: "Co praktici? Nutíte je do týmů?", a: "Nenutíme. Vstup je dobrovolný, samostatná ordinace zůstává u dnešní úhrady, ne u nižší, a smluvní síť samostatných ordinací dostane totéž co jeden poskytovatel, pokud zajistí stejné funkce. Praktikům dáváme to, o co žádají léta: zrušení preskripčních omezení, ultrazvuk, zástup, sestru s vlastními pacienty, pětiletou jistotu a vzorovou smlouvu, aby odcházející lékař dostal za praxi zaplaceno a mladý nemusel shánět miliony. Dětské praktiky nerušíme a povinné doporučení ke specialistovi nezavádíme." },
-  { q: "Bude mě léčit počítač?", a: "Ne. Zapisovatel přepíše rozhovor a lékař zápis zkontroluje a podepíše; dálkové sledování u srdečního selhání hlídá sestra, ne stroj. První studie ukazují u zapisovatele jen mírný a nejistý přínos, proto s ním nepočítáme jako se zdrojem kapacity a nejdřív ho ověří pilot. Každé klinické rozhodnutí dělá člověk a data zůstávají v českém zdravotnickém systému a v EU." },
-  { q: "Proč vám věřit, když autor sedí ve Správní radě VZP?", a: "Protože to říkáme sami a předem. Autor je členem Správní rady VZP; o smlouvě pilotu rozhoduje vedení VZP, ne Správní rada, autor se z hlasování o pilotu vyloučí a výsledky hodnotí nezávislý hodnotitel jmenovaný před startem. Model nákladů je otevřený a každé číslo v tomto textu má ve studii svůj výpočet a zdroj. Kdo najde chybu, pomůže reformě víc než ten, kdo ji pochválí." },
+  { q: "Rušíte nemocnice?", a: "Ne. Z 48 036 akutních lůžek jich 8 000 změní účel na doléčení, rehabilitaci a péči na konci života, a to až od roku 2033 podle krajských plánů. Žádné lůžko se nezmění dřív, než kraj doloží, že pacienti mají kam jít a že 95 % obyvatel má urgentní příjem do 30 minut. Okresní nemocnice dostane jistou roli místo boje o přežití, a když plán plní, dorovnáme jí příjem. V letech 2010 až 2013 ubylo 5 914 akutních lůžek a lůžek pro doléčení přibylo jen 22. Přesně tohle se nesmí opakovat." },
+  { q: "Zvýšíte daně?", a: "Tiché víno zdaníme stejně jako šumivé (23,40 Kč na litr, malí vinaři polovinu), zavedeme daň ze slazených nápojů podle množství cukru a daň z lihu a piva se bude zvyšovat s inflací. Dohromady 5 mld. Kč ročně, a zákon řekne, na co: 2 mld. Kč na prevenci, zbytek do zdravotního pojištění. Odvody z mezd se nemění a vyšší pojistné nenavrhujeme. Kdo si dá sklenku vína týdně, zaplatí asi 240 Kč ročně. Kdo nepije slazené nápoje, nezaplatí nic." },
+  { q: "Kde vezmete sestry?", a: "Reforma potřebuje do roku 2038 asi 4 000 sester navíc, v průměru 440 ročně, tedy zhruba třetinu těch, které ročně vystudují. Je to nejslabší místo plánu a říkáme to otevřeně: zdravotnictví musí zároveň nahradit přes 30 000 úvazků do roku 2037. Proto tým dostane zaplaceno jen za obsazené místo, plat je jako v nemocnici bez nočních služeb, počítáme s návraty do oboru i s náborem ze zahraničí. A když do konce roku 2031 přijde jen polovina sester, nové budovy se nestaví a reforma se zmenší, ne zastaví." },
+  { q: "Proč ne hned?", a: "Protože z opozice nelze přijmout zákon a protože velký zákon trvá od prvního podkladu po účinnost dva až tři a půl roku. Předchozí verze slibovala zákony od roku 2029 a nezávislý posudek správně řekl, že se to stihnout nedá. Co jde hned, děláme hned: zkoušku ve třech regionech od roku 2028, návrhy do pravidel úhrad do 30. 6. 2027, návrhy ke vládním zákonům a hotové podklady zákonů před volbami. Kdyby dnešní vláda zaplatila sestry v týmových ordinacích už od roku 2028, podpoříme to jako první." },
+  { q: "Není to drahé?", a: "Až reforma poběží naplno kolem roku 2038, bude stát čistě asi 21,5 mld. Kč ročně, tedy necelá 4 % dnešních výdajů zdravotního pojištění. Říkáme rozpětí 15 až 25 mld. Kč, protože jedno přesné číslo by bylo předstírání. Pro srovnání: i bez reformy bude zdravotnímu pojištění v roce 2038 chybět 70 mld. Kč. Za 21,5 mld. Kč dostanete 520 týmů, 4 000 sester, návštěvy doma, paliativní týmy ve všech okresech, konzultace se specialisty a prevenci se stálými penězi. Nebude to levné a nebude to úspora. Bude to víc péče blíž lidem za peníze, které do zdravotnictví půjdou tak jako tak." },
+  { q: "Nutíte praktiky do týmů?", a: "Ne. Vstup je dobrovolný. Kdo zůstane sám, dostane od pojišťovny stejně jako dnes, ne méně. Síť samostatných ordinací, které se domluví, dostane totéž co jeden velký tým, pokud zajistí stejné služby. Praktikům dáváme, o co žádají léta: zrušení omezení, které léky smí předepsat, ultrazvuk, zástup, sestru s vlastními pacienty, jistotu na pět let a vzorovou smlouvu, aby odcházející lékař dostal za ordinaci zaplaceno a mladý nemusel shánět miliony. Dětské praktiky nerušíme a povinné doporučení ke specialistovi nezavádíme." },
+  { q: "Bude mě léčit počítač?", a: "Ne. Zapisovatel přepíše rozhovor s lékařem a lékař zápis zkontroluje a podepíše. Sledování pacientů se srdečním selháním na dálku vyhodnocuje sestra, ne stroj. První studie ukazují u zapisovatele jen malý a nejistý přínos, proto s ním nepočítáme jako s úsporou času a nejdřív ho vyzkoušíme. Každé rozhodnutí o léčbě dělá člověk a data zůstávají v Česku a v Evropské unii." },
+  { q: "Proč vám věřit, když autor sedí ve správní radě VZP?", a: "Protože to říkáme sami a předem. Autor je členem Správní rady VZP. O smlouvě na zkoušku ve třech regionech rozhoduje vedení VZP, ne správní rada, autor se z hlasování o zkoušce vyloučí a výsledky hodnotí nezávislý hodnotitel jmenovaný před startem. Ekonomický model je veřejný a každé číslo v tomto textu má ve studii svůj výpočet a zdroj. Kdo najde chybu, pomůže reformě víc než ten, kdo ji pochválí." },
 ];
 
-export const CONFLICT = "Autor je členem Správní rady VZP, členem Pirátské ekonomické expertní rady (PEER) a autorem HSPA Monitoru. Plán navrhuje pilot s VZP a mění složení správních rad pojišťoven; proto o smlouvě pilotu rozhoduje vedení VZP, výsledky hodnotí nezávislý hodnotitel a autor se z hlasování o pilotu vyloučí.";
+export const CONFLICT = "Autor plánu je členem Správní rady VZP, členem Pirátské ekonomické expertní rady (PEER) a autorem HSPA Monitoru. Plán navrhuje zkoušku s VZP a mění složení správních rad pojišťoven. Proto o smlouvě na zkoušku rozhoduje vedení VZP, výsledky hodnotí nezávislý hodnotitel a autor se z hlasování o zkoušce vyloučí.";
 
 export const INSPIRATION = [
-  { country: "Portugalsko a Estonsko", what: "týmy primární péče" },
-  { country: "Dánsko a Německo", what: "plán sítě nemocnic" },
+  { country: "Portugalsko a Estonsko", what: "týmy lékařů a sester v primární péči" },
+  { country: "Dánsko a Německo", what: "plánovaná síť nemocnic" },
   { country: "Británie a Polsko", what: "daň ze slazených nápojů" },
   { country: "Skotsko", what: "minimální cena alkoholu" },
+];
+
+// ---------------------------------------------------------------------------
+// SLOVNÍČEK
+// ---------------------------------------------------------------------------
+
+export const GLOSSARY = [
+  { term: "Primární péče", text: "První kontakt s lékařem: praktik pro dospělé, praktik pro děti a dorost, sestra v ordinaci. Odtud pacient jde dál ke specialistům nebo do nemocnice." },
+  { term: "Tým sdružené péče", text: "Několik praktiků a sester, kteří se spojí a společně se starají o 10 až 25 tisíc lidí v okolí. Mají jednu smlouvu s pojišťovnou, víc sester a další profese (nutriční terapeut, fyzioterapeut, psycholog)." },
+  { term: "Centrum primární péče", text: "Budova, kde tým sídlí pod jednou střechou. Vlastní ji obec nebo kraj. Varianta B reformy je bez nových center: týmy fungují v dnešních ordinacích." },
+  { term: "Spádové území", text: "Oblast, za jejíž obyvatele tým odpovídá a kde přijímá nové pacienty." },
+  { term: "ORP (obec s rozšířenou působností)", text: "Větší město, které vyřizuje úřední věci i pro okolní obce. Česko jich má 205. Zkouška reformy proběhne ve třech z nich a počet lidí bez praktika se bude zveřejňovat po ORP." },
+  { term: "Zkouška ve třech regionech (pilot)", text: "Dva roky (2028 a 2029) ověříme v jednom kraji na třech ORP, zda praktici do týmů vstoupí, zda se najdou sestry a kolik to stojí. Hodnotí nezávislý hodnotitel." },
+  { term: "Elektronická žádanka (eŽádanka)", text: "Elektronický poukaz na vyšetření u specialisty. Navrhujeme, aby v ní lékař povinně uvedl, jak to spěchá: do 2 týdnů, do 6 týdnů, nebo plánované." },
+  { term: "Akutní lůžko", text: "Lůžko pro nemocné, kteří potřebují operaci nebo intenzivní léčbu. Česko jich má 48 036, obsazená jsou z 56 %." },
+  { term: "Následná péče", text: "Doléčení a rehabilitace po nemoci nebo operaci, dlouhodobá péče a péče na konci života. Těchto lůžek je málo a jsou obsazená z 85 %." },
+  { term: "Obložnost", text: "Jak velká část lůžek je obsazená. Nad 85 % se podle výzkumů zvyšuje úmrtnost, proto se při této obsazenosti akutních lůžek přeměna v kraji zastaví." },
+  { term: "Zbytečná (odvratitelná) hospitalizace", text: "Pobyt v nemocnici, kterému by předešla dobrá péče mimo nemocnici: včasná kontrola, sestra, která zavolá, návštěva doma. Hlavní ukazatel reformy." },
+  { term: "Platba státu za státní pojištěnce", text: "Stát platí zdravotní pojištění za děti, důchodce, studenty a další, asi 6 milionů lidí. Dnes je to 2 188 Kč měsíčně na osobu. Navrhujeme nový vzorec, který sleduje skutečné náklady na jejich péči." },
+  { term: "Daně za zdraví", text: "Daň z tichého vína, daň ze slazených nápojů a každoroční zvyšování daně z lihu a piva s inflací. Výnos 5 mld. Kč ročně jde na prevenci a do zdravotního pojištění." },
+  { term: "Národní fond prevence", text: "Nový fond s pevnými 2 mld. Kč ročně na screening, očkování, navigaci pacientů po pozitivním testu, zubní prevenci u dětí a komunitní programy." },
+  { term: "Kontrolní bod (brána)", text: "Předem domluvený okamžik, kdy se podle čísel rozhodne, zda reforma pokračuje, upraví se, nebo zmenší. Jsou čtyři: B1 červen 2028, B2 přelom 2029 a 2030, B3 prosinec 2031, B4 rok 2033." },
+  { term: "Varianty A, B, C", text: "A je plná reforma s novými centry (21,5 mld. Kč ročně). B je bez nových budov (17,8 mld. Kč), nastane, když v roce 2031 chybí sestry. C je minimální (11,3 mld. Kč), jen pro srovnání." },
+  { term: "Kontinuita péče (index UPC)", text: "Jak často se pacient dostane ke svému jmenovitému lékaři. Cíl je aspoň 7 z 10 návštěv. Výzkumy spojují stálého lékaře s nižší úmrtností." },
+  { term: "Domácnosti ohrožené zdravotními výdaji", text: "Domácnosti, které za zdraví platí ze své kapsy víc než 40 % toho, co jim zbude po základních výdajích. Dnes je to 6 % domácností, mezi nejchudšími 21 %. Nesmí jich přibýt." },
+  { term: "Pravidla úhrad (úhradová vyhláška, dohodovací řízení)", text: "Každý rok se pojišťovny a poskytovatelé dohadují, kolik se za co platí. Když se nedohodnou, rozhodne ministerstvo vyhláškou. Návrhy na rok 2028 je třeba podat do 30. 6. 2027." },
+  { term: "Podklad zákona (věcný záměr)", text: "Dokument, který říká, co má zákon řešit a jak, ještě před napsáním paragrafů. Velký zákon trvá od podkladu po účinnost 24 až 42 měsíců, proto podklady píšeme už v opozici." },
+  { term: "ÚZIS", text: "Ústav zdravotnických informací a statistiky, státní statistický ústav pro zdravotnictví. S univerzitou bude nezávislým hodnotitelem reformy." },
+  { term: "Národní rozpočtová rada (NRR)", text: "Nezávislý orgán, který hlídá veřejné finance. Z její projekce vychází odhad, kolik bude zdravotnímu pojištění chybět." },
+];
+
+// Řetězce závislostí pro diagram „co na co navazuje“
+export const CHAINS = [
+  { id: "penize", name: "Peníze", color: 0, steps: [
+    { label: "Daně za zdraví a nová platba státu", when: "zákony 2030, platí od 1. 1. 2031" },
+    { label: "Pojišťovny platí týmy a sestry", when: "od roku 2031" },
+  ] },
+  { id: "lide", name: "Lidé a péče", color: 2, steps: [
+    { label: "Zkouška ve třech regionech", when: "2028 až 2029" },
+    { label: "Smlouvy týmů s pojišťovnami", when: "od roku 2030" },
+    { label: "Zákon o primární péči", when: "platí od 1. 1. 2032" },
+    { label: "520 týmů, 4 000 sester", when: "kolem roku 2038" },
+  ] },
+  { id: "luzka", name: "Nemocnice", color: 1, steps: [
+    { label: "Dost míst pro doléčení a dlouhodobou péči", when: "podmínka každé změny" },
+    { label: "Zákon o síti a krajské plány", when: "platí od 2033" },
+    { label: "8 000 lůžek změní účel", when: "2033 až 2038" },
+  ] },
 ];

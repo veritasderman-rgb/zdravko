@@ -16,8 +16,10 @@ Statické stránky z obsahu studie v3, politické verze a prezentace, data v `sr
 | `/penize` | struktura nákladů 2038, kdo platí, tři kalkulačky (platba státu, rozdělení daní, kolik zaplatím), deset čísel |
 | `/pro-koho` | co nabízíme a potřebujeme od 12 skupin, kulaté stoly |
 | `/otazky` | osm častých otázek, střet zájmů |
+| `/studie` | plné znění odborné studie ke čtení, bez připomínek (z databáze, obnova po 5 minutách) |
+| `/slovnicek` | slovníček pojmů |
 
-Grafy jsou v Recharts podle zásad dataviz (validovaná paleta, jedna osa, tenké pruhy, tabulková varianta u každého grafu).
+Texty jsou psané v první osobě množného čísla bez odborných výrazů; kde se jim nejde vyhnout, vysvětluje je slovníček. Grafy jsou v Recharts podle zásad dataviz (validovaná paleta, jedna osa, tenké pruhy, tabulková varianta u každého grafu).
 
 ## Interní část: připomínky k odborné studii (přístupový kód)
 
