@@ -49,7 +49,7 @@ Doporučení: postavit jednu aplikaci se třemi úrovněmi přístupu (interní 
 
 ### 3.1 Čtečka dokumentu s kotvami
 
-- Zdroj pravdy zůstává **Markdown v tomto git repozitáři**. Aplikace ho při každé verzi naimportuje a rozseká na bloky (nadpis, odstavec, tabulka, řádek tabulky, odrážka). Každý blok dostane stabilní ID odvozené z cesty nadpisů a pořadí; při nové verzi se bloky páruje podle textu, aby připomínky nespadly.
+- Zdroj pravdy zůstává **Markdown v tomto git repozitáři**. Aplikace ho při každé verzi naimportuje a rozseká na bloky (nadpis, odstavec, tabulka, řádek tabulky, odrážka). Klíč bloku odvozený z cesty nadpisů a pořadí je jen vstupní adresa; při nové verzi importér sestaví **explicitní mapu starý blok → nový blok** (nejdřív shoda textu v téže sekci, pak nejbližší podobný text v téže sekci, zbytek ručně) a tu uloží k verzi, aby se dala zkontrolovat. Připomínka tak nese trvalé ID bloku, ne pořadí; vložený odstavec nic neposune. Bloky, které se spárovat nepodaří, se vypíší koordinátorovi k ručnímu přiřazení. MVP zatím mapu nestaví a klíč podle pořadí používá přímo; je to první věc, kterou je třeba dodělat před verzí v3.1.
 - Levý panel: osnova (Části I–XI, přílohy), filtr podle kódu („ukaž mi vše k J2“), vyhledávání.
 - U každého bloku: ikona komentáře s počtem, štítky kódů (J/P/Pil/M/H/D/R/B), značka „Ověřit“, odkaz na politickou verzi téhož tématu.
 - Pravý panel: připomínky k vybranému bloku, vlákno odpovědí, stav vypořádání.
@@ -118,7 +118,7 @@ kritická cesta (3 řetězce, 4 brány) · teorie změny (5 řetězců) · tři 
 
 ### 3.9 Kalkulačky
 
-Všechny stojí na vzorcích, které studie už uvádí; nic nového se nevymýšlí.
+Většina stojí na vzorcích, které studie už uvádí (platba státu, sestry, lůžka, tým pro ORP, brána B3). Daňová kalkulačka je výjimka: studie uvádí jen scénářové odhady výnosu a sama říká, že přesné sazby daně ze slazených nápojů určí dopadová studie v roce 2028 a podíl malých vinařů je neznámý. Kalkulačka proto bude přepočítávat jen rozpětí scénářů studie podle zvoleného předpokladu (sazba, elasticita, podíl malých vinařů) a každý výsledek označí jako scénář s uvedenými předpoklady, ne jako fiskální odhad. Model v3 online závisí na dodání skriptu.
 
 | Kalkulačka | Vstupy | Výstup | Odkud vzorec |
 | --- | --- | --- | --- |

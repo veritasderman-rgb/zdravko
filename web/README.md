@@ -34,8 +34,11 @@ pnpm import:docs             # naimportuje ../*.md a ../docs/*.md do bloků (jen
 pnpm dev
 ```
 
-Po změně Markdownu stačí znovu `pnpm import:docs`: dokument dostane novou verzi, bloky se znovu vytvoří,
-připomínky zůstávají navázané na klíč bloku (sekce + pořadí), položky „Ověřit“ si drží stav podle textu.
+Po změně Markdownu stačí znovu `pnpm import:docs`: dokument dostane novou verzi, bloky se znovu vytvoří a položky
+„Ověřit“ si drží stav podle textu. **Známé omezení MVP:** připomínka je navázaná na klíč bloku (sekce + pořadí
+v sekci). Vložení odstavce do sekce proto posune klíče následujících bloků a připomínky k nim ukazují jinam. Před
+první novou verzí (v3.1) je třeba doplnit mapování starý blok → nový blok (shoda textu v sekci, pak podobnost,
+zbytek ručně) a připomínky na něj přepsat; návrh je v `docs/navrh-konzultacni-platformy.md`, oddíl 3.1.
 
 ## Struktura
 
