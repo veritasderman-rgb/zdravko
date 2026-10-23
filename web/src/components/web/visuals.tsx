@@ -159,19 +159,19 @@ export function MoneyFlow() {
   );
 }
 
-/** Deset klíčových organizací; podporu potřebujeme od šesti. */
+/** Deset organizací, se kterými plán projednáme. */
 export function SupportMeter() {
   return (
     <div>
       <div className="grid grid-cols-5 gap-2 sm:grid-cols-10">
         {KEY_SUBJECTS.map((s, i) => (
           <div key={s} className="flex flex-col items-center gap-1 text-center">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full text-sm font-semibold" style={{ background: i < 6 ? SERIES[2] : "#e7e5df", color: i < 6 ? "#fff" : INK.secondary }}>{i + 1}</div>
+            <div className="flex h-10 w-10 items-center justify-center rounded-full text-sm font-semibold" style={{ background: SERIES[2], color: "#fff" }}>{i + 1}</div>
             <div className="text-[10px] leading-tight text-muted">{s}</div>
           </div>
         ))}
       </div>
-      <p className="mt-3 text-sm text-muted">Do června 2028 potřebujeme písemnou podporu jádra plánu od aspoň <b className="text-foreground">6 z těchto 10</b> organizací. Bez nich se plán neprosadí ani s vládní většinou.</p>
+      <p className="mt-3 text-sm text-muted">S každou z těchto <b className="text-foreground">deseti organizací</b> plán projednáme dřív, než půjde do Sněmovny. Chceme znát jejich výhrady a zapracovat je do verze 3.1.</p>
     </div>
   );
 }
