@@ -52,7 +52,7 @@ export default function ProcPage() {
     <>
       <PageHero
         eyebrow="Proč"
-        title="Peníze tečou tam, kde jsou postele, ne tam, kde jsou lidé nejvíc nemocní."
+        title="Peníze tečou tam, kde jsou postele, a ne tam, kde jsou lidé nejvíc nemocní."
         lead="Hodně věcí funguje a zachováme je: pojištění hradí 85 % výdajů na zdraví a jen půl procenta lidí říká, že se k potřebné péči nedostalo. Těžiště systému je ale v nemocnicích. A na to naráží stárnutí: lidí nad 85 let bude v roce 2050 půl milionu, dnes je jich 200 tisíc."
         aside={<HeroAside />}
       />
@@ -108,7 +108,7 @@ export default function ProcPage() {
 
       <Section
         tone="paper"
-        eyebrow="Péče doma, ne na lůžku z nouze"
+        eyebrow="Péče doma místo lůžka z nouze"
         title="Zbytečných hospitalizací máme o čtvrtinu víc než vyspělé země"
         lead="Zbytečná hospitalizace je taková, které by předešla dobrá péče mimo nemocnici: včasná kontrola dlouhodobě nemocného, sestra, která zavolá, návštěva doma. Je to hlavní číslo, podle kterého se reforma bude v roce 2033 hodnotit."
       >
@@ -132,7 +132,7 @@ export default function ProcPage() {
         </div>
         <div className="mt-8 max-w-[52em]">
           <Callout title="Říkáme to otevřeně" tone="sage">
-            Nedostatek sester je nejslabší místo plánu a říkáme to otevřeně. Proto pojišťovna platí jen obsazené místo, plat je jako v nemocnici bez nočních služeb, a když do konce roku 2031 přijde jen polovina sester, nové budovy se nestaví a reforma se zmenší, ne zastaví.
+            Nedostatek sester je nejslabší místo plánu. Proto pojišťovna platí jen obsazené místo a plat je jako v nemocnici, ale bez nočních služeb. Kdyby do konce roku 2031 přišla jen polovina potřebných sester, nové budovy se stavět nebudou a reforma poběží v menším rozsahu. Nezastaví se.
           </Callout>
         </div>
       </Section>

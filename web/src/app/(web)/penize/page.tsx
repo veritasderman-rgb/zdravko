@@ -101,7 +101,7 @@ export default function PenizePage() {
         id="kalkulacky"
         eyebrow="Přepočítejte si to"
         title="Tři kalkulačky nad čísly studie"
-        lead="Vzorce jsou převzaté z ekonomického modelu studie. Výsledky jsou scénáře s uvedenými předpoklady, ne přesná předpověď."
+        lead="Vzorce jsou převzaté z ekonomického modelu studie. Výsledky jsou scénáře s uvedenými předpoklady, a ne přesná předpověď."
       >
         <div className="grid gap-6 lg:grid-cols-2">
           <StatePaymentCalculator />

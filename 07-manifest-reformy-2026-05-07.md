@@ -1,10 +1,10 @@
 # Manifest reformy českého zdravotnictví
 
-*Josef Pavlovic, Bára Malíková a Resortní tým České pirátské strany pro zdravotnictví. Publikováno 7. 5. 2026 na HSPA Monitoru (skorezdravotnictvi.cz). Tento soubor je textová kopie pro potřeby studie „Zdraví blíž lidem“ a webu; závazné znění je na zdrojové adrese.*
+*Josef Pavlovic, Bára Malíková a Resortní tým České pirátské strany pro zdravotnictví. Publikováno 7. 5. 2026 na HSPA Monitoru (skorezdravotnictvi.cz). Tento soubor je textová kopie pro potřeby studie „Zdraví blíž lidem“ a webu; závazné znění je na zdrojové adrese. Odstavce označené „Doplněno 23. 10. 2026“ (střet zájmů v komisích ministerstva v prioritě 4, péče porodních asistentek v prioritě 12) přidali autoři Manifestu dodatečně a na zdrojové adrese se teprve promítnou.*
 
 Zdroj: https://www.skorezdravotnictvi.cz/clanek-manifest-reforma-zdravotnictvi · Podstránky priorit: https://www.skorezdravotnictvi.cz/manifest/
 
-**Jak s ním studie pracuje.** Manifest je výchozí politický dokument reformy. Studie v3 rozpracovala tři jeho oblasti do jádra reformy (6 pomezí, 8 prevence, 10 data), deset dalších vede jako doprovod s vlastními policy briefy (Část XI, opatření M1.1–M10.5) a přidala to, co Manifest výslovně neřeší: týmy primární péče s pětiletou smlouvou (J1–J4) a krajský plán sítě lůžkové péče (J6–J7). Mapování oblastí na opatření je v souboru `docs/manifest-13-vs-studie.md` a na webu na stránce `/plan`.
+**Jak s ním studie pracuje.** Manifest je výchozí politický dokument reformy. Studie v3 rozpracovala tři jeho oblasti do jádra reformy (6 pomezí, 8 prevence, 10 data), deset dalších vede jako doprovod s vlastními policy briefy (Část XI, opatření M1.1–M10.5) a přidala to, co Manifest výslovně neřeší: týmy primární péče s pětiletou smlouvou (J1–J4) a krajský plán sítě lůžkové péče (J6–J7). Střet zájmů v komisích ministerstva (M4.5) a péči porodních asistentek (Pil2.6) rozpracovává studie v3.1 a od 23. 10. 2026 jsou i v Manifestu. Mapování oblastí na opatření je v souboru `docs/manifest-13-vs-studie.md` a na webu na stránce `/plan`.
 
 ---
 
@@ -110,6 +110,8 @@ Data o českém zdravotnictví dnes vycházejí jako časově zpožděné PDF ro
 
 Cílem reformy je publikovat anonymizovaná data o českém zdravotnictví na úrovni poskytovatele — s komentářem a v otevřeném formátu, aby každý mohl ověřit originál a pracovat s daty dál. Aktuální data, ne zpožděná o roky. Pacient před zákrokem dostane informaci o zařízeních, která jeho zákrok provádějí, s čekací dobou, kvalitativními ukazateli a vzdáleností; lékař vidí volné kapacity v reálném čase. Jako rámec hodnocení kvality použijeme HSPA (Health System Performance Assessment), který Česko přijalo v roce 2023 ve spolupráci s OECD, ale jehož implementace zatím nepostoupila.
 
+Transparence se týká i toho, kdo o zdravotnictví rozhoduje. Komise a poradní orgány ministerstva radí o úhradách, seznamu výkonů, kategorizaci, rozmístění přístrojů, dotacích a akreditacích, a jejich členové dnes prohlášení o zájmech nezveřejňují. Chceme komise bez střetu zájmů. Kde se bez odborníků z praxe neobejdou, platí aspoň úplná průhlednost: veřejné prohlášení o zájmech za poslední tři roky, vyloučení z hlasování i z přípravy podkladu u vlastní věci, jmenovitá hlasování a zápisy zveřejněné do 30 dnů. Většinu z toho může ministr zavést hned, příkazem a statuty komisí. *(Doplněno 23. 10. 2026.)*
+
 Modely fungují v zahraničí dlouhodobě. Britský NHS Digital a navazující nástroje („NHS — find a hospital") publikují výkonová data jednotlivých zařízení a jejich kvalitu. Americký CMS Hospital Compare srovnává nemocnice podle mortality, readmise a kvality péče. Skandinávské země mají dlouhou tradici otevřených klinických registrů — švédské Nationella kvalitetsregister jsou přes tři dekády staré a stále se rozšiřují. Co se měří, lze zlepšit; co se neměří, zůstává v anekdotě.
 
 ### 5 · Dostupné léky běžné i moderní
@@ -181,6 +183,8 @@ V zahraničí jsou rozšířené role sester normálním standardem. Ve Spojený
 ### 12 · Práva pacientů
 
 V době koronavirové krize vyeskalovala situace okolo porušování práv některých skupin pacientů — umírajících, nezletilých dětí, rodiček. Specifická je oblast porodnictví: právo žen a otců u porodu, tedy zákonných zástupců novorozence, je v ČR systémově upozaďováno. V mnoha porodnicích je popírán pozitivní vliv přítomnosti osoby blízké na psychiku dítěte; separace novorozence od matky je prezentována jako neškodná. Český zákon o zdravotních službách i občanský zákoník přitom jasně stanoví, že oddělit dítě od pečující osoby lze pouze soudně a že pacient může dostat jen péči, se kterou vyslovil souhlas. Mnohé nemocnice tato základní pravidla porušují.
+
+Porodnictví je zároveň oblast, kde se dnes rozhoduje o rušení malých porodnic, aniž by někdo řekl, co bude místo nich. Uznáváme, že síť porodnic v dnešní podobě neudržíme. Odmítáme ale rušení bez náhrady. Chceme posílit terénní služby porodních asistentek: hrazenou péči v těhotenství, u fyziologického porodu a v šestinedělí včetně návštěv doma, centra porodní asistence při porodnicích a komunitní porodní asistentky se smlouvou s pojišťovnou a s dohodou o předání do nejbližší porodnice. Je to nejlevnější a u zdravých těhotenství nejlépe doložená péče. Žádná porodnice se nemá sloučit ani zavřít, dokud v jejím okolí taková síť nefunguje a dokud kraj nemá plán dojezdu. *(Doplněno 23. 10. 2026.)*
 
 Reálná vymahatelnost práva pacienta je dnes mimo soud (v řádu let) prakticky nulová; nezávislý posudek je obtížné získat, protože znalecké posudky často píší kolegové z oboru. Reformu proto stavíme na zřízení institutu zdravotnického ombudsmana s pravomocí vyšetřovat stížnosti pacientů a vydávat doporučení. Akreditační komise (SAK a podobně) potřebují změnu — dnes fungují spíše jako soukromé firmy se zájmem certifikaci udělit a získat za to peníze, a reálně odmítají řešit nedodržení certifikace. Akreditace má klást důraz na respekt k právům pacientů, ne na přebujelou administrativu — protože dobrá myšlenka kvality a bezpečí byla v praxi zredukována na povinnost vyplnit mnohostránkové souhlasové formuláře. Pacientům to nedává nic, lékaře to štve a viní z toho akreditační proces.
 
@@ -352,7 +356,7 @@ Každá priorita má na webu HSPA Monitoru vlastní stránku s kontextem, opatř
 
 **Co to drží.** Lékař volá nemocnice po telefonu, protože nezná aktuální kapacity. Pacient před plánovaným zákrokem rozhoduje na anekdotách. Data existují v NZIS, ale nejsou otevřená — chybí politická vůle i jednotná datová infrastruktura.
 
-**Co se musí změnit.** Národní open-data portál s anonymizovanými daty per IČO, denní/týdenní frekvence, otevřené API a HSPA rámec OECD jako oficiální měřítko.
+**Co se musí změnit.** Národní open-data portál s anonymizovanými daty per IČO, denní/týdenní frekvence, otevřené API a HSPA rámec OECD jako oficiální měřítko. Komise a poradní orgány ministerstva bez střetu zájmů, nebo aspoň zcela průhledné (doplněno 23. 10. 2026).
 
 **Riziko při nečinnosti.** Bez transparentních dat se kvalita neměří, plýtvání neodhalí a veřejná debata o reformě stojí na dojmech místo na číslech.
 
@@ -364,10 +368,11 @@ Každá priorita má na webu HSPA Monitoru vlastní stránku s kontextem, opatř
 | HSPA rámec OECD jako oficiální měřítko kvality (ČR přijala 2023, neimplementuje) | Usnesení vlády + metodika ÚZIS | Rok 1 |
 | Per-hospital kvalitativní metriky publikované veřejně | Reporting ÚZIS + NIKEZ | Rok 2 |
 | Pacient před zákrokem dostane comparison sheet svého pracoviště vs alternativ | SZV + pacientský portál | Rok 3 |
+| Střet zájmů v komisích a poradních orgánech MZ — veřejná prohlášení o zájmech, vyloučení z hlasování u vlastní věci, jmenovitá hlasování, zápisy do 30 dnů (doplněno 23. 10. 2026) | Příkaz ministra + statuty komisí; později zákon 372/2011 | Rok 1 |
 
 **Harmonogram.**
 
-- Rok 1: Legislativní povinnost ÚZIS publikovat data otevřeně + API; HSPA jako oficiální měřítko
+- Rok 1: Legislativní povinnost ÚZIS publikovat data otevřeně + API; HSPA jako oficiální měřítko; příkaz ministra a nové statuty komisí (prohlášení o zájmech, jmenovitá hlasování, veřejné zápisy)
 - Rok 2: Per-hospital metrika pro 10 klinických oblastí (AMI, CMP, onko chirurgie, …)
 - Rok 3: Comparison sheet pro pacienta před plánovaným zákrokem
 - Rok 5: Plně auditní stopa všech kvalitativních metrik na národní úrovni
@@ -663,7 +668,7 @@ Každá priorita má na webu HSPA Monitoru vlastní stránku s kontextem, opatř
 
 **Co to drží.** Nemocniční ombudsman zavedený novelou 290/2025 Sb. je krok správným směrem, ale závisí na implementaci. Bez standardizovaných lhůt a sankcí zůstává stížnost často bez odezvy.
 
-**Co se musí změnit.** Standardizovat stížnostní řízení (lhůta 30 dní, sankce), zavést pacientského advokáta pro vážné diagnózy, Patient Safety Incidents a mediaci sporů.
+**Co se musí změnit.** Standardizovat stížnostní řízení (lhůta 30 dní, sankce), zavést pacientského advokáta pro vážné diagnózy, Patient Safety Incidents a mediaci sporů. Posílit terénní péči porodních asistentek místo pouhého rušení porodnic (doplněno 23. 10. 2026).
 
 **Riziko při nečinnosti.** Bez vymahatelnosti zůstanou práva pacientů na papíře — a důvěra v systém, kterou data ukazují jako křehkou, dál klesá.
 
@@ -675,12 +680,13 @@ Každá priorita má na webu HSPA Monitoru vlastní stránku s kontextem, opatř
 | Standardizace stížnostního řízení — max. lhůta 30 dní, sankce za nedodržení | Zákon o zdravotních službách 372/2011 | Rok 2 |
 | Patient Safety Incidents jako v aviaci — povinné hlášení, kultura učení z chyb | Zákon o ZS + metodika ÚZIS | Rok 3 |
 | Pacientský advokát pro vážné diagnózy + mediátor sporů jako alternativa k soudu | SZV + zákon o mediaci | Rok 4 |
+| Hrazená péče porodních asistentek (těhotenství, fyziologický porod, šestinedělí doma), centra porodní asistence při porodnicích, komunitní asistentky se smlouvou; žádné zavření porodnice bez jejich sítě v území a plánu dojezdu (doplněno 23. 10. 2026) | Seznam výkonů + úhradová vyhláška + smlouvy pojišťoven; zákon o síti lůžkové péče | Rok 1–3 |
 
 **Harmonogram.**
 
-- Rok 1: Implementace nemocničního ombudsmana (zákon 290/2025 Sb., účinnost 1. 7. 2026)
+- Rok 1: Implementace nemocničního ombudsmana (zákon 290/2025 Sb., účinnost 1. 7. 2026); výkony porodní asistentky v seznamu výkonů a smlouvy pojišťoven s komunitními porodními asistentkami
 - Rok 2: Standardizace stížnostního řízení + lhůty + sankce
-- Rok 3: Pilot Patient Safety Incidents systému (3 fakultní nemocnice)
+- Rok 3: Pilot Patient Safety Incidents systému (3 fakultní nemocnice); podmínka pro změny v síti porodnic v zákoně o síti
 - Rok 4: Pacientský advokát pro onkologii a vážné diagnózy
 - Rok 5+: No-fault compensation model (skandinávský)
 
@@ -692,6 +698,10 @@ Každá priorita má na webu HSPA Monitoru vlastní stránku s kontextem, opatř
 - Patient injury insurance — automatické odškodnění bez soudu pro definované újmy. Skandinávský model.
 - 🇳🇱 Nizozemsko · IGJ
 - Silný inspekční orgán s pravomocí veřejně publikovat výsledky inspekcí per pracoviště.
+- 🇬🇧 Anglie · Midwifery units
+- Jednotky vedené porodními asistentkami při porodnicích i samostatně. Studie Birthplace (2011, 64 538 porodů): stejná bezpečnost pro dítě jako v porodnici, méně zásahů, nižší náklady.
+- 🇳🇱 Nizozemsko · komunitní porodní asistentky
+- Samostatně vedou péči o zdravé těhotné a rodičky doma i v porodnici, s jasným pravidlem předání gynekologovi.
 
 **Co je sporné.** No-fault odškodnění zrychluje kompenzaci, ale kritici varují, že oslabuje odpovědnost za chyby. Povinné hlášení incidentů funguje jen v kultuře bez trestání — sporné je, jak ji vybudovat v prostředí zvyklém hledat viníka. A pacientský advokát placený z pojištění zvedá náklady.
 
