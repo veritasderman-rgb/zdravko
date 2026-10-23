@@ -15,7 +15,7 @@ export const MANIFEST = {
   source: "https://www.skorezdravotnictvi.cz/clanek-manifest-reforma-zdravotnictvi",
   hub: "https://www.skorezdravotnictvi.cz/manifest/",
   intro:
-    "Manifest reformy z 7. 5. 2026 vychází z pěti čísel, o kterých se nemusíme dohadovat, a odpovídá na ně ve třinácti oblastech. Naše studie ho rozpracovává do opatření, právních nástrojů, termínů a peněz. U každé oblasti ukazujeme, co Manifest slibuje, co z toho ve studii děláme a kde se od něj liší.",
+    "Manifest reformy z 7. 5. 2026 vychází z pěti čísel, o kterých se nemusíme dohadovat, a odpovídá na ně ve třinácti oblastech. Naše studie ho rozpracovává do opatření, právních nástrojů, termínů a peněz. U každé oblasti ukazujeme, co Manifest slibuje, co z toho ve studii děláme a co z něj zbývá rozpracovat.",
   fiveData: [
     { value: "463", label: "úmrtí na nemoci srdce a cév na 100 000 lidí", compare: "průměr EU-27: 313", source: "Eurostat, 2023" },
     { value: "31,1 %", label: "lidí se účastní screeningu tlustého střeva", compare: "průměr OECD: 42 %", source: "OECD, 2024" },
@@ -206,7 +206,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     ],
     inspiration: "Dvouvrstvé systémy mají Nizozemsko, Švýcarsko a Francie (jasná hranice mezi standardem a nadstandardem); čekací doby zveřejňuje britská NHS a záruku termínu mají Dánsko a Německo.",
     gaps:
-      "Trestnost neformálních plateb a hrazený druhý názor zatím nejsou rozpracované do kroků. Záruku specialisty do 30 dnů plníme lhůtami podle naléhavosti (do 2 týdnů, do 6 týdnů, plánované), které zavádí elektronická žádanka (J5).",
+      "Trestnost neformálních plateb a hrazený druhý názor zatím nejsou rozpracované do kroků. Záruku specialisty do 30 dnů zatím nahrazujeme lhůtami podle naléhavosti, které zavádí elektronická žádanka (J5): do 2 týdnů, do 6 týdnů a plánovaná péče bez pevné horní hranice. Jednotnou záruku 30 dnů pro všechny tedy ještě nemáme rozpracovanou.",
     dispute:
       "Záruka do 30 dnů může frontu jen přesunout, pokud nejsou lidé, kteří by pacienty ošetřili. Zveřejňování výsledků za pracoviště zase může vést k tomu, že nemocnice odmítnou rizikovější pacienty, aby si nezhoršily statistiku.",
   },
