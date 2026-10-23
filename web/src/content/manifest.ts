@@ -26,10 +26,10 @@ export const MANIFEST = {
 };
 
 export const MANIFEST_NOTE =
-  "Manifest je politický dokument autorů z 7. 5. 2026. Studie „Zdraví blíž lidem“ je jeho rozpracování do opatření, nástrojů, termínů a peněz. Tři oblasti (pomezí zdravotní a sociální péče, prevenci a data) jsme zařadili do jádra reformy, deset dalších vedeme jako doprovod s vlastním krátkým briefem. Kde se obě znění liší, platí studie ve verzi 3 a rozdíl uvádíme u příslušné oblasti.";
+  "Manifest je politický dokument autorů z 7. 5. 2026 a říká, co se má změnit a proč. Studie „Zdraví blíž lidem“ z něj vychází a rozpracovává ho do opatření, nástrojů, termínů a peněz. Tři oblasti (pomezí zdravotní a sociální péče, prevence a data) tvoří nosnou část plánu, deset dalších jsou doplňková opatření s vlastním krátkým briefem. Co z Manifestu ještě není rozpracované do kroků, uvádíme u každé oblasti.";
 
 /** Zkrácená verze pro perex stránky. */
-export const MANIFEST_NOTE_SHORT = "Kde se obě znění liší, platí studie ve verzi 3 a rozdíl uvádíme u každé oblasti.";
+export const MANIFEST_NOTE_SHORT = "Studie z Manifestu vychází; co ještě není rozpracované do kroků, uvádíme u každé oblasti.";
 
 export type ManifestArea = {
   n: number;
@@ -182,7 +182,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     ],
     inspiration: "Britský institut NICE hodnotí přínos a náklady od roku 1999, podobně fungují německý G-BA, francouzský HAS a skandinávské instituce; bonus za výsledky znají britský CQUIN a americký Medicare.",
     gaps:
-      "Bonus 5 až 15 % k platbě za případ (DRG) vázaný na výsledek studie nemá. Platí týmy za funkce, které skutečně zajistí, a odměnu za výsledky stropuje, protože nizozemské balíčkové platby za chroniky výdaje spíš zvýšily.",
+      "Bonus 5 až 15 % k platbě za případ (DRG) vázaný na výsledek zatím není rozpracovaný. Studie zatím platí týmům za funkce, které skutečně zajistí, a odměnu za výsledky stropuje, protože nizozemské balíčkové platby za chroniky výdaje spíš zvýšily. Nemocniční část bonusu doplníme do příští verze.",
     dispute:
       "Platba vázaná na výsledek může vést k tomu, že nemocnice vylepšují hlavně to, co se měří. Těžké je i spravedlivě započítat, že některá pracoviště léčí těžší pacienty, a rozhodnout, kolik procent úhrady na výsledek vázat.",
   },
@@ -206,7 +206,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     ],
     inspiration: "Dvouvrstvé systémy mají Nizozemsko, Švýcarsko a Francie (jasná hranice mezi standardem a nadstandardem); čekací doby zveřejňuje britská NHS a záruku termínu mají Dánsko a Německo.",
     gaps:
-      "Trestnost neformálních plateb a hrazený druhý názor studie neřeší. Záruku specialisty do 30 dnů nahrazují lhůty podle naléhavosti (do 2 týdnů, do 6 týdnů, plánované), které zavádí elektronická žádanka (J5).",
+      "Trestnost neformálních plateb a hrazený druhý názor zatím nejsou rozpracované do kroků. Záruku specialisty do 30 dnů plníme lhůtami podle naléhavosti (do 2 týdnů, do 6 týdnů, plánované), které zavádí elektronická žádanka (J5).",
     dispute:
       "Záruka do 30 dnů může frontu jen přesunout, pokud nejsou lidé, kteří by pacienty ošetřili. Zveřejňování výsledků za pracoviště zase může vést k tomu, že nemocnice odmítnou rizikovější pacienty, aby si nezhoršily statistiku.",
   },
@@ -230,7 +230,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     ],
     inspiration: "Finská služba Kanta ukazuje pacientovi, kdo se na jeho data díval; navigátora hradí pojišťovna v Nizozemsku a švédská linka 1177 pomáhá orientovat se v systému nepřetržitě.",
     gaps:
-      "Povinné hlášení pacientských incidentů studie nemá. Navigátor pro vážné diagnózy je ve studii užší: navigace po pozitivním screeningu (pilot) a koordinátor společného plánu péče.",
+      "Povinné hlášení pacientských incidentů zatím není rozpracované. Navigátor pro vážné diagnózy máme zatím jen jako navigaci po pozitivním screeningu (pilot) a koordinátora společného plánu péče; rozšíření na onkologii doplníme.",
     dispute:
       "Vlastnictví dat pacientem zní dobře, ale naráží na bezpečnost a propojitelnost systémů: kdo ručí, když pacient data omylem sdílí špatně? Otevřené je i to, zda navigátor patří jen k rakovině, nebo ke všem vážným diagnózám.",
   },
@@ -278,7 +278,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     ],
     inspiration: "Britští lékárníci v NHS očkují a poskytují prevenci, Belgie platí lékárníkům roční revizi léků, Nizozemsko má kurýrní výdej a skotský SMC hodnotí léky na vzácné nemoci zvlášť.",
     gaps:
-      "Státní zásoba 500 a více léčiv (Emergency Stock) jde dál než seznam základních léků (M5.1). U léků na vzácná onemocnění navíc studie nezavádí strop nákladů na pacienta; navrhuje společný rizikový fond všech pojišťoven.",
+      "Státní zásobu 500 a více léčiv (Emergency Stock) zatím pokrývá jen seznam základních léků (M5.1); rozsah zásoby a strop nákladů na pacienta u léků na vzácná onemocnění zbývá doplnit. Zatím navrhujeme společný rizikový fond všech pojišťoven.",
     dispute:
       "Velké státní zásoby vážou peníze a léky mají omezenou trvanlivost, takže se musí obměňovat. Omezení reexportu navíc naráží na evropské právo.",
   },
@@ -302,7 +302,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     ],
     inspiration: "Dánská domácí péče je první volba pro seniory, nizozemský Buurtzorg má samosprávné týmy sester a britský Better Care Fund sdílí peníze zdravotnictví a obcí.",
     gaps:
-      "Manifest chce mezirezortní zákon už v roce 1 (2030); sdílené financování má studie jako sociální účet (P3) s účinností až 1. 1. 2034. Rodinu v nemocnici chce Manifest „bez výjimek“, studie ji dává jako výchozí pravidlo s odůvodněnými a zapsanými výjimkami (M9.4).",
+      "Mezirezortní zákon chce Manifest už v roce 1 (2030); sdílené financování máme jako sociální účet (P3) s účinností 1. 1. 2034, protože za jedno volební období projdou jen dvě velké předlohy. Rodinu v nemocnici chce Manifest bez výjimek; zatím ji dáváme jako výchozí pravidlo s odůvodněnými a zapsanými výjimkami (M9.4).",
     dispute:
       "Spojit dva resorty s různými rozpočtovými pravidly je administrativně těžké a hrozí přehazování odpovědnosti. Domácí péče také není automaticky levnější: bez dost lidí jen přenese zátěž na rodiny.",
   },
@@ -327,7 +327,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     ],
     inspiration: "Dánský Trial Nation spojuje pět univerzit a národní biobanku, britský NIHR financuje výzkum přes NHS a evropská síť ECRIN propojuje infrastruktury klinického výzkumu.",
     gaps:
-      "Centrální etickou komisi, národní biobanku a plné provedení evropského nařízení o klinických hodnoceních studie neřeší. Soustředí se na program AZV pro akademické studie a na vyhodnocení pilotních týmů jako studie.",
+      "Centrální etickou komisi, národní biobanku a plné provedení evropského nařízení o klinických hodnoceních zbývá rozpracovat. Zatím máme program AZV pro akademické studie a vyhodnocení pilotních týmů jako studie.",
     dispute:
       "Centrální etická komise zrychlí schvalování, ale kritici se bojí ztráty znalosti místních poměrů. Pobídky vázané na nábor pacientů mohou tlačit na množství studií na úkor dohledu nad pacienty.",
   },
@@ -354,7 +354,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     ],
     inspiration: "Finská severní Karélie od roku 1972 snížila úmrtnost na srdeční nemoci o desítky procent, Skotsko zavedlo od roku 2018 minimální cenu alkoholu a severské země mají účast na screeningu kolem 70 %.",
     gaps:
-      "Manifest chce prevenci aspoň na 5 % výdajů; studie dává Národnímu fondu prevence pevně 2 mld. Kč z daní za zdraví a 1,3 mld. Kč na prevenci v týmech, cíl v procentech nestanovuje. Hrazenou dentální hygienu zužuje na fluoridový lak a zalití rýh (0,3 až 0,5 mld. Kč); zdanění tabáku a pozvánky na všechny screeningy zatím nemá.",
+      "Manifest chce prevenci aspoň na 5 % výdajů; zatím máme pevně 2 mld. Kč pro Národní fond prevence z daní za zdraví a 1,3 mld. Kč na prevenci v týmech, cestu k 5 % zbývá dopočítat. Hrazenou dentální hygienu do 18 let zatím pokrývá fluoridový lak a zalití rýh (0,3 až 0,5 mld. Kč); zdanění tabáku a pozvánky na všechny screeningy zbývá doplnit.",
     dispute:
       "Daně z alkoholu a tabáku fungují na celou populaci, ale jsou politicky nepopulární a dopadají víc na lidi s nízkými příjmy. Automatické pozvánky zvyšují účast, ale i náklady a riziko zbytečné diagnostiky; kde končí prevence a začíná poručnický přístup státu, je otevřená otázka.",
   },
@@ -379,7 +379,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     ],
     inspiration: "Švédsko hradí zubní péči dětem a mladým, německý Bonusheft vyžaduje každoroční prohlídku pro plnou úhradu a britská NHS má tři cenová pásma, ze kterých pacient předem zná doplatek.",
     gaps:
-      "Konec amalgámu a bonus pro zubaře za prevenci studie nemá; zubaře mimo velká města má udržet úprava sazeb (M7.2), ne pokuty pro pojišťovny. Hrazenou dentální hygienu do 18 let zužuje na fluoridový lak, zalití rýh a instruktáž (Pil4.6).",
+      "Konec amalgámu a bonus pro zubaře za prevenci zbývá rozpracovat; zubaře mimo velká města zatím drží úprava sazeb (M7.2). Hrazenou dentální hygienu do 18 let zatím pokrývá fluoridový lak, zalití rýh a instruktáž (Pil4.6).",
     dispute:
       "Plně hrazená péče podle švédského vzoru je nákladná a těžko se určuje hranice mezi nutnou a kosmetickou péčí. Pokuty za nedostupnost mohou zubaře z veřejného systému spíš vytlačit a konec amalgámu zdraží plomby, takže je třeba rozhodnout, kdo rozdíl zaplatí.",
   },
@@ -403,7 +403,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
       { value: "62", label: "bodů má Česko v indexu zavedení elektronického zdravotnictví", compare: "průměr OECD: 70" },
     ],
     inspiration: "Estonsko má od roku 2008 národní elektronické zdravotnictví, dánský portál sundhed.dk funguje od roku 2003 a finská Kanta spojuje osobní záznam, e-recept a archiv vyšetření.",
-    gaps: "Jednotné datové standardy (FHIR) studie nezmiňuje; v Pilíři 3 navazuje na portál pacienta, který ministerstvo spustilo v lednu 2026, a na evropský prostor pro zdravotní data (EHDS).",
+    gaps: "Jednotné datové standardy (FHIR) zbývá rozpracovat; Pilíř 3 zatím navazuje na portál pacienta, který ministerstvo spustilo v lednu 2026, a na evropský prostor pro zdravotní data (EHDS).",
     dispute:
       "Lékaři se bojí, že sdílení dat poslouží ke kontrole, ne k péči. Rychlé zavedení navíc stojí proti ochraně citlivých dat a kybernetické bezpečnosti: ransomware už české nemocnice vyřadil.",
   },
@@ -428,7 +428,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     ],
     inspiration: "Nizozemské specialistické sestry smějí předepisovat, britská NHS plánuje personál na patnáct let a sestry v primární péči se širokými kompetencemi mají Finsko a Spojené státy.",
     gaps:
-      "Navýšení kapacit lékařských fakult, regionální bonusy a patnáctileté plánování personálu studie nemá; místo toho bere personální bilanci po krajích (P1) a roční výpočet rezidenčních míst (P2). Kompetence sester přicházejí později než v Manifestu: samostatná indikace od 2032, sestra s rozšířenou praxí od 2033 (J2).",
+      "Navýšení kapacit lékařských fakult, regionální bonusy a patnáctileté plánování personálu zbývá rozpracovat; zatím máme personální bilanci po krajích (P1) a roční výpočet rezidenčních míst (P2). Kompetence sester přicházejí později než v Manifestu: samostatná indikace od 2032, sestra s rozšířenou praxí od 2033 (J2).",
     dispute:
       "Širší kompetence nelékařů narážejí na odpor části lékařů. Víc míst na fakultách se projeví až za deset a více let a samo neřeší, že lidé odcházejí; otevřené je, zda stačí regionální bonusy, nebo je potřeba závazek odpracovat roky v regionu.",
   },
@@ -453,7 +453,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     ],
     inspiration: "Švédsko a Norsko mají ombudsmana pro pacienty, Dánsko a Švédsko odškodnění bez prokazování viny, Británie síť Healthwatch a Nizozemsko inspekci, která zveřejňuje výsledky po pracovištích.",
     gaps:
-      "Hlášení incidentů, mediaci a odškodnění bez prokazování viny studie nemá. Nemocniční ombudsman podle zákona 290/2025 Sb. už platí; studie přidává zdravotnického ombudsmana u veřejného ochránce práv.",
+      "Hlášení incidentů, mediaci a odškodnění bez prokazování viny zbývá rozpracovat. Nemocniční ombudsman podle zákona 290/2025 Sb. už platí; k němu přidáváme zdravotnického ombudsmana u veřejného ochránce práv.",
     dispute:
       "Odškodnění bez viny zrychluje kompenzaci, ale kritici se bojí, že oslabí odpovědnost za chyby. Hlášení incidentů funguje jen v kultuře bez trestání, kterou je těžké vybudovat tam, kde se hledá viník.",
   },
@@ -480,7 +480,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     ],
     inspiration: "Britské Talking Therapies nabízejí psychoterapii bez doplatku od roku 2008, Belgie od roku 2010 přesouvá peníze do komunitní péče a Nizozemsko hradí zdravotnické psychology v základním pojištění.",
     gaps:
-      "Zákon o psychoterapii chce Manifest už v roce 1 (2030); studie řeší psychoterapii novelami zákonů a s účinností až 1. 1. 2034 (M10.3). Dětskou psychiatrii studie uvádí jen jako rezidenční místa navázaná na cíl (M10.5).",
+      "Zákon o psychoterapii chce Manifest už v roce 1 (2030); zatím ho řešíme novelami zákonů s účinností 1. 1. 2034 (M10.3). Dětskou psychiatrii máme zatím jen jako rezidenční místa navázaná na cíl (M10.5); kapacity a krajské rozložení doplníme.",
     dispute:
       "Přesun z lůžek do komunity funguje jen tam, kde komunitní síť opravdu vznikne; jinak zůstanou lidé bez péče. Vysoká spotřeba antidepresiv navíc nemusí být jen selhání, část může odrážet lepší záchyt deprese.",
   },

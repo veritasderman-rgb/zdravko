@@ -11,7 +11,7 @@ import { Callout, Chip, CodeRef, NextStep, PageHero, Section, TextLink } from "@
 
 export const metadata = { title: "13 oblastí" };
 
-const LAYER_LABEL = { jadro: "jádro", doprovod: "doprovod" } as const;
+const LAYER_LABEL = { jadro: "nosná část plánu", doprovod: "doplňkové opatření" } as const;
 
 function FiveNumbers() {
   return (
@@ -62,7 +62,7 @@ function AreaSection({ area, tone }: { area: ManifestArea; tone: "sand" | "paper
       <div className="flex flex-col gap-8 sm:gap-10">
         {area.studyArea && (
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-            <Chip variant="topic">{area.layer === "jadro" ? "Jádro reformy" : "Doprovod"}</Chip>
+            <Chip variant="topic">{area.layer === "jadro" ? "Nosná část plánu" : "Doplňkové opatření"}</Chip>
             <span className="text-base text-muted">Ve studii: {area.studyArea}</span>
           </div>
         )}
@@ -106,7 +106,7 @@ function AreaSection({ area, tone }: { area: ManifestArea; tone: "sand" | "paper
             {(area.gaps || area.dispute) && (
               <div className="flex flex-col gap-4">
                 {area.gaps && (
-                  <Callout title="Kde se lišíme" tone="sage">
+                  <Callout title="Co z Manifestu zbývá rozpracovat" tone="sage">
                     <p>{area.gaps}</p>
                   </Callout>
                 )}
@@ -142,21 +142,21 @@ export default function PlanPage() {
       <Section
         tone="paper"
         eyebrow="Jak Manifest čteme"
-        title="Jádro, doprovod a roky od nástupu vlády"
+        title="Nosná část, doplňková opatření a roky od nástupu vlády"
         lead={MANIFEST_NOTE}
       >
         <div className="grid gap-4 md:grid-cols-2">
           <div className="rounded-card border border-line bg-sand p-5 sm:p-6">
-            <Chip variant="topic">Jádro</Chip>
+            <Chip variant="topic">Nosná část plánu</Chip>
             <p className="mt-3 text-base text-ink-2 sm:text-[17px]">
-              Tři oblasti (6, 8 a 10) jsme rozpracovali do jádra reformy: pomezí zdravotní a sociální péče, prevenci a data ve službách pacienta. Jejich opatření nesou kódy{" "}
+              Nosná část plánu jsou opatření, bez kterých reforma nefunguje: mají zákon, termín a peníze. Patří sem tři oblasti Manifestu (6, 8 a 10): pomezí zdravotní a sociální péče, prevence a data ve službách pacienta. Jejich opatření nesou kódy{" "}
               <CodeRef code="J" link={false} />, <CodeRef code="P" link={false} /> a <CodeRef code="Pil" link={false} />.
             </p>
           </div>
           <div className="rounded-card border border-line bg-sand p-5 sm:p-6">
-            <Chip variant="topic">Doprovod</Chip>
+            <Chip variant="topic">Doplňková opatření</Chip>
             <p className="mt-3 text-base text-ink-2 sm:text-[17px]">
-              Zbylých deset oblastí má ve studii krátký brief s vlastním tempem a kódy <CodeRef code="M" link={false} /> (od M1.1 do M10.5). Zdržení doprovodu jádro nezastaví a naopak.
+              Doplňková opatření jsou zbylých deset oblastí. Každá má ve studii krátký brief s vlastním tempem a kódy <CodeRef code="M" link={false} /> (od M1.1 do M10.5). Když se jedno zdrží, nosná část jede dál, a naopak.
             </p>
           </div>
           <div className="rounded-card border border-line bg-sand p-5 sm:p-6">
@@ -187,7 +187,7 @@ export default function PlanPage() {
         tone="sand"
         eyebrow="Rozcestník"
         title="Třináct oblastí na jednom místě"
-        lead="Kliknutím přeskočíte na oblast. Zeleně podbarvené jsou tři oblasti, které jsme rozpracovali do jádra reformy."
+        lead="Kliknutím přeskočíte na oblast. Zeleně podbarvené jsou tři oblasti, které tvoří nosnou část plánu (mají zákon, termín a peníze)."
       >
         <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {MANIFEST_AREAS.map((a) => (
@@ -218,9 +218,9 @@ export default function PlanPage() {
 
       <Section
         tone="sand"
-        eyebrow="Nad rámec Manifestu"
-        title="Co studie přidává nad rámec Manifestu"
-        lead="Manifest říká, co se má změnit. Studie k tomu doplňuje, kdo to udělá, podle jakého zákona, kdy a za jaké peníze, a podle čeho poznáme, že se daří."
+        eyebrow="Jak Manifest naplňujeme"
+        title="Nástroje, kterými Manifest naplňujeme"
+        lead="Manifest říká, co se má změnit a proč. Studie k tomu doplňuje, kdo to udělá, podle jakého zákona, kdy a za jaké peníze, a podle čeho poznáme, že se daří. Tohle jsou nástroje, které Manifest nepopisoval a bez kterých by jeho priority zůstaly na papíře."
       >
         <ul className="grid gap-4 md:grid-cols-2">
           {BEYOND_MANIFEST.map((b) => (
