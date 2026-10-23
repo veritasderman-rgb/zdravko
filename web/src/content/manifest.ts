@@ -82,6 +82,7 @@ const SHORT: Record<string, { label: string; when: string }> = {
   P5: { label: "Měření výkonu zdravotnictví (rámec HSPA) ukotvené v zákoně", when: "platí od 1. 1. 2033" },
   // Doplňky pilířů
   "Pil2.2": { label: "Pravidla podle zdravotní potřeby místo limitů na počet výkonů", when: "první skupiny výkonů v úhradách 2031" },
+  "Pil2.6": { label: "Hrazená péče porodních asistentek doma i v porodnici; žádná porodnice se nezavře bez jejich sítě v území", when: "podnět 2027, smlouvy od 2031, v zákoně o síti od 2033" },
   "Pil3.1": { label: "Sledování pacientů na dálku (nejdřív srdeční selhání a vysoký tlak)", when: "pilot 2028, hrazený výkon od 1. 1. 2031" },
   "Pil3.2": { label: "Zapisovatel s umělou inteligencí jen jako pilot", when: "pilot od 2028" },
   "Pil3.3": { label: "Portál pacienta a pravidla pro digitální nástroje", when: "do dvou let od nástupu vlády" },
@@ -119,6 +120,7 @@ const SHORT: Record<string, { label: string; when: string }> = {
   "M4.2": { label: "Informace pro pacienta před zákrokem a volné kapacity v reálném čase", when: "od 2027" },
   "M4.3": { label: "Rámec HSPA jako oficiální měřítko v zákoně (viz P5)", when: "platí od 1. 1. 2033" },
   "M4.4": { label: "Reformu hodnotí ÚZIS s univerzitou, ne autoři studie", when: "jmenovat do konce 2027, zpráva 2033" },
+  "M4.5": { label: "Střet zájmů v komisích ministerstva: veřejná prohlášení o zájmech, vyloučení z hlasování, veřejné zápisy", when: "podnět 2027, příkaz ministra 2030, zákon 2033 a později" },
   "M5.1": { label: "Seznam základních léků se zajištěnou dostupností a pravidla pro výpadky", when: "bez zákona kdykoli, zákon 2032–2033" },
   "M5.2": { label: "Online srovnávač doplatků", when: "termín zatím není" },
   "M5.3": { label: "Lékárník: kurýrní rozvoz s kontrolou a širší pravomoci v prevenci a očkování", when: "platí 2032–2033" },
@@ -242,7 +244,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
       "Anonymizovaná data o nemocnicích a ordinacích budou otevřená, aktuální a použitelná pro každého. Pacient před zákrokem uvidí čekací dobu, kvalitu péče i vzdálenost, lékař volné kapacity.",
     layer: "doprovod",
     studyArea: "Oblast 4 (brief Části XI), P5",
-    measures: pick(["M4.1", "M4.2", "M4.3", "M4.4", "P5", "Pil3.3"]),
+    measures: pick(["M4.1", "M4.2", "M4.3", "M4.4", "M4.5", "P5", "Pil3.3"]),
     manifestSteps: [
       { year: "Rok 1", text: "Zákonná povinnost otevřených dat od ÚZIS včetně rozhraní pro programy; rámec HSPA jako oficiální měřítko." },
       { year: "Rok 2", text: "Ukazatele kvality za nemocnice pro deset oblastí péče (infarkt, mrtvice, rakovina a další)." },
@@ -252,7 +254,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     facts: [
       { value: "1–2 roky", label: "se zpožďují ročenky ÚZIS, ze kterých dnes data vycházejí", compare: "cíl Manifestu: data denně nebo týdně" },
     ],
-    inspiration: "Britská služba NHS Find a hospital srovnává nemocnice denně, americký Hospital Compare má přes sto ukazatelů a švédské registry kvality fungují od 70. let.",
+    inspiration: "Britská služba NHS Find a hospital srovnává nemocnice denně, americký Hospital Compare má přes sto ukazatelů a švédské registry kvality fungují od 70. let. Evropská léková agentura zveřejňuje prohlášení o zájmech všech svých expertů a podle míry zájmu omezuje jejich roli.",
     dispute:
       "Syrová čísla za nemocnice bez přepočtu na těžkost pacientů mohou nespravedlivě poškodit centra, která berou nejtěžší případy. Je třeba rozhodnout, kolik vysvětlení k číslům přidat a kdo ručí za chybný srovnávací údaj.",
   },
@@ -440,7 +442,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
       "Stížnost pacienta se vyřídí rychle a má váhu. Chceme zdravotnického ombudsmana, který vyšetřuje a jehož doporučení nezůstane bez odpovědi, a porodnice i nemocnice, které respektují práva pacientů.",
     layer: "doprovod",
     studyArea: "Oblast 9 (brief Části XI)",
-    measures: pick(["M9.1", "M9.2", "M9.3", "M9.4", "M9.5"]),
+    measures: pick(["M9.1", "M9.2", "M9.3", "M9.4", "M9.5", "Pil2.6"]),
     manifestSteps: [
       { year: "Rok 1", text: "Nemocniční ombudsman v každé nemocnici (zákon 290/2025 Sb., od 1. 7. 2026)." },
       { year: "Rok 2", text: "Jednotné stížnostní řízení s lhůtou 30 dnů a pokutami." },
@@ -453,7 +455,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     ],
     inspiration: "Švédsko a Norsko mají ombudsmana pro pacienty, Dánsko a Švédsko odškodnění bez prokazování viny, Británie síť Healthwatch a Nizozemsko inspekci, která zveřejňuje výsledky po pracovištích.",
     gaps:
-      "Hlášení incidentů, mediaci a odškodnění bez prokazování viny zbývá rozpracovat. Nemocniční ombudsman podle zákona 290/2025 Sb. už platí; k němu přidáváme zdravotnického ombudsmana u veřejného ochránce práv.",
+      "Hlášení incidentů, mediaci a odškodnění bez prokazování viny zbývá rozpracovat. Nemocniční ombudsman podle zákona 290/2025 Sb. už platí; k němu přidáváme zdravotnického ombudsmana u veřejného ochránce práv. Nad rámec Manifestu přidáváme hrazenou péči porodních asistentek a pravidlo, že se žádná porodnice nezavře bez jejich sítě v území (Pil2.6).",
     dispute:
       "Odškodnění bez viny zrychluje kompenzaci, ale kritici se bojí, že oslabí odpovědnost za chyby. Hlášení incidentů funguje jen v kultuře bez trestání, kterou je těžké vybudovat tam, kde se hledá viník.",
   },
@@ -506,6 +508,14 @@ export const BEYOND_MANIFEST: { title: string; text: string }[] = [
   {
     title: "Personální bilance a rezidenční místa (P1, P2)",
     text: "Bez lidí reforma nebude. Proto studie po krajích zveřejní, kolik sester a lékařů je potřeba, a každý rok spočítá, kolik rezidenčních míst pro praktiky a pediatry se má vypsat.",
+  },
+  {
+    title: "Porodní asistentky místo pouhého rušení porodnic (Pil2.6)",
+    text: "Porodů ubývá a malé porodnice se zavírají, dnes ale bez odpovědi, co dál. Studie navrhuje hrazenou péči porodních asistentek v těhotenství, u fyziologického porodu a v šestinedělí, doma i v centrech při porodnicích, a pravidlo, že se žádná porodnice nesloučí ani nezavře, dokud v území nemá pojišťovna smlouvu s komunitními porodními asistentkami a kraj plán dojezdu.",
+  },
+  {
+    title: "Komise ministerstva bez střetu zájmů (M4.5)",
+    text: "O úhradách, seznamu výkonů, přístrojích a dotacích radí ministerstvu komise, jejichž členové dnes prohlášení o zájmech nezveřejňují. Studie chce komise bez střetu zájmů, a kde se bez odborníků z praxe neobejdou, aspoň úplnou průhlednost: veřejná prohlášení o zájmech, vyloučení z hlasování o vlastní věci, jmenovitá hlasování a zápisy do 30 dnů.",
   },
   {
     title: "Čtyři kontrolní body a tři varianty",
