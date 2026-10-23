@@ -81,7 +81,7 @@ export function SiteFooter() {
       <Container className="grid gap-8 py-10 text-base sm:py-16 sm:text-[17px] md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
         <div className="flex flex-col gap-3">
           <p className="font-serif text-[21px] font-semibold text-on-dark sm:text-2xl">Zdraví blíž lidem</p>
-          <p className="text-on-dark-muted">Plán reformy zdravotnictví, verze 3 ke konzultaci, 20. 10. 2026</p>
+          <p className="text-on-dark-muted">Plán reformy zdravotnictví, verze 3.1 ke konzultaci, 23. 10. 2026</p>
           <p className="text-on-dark-muted">Připravil Josef Pavlovic, resortní tým Zdravotnictví. Je to návrh k diskusi, ne program strany.</p>
         </div>
         <FooterNav id="paticka-stranky" label="Stránky" links={SITE_LINKS} />

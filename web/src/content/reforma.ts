@@ -1,5 +1,5 @@
 /**
- * Obsah veřejného webu. Čísla pocházejí ze studie „Zdraví blíž lidem“ v3 (20. 10. 2026),
+ * Obsah veřejného webu. Čísla pocházejí ze studie „Zdraví blíž lidem“ v3.1 (23. 10. 2026),
  * z politické verze 3 a z prezentace „Co chceme a proč“. Částky jsou v mld. Kč ročně,
  * ceny roku 2026, pokud není uvedeno jinak.
  *
@@ -9,7 +9,7 @@
 
 export const META = {
   title: "Zdraví blíž lidem",
-  subtitle: "Plán reformy zdravotnictví · verze 3 ke konzultaci · 20. 10. 2026",
+  subtitle: "Plán reformy zdravotnictví · verze 3.1 ke konzultaci · 23. 10. 2026",
   author: "Josef Pavlovic, resortní tým Zdravotnictví",
   claim: "Představujeme plán a hledáme pro něj podporu.",
   deadline: "31. 3. 2027",
@@ -88,7 +88,7 @@ export const NURSES = {
 };
 
 export const PREVENTION_FACTS = [
-  { value: "10,6 litru", label: "čistého alkoholu vypije průměrný Čech starší 15 let za rok. Průměr vyspělých zemí je 8,4 litru." },
+  { value: "11,2 litru", label: "čistého alkoholu vypije průměrný Čech starší 15 let za rok (2023). Průměr vyspělých zemí je 8,5 litru." },
   { value: "+43 %", label: "víc úmrtí na nemoci jater než v průměru Evropské unie." },
   { value: "31 %", label: "lidí chodí na vyšetření tlustého střeva, které včas odhalí rakovinu. Ve vyspělých zemích 42 %." },
   { value: "60 až 70 %", label: "lidí s pozitivním testem na krev ve stolici dojde na kolonoskopii (MZ ČR, 2025)." },

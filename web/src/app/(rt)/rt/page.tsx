@@ -16,7 +16,7 @@ export default async function Home() {
 
   return (
     <main className="mx-auto max-w-[1100px] px-4 py-8">
-      <h1 className="text-2xl font-semibold tracking-tight">Konzultace verze 3</h1>
+      <h1 className="text-2xl font-semibold tracking-tight">Konzultace verze 3.1</h1>
       <p className="mt-1 max-w-2xl text-sm text-muted">
         Interní kolo připomínek resortního týmu k odborné studii před schválením 7. 12. 2026. Otevřete studii, klikněte na odstavec a vložte
         připomínku. Jedna věc, jeden komentář; návrh znění a zdroj pomohou vypořádání nejvíc.
