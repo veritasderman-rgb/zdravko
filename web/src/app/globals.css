@@ -204,7 +204,7 @@ label.field {
 
 .code-ref {
   font-family: var(--font-geist-mono), ui-monospace, monospace;
-  font-size: 0.8em;
+  font-size: max(0.8em, 13px);
   padding: 0 0.3em;
   border-radius: 6px;
   background: #eae3d6;
@@ -249,4 +249,16 @@ label.field {
 }
 .btn-ghost:hover {
   background: var(--accent-soft);
+}
+
+
+/* Obrázky studie: animace se spouští třídou is-visible (Reveal), vypnuté při reduced-motion */
+.fig-animate [data-anim] { opacity: 0; transform: translateY(6px); }
+.fig-animate.is-visible [data-anim] { opacity: 1; transform: none; transition: opacity 0.5s ease, transform 0.5s ease; transition-delay: calc(var(--i, 0) * 90ms); }
+.fig-animate [data-anim="grow"] { transform: scaleX(0); transform-origin: left center; }
+.fig-animate.is-visible [data-anim="grow"] { transform: scaleX(1); }
+.fig-animate [data-anim="draw"] { stroke-dasharray: 1000; stroke-dashoffset: 1000; opacity: 1; transform: none; }
+.fig-animate.is-visible [data-anim="draw"] { stroke-dashoffset: 0; transition: stroke-dashoffset 1.2s ease-out; transition-delay: calc(var(--i, 0) * 120ms); }
+@media (prefers-reduced-motion: reduce) {
+  .fig-animate [data-anim], .fig-animate [data-anim="grow"], .fig-animate [data-anim="draw"] { opacity: 1; transform: none; stroke-dashoffset: 0; transition: none; }
 }

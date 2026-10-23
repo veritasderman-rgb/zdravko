@@ -45,7 +45,7 @@ export default function SlovnicekPage() {
                 {l.items.map((g) => (
                   <div key={g.term} id={slug(g.term)} className="scroll-mt-6 border-b border-line py-5">
                     <dt className="font-serif text-[22px] font-semibold leading-snug text-ink">
-                      <a href={`#${slug(g.term)}`} className="hover:underline hover:decoration-2 hover:underline-offset-4">
+                      <a href={`#${slug(g.term)}`} className="inline-flex min-h-11 items-center hover:underline hover:decoration-2 hover:underline-offset-4">
                         {g.term}
                       </a>
                     </dt>
