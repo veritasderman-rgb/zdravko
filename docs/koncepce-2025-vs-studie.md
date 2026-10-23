@@ -1,5 +1,8 @@
 # Koncepce MZ 2025 a studie „Zdraví blíž lidem“ v3: srovnání čísel a směru
 
+> **Interní pracovní podklad.** Koncepci MZ 2025 používáme výhradně k ověření dat. Na veřejném webu ani ve studii ji neuvádíme jako politickou oporu („jde stejným směrem“ apod.); je to dokument ministerstva a nemá být politicky ohýbán. Čísla z ní převzatá dokládáme primárními zdroji, kde existují, jinak neutrální citací datového zdroje.
+
+
 Pracovní podklad pro resortní tým · 23. 10. 2026
 
 **Co se srovnává.**
