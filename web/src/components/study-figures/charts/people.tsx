@@ -16,11 +16,11 @@ export function NursesFigure() {
   const grads = gradsRow.value; // 680 VŠ + 570 VOŠ
   const needLow = Math.round(e.replacementMin / e.yearsHigh);
   const needHigh = Math.round(e.replacementMin / e.yearsLow);
-  const shareOfGrads = (v: number) => Math.round((v / grads) * 100);
+  const shareOfGrads = (v: number) => Math.round((v / e.gradsProgramPerYear) * 100);
   const n = (v: number) => csNumber(v, 0);
   return (
     <ChartFrame
-      title={`Reforma potřebuje v průměru ${n(reformRow.value)} sester ročně, asi třetinu absolventek; ve vrcholu ${e.reformPeakYear} skoro polovinu`}
+      title={`Reforma potřebuje v průměru ${n(reformRow.value)} sester ročně, asi čtvrtinu absolventek, které mají vyjít ze škol do roku 2037; ve vrcholu ${e.reformPeakYear} asi třetinu`}
       subtitle={`Všeobecné sestry za rok. Potřeba náhrady: nejméně ${n(e.replacementMin)} úvazků za ${e.yearsLow} až ${e.yearsHigh} let. Studie v3 pracovala s ${n(e.v3Replacement)} úvazky do roku 2037 a ${n(e.v3Grads)} absolventkami ročně; čísla jsme opravili podle vládního programu.`}
       source="Vládní program pro nelékařské zdravotnické profese 2026–2037 a MZ ČR 2025 (potřeba a absolventky); ekonomický model studie v3 (potřeba reformy)"
       table={
@@ -65,7 +65,7 @@ export function NursesFigure() {
             ]}
           />
           <Note>
-            Vrchol {e.reformPeak} sester v roce {e.reformPeakYear} je {shareOfGrads(e.reformPeak)} % absolventek (studie v3 uváděla 46 % z 1 300). Týmy proto přebírají nemocniční sestry jen tam, kde se podle plánu sítě práce v nemocnici prokazatelně změnila, a brána B3 v prosinci 2031 měří obsazení míst sester; když nebude splněna, reforma pokračuje jako varianta B.
+            Vrchol {e.reformPeak} sester v roce {e.reformPeakYear} je {shareOfGrads(e.reformPeak)} % z asi {n(e.gradsProgramPerYear)} všeobecných sester, které mají podle vládního programu ročně vyjít z vysokých a vyšších odborných škol (dnes jich vychází {n(grads)}; studie v3 uváděla 46 % z 1 300). Týmy proto přebírají nemocniční sestry jen tam, kde se podle plánu sítě práce v nemocnici prokazatelně změnila, a brána B3 v prosinci 2031 měří obsazení míst sester; když nebude splněna, reforma pokračuje jako varianta B.
           </Note>
         </div>
       </Reveal>

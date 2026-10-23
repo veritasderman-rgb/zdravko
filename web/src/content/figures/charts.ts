@@ -172,6 +172,8 @@ export const NURSES_EXTRA = {
   yearsHigh: 12,
   gradsUni: 680,
   gradsCollege: 570,
+  /** Průměrný roční výstup programu 2026–2037: 11 078 všeobecných sester z VŠ a asi 11 000 z VOŠ za 12 let (studie v3.1, Část V). */
+  gradsProgramPerYear: 1840,
   /** Reforma přidává v letech 2032–2037 450 až 600 sester ročně, vrchol 595 v roce 2034 (ř. 1483). */
   reformLow: 450,
   reformHigh: 600,
