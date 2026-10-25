@@ -131,12 +131,13 @@ export function VazbyOrgFigure() {
       legend={ORG_LEGEND}
       textVersion={textVersion}
     >
-      <div className="flex flex-col gap-8">
+      <div className="org-groups flex flex-col gap-8">
         {ORG_GROUPS.map((g) => (
-          <section key={g.id} aria-label={g.title} className="org-group break-inside-avoid">
-            <div className="relative flex flex-col items-center pb-5 after:absolute after:bottom-0 after:left-1/2 after:h-5 after:w-px after:bg-line-strong">
+          <section key={g.id} aria-label={g.title} className="org-group">
+            <div className="org-head relative flex flex-col items-center pb-5 after:absolute after:bottom-0 after:left-1/2 after:h-5 after:w-px after:bg-line-strong">
               <p className="rounded-full bg-forest px-4 py-1.5 text-center text-[15px] font-bold text-white">{g.title}</p>
               <p className="mt-2 max-w-[60ch] text-center text-[14px] leading-snug text-ink-2">{g.lead}</p>
+              <span aria-hidden className="org-keep hidden" />
             </div>
             <div className="grid gap-x-3 gap-y-6 [grid-template-columns:repeat(auto-fit,minmax(196px,1fr))]">
               {g.roots.map((r) => (
