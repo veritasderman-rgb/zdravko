@@ -3,6 +3,7 @@ import { ChartFrame } from "@/components/charts/chart-frame";
 import { DataTable } from "@/components/charts/data-table";
 import { BAR, INK, MUTED_MARK, SERIES, csNumber } from "@/components/charts/theme";
 import { MoneyFlow } from "@/components/web/visuals";
+import { MODEL_NOTE } from "@/content/cisla";
 import { COST_2038, COST_GROUPS, FUNDING, FUND_GROUPS, TAXES, VARIANTS } from "@/content/reforma";
 import { HEALTH_TAX_SPLIT, SENSITIVITY, VARIANT_EXTRA } from "@/content/figures/charts";
 import { Reveal } from "../reveal";
@@ -121,7 +122,7 @@ export function SensitivityFigure() {
     <ChartFrame
       title="Čistý náklad v roce 2038 drží mezi 15 a 25 mld. Kč; víc ho posune souběh několika změn než jeden předpoklad"
       subtitle={`Čistý náklad reformy v roce 2038, mld. Kč ročně; svislá čára je základní odhad ${csNumber(d.central)} mld. Kč`}
-      source="Ekonomický model studie v3 (model_v3.py), Monte Carlo 20 000 běhů s trojúhelníkovými rozděleními, ceny 2026. Rozpětí jednotlivých předpokladů: podklad pro PEER, 20. 10. 2026."
+      source={`${MODEL_NOTE} Monte Carlo 20 000 běhů s trojúhelníkovými rozděleními. Rozpětí jednotlivých předpokladů: podklad pro PEER, 20. 10. 2026.`}
       table={
         <DataTable
           header={["Rozpětí nebo scénář", "Čistý náklad 2038 (mld. Kč)"]}
@@ -227,7 +228,7 @@ export function VariantsFigure() {
     <ChartFrame
       title="Plná varianta A stojí 21,5 mld. Kč ročně, varianta B bez center 17,8 a minimální C 11,3"
       subtitle={`Čistý náklad v roce 2038, mld. Kč ročně; všechny tři varianty mají stejný společný základ ${csNumber(base)} mld. Kč`}
-      source="Ekonomický model studie v3 (model_v3.py), ceny 2026"
+      source={MODEL_NOTE}
       table={
         <DataTable
           numeric={false}

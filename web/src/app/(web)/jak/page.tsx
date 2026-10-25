@@ -6,6 +6,7 @@ import { HBarChart } from "@/components/charts/hbar-chart";
 import { csNumber } from "@/components/charts/theme";
 import { CodeRef, NextStep, PageHero, Section } from "@/components/web/ui";
 import { ChainsDiagram } from "@/components/web/visuals";
+import { MODEL_NOTE } from "@/content/cisla";
 
 export const metadata = { title: "Jak a kdy" };
 
@@ -89,7 +90,7 @@ export default function JakPage() {
           <ChartFrame
             title={`Plná varianta stojí ${csNumber(a.cost)} mld. Kč ročně, bez nových center ${csNumber(b.cost)}, minimální ${csNumber(c.cost)}`}
             subtitle="Čistý roční náklad v roce 2038, mld. Kč, ceny roku 2026"
-            source="Model studie v3; mld. Kč, ceny roku 2026"
+            source={`mld. Kč. ${MODEL_NOTE}`}
             table={<DataTable header={["Varianta", "mld. Kč ročně"]} rows={VARIANTS.rows.map((v) => [v.name, csNumber(v.cost)])} />}
           >
             <HBarChart rows={VARIANTS.rows.map((v) => ({ label: v.name, value: v.cost, highlight: v.key === "A" }))} unit="mld. Kč" />

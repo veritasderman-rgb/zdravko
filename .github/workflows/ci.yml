@@ -31,6 +31,8 @@ jobs:
         run: pnpm lint
       - name: Typecheck
         run: pnpm typecheck
+      - name: Registr čísel (zdroje, místa použití, shoda se studií)
+        run: pnpm check:cisla
       - name: Testy (PGlite, bez sdílené databáze)
         run: pnpm test
       - name: Build

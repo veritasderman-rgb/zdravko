@@ -3,9 +3,14 @@
  * z politické verze 3 a z prezentace „Co chceme a proč“. Částky jsou v mld. Kč ročně,
  * ceny roku 2026, pokud není uvedeno jinak.
  *
+ * Čísla, která mají zdroj, rok a definici, žijí v registru `@/content/cisla`; datové řady tady
+ * je jen čtou (n("…")). Texty, které číslo píší slovy, hlídá `pnpm check:cisla`.
+ *
  * Jazyk: píšeme „my“ (navrhovatelé), krátké věty, odborné pojmy vysvětlujeme při prvním
  * použití a ve slovníčku (GLOSSARY).
  */
+
+import { MODEL_NOTE, n } from "@/content/cisla";
 
 export const META = {
   title: "Zdraví blíž lidem",
@@ -30,10 +35,10 @@ export const SPENDING_SHARE = {
   title: "Na akutní lůžka jde téměř sedmkrát víc peněz než na praktické lékaře pro dospělé",
   source: "ÚZIS, platby zdravotních pojišťoven za rok 2024, podíl v procentech",
   rows: [
-    { label: "Akutní lůžka v nemocnicích", value: 29.7, highlight: true },
+    { label: "Akutní lůžka v nemocnicích", value: n("acuteShare"), highlight: true },
     { label: "Ambulantní specialisté", value: 20.3 },
     { label: "Všichni praktici (dospělí i děti)", value: 6.4 },
-    { label: "Praktici pro dospělé", value: 4.3, highlight: true },
+    { label: "Praktici pro dospělé", value: n("gpShare"), highlight: true },
   ],
 };
 
@@ -42,16 +47,16 @@ export const GP_DECLINE = {
   source: "ÚZIS, NRZP a NRHZS, stav k 31. 3. 2023; ročně ubude 110 až 180 lékařů, téměř polovina (43,6 %) je starší 60 let",
   points: Array.from({ length: 10 }, (_, i) => {
     const year = 2026 + i;
-    return { year, low: 5500 - 180 * i, high: 5500 - 110 * i };
+    return { year, low: n("gpCount") - 180 * i, high: n("gpCount") - 110 * i };
   }),
 };
 
 export const BEDS = {
-  title: "Akutní lůžka jsou obsazená z 56 %, lůžka pro doléčení z 85 %",
+  title: "Akutní lůžka jsou obsazená z 56 %, lůžka pro doléčení a dlouhodobou péči z 85 %",
   source: "ÚZIS 2024. V osmi krajích je následná péče obsazená nad 85 %, tedy prakticky plná. Produkce akutní lůžkové péče klesá asi o 1,5 % ročně a řada nemocnic má oddělení s obložností pod 50 % (MZ ČR, 2025)",
   rows: [
-    { label: "Akutní lůžka (48 036)", value: 56 },
-    { label: "Lůžka následné péče (doléčení, rehabilitace)", value: 85 },
+    { label: `Akutní lůžka (${n("acuteBeds").toLocaleString("cs-CZ")})`, value: n("acuteOccupancy") },
+    { label: "Lůžka následné a dlouhodobé péče (doléčení, rehabilitace)", value: n("followUpLtcOccupancy") },
   ],
   threshold: 85,
 };
@@ -60,7 +65,7 @@ export const AVOIDABLE = {
   title: "Zbytečných hospitalizací máme o čtvrtinu víc než průměr vyspělých zemí",
   source: "OECD Health at a Glance 2025, data 2021/2022; hospitalizace na 100 000 obyvatel, kterým by předešla dobrá péče mimo nemocnici",
   rows: [
-    { label: "Česko dnes", value: 592, highlight: true },
+    { label: "Česko dnes", value: n("acsc"), highlight: true },
     { label: "Náš cíl pro rok 2033", value: 550 },
     { label: "Náš cíl kolem roku 2038", value: 530 },
     { label: "Průměr zemí OECD", value: 473 },
@@ -69,11 +74,11 @@ export const AVOIDABLE = {
 
 export const GAP = {
   title: "Zdravotnímu pojištění bude chybět 60 až 104 miliard ročně, i kdyby se nic neměnilo",
-  source: "Národní rozpočtová rada, září 2026; ceny roku 2026. Reforma tuto díru nezpůsobuje ani nezaceluje.",
+  source: `Mezera: Národní rozpočtová rada, září 2026, přepočet studie na ceny roku 2026 (přesné hodnoty tabulky D.1 se ověřují). Reforma tuto díru nezpůsobuje ani nezaceluje. Náklad reformy: ${MODEL_NOTE}`,
   rows: [
-    { year: "2035", gap: 59.7, reform: 16.9 },
-    { year: "2038", gap: 70.0, reform: 21.5 },
-    { year: "2050", gap: 104.4, reform: 24.9 },
+    { year: "2035", gap: n("insuranceGap2035"), reform: n("netCost2035") },
+    { year: "2038", gap: n("insuranceGap2038"), reform: n("netCost2038") },
+    { year: "2050", gap: n("insuranceGap2050"), reform: n("netCost2050") },
   ],
 };
 
@@ -81,9 +86,9 @@ export const NURSES = {
   title: "Sester chybí už dnes: jen všeobecných sester je do 12 let potřeba nejméně 24 000 nových úvazků",
   source: "MZ ČR 2025 a vládní program pro nelékařské zdravotnické profese 2026 až 2037. Ve zdravotnictví pracuje asi 83 tisíc sester, 3 tisíce chybí, přes 12 tisíc je starších 60 let. Ročně vystuduje asi 680 sester na vysokých a 570 na vyšších odborných školách",
   rows: [
-    { label: "Kolik nových všeobecných sester je ročně potřeba (24 000 za 12 let)", value: 2000 },
-    { label: "Kolik všeobecných sester ročně vystuduje (VŠ a VOŠ)", value: 1250 },
-    { label: "Kolik navíc ročně potřebuje reforma (průměr)", value: 440, highlight: true },
+    { label: "Kolik nových všeobecných sester je ročně potřeba (24 000 za 12 let)", value: Math.round(n("nursesNeed") / 12) },
+    { label: "Kolik všeobecných sester ročně vystuduje (VŠ a VOŠ)", value: n("nursesGrads") },
+    { label: "Kolik navíc ročně potřebuje reforma (průměr)", value: n("nursesPerYear"), highlight: true },
   ],
 };
 
@@ -277,9 +282,9 @@ export const STEPS_2029 = [
 
 export const VARIANTS = {
   rows: [
-    { key: "A", name: "A: plná, s novými centry", cost: 21.5, invest: "22 až 33", nurses: 4000, teams: "75 % praktiků", rural: "ano, obec nebo kraj založí tým", when: "základní varianta" },
-    { key: "B", name: "B: bez nových center", cost: 17.8, invest: "6 až 11", nurses: 3450, teams: "65 %, jen kde ordinace je", rural: "jen tam, kde ordinace je", when: "když v roce 2031 chybí sestry" },
-    { key: "C", name: "C: minimální", cost: 11.3, invest: "5 až 10", nurses: 0, teams: "žádné týmy", rural: "ne", when: "pro srovnání" },
+    { key: "A", name: "A: plná, s novými centry", cost: n("netCost2038"), invest: "22 až 33", nurses: 4000, teams: "75 % praktiků", rural: "ano, obec nebo kraj založí tým", when: "základní varianta" },
+    { key: "B", name: "B: bez nových center", cost: n("variantB"), invest: "6 až 11", nurses: 3450, teams: "65 %, jen kde ordinace je", rural: "jen tam, kde ordinace je", when: "když v roce 2031 chybí sestry" },
+    { key: "C", name: "C: minimální", cost: n("variantC"), invest: "5 až 10", nurses: 0, teams: "žádné týmy", rural: "ne", when: "pro srovnání" },
   ],
   note: "Prevence, paliativní péče, konzultace lékařů a fond přeměny nemocnic jsou ve všech třech variantách. Rozdíl mezi A a B kupuje budovy, další profese v týmu a možnost, aby obec nebo kraj založily tým tam, kde ordinace zanikla.",
 };
@@ -297,7 +302,7 @@ export const INDICATORS = [
 
 export const RISKS = [
   { risk: "Sestry nepřijdou nebo odejdou z nemocnic", signal: "každé čtvrtletí sledujeme, kolik míst pro sestry je v týmech obsazených a kolik volných míst mají nemocnice v kraji", safeguard: "týmy rostou postupně; plat jako v nemocnici, bez nočních; pojišťovna platí jen obsazené místo; když je sester polovina, nové budovy se nestaví" },
-  { risk: "Bude to dražší", signal: "skutečné platby týmům ve zkoušce vybočí z odhadu; celkový náklad vybočí z 15 až 25 mld. Kč", safeguard: "místo jednoho čísla počítáme s rozpětím; model je veřejný; před koaliční smlouvou přepočítáme podle skutečných nákladů zkoušky" },
+  { risk: "Bude to dražší", signal: "skutečné platby týmům ve zkoušce vybočí z odhadu; celkový náklad vybočí z 15 až 25 mld. Kč", safeguard: "místo jednoho čísla počítáme s rozpětím; model zveřejníme i s tabulkou vstupů a do té doby jeho čísla označujeme jako scénářové výpočty; před koaliční smlouvou přepočítáme podle skutečných nákladů zkoušky" },
   { risk: "Ministerstvo nestihne napsat zákony", signal: "podklady zákonů nejsou hotové do konce roku 2029; vláda plánuje víc než dva velké zákony", safeguard: "jen dva velké zákony za volební období; podklady napíšeme už v opozici; ministerstvo posílí o dva legislativní týmy" },
   { risk: "Ministerstvo financí odmítne vyšší platbu státu", signal: "záporné stanovisko v připomínkovém řízení; platba se znovu zmrazí", safeguard: "výpočet v jedné tabulce; jednání s ministerstvem a rozpočtovou radou od roku 2028; při odmítnutí zůstávají daně za zdraví a reforma se zmenší" },
   { risk: "Změna lůžek zhorší dostupnost péče", signal: "akutní lůžka v kraji obsazená nad 85 %; méně než 95 % lidí má urgentní příjem do 30 minut", safeguard: "přeměna se v kraji zastaví; místa pro doléčení musí být připravená předem; záchranka se posílí dřív, než se cokoli slučuje" },
@@ -310,7 +315,7 @@ export const RISKS = [
 
 export const COST_2038 = {
   title: "Na co půjde 22,8 mld. Kč ročně, až reforma poběží naplno (2038)",
-  source: "Ekonomický model studie v3; provoz včetně rezervy, ceny roku 2026",
+  source: `Provoz včetně rezervy. ${MODEL_NOTE}`,
   rows: [
     { label: "Sestry navíc v týmech", value: 3.97, group: "lidé v ordinacích" },
     { label: "Platby týmům za registrované pacienty", value: 3.73, group: "lidé v ordinacích" },
@@ -336,20 +341,21 @@ export const COST_GROUPS = ["lidé v ordinacích", "péče doma", "prevence", "n
 
 export const NET_COST = {
   rows: [
-    { year: "2035", provoz: 17.6, uspory: 0.7, net: 16.9, share: "3,0 %" },
-    { year: "2038", provoz: 22.8, uspory: 1.2, net: 21.5, share: "3,8 %" },
-    { year: "2050", provoz: 28.5, uspory: 3.6, net: 24.9, share: "4,4 %" },
+    { year: "2035", provoz: 17.6, uspory: 0.7, net: n("netCost2035"), share: "3,0 %" },
+    { year: "2038", provoz: n("opCost2038"), uspory: n("savings2038"), net: n("netCost2038"), share: "3,8 %" },
+    { year: "2050", provoz: 28.5, uspory: n("savings2050"), net: n("netCost2050"), share: "4,4 %" },
   ],
 };
 
 export const FUNDING = {
   title: "Kdo zaplatí 21,5 mld. Kč ročně",
-  source: "Model studie v3. Vyšší platba státu nejsou nové peníze, ale přesun ze státního rozpočtu.",
+  source: `${MODEL_NOTE} Vyšší platba státu nejsou nové peníze, ale přesun ze státního rozpočtu.`,
   rows: [
-    { label: "Stát: vyšší platba za děti, důchodce a studenty", value: 13.0, group: "stát" },
+    { label: "Stát: vyšší platba za děti, důchodce a studenty", value: n("statePaymentExtra"), group: "stát" },
     { label: "Stát: přímé výdaje (řízení, fond přeměny, sledování na dálku)", value: 2.6, group: "stát" },
-    { label: "Daně za zdraví: do zdravotního pojištění", value: 3.0, group: "daně za zdraví" },
-    { label: "Daně za zdraví: Fond prevence", value: 2.0, group: "daně za zdraví" },
+    // Pravidlo PEER: fond nejméně 40 % výnosu, vždy aspoň 2 mld. Kč; zbytek do pojištění.
+    { label: "Daně za zdraví: do zdravotního pojištění", value: n("healthTaxPlan") - Math.max(2, (n("preventionFundShare") / 100) * n("healthTaxPlan")), group: "daně za zdraví" },
+    { label: "Daně za zdraví: Fond prevence", value: Math.max(2, (n("preventionFundShare") / 100) * n("healthTaxPlan")), group: "daně za zdraví" },
     { label: "Obce a kraje: odvoz k lékaři, provoz center", value: 1.0, group: "obce" },
   ],
 };
@@ -369,11 +375,11 @@ export const TEN_NUMBERS = [
 ];
 
 export const TAXES = {
-  wineRatePerLitre: 23.4,
+  wineRatePerLitre: n("wineTax"),
   glassLitres: 0.2,
   sugarPerLitreLow: 6,
   sugarPerLitreHigh: 8,
-  statePayees: 6.0,
+  statePayees: n("statePayees"),
 };
 
 // ---------------------------------------------------------------------------
@@ -423,7 +429,7 @@ export const FAQ = [
   { q: "Není to drahé?", a: "Až reforma poběží naplno kolem roku 2038, bude stát čistě asi 21,5 mld. Kč ročně, tedy necelá 4 % dnešních výdajů zdravotního pojištění. Říkáme rozpětí 15 až 25 mld. Kč, protože jedno přesné číslo by bylo předstírání. Pro srovnání: i bez reformy bude zdravotnímu pojištění v roce 2038 chybět 70 mld. Kč. Za 21,5 mld. Kč dostanete 520 týmů, 4 000 sester, návštěvy doma, paliativní týmy ve všech okresech, konzultace se specialisty a prevenci se stálými penězi. Nebude to levné a nebude to úspora. Bude to víc péče blíž lidem za peníze, které do zdravotnictví půjdou tak jako tak." },
   { q: "Nutíte praktiky do týmů?", a: "Ne. Vstup je dobrovolný. Kdo zůstane sám, dostane od pojišťovny stejně jako dnes a nikdy méně. Síť samostatných ordinací, které se domluví, dostane totéž co jeden velký tým, pokud zajistí stejné služby. Praktikům dáváme, o co žádají léta: zrušení omezení, které léky smí předepsat, ultrazvuk, zástup, sestru s vlastními pacienty, jistotu na pět let a vzorovou smlouvu, aby odcházející lékař dostal za ordinaci zaplaceno a mladý nemusel shánět miliony. Dětské praktiky nerušíme a povinné doporučení ke specialistovi nezavádíme." },
   { q: "Bude mě léčit počítač?", a: "Ne. Zapisovatel přepíše rozhovor s lékařem a lékař zápis zkontroluje a podepíše. Sledování pacientů se srdečním selháním na dálku vyhodnocuje sestra, a ne stroj. První studie ukazují u zapisovatele jen malý a nejistý přínos, proto s ním nepočítáme jako s úsporou času a nejdřív ho vyzkoušíme. Každé rozhodnutí o léčbě dělá člověk a data zůstávají v Česku a v Evropské unii." },
-  { q: "Proč vám věřit, když autor sedí ve správní radě VZP?", a: "Protože to říkáme sami a předem. Autor je členem Správní rady VZP. O smlouvě na zkoušku ve třech regionech rozhoduje vedení VZP, a ne správní rada. Autor se z hlasování o zkoušce vyloučí a výsledky hodnotí nezávislý hodnotitel jmenovaný před startem. Ekonomický model je veřejný a každé číslo v tomto textu má ve studii svůj výpočet a zdroj. Kdo najde chybu, pomůže reformě víc než ten, kdo ji pochválí." },
+  { q: "Proč vám věřit, když autor sedí ve správní radě VZP?", a: "Protože to říkáme sami a předem. Autor je členem Správní rady VZP. O smlouvě na zkoušku ve třech regionech rozhoduje vedení VZP, a ne správní rada. Autor se z hlasování o zkoušce vyloučí a výsledky hodnotí nezávislý hodnotitel jmenovaný před startem. Každé číslo má ve studii svůj zdroj nebo výpočet a v přehledu Čísla a zdroje je u něj rok, definice a rozpětí. Ekonomický model zveřejníme i s tabulkou vstupů; do té doby jsou jeho výsledky scénářové výpočty. Kdo najde chybu, pomůže reformě víc než ten, kdo ji pochválí." },
 ];
 
 export const CONFLICT = "Autor plánu je členem Správní rady VZP, členem Pirátské ekonomické expertní rady (PEER) a autorem HSPA Monitoru. Plán navrhuje zkoušku s VZP a mění složení správních rad pojišťoven. Proto o smlouvě na zkoušku rozhoduje vedení VZP, výsledky hodnotí nezávislý hodnotitel a autor se z hlasování o zkoušce vyloučí.";

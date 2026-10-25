@@ -5,9 +5,10 @@ import { HBarChart } from "@/components/charts/hbar-chart";
 import { StackedBar } from "@/components/charts/meters";
 import { csNumber } from "@/components/charts/theme";
 import { PersonalTaxCalculator, StatePaymentCalculator, TaxSplitCalculator } from "@/components/charts/calculators";
-import { Callout, NextStep, PageHero, Section } from "@/components/web/ui";
+import { Callout, NextStep, PageHero, Section, TextLink } from "@/components/web/ui";
 import { BigNumber } from "@/components/web/blocks";
 import { MoneyFlow } from "@/components/web/visuals";
+import { MODEL_NOTE } from "@/content/cisla";
 
 export const metadata = { title: "Peníze" };
 
@@ -29,7 +30,7 @@ export default function PenizePage() {
             value="21,5 mld. Kč"
             text="ročně navíc, až reforma poběží naplno kolem roku 2038. Odhad 15 až 25 mld. Kč, necelá 4 % toho, co dnes stojí zdravotní pojištění."
             range={{ min: 15, max: 25, value: 21.5, scaleMax: 30, unit: "mld. Kč", minLabel: "15", maxLabel: "25 mld." }}
-            source="Ekonomický model studie v3, ceny roku 2026"
+            source={MODEL_NOTE}
           />
         }
       />
@@ -44,7 +45,7 @@ export default function PenizePage() {
         <ChartFrame
           title="Víc než polovina peněz půjde na lidi v ordinacích"
           subtitle="Tok peněz v roce 2038, mld. Kč ročně: vlevo zdroje, vpravo použití"
-          source="Model studie v3, ceny roku 2026."
+          source={MODEL_NOTE}
           table={<DataTable header={["Skupina", "mld. Kč ročně"]} rows={[...sources, ...uses]} />}
         >
           <MoneyFlow />
@@ -72,7 +73,7 @@ export default function PenizePage() {
           ))}
         </ul>
         <p className="mt-6 max-w-[44em] text-[19px] leading-relaxed text-ink-2">
-          Úspory jsou skutečné, ale malé. Dobrá péče blízko domova přináší víc zdraví a méně zbytečných hospitalizací, celkové výdaje ale spíš zvyšuje. Ekonomický model je veřejný a kdokoli si ho může přepočítat.
+          Úspory jsou skutečné, ale malé. Dobrá péče blízko domova přináší víc zdraví a méně zbytečných hospitalizací, celkové výdaje ale spíš zvyšuje. Čísla nákladů jsou scénářové výpočty ekonomického modelu studie. Model zveřejníme i s tabulkou vstupů, aby si ho kdokoli mohl přepočítat; zdroj, rok a rozpětí každého čísla najdete v přehledu <TextLink href="/cisla">Čísla a zdroje</TextLink>.
         </p>
       </Section>
 
