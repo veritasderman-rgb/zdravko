@@ -94,6 +94,12 @@ describe("limity a antispam", () => {
     expect(await hitLimit(db, "s", k, [{ windowS: 600, max: 1 }])).toBe(true);
   });
 
+  it("souběžné pokusy nepřekročí limit", async () => {
+    const k = keyHash(SECRET, "192.0.2.9");
+    const results = await Promise.all(Array.from({ length: 6 }, () => hitLimit(db, "soubeh", k, [{ windowS: 600, max: 3 }])));
+    expect(results.filter(Boolean)).toHaveLength(3);
+  });
+
   it("neukládá adresu IP, jen její HMAC závislý na tajemství", async () => {
     const k = keyHash(SECRET, "203.0.113.5");
     expect(k).not.toContain("203.0.113.5");

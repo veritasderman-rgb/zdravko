@@ -42,21 +42,25 @@ export type Limit = { windowS: number; max: number };
 
 /**
  * Zapíše pokus a vrátí true, když se vejde do všech limitů. Pokus přes limit se nezapisuje,
- * takže čekání limit uvolní.
+ * takže čekání limit uvolní. Kontrola a zápis běží pod transakčním zámkem na klíč, aby
+ * souběžné požadavky nepřečetly stejný stav a neprošly všechny přes limit.
  */
 export async function hitLimit(db: AnyDb, scope: string, key: string, limits: Limit[]): Promise<boolean> {
   const longest = Math.max(...limits.map((l) => l.windowS));
-  const rows = await db
-    .select({ createdAt: schema.rateHits.createdAt })
-    .from(schema.rateHits)
-    .where(and(eq(schema.rateHits.scope, scope), eq(schema.rateHits.keyHash, key), gt(schema.rateHits.createdAt, sql`now() - make_interval(secs => ${longest})`)));
-  const now = Date.now();
-  for (const l of limits) {
-    const n = rows.filter((r) => now - r.createdAt.getTime() < l.windowS * 1000).length;
-    if (n >= l.max) return false;
-  }
-  await db.insert(schema.rateHits).values({ scope, keyHash: key });
-  return true;
+  return db.transaction(async (tx) => {
+    await tx.execute(sql`select pg_advisory_xact_lock(hashtextextended(${`${scope}:${key}`}, 0))`);
+    const rows = await tx
+      .select({ createdAt: schema.rateHits.createdAt })
+      .from(schema.rateHits)
+      .where(and(eq(schema.rateHits.scope, scope), eq(schema.rateHits.keyHash, key), gt(schema.rateHits.createdAt, sql`now() - make_interval(secs => ${longest})`)));
+    const now = Date.now();
+    for (const l of limits) {
+      const n = rows.filter((r) => now - r.createdAt.getTime() < l.windowS * 1000).length;
+      if (n >= l.max) return false;
+    }
+    await tx.insert(schema.rateHits).values({ scope, keyHash: key });
+    return true;
+  });
 }
 
 const URL_RE = /(https?:\/\/|www\.)\S+/gi;
