@@ -161,6 +161,18 @@
     min-width: 0 !important;
     font-size: 8.5pt !important;
   }
+  table.vazby-matrix {
+    table-layout: fixed !important;
+  }
+  table.vazby-matrix th,
+  table.vazby-matrix td {
+    padding: 1pt 2pt !important;
+  }
+  table.vazby-matrix thead th {
+    font-size: 6.5pt !important;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
   a.org-card::after {
     content: none !important;
   }

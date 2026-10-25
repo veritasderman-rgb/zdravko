@@ -227,14 +227,22 @@ export function VazbyMatrixFigure() {
       textVersion={textVersion}
     >
       <div className="vazby-scroll -mx-1 overflow-x-auto px-1">
-        <table className="w-full min-w-[860px] border-collapse text-[14px]">
+        <table className="vazby-matrix w-full min-w-[860px] table-fixed border-collapse text-[14px]">
+          {/* Pevné šířky: název opatření 34 %, osm ukazatelů po 7 %, doplňkové 10 %; drží se i v tisku. */}
+          <colgroup>
+            <col style={{ width: "34%" }} />
+            {MAIN_INDICATORS.map((h) => (
+              <col key={h.code} style={{ width: "7%" }} />
+            ))}
+            <col style={{ width: "10%" }} />
+          </colgroup>
           <thead>
             <tr>
-              <th scope="col" className="w-[300px] pb-2 text-left align-bottom text-[13px] font-bold uppercase tracking-[0.06em] text-muted">
+              <th scope="col" className="pb-2 text-left align-bottom text-[13px] font-bold uppercase tracking-[0.06em] text-muted">
                 Opatření
               </th>
               {MAIN_INDICATORS.map((h) => (
-                <th key={h.code} scope="col" className="w-[68px] px-1 pb-2 text-center align-bottom text-[12px] font-semibold leading-tight text-ink-2">
+                <th key={h.code} scope="col" className="px-1 pb-2 text-center align-bottom text-[12px] font-semibold leading-tight text-ink-2">
                   <span className="block font-mono text-[13px] font-bold text-ink">{h.code}</span>
                   {h.short}
                 </th>
@@ -307,7 +315,9 @@ function Dot({ hollow = false, label }: { hollow?: boolean; label?: string }) {
       role={label ? "img" : undefined}
       aria-label={label}
       aria-hidden={label ? undefined : true}
-      className={`inline-block h-3.5 w-3.5 rounded-full align-middle ${hollow ? "border-2 border-forest bg-paper" : "bg-forest"}`}
+      className={`inline-block h-3.5 w-3.5 rounded-full align-middle ${hollow ? "border-2 border-forest bg-paper" : ""}`}
+      // Plná tečka nese informaci barvou; inline pozadí zůstane i v tisku (print.css ruší jen pozadí z tříd).
+      style={hollow ? undefined : { backgroundColor: "#1f4a3d" }}
     />
   );
 }
