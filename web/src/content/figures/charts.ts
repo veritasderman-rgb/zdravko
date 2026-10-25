@@ -1,3 +1,5 @@
+import { CISLA, n } from "@/content/cisla";
+
 /**
  * Data datových grafů studie „Zdraví blíž lidem“ v3 (01-studie-zdravi-bliz-lidem-v3.md).
  * Čísla řádků odkazují na studii v3. Co už je v `@/content/reforma` (SPENDING_SHARE, GP_DECLINE,
@@ -15,11 +17,11 @@ export const SPENDING_SEGMENTS = {
   /** Akutní lůžková péče = 150 mld. Kč (ř. 225). */
   acuteBn: 150,
   rows: [
-    { key: "acute", label: "Akutní lůžková péče", value: 29.7, inpatient: true, emphasis: 0 },
+    { key: "acute", label: "Akutní lůžková péče", value: n("acuteShare"), inpatient: true, emphasis: 0 },
     { key: "hospAmb", label: "Nemocniční ambulance", value: 12.8, inpatient: true },
     // dopočet: 56,3 − 29,7 − 12,8
     { key: "inpatientRest", label: "Zbytek lůžkového segmentu, mj. centrová léčiva (dopočet)", value: 13.8, inpatient: true },
-    { key: "gp", label: "Praktici pro dospělé", value: 4.3, inpatient: false, emphasis: 1 },
+    { key: "gp", label: "Praktici pro dospělé", value: n("gpShare"), inpatient: false, emphasis: 1 },
     // dopočet: 100 − 56,3 − 4,3
     { key: "rest", label: "Ostatní péče mimo lůžkový segment (dopočet)", value: 39.4, inpatient: false },
   ],
@@ -43,8 +45,8 @@ export const GP_AGE = {
 export const AVOIDABLE_GAP = [
   { key: "dm", label: "Úmrtnost na diabetes", cz: 49.4 as number | null, ref: 23.5 as number | null, refLabel: "EU", unit: "na 100 000", excess: null as number | null, chronic: true, source: "Eurostat hlth_cd_asdr2, 2023" },
   { key: "cvd", label: "Úmrtnost na kardiovaskulární nemoci", cz: null, ref: null, refLabel: "EU", unit: "", excess: 48, chronic: true, source: "Eurostat hlth_cd_asdr2, 2023 (studie uvádí jen rozdíl)" },
-  { key: "acsc", label: "Odvratitelné hospitalizace (ACSC)", cz: 592, ref: 473, refLabel: "OECD", unit: "na 100 000 obyvatel 15+", excess: null, chronic: false, source: "OECD Health at a Glance 2025, 2021/2022" },
-  { key: "treat", label: "Léčitelná úmrtnost (do 75 let)", cz: 107.2, ref: 86.8, refLabel: "EU27", unit: "na 100 000", excess: null, chronic: false, source: "Eurostat hlth_cd_apr, 2023" },
+  { key: "acsc", label: "Odvratitelné hospitalizace (ACSC)", cz: n("acsc"), ref: 473, refLabel: "OECD", unit: "na 100 000 obyvatel 15+", excess: null, chronic: false, source: "OECD Health at a Glance 2025, 2021/2022" },
+  { key: "treat", label: "Léčitelná úmrtnost (do 75 let)", cz: n("treatableMortality"), ref: 86.8, refLabel: "EU27", unit: "na 100 000", excess: null, chronic: false, source: "Eurostat hlth_cd_apr, 2023" },
   { key: "prev", label: "Preventabilní úmrtnost (do 75 let)", cz: 173.9, ref: 150.9, refLabel: "EU27", unit: "na 100 000", excess: null, chronic: false, source: "Eurostat hlth_cd_apr, 2023" },
 ];
 
@@ -54,7 +56,7 @@ export const AVOIDABLE_GAP = [
 export const LTC_BEDS = {
   czPer1000: 35.1, // OECD 2024
   europePer1000: 46, // srovnatelné evropské země, Eurostat 2019/2020
-  needBy2035: 39000, // Přecechtěl a Hlávka 2025
+  needBy2035: n("ltcNeed2035"), // Přecechtěl a Hlávka 2025
   needPerYear: 2800,
   built2022: 1928,
 };
@@ -63,11 +65,11 @@ export const LTC_BEDS = {
 // 5. Hospodaření zdravotního pojištění (ř. 305, 309, 1475)
 // ---------------------------------------------------------------------------
 export const INSURANCE_BALANCE = {
-  plan2026: { revenue: 555.8, spending: 570.8, deficit: 14.9 },
+  plan2026: { revenue: 555.8, spending: 570.8, deficit: n("insurersDeficit2026") },
   /** Zůstatek základních fondů všech sedmi pojišťoven, mld. Kč (důvodová zpráva k tisku 235). */
   funds: [
     { label: "Začátek roku 2021", value: 69.9 },
-    { label: "Konec roku 2025", value: 43.2 },
+    { label: "Konec roku 2025", value: n("insurersReserves") },
   ],
   /** Měsíční výdaje systému, pro měřítko (ř. 1475). */
   monthlySpending: 47,
@@ -78,20 +80,21 @@ export const INSURANCE_BALANCE = {
 // ---------------------------------------------------------------------------
 export const ACUTE_BEDS = {
   actual: [
-    { year: 2024, beds: 48036, note: "NZIP/ÚZIS" },
+    { year: 2024, beds: n("acuteBeds"), note: "NZIP/ÚZIS" },
     { year: 2025, beds: 46018, note: "předběžně" },
   ],
   /** Plán: do 2032 jen dobrovolné přeměny, od 2033 krajské plány, asi 1 330 ročně, 2038 asi 40 000 (ř. 102, 852). */
   plan: [
-    { year: 2031, beds: 48036 },
-    { year: 2032, beds: 48036 },
-    { year: 2038, beds: 40000 },
+    { year: 2031, beds: n("acuteBeds") },
+    { year: 2032, beds: n("acuteBeds") },
+    // „asi 40 000“: dnešní akutní lůžka minus 8 000 přeměněných, zaokrouhleno na tisíce
+    { year: 2038, beds: Math.round((n("acuteBeds") - n("bedsToConvert")) / 1000) * 1000 },
   ],
   perYear: 1330,
   per1000From: 4.4,
   per1000To: 3.7,
   /** 2010–2013 ubylo 5 914 akutních lůžek, následných přibylo 22 (ř. 886). */
-  lesson: { acuteLost: 5914, followUpAdded: 22 },
+  lesson: { acuteLost: n("bedsLesson"), followUpAdded: 22 },
 };
 
 // ---------------------------------------------------------------------------
@@ -101,19 +104,19 @@ export const HEALTH_TAX_SPLIT = {
   /** Dolní hranice pro Fond prevence, valorizovaně. */
   fund: 2,
   scenarios: [
-    { key: "plan", label: "Plánovací výnos", total: 5 },
-    { key: "upper", label: "Horní hranice rozpětí", total: 7 },
-    { key: "peer", label: "Cíl Hospodářské strategie PEER (dolní mez)", total: 10 },
+    { key: "plan", label: "Plánovací výnos", total: n("healthTaxPlan") },
+    { key: "upper", label: "Horní hranice rozpětí", total: CISLA.healthTaxPlan.range[1] },
+    { key: "peer", label: "Cíl Hospodářské strategie PEER (dolní mez)", total: CISLA.peerTaxTarget.range[0] },
   ],
   /** Pravidlo Hospodářské strategie PEER: nejméně 40 % výnosu do Fondu prevence. */
-  peerShare: 0.4,
+  peerShare: n("preventionFundShare") / 100,
 };
 
 // ---------------------------------------------------------------------------
 // 8. Citlivost čistého nákladu 2038 (ř. 1359–1381)
 // ---------------------------------------------------------------------------
 export const SENSITIVITY = {
-  central: 21.5,
+  central: n("netCost2038"),
   ranges: [
     { key: "mc", label: "Monte Carlo, 20 000 běhů: 90 % výsledků", lo: 19.2, hi: 23.0, mid: 21.0, midLabel: "medián 21,0" },
     // Podklad pro PEER (04-podklad-pro-PEER.md, ř. 120): žádný z deseti předpokladů sám neposune odhad mimo 19,4–23,1.
@@ -158,10 +161,10 @@ export const RAMP = [
   { year: 2032, net: 7.4, teams: 120 },
   { year: 2033, net: 11.3, teams: null },
   { year: 2034, net: 14.5, teams: null },
-  { year: 2035, net: 16.9, teams: 330 },
+  { year: 2035, net: n("netCost2035"), teams: 330 },
   { year: 2036, net: 18.6, teams: null },
   { year: 2037, net: 20.1, teams: null },
-  { year: 2038, net: 21.5, teams: 520 },
+  { year: 2038, net: n("netCost2038"), teams: n("teams2038") },
 ];
 
 // ---------------------------------------------------------------------------
@@ -191,7 +194,7 @@ export const NURSES_EXTRA = {
 // Řada po roce 2035 je jen aritmetika téhož pravidla do konce náběhu reformy (2038).
 // ---------------------------------------------------------------------------
 export const GP_P2 = {
-  start: 5500,
+  start: n("gpCount"),
   startYear: 2026,
   lossLow: 110,
   lossHigh: 180,

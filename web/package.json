@@ -13,7 +13,8 @@
     "import:docs": "tsx scripts/import.ts",
     "pdf": "node scripts/pdf.mjs",
     "test": "vitest run",
-    "db:anchors": "tsx scripts/anchors-backfill.ts"
+    "db:anchors": "tsx scripts/anchors-backfill.ts",
+    "check:cisla": "tsx scripts/check-cisla.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.2.0",

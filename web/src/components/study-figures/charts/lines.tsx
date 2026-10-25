@@ -19,6 +19,7 @@ import { ChartFrame } from "@/components/charts/chart-frame";
 import { DataTable } from "@/components/charts/data-table";
 import { FONT_SANS, FONT_SERIF, INK, MUTED_MARK, SERIES, TICK, csNumber } from "@/components/charts/theme";
 import { ACUTE_BEDS, GP_P2, RAMP } from "@/content/figures/charts";
+import { MODEL_NOTE } from "@/content/cisla";
 import { Reveal } from "../reveal";
 import { Legend, Note, anim } from "./primitives";
 
@@ -135,7 +136,7 @@ export function RampFigure() {
     <ChartFrame
       title="Náklad nabíhá jedenáct let a většina peněz se utratí až po bráně B3 v prosinci 2031"
       subtitle="Čistý náklad reformy po letech, mld. Kč ročně; varianta A, scénář „Vláda 2030“, ceny 2026"
-      source={`Ekonomický model studie v3 (model_v3.py); kumulativně 2028–2038 asi ${csNumber(Math.round(total), 0)} mld. Kč. Počty týmů: studie v3, Části I a V.`}
+      source={`${MODEL_NOTE} Kumulativně 2028–2038 asi ${csNumber(Math.round(total), 0)} mld. Kč. Počty týmů: studie, Části I a V.`}
       table={
         <DataTable
           header={["Rok", "Čistý náklad (mld. Kč)", "Týmů"]}
@@ -213,7 +214,7 @@ export function GpP2Figure() {
     <ChartFrame
       title={`Úbytek praktiků rezidenční místa nezastaví: P2 přidá do roku ${g.endYear} asi ${csNumber(gain, 0)} lékařů`}
       subtitle={`Praktici pro dospělé, počet; rozpětí podle úbytku ${g.lossLow} až ${g.lossHigh} ročně. P2 = +${g.p2PerYear} atestací ročně od roku ${g.p2From} (předpoklad modelu)`}
-      source={`Model studie v3 (model_v3.py); ${csNumber(g.start, 0)} praktiků pro dospělé v roce ${g.startYear} (ÚZIS). Roky po 2035 jsou aritmetika téhož pravidla do konce náběhu reformy.`}
+      source={`${MODEL_NOTE} ${csNumber(g.start, 0)} praktiků pro dospělé v roce ${g.startYear} (ÚZIS). Roky po 2035 jsou aritmetika téhož pravidla do konce náběhu reformy.`}
       table={
         <DataTable
           header={["Rok", "Bez P2", "S P2"]}
