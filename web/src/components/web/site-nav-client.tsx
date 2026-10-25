@@ -255,7 +255,7 @@ function MobileMenu({ links, more, brand, pathname }: { links: NavLink[]; more: 
           </nav>
           <div className="mt-auto flex flex-col items-stretch gap-2 px-[clamp(16px,4vw,40px)] pb-8 pt-8">
             <Button href="/studie" variant="secondary">
-              Číst studii
+              Číst a připomínkovat studii
             </Button>
             <TextLink href="/vstup" className="inline-flex min-h-12 items-center justify-center">
               Přihlášení pro tým

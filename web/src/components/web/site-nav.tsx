@@ -44,8 +44,8 @@ export function SiteNav() {
         <Brand />
         <SiteNavClient links={SITE_LINKS} more={MORE_LINKS} brand={<Brand />} />
         <div className="hidden xl:block">
-          <Button href="/studie" variant="secondary" className="min-h-12! px-[22px]! text-[17px]!">
-            Číst studii
+          <Button href="/studie" variant="secondary" className="min-h-12! whitespace-nowrap px-[22px]! text-[17px]!">
+            Číst a připomínkovat studii
           </Button>
         </div>
       </Container>
