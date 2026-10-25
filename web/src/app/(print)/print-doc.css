@@ -1,0 +1,157 @@
+/*
+ * Rozvržení tiskového dokumentu (/studie/tisk → public/studie.pdf).
+ * Na obrazovce vypadá jako list papíru, v tisku se řídí @page z print.css
+ * (A4, okraje) a čísla stránek doplní generátor PDF do patičky.
+ */
+.print-doc {
+  background: #fff;
+  color: #000;
+  font-family: var(--font-serif, Georgia), Georgia, serif;
+}
+
+.print-doc .doc-page {
+  max-width: 170mm;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+.print-doc .doc-cover {
+  min-height: 200mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  break-after: page;
+  page-break-after: always;
+}
+
+.print-doc .doc-note {
+  border: 1px solid #000;
+  padding: 14px 18px;
+  font-size: 11pt;
+  line-height: 1.5;
+}
+
+.print-doc .doc-toc {
+  break-after: page;
+  page-break-after: always;
+}
+
+.print-doc .doc-toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 1;
+}
+
+.print-doc .doc-toc li[data-level="1"] {
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.print-doc .doc-toc li[data-level="2"] {
+  padding-left: 14px;
+}
+
+.print-doc .doc-toc li[data-level="3"] {
+  padding-left: 28px;
+  font-size: 10pt;
+}
+
+.print-doc .doc-toc a {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Text studie: stejné bloky jako čtečka, bez interaktivity. */
+.print-doc .study-text {
+  font-size: 11pt;
+  line-height: 1.5;
+}
+
+.print-doc .study-text h1,
+.print-doc .study-text h2,
+.print-doc .study-text h3,
+.print-doc .study-text h4 {
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+.print-doc .study-text h1 {
+  break-before: page;
+  page-break-before: always;
+}
+
+.print-doc .study-text h1:first-of-type {
+  break-before: auto;
+  page-break-before: auto;
+}
+
+/* Tabulky se smí dělit přes stránky (dlouhé by jinak nechaly prázdnou stranu); záhlaví se opakuje. */
+.print-doc .study-text figure,
+.print-doc .study-text pre,
+.print-doc .study-text blockquote {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.print-doc .study-text thead {
+  display: table-header-group;
+}
+
+.print-doc .study-text tr {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.print-doc .study-text table {
+  font-size: 9pt;
+  line-height: 1.35;
+}
+
+.print-doc .study-text figure {
+  margin: 14px 0;
+}
+
+.print-doc .study-text figcaption {
+  font-size: 9pt;
+}
+
+/* Obrázky studie: v tisku vše ve výsledném stavu, bez čekání na animaci. */
+.print-doc .fig-animate [data-anim],
+.print-doc .fig-animate [data-anim="grow"],
+.print-doc .fig-animate [data-anim="draw"] {
+  opacity: 1 !important;
+  transform: none !important;
+  stroke-dashoffset: 0 !important;
+  transition: none !important;
+}
+
+.print-doc .doc-end {
+  break-before: page;
+  page-break-before: always;
+}
+
+@media print {
+  .print-doc .doc-page {
+    max-width: none;
+    padding: 0;
+  }
+}
+
+/* Rámeček tabulky z čtečky má overflow: auto, který se v tisku nedá rozdělit přes stránky
+   a dlouhou tabulku by celou odsunul na další stranu; v dokumentu se tabulky dělí. */
+.print-doc .doc-table-box {
+  overflow: visible !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* Sdílený print.css zakazuje dělení tabulek (hodí se pro krátké tabulky webu);
+   v dokumentu se dlouhé tabulky dělit musí, jinak nechávají prázdné strany. */
+@media print {
+  .print-doc table {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+}
