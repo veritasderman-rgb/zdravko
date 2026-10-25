@@ -176,7 +176,30 @@
   a.org-card::after {
     content: none !important;
   }
-  .org-group {
+  /* Pilíř se smí rozdělit na víc stran (celý se na stranu nevejde),
+     karta ani nadpis pilíře od první řady karet ne. */
+  .org-groups {
+    display: block !important;
+  }
+  .org-groups > * + * {
+    margin-top: 2rem;
+  }
+  .org-head {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  /* Neviditelná výška pod nadpisem pilíře: nadpis se vytiskne jen tam,
+     kde se pod něj vejde i první řada karet. */
+  .org-keep {
+    display: block !important;
+    height: 9rem;
+    margin-bottom: -9rem;
+    break-inside: avoid;
+  }
+  .org-head {
+    break-inside: avoid;
+  }
+  a.org-card {
     break-inside: avoid;
     page-break-inside: avoid;
   }
