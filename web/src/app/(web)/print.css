@@ -142,6 +142,50 @@
     content: none !important;
   }
 
+  /* Mapa vazeb a organigramy: uzly jsou tlačítka a odkazy, v tisku zůstávají jako popisky;
+     široké plátno se zmenší na šířku stránky, panel s výběrem se netiskne. */
+  .vazby-canvas {
+    zoom: 0.57;
+  }
+  .vazby-scroll {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .vazby-canvas button {
+    display: flex !important;
+  }
+  .vazby-panel {
+    display: none !important;
+  }
+  .vazby-scroll table {
+    min-width: 0 !important;
+    font-size: 8.5pt !important;
+  }
+  table.vazby-matrix {
+    table-layout: fixed !important;
+  }
+  table.vazby-matrix th,
+  table.vazby-matrix td {
+    padding: 1pt 2pt !important;
+  }
+  table.vazby-matrix thead th {
+    font-size: 6.5pt !important;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+  a.org-card::after {
+    content: none !important;
+  }
+  .org-group {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Diagramy: v tisku obrázek, ne jeho textová verze (ta je pro čtečky obrazovky na webu). */
+  details.diagram-text {
+    display: none !important;
+  }
+
   /* Rozbalit FAQ a rizika */
   details > :not(summary) {
     display: block !important;

@@ -105,7 +105,7 @@ export function DepsMoneyFigure() {
     { d: "M94 480V546H222", i: 6 },
   ];
   const labels: CanvasLabel[] = [
-    { x: 324, y: 165, text: "zbytek 3–5 mld. Kč", i: 3 },
+    { x: 324, y: 165, text: "zbytek 3–4,2 mld. Kč", i: 3 },
     { x: 480, y: 470, text: "ano → s centry", tone: "ink", i: 6 },
     { x: 480, y: 489, text: "ne → varianta B", tone: "ink", i: 6 },
   ];

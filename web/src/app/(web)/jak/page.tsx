@@ -4,7 +4,7 @@ import { ChartFrame } from "@/components/charts/chart-frame";
 import { DataTable } from "@/components/charts/data-table";
 import { HBarChart } from "@/components/charts/hbar-chart";
 import { csNumber } from "@/components/charts/theme";
-import { CodeRef, NextStep, PageHero, Section } from "@/components/web/ui";
+import { CodeRef, NextStep, PageHero, Section, TextLink } from "@/components/web/ui";
 import { ChainsDiagram } from "@/components/web/visuals";
 import { MODEL_NOTE } from "@/content/cisla";
 
@@ -64,6 +64,11 @@ export default function JakPage() {
 
       <Section eyebrow="Co na co navazuje" title="Tři řetězce v pevném pořadí" lead="Nejdřív peníze, pak lidé, pak lůžka. Kdo některý článek přeskočí, reformu nezrychlí, jen ji rozbije.">
         <ChainsDiagram />
+        <p className="mt-6 text-[17px]">
+          <TextLink href="/souvislosti" arrow>
+            Celá mapa vazeb: na čem které opatření stojí a co umožní
+          </TextLink>
+        </p>
       </Section>
 
       <Section tone="paper" eyebrow="Čtyři pravidla" title="Platí od roku 2026 do roku 2038, ať vládne kdokoli" lead="Reforma kvůli jednomu neúspěchu nekončí. Část, která nefunguje, ano.">

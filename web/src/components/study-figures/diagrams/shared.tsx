@@ -78,7 +78,7 @@ export function DiagramFrame({
       </div>
       <Reveal>{children}</Reveal>
       {legend && legend.length > 0 && <Legend items={legend} />}
-      <details className="group rounded-[10px] border border-line bg-sand px-4 py-2.5 text-[15px] leading-relaxed text-ink-2">
+      <details className="diagram-text group rounded-[10px] border border-line bg-sand px-4 py-2.5 text-[15px] leading-relaxed text-ink-2">
         <summary className="min-h-11 cursor-pointer content-center font-semibold text-ink">Textová verze</summary>
         <div className="mt-2 flex flex-col gap-3 pb-2">{textVersion}</div>
       </details>
@@ -208,7 +208,7 @@ export function Canvas({
   const kinds = Array.from(new Set(paths.map((p) => p.kind ?? "normal"))).filter((k) => EDGE_STYLE[k].arrow);
   return (
     <div className="hidden @min-[640px]:block">
-      <div className="relative w-full" style={{ aspectRatio: `${W} / ${H}` }} role="group" aria-label={ariaLabel}>
+      <div className="relative w-full" style={{ aspectRatio: `${W} / ${H}` }} role="figure" aria-label={ariaLabel}>
         <svg className="absolute inset-0 h-full w-full overflow-visible" viewBox={`0 0 ${W} ${H}`} aria-hidden focusable="false">
           <defs>
             {kinds.map((k) => (

@@ -33,6 +33,8 @@ jobs:
         run: pnpm typecheck
       - name: Registr čísel (zdroje, místa použití, shoda se studií)
         run: pnpm check:cisla
+      - name: Vazby opatření (žádná vazba proti času, organigramy úplné)
+        run: pnpm check:vazby
       - name: Testy (PGlite, bez sdílené databáze)
         run: pnpm test
       - name: Build

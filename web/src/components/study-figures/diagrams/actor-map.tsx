@@ -51,7 +51,7 @@ export function ActorMapFigure() {
             </span>
           </div>
           <div>
-            <div className="relative aspect-[600/400] w-full rounded-[10px] border border-line-strong bg-paper" role="group" aria-label="Mapa aktérů: vliv × postoj">
+            <div className="relative aspect-[600/400] w-full rounded-[10px] border border-line-strong bg-paper" role="figure" aria-label="Mapa aktérů: vliv × postoj">
               <span aria-hidden className="absolute bottom-0 left-1/2 top-0 border-l border-dashed border-line-strong" />
               <span aria-hidden className="absolute left-0 right-0 top-1/2 border-t border-dashed border-line-strong" />
               <span className="absolute left-3 top-2 text-[13px] font-semibold text-muted">{D.quadrants.tl}</span>
