@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { requireSession } from "@/lib/auth";
+import { can } from "@/lib/roles";
 import { listVerifications } from "@/lib/queries";
 import { VERIFICATION_LABEL } from "@/lib/labels";
 import { updateVerification } from "@/app/actions";
@@ -8,7 +9,8 @@ export const dynamic = "force-dynamic";
 export const metadata = { title: "Ověřit" };
 
 export default async function VerifyPage({ searchParams }: PageProps<"/overit">) {
-  await requireSession();
+  const session = await requireSession();
+  const editable = can(session.role, "verify");
   const sp = await searchParams;
   const status = typeof sp.status === "string" && sp.status ? sp.status : undefined;
   const rows = await listVerifications(status);
@@ -56,6 +58,7 @@ export default async function VerifyPage({ searchParams }: PageProps<"/overit">)
                     </Link>
                   </p>
                 </div>
+                {editable ? (
                 <form action={updateVerification} className="mt-2 grid grid-cols-1 gap-2 text-xs md:grid-cols-[180px_160px_1fr_auto]">
                   <input type="hidden" name="id" value={v.id} />
                   <select name="status" defaultValue={v.status}>
@@ -65,6 +68,14 @@ export default async function VerifyPage({ searchParams }: PageProps<"/overit">)
                   <input name="note" defaultValue={v.note ?? ""} placeholder="výsledek, zdroj, nové znění" />
                   <button className="btn !py-1 !px-3 !text-xs" type="submit">Uložit</button>
                 </form>
+                ) : (
+                  (v.assignee || v.note) && (
+                    <p className="mt-1 text-xs text-muted">
+                      {v.assignee ? `Ověřuje: ${v.assignee}. ` : ""}
+                      {v.note}
+                    </p>
+                  )
+                )}
               </li>
             ))}
           </ul>

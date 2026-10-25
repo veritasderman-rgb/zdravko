@@ -113,25 +113,25 @@ describe("transakce s auditem", () => {
   it("když audit selže, změna stavu se vrátí", async () => {
     const r = await createComment(db, base());
     await failEvents();
-    await expect(setCommentStatus(db, { id: r.id, status: "vyporadana", actor: "x" })).rejects.toThrow();
+    await expect(setCommentStatus(db, { id: r.id, status: "vyporadana", role: "koordinator", actor: "x" })).rejects.toThrow();
     const [c] = await db.select().from(schema.comments).where(eq(schema.comments.id, r.id));
     expect(c.status).toBe("nova");
   });
 
   it("změna stavu zapíše audit a neexistující připomínku odmítne", async () => {
     const r = await createComment(db, base());
-    await setCommentStatus(db, { id: r.id, status: "v_reseni", assignee: "Garant", priority: "vysoka", actor: "Garant" });
+    await setCommentStatus(db, { id: r.id, status: "v_reseni", assignee: "Garant", priority: "vysoka", role: "koordinator", actor: "Garant" });
     const [c] = await db.select().from(schema.comments).where(eq(schema.comments.id, r.id));
     expect(c).toMatchObject({ status: "v_reseni", assignee: "Garant", priority: "vysoka" });
     const ev = await db.select().from(schema.events).where(eq(schema.events.entityId, r.id));
     expect(ev.map((e) => e.action)).toEqual(expect.arrayContaining(["created", "status"]));
-    await expect(setCommentStatus(db, { id: 99999, status: "v_reseni", actor: "x" })).rejects.toThrow(/nenalezena/);
-    await expect(setCommentStatus(db, { id: r.id, status: "smazana", actor: "x" })).rejects.toBeInstanceOf(CommentError);
+    await expect(setCommentStatus(db, { id: 99999, status: "v_reseni", role: "koordinator", actor: "x" })).rejects.toThrow(/nenalezena/);
+    await expect(setCommentStatus(db, { id: r.id, status: "smazana", role: "koordinator", actor: "x" })).rejects.toBeInstanceOf(CommentError);
   });
 
   it("stav ověření se mění spolu s auditem", async () => {
     const [v] = await db.select().from(schema.verifications);
-    await setVerificationStatus(db, { id: v.id, status: "overeno_potvrzeno", note: "OK", actor: "Oponent" });
+    await setVerificationStatus(db, { id: v.id, status: "overeno_potvrzeno", note: "OK", role: "koordinator", actor: "Oponent" });
     const [after] = await db.select().from(schema.verifications).where(eq(schema.verifications.id, v.id));
     expect(after.status).toBe("overeno_potvrzeno");
     const ev = await db.select().from(schema.events).where(eq(schema.events.entity, "verification"));

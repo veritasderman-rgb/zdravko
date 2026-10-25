@@ -1,14 +1,16 @@
-// Jednoduchá podepsaná session v cookie. Do dodání seznamu členů RT
-// slouží jediný přístupový kód (ACCESS_CODE); pak ji nahradí přihlášení e-mailem.
-// Používá Web Crypto, aby fungovala i v proxy.ts.
+// Podepsaná session v cookie s účtem (uid) a rolí. Vzniká po přihlášení odkazem z e-mailu.
+// Proxy ověřuje jen podpis; stránky a akce navíc kontrolují v databázi, že účet je aktivní
+// a jakou má roli (src/lib/auth.ts). Používá Web Crypto, aby fungovala i v proxy.ts.
+import { isRole, type Role } from "./roles";
 
 export const SESSION_COOKIE = "zbl_session";
 const MAX_AGE_S = 60 * 60 * 24 * 30;
 
 export interface Session {
+  uid: number;
   name: string;
   organization: string;
-  role: "rt" | "host";
+  role: Role;
   exp: number;
 }
 
@@ -48,6 +50,8 @@ export async function openSession(token: string | undefined): Promise<Session | 
     if (!ok) return null;
     const data = JSON.parse(new TextDecoder().decode(fromB64url(body))) as Session;
     if (!data.exp || data.exp < Date.now() / 1000) return null;
+    // Staré session ze sdíleného kódu nemají účet; s nimi se už přihlásit nejde.
+    if (!Number.isInteger(data.uid) || !isRole(data.role)) return null;
     return data;
   } catch {
     return null;

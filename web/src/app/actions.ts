@@ -9,29 +9,67 @@ import { getSession } from "@/lib/auth";
 import { sealSession, SESSION_COOKIE, sessionCookieOptions } from "@/lib/session";
 import { withPoolDb } from "@/db/pool";
 import { CommentError, createComment, createReply, setCommentStatus, setVerificationStatus } from "@/lib/comments-core";
-import { commentVerification, sendMail } from "@/lib/mail";
+import { commentVerification, loginMail, sendMail } from "@/lib/mail";
+import { LOGIN_LINK_MINUTES, consumeLoginToken, createLoginToken } from "@/lib/accounts-core";
 import { RETENTION, clientIp, confirmComment, dropUnverified, hitLimit, isDuplicate, keyHash, newVerifyToken, spamReason } from "@/lib/privacy-core";
 import { privacySecret, siteUrl } from "@/lib/privacy";
 
 export type ActionState = { error?: string; ok?: boolean };
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 function str(fd: FormData, key: string, max = 20000): string {
   const v = fd.get(key);
   return typeof v === "string" ? v.trim().slice(0, max) : "";
 }
 
-export async function login(_prev: ActionState, fd: FormData): Promise<ActionState> {
-  const code = str(fd, "code", 200);
-  const name = str(fd, "name", 120);
-  const organization = str(fd, "organization", 200);
-  const next = str(fd, "next", 500) || "/rt";
-  if (!process.env.ACCESS_CODE) return { error: "Přístupový kód není nastaven na serveru." };
-  if (code !== process.env.ACCESS_CODE) return { error: "Nesprávný přístupový kód." };
-  if (name.length < 2) return { error: "Zadejte jméno, pod kterým se budou vaše připomínky evidovat." };
-  const token = await sealSession({ name, organization, role: "rt" });
-  (await cookies()).set(SESSION_COOKIE, token, sessionCookieOptions);
-  // jen lokální absolutní cesta; "//host" nebo "/\\host" by byl otevřený redirect
-  redirect(/^\/(?![\/\\])/.test(next) ? next : "/rt");
+/** Jen lokální absolutní cesta; "//host" nebo "/\\host" by byl otevřený redirect. */
+const safeNext = (next: string) => (/^\/(?![\/\\])/.test(next) ? next : "/rt");
+
+/**
+ * Žádost o odkaz pro přihlášení. Odpověď je vždy stejná, ať účet existuje, nebo ne;
+ * odkaz přijde jen na e-mail aktivního člena týmu.
+ */
+export async function requestLogin(_prev: ActionState, fd: FormData): Promise<ActionState> {
+  const email = str(fd, "email", 200).toLowerCase();
+  const next = safeNext(str(fd, "next", 500) || "/rt");
+  if (!EMAIL_RE.test(email)) return { error: "Zadejte platný e-mail." };
+  const secret = privacySecret();
+  const ip = clientIp(await headers());
+  let link: Awaited<ReturnType<typeof createLoginToken>> = null;
+  try {
+    link = await withPoolDb(async (pdb) => {
+      const ok =
+        (await hitLimit(pdb, "prihlaseni-ip", keyHash(secret, ip), [{ windowS: 3600, max: 20 }])) &&
+        (await hitLimit(pdb, "prihlaseni-email", keyHash(secret, email), [{ windowS: 3600, max: 5 }]));
+      if (!ok) throw new CommentError("O odkaz jste žádali v poslední době několikrát. Zkuste to prosím za hodinu.");
+      return createLoginToken(pdb, email);
+    });
+  } catch (e) {
+    return failure(e, "Odkaz se nepodařilo připravit. Zkuste to prosím znovu.");
+  }
+  if (link) {
+    const url = `${siteUrl()}/vstup/prihlasit?t=${encodeURIComponent(link.token)}&next=${encodeURIComponent(next)}`;
+    const sent = await sendMail({ to: email, ...loginMail({ name: link.user.name, url, minutes: LOGIN_LINK_MINUTES }) });
+    if (!sent) return { error: "E-mail s odkazem se nepodařilo odeslat. Zkuste to prosím za chvíli." };
+  }
+  return { ok: true };
+}
+
+/** Přihlášení tlačítkem na stránce z odkazu (samotné otevření odkazu nic nespotřebuje). */
+export async function completeLogin(_prev: ActionState, fd: FormData): Promise<ActionState> {
+  const token = str(fd, "t", 200);
+  const next = safeNext(str(fd, "next", 500) || "/rt");
+  let user: Awaited<ReturnType<typeof consumeLoginToken>>;
+  try {
+    user = await withPoolDb((pdb) => consumeLoginToken(pdb, token));
+  } catch (e) {
+    return failure(e, "Přihlášení se nepodařilo. Zkuste to prosím znovu.");
+  }
+  if (!user) return { error: "Odkaz neplatí. Platí jen jednou a jen 20 minut; požádejte o nový." };
+  const sealed = await sealSession({ uid: user.id, name: user.name, organization: user.organization ?? "", role: user.role });
+  (await cookies()).set(SESSION_COOKIE, sealed, sessionCookieOptions);
+  redirect(next);
 }
 
 export async function logout() {
@@ -68,6 +106,7 @@ export async function addComment(_prev: ActionState, fd: FormData): Promise<Acti
         organization: session.organization || null,
         onBehalf: str(fd, "onBehalf", 20) === "organizace" ? "organizace" : "osoba",
         channel: "rt",
+        authorUserId: session.uid,
         actor: session.name,
       }),
     );
@@ -85,7 +124,7 @@ export async function addReply(_prev: ActionState, fd: FormData): Promise<Action
   if (!session) return { error: "Přihlášení vypršelo." };
   const slug = str(fd, "slug", 100);
   try {
-    await withPoolDb((db) => createReply(db, { parentId: Number(fd.get("parentId")), body: str(fd, "body"), authorName: session.name, organization: session.organization || null, actor: session.name }));
+    await withPoolDb((db) => createReply(db, { parentId: Number(fd.get("parentId")), body: str(fd, "body"), authorName: session.name, organization: session.organization || null, authorUserId: session.uid, actor: session.name }));
   } catch (e) {
     return failure(e, "Odpověď se nepodařilo uložit.");
   }
@@ -104,6 +143,7 @@ export async function updateCommentStatus(fd: FormData): Promise<void> {
         assignee: str(fd, "assignee", 120),
         topic: str(fd, "topic", 120),
         priority: str(fd, "priority", 20),
+        role: session.role,
         actor: session.name,
       }),
     );
@@ -115,8 +155,6 @@ export async function updateCommentStatus(fd: FormData): Promise<void> {
   const slug = str(fd, "slug", 100);
   if (slug) revalidatePath(`/d/${slug}`);
 }
-
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 /**
  * Veřejná připomínka bez přihlášení: libovolné jméno a e-mail (nikdy se nezveřejňují).
@@ -244,7 +282,7 @@ export async function updateVerification(fd: FormData): Promise<void> {
   const session = await getSession();
   if (!session) return;
   try {
-    await withPoolDb((db) => setVerificationStatus(db, { id: Number(fd.get("id")), status: str(fd, "status", 30), assignee: str(fd, "assignee", 120), note: str(fd, "note", 4000), actor: session.name }));
+    await withPoolDb((db) => setVerificationStatus(db, { id: Number(fd.get("id")), status: str(fd, "status", 30), assignee: str(fd, "assignee", 120), note: str(fd, "note", 4000), role: session.role, actor: session.name }));
   } catch (e) {
     if (!(e instanceof CommentError)) console.error(e);
     return;

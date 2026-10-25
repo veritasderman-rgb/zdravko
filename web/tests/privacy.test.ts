@@ -227,7 +227,7 @@ describe("lhůty uchování", () => {
     await hitLimit(db, "pripominka-ip", "k2", [{ windowS: 600, max: 5 }]);
     await client.exec("update rate_hits set created_at = now() - interval '31 days' where key_hash = 'k1'");
 
-    expect(await applyRetention(db)).toEqual({ unverified: 1, rateHits: 1, anonymized: 1 });
+    expect(await applyRetention(db)).toEqual({ unverified: 1, rateHits: 1, anonymized: 1, loginTokens: 0 });
     expect(await comment(stale.id)).toBeUndefined();
     expect(await comment(fresh.id)).toBeDefined();
     expect(await comment(old.id)).toMatchObject({ authorName: ANONYMIZED_NAME, email: null, body: "Stará potvrzená připomínka veřejnosti." });
@@ -236,6 +236,6 @@ describe("lhůty uchování", () => {
     expect((await db.select().from(schema.rateHits)).map((h) => h.keyHash)).toEqual(["k2"]);
 
     // Druhé spuštění už nic nemění.
-    expect(await applyRetention(db)).toEqual({ unverified: 0, rateHits: 0, anonymized: 0 });
+    expect(await applyRetention(db)).toEqual({ unverified: 0, rateHits: 0, anonymized: 0, loginTokens: 0 });
   });
 });

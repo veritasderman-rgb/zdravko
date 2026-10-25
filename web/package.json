@@ -16,7 +16,9 @@
     "db:anchors": "tsx scripts/anchors-backfill.ts",
     "check:cisla": "tsx scripts/check-cisla.ts",
     "check:vazby": "tsx scripts/check-vazby.ts",
-    "gdpr:retence": "tsx scripts/retence.ts"
+    "gdpr:retence": "tsx scripts/retence.ts",
+    "users:add": "tsx scripts/users.ts add",
+    "users:list": "tsx scripts/users.ts list"
   },
   "dependencies": {
     "@fontsource-variable/geist-mono": "5.3.0",

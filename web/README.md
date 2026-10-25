@@ -24,10 +24,31 @@ Statické stránky z obsahu studie v3, politické verze a prezentace, data v `sr
 
 Texty jsou psané v první osobě množného čísla bez odborných výrazů; kde se jim nejde vyhnout, vysvětluje je slovníček. Grafy jsou v Recharts podle zásad dataviz (validovaná paleta, jedna osa, tenké pruhy, tabulková varianta u každého grafu).
 
-## Interní část: připomínky k odborné studii (přístupový kód)
+## Interní část: připomínky k odborné studii (osobní účty a role)
 
 Připomínkuje se jen odborná studie (`01-studie-zdravi-bliz-lidem-v3.md`); ostatní dokumenty slouží jako zdroj pro veřejný web.
-Cesty `/rt`, `/d/studie`, `/pripominky`, `/overit`, `/kody` a export chrání `src/proxy.ts`.
+Cesty `/rt`, `/d/studie`, `/pripominky`, `/overit`, `/kody`, `/lide` a export chrání `src/proxy.ts`.
+
+**Účty a role** (`src/lib/roles.ts`, `src/lib/accounts-core.ts`). Každý člen týmu má účet s e-mailem a rolí; přihlašuje
+se jednorázovým odkazem z e-mailu (platí 20 minut, potvrzuje se tlačítkem, aby ho nespotřebovala kontrola pošty).
+Sdílený přístupový kód už není. Role:
+
+| Role | Smí |
+| --- | --- |
+| čtenář | číst studii a připomínky, psát připomínky a odpovědi |
+| garant | navíc třídit (garant, téma, priorita), posouvat do stavu „návrh vypořádání“, vést registr „Ověřit“, vidět e-maily veřejnosti |
+| oponent | navíc potvrdit návrh vypořádání („zkontrolováno“), nebo ho vrátit k řešení |
+| autor | totéž co garant, navíc rozhodnout o vypořádání a exportovat |
+| koordinátor | všechno, navíc zveřejnit vypořádání a spravovat lidi na `/lide` |
+
+Oprávnění se kontrolují na serveru (změna stavu, registr, export, správa lidí); stránky jen skrývají ovládání,
+které role nemá. Role a aktivita se čtou z databáze při každém požadavku, takže deaktivace platí hned. Koordinátor
+musí zůstat aspoň jeden. Prvního založíte z příkazové řádky:
+
+```bash
+pnpm users:add --email jana@example.cz --name "Jana Nováková" --role koordinator --org "RT zdravotnictví"
+pnpm users:list
+```
 
 ## Co interní část umí
 
@@ -41,8 +62,8 @@ Cesty `/rt`, `/d/studie`, `/pripominky`, `/overit`, `/kody` a export chrání `s
 - **Registr „Ověřit“**: 100 míst vytěžených ze studie, stav, kdo ověří, výsledek.
 - **Registr kódů** J1–J10, P1–P5, Pil, M, H1–H8, D1–D12, R1–R19, B1–B4 (132 kódů) s popisem z registru opatření,
   výskyty v textu, připomínkami a filtrem dokumentu podle kódu (`/d/studie?kod=J2`).
-- **Přístup** jedním kódem a jménem (podepsaná cookie). Jména osob se nikdy nezveřejňují, do veřejného vypořádání jde
-  jen organizace.
+- **Přístup** osobním účtem s rolí, přihlášení odkazem z e-mailu (podepsaná cookie). Jména osob se nikdy
+  nezveřejňují, do veřejného vypořádání jde jen organizace.
 
 ## Stack
 
@@ -54,7 +75,7 @@ Next.js 16 (App Router, server actions), Tailwind 4, Drizzle ORM, Neon Postgres 
 ```bash
 cd web
 pnpm install
-cp .env.example .env.local   # doplňte DATABASE_URL, ACCESS_CODE, SESSION_SECRET
+cp .env.example .env.local   # doplňte DATABASE_URL, SESSION_SECRET, RESEND_API_KEY
 pnpm db:push                 # vytvoří tabulky podle src/db/schema.ts
 pnpm import:docs             # naimportuje studii do bloků (jen při změně; --force založí novou verzi)
 pnpm dev
@@ -92,13 +113,13 @@ pnpm db:anchors    # doplní kotvy do všech verzí a naváže na ně existujíc
   připomínky celé, u ostatních odstraní jméno, e-mail, organizaci a text a vyčistí auditní záznamy; ve vypořádání
   zůstane číslo, místo ve studii a stav.
 
-Nasazení: nejdřív `pnpm db:push` (přidá `comments.verify_token_hash`, `comments.anonymized_at` a tabulku `rate_hits`;
-starý kód nové sloupce ignoruje), pak sloučit kód a ve Vercelu nastavit `CRON_SECRET`.
+Nasazení změn schématu: vždy nejdřív `pnpm db:push` (přidávají se jen sloupce a tabulky, starý kód je ignoruje),
+pak sloučit kód. Mazání podle lhůt potřebuje ve Vercelu `CRON_SECRET`.
 
 **Testy a kontroly.** `pnpm test` spouští testy nad PGlite (Postgres v paměti), bez sdílené databáze: přiřazení
 kotev, migraci připomínek ze studie v3 na v3.1 na skutečných souborech, doplnění kotev do starých dat, validaci
 a transakce zápisů, export bez osobních údajů, limity, potvrzení e-mailem, odkaz na vlastní údaje, výmaz a lhůty
-uchování. GitHub Actions (`.github/workflows/ci.yml`) pouští u každého PR
+uchování, role a jejich vynucení, přihlášení odkazem a správu lidí. GitHub Actions (`.github/workflows/ci.yml`) pouští u každého PR
 lint, typecheck, testy a build.
 
 ## Struktura
@@ -112,9 +133,10 @@ lint, typecheck, testy a build.
 | `src/app/cron/retence`, `scripts/retence.ts` | denní a ruční mazání podle lhůt |
 | `tests/` | testy (Vitest + PGlite) |
 | `src/content/figures/vazby.ts` | mapa vazeb opatření v čase, organigramy pilířů, matice vlivů; `pnpm check:vazby` hlídá, že vazba „bez A nejde B“ nemíří proti času a že organigramy obsahují všechna opatření registru |
-| `src/db/schema.ts` | tabulky: documents, document_versions, blocks, codes, comments, resolutions, verifications, events, rate_hits |
+| `src/db/schema.ts` | tabulky: documents, document_versions, blocks, codes, comments, resolutions, verifications, events, rate_hits, users, login_tokens |
 | `src/lib/codes.ts` | regulární výraz a pomocníci pro kódy J/P/Pil/M/H/D/R/B |
-| `src/lib/session.ts`, `src/proxy.ts` | podepsaná cookie a ochrana všech stránek kromě `/vstup` |
+| `src/lib/session.ts`, `src/lib/auth.ts`, `src/proxy.ts` | podepsaná cookie s účtem a rolí, kontrola aktivního účtu, ochrana interních stránek |
+| `src/lib/roles.ts`, `src/lib/accounts-core.ts`, `src/app/(rt)/lide`, `scripts/users.ts` | role a oprávnění, přihlášení odkazem, správa lidí |
 | `src/app/(web)` | veřejný web; `src/components/charts` grafy a kalkulačky; `src/components/web` navigace a prvky |
 | `src/app/(rt)/d/[slug]` | čtečka studie |
 | `src/app/(rt)/pripominky`, `src/app/api/export/pripominky` | seznam a CSV export |
@@ -123,6 +145,6 @@ lint, typecheck, testy a build.
 
 ## Co je další krok (podle návrhu)
 
-Vypořádání s odůvodněním a kontrolou oponenta (tabulka `resolutions` už existuje), přihlášení e-mailem místo
-jednoho kódu, témata a garantství, otázky pro RT, registr závazných čísel, interaktivní grafy, kalkulačky
+Vypořádání s odůvodněním a kontrolou oponenta (tabulka `resolutions` už existuje), témata a garantství
+navázaná na účty, otázky pro RT, registr závazných čísel, interaktivní grafy, kalkulačky
 (nejdřív platba státu a daně za zdraví), veřejná část.
