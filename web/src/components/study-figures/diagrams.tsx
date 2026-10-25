@@ -11,6 +11,8 @@ import { MoneyFlowsFigure } from "./diagrams/money-flows";
 import { GovernanceFigure } from "./diagrams/governance";
 import { ActorMapFigure } from "./diagrams/actor-map";
 import { RiskMatrixFigure } from "./diagrams/risk-matrix";
+import { VazbyMapFigure } from "./diagrams/vazby-map";
+import { VazbyMatrixFigure, VazbyOrgFigure } from "./diagrams/vazby-org";
 import {
   ACTOR_MAP,
   CRITICAL_PATH,
@@ -38,6 +40,9 @@ export const DIAGRAM_FIGURES: StudyFigure[] = [
   { id: "krajsky-plan", match: ["proces krajského plánu sítě"], title: NETWORK_PLAN.title, Component: NetworkPlanFigure }, // ř. 896
   { id: "zavislosti-penize-lide", match: ["graf závislostí 1/2"], title: DEPS_MONEY.title, Component: DepsMoneyFigure }, // ř. 1206
   { id: "zavislosti-pece-sit", match: ["graf závislostí 2/2"], title: DEPS_CARE.title, Component: DepsCareFigure }, // ř. 1210
+  { id: "mapa-vazeb", match: ["mapa vazeb opatření v čase"], title: "Co na co navazuje: mapa vazeb opatření", Component: VazbyMapFigure },
+  { id: "organigramy-pilire", match: ["organigramy pilířů"], title: "Organigramy pilířů", Component: VazbyOrgFigure },
+  { id: "matice-vlivu", match: ["matice vlivů na ukazatele"], title: "Matice vlivů na ukazatele", Component: VazbyMatrixFigure },
   { id: "organigram-dnes", match: ["organigram · dnes"], title: ORG_TODAY.title, Component: OrgTodayFigure }, // ř. 1284
   { id: "organigram-2038", match: ["organigram · cílový stav"], title: ORG_2038.title, Component: Org2038Figure }, // ř. 1288
   { id: "toky-penez", match: ["toky peněz dnes a po reformě"], title: MONEY_FLOWS.title, Component: MoneyFlowsFigure }, // ř. 1296

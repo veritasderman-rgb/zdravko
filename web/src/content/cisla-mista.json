@@ -3,7 +3,7 @@
   "web": [
    {
     "file": "src/app/(web)/jak/page.tsx",
-    "line": 218
+    "line": 223
    },
    {
     "file": "src/app/(web)/penize/page.tsx",
@@ -96,19 +96,19 @@
     "heading": "Varianty A, B a C"
    },
    {
-    "line": 1364,
+    "line": 1382,
     "heading": "Část V — Peníze a lidé"
    },
    {
-    "line": 1419,
+    "line": 1437,
     "heading": "Čistý náklad a citlivost"
    },
    {
-    "line": 1445,
+    "line": 1463,
     "heading": "Varianty A, B, C"
    },
    {
-    "line": 1502,
+    "line": 1520,
     "heading": "Odkud peníze"
    }
   ]
@@ -138,23 +138,23 @@
     "heading": "Kolik to stojí a kdo to zaplatí"
    },
    {
-    "line": 1419,
+    "line": 1437,
     "heading": "Čistý náklad a citlivost"
    },
    {
-    "line": 1425,
+    "line": 1443,
     "heading": "Čistý náklad a citlivost"
    },
    {
-    "line": 1495,
+    "line": 1513,
     "heading": "Odkud peníze"
    },
    {
-    "line": 1533,
+    "line": 1551,
     "heading": "Odkud peníze"
    },
    {
-    "line": 2929,
+    "line": 2947,
     "heading": "Datové zdroje"
    }
   ]
@@ -172,11 +172,11 @@
   ],
   "studie": [
    {
-    "line": 1425,
+    "line": 1443,
     "heading": "Čistý náklad a citlivost"
    },
    {
-    "line": 1495,
+    "line": 1513,
     "heading": "Odkud peníze"
    }
   ]
@@ -202,11 +202,11 @@
   ],
   "studie": [
    {
-    "line": 1370,
+    "line": 1388,
     "heading": "Kolik stojí provoz"
    },
    {
-    "line": 1423,
+    "line": 1441,
     "heading": "Čistý náklad a citlivost"
    }
   ]
@@ -224,7 +224,7 @@
     "heading": "Kolik to stojí a kdo to zaplatí"
    },
    {
-    "line": 1406,
+    "line": 1424,
     "heading": "Úspory bez překryvů"
    }
   ]
@@ -242,7 +242,7 @@
     "heading": "Kolik to stojí a kdo to zaplatí"
    },
    {
-    "line": 1406,
+    "line": 1424,
     "heading": "Úspory bez překryvů"
    }
   ]
@@ -302,15 +302,15 @@
     "heading": "Varianty A, B a C"
    },
    {
-    "line": 1445,
+    "line": 1463,
     "heading": "Varianty A, B, C"
    },
    {
-    "line": 2701,
+    "line": 2719,
     "heading": "Deset výhrad verdiktu"
    },
    {
-    "line": 2717,
+    "line": 2735,
     "heading": "Dvacet oprav"
    }
   ]
@@ -340,15 +340,15 @@
     "heading": "Varianty A, B a C"
    },
    {
-    "line": 1445,
+    "line": 1463,
     "heading": "Varianty A, B, C"
    },
    {
-    "line": 2701,
+    "line": 2719,
     "heading": "Deset výhrad verdiktu"
    },
    {
-    "line": 2717,
+    "line": 2735,
     "heading": "Dvacet oprav"
    }
   ]
@@ -370,11 +370,11 @@
     "heading": "Kolik to stojí a kdo to zaplatí"
    },
    {
-    "line": 1472,
+    "line": 1490,
     "heading": "Investice"
    },
    {
-    "line": 1480,
+    "line": 1498,
     "heading": "Investice"
    }
   ]
@@ -400,23 +400,23 @@
     "heading": "Kolik to stojí a kdo to zaplatí"
    },
    {
-    "line": 1360,
+    "line": 1378,
     "heading": "Toky peněz dnes a po reformě"
    },
    {
-    "line": 1502,
+    "line": 1520,
     "heading": "Odkud peníze"
    },
    {
-    "line": 1620,
+    "line": 1638,
     "heading": "Deset předloh a náš postoj"
    },
    {
-    "line": 2567,
+    "line": 2585,
     "heading": "Jádro a podmínky (J1–J10, P1–P5)"
    },
    {
-    "line": 2718,
+    "line": 2736,
     "heading": "Dvacet oprav"
    }
   ]
@@ -450,19 +450,19 @@
     "heading": "Kolik to stojí a kdo to zaplatí"
    },
    {
-    "line": 1360,
+    "line": 1378,
     "heading": "Toky peněz dnes a po reformě"
    },
    {
-    "line": 1502,
+    "line": 1520,
     "heading": "Odkud peníze"
    },
    {
-    "line": 2567,
+    "line": 2585,
     "heading": "Jádro a podmínky (J1–J10, P1–P5)"
    },
    {
-    "line": 2718,
+    "line": 2736,
     "heading": "Dvacet oprav"
    }
   ]
@@ -500,19 +500,19 @@
     "heading": "P4: Fond prevence zdravotních pojišťoven"
    },
    {
-    "line": 1360,
+    "line": 1378,
     "heading": "Toky peněz dnes a po reformě"
    },
    {
-    "line": 1502,
+    "line": 1520,
     "heading": "Odkud peníze"
    },
    {
-    "line": 1588,
+    "line": 1606,
     "heading": "Otevřenost modelu"
    },
    {
-    "line": 2169,
+    "line": 2187,
     "heading": "Registr rizik"
    }
   ]
@@ -534,11 +534,11 @@
   ],
   "studie": [
    {
-    "line": 1502,
+    "line": 1520,
     "heading": "Odkud peníze"
    },
    {
-    "line": 1588,
+    "line": 1606,
     "heading": "Otevřenost modelu"
    }
   ]
@@ -564,11 +564,11 @@
     "heading": "Pil4.11 a Pil4.12: tabák a nikotin zdaněné víc, prevence odměněná"
    },
    {
-    "line": 1488,
+    "line": 1506,
     "heading": "Odkud peníze"
    },
    {
-    "line": 1494,
+    "line": 1512,
     "heading": "Odkud peníze"
    }
   ]
@@ -594,19 +594,19 @@
     "heading": "Co reforma nedělá a co ji nejvíc ohrožuje"
    },
    {
-    "line": 1364,
+    "line": 1382,
     "heading": "Část V — Peníze a lidé"
    },
    {
-    "line": 1488,
+    "line": 1506,
     "heading": "Odkud peníze"
    },
    {
-    "line": 1494,
+    "line": 1512,
     "heading": "Odkud peníze"
    },
    {
-    "line": 1510,
+    "line": 1528,
     "heading": "Odkud peníze"
    }
   ]
@@ -632,11 +632,11 @@
     "heading": "Peníze: pojištění ve schodku, rezervy klesá"
    },
    {
-    "line": 1488,
+    "line": 1506,
     "heading": "Odkud peníze"
    },
    {
-    "line": 1494,
+    "line": 1512,
     "heading": "Odkud peníze"
    }
   ]
@@ -680,7 +680,7 @@
     "heading": "Od problému k opatření"
    },
    {
-    "line": 1535,
+    "line": 1553,
     "heading": "Odkud peníze"
    }
   ]
@@ -702,10 +702,6 @@
    {
     "file": "src/components/study-figures/charts/model.tsx",
     "line": 298
-   },
-   {
-    "file": "src/components/study-figures/diagrams/dependencies.tsx",
-    "line": 108
    },
    {
     "file": "src/components/web/blocks.tsx",
@@ -730,10 +726,6 @@
    {
     "file": "src/content/figures/diagrams.ts",
     "line": 321
-   },
-   {
-    "file": "src/content/figures/diagrams.ts",
-    "line": 336
    },
    {
     "file": "src/content/figures/diagrams.ts",
@@ -866,67 +858,67 @@
     "heading": "P4: Fond prevence zdravotních pojišťoven"
    },
    {
-    "line": 1302,
+    "line": 1320,
     "heading": "Proč daně, vzorec platby státu a sestry před náběhem týmů"
    },
    {
-    "line": 1330,
+    "line": 1348,
     "heading": "Co když se to nepovede"
    },
    {
-    "line": 1354,
+    "line": 1372,
     "heading": "Toky peněz dnes a po reformě"
    },
    {
-    "line": 1415,
+    "line": 1433,
     "heading": "Úspory bez překryvů"
    },
    {
-    "line": 1502,
+    "line": 1520,
     "heading": "Odkud peníze"
    },
    {
-    "line": 1525,
+    "line": 1543,
     "heading": "Odkud peníze"
    },
    {
-    "line": 1533,
+    "line": 1551,
     "heading": "Odkud peníze"
    },
    {
-    "line": 1589,
+    "line": 1607,
     "heading": "Otevřenost modelu"
    },
    {
-    "line": 1694,
+    "line": 1712,
     "heading": "Vlna 1: peníze a daně (předložit 2030, účinnost 1. 1. 2031)"
    },
    {
-    "line": 1934,
+    "line": 1952,
     "heading": "Konzultační fáze 2026–2029"
    },
    {
-    "line": 1959,
+    "line": 1977,
     "heading": "Konzultační fáze 2026–2029"
    },
    {
-    "line": 2129,
+    "line": 2147,
     "heading": "Brána, ukazatel, prahová hodnota"
    },
    {
-    "line": 2169,
+    "line": 2187,
     "heading": "Registr rizik"
    },
    {
-    "line": 2175,
+    "line": 2193,
     "heading": "Registr rizik"
    },
    {
-    "line": 2702,
+    "line": 2720,
     "heading": "Deset výhrad verdiktu"
    },
    {
-    "line": 2718,
+    "line": 2736,
     "heading": "Dvacet oprav"
    }
   ]
@@ -992,15 +984,15 @@
     "heading": "P4: Fond prevence zdravotních pojišťoven"
    },
    {
-    "line": 1533,
+    "line": 1551,
     "heading": "Odkud peníze"
    },
    {
-    "line": 1959,
+    "line": 1977,
     "heading": "Konzultační fáze 2026–2029"
    },
    {
-    "line": 3012,
+    "line": 3030,
     "heading": "Vlastní podklady strany"
    }
   ]
@@ -1041,6 +1033,10 @@
    },
    {
     "file": "src/content/figures/diagrams.ts",
+    "line": 335
+   },
+   {
+    "file": "src/content/figures/diagrams.ts",
     "line": 466
    },
    {
@@ -1050,6 +1046,10 @@
    {
     "file": "src/content/figures/timelines.ts",
     "line": 614
+   },
+   {
+    "file": "src/content/figures/vazby.ts",
+    "line": 130
    },
    {
     "file": "src/content/manifest.ts",
@@ -1162,43 +1162,47 @@
     "heading": "Ostatní prevence: zubní prevence, očkování, navigace, krátká intervence"
    },
    {
-    "line": 1302,
+    "line": 1320,
     "heading": "Proč daně, vzorec platby státu a sestry před náběhem týmů"
    },
    {
-    "line": 1533,
+    "line": 1551,
     "heading": "Odkud peníze"
    },
    {
-    "line": 1694,
+    "line": 1712,
     "heading": "Vlna 1: peníze a daně (předložit 2030, účinnost 1. 1. 2031)"
    },
    {
-    "line": 2075,
+    "line": 1845,
+    "heading": "Věcné záměry k napsání v opozici"
+   },
+   {
+    "line": 2093,
     "heading": "Osm hlavních ukazatelů"
    },
    {
-    "line": 2090,
+    "line": 2108,
     "heading": "Dvanáct doplňkových ukazatelů"
    },
    {
-    "line": 2091,
+    "line": 2109,
     "heading": "Dvanáct doplňkových ukazatelů"
    },
    {
-    "line": 2095,
+    "line": 2113,
     "heading": "Dvanáct doplňkových ukazatelů"
    },
    {
-    "line": 2436,
+    "line": 2454,
     "heading": "8. Vzdělání a podmínky personálu"
    },
    {
-    "line": 2571,
+    "line": 2589,
     "heading": "Jádro a podmínky (J1–J10, P1–P5)"
    },
    {
-    "line": 2703,
+    "line": 2721,
     "heading": "Deset výhrad verdiktu"
    }
   ]
@@ -1264,7 +1268,7 @@
     "heading": "Minimální cena alkoholu a další regulace bez výnosu"
    },
    {
-    "line": 1699,
+    "line": 1717,
     "heading": "Vlna 1: peníze a daně (předložit 2030, účinnost 1. 1. 2031)"
    }
   ]
@@ -1354,19 +1358,19 @@
     "heading": "J1 · Standard týmu sdružené péče a pětiletá smlouva"
    },
    {
-    "line": 1379,
+    "line": 1397,
     "heading": "Kolik stojí provoz"
    },
    {
-    "line": 1464,
+    "line": 1482,
     "heading": "Náběh po letech"
    },
    {
-    "line": 1858,
+    "line": 1876,
     "heading": "Fáze a brány"
    },
    {
-    "line": 2069,
+    "line": 2087,
     "heading": "Osm hlavních ukazatelů"
    }
   ]
@@ -1420,25 +1424,29 @@
     "heading": "Kolik to stojí a kdo to zaplatí"
    },
    {
-    "line": 1374,
+    "line": 1392,
     "heading": "Kolik stojí provoz"
    },
    {
-    "line": 1541,
+    "line": 1559,
     "heading": "Lidé"
    },
    {
-    "line": 1545,
+    "line": 1563,
     "heading": "Lidé"
    },
    {
-    "line": 2164,
+    "line": 2182,
     "heading": "Registr rizik"
    }
   ]
  },
  "nursesPerYear": {
   "web": [
+   {
+    "file": "src/content/figures/vazby.ts",
+    "line": 149
+   },
    {
     "file": "src/content/reforma.ts",
     "line": 91
@@ -1466,7 +1474,7 @@
     "heading": "Co reforma nedělá a co ji nejvíc ohrožuje"
    },
    {
-    "line": 2699,
+    "line": 2717,
     "heading": "Deset výhrad verdiktu"
    }
   ]
@@ -1516,35 +1524,35 @@
     "heading": "J2 · Sesterská složka úhrady a rozšířené kompetence sester"
    },
    {
-    "line": 1304,
+    "line": 1322,
     "heading": "Proč daně, vzorec platby státu a sestry před náběhem týmů"
    },
    {
-    "line": 1543,
+    "line": 1561,
     "heading": "Lidé"
    },
    {
-    "line": 1545,
+    "line": 1563,
     "heading": "Lidé"
    },
    {
-    "line": 1547,
+    "line": 1565,
     "heading": "Lidé"
    },
    {
-    "line": 2164,
+    "line": 2182,
     "heading": "Registr rizik"
    },
    {
-    "line": 2436,
+    "line": 2454,
     "heading": "8. Vzdělání a podmínky personálu"
    },
    {
-    "line": 2699,
+    "line": 2717,
     "heading": "Deset výhrad verdiktu"
    },
    {
-    "line": 2926,
+    "line": 2944,
     "heading": "Datové zdroje"
    }
   ]
@@ -1590,23 +1598,23 @@
     "heading": "J2 · Sesterská složka úhrady a rozšířené kompetence sester"
    },
    {
-    "line": 1304,
+    "line": 1322,
     "heading": "Proč daně, vzorec platby státu a sestry před náběhem týmů"
    },
    {
-    "line": 1521,
+    "line": 1539,
     "heading": "Odkud peníze"
    },
    {
-    "line": 1551,
+    "line": 1569,
     "heading": "Lidé"
    },
    {
-    "line": 2164,
+    "line": 2182,
     "heading": "Registr rizik"
    },
    {
-    "line": 2436,
+    "line": 2454,
     "heading": "8. Vzdělání a podmínky personálu"
    }
   ]
@@ -1656,15 +1664,15 @@
     "heading": "J1 · Standard týmu sdružené péče a pětiletá smlouva"
    },
    {
-    "line": 1553,
+    "line": 1571,
     "heading": "Lidé"
    },
    {
-    "line": 1555,
+    "line": 1573,
     "heading": "Lidé"
    },
    {
-    "line": 1581,
+    "line": 1599,
     "heading": "Otevřenost modelu"
    }
   ]
@@ -1706,27 +1714,27 @@
     "heading": "J1 · Standard týmu sdružené péče a pětiletá smlouva"
    },
    {
-    "line": 1304,
+    "line": 1322,
     "heading": "Proč daně, vzorec platby státu a sestry před náběhem týmů"
    },
    {
-    "line": 1553,
+    "line": 1571,
     "heading": "Lidé"
    },
    {
-    "line": 1555,
+    "line": 1573,
     "heading": "Lidé"
    },
    {
-    "line": 1581,
+    "line": 1599,
     "heading": "Otevřenost modelu"
    },
    {
-    "line": 2165,
+    "line": 2183,
     "heading": "Registr rizik"
    },
    {
-    "line": 2436,
+    "line": 2454,
     "heading": "8. Vzdělání a podmínky personálu"
    }
   ]
@@ -1848,31 +1856,31 @@
     "heading": "Výchozí stav po krajích"
    },
    {
-    "line": 1316,
+    "line": 1334,
     "heading": "Proč kapacita dlouhodobé péče před přeměnou akutních lůžek"
    },
    {
-    "line": 1563,
+    "line": 1581,
     "heading": "Lidé"
    },
    {
-    "line": 2085,
+    "line": 2103,
     "heading": "Dvanáct doplňkových ukazatelů"
    },
    {
-    "line": 2086,
+    "line": 2104,
     "heading": "Dvanáct doplňkových ukazatelů"
    },
    {
-    "line": 2704,
+    "line": 2722,
     "heading": "Deset výhrad verdiktu"
    },
    {
-    "line": 2720,
+    "line": 2738,
     "heading": "Dvacet oprav"
    },
    {
-    "line": 2918,
+    "line": 2936,
     "heading": "Datové zdroje"
    }
   ]
@@ -1918,6 +1926,10 @@
    {
     "file": "src/content/figures/timelines.ts",
     "line": 685
+   },
+   {
+    "file": "src/content/figures/vazby.ts",
+    "line": 90
    },
    {
     "file": "src/content/manifest.ts",
@@ -1970,31 +1982,31 @@
     "heading": "Část IV — Co na co navazuje a proč"
    },
    {
-    "line": 1316,
+    "line": 1334,
     "heading": "Proč kapacita dlouhodobé péče před přeměnou akutních lůžek"
    },
    {
-    "line": 1479,
+    "line": 1497,
     "heading": "Investice"
    },
    {
-    "line": 1549,
+    "line": 1567,
     "heading": "Lidé"
    },
    {
-    "line": 1559,
+    "line": 1577,
     "heading": "Lidé"
    },
    {
-    "line": 1570,
+    "line": 1588,
     "heading": "Lidé"
    },
    {
-    "line": 1870,
+    "line": 1888,
     "heading": "Fáze a brány"
    },
    {
-    "line": 2704,
+    "line": 2722,
     "heading": "Deset výhrad verdiktu"
    }
   ]
@@ -2028,11 +2040,11 @@
     "heading": "Od problému k opatření"
    },
    {
-    "line": 2086,
+    "line": 2104,
     "heading": "Dvanáct doplňkových ukazatelů"
    },
    {
-    "line": 2887,
+    "line": 2905,
     "heading": "Pilíř 2: lůžka, centralizace, obložnost"
    }
   ]
@@ -2057,7 +2069,7 @@
     "heading": "Výchozí stav po krajích"
    },
    {
-    "line": 1314,
+    "line": 1332,
     "heading": "Proč kapacita dlouhodobé péče před přeměnou akutních lůžek"
    }
   ]
@@ -2141,11 +2153,11 @@
     "heading": "Část III — Jádro reformy: síť lůžkové péče (pilíř 2)"
    },
    {
-    "line": 1858,
+    "line": 1876,
     "heading": "Fáze a brány"
    },
    {
-    "line": 2073,
+    "line": 2091,
     "heading": "Osm hlavních ukazatelů"
    }
   ]
@@ -2229,23 +2241,23 @@
     "heading": "Pilíř 5: sociální účet a pomezí zdravotní a sociální péče (P3)"
    },
    {
-    "line": 1314,
+    "line": 1332,
     "heading": "Proč kapacita dlouhodobé péče před přeměnou akutních lůžek"
    },
    {
-    "line": 1559,
+    "line": 1577,
     "heading": "Lidé"
    },
    {
-    "line": 2087,
+    "line": 2105,
     "heading": "Dvanáct doplňkových ukazatelů"
    },
    {
-    "line": 2564,
+    "line": 2582,
     "heading": "Jádro a podmínky (J1–J10, P1–P5)"
    },
    {
-    "line": 2924,
+    "line": 2942,
     "heading": "Datové zdroje"
    }
   ]
@@ -2279,27 +2291,27 @@
     "heading": "Pilíř 5: sociální účet a pomezí zdravotní a sociální péče (P3)"
    },
    {
-    "line": 1314,
+    "line": 1332,
     "heading": "Proč kapacita dlouhodobé péče před přeměnou akutních lůžek"
    },
    {
-    "line": 1559,
+    "line": 1577,
     "heading": "Lidé"
    },
    {
-    "line": 1580,
+    "line": 1598,
     "heading": "Otevřenost modelu"
    },
    {
-    "line": 2087,
+    "line": 2105,
     "heading": "Dvanáct doplňkových ukazatelů"
    },
    {
-    "line": 2564,
+    "line": 2582,
     "heading": "Jádro a podmínky (J1–J10, P1–P5)"
    },
    {
-    "line": 2923,
+    "line": 2941,
     "heading": "Datové zdroje"
    }
   ]
@@ -2363,19 +2375,19 @@
     "heading": "Cíl reformy a pět měřitelných cílů"
    },
    {
-    "line": 1411,
+    "line": 1429,
     "heading": "Úspory bez překryvů"
    },
    {
-    "line": 2072,
+    "line": 2090,
     "heading": "Osm hlavních ukazatelů"
    },
    {
-    "line": 2077,
+    "line": 2095,
     "heading": "Osm hlavních ukazatelů"
    },
    {
-    "line": 2827,
+    "line": 2845,
     "heading": "Otevřená ověření"
    }
   ]
@@ -2397,7 +2409,7 @@
     "heading": "Odvratitelné hospitalizace a úmrtnost"
    },
    {
-    "line": 2074,
+    "line": 2092,
     "heading": "Osm hlavních ukazatelů"
    }
   ]
@@ -2410,7 +2422,7 @@
     "heading": "Co chceme"
    },
    {
-    "line": 2056,
+    "line": 2074,
     "heading": "Nadřazený cíl: +5 let života ve zdraví"
    }
   ]
@@ -2423,7 +2435,7 @@
     "heading": "Co chceme"
    },
    {
-    "line": 2056,
+    "line": 2074,
     "heading": "Nadřazený cíl: +5 let života ve zdraví"
    }
   ]
@@ -2475,7 +2487,7 @@
     "heading": "Pilíř 4: daně za zdraví podle Hospodářské strategie PEER"
    },
    {
-    "line": 2092,
+    "line": 2110,
     "heading": "Dvanáct doplňkových ukazatelů"
    }
   ]

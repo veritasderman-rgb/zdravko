@@ -87,6 +87,7 @@ lint, typecheck, testy a build.
 | `scripts/anchors-backfill.ts` | jednorázové doplnění kotev do starých verzí a navázání existujících připomínek |
 | `src/lib/comments-core.ts` | zápisy připomínek: společná validace a transakce s auditem |
 | `tests/` | testy (Vitest + PGlite) |
+| `src/content/figures/vazby.ts` | mapa vazeb opatření v čase, organigramy pilířů, matice vlivů; `pnpm check:vazby` hlídá, že vazba „bez A nejde B“ nemíří proti času a že organigramy obsahují všechna opatření registru |
 | `src/db/schema.ts` | tabulky: documents, document_versions, blocks, codes, comments, resolutions, verifications, events |
 | `src/lib/codes.ts` | regulární výraz a pomocníci pro kódy J/P/Pil/M/H/D/R/B |
 | `src/lib/session.ts`, `src/proxy.ts` | podepsaná cookie a ochrana všech stránek kromě `/vstup` |

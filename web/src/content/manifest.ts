@@ -77,7 +77,7 @@ const SHORT: Record<string, { label: string; when: string }> = {
   J9: { label: "Daň ze slazených nápojů podle množství cukru", when: "platí od 1. 1. 2032" },
   P1: { label: "Personální bilance po krajích: nábor ze zahraničí a rychlejší uznání aprobací", when: "zveřejnit do konce 2029, měřit koncem 2031" },
   P2: { label: "Rezidenční místa pro praktiky a pediatry", when: "podnět 2027, v rozpočtu 2028, závazně od 2031" },
-  P3: { label: "Sociální účet a sdílené financování sociálně-zdravotní péče", when: "záměr do konce 2029, platí od 1. 1. 2034" },
+  P3: { label: "Sociální účet a sdílené financování sociálně-zdravotní péče", when: "teze do konce 2029, platí od 1. 1. 2034" },
   P4: { label: "Fond prevence zdravotních pojišťoven: nejméně 40 % daní za zdraví, aspoň 2 mld. Kč", when: "platí od 1. 1. 2031" },
   P5: { label: "Měření výkonu zdravotnictví (rámec HSPA) ukotvené v zákoně", when: "platí od 1. 1. 2033" },
   // Doplňky pilířů
