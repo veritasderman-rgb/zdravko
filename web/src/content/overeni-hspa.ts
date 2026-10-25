@@ -23,7 +23,7 @@ export type RecordType = "overit" | "tvrzeni" | "ukazatel" | "cislo";
 export type HspaRef =
   | { kind: "indicator"; id: string; name: string; value?: number | string | null; unit?: string | null; year?: number | string | null; source?: string | null; url: string; verification?: string; note?: string }
   | { kind: "article"; file: string; title?: string; quote?: string; url: string; published?: boolean; note?: string }
-  | { kind: "claim"; id: string; quote?: string; value?: number | string | null; unit?: string | null; as_of?: number | string | null; url?: string; published?: boolean; note?: string }
+  | { kind: "claim"; id: string; file?: string; title?: string; quote?: string; value?: number | string | null; unit?: string | null; as_of?: number | string | null; url?: string; published?: boolean; note?: string }
   | { kind: "dataset"; file: string; ref?: string; note?: string; url?: string };
 
 export type OvereniRecord = {
@@ -144,20 +144,25 @@ export function forBlock(headingPath: string, text: string): OvereniRecord[] {
 
 export type EvidenceLink = { label: string; url: string; kind: "article" | "indicator" };
 
-/** Odkazy k zobrazení: publikované články a indikátory, bez duplicit, články první. */
+/**
+ * Odkazy k zobrazení: publikované články (i přes registrované tvrzení, které na článek míří)
+ * a indikátory, bez duplicit, články první.
+ */
 export function evidenceLinks(records: OvereniRecord[], max = 4): EvidenceLink[] {
   const seen = new Set<string>();
   const out: EvidenceLink[] = [];
-  for (const kind of ["article", "indicator"] as const) {
-    for (const r of records) {
-      for (const h of r.hspa) {
-        if (h.kind !== kind || !h.url || seen.has(h.url)) continue;
-        if (h.kind === "article" && h.published === false) continue;
-        seen.add(h.url);
-        out.push({ kind, url: h.url, label: h.kind === "article" ? (h.title ?? h.file) : h.name });
-      }
+  const add = (kind: EvidenceLink["kind"], url: string | undefined, label: string) => {
+    if (!url || seen.has(url)) return;
+    seen.add(url);
+    out.push({ kind, url, label });
+  };
+  for (const r of records) {
+    for (const h of r.hspa) {
+      if (h.kind === "article" && h.published !== false) add("article", h.url, h.title ?? h.file);
+      if (h.kind === "claim" && h.published !== false) add("article", h.url, h.title ?? h.file ?? h.id);
     }
   }
+  for (const r of records) for (const h of r.hspa) if (h.kind === "indicator") add("indicator", h.url, h.name);
   return out.slice(0, max);
 }
 

@@ -79,7 +79,9 @@
      "value": 30000,
      "unit": "úvazků",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "file": "clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "title": "Generační propast v ošetřovatelství: proč nám chybí tisíce sester a co s tím chce udělat program za 13 miliard"
     },
     {
      "kind": "article",
@@ -115,7 +117,9 @@
      "value": 39000,
      "unit": "lůžek",
      "as_of": 2035,
-     "url": "https://skorezdravotnictvi.cz/clanek-socialne-zdravotni-pomezi-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-socialne-zdravotni-pomezi-2026.html",
+     "file": "clanek-socialne-zdravotni-pomezi-2026.html",
+     "title": "Sociálně-zdravotní pomezí: jak zákon 38/2025 Sb. mění logiku péče o seniory"
     },
     {
      "kind": "claim",
@@ -124,7 +128,9 @@
      "value": 39000,
      "unit": "lůžek",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-reforma-dlouhodobe-pece-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-reforma-dlouhodobe-pece-2026.html",
+     "file": "clanek-reforma-dlouhodobe-pece-2026.html",
+     "title": "Dlouhodobá péče v Česku: tichá strukturální krize. Proč dvojkolejný systém stojí v cestě reformě, kterou demografie tak jako tak vynutí"
     }
    ],
    "verdict": "potvrzuje",
@@ -281,7 +287,9 @@
      "value": 15.5,
      "unit": "mld Kč/rok",
      "as_of": 2025,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     },
     {
      "kind": "dataset",
@@ -350,7 +358,9 @@
      "value": 40,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html",
+     "file": "clanek-presun-pece-z-luzek.html",
+     "title": "Přesun péče z lůžek dává smysl. Cíl minus deset procentních bodů ale měří něco jiného, než se má změnit"
     },
     {
      "kind": "claim",
@@ -359,7 +369,9 @@
      "value": 55.9,
      "unit": "%",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html",
+     "file": "clanek-presun-pece-z-luzek.html",
+     "title": "Přesun péče z lůžek dává smysl. Cíl minus deset procentních bodů ale měří něco jiného, než se má změnit"
     },
     {
      "kind": "article",
@@ -399,7 +411,9 @@
      "value": 46.5,
      "unit": "%",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html",
+     "file": "clanek-presun-pece-z-luzek.html",
+     "title": "Přesun péče z lůžek dává smysl. Cíl minus deset procentních bodů ale měří něco jiného, než se má změnit"
     },
     {
      "kind": "article",
@@ -415,7 +429,9 @@
      "value": 40,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html",
+     "file": "clanek-presun-pece-z-luzek.html",
+     "title": "Přesun péče z lůžek dává smysl. Cíl minus deset procentních bodů ale měří něco jiného, než se má změnit"
     },
     {
      "kind": "claim",
@@ -424,7 +440,9 @@
      "value": 55.9,
      "unit": "%",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html",
+     "file": "clanek-presun-pece-z-luzek.html",
+     "title": "Přesun péče z lůžek dává smysl. Cíl minus deset procentních bodů ale měří něco jiného, než se má změnit"
     }
    ],
    "verdict": "rozpor",
@@ -446,7 +464,9 @@
      "value": 45,
      "unit": "mld. Kč / dekáda (střed pásma 40–50)",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-sestry-vazajici-podminka.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-sestry-vazajici-podminka.html",
+     "file": "clanek-sestry-vazajici-podminka.html",
+     "title": "Čtyřicet osm ku dvanácti. Plán přesunout péči z lůžek do terénu má peníze i směr — nemá ruce"
     },
     {
      "kind": "claim",
@@ -455,7 +475,9 @@
      "value": 48000,
      "unit": "úvazků",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-sestry-vazajici-podminka.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-sestry-vazajici-podminka.html",
+     "file": "clanek-sestry-vazajici-podminka.html",
+     "title": "Čtyřicet osm ku dvanácti. Plán přesunout péči z lůžek do terénu má peníze i směr — nemá ruce"
     },
     {
      "kind": "article",
@@ -551,7 +573,9 @@
      "value": 62.4,
      "unit": "let",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-zdrave-roky-cil-pet-let.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-zdrave-roky-cil-pet-let.html",
+     "file": "clanek-zdrave-roky-cil-pet-let.html",
+     "title": "Pět let navíc. Cíl na zdravé stárnutí je dobře zvolený — zatím ale jde splnit i výměnou otázky v dotazníku"
     },
     {
      "kind": "indicator",
@@ -598,7 +622,9 @@
      "value": 29.7,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html",
+     "file": "clanek-financovani-segmenty-2026.html",
+     "title": "Kam plyne 508 miliard. Co o struktuře českého zdravotnictví říkají dohodovací řízení"
     },
     {
      "kind": "article",
@@ -680,7 +706,9 @@
      "value": 107.2,
      "unit": "na 100 000 ob.",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-lecitelna-mortalita.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-lecitelna-mortalita.html",
+     "file": "clanek-lecitelna-mortalita.html",
+     "title": "Co dokáže systém vyléčit: Česko ztrácí o čtvrtinu víc životů, kterým šlo zabránit léčbou"
     },
     {
      "kind": "claim",
@@ -689,7 +717,9 @@
      "value": 86.8,
      "unit": "na 100 000 ob.",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-lecitelna-mortalita.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-lecitelna-mortalita.html",
+     "file": "clanek-lecitelna-mortalita.html",
+     "title": "Co dokáže systém vyléčit: Česko ztrácí o čtvrtinu víc životů, kterým šlo zabránit léčbou"
     }
    ],
    "verdict": "potvrzuje",
@@ -722,7 +752,9 @@
      "value": 592,
      "unit": "na 100 000 ob.",
      "as_of": 2022,
-     "url": "https://skorezdravotnictvi.cz/clanek-vyhnutelne-hospitalizace.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-vyhnutelne-hospitalizace.html",
+     "file": "clanek-vyhnutelne-hospitalizace.html",
+     "title": "Téměř šest set hospitalizací, kterým mělo zabránit ambulantní zdravotnictví"
     }
    ],
    "verdict": "potvrzuje",
@@ -755,7 +787,9 @@
      "value": 21,
      "unit": "% domácností",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-katastroficke-vydaje-zdravi.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-katastroficke-vydaje-zdravi.html",
+     "file": "clanek-katastroficke-vydaje-zdravi.html",
+     "title": "Šest procent domácností, dvacet jedna procent u nejchudších. Katastrofické výdaje na zdraví v Česku rostou"
     },
     {
      "kind": "claim",
@@ -764,7 +798,9 @@
      "value": 14,
      "unit": "% domácností",
      "as_of": 2018,
-     "url": "https://skorezdravotnictvi.cz/clanek-katastroficke-vydaje-zdravi.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-katastroficke-vydaje-zdravi.html",
+     "file": "clanek-katastroficke-vydaje-zdravi.html",
+     "title": "Šest procent domácností, dvacet jedna procent u nejchudších. Katastrofické výdaje na zdraví v Česku rostou"
     }
    ],
    "verdict": "potvrzuje",
@@ -819,7 +855,9 @@
      "value": 84.2,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html",
+     "file": "clanek-presun-pece-z-luzek.html",
+     "title": "Přesun péče z lůžek dává smysl. Cíl minus deset procentních bodů ale měří něco jiného, než se má změnit"
     },
     {
      "kind": "claim",
@@ -828,7 +866,9 @@
      "value": 39000,
      "unit": "lůžek",
      "as_of": 2035,
-     "url": "https://skorezdravotnictvi.cz/clanek-socialne-zdravotni-pomezi-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-socialne-zdravotni-pomezi-2026.html",
+     "file": "clanek-socialne-zdravotni-pomezi-2026.html",
+     "title": "Sociálně-zdravotní pomezí: jak zákon 38/2025 Sb. mění logiku péče o seniory"
     },
     {
      "kind": "dataset",
@@ -920,7 +960,9 @@
      "value": 30000,
      "unit": "úvazků",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "file": "clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "title": "Generační propast v ošetřovatelství: proč nám chybí tisíce sester a co s tím chce udělat program za 13 miliard"
     }
    ],
    "verdict": "rozpor",
@@ -953,7 +995,9 @@
      "value": 4,
      "unit": "na 1 000 ob.",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-hospitalizujeme-nejvic.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-hospitalizujeme-nejvic.html",
+     "file": "clanek-hospitalizujeme-nejvic.html",
+     "title": "Osmnáct tisíc hospitalizací na sto tisíc obyvatel. Proč Česko leží v nemocnicích nejvíc v OECD"
     },
     {
      "kind": "claim",
@@ -962,7 +1006,9 @@
      "value": 4,
      "unit": "na 1 000 ob.",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html",
+     "file": "clanek-presun-pece-z-luzek.html",
+     "title": "Přesun péče z lůžek dává smysl. Cíl minus deset procentních bodů ale měří něco jiného, než se má změnit"
     }
    ],
    "verdict": "castecne",
@@ -984,7 +1030,9 @@
      "value": 6.016,
      "unit": "mil. osob",
      "as_of": 2027,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     },
     {
      "kind": "article",
@@ -1087,7 +1135,9 @@
      "value": 29.7,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html",
+     "file": "clanek-financovani-segmenty-2026.html",
+     "title": "Kam plyne 508 miliard. Co o struktuře českého zdravotnictví říkají dohodovací řízení"
     },
     {
      "kind": "article",
@@ -1157,7 +1207,9 @@
      "value": 1.59,
      "unit": "mil. osob",
      "as_of": 2050,
-     "url": "https://skorezdravotnictvi.cz/clanek-narok-pojistence-2-demograficky-tlak.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-narok-pojistence-2-demograficky-tlak.html",
+     "file": "clanek-narok-pojistence-2-demograficky-tlak.html",
+     "title": "Nárok narazí na demografii. Proč bude do roku 2050 čekat dvakrát víc seniorů na péči, kterou systém slibuje"
     }
    ],
    "verdict": "potvrzuje",
@@ -1179,7 +1231,9 @@
      "value": 85.6,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-financovani-sha.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-financovani-sha.html",
+     "file": "clanek-financovani-sha.html",
+     "title": "Odkud jdou peníze a kam mizí. Anatomie financování českého zdravotnictví"
     },
     {
      "kind": "article",
@@ -1219,7 +1273,9 @@
      "value": 0.3,
      "unit": "%",
      "as_of": 2025,
-     "url": "https://skorezdravotnictvi.cz/clanek-nadstandardy-3-cesky-narok.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-nadstandardy-3-cesky-narok.html",
+     "file": "clanek-nadstandardy-3-cesky-narok.html",
+     "title": "Co by nadstandardy udělaly s českým nárokem — a za jakých podmínek by dostupnost nesnížily"
     }
    ],
    "verdict": "upresnuje",
@@ -1252,7 +1308,9 @@
      "value": 8.6,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html",
+     "file": "clanek-presun-pece-z-luzek.html",
+     "title": "Přesun péče z lůžek dává smysl. Cíl minus deset procentních bodů ale měří něco jiného, než se má změnit"
     }
    ],
    "verdict": "potvrzuje",
@@ -1494,7 +1552,9 @@
      "value": 56.3,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html",
+     "file": "clanek-financovani-segmenty-2026.html",
+     "title": "Kam plyne 508 miliard. Co o struktuře českého zdravotnictví říkají dohodovací řízení"
     },
     {
      "kind": "indicator",
@@ -1619,7 +1679,9 @@
      "value": 25.9,
      "unit": "%",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html",
+     "file": "clanek-financovani-segmenty-2026.html",
+     "title": "Kam plyne 508 miliard. Co o struktuře českého zdravotnictví říkají dohodovací řízení"
     },
     {
      "kind": "article",
@@ -1691,7 +1753,9 @@
      "value": 17990,
      "unit": "na 100 000 ob.",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-hospitalizujeme-nejvic.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-hospitalizujeme-nejvic.html",
+     "file": "clanek-hospitalizujeme-nejvic.html",
+     "title": "Osmnáct tisíc hospitalizací na sto tisíc obyvatel. Proč Česko leží v nemocnicích nejvíc v OECD"
     }
    ],
    "verdict": "potvrzuje",
@@ -1713,7 +1777,9 @@
      "value": 56,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html",
+     "file": "clanek-presun-pece-z-luzek.html",
+     "title": "Přesun péče z lůžek dává smysl. Cíl minus deset procentních bodů ale měří něco jiného, než se má změnit"
     },
     {
      "kind": "claim",
@@ -1722,7 +1788,9 @@
      "value": 84.2,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html",
+     "file": "clanek-presun-pece-z-luzek.html",
+     "title": "Přesun péče z lůžek dává smysl. Cíl minus deset procentních bodů ale měří něco jiného, než se má změnit"
     },
     {
      "kind": "article",
@@ -1856,7 +1924,9 @@
      "value": -110,
      "unit": "PLD/rok",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html",
+     "file": "clanek-reforma-primarni-pece-2027.html",
+     "title": "Praktik jako uzel systému. Kapitace, Pay-for-Performance a věková krize primární péče v dohodovacím řízení 2027"
     },
     {
      "kind": "article",
@@ -1912,7 +1982,9 @@
      "value": 33,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html",
+     "file": "clanek-reforma-primarni-pece-2027.html",
+     "title": "Praktik jako uzel systému. Kapitace, Pay-for-Performance a věková krize primární péče v dohodovacím řízení 2027"
     },
     {
      "kind": "article",
@@ -2120,7 +2192,9 @@
      "value": 1500,
      "unit": "pojištěnců",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html",
+     "file": "clanek-reforma-primarni-pece-2027.html",
+     "title": "Praktik jako uzel systému. Kapitace, Pay-for-Performance a věková krize primární péče v dohodovacím řízení 2027"
     },
     {
      "kind": "dataset",
@@ -2159,7 +2233,9 @@
      "value": 592,
      "unit": "na 100 000 ob.",
      "as_of": 2022,
-     "url": "https://skorezdravotnictvi.cz/clanek-vyhnutelne-hospitalizace.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-vyhnutelne-hospitalizace.html",
+     "file": "clanek-vyhnutelne-hospitalizace.html",
+     "title": "Téměř šest set hospitalizací, kterým mělo zabránit ambulantní zdravotnictví"
     },
     {
      "kind": "claim",
@@ -2168,7 +2244,9 @@
      "value": 25,
      "unit": "%",
      "as_of": 2022,
-     "url": "https://skorezdravotnictvi.cz/clanek-vyhnutelne-hospitalizace.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-vyhnutelne-hospitalizace.html",
+     "file": "clanek-vyhnutelne-hospitalizace.html",
+     "title": "Téměř šest set hospitalizací, kterým mělo zabránit ambulantní zdravotnictví"
     }
    ],
    "verdict": "potvrzuje",
@@ -2201,7 +2279,9 @@
      "value": 24,
      "unit": "%",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-lecitelna-mortalita.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-lecitelna-mortalita.html",
+     "file": "clanek-lecitelna-mortalita.html",
+     "title": "Co dokáže systém vyléčit: Česko ztrácí o čtvrtinu víc životů, kterým šlo zabránit léčbou"
     },
     {
      "kind": "claim",
@@ -2210,7 +2290,9 @@
      "value": 107.2,
      "unit": "na 100 000 ob.",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-lecitelna-mortalita.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-lecitelna-mortalita.html",
+     "file": "clanek-lecitelna-mortalita.html",
+     "title": "Co dokáže systém vyléčit: Česko ztrácí o čtvrtinu víc životů, kterým šlo zabránit léčbou"
     }
    ],
    "verdict": "potvrzuje",
@@ -2531,7 +2613,9 @@
      "value": 48,
      "unit": "%",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-kardiovaskularni-mortalita.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-kardiovaskularni-mortalita.html",
+     "file": "clanek-kardiovaskularni-mortalita.html",
+     "title": "Český kardiovaskulární paradox. Akutní péče v evropské špičce, mortalita o 60 procent vyšší"
     },
     {
      "kind": "indicator",
@@ -2812,7 +2896,9 @@
      "value": 13,
      "unit": "tis. úvazků",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "file": "clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "title": "Generační propast v ošetřovatelství: proč nám chybí tisíce sester a co s tím chce udělat program za 13 miliard"
     },
     {
      "kind": "indicator",
@@ -2852,7 +2938,9 @@
      "value": 20,
      "unit": "%",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "file": "clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "title": "Generační propast v ošetřovatelství: proč nám chybí tisíce sester a co s tím chce udělat program za 13 miliard"
     }
    ],
    "verdict": "potvrzuje",
@@ -2881,7 +2969,9 @@
      "value": 30000,
      "unit": "úvazků",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "file": "clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "title": "Generační propast v ošetřovatelství: proč nám chybí tisíce sester a co s tím chce udělat program za 13 miliard"
     }
    ],
    "verdict": "rozpor",
@@ -2914,7 +3004,9 @@
      "value": 4.2,
      "unit": "/ 1 000",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-pracovni-sila.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-pracovni-sila.html",
+     "file": "clanek-pracovni-sila.html",
+     "title": "Lékařů máme víc než OECD. Sester chybí. A absolventů taky"
     }
    ],
    "verdict": "potvrzuje",
@@ -3105,7 +3197,9 @@
      "value": 9,
      "unit": "/ 1 000",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-pracovni-sila.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-pracovni-sila.html",
+     "file": "clanek-pracovni-sila.html",
+     "title": "Lékařů máme víc než OECD. Sester chybí. A absolventů taky"
     },
     {
      "kind": "claim",
@@ -3114,7 +3208,9 @@
      "value": 9.2,
      "unit": "/ 1 000",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-pracovni-sila.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-pracovni-sila.html",
+     "file": "clanek-pracovni-sila.html",
+     "title": "Lékařů máme víc než OECD. Sester chybí. A absolventů taky"
     }
    ],
    "verdict": "potvrzuje",
@@ -3280,7 +3376,9 @@
      "value": 2.5,
      "unit": "/ 100 osob 65+",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-kdo-se-o-nas-postara-2035.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-kdo-se-o-nas-postara-2035.html",
+     "file": "clanek-kdo-se-o-nas-postara-2035.html",
+     "title": "Kdo se o nás postará v roce 2035. O 284 tisíc lidí nad 75 let víc, tři cesty a jeden nesečtený účet"
     }
    ],
    "verdict": "upresnuje",
@@ -3415,7 +3513,9 @@
      "value": 5.6,
      "unit": "na 100 osob 65+",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-sestry-vazajici-podminka.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-sestry-vazajici-podminka.html",
+     "file": "clanek-sestry-vazajici-podminka.html",
+     "title": "Čtyřicet osm ku dvanácti. Plán přesunout péči z lůžek do terénu má peníze i směr — nemá ruce"
     }
    ],
    "verdict": "potvrzuje",
@@ -3448,7 +3548,9 @@
      "value": 35.1,
      "unit": "lůžek / 1 000 ob. 65+",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-luzka-dlouhodobe-pece.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-luzka-dlouhodobe-pece.html",
+     "file": "clanek-luzka-dlouhodobe-pece.html",
+     "title": "Místo pro stáří se ztrácí. Lůžek dlouhodobé péče má Česko o čtvrtinu pod evropským průměrem"
     },
     {
      "kind": "claim",
@@ -3457,7 +3559,9 @@
      "value": 46,
      "unit": "lůžek / 1 000 ob. 65+",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-luzka-dlouhodobe-pece.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-luzka-dlouhodobe-pece.html",
+     "file": "clanek-luzka-dlouhodobe-pece.html",
+     "title": "Místo pro stáří se ztrácí. Lůžek dlouhodobé péče má Česko o čtvrtinu pod evropským průměrem"
     }
    ],
    "verdict": "potvrzuje",
@@ -3511,7 +3615,9 @@
      "value": 39000,
      "unit": "lůžek",
      "as_of": 2035,
-     "url": "https://skorezdravotnictvi.cz/clanek-socialne-zdravotni-pomezi-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-socialne-zdravotni-pomezi-2026.html",
+     "file": "clanek-socialne-zdravotni-pomezi-2026.html",
+     "title": "Sociálně-zdravotní pomezí: jak zákon 38/2025 Sb. mění logiku péče o seniory"
     },
     {
      "kind": "article",
@@ -3646,7 +3752,9 @@
      "value": 84.2,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html",
+     "file": "clanek-presun-pece-z-luzek.html",
+     "title": "Přesun péče z lůžek dává smysl. Cíl minus deset procentních bodů ale měří něco jiného, než se má změnit"
     },
     {
      "kind": "dataset",
@@ -3674,7 +3782,9 @@
      "value": 555.8,
      "unit": "mld. Kč",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-pojistne-plany-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-pojistne-plany-2026.html",
+     "file": "clanek-pojistne-plany-2026.html",
+     "title": "Schodek podle plánu. Pojišťovny míří rokem 2026 k minusu 14,9 miliardy a rezervy klesají ke kritické hranici"
     },
     {
      "kind": "claim",
@@ -3683,7 +3793,9 @@
      "value": 570.8,
      "unit": "mld. Kč",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-pojistne-plany-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-pojistne-plany-2026.html",
+     "file": "clanek-pojistne-plany-2026.html",
+     "title": "Schodek podle plánu. Pojišťovny míří rokem 2026 k minusu 14,9 miliardy a rezervy klesají ke kritické hranici"
     },
     {
      "kind": "claim",
@@ -3692,7 +3804,9 @@
      "value": -14.9,
      "unit": "mld. Kč",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-pojistne-plany-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-pojistne-plany-2026.html",
+     "file": "clanek-pojistne-plany-2026.html",
+     "title": "Schodek podle plánu. Pojišťovny míří rokem 2026 k minusu 14,9 miliardy a rezervy klesají ke kritické hranici"
     },
     {
      "kind": "article",
@@ -3794,7 +3908,9 @@
      "value": 32,
      "unit": "mld Kč",
      "as_of": 2025,
-     "url": "https://skorezdravotnictvi.cz/clanek-deficit-vzp-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-deficit-vzp-2026.html",
+     "file": "clanek-deficit-vzp-2026.html",
+     "title": "Miliardy, které chybí. Anatomie deficitu veřejného zdravotního pojištění 2026"
     },
     {
      "kind": "claim",
@@ -3803,7 +3919,9 @@
      "value": 32,
      "unit": "mld Kč",
      "as_of": 2025,
-     "url": "https://skorezdravotnictvi.cz/clanek-deficit-pojisteni-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-deficit-pojisteni-2026.html",
+     "file": "clanek-deficit-pojisteni-2026.html",
+     "title": "Strukturální deficit zdravotního pojištění 2026. Proč se nůžky rozevírají a co je zastaví"
     }
    ],
    "verdict": "potvrzuje",
@@ -3825,7 +3943,9 @@
      "value": 2188,
      "unit": "Kč/měsíc",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-deficit-pojisteni-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-deficit-pojisteni-2026.html",
+     "file": "clanek-deficit-pojisteni-2026.html",
+     "title": "Strukturální deficit zdravotního pojištění 2026. Proč se nůžky rozevírají a co je zastaví"
     },
     {
      "kind": "claim",
@@ -3834,7 +3954,9 @@
      "value": 28.4,
      "unit": "%",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     }
    ],
    "verdict": "potvrzuje",
@@ -3876,7 +3998,9 @@
      "value": 18362,
      "unit": "Kč",
      "as_of": 2027,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     },
     {
      "kind": "claim",
@@ -3885,7 +4009,9 @@
      "value": 2479,
      "unit": "Kč / měsíc",
      "as_of": 2027,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     },
     {
      "kind": "article",
@@ -3999,7 +4125,9 @@
      "value": 21,
      "unit": "% domácností",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-katastroficke-vydaje-zdravi.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-katastroficke-vydaje-zdravi.html",
+     "file": "clanek-katastroficke-vydaje-zdravi.html",
+     "title": "Šest procent domácností, dvacet jedna procent u nejchudších. Katastrofické výdaje na zdraví v Česku rostou"
     },
     {
      "kind": "claim",
@@ -4008,7 +4136,9 @@
      "value": 14,
      "unit": "% domácností",
      "as_of": 2018,
-     "url": "https://skorezdravotnictvi.cz/clanek-katastroficke-vydaje-zdravi.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-katastroficke-vydaje-zdravi.html",
+     "file": "clanek-katastroficke-vydaje-zdravi.html",
+     "title": "Šest procent domácností, dvacet jedna procent u nejchudších. Katastrofické výdaje na zdraví v Česku rostou"
     },
     {
      "kind": "claim",
@@ -4017,7 +4147,9 @@
      "value": 6,
      "unit": "% domácností",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-katastroficke-vydaje-zdravi.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-katastroficke-vydaje-zdravi.html",
+     "file": "clanek-katastroficke-vydaje-zdravi.html",
+     "title": "Šest procent domácností, dvacet jedna procent u nejchudších. Katastrofické výdaje na zdraví v Česku rostou"
     },
     {
      "kind": "indicator",
@@ -4082,7 +4214,9 @@
      "value": 11.2,
      "unit": "l/os./rok",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-alkohol-spotreba.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-alkohol-spotreba.html",
+     "file": "clanek-alkohol-spotreba.html",
+     "title": "Čtrnáct litrů. Proč Česko pije nejvíc v OECD a co s tím dělají jiné země"
     },
     {
      "kind": "claim",
@@ -4091,7 +4225,9 @@
      "value": 32,
      "unit": "%",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-alkohol-spotreba.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-alkohol-spotreba.html",
+     "file": "clanek-alkohol-spotreba.html",
+     "title": "Čtrnáct litrů. Proč Česko pije nejvíc v OECD a co s tím dělají jiné země"
     },
     {
      "kind": "indicator",
@@ -4349,7 +4485,9 @@
      "value": 26.3,
      "unit": "%",
      "as_of": 2019,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     }
    ],
    "verdict": "potvrzuje",
@@ -4445,7 +4583,9 @@
      "value": 61.4,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-mamografy-nejmene-v-eu-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-mamografy-nejmene-v-eu-2026.html",
+     "file": "clanek-mamografy-nejmene-v-eu-2026.html",
+     "title": "1,05 mamografu na 100 tisíc obyvatel. Česko má s Polskem nejméně přístrojů v EU, přesto účast na screeningu stojí nad mediánem"
     },
     {
      "kind": "claim",
@@ -4454,7 +4594,9 @@
      "value": 56.6,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-mamografy-nejmene-v-eu-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-mamografy-nejmene-v-eu-2026.html",
+     "file": "clanek-mamografy-nejmene-v-eu-2026.html",
+     "title": "1,05 mamografu na 100 tisíc obyvatel. Česko má s Polskem nejméně přístrojů v EU, přesto účast na screeningu stojí nad mediánem"
     },
     {
      "kind": "claim",
@@ -4463,7 +4605,9 @@
      "value": 60,
      "unit": "%",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-mamograf-rakovina-prsu.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-mamograf-rakovina-prsu.html",
+     "file": "clanek-mamograf-rakovina-prsu.html",
+     "title": "Šedesát procent. Proč český mamograf naráží na pomyslný strop"
     }
    ],
    "verdict": "upresnuje",
@@ -4567,7 +4711,9 @@
      "value": 24.6,
      "unit": "%",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-ockovani-dospelych-rezerva.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-ockovani-dospelych-rezerva.html",
+     "file": "clanek-ockovani-dospelych-rezerva.html",
+     "title": "Dvacet čtyři procenta. Nejrychleji dostupná rezerva české prevence je hotová, hrazená — a nevyužitá"
     },
     {
      "kind": "claim",
@@ -4576,7 +4722,9 @@
      "value": 51,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-vydaje-prevence.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-vydaje-prevence.html",
+     "file": "clanek-vydaje-prevence.html",
+     "title": "Dvě a tři čtvrtě procenta. Proč Česko utrácí na prevenci pětinu pod průměrem OECD a jak to systém znevýhodňuje"
     }
    ],
    "verdict": "potvrzuje",
@@ -4758,7 +4906,9 @@
      "value": 2.7,
      "unit": "%",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-vydaje-prevence.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-vydaje-prevence.html",
+     "file": "clanek-vydaje-prevence.html",
+     "title": "Dvě a tři čtvrtě procenta. Proč Česko utrácí na prevenci pětinu pod průměrem OECD a jak to systém znevýhodňuje"
     },
     {
      "kind": "claim",
@@ -4767,7 +4917,9 @@
      "value": 3.2,
      "unit": "%",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-vydaje-prevence.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-vydaje-prevence.html",
+     "file": "clanek-vydaje-prevence.html",
+     "title": "Dvě a tři čtvrtě procenta. Proč Česko utrácí na prevenci pětinu pod průměrem OECD a jak to systém znevýhodňuje"
     }
    ],
    "verdict": "potvrzuje",
@@ -4853,7 +5005,9 @@
      "value": 15.5,
      "unit": "mld Kč/rok",
      "as_of": 2025,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     },
     {
      "kind": "article",
@@ -4900,7 +5054,9 @@
      "value": 43,
      "unit": "%",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-jaterni-mortalita-alkohol.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-jaterni-mortalita-alkohol.html",
+     "file": "clanek-jaterni-mortalita-alkohol.html",
+     "title": "Cena levného piva: Česko umírá na nemocná játra o 43 % častěji než Evropa"
     },
     {
      "kind": "article",
@@ -4929,7 +5085,9 @@
      "value": 30.8,
      "unit": "kg",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-napoje-6-dan-regulace.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-napoje-6-dan-regulace.html",
+     "file": "clanek-napoje-6-dan-regulace.html",
+     "title": "Daň, etikety, automaty: co na slazené nápoje opravdu platí"
     },
     {
      "kind": "article",
@@ -5212,7 +5370,9 @@
      "value": 29.7,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html",
+     "file": "clanek-financovani-segmenty-2026.html",
+     "title": "Kam plyne 508 miliard. Co o struktuře českého zdravotnictví říkají dohodovací řízení"
     },
     {
      "kind": "claim",
@@ -5221,7 +5381,9 @@
      "value": 56,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html",
+     "file": "clanek-presun-pece-z-luzek.html",
+     "title": "Přesun péče z lůžek dává smysl. Cíl minus deset procentních bodů ale měří něco jiného, než se má změnit"
     }
    ],
    "verdict": "potvrzuje",
@@ -5243,7 +5405,9 @@
      "value": -110,
      "unit": "PLD/rok",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html",
+     "file": "clanek-reforma-primarni-pece-2027.html",
+     "title": "Praktik jako uzel systému. Kapitace, Pay-for-Performance a věková krize primární péče v dohodovacím řízení 2027"
     },
     {
      "kind": "claim",
@@ -5252,7 +5416,9 @@
      "value": 33,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html",
+     "file": "clanek-reforma-primarni-pece-2027.html",
+     "title": "Praktik jako uzel systému. Kapitace, Pay-for-Performance a věková krize primární péče v dohodovacím řízení 2027"
     }
    ],
    "verdict": "castecne",
@@ -5351,7 +5517,9 @@
      "value": 30000,
      "unit": "úvazků",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "file": "clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "title": "Generační propast v ošetřovatelství: proč nám chybí tisíce sester a co s tím chce udělat program za 13 miliard"
     }
    ],
    "verdict": "rozpor",
@@ -5373,7 +5541,9 @@
      "value": 39000,
      "unit": "lůžek",
      "as_of": 2035,
-     "url": "https://skorezdravotnictvi.cz/clanek-socialne-zdravotni-pomezi-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-socialne-zdravotni-pomezi-2026.html",
+     "file": "clanek-socialne-zdravotni-pomezi-2026.html",
+     "title": "Sociálně-zdravotní pomezí: jak zákon 38/2025 Sb. mění logiku péče o seniory"
     },
     {
      "kind": "dataset",
@@ -5401,7 +5571,9 @@
      "value": -14.9,
      "unit": "mld. Kč",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-pojistne-plany-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-pojistne-plany-2026.html",
+     "file": "clanek-pojistne-plany-2026.html",
+     "title": "Schodek podle plánu. Pojišťovny míří rokem 2026 k minusu 14,9 miliardy a rezervy klesají ke kritické hranici"
     },
     {
      "kind": "article",
@@ -5498,7 +5670,9 @@
      "value": 21,
      "unit": "% domácností",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-katastroficke-vydaje-zdravi.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-katastroficke-vydaje-zdravi.html",
+     "file": "clanek-katastroficke-vydaje-zdravi.html",
+     "title": "Šest procent domácností, dvacet jedna procent u nejchudších. Katastrofické výdaje na zdraví v Česku rostou"
     }
    ],
    "verdict": "potvrzuje",
@@ -5574,7 +5748,9 @@
      "value": 29.7,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html",
+     "file": "clanek-financovani-segmenty-2026.html",
+     "title": "Kam plyne 508 miliard. Co o struktuře českého zdravotnictví říkají dohodovací řízení"
     },
     {
      "kind": "indicator",
@@ -5649,7 +5825,9 @@
      "value": 5,
      "unit": "mld Kč/rok",
      "as_of": 2022,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     },
     {
      "kind": "claim",
@@ -5658,7 +5836,9 @@
      "value": 3.8,
      "unit": "mld Kč/rok",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     }
    ],
    "verdict": "castecne",
@@ -5729,7 +5909,9 @@
      "value": 21,
      "unit": "% domácností",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-katastroficke-vydaje-zdravi.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-katastroficke-vydaje-zdravi.html",
+     "file": "clanek-katastroficke-vydaje-zdravi.html",
+     "title": "Šest procent domácností, dvacet jedna procent u nejchudších. Katastrofické výdaje na zdraví v Česku rostou"
     },
     {
      "kind": "article",
@@ -5860,7 +6042,9 @@
      "value": 56,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html",
+     "file": "clanek-presun-pece-z-luzek.html",
+     "title": "Přesun péče z lůžek dává smysl. Cíl minus deset procentních bodů ale měří něco jiného, než se má změnit"
     }
    ],
    "verdict": "castecne",
@@ -5979,7 +6163,9 @@
      "value": -110,
      "unit": "PLD/rok",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html",
+     "file": "clanek-reforma-primarni-pece-2027.html",
+     "title": "Praktik jako uzel systému. Kapitace, Pay-for-Performance a věková krize primární péče v dohodovacím řízení 2027"
     }
    ],
    "verdict": "castecne",
@@ -6161,7 +6347,9 @@
      "value": 2.26,
      "unit": "mld Kč",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-bonus-za-zdravi-pojistne.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-bonus-za-zdravi-pojistne.html",
+     "file": "clanek-bonus-za-zdravi-pojistne.html",
+     "title": "„Po vzoru Nizozemska\" znamená přesný opak. Bonus za péči o zdraví patří do fondu prevence, ne do pojistného"
     }
    ],
    "verdict": "castecne",
@@ -6237,7 +6425,9 @@
      "value": 33,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html",
+     "file": "clanek-reforma-primarni-pece-2027.html",
+     "title": "Praktik jako uzel systému. Kapitace, Pay-for-Performance a věková krize primární péče v dohodovacím řízení 2027"
     },
     {
      "kind": "claim",
@@ -6246,7 +6436,9 @@
      "value": -110,
      "unit": "PLD/rok",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html",
+     "file": "clanek-reforma-primarni-pece-2027.html",
+     "title": "Praktik jako uzel systému. Kapitace, Pay-for-Performance a věková krize primární péče v dohodovacím řízení 2027"
     },
     {
      "kind": "indicator",
@@ -6339,7 +6531,9 @@
      "value": 85,
      "unit": "Kč/měsíc/pojištěnec",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-uhradova-vyhlaska.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-uhradova-vyhlaska.html",
+     "file": "clanek-uhradova-vyhlaska.html",
+     "title": "Vzorec, který rozdělí stovky miliard. Jak funguje úhradová vyhláška a proč na ní záleží víc, než si myslíte"
     }
    ],
    "verdict": "castecne",
@@ -6486,7 +6680,9 @@
      "value": 30000,
      "unit": "úvazků",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "file": "clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "title": "Generační propast v ošetřovatelství: proč nám chybí tisíce sester a co s tím chce udělat program za 13 miliard"
     },
     {
      "kind": "claim",
@@ -6495,7 +6691,9 @@
      "value": 30000,
      "unit": "úvazků / 12 let",
      "as_of": 2022,
-     "url": "https://skorezdravotnictvi.cz/clanek-sestry-vazajici-podminka.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-sestry-vazajici-podminka.html",
+     "file": "clanek-sestry-vazajici-podminka.html",
+     "title": "Čtyřicet osm ku dvanácti. Plán přesunout péči z lůžek do terénu má peníze i směr — nemá ruce"
     }
    ],
    "verdict": "upresnuje",
@@ -6754,7 +6952,9 @@
      "value": 1200,
      "unit": "přípravků",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-preskripce-praktici-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-preskripce-praktici-2026.html",
+     "file": "clanek-preskripce-praktici-2026.html",
+     "title": "Konec obíhání kvůli receptu. Přes 1 200 léků smí od července předepsat i praktik"
     }
    ],
    "verdict": "rozpor",
@@ -6865,7 +7065,9 @@
      "value": 1200,
      "unit": "přípravků",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-preskripce-praktici-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-preskripce-praktici-2026.html",
+     "file": "clanek-preskripce-praktici-2026.html",
+     "title": "Konec obíhání kvůli receptu. Přes 1 200 léků smí od července předepsat i praktik"
     },
     {
      "kind": "dataset",
@@ -7138,7 +7340,9 @@
      "value": 52,
      "unit": "týdnů",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-narok-pojistence-2-demograficky-tlak.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-narok-pojistence-2-demograficky-tlak.html",
+     "file": "clanek-narok-pojistence-2-demograficky-tlak.html",
+     "title": "Nárok narazí na demografii. Proč bude do roku 2050 čekat dvakrát víc seniorů na péči, kterou systém slibuje"
     }
    ],
    "verdict": "rozpor",
@@ -7499,7 +7703,9 @@
      "value": 76,
      "unit": "Kč/měsíc/pojištěnec",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-uhradova-vyhlaska.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-uhradova-vyhlaska.html",
+     "file": "clanek-uhradova-vyhlaska.html",
+     "title": "Vzorec, který rozdělí stovky miliard. Jak funguje úhradová vyhláška a proč na ní záleží víc, než si myslíte"
     },
     {
      "kind": "article",
@@ -7588,7 +7794,9 @@
      "value": 86,
      "unit": "mil.",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-ezkarta-ehealth.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-ezkarta-ehealth.html",
+     "file": "clanek-ezkarta-ehealth.html",
+     "title": "Šedesát dva ze sta. Český eHealth má EZKartu v telefonu — ale dva ze tří lékařů Patient Summary nepoužili"
     },
     {
      "kind": "article",
@@ -7655,7 +7863,9 @@
      "value": 39.8,
      "unit": "% osob 16–74",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-objednani-k-lekari-online.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-objednani-k-lekari-online.html",
+     "file": "clanek-objednani-k-lekari-online.html",
+     "title": "K lékaři se objednáváme online dvakrát méně než zbytek Evropy. Nechybí pacienti, chybí systém"
     },
     {
      "kind": "article",
@@ -8009,7 +8219,9 @@
      "value": 9.5,
      "unit": "%",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-ai-zdravotnictvi-1-vstricnost.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-ai-zdravotnictvi-1-vstricnost.html",
+     "file": "clanek-ai-zdravotnictvi-1-vstricnost.html",
+     "title": "Lékař, který se vám zase dívá do očí: jak umělá inteligence mění provoz medicíny"
     },
     {
      "kind": "dataset",
@@ -8385,7 +8597,9 @@
      "value": 29.7,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html",
+     "file": "clanek-financovani-segmenty-2026.html",
+     "title": "Kam plyne 508 miliard. Co o struktuře českého zdravotnictví říkají dohodovací řízení"
     },
     {
      "kind": "indicator",
@@ -8550,7 +8764,9 @@
      "value": 56,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html",
+     "file": "clanek-presun-pece-z-luzek.html",
+     "title": "Přesun péče z lůžek dává smysl. Cíl minus deset procentních bodů ale měří něco jiného, než se má změnit"
     },
     {
      "kind": "claim",
@@ -8559,7 +8775,9 @@
      "value": 84.2,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html",
+     "file": "clanek-presun-pece-z-luzek.html",
+     "title": "Přesun péče z lůžek dává smysl. Cíl minus deset procentních bodů ale měří něco jiného, než se má změnit"
     }
    ],
    "verdict": "upresnuje",
@@ -8926,7 +9144,9 @@
      "value": 39000,
      "unit": "lůžek",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-reforma-dlouhodobe-pece-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-reforma-dlouhodobe-pece-2026.html",
+     "file": "clanek-reforma-dlouhodobe-pece-2026.html",
+     "title": "Dlouhodobá péče v Česku: tichá strukturální krize. Proč dvojkolejný systém stojí v cestě reformě, kterou demografie tak jako tak vynutí"
     },
     {
      "kind": "article",
@@ -9371,7 +9591,9 @@
      "value": 11.76,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-centralizace-chirurgie-2027.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-centralizace-chirurgie-2027.html",
+     "file": "clanek-centralizace-chirurgie-2027.html",
+     "title": "Centralizace onkologické chirurgie 2027: konec „trofejních výkonů\" v českých nemocnicích"
     },
     {
      "kind": "claim",
@@ -9380,7 +9602,9 @@
      "value": 6.15,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-centralizace-chirurgie-2027.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-centralizace-chirurgie-2027.html",
+     "file": "clanek-centralizace-chirurgie-2027.html",
+     "title": "Centralizace onkologické chirurgie 2027: konec „trofejních výkonů\" v českých nemocnicích"
     }
    ],
    "verdict": "potvrzuje",
@@ -9930,7 +10154,9 @@
      "value": 4067,
      "unit": "hospitalizací ročně (0–19 let)",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-detska-psychiatrie-akutni-luzka.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-detska-psychiatrie-akutni-luzka.html",
+     "file": "clanek-detska-psychiatrie-akutni-luzka.html",
+     "title": "Akutní lůžko místo ambulance: dětské psychiatrické hospitalizace se za deset let zdvojnásobily"
     }
    ],
    "verdict": "potvrzuje",
@@ -10505,7 +10731,9 @@
      "value": 6.5,
      "unit": "mld Kč/rok",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     }
    ],
    "verdict": "upresnuje",
@@ -10568,7 +10796,9 @@
      "value": 327,
      "unit": "mil. GBP/rok",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     }
    ],
    "verdict": "potvrzuje",
@@ -10604,7 +10834,9 @@
      "value": 8.97,
      "unit": "mld Kč",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     }
    ],
    "verdict": "potvrzuje",
@@ -10633,7 +10865,9 @@
      "value": 19.5,
      "unit": "l/os./rok",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     },
     {
      "kind": "claim",
@@ -10642,7 +10876,9 @@
      "value": 3.8,
      "unit": "mld Kč/rok",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     }
    ],
    "verdict": "potvrzuje",
@@ -10944,7 +11180,9 @@
      "value": 8.97,
      "unit": "mld Kč",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     }
    ],
    "verdict": "potvrzuje",
@@ -11111,7 +11349,9 @@
      "value": -1.59,
      "unit": "elasticita",
      "as_of": 2022,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     },
     {
      "kind": "dataset",
@@ -11192,7 +11432,9 @@
      "value": 26.3,
      "unit": "%",
      "as_of": 2019,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     }
    ],
    "verdict": "potvrzuje",
@@ -11827,7 +12069,9 @@
      "value": 2.74,
      "unit": "%",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     },
     {
      "kind": "claim",
@@ -11836,7 +12080,9 @@
      "value": 18.5,
      "unit": "mld Kč/rok",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     }
    ],
    "verdict": "potvrzuje",
@@ -11892,7 +12138,9 @@
      "value": 2.26,
      "unit": "mld Kč",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-bonus-za-zdravi-pojistne.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-bonus-za-zdravi-pojistne.html",
+     "file": "clanek-bonus-za-zdravi-pojistne.html",
+     "title": "„Po vzoru Nizozemska\" znamená přesný opak. Bonus za péči o zdraví patří do fondu prevence, ne do pojistného"
     },
     {
      "kind": "article",
@@ -12520,7 +12768,9 @@
      "value": -20,
      "unit": "g/týden",
      "as_of": 2018,
-     "url": "https://skorezdravotnictvi.cz/clanek-kratke-intervence-uhrady.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-kratke-intervence-uhrady.html",
+     "file": "clanek-kratke-intervence-uhrady.html",
+     "title": "Devadesát vteřin, které se vyplatí. Krátká intervence patří k nejlépe doloženým zásahům v medicíně — a v ceníku praktika chybí"
     },
     {
      "kind": "dataset",
@@ -12865,7 +13115,9 @@
      "value": 2.5,
      "unit": "/ 100 osob 65+",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-reforma-dlouhodobe-pece-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-reforma-dlouhodobe-pece-2026.html",
+     "file": "clanek-reforma-dlouhodobe-pece-2026.html",
+     "title": "Dlouhodobá péče v Česku: tichá strukturální krize. Proč dvojkolejný systém stojí v cestě reformě, kterou demografie tak jako tak vynutí"
     },
     {
      "kind": "claim",
@@ -12874,7 +13126,9 @@
      "value": 2.5,
      "unit": "/ 100 osob 65+",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-kdo-se-o-nas-postara-2035.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-kdo-se-o-nas-postara-2035.html",
+     "file": "clanek-kdo-se-o-nas-postara-2035.html",
+     "title": "Kdo se o nás postará v roce 2035. O 284 tisíc lidí nad 75 let víc, tři cesty a jeden nesečtený účet"
     }
    ],
    "verdict": "potvrzuje",
@@ -12987,7 +13241,9 @@
      "value": 665000,
      "unit": "Kč / klient / rok",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-kdo-se-o-nas-postara-2035.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-kdo-se-o-nas-postara-2035.html",
+     "file": "clanek-kdo-se-o-nas-postara-2035.html",
+     "title": "Kdo se o nás postará v roce 2035. O 284 tisíc lidí nad 75 let víc, tři cesty a jeden nesečtený účet"
     },
     {
      "kind": "dataset",
@@ -13086,7 +13342,9 @@
      "value": 275000,
      "unit": "osob",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-neformalni-pecujici.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-neformalni-pecujici.html",
+     "file": "clanek-neformalni-pecujici.html",
+     "title": "Největší poskytovatel dlouhodobé péče v Česku nemá IČO"
     }
    ],
    "verdict": "upresnuje",
@@ -13663,7 +13921,9 @@
      "value": 19,
      "unit": "%",
      "as_of": 2022,
-     "url": "https://skorezdravotnictvi.cz/clanek-pyll.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-pyll.html",
+     "file": "clanek-pyll.html",
+     "title": "Úmrtí, kterým šlo předejít. Odvratitelná úmrtnost je v Česku o pětinu vyšší než v EU"
     }
    ],
    "verdict": "castecne",
@@ -13839,7 +14099,9 @@
      "value": 18362,
      "unit": "Kč",
      "as_of": 2027,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     },
     {
      "kind": "dataset",
@@ -13881,7 +14143,9 @@
      "value": 6.5,
      "unit": "mld Kč/rok",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     }
    ],
    "verdict": "upresnuje",
@@ -13948,7 +14212,9 @@
      "value": 30000,
      "unit": "úvazků",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "file": "clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "title": "Generační propast v ošetřovatelství: proč nám chybí tisíce sester a co s tím chce udělat program za 13 miliard"
     },
     {
      "kind": "claim",
@@ -13957,7 +14223,9 @@
      "value": 30000,
      "unit": "úvazků / 12 let",
      "as_of": 2022,
-     "url": "https://skorezdravotnictvi.cz/clanek-sestry-vazajici-podminka.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-sestry-vazajici-podminka.html",
+     "file": "clanek-sestry-vazajici-podminka.html",
+     "title": "Čtyřicet osm ku dvanácti. Plán přesunout péči z lůžek do terénu má peníze i směr — nemá ruce"
     }
    ],
    "verdict": "upresnuje",
@@ -13986,7 +14254,9 @@
      "value": -110,
      "unit": "PLD/rok",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html",
+     "file": "clanek-reforma-primarni-pece-2027.html",
+     "title": "Praktik jako uzel systému. Kapitace, Pay-for-Performance a věková krize primární péče v dohodovacím řízení 2027"
     }
    ],
    "verdict": "potvrzuje",
@@ -14165,7 +14435,9 @@
      "value": 39000,
      "unit": "lůžek",
      "as_of": 2035,
-     "url": "https://skorezdravotnictvi.cz/clanek-socialne-zdravotni-pomezi-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-socialne-zdravotni-pomezi-2026.html",
+     "file": "clanek-socialne-zdravotni-pomezi-2026.html",
+     "title": "Sociálně-zdravotní pomezí: jak zákon 38/2025 Sb. mění logiku péče o seniory"
     },
     {
      "kind": "claim",
@@ -14174,7 +14446,9 @@
      "value": 39000,
      "unit": "lůžek",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-reforma-dlouhodobe-pece-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-reforma-dlouhodobe-pece-2026.html",
+     "file": "clanek-reforma-dlouhodobe-pece-2026.html",
+     "title": "Dlouhodobá péče v Česku: tichá strukturální krize. Proč dvojkolejný systém stojí v cestě reformě, kterou demografie tak jako tak vynutí"
     },
     {
      "kind": "indicator",
@@ -14467,7 +14741,9 @@
      "value": 2368,
      "unit": "Kč / měsíc",
      "as_of": 2027,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     },
     {
      "kind": "claim",
@@ -14476,7 +14752,9 @@
      "value": 6.016,
      "unit": "mil. osob",
      "as_of": 2027,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     },
     {
      "kind": "article",
@@ -14583,7 +14861,9 @@
      "value": 95,
      "unit": "%",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-preventivni-prohlidka.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-preventivni-prohlidka.html",
+     "file": "clanek-preventivni-prohlidka.html",
+     "title": "Půlka dospělých Čechů preventivní prohlídku ignoruje. Co se v ní dělá a proč to stojí za půlhodinu času"
     }
    ],
    "verdict": "castecne",
@@ -14612,7 +14892,9 @@
      "value": 1.2,
      "unit": "mld Kč/rok",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-kratke-intervence-uhrady.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-kratke-intervence-uhrady.html",
+     "file": "clanek-kratke-intervence-uhrady.html",
+     "title": "Devadesát vteřin, které se vyplatí. Krátká intervence patří k nejlépe doloženým zásahům v medicíně — a v ceníku praktika chybí"
     },
     {
      "kind": "article",
@@ -14964,7 +15246,9 @@
      "value": 592,
      "unit": "na 100 000 ob.",
      "as_of": 2022,
-     "url": "https://skorezdravotnictvi.cz/clanek-vyhnutelne-hospitalizace.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-vyhnutelne-hospitalizace.html",
+     "file": "clanek-vyhnutelne-hospitalizace.html",
+     "title": "Téměř šest set hospitalizací, kterým mělo zabránit ambulantní zdravotnictví"
     },
     {
      "kind": "article",
@@ -15260,7 +15544,9 @@
      "value": 6.016,
      "unit": "mil. osob",
      "as_of": 2027,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     },
     {
      "kind": "claim",
@@ -15269,7 +15555,9 @@
      "value": 6.016,
      "unit": "mil. osob",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-valorizace-statni-pojistenci-2027.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-valorizace-statni-pojistenci-2027.html",
+     "file": "clanek-valorizace-statni-pojistenci-2027.html",
+     "title": "2,4 miliardy podle vzorce, 24 miliard podle slibu. Platba za státní pojištěnce jde do roku 2027 po dvou kolejích"
     },
     {
      "kind": "claim",
@@ -15278,7 +15566,9 @@
      "value": 5.9,
      "unit": "mil. osob",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statu-statni-pojistenci.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statu-statni-pojistenci.html",
+     "file": "clanek-platba-statu-statni-pojistenci.html",
+     "title": "Sto padesát pět miliard ze státního rozpočtu. Anatomie platby státu za státní pojištěnce a její valorizace"
     }
    ],
    "verdict": "potvrzuje",
@@ -15300,7 +15590,9 @@
      "value": 2188,
      "unit": "Kč/měsíc",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-deficit-pojisteni-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-deficit-pojisteni-2026.html",
+     "file": "clanek-deficit-pojisteni-2026.html",
+     "title": "Strukturální deficit zdravotního pojištění 2026. Proč se nůžky rozevírají a co je zastaví"
     },
     {
      "kind": "claim",
@@ -15309,7 +15601,9 @@
      "value": 16206,
      "unit": "Kč",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statu-statni-pojistenci.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statu-statni-pojistenci.html",
+     "file": "clanek-platba-statu-statni-pojistenci.html",
+     "title": "Sto padesát pět miliard ze státního rozpočtu. Anatomie platby státu za státní pojištěnce a její valorizace"
     },
     {
      "kind": "claim",
@@ -15318,7 +15612,9 @@
      "value": 2479,
      "unit": "Kč / měsíc",
      "as_of": 2027,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     },
     {
      "kind": "article",
@@ -15455,7 +15751,9 @@
      "value": 3.8,
      "unit": "mld Kč/rok",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     },
     {
      "kind": "claim",
@@ -15464,7 +15762,9 @@
      "value": 2.1,
      "unit": "mld Kč/rok",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     }
    ],
    "verdict": "potvrzuje",
@@ -15493,7 +15793,9 @@
      "value": 2.7,
      "unit": "mld Kč/rok",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     }
    ],
    "verdict": "castecne",
@@ -15689,7 +15991,9 @@
      "value": 13,
      "unit": "tis. úvazků",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "file": "clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "title": "Generační propast v ošetřovatelství: proč nám chybí tisíce sester a co s tím chce udělat program za 13 miliard"
     }
    ],
    "verdict": "castecne",
@@ -15834,7 +16138,9 @@
      "value": 71,
      "unit": "na 100 000 obyvatel",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-podil-prakticti-lekari.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-podil-prakticti-lekari.html",
+     "file": "clanek-podil-prakticti-lekari.html",
+     "title": "Málo praktiků, hodně specialistů: Česko má jeden z nejnižších podílů generalistů v OECD"
     }
    ],
    "verdict": "potvrzuje",
@@ -15883,7 +16189,9 @@
      "value": -110,
      "unit": "PLD/rok",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html",
+     "file": "clanek-reforma-primarni-pece-2027.html",
+     "title": "Praktik jako uzel systému. Kapitace, Pay-for-Performance a věková krize primární péče v dohodovacím řízení 2027"
     }
    ],
    "verdict": "rozpor",
@@ -15930,7 +16238,9 @@
      "value": 33,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html",
+     "file": "clanek-reforma-primarni-pece-2027.html",
+     "title": "Praktik jako uzel systému. Kapitace, Pay-for-Performance a věková krize primární péče v dohodovacím řízení 2027"
     },
     {
      "kind": "dataset",
@@ -16060,7 +16370,9 @@
      "value": 39000,
      "unit": "lůžek",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-reforma-dlouhodobe-pece-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-reforma-dlouhodobe-pece-2026.html",
+     "file": "clanek-reforma-dlouhodobe-pece-2026.html",
+     "title": "Dlouhodobá péče v Česku: tichá strukturální krize. Proč dvojkolejný systém stojí v cestě reformě, kterou demografie tak jako tak vynutí"
     },
     {
      "kind": "dataset",
@@ -16357,7 +16669,9 @@
      "value": 6.016,
      "unit": "mil. osob",
      "as_of": 2027,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     },
     {
      "kind": "article",
@@ -16373,7 +16687,9 @@
      "value": 16206,
      "unit": "Kč",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statu-statni-pojistenci.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statu-statni-pojistenci.html",
+     "file": "clanek-platba-statu-statni-pojistenci.html",
+     "title": "Sto padesát pět miliard ze státního rozpočtu. Anatomie platby státu za státní pojištěnce a její valorizace"
     }
    ],
    "verdict": "potvrzuje",
@@ -16402,7 +16718,9 @@
      "value": 327,
      "unit": "mil. GBP/rok",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     },
     {
      "kind": "claim",
@@ -16411,7 +16729,9 @@
      "value": -1.59,
      "unit": "elasticita",
      "as_of": 2022,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     }
    ],
    "verdict": "potvrzuje",
@@ -16826,7 +17146,9 @@
      "value": 17096,
      "unit": "výkonů/rok",
      "as_of": 2025,
-     "url": "https://skorezdravotnictvi.cz/clanek-centralizace-onkochirurgie-2030.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-centralizace-onkochirurgie-2030.html",
+     "file": "clanek-centralizace-onkochirurgie-2030.html",
+     "title": "Čtyři tisíce operací se stěhují do center. Centralizace onkochirurgie má být hotová do roku 2030"
     },
     {
      "kind": "claim",
@@ -16835,7 +17157,9 @@
      "value": 4109,
      "unit": "výkonů/rok",
      "as_of": 2025,
-     "url": "https://skorezdravotnictvi.cz/clanek-centralizace-onkochirurgie-2030.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-centralizace-onkochirurgie-2030.html",
+     "file": "clanek-centralizace-onkochirurgie-2030.html",
+     "title": "Čtyři tisíce operací se stěhují do center. Centralizace onkochirurgie má být hotová do roku 2030"
     },
     {
      "kind": "article",
@@ -16904,7 +17228,9 @@
      "value": 11.76,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-centralizace-chirurgie-2027.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-centralizace-chirurgie-2027.html",
+     "file": "clanek-centralizace-chirurgie-2027.html",
+     "title": "Centralizace onkologické chirurgie 2027: konec „trofejních výkonů\" v českých nemocnicích"
     },
     {
      "kind": "article",
@@ -17218,7 +17544,9 @@
      "value": 2479,
      "unit": "Kč / měsíc",
      "as_of": 2027,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     },
     {
      "kind": "claim",
@@ -17227,7 +17555,9 @@
      "value": 291,
      "unit": "Kč / měsíc",
      "as_of": 2027,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     },
     {
      "kind": "indicator",
@@ -17294,7 +17624,9 @@
      "value": 12,
      "unit": "segmentů (z 15)",
      "as_of": 2027,
-     "url": "https://skorezdravotnictvi.cz/clanek-dohodovaci-rizeni-2027-vysledek.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-dohodovaci-rizeni-2027-vysledek.html",
+     "file": "clanek-dohodovaci-rizeni-2027-vysledek.html",
+     "title": "Dohoda ve 12 z 15 segmentů. Co skutečně přineslo dohodovací řízení pro rok 2027"
     },
     {
      "kind": "claim",
@@ -17303,7 +17635,9 @@
      "value": 604.8,
      "unit": "mld Kč",
      "as_of": 2027,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     },
     {
      "kind": "article",
@@ -17695,7 +18029,9 @@
      "value": 14,
      "unit": "KHS",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-institut-verejneho-zdravi.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-institut-verejneho-zdravi.html",
+     "file": "clanek-institut-verejneho-zdravi.html",
+     "title": "Největší reforma hygienické služby za sto let. Co přinese Institut pro veřejné zdraví 21. století"
     },
     {
      "kind": "claim",
@@ -17704,7 +18040,9 @@
      "value": 17,
      "unit": "institucí",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-institut-verejneho-zdravi.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-institut-verejneho-zdravi.html",
+     "file": "clanek-institut-verejneho-zdravi.html",
+     "title": "Největší reforma hygienické služby za sto let. Co přinese Institut pro veřejné zdraví 21. století"
     },
     {
      "kind": "article",
@@ -18542,7 +18880,9 @@
      "value": 54,
      "unit": "pracovišť",
      "as_of": 2025,
-     "url": "https://skorezdravotnictvi.cz/clanek-centralizace-onkochirurgie-2030.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-centralizace-onkochirurgie-2030.html",
+     "file": "clanek-centralizace-onkochirurgie-2030.html",
+     "title": "Čtyři tisíce operací se stěhují do center. Centralizace onkochirurgie má být hotová do roku 2030"
     },
     {
      "kind": "dataset",
@@ -18706,7 +19046,9 @@
      "value": 6.5,
      "unit": "mld Kč/rok",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     },
     {
      "kind": "claim",
@@ -18715,7 +19057,9 @@
      "value": 3.8,
      "unit": "mld Kč/rok",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     },
     {
      "kind": "claim",
@@ -18724,7 +19068,9 @@
      "value": 2.1,
      "unit": "mld Kč/rok",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     }
    ],
    "verdict": "potvrzuje",
@@ -18807,7 +19153,9 @@
      "value": 39100,
      "unit": "Kč/hl etanolu",
      "as_of": 2025,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     },
     {
      "kind": "claim",
@@ -18816,7 +19164,9 @@
      "value": -0.69,
      "unit": "elasticita",
      "as_of": 2009,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     }
    ],
    "verdict": "castecne",
@@ -18858,7 +19208,9 @@
      "value": 2.1,
      "unit": "mld Kč/rok",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     },
     {
      "kind": "article",
@@ -20175,7 +20527,9 @@
      "value": 604.8,
      "unit": "mld Kč",
      "as_of": 2027,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     }
    ],
    "verdict": "castecne",
@@ -20427,7 +20781,9 @@
      "value": 29.7,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html",
+     "file": "clanek-financovani-segmenty-2026.html",
+     "title": "Kam plyne 508 miliard. Co o struktuře českého zdravotnictví říkají dohodovací řízení"
     }
    ],
    "verdict": "potvrzuje",
@@ -20889,7 +21245,9 @@
      "value": 62.4,
      "unit": "let",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-zdrave-roky-cil-pet-let.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-zdrave-roky-cil-pet-let.html",
+     "file": "clanek-zdrave-roky-cil-pet-let.html",
+     "title": "Pět let navíc. Cíl na zdravé stárnutí je dobře zvolený — zatím ale jde splnit i výměnou otázky v dotazníku"
     },
     {
      "kind": "claim",
@@ -20898,7 +21256,9 @@
      "value": 5.1,
      "unit": "let",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-zdrave-roky-cil-pet-let.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-zdrave-roky-cil-pet-let.html",
+     "file": "clanek-zdrave-roky-cil-pet-let.html",
+     "title": "Pět let navíc. Cíl na zdravé stárnutí je dobře zvolený — zatím ale jde splnit i výměnou otázky v dotazníku"
     },
     {
      "kind": "article",
@@ -21036,7 +21396,9 @@
      "value": 46.5,
      "unit": "%",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html",
+     "file": "clanek-presun-pece-z-luzek.html",
+     "title": "Přesun péče z lůžek dává smysl. Cíl minus deset procentních bodů ale měří něco jiného, než se má změnit"
     },
     {
      "kind": "claim",
@@ -21045,7 +21407,9 @@
      "value": 40,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html",
+     "file": "clanek-presun-pece-z-luzek.html",
+     "title": "Přesun péče z lůžek dává smysl. Cíl minus deset procentních bodů ale měří něco jiného, než se má změnit"
     }
    ],
    "verdict": "upresnuje",
@@ -21168,7 +21532,9 @@
      "value": 13,
      "unit": "tis. úvazků",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "file": "clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "title": "Generační propast v ošetřovatelství: proč nám chybí tisíce sester a co s tím chce udělat program za 13 miliard"
     }
    ],
    "verdict": "castecne",
@@ -21411,7 +21777,9 @@
      "value": 29.7,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html",
+     "file": "clanek-financovani-segmenty-2026.html",
+     "title": "Kam plyne 508 miliard. Co o struktuře českého zdravotnictví říkají dohodovací řízení"
     },
     {
      "kind": "indicator",
@@ -21475,7 +21843,9 @@
      "value": 107.2,
      "unit": "na 100 000 ob.",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-lecitelna-mortalita.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-lecitelna-mortalita.html",
+     "file": "clanek-lecitelna-mortalita.html",
+     "title": "Co dokáže systém vyléčit: Česko ztrácí o čtvrtinu víc životů, kterým šlo zabránit léčbou"
     },
     {
      "kind": "claim",
@@ -21484,7 +21854,9 @@
      "value": 86.8,
      "unit": "na 100 000 ob.",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-lecitelna-mortalita.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-lecitelna-mortalita.html",
+     "file": "clanek-lecitelna-mortalita.html",
+     "title": "Co dokáže systém vyléčit: Česko ztrácí o čtvrtinu víc životů, kterým šlo zabránit léčbou"
     },
     {
      "kind": "claim",
@@ -21493,7 +21865,9 @@
      "value": 174,
      "unit": "na 100 000 ob.",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-pyll.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-pyll.html",
+     "file": "clanek-pyll.html",
+     "title": "Úmrtí, kterým šlo předejít. Odvratitelná úmrtnost je v Česku o pětinu vyšší než v EU"
     }
    ],
    "verdict": "potvrzuje",
@@ -21645,7 +22019,9 @@
      "value": 6,
      "unit": "% domácností",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-katastroficke-vydaje-zdravi.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-katastroficke-vydaje-zdravi.html",
+     "file": "clanek-katastroficke-vydaje-zdravi.html",
+     "title": "Šest procent domácností, dvacet jedna procent u nejchudších. Katastrofické výdaje na zdraví v Česku rostou"
     }
    ],
    "verdict": "potvrzuje",
@@ -21769,7 +22145,9 @@
      "value": 56,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html",
+     "file": "clanek-presun-pece-z-luzek.html",
+     "title": "Přesun péče z lůžek dává smysl. Cíl minus deset procentních bodů ale měří něco jiného, než se má změnit"
     }
    ],
    "verdict": "potvrzuje",
@@ -21835,7 +22213,9 @@
      "value": 39000,
      "unit": "lůžek",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-reforma-dlouhodobe-pece-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-reforma-dlouhodobe-pece-2026.html",
+     "file": "clanek-reforma-dlouhodobe-pece-2026.html",
+     "title": "Dlouhodobá péče v Česku: tichá strukturální krize. Proč dvojkolejný systém stojí v cestě reformě, kterou demografie tak jako tak vynutí"
     },
     {
      "kind": "claim",
@@ -21844,7 +22224,9 @@
      "value": 39000,
      "unit": "lůžek",
      "as_of": 2035,
-     "url": "https://skorezdravotnictvi.cz/clanek-socialne-zdravotni-pomezi-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-socialne-zdravotni-pomezi-2026.html",
+     "file": "clanek-socialne-zdravotni-pomezi-2026.html",
+     "title": "Sociálně-zdravotní pomezí: jak zákon 38/2025 Sb. mění logiku péče o seniory"
     },
     {
      "kind": "article",
@@ -22461,7 +22843,9 @@
      "value": 19.5,
      "unit": "na 100 000 ob.",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-jaterni-mortalita-alkohol.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-jaterni-mortalita-alkohol.html",
+     "file": "clanek-jaterni-mortalita-alkohol.html",
+     "title": "Cena levného piva: Česko umírá na nemocná játra o 43 % častěji než Evropa"
     },
     {
      "kind": "claim",
@@ -22470,7 +22854,9 @@
      "value": 13.7,
      "unit": "na 100 000 ob.",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-jaterni-mortalita-alkohol.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-jaterni-mortalita-alkohol.html",
+     "file": "clanek-jaterni-mortalita-alkohol.html",
+     "title": "Cena levného piva: Česko umírá na nemocná játra o 43 % častěji než Evropa"
     },
     {
      "kind": "article",
@@ -23195,7 +23581,9 @@
      "value": -110,
      "unit": "PLD/rok",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html",
+     "file": "clanek-reforma-primarni-pece-2027.html",
+     "title": "Praktik jako uzel systému. Kapitace, Pay-for-Performance a věková krize primární péče v dohodovacím řízení 2027"
     }
    ],
    "verdict": "potvrzuje",
@@ -23536,7 +23924,9 @@
      "value": 0,
      "unit": "výkonů/rok",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-hta-jca-eu-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-hta-jca-eu-2026.html",
+     "file": "clanek-hta-jca-eu-2026.html",
+     "title": "Joint Clinical Assessment startuje, Česko hodnotí léky podle vlastních not. Co znamená nařízení EU 2021/2282 pro úhradové rozhodování a kde má český HTA‑systém slepá místa"
     }
    ],
    "verdict": "castecne",
@@ -23592,7 +23982,9 @@
      "value": 27,
      "unit": "států",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-hta-jca-eu-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-hta-jca-eu-2026.html",
+     "file": "clanek-hta-jca-eu-2026.html",
+     "title": "Joint Clinical Assessment startuje, Česko hodnotí léky podle vlastních not. Co znamená nařízení EU 2021/2282 pro úhradové rozhodování a kde má český HTA‑systém slepá místa"
     }
    ],
    "verdict": "potvrzuje",
@@ -23628,7 +24020,9 @@
      "value": 8,
      "unit": "agend",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-nikez-jak-funguje-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-nikez-jak-funguje-2026.html",
+     "file": "clanek-nikez-jak-funguje-2026.html",
+     "title": "Kdo je NIKEZ a jak funguje: instituce, která má v Česku změřit kvalitu péče"
     }
    ],
    "verdict": "potvrzuje",
@@ -23808,7 +24202,9 @@
      "value": 0.3,
      "unit": "%",
      "as_of": 2025,
-     "url": "https://skorezdravotnictvi.cz/clanek-nadstandardy-3-cesky-narok.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-nadstandardy-3-cesky-narok.html",
+     "file": "clanek-nadstandardy-3-cesky-narok.html",
+     "title": "Co by nadstandardy udělaly s českým nárokem — a za jakých podmínek by dostupnost nesnížily"
     },
     {
      "kind": "claim",
@@ -23817,7 +24213,9 @@
      "value": 118,
      "unit": "dní",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-nadstandardy-3-cesky-narok.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-nadstandardy-3-cesky-narok.html",
+     "file": "clanek-nadstandardy-3-cesky-narok.html",
+     "title": "Co by nadstandardy udělaly s českým nárokem — a za jakých podmínek by dostupnost nesnížily"
     }
    ],
    "verdict": "potvrzuje",
@@ -23853,7 +24251,9 @@
      "value": 18,
      "unit": "položek",
      "as_of": 2012,
-     "url": "https://skorezdravotnictvi.cz/clanek-nadstandardy-1-otevrene-dvere.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-nadstandardy-1-otevrene-dvere.html",
+     "file": "clanek-nadstandardy-1-otevrene-dvere.html",
+     "title": "Otevřené dveře. Ústavní soud nadstandardy nezakázal — tak proč jimi 12 let nikdo neprošel?"
     },
     {
      "kind": "claim",
@@ -23862,7 +24262,9 @@
      "value": 12,
      "unit": "let",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-nadstandardy-1-otevrene-dvere.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-nadstandardy-1-otevrene-dvere.html",
+     "file": "clanek-nadstandardy-1-otevrene-dvere.html",
+     "title": "Otevřené dveře. Ústavní soud nadstandardy nezakázal — tak proč jimi 12 let nikdo neprošel?"
     }
    ],
    "verdict": "potvrzuje",
@@ -24028,7 +24430,9 @@
      "value": 88.4,
      "unit": "%",
      "as_of": 2027,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     }
    ],
    "verdict": "upresnuje",
@@ -24272,7 +24676,9 @@
      "value": 41,
      "unit": "osob",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-stret-zajmu-poradni-organy-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-stret-zajmu-poradni-organy-2026.html",
+     "file": "clanek-stret-zajmu-poradni-organy-2026.html",
+     "title": "Orgány bez pravidel. Střet zájmů řeší jen pět z 57 statutů poradních těles ministerstva"
     }
    ],
    "verdict": "potvrzuje",
@@ -24401,7 +24807,9 @@
      "value": 5,
      "unit": "orgánů",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-stret-zajmu-poradni-organy-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-stret-zajmu-poradni-organy-2026.html",
+     "file": "clanek-stret-zajmu-poradni-organy-2026.html",
+     "title": "Orgány bez pravidel. Střet zájmů řeší jen pět z 57 statutů poradních těles ministerstva"
     },
     {
      "kind": "claim",
@@ -24410,7 +24818,9 @@
      "value": 45,
      "unit": "zápisů",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-stret-zajmu-poradni-organy-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-stret-zajmu-poradni-organy-2026.html",
+     "file": "clanek-stret-zajmu-poradni-organy-2026.html",
+     "title": "Orgány bez pravidel. Střet zájmů řeší jen pět z 57 statutů poradních těles ministerstva"
     }
    ],
    "verdict": "potvrzuje",
@@ -24711,7 +25121,9 @@
      "value": 36.2,
      "unit": "% osob 65+",
      "as_of": 2022,
-     "url": "https://skorezdravotnictvi.cz/clanek-polypragmazie-senioru.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-polypragmazie-senioru.html",
+     "file": "clanek-polypragmazie-senioru.html",
+     "title": "Polypragmazie u českých seniorů: 46,6 % osob 65+ užívá souběžně 5 a více léků — strukturální slabost, kterou systém neumí zachytit"
     }
    ],
    "verdict": "potvrzuje",
@@ -25099,7 +25511,9 @@
      "value": 6.05,
      "unit": "mld Kč",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-azv-zdravotnicky-vyzkum.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-azv-zdravotnicky-vyzkum.html",
+     "file": "clanek-azv-zdravotnicky-vyzkum.html",
+     "title": "Miliarda a čtvrt ročně na zdravotnický výzkum. Jak funguje AZV a kde peníze končí"
     },
     {
      "kind": "claim",
@@ -25108,7 +25522,9 @@
      "value": 1.83,
      "unit": "% HDP",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-azv-zdravotnicky-vyzkum.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-azv-zdravotnicky-vyzkum.html",
+     "file": "clanek-azv-zdravotnicky-vyzkum.html",
+     "title": "Miliarda a čtvrt ročně na zdravotnický výzkum. Jak funguje AZV a kde peníze končí"
     }
    ],
    "verdict": "upresnuje",
@@ -25320,7 +25736,9 @@
      "value": 2.96,
      "unit": "zubů (KPE)",
      "as_of": 2003,
-     "url": "https://skorezdravotnictvi.cz/clanek-zubni-kaz-deti.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-zubni-kaz-deti.html",
+     "file": "clanek-zubni-kaz-deti.html",
+     "title": "České děti mají zhruba čtyřikrát víc kazů než německé. A skoro to nikdo neměří"
     }
    ],
    "verdict": "potvrzuje",
@@ -25385,7 +25803,9 @@
      "value": 19.3,
      "unit": "mld Kč",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html",
+     "file": "clanek-financovani-segmenty-2026.html",
+     "title": "Kam plyne 508 miliard. Co o struktuře českého zdravotnictví říkají dohodovací řízení"
     }
    ],
    "verdict": "potvrzuje",
@@ -25597,7 +26017,9 @@
      "value": 35,
      "unit": "%",
      "as_of": 2022,
-     "url": "https://skorezdravotnictvi.cz/clanek-starnuti-lekaru.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-starnuti-lekaru.html",
+     "file": "clanek-starnuti-lekaru.html",
+     "title": "Každý druhý praktik brzy do důchodu. Čtyřicet jedna procent českých lékařů je starších 55 let"
     }
    ],
    "verdict": "potvrzuje",
@@ -25688,7 +26110,9 @@
      "value": 30000,
      "unit": "úvazků",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "file": "clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "title": "Generační propast v ošetřovatelství: proč nám chybí tisíce sester a co s tím chce udělat program za 13 miliard"
     }
    ],
    "verdict": "castecne",
@@ -25717,7 +26141,9 @@
      "value": 13,
      "unit": "mld. Kč",
      "as_of": 2025,
-     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "file": "clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "title": "Generační propast v ošetřovatelství: proč nám chybí tisíce sester a co s tím chce udělat program za 13 miliard"
     },
     {
      "kind": "claim",
@@ -25726,7 +26152,9 @@
      "value": 20,
      "unit": "%",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "file": "clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "title": "Generační propast v ošetřovatelství: proč nám chybí tisíce sester a co s tím chce udělat program za 13 miliard"
     }
    ],
    "verdict": "potvrzuje",
@@ -26258,7 +26686,9 @@
      "value": 50,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-centra-dusevniho-zdravi.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-centra-dusevniho-zdravi.html",
+     "file": "clanek-centra-dusevniho-zdravi.html",
+     "title": "Reforma slíbila 100 center duševního zdraví. Funguje jich zhruba 40"
     }
    ],
    "verdict": "potvrzuje",
@@ -26696,7 +27126,9 @@
      "value": 3.8,
      "unit": "mld Kč/rok",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     },
     {
      "kind": "article",
@@ -26732,7 +27164,9 @@
      "value": 2.1,
      "unit": "mld Kč/rok",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     },
     {
      "kind": "claim",
@@ -26741,7 +27175,9 @@
      "value": 2.7,
      "unit": "mld Kč/rok",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     }
    ],
    "verdict": "castecne",
@@ -26763,7 +27199,9 @@
      "value": 6.016,
      "unit": "mil. osob",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-valorizace-statni-pojistenci-2027.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-valorizace-statni-pojistenci-2027.html",
+     "file": "clanek-valorizace-statni-pojistenci-2027.html",
+     "title": "2,4 miliardy podle vzorce, 24 miliard podle slibu. Platba za státní pojištěnce jde do roku 2027 po dvou kolejích"
     },
     {
      "kind": "claim",
@@ -26772,7 +27210,9 @@
      "value": 6.016,
      "unit": "mil. osob",
      "as_of": 2027,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     },
     {
      "kind": "claim",
@@ -26781,7 +27221,9 @@
      "value": 1912,
      "unit": "Kč",
      "as_of": 2027,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     },
     {
      "kind": "dataset",
@@ -26873,7 +27315,9 @@
      "value": 94.2,
      "unit": "% výjezdů",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-zachranka-milion-pacientu.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-zachranka-milion-pacientu.html",
+     "file": "clanek-zachranka-milion-pacientu.html",
+     "title": "Záchranka ošetří pacienta víc než milionkrát za rok. O polovinu víc než před 15 lety — a v polovině případů jde o seniora"
     },
     {
      "kind": "dataset",
@@ -27072,7 +27516,9 @@
      "value": 10,
      "unit": "týmů / mil. ob.",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-mobilni-paliativni-tymy.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-mobilni-paliativni-tymy.html",
+     "file": "clanek-mobilni-paliativni-tymy.html",
+     "title": "Umřít doma chce většina. Tým, který to umožní, má jen každý druhý okres"
     },
     {
      "kind": "claim",
@@ -27081,7 +27527,9 @@
      "value": 90,
      "unit": "týmů",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-mobilni-paliativni-tymy.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-mobilni-paliativni-tymy.html",
+     "file": "clanek-mobilni-paliativni-tymy.html",
+     "title": "Umřít doma chce většina. Tým, který to umožní, má jen každý druhý okres"
     },
     {
      "kind": "article",
@@ -27444,7 +27892,9 @@
      "value": 56,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html",
+     "file": "clanek-presun-pece-z-luzek.html",
+     "title": "Přesun péče z lůžek dává smysl. Cíl minus deset procentních bodů ale měří něco jiného, než se má změnit"
     },
     {
      "kind": "indicator",
@@ -27504,7 +27954,9 @@
      "value": 6.016,
      "unit": "mil. osob",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-valorizace-statni-pojistenci-2027.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-valorizace-statni-pojistenci-2027.html",
+     "file": "clanek-valorizace-statni-pojistenci-2027.html",
+     "title": "2,4 miliardy podle vzorce, 24 miliard podle slibu. Platba za státní pojištěnce jde do roku 2027 po dvou kolejích"
     },
     {
      "kind": "claim",
@@ -27513,7 +27965,9 @@
      "value": 6.016,
      "unit": "mil. osob",
      "as_of": 2027,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     }
    ],
    "verdict": "potvrzuje",
@@ -27602,7 +28056,9 @@
      "value": 43.2,
      "unit": "mld Kč",
      "as_of": 2025,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     },
     {
      "kind": "claim",
@@ -27611,7 +28067,9 @@
      "value": 52.7,
      "unit": "mld Kč",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     },
     {
      "kind": "claim",
@@ -27620,7 +28078,9 @@
      "value": 32,
      "unit": "mld Kč",
      "as_of": 2025,
-     "url": "https://skorezdravotnictvi.cz/clanek-deficit-pojisteni-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-deficit-pojisteni-2026.html",
+     "file": "clanek-deficit-pojisteni-2026.html",
+     "title": "Strukturální deficit zdravotního pojištění 2026. Proč se nůžky rozevírají a co je zastaví"
     },
     {
      "kind": "article",
@@ -27663,7 +28123,9 @@
      "value": 1912,
      "unit": "Kč",
      "as_of": 2027,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     },
     {
      "kind": "dataset",
@@ -28080,7 +28542,9 @@
      "value": 94.2,
      "unit": "% výjezdů",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-ohca-zachrana-srdce.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-ohca-zachrana-srdce.html",
+     "file": "clanek-ohca-zachrana-srdce.html",
+     "title": "Záchranný řetězec po zástavě srdce: proč Česko zaostává a co s tím"
     }
    ],
    "verdict": "upresnuje",
@@ -28175,7 +28639,9 @@
      "value": 1.49,
      "unit": "mld PLN/rok",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     }
    ],
    "verdict": "castecne",
@@ -28279,7 +28745,9 @@
      "value": 24.6,
      "unit": "%",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-ockovani-dospelych-rezerva.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-ockovani-dospelych-rezerva.html",
+     "file": "clanek-ockovani-dospelych-rezerva.html",
+     "title": "Dvacet čtyři procenta. Nejrychleji dostupná rezerva české prevence je hotová, hrazená — a nevyužitá"
     },
     {
      "kind": "dataset",
@@ -29001,7 +29469,9 @@
      "value": 10.6,
      "unit": "l/os./rok",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     }
    ],
    "verdict": "upresnuje",
@@ -29035,7 +29505,9 @@
      "value": 592,
      "unit": "na 100 000 ob.",
      "as_of": 2022,
-     "url": "https://skorezdravotnictvi.cz/clanek-vyhnutelne-hospitalizace.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-vyhnutelne-hospitalizace.html",
+     "file": "clanek-vyhnutelne-hospitalizace.html",
+     "title": "Téměř šest set hospitalizací, kterým mělo zabránit ambulantní zdravotnictví"
     }
    ],
    "verdict": "rozpor",
@@ -29081,7 +29553,9 @@
      "value": 56,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html",
+     "file": "clanek-presun-pece-z-luzek.html",
+     "title": "Přesun péče z lůžek dává smysl. Cíl minus deset procentních bodů ale měří něco jiného, než se má změnit"
     }
    ],
    "verdict": "castecne",
@@ -29127,7 +29601,9 @@
      "value": 2.7,
      "unit": "%",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-vydaje-prevence.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-vydaje-prevence.html",
+     "file": "clanek-vydaje-prevence.html",
+     "title": "Dvě a tři čtvrtě procenta. Proč Česko utrácí na prevenci pětinu pod průměrem OECD a jak to systém znevýhodňuje"
     },
     {
      "kind": "claim",
@@ -29136,7 +29612,9 @@
      "value": 3.2,
      "unit": "%",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-vydaje-prevence.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-vydaje-prevence.html",
+     "file": "clanek-vydaje-prevence.html",
+     "title": "Dvě a tři čtvrtě procenta. Proč Česko utrácí na prevenci pětinu pod průměrem OECD a jak to systém znevýhodňuje"
     }
    ],
    "verdict": "upresnuje",
@@ -29655,7 +30133,9 @@
      "value": 8.48,
      "unit": "%",
      "as_of": 2012,
-     "url": "https://skorezdravotnictvi.cz/clanek-centralizace-onkochirurgie-2030.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-centralizace-onkochirurgie-2030.html",
+     "file": "clanek-centralizace-onkochirurgie-2030.html",
+     "title": "Čtyři tisíce operací se stěhují do center. Centralizace onkochirurgie má být hotová do roku 2030"
     },
     {
      "kind": "dataset",
@@ -29758,7 +30238,9 @@
      "value": 56,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html",
+     "file": "clanek-presun-pece-z-luzek.html",
+     "title": "Přesun péče z lůžek dává smysl. Cíl minus deset procentních bodů ale měří něco jiného, než se má změnit"
     }
    ],
    "verdict": "castecne",
@@ -29888,7 +30370,9 @@
      "value": -1.59,
      "unit": "elasticita",
      "as_of": 2022,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     }
    ],
    "verdict": "potvrzuje",
@@ -30327,7 +30811,9 @@
      "value": 1912,
      "unit": "Kč",
      "as_of": 2027,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     }
    ],
    "verdict": "hspa_nema",
@@ -30481,7 +30967,9 @@
      "value": 2.7,
      "unit": "mld Kč/rok",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     }
    ],
    "verdict": "rozpor",
@@ -30510,7 +30998,9 @@
      "value": 3.8,
      "unit": "mld Kč/rok",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     }
    ],
    "verdict": "potvrzuje",
@@ -30589,7 +31079,9 @@
      "value": 2479,
      "unit": "Kč / měsíc",
      "as_of": 2027,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     }
    ],
    "verdict": "potvrzuje",
@@ -31223,7 +31715,9 @@
      "value": 1912,
      "unit": "Kč",
      "as_of": 2027,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     }
    ],
    "verdict": "hspa_nema",
@@ -31305,7 +31799,9 @@
      "value": 43.2,
      "unit": "mld Kč",
      "as_of": 2025,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     },
     {
      "kind": "claim",
@@ -31314,7 +31810,9 @@
      "value": 52.7,
      "unit": "mld Kč",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     },
     {
      "kind": "claim",
@@ -31323,7 +31821,9 @@
      "value": 32,
      "unit": "mld Kč",
      "as_of": 2025,
-     "url": "https://skorezdravotnictvi.cz/clanek-deficit-pojisteni-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-deficit-pojisteni-2026.html",
+     "file": "clanek-deficit-pojisteni-2026.html",
+     "title": "Strukturální deficit zdravotního pojištění 2026. Proč se nůžky rozevírají a co je zastaví"
     },
     {
      "kind": "article",
@@ -31713,7 +32213,9 @@
      "value": 6.016,
      "unit": "mil. osob",
      "as_of": 2027,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     },
     {
      "kind": "claim",
@@ -31722,7 +32224,9 @@
      "value": 5.9,
      "unit": "mil. osob",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statu-statni-pojistenci.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statu-statni-pojistenci.html",
+     "file": "clanek-platba-statu-statni-pojistenci.html",
+     "title": "Sto padesát pět miliard ze státního rozpočtu. Anatomie platby státu za státní pojištěnce a její valorizace"
     }
    ],
    "verdict": "potvrzuje",
@@ -31748,7 +32252,9 @@
      "value": 5.9,
      "unit": "mil. osob",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statu-statni-pojistenci.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statu-statni-pojistenci.html",
+     "file": "clanek-platba-statu-statni-pojistenci.html",
+     "title": "Sto padesát pět miliard ze státního rozpočtu. Anatomie platby státu za státní pojištěnce a její valorizace"
     },
     {
      "kind": "claim",
@@ -31757,7 +32263,9 @@
      "value": 5.9,
      "unit": "mil. osob",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-deficit-pojisteni-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-deficit-pojisteni-2026.html",
+     "file": "clanek-deficit-pojisteni-2026.html",
+     "title": "Strukturální deficit zdravotního pojištění 2026. Proč se nůžky rozevírají a co je zastaví"
     },
     {
      "kind": "claim",
@@ -31766,7 +32274,9 @@
      "value": 6.016,
      "unit": "mil. osob",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-valorizace-statni-pojistenci-2027.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-valorizace-statni-pojistenci-2027.html",
+     "file": "clanek-valorizace-statni-pojistenci-2027.html",
+     "title": "2,4 miliardy podle vzorce, 24 miliard podle slibu. Platba za státní pojištěnce jde do roku 2027 po dvou kolejích"
     },
     {
      "kind": "article",
@@ -31807,7 +32317,9 @@
      "value": -14.9,
      "unit": "mld. Kč",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-pojistne-plany-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-pojistne-plany-2026.html",
+     "file": "clanek-pojistne-plany-2026.html",
+     "title": "Schodek podle plánu. Pojišťovny míří rokem 2026 k minusu 14,9 miliardy a rezervy klesají ke kritické hranici"
     }
    ],
    "verdict": "castecne",
@@ -31840,7 +32352,9 @@
      "value": -14.9,
      "unit": "mld. Kč",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-pojistne-plany-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-pojistne-plany-2026.html",
+     "file": "clanek-pojistne-plany-2026.html",
+     "title": "Schodek podle plánu. Pojišťovny míří rokem 2026 k minusu 14,9 miliardy a rezervy klesají ke kritické hranici"
     }
    ],
    "verdict": "castecne",
@@ -31874,7 +32388,9 @@
      "value": -14.9,
      "unit": "mld. Kč",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-pojistne-plany-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-pojistne-plany-2026.html",
+     "file": "clanek-pojistne-plany-2026.html",
+     "title": "Schodek podle plánu. Pojišťovny míří rokem 2026 k minusu 14,9 miliardy a rezervy klesají ke kritické hranici"
     }
    ],
    "verdict": "castecne",
@@ -31900,7 +32416,9 @@
      "value": 555.8,
      "unit": "mld. Kč",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-pojistne-plany-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-pojistne-plany-2026.html",
+     "file": "clanek-pojistne-plany-2026.html",
+     "title": "Schodek podle plánu. Pojišťovny míří rokem 2026 k minusu 14,9 miliardy a rezervy klesají ke kritické hranici"
     },
     {
      "kind": "claim",
@@ -31909,7 +32427,9 @@
      "value": 570.8,
      "unit": "mld. Kč",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-pojistne-plany-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-pojistne-plany-2026.html",
+     "file": "clanek-pojistne-plany-2026.html",
+     "title": "Schodek podle plánu. Pojišťovny míří rokem 2026 k minusu 14,9 miliardy a rezervy klesají ke kritické hranici"
     },
     {
      "kind": "claim",
@@ -31918,7 +32438,9 @@
      "value": -14.9,
      "unit": "mld. Kč",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-pojistne-plany-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-pojistne-plany-2026.html",
+     "file": "clanek-pojistne-plany-2026.html",
+     "title": "Schodek podle plánu. Pojišťovny míří rokem 2026 k minusu 14,9 miliardy a rezervy klesají ke kritické hranici"
     },
     {
      "kind": "article",
@@ -31965,7 +32487,9 @@
      "value": 43.2,
      "unit": "mld Kč",
      "as_of": 2025,
-     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "file": "clanek-platba-statni-pojistenci-2027-tri-cisla.html",
+     "title": "Jedna platba, čtyři čísla. Nařízení přidá za státní pojištěnce 33 korun, zákon 291 — a vyrovnaná vyhláška stojí na částce, kterou nikdo neschválil"
     },
     {
      "kind": "claim",
@@ -31974,7 +32498,9 @@
      "value": 24.3,
      "unit": "mld. Kč",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-pojistne-plany-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-pojistne-plany-2026.html",
+     "file": "clanek-pojistne-plany-2026.html",
+     "title": "Schodek podle plánu. Pojišťovny míří rokem 2026 k minusu 14,9 miliardy a rezervy klesají ke kritické hranici"
     },
     {
      "kind": "claim",
@@ -31983,7 +32509,9 @@
      "value": 32,
      "unit": "mld Kč",
      "as_of": 2025,
-     "url": "https://skorezdravotnictvi.cz/clanek-deficit-pojisteni-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-deficit-pojisteni-2026.html",
+     "file": "clanek-deficit-pojisteni-2026.html",
+     "title": "Strukturální deficit zdravotního pojištění 2026. Proč se nůžky rozevírají a co je zastaví"
     }
    ],
    "verdict": "upresnuje",
@@ -32023,7 +32551,9 @@
      "value": 6.5,
      "unit": "mld Kč/rok",
      "as_of": 2026,
-     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-cukerna-dan-vynos.html",
+     "file": "clanek-cukerna-dan-vynos.html",
+     "title": "Deset až patnáct miliard: co vydrží spočítat na cukerné a alkoholové dani"
     }
    ],
    "verdict": "castecne",
@@ -32257,7 +32787,9 @@
      "value": 30000,
      "unit": "úvazků",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "file": "clanek-osetrovatelstvi-generacni-propast-2026.html",
+     "title": "Generační propast v ošetřovatelství: proč nám chybí tisíce sester a co s tím chce udělat program za 13 miliard"
     }
    ],
    "verdict": "castecne",
@@ -32387,7 +32919,9 @@
      "value": 50,
      "unit": "%",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-starnuti-lekaru.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-starnuti-lekaru.html",
+     "file": "clanek-starnuti-lekaru.html",
+     "title": "Každý druhý praktik brzy do důchodu. Čtyřicet jedna procent českých lékařů je starších 55 let"
     }
    ],
    "verdict": "upresnuje",
@@ -32421,7 +32955,9 @@
      "value": -110,
      "unit": "PLD/rok",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-reforma-primarni-pece-2027.html",
+     "file": "clanek-reforma-primarni-pece-2027.html",
+     "title": "Praktik jako uzel systému. Kapitace, Pay-for-Performance a věková krize primární péče v dohodovacím řízení 2027"
     }
    ],
    "verdict": "potvrzuje",
@@ -32617,7 +33153,9 @@
      "value": 56,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html",
+     "file": "clanek-presun-pece-z-luzek.html",
+     "title": "Přesun péče z lůžek dává smysl. Cíl minus deset procentních bodů ale měří něco jiného, než se má změnit"
     },
     {
      "kind": "indicator",
@@ -32661,7 +33199,9 @@
      "value": 84.2,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-presun-pece-z-luzek.html",
+     "file": "clanek-presun-pece-z-luzek.html",
+     "title": "Přesun péče z lůžek dává smysl. Cíl minus deset procentních bodů ale měří něco jiného, než se má změnit"
     }
    ],
    "verdict": "potvrzuje",
@@ -32718,7 +33258,9 @@
      "value": 29.7,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html",
+     "file": "clanek-financovani-segmenty-2026.html",
+     "title": "Kam plyne 508 miliard. Co o struktuře českého zdravotnictví říkají dohodovací řízení"
     },
     {
      "kind": "indicator",
@@ -32762,7 +33304,9 @@
      "value": 28.7,
      "unit": "%",
      "as_of": 2024,
-     "url": "https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html",
+     "file": "clanek-financovani-segmenty-2026.html",
+     "title": "Kam plyne 508 miliard. Co o struktuře českého zdravotnictví říkají dohodovací řízení"
     }
    ],
    "verdict": "castecne",
@@ -32795,7 +33339,9 @@
      "value": 39000,
      "unit": "lůžek",
      "as_of": null,
-     "url": "https://skorezdravotnictvi.cz/clanek-reforma-dlouhodobe-pece-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-reforma-dlouhodobe-pece-2026.html",
+     "file": "clanek-reforma-dlouhodobe-pece-2026.html",
+     "title": "Dlouhodobá péče v Česku: tichá strukturální krize. Proč dvojkolejný systém stojí v cestě reformě, kterou demografie tak jako tak vynutí"
     },
     {
      "kind": "indicator",
@@ -32911,7 +33457,9 @@
      "value": 592,
      "unit": "na 100 000 ob.",
      "as_of": 2022,
-     "url": "https://skorezdravotnictvi.cz/clanek-deficit-pojisteni-2026.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-deficit-pojisteni-2026.html",
+     "file": "clanek-deficit-pojisteni-2026.html",
+     "title": "Strukturální deficit zdravotního pojištění 2026. Proč se nůžky rozevírají a co je zastaví"
     }
    ],
    "verdict": "potvrzuje",
@@ -32955,7 +33503,9 @@
      "value": 86.8,
      "unit": "na 100 000 ob.",
      "as_of": 2023,
-     "url": "https://skorezdravotnictvi.cz/clanek-lecitelna-mortalita.html"
+     "url": "https://skorezdravotnictvi.cz/clanek-lecitelna-mortalita.html",
+     "file": "clanek-lecitelna-mortalita.html",
+     "title": "Co dokáže systém vyléčit: Česko ztrácí o čtvrtinu víc životů, kterým šlo zabránit léčbou"
     }
    ],
    "verdict": "potvrzuje",

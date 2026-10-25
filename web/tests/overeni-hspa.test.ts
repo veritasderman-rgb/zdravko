@@ -51,6 +51,10 @@ describe("registr ověření HSPA", () => {
     const drafts = OVERENI.records.flatMap((r) => r.hspa).filter((h) => h.kind === "article" && h.published === false);
     for (const d of drafts) expect(links.some((l) => l.url === d.url)).toBe(false);
     expect(topVerdict([{ verdict: "potvrzuje" }, { verdict: "rozpor" }] as never)).toBe("rozpor");
+    // záznam doložený jen registrovaným tvrzením (claim) musí mít odkaz na jeho článek
+    const claimOnly = OVERENI.records.filter((r) => r.hspa.some((h) => h.kind === "claim" && h.published !== false) && !r.hspa.some((h) => h.kind === "article"));
+    expect(claimOnly.length).toBeGreaterThan(0);
+    for (const r of claimOnly) expect(evidenceLinks([r]).length, r.id).toBeGreaterThan(0);
   });
 
   it("sedí na studii: položky „Ověřit“ i bloky importéru", () => {
