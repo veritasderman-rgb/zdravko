@@ -7,6 +7,7 @@ import { and, eq, isNull } from "drizzle-orm";
 import * as schema from "@/db/schema";
 import type { AnyDb } from "@/db/pool";
 import { CODE_RE } from "@/lib/codes";
+import { can, canSetStatus, type Role } from "@/lib/roles";
 
 /** Chyba, jejíž text lze ukázat uživateli. */
 export class CommentError extends Error {}
@@ -87,6 +88,8 @@ export type NewComment = {
   priority?: (typeof PRIORITIES)[number];
   /** Hash tokenu z potvrzovacího e-mailu; připomínka do potvrzení čeká mimo frontu týmu. */
   verifyTokenHash?: string | null;
+  /** Účet autora interní připomínky. */
+  authorUserId?: number | null;
   actor: string;
 };
 
@@ -130,6 +133,7 @@ export async function createComment(db: AnyDb, c: NewComment): Promise<CreatedCo
         channel: c.channel,
         priority: c.priority ?? (c.channel === "verejnost" ? "nizka" : "bezna"),
         verifyTokenHash: c.verifyTokenHash ?? null,
+        authorUserId: c.authorUserId ?? null,
       })
       .returning({ id: schema.comments.id });
     await tx.insert(schema.events).values({
@@ -143,7 +147,7 @@ export async function createComment(db: AnyDb, c: NewComment): Promise<CreatedCo
   });
 }
 
-export async function createReply(db: AnyDb, r: { parentId: number; body: string; authorName: string; organization?: string | null; actor: string }) {
+export async function createReply(db: AnyDb, r: { parentId: number; body: string; authorName: string; organization?: string | null; authorUserId?: number | null; actor: string }) {
   if (!Number.isInteger(r.parentId) || r.parentId <= 0 || norm(r.body).length < 2) throw new CommentError("Napište odpověď.");
   return db.transaction(async (tx) => {
     const [parent] = await tx.select().from(schema.comments).where(and(eq(schema.comments.id, r.parentId), isNull(schema.comments.parentId)));
@@ -164,6 +168,7 @@ export async function createReply(db: AnyDb, r: { parentId: number; body: string
         codes: parent.codes,
         authorName: r.authorName,
         organization: r.organization || null,
+        authorUserId: r.authorUserId ?? null,
         parentId: parent.id,
       })
       .returning({ id: schema.comments.id });
@@ -172,24 +177,32 @@ export async function createReply(db: AnyDb, r: { parentId: number; body: string
   });
 }
 
+/**
+ * Změna stavu připomínky podle role: stav jen do povolených cílů (src/lib/roles.ts),
+ * garanta, téma a prioritu jen s oprávněním třídit; jinak zůstávají, jak byly.
+ */
 export async function setCommentStatus(
   db: AnyDb,
-  s: { id: number; status: string; assignee?: string; topic?: string; priority?: string; actor: string },
+  s: { id: number; status: string; assignee?: string; topic?: string; priority?: string; role: Role; actor: string },
 ) {
   if (!Number.isInteger(s.id) || s.id <= 0 || !(STATUSES as readonly string[]).includes(s.status)) throw new CommentError("Neplatná změna stavu.");
+  const triage = can(s.role, "triage");
   const priority = (PRIORITIES as readonly string[]).includes(s.priority ?? "") ? (s.priority as (typeof PRIORITIES)[number]) : undefined;
   return db.transaction(async (tx) => {
-    const updated = await tx
+    const [current] = await tx.select({ status: schema.comments.status }).from(schema.comments).where(eq(schema.comments.id, s.id));
+    if (!current) throw new CommentError("Připomínka nenalezena.");
+    if (!canSetStatus(s.role, current.status, s.status)) throw new CommentError("Do tohoto stavu připomínku vaše role posunout nemůže.");
+    const fields = triage ? { assignee: s.assignee || null, topic: s.topic || null, ...(priority ? { priority } : {}) } : {};
+    await tx
       .update(schema.comments)
-      .set({ status: s.status as (typeof STATUSES)[number], assignee: s.assignee || null, topic: s.topic || null, ...(priority ? { priority } : {}), updatedAt: new Date() })
-      .where(eq(schema.comments.id, s.id))
-      .returning({ id: schema.comments.id });
-    if (!updated.length) throw new CommentError("Připomínka nenalezena.");
-    await tx.insert(schema.events).values({ entity: "comment", entityId: s.id, action: "status", actor: s.actor, payload: { status: s.status, assignee: s.assignee || null, topic: s.topic || null, priority: priority ?? null } });
+      .set({ status: s.status as (typeof STATUSES)[number], ...fields, updatedAt: new Date() })
+      .where(eq(schema.comments.id, s.id));
+    await tx.insert(schema.events).values({ entity: "comment", entityId: s.id, action: "status", actor: s.actor, payload: { status: s.status, from: current.status, ...(triage ? { assignee: s.assignee || null, topic: s.topic || null, priority: priority ?? null } : {}) } });
   });
 }
 
-export async function setVerificationStatus(db: AnyDb, v: { id: number; status: string; assignee?: string; note?: string; actor: string }) {
+export async function setVerificationStatus(db: AnyDb, v: { id: number; status: string; assignee?: string; note?: string; role: Role; actor: string }) {
+  if (!can(v.role, "verify")) throw new CommentError("Registr „Ověřit“ vaše role měnit nemůže.");
   if (!Number.isInteger(v.id) || v.id <= 0 || !(VSTATUSES as readonly string[]).includes(v.status)) throw new CommentError("Neplatná změna stavu.");
   return db.transaction(async (tx) => {
     const updated = await tx

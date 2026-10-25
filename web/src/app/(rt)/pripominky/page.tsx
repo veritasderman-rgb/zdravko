@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { requireSession } from "@/lib/auth";
+import { can, statusTargets } from "@/lib/roles";
 import { countPendingVerification, listComments, listDocumentsWithStats } from "@/lib/queries";
 import { CHANNEL_LABEL, KIND_LABEL, PRIORITY_CLASS, PRIORITY_LABEL, SEVERITY_CLASS, SEVERITY_LABEL, STATUS_CLASS, STATUS_LABEL, fmtDate } from "@/lib/labels";
 import { updateCommentStatus } from "@/app/actions";
@@ -12,7 +13,9 @@ function one(v: string | string[] | undefined) {
 }
 
 export default async function CommentsPage({ searchParams }: PageProps<"/pripominky">) {
-  await requireSession();
+  const session = await requireSession();
+  const triage = can(session.role, "triage");
+  const targets = statusTargets(session.role);
   const sp = await searchParams;
   const filter = { doc: one(sp.doc), status: one(sp.status), severity: one(sp.severity), kind: one(sp.kind), code: one(sp.code), q: one(sp.q), channel: one(sp.channel), overeni: one(sp.overeni) };
   const [rows, docs, pending] = await Promise.all([listComments(filter), listDocumentsWithStats(), countPendingVerification()]);
@@ -26,7 +29,7 @@ export default async function CommentsPage({ searchParams }: PageProps<"/pripomi
           <h1 className="text-2xl font-semibold tracking-tight">Připomínky</h1>
           <p className="text-sm text-muted">{rows.length} záznamů{rows.length === 500 ? " (zobrazeno prvních 500)" : ""}</p>
         </div>
-        <a href={exportHref} className="btn btn-ghost">Export CSV</a>
+        {can(session.role, "export") && <a href={exportHref} className="btn btn-ghost">Export CSV</a>}
       </div>
 
       {filter.overeni === "ceka" ? (
@@ -105,20 +108,29 @@ export default async function CommentsPage({ searchParams }: PageProps<"/pripomi
             {c.proposedText && <p className="mt-1 rounded bg-emerald-50 p-2 text-xs whitespace-pre-wrap"><b>Návrh znění:</b> {c.proposedText}</p>}
             {c.source && <p className="mt-1 text-xs text-muted">Zdroj: {c.source}</p>}
             <div className="mt-2 flex flex-wrap items-center justify-between gap-2 text-[11px] text-muted">
-              <span>{c.authorName}{c.organization ? ` · ${c.organization}` : ""}{c.email ? ` · ${c.email}` : ""} · {fmtDate(c.createdAt)}</span>
-              <form action={updateCommentStatus} className="flex flex-wrap items-center gap-1">
-                <input type="hidden" name="id" value={c.id} />
-                <input type="hidden" name="slug" value={docSlug} />
-                <select name="status" defaultValue={c.status} className="!w-auto !py-0.5 !text-[11px]">
-                  {Object.entries(STATUS_LABEL).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
-                </select>
-                <input name="assignee" defaultValue={c.assignee ?? ""} placeholder="garant" className="!w-28 !py-0.5 !text-[11px]" />
-                <input name="topic" defaultValue={c.topic ?? ""} placeholder="téma" className="!w-28 !py-0.5 !text-[11px]" />
-                <select name="priority" defaultValue={c.priority} className="!w-auto !py-0.5 !text-[11px]">
-                  {Object.entries(PRIORITY_LABEL).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
-                </select>
-                <button className="btn !py-0.5 !px-2 !text-[11px]" type="submit">Uložit</button>
-              </form>
+              <span>{c.authorName}{c.organization ? ` · ${c.organization}` : ""}{c.email && can(session.role, "seeEmails") ? ` · ${c.email}` : ""} · {fmtDate(c.createdAt)}</span>
+              {(triage || targets.length > 0) && (
+                <form action={updateCommentStatus} className="flex flex-wrap items-center gap-1">
+                  <input type="hidden" name="id" value={c.id} />
+                  <input type="hidden" name="slug" value={docSlug} />
+                  {/* Nabízí se jen aktuální stav a stavy, do kterých smí role připomínku posunout. */}
+                  <select name="status" defaultValue={c.status} className="!w-auto !py-0.5 !text-[11px]">
+                    {Object.entries(STATUS_LABEL)
+                      .filter(([k]) => k === c.status || targets.includes(k))
+                      .map(([k, v]) => <option key={k} value={k}>{v}</option>)}
+                  </select>
+                  {triage && (
+                    <>
+                      <input name="assignee" defaultValue={c.assignee ?? ""} placeholder="garant" className="!w-28 !py-0.5 !text-[11px]" />
+                      <input name="topic" defaultValue={c.topic ?? ""} placeholder="téma" className="!w-28 !py-0.5 !text-[11px]" />
+                      <select name="priority" defaultValue={c.priority} className="!w-auto !py-0.5 !text-[11px]">
+                        {Object.entries(PRIORITY_LABEL).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
+                      </select>
+                    </>
+                  )}
+                  <button className="btn !py-0.5 !px-2 !text-[11px]" type="submit">Uložit</button>
+                </form>
+              )}
             </div>
           </li>
         ))}

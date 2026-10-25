@@ -171,6 +171,37 @@ export const resolutionOutcome = pgEnum("resolution_outcome", [
   "mimo_rozsah",
 ]);
 
+// Role v interní části: čtenář připomínkuje, garant třídí a navrhuje vypořádání,
+// oponent kontroluje návrh, autor rozhoduje o vypořádání, koordinátor spravuje lidi a zveřejňuje.
+export const userRole = pgEnum("user_role", ["ctenar", "garant", "oponent", "autor", "koordinator"]);
+
+export const users = pgTable("users", {
+  id: serial("id").primaryKey(),
+  email: text("email").notNull().unique(), // vždy malými písmeny
+  name: text("name").notNull(),
+  organization: text("organization"),
+  role: userRole("role").notNull().default("ctenar"),
+  active: boolean("active").notNull().default(true),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  lastLoginAt: timestamp("last_login_at", { withTimezone: true }),
+});
+
+// Jednorázové odkazy pro přihlášení e-mailem; ukládá se jen hash tokenu.
+export const loginTokens = pgTable(
+  "login_tokens",
+  {
+    id: serial("id").primaryKey(),
+    userId: integer("user_id")
+      .notNull()
+      .references(() => users.id),
+    tokenHash: text("token_hash").notNull(),
+    expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+    usedAt: timestamp("used_at", { withTimezone: true }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [uniqueIndex("login_tokens_hash_idx").on(t.tokenHash)],
+);
+
 export const comments = pgTable(
   "comments",
   {
@@ -197,6 +228,7 @@ export const comments = pgTable(
     needsVerification: boolean("needs_verification").notNull().default(false),
     codes: text("codes").array().notNull().default([]),
     authorName: text("author_name").notNull(), // nikdy se nezveřejňuje
+    authorUserId: integer("author_user_id").references(() => users.id), // účet autora interní připomínky
     organization: text("organization"), // jediné, co jde do veřejného vypořádání
     onBehalf: text("on_behalf").notNull().default("osoba"), // osoba | organizace
     email: text("email"), // jen u připomínek veřejnosti; nikdy se nezveřejňuje

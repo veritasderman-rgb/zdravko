@@ -226,9 +226,9 @@ export async function erasePersonalData(db: AnyDb, email: string): Promise<{ era
 /**
  * Mazání podle lhůt uchování (spouští se denně):
  * nepotvrzené připomínky po 7 dnech, záznamy limitů po 30 dnech,
- * jméno a e-mail veřejných připomínek po 24 měsících.
+ * jméno a e-mail veřejných připomínek po 24 měsících, prošlé odkazy pro přihlášení po dni.
  */
-export async function applyRetention(db: AnyDb): Promise<{ unverified: number; rateHits: number; anonymized: number }> {
+export async function applyRetention(db: AnyDb): Promise<{ unverified: number; rateHits: number; anonymized: number; loginTokens: number }> {
   return db.transaction(async (tx) => {
     const t = tx as unknown as AnyDb;
     const stale = await tx
@@ -252,8 +252,13 @@ export async function applyRetention(db: AnyDb): Promise<{ unverified: number; r
       )
       .returning({ id: schema.comments.id });
     await scrubEvents(t, old.map((o) => o.id));
-    const result = { unverified: stale.length, rateHits: hits.length, anonymized: old.length };
-    if (result.unverified || result.rateHits || result.anonymized) await tx.insert(schema.events).values({ entity: "privacy", action: "retention", actor: "system", payload: result });
+    // Odkazy pro přihlášení do interní části: po vypršení k ničemu, den po něm pryč.
+    const tokens = await tx
+      .delete(schema.loginTokens)
+      .where(lt(schema.loginTokens.expiresAt, sql`now() - interval '1 day'`))
+      .returning({ id: schema.loginTokens.id });
+    const result = { unverified: stale.length, rateHits: hits.length, anonymized: old.length, loginTokens: tokens.length };
+    if (result.unverified || result.rateHits || result.anonymized || result.loginTokens) await tx.insert(schema.events).values({ entity: "privacy", action: "retention", actor: "system", payload: result });
     return result;
   });
 }

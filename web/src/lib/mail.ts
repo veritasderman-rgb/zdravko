@@ -106,3 +106,22 @@ ${SIGN}
 <p>${SIGN}</p>`;
   return { subject, text, html };
 }
+
+/** Odkaz pro přihlášení do interní části (jednorázový). */
+export function loginMail(p: { name: string; url: string; minutes: number }) {
+  const subject = "Přihlášení k připomínkám studie Zdraví blíž lidem";
+  const text = `Dobrý den, ${p.name},
+
+přihlásíte se na této adrese:
+${p.url}
+
+Odkaz platí ${p.minutes} minut a jen jednou. Pokud jste o přihlášení nežádali, e-mail ignorujte.
+
+${SIGN}
+`;
+  const html = `<p>Dobrý den, ${esc(p.name)},</p>
+<p><a href="${esc(p.url)}" style="display:inline-block;background:#1f4a3d;color:#fff;padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:bold">Přihlásit se</a></p>
+<p style="color:#52594F">Odkaz platí ${p.minutes} minut a jen jednou. Pokud jste o přihlášení nežádali, e-mail ignorujte.</p>
+<p>${SIGN}</p>`;
+  return { subject, text, html };
+}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getSession } from "@/lib/auth";
 import { logout } from "@/app/actions";
+import { ROLE_LABEL, can } from "@/lib/roles";
 
 /** Navigace interní části pro resortní tým. */
 export async function Nav() {
@@ -17,6 +18,7 @@ export async function Nav() {
             <Link href="/pripominky" className="hover:text-foreground">Připomínky</Link>
             <Link href="/overit" className="hover:text-foreground">Ověřit</Link>
             <Link href="/kody" className="hover:text-foreground">Kódy</Link>
+            {can(session.role, "manageUsers") && <Link href="/lide" className="hover:text-foreground">Lidé</Link>}
             <Link href="/" className="hover:text-foreground">Veřejný web</Link>
           </nav>
         )}
@@ -26,6 +28,7 @@ export async function Nav() {
               <span>
                 {session.name}
                 {session.organization ? ` · ${session.organization}` : ""}
+                <span className="chip ml-2">{ROLE_LABEL[session.role]}</span>
               </span>
               <form action={logout}>
                 <button className="hover:text-foreground underline" type="submit">Odhlásit</button>

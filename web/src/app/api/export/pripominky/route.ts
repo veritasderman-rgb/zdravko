@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { getSession } from "@/lib/auth";
+import { can } from "@/lib/roles";
 import { listComments } from "@/lib/queries";
 import { commentsCsv } from "@/lib/export";
 
@@ -8,6 +9,7 @@ export const dynamic = "force-dynamic";
 export async function GET(req: NextRequest) {
   const session = await getSession();
   if (!session) return new NextResponse("Unauthorized", { status: 401 });
+  if (!can(session.role, "export")) return new NextResponse("Export smí autor a koordinátor.", { status: 403 });
   const sp = req.nextUrl.searchParams;
   const g = (k: string) => sp.get(k) || undefined;
   const rows = await listComments({ doc: g("doc"), status: g("status"), severity: g("severity"), kind: g("kind"), code: g("code"), q: g("q"), channel: g("channel"), overeni: g("overeni") });

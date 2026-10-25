@@ -12,7 +12,7 @@ import { applyRetention } from "../src/lib/privacy-core";
 
 withPoolDb((db) => applyRetention(db))
   .then((r) => {
-    console.log(`nepotvrzené připomínky: ${r.unverified}, záznamy limitů: ${r.rateHits}, anonymizované připomínky: ${r.anonymized}`);
+    console.log(`nepotvrzené připomínky: ${r.unverified}, záznamy limitů: ${r.rateHits}, anonymizované připomínky: ${r.anonymized}, prošlé odkazy pro přihlášení: ${r.loginTokens}`);
   })
   .catch((e) => {
     console.error(e);
