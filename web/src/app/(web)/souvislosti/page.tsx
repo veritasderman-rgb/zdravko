@@ -45,7 +45,12 @@ export default function SouvislostiPage() {
         <VazbyMatrixFigure />
       </Section>
 
-      <NextStep title="Kdy se co stane" text="Fáze, kontrolní body a hlavní milníky na časové ose 2026–2038." href="/jak" label="Jak a kdy" />
+      <NextStep
+        title="Všechny grafy závislostí ze studie"
+        text="Kritická cesta, co na co navazuje v penězích, lidech, péči a síti, mapa vazeb, organigramy a matice, každý s textem ze studie a odkazem na své místo v ní."
+        href="/studie/zavislosti"
+        label="Grafy závislostí"
+      />
     </>
   );
 }

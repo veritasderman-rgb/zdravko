@@ -73,6 +73,9 @@ export default async function StudiePage() {
               <Button href="#pripominka" variant="secondary">
                 Napsat připomínku
               </Button>
+              <Button href="/studie/zavislosti" variant="secondary">
+                Grafy závislostí
+              </Button>
               <Button href="/studie.pdf" variant="secondary" icon="download">
                 Stáhnout PDF
               </Button>
