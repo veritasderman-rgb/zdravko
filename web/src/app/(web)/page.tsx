@@ -35,9 +35,12 @@ export default function HomePage() {
             <p className="mt-4 max-w-[34em] text-pretty text-[19px] leading-normal text-muted sm:mt-[26px] sm:text-[22px]">
               Péče o dlouhodobě nemocné a staré lidi se přesune z nemocnic blíž k nim. Nemocnice dostanou jistou roli, prevence stálé peníze.
             </p>
-            <div className="mt-6 flex w-full flex-col items-stretch gap-1.5 sm:mt-9 sm:w-auto sm:flex-row sm:items-center sm:gap-7">
-              <Button href="/co-chceme" icon="arrow">
+            <div className="mt-6 flex w-full flex-col items-stretch gap-1.5 sm:mt-9 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5 sm:gap-y-3">
+              <Button href="/co-chceme" icon="arrow" className="whitespace-nowrap">
                 Co se změní pro mě
+              </Button>
+              <Button href="/studie" variant="secondary" className="whitespace-nowrap">
+                Číst a připomínkovat studii
               </Button>
               <TextLink href="/proc" className="inline-flex min-h-12 items-center justify-center">
                 Proč to potřebujeme
@@ -214,7 +217,7 @@ export default function HomePage() {
         </form>
         <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
           <TextLink href="/studie" arrow className="inline-flex min-h-12 items-center">
-            Číst a komentovat celou studii
+            Číst a připomínkovat celou studii
           </TextLink>
           <TextLink href="/studie#pripominka" className="inline-flex min-h-12 items-center">
             Napsat obecnou připomínku

@@ -60,25 +60,25 @@ export function PersonalTaxCalculator() {
   );
 }
 
-/** Rozdělení výnosu daní za zdraví podle pravidla: 2 mld. Kč fond prevence pevně, zbytek platba státu. */
+/** Rozdělení výnosu daní za zdraví podle pravidla PEER: nejméně 40 % Fondu prevence, aspoň 2 mld. Kč, zbytek platba státu. */
 export function TaxSplitCalculator() {
   const [revenue, setRevenue] = useState(5);
-  const fund = Math.min(2, revenue);
+  const fund = Math.min(revenue, Math.max(2, 0.4 * revenue));
   const state = Math.max(0, revenue - fund);
   const parts = [
-    { label: "Národní fond prevence", value: fund, color: SERIES[2] },
+    { label: "Fond prevence", value: fund, color: SERIES[2] },
     { label: "Do zdravotního pojištění", value: state, color: SERIES[0] },
   ];
   return (
     <CalculatorFrame
       question="Kam jdou peníze z daní za zdraví?"
-      note="Odvody z mezd se nemění. Počítáme s 5 mld. Kč ročně, může to být 5 až 7."
+      note="Odvody z mezd se nemění. Rozpočet reformy počítá s 5 mld. Kč ročně (rozpětí 5 až 7); program strany s 10 až 15 mld. Kč."
     >
       <p className="text-[18px] leading-relaxed text-ink-2">
-        Národní fond prevence dostane vždy první 2 mld. Kč, i kdyby daně vynesly méně. Zbytek jde do zdravotního pojištění. Posuňte, kolik by daně vynesly.
+        Fond prevence zdravotních pojišťoven dostane nejméně 40 % výnosu a vždy aspoň 2 mld. Kč, i kdyby daně vynesly méně. Zbytek jde do zdravotního pojištění. Posuňte, kolik by daně vynesly.
       </p>
-      <RangeInput id="calc-vynos" label="Výnos daní za zdraví ročně" value={revenue} min={3} max={7} step={0.5} onChange={setRevenue} format={(v) => `${csNumber(v, 1)} mld. Kč`} />
-      <CalcOutput value={`${csNumber(state, 1)} mld. Kč`} text={`půjde do zdravotního pojištění; Národní fond prevence dostane ${csNumber(fund, 1)} mld. Kč`} />
+      <RangeInput id="calc-vynos" label="Výnos daní za zdraví ročně" value={revenue} min={3} max={15} step={0.5} onChange={setRevenue} format={(v) => `${csNumber(v, 1)} mld. Kč`} />
+      <CalcOutput value={`${csNumber(state, 1)} mld. Kč`} text={`půjde do zdravotního pojištění; Fond prevence dostane ${csNumber(fund, 1)} mld. Kč`} />
       <div>
         <div className="flex h-6 w-full gap-[2px]" aria-hidden>
           {parts.map((p, i) => (

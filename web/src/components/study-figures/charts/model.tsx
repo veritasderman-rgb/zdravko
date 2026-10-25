@@ -42,32 +42,31 @@ export function HealthTaxSplitFigure() {
   /** 100 Kč měsíčně na státního pojištěnce = 7,2 mld. Kč ročně (6,0 mil. státních pojištěnců). */
   const perMonth = (bnKc: number) => Math.round((bnKc * 1e9) / (TAXES.statePayees * 1e6 * 12) / 10) * 10;
   const rows = d.scenarios.map((s) => {
-    const rest = s.total - d.fund;
-    return { ...s, rest, share: Math.round((d.fund / s.total) * 100), kc: perMonth(rest) };
+    const fund = Math.round(Math.max(d.fund, s.total * d.peerShare) * 10) / 10;
+    const rest = Math.round((s.total - fund) * 10) / 10;
+    return { ...s, fund, rest, share: Math.round((fund / s.total) * 100), kc: perMonth(rest) };
   });
-  const upper = rows[rows.length - 1];
-  const peerGap = upper.total * d.peerShare - d.fund;
   const colors = { fund: SERIES[0], rest: SERIES[1] };
   return (
     <ChartFrame
-      title="Prevence dostane pevně 2 mld. Kč, zbytek výnosu daní za zdraví zvýší platbu státu do pojištění"
-      subtitle="Rozdělení ročního výnosu daní za zdraví v plném náběhu, mld. Kč: plánovací výnos 5 mld. Kč a horní hranice rozpětí 7 mld. Kč"
-      source="Studie v3, Část III (pilíř 4 a P4); 100 Kč měsíčně na státního pojištěnce odpovídá 7,2 mld. Kč ročně (6,0 mil. státních pojištěnců)"
+      title="Prevence dostane nejméně 40 % výnosu daní za zdraví, vždy aspoň 2 mld. Kč; zbytek zvýší platbu státu do pojištění"
+      subtitle="Rozdělení ročního výnosu daní za zdraví v plném náběhu, mld. Kč: plánovací výnos 5 mld. Kč, horní hranice rozpětí 7 mld. Kč a dolní mez cíle PEER 10 mld. Kč"
+      source="Studie v3.1, Část III (pilíř 4 a P4) a Hospodářská strategie PEER, kap. 1.4; 100 Kč měsíčně na státního pojištěnce odpovídá 7,2 mld. Kč ročně (6,0 mil. státních pojištěnců)"
       table={
         <DataTable
-          header={["Scénář", "Výnos (mld. Kč)", "Národní fond prevence", "Platba státu do pojištění", "Navíc na státního pojištěnce"]}
-          rows={rows.map((r) => [r.label, csNumber(r.total), `${csNumber(d.fund)} (${r.share} %)`, csNumber(r.rest), `asi ${r.kc} Kč měsíčně`])}
+          header={["Scénář", "Výnos (mld. Kč)", "Fond prevence", "Platba státu do pojištění", "Navíc na státního pojištěnce"]}
+          rows={rows.map((r) => [r.label, csNumber(r.total), `${csNumber(r.fund)} (${r.share} %)`, csNumber(r.rest), `asi ${r.kc} Kč měsíčně`])}
         />
       }
     >
       <Reveal>
         <div className="font-sans">
           <p data-anim style={anim(0)} className="mb-5 rounded-card bg-sand px-4 py-3 text-[16px] leading-relaxed text-ink">
-            <span className="font-semibold">Pravidlo v zákoně o fondu:</span> {csNumber(d.fund)} mld. Kč ročně (valorizovaně) má Národní fond prevence přednostně i při nižším výnosu; zbytek zvyšuje platbu státu za státní pojištěnce. Odvody z práce se nesnižují.
+            <span className="font-semibold">Pravidlo v zákoně o fondu (podle Hospodářské strategie PEER):</span> Fond prevence zdravotních pojišťoven dostane nejméně 40 % výnosu, vždy aspoň {csNumber(d.fund)} mld. Kč ročně (valorizovaně); zbytek zvyšuje platbu státu za státní pojištěnce. Odvody z práce se nesnižují.
           </p>
           <Legend
             items={[
-              { label: "Národní fond prevence", color: colors.fund },
+              { label: "Fond prevence", color: colors.fund },
               { label: "platba státu do zdravotního pojištění", color: colors.rest },
             ]}
           />
@@ -82,7 +81,7 @@ export function HealthTaxSplitFigure() {
                   label={`${r.label}: ${csNumber(r.total)} mld. Kč`}
                   text={csNumber(r.total)}
                   parts={[
-                    { value: d.fund, color: colors.fund, title: `Národní fond prevence: ${csNumber(d.fund)} mld. Kč (${r.share} %)` },
+                    { value: r.fund, color: colors.fund, title: `Fond prevence: ${csNumber(r.fund)} mld. Kč (${r.share} %)` },
                     { value: r.rest, color: colors.rest, title: `Platba státu do pojištění: ${csNumber(r.rest)} mld. Kč` },
                   ]}
                 />
@@ -93,12 +92,12 @@ export function HealthTaxSplitFigure() {
           <ul className="mt-4 flex flex-col text-[16px]">
             {rows.map((r, i) => (
               <li key={r.key} data-anim style={anim(3 + i)} className="border-t border-line py-2 text-ink-2">
-                <span className="font-semibold text-ink">{csNumber(r.total)} mld. Kč:</span> fond {csNumber(d.fund)} ({r.share} % výnosu), pojištění {csNumber(r.rest)}, tedy asi {r.kc} Kč měsíčně navíc za každého státního pojištěnce
+                <span className="font-semibold text-ink">{csNumber(r.total)} mld. Kč:</span> fond {csNumber(r.fund)} ({r.share} % výnosu), pojištění {csNumber(r.rest)}, tedy asi {r.kc} Kč měsíčně navíc za každého státního pojištěnce
               </li>
             ))}
           </ul>
           <Note>
-            Částka 2 mld. Kč kryje prevenci, se kterou počítá model (1,3 mld. Kč), a komunitní programy (0,7 mld. Kč). PEER požaduje pro fond aspoň 40 %: při výnosu {csNumber(upper.total)} mld. Kč by to bylo o {csNumber(peerGap)} mld. Kč víc, a ty lze vyčlenit jen z horního scénáře, ne z plánovací hodnoty.
+            Při plánovací hodnotě kryjí 2 mld. Kč prevenci, se kterou počítá model (1,3 mld. Kč), a komunitní programy (0,7 mld. Kč). Částku nad 2 mld. Kč při vyšším výnosu přidělí rada fondu programům s doloženým účinkem; rozpočet reformy s ní zatím nepočítá.
           </Note>
         </div>
       </Reveal>

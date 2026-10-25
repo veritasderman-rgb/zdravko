@@ -98,13 +98,14 @@ export const ACUTE_BEDS = {
 // 7. Pravidlo rozdělení daní za zdraví (ř. 1010, 1062–1072)
 // ---------------------------------------------------------------------------
 export const HEALTH_TAX_SPLIT = {
-  /** Pevně pro Národní fond prevence, valorizovaně. */
+  /** Dolní hranice pro Fond prevence, valorizovaně. */
   fund: 2,
   scenarios: [
     { key: "plan", label: "Plánovací výnos", total: 5 },
     { key: "upper", label: "Horní hranice rozpětí", total: 7 },
+    { key: "peer", label: "Cíl Hospodářské strategie PEER (dolní mez)", total: 10 },
   ],
-  /** PEER požaduje aspoň 40 % pro fond (ř. 1072). */
+  /** Pravidlo Hospodářské strategie PEER: nejméně 40 % výnosu do Fondu prevence. */
   peerShare: 0.4,
 };
 
@@ -212,7 +213,7 @@ export const BILLS: { year: string; wave: number; size: BillSize; name: string }
   { year: "2030", wave: 1, size: "S", name: "Vzorec platby státu (zák. 592/1992 Sb.)" },
   { year: "2030", wave: 1, size: "M", name: "Daň z tichého vína a valorizace (zák. 353/2003 Sb.)" },
   { year: "2030", wave: 1, size: "M", name: "Zákon o dani ze slazených nápojů" },
-  { year: "2030", wave: 1, size: "M", name: "Zákon o Národním fondu prevence" },
+  { year: "2030", wave: 1, size: "M", name: "Zákon o Fondu prevence" },
   { year: "2030", wave: 2, size: "L", name: "Primární péče (nová hlava zák. 372/2011 Sb. s novelou zák. 48/1997 Sb.)" },
   { year: "2030", wave: 2, size: "S", name: "eŽádanka (zák. 325/2021 Sb.), jen pokud neprojde ve vlně 0" },
   { year: "2030", wave: 2, size: "M", name: "Zdravotnický ombudsman" },
