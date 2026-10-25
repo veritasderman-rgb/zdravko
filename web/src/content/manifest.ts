@@ -78,7 +78,7 @@ const SHORT: Record<string, { label: string; when: string }> = {
   P1: { label: "Personální bilance po krajích: nábor ze zahraničí a rychlejší uznání aprobací", when: "zveřejnit do konce 2029, měřit koncem 2031" },
   P2: { label: "Rezidenční místa pro praktiky a pediatry", when: "podnět 2027, v rozpočtu 2028, závazně od 2031" },
   P3: { label: "Sociální účet a sdílené financování sociálně-zdravotní péče", when: "záměr do konce 2029, platí od 1. 1. 2034" },
-  P4: { label: "Národní fond prevence s pevnou částkou z daní za zdraví", when: "platí od 1. 1. 2031" },
+  P4: { label: "Fond prevence zdravotních pojišťoven: nejméně 40 % daní za zdraví, aspoň 2 mld. Kč", when: "platí od 1. 1. 2031" },
   P5: { label: "Měření výkonu zdravotnictví (rámec HSPA) ukotvené v zákoně", when: "platí od 1. 1. 2033" },
   // Doplňky pilířů
   "Pil2.2": { label: "Pravidla podle zdravotní potřeby místo limitů na počet výkonů", when: "první skupiny výkonů v úhradách 2031" },
@@ -97,7 +97,7 @@ const SHORT: Record<string, { label: string; when: string }> = {
   "Pil4.9": { label: "Krátká intervence u praktika (stručné poradenství k rizikovým zvykům)", when: "od úhradové vyhlášky 2031" },
   "Pil4.10": { label: "Strava a pohyb: školní stravování, reklama dětem, nutriční terapeut", when: "termín ověříme, vyhodnocení po třech letech" },
   "Pil4.11": { label: "Daň z tabáku a nikotinu: každý rok o 5 % nad inflaci, bez skoků; sáčky a e-cigarety podle nikotinu", when: "podnět 2027, platí od 1. 1. 2031" },
-  "Pil4.12": { label: "Pro ty, kdo chodí na prevenci: hrazené odvykání kouření a příspěvek pojišťovny na pohyb nebo výživu", when: "platí od 1. 1. 2031, příspěvek od 2032" },
+  "Pil4.12": { label: "Nižší pojistné pro ty, kdo aktivně pečují o své zdraví, a hrazené odvykání kouření", when: "odvykání od 2031, pilot do 40 let od 2032" },
   "Pil5.1": { label: "Domácí péče na delší dobu, může ji předepsat sestra se specializací", when: "platí od 1. 1. 2032" },
   "Pil5.2": { label: "Mobilní paliativní tým v každém okrese", when: "úhrada 2031, náběh 2031–2034" },
   "Pil5.3": { label: "Společný plán péče, koordinátor a hrazené plánování péče", when: "úhrada od 2031" },
@@ -359,7 +359,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     ],
     inspiration: "Finská severní Karélie od roku 1972 snížila úmrtnost na srdeční nemoci o desítky procent, Skotsko zavedlo od roku 2018 minimální cenu alkoholu a severské země mají účast na screeningu kolem 70 %.",
     gaps:
-      "Manifest chce prevenci aspoň na 5 % výdajů; zatím máme pevně 2 mld. Kč pro Národní fond prevence z daní za zdraví a 1,3 mld. Kč na prevenci v týmech, cestu k 5 % zbývá dopočítat. Hrazenou dentální hygienu do 18 let zatím pokrývá fluoridový lak a zalití rýh (0,3 až 0,5 mld. Kč). Daň z tabáku a nikotinu roste postupně a její přírůstek jde na podporu těch, kdo chodí na prevenci (Pil4.11, Pil4.12); pozvánky na všechny screeningy zbývá doplnit.",
+      "Manifest chce prevenci aspoň na 5 % výdajů; zatím máme pro Fond prevence nejméně 40 % daní za zdraví, aspoň 2 mld. Kč, a 1,3 mld. Kč na prevenci v týmech, cestu k 5 % zbývá dopočítat. Hrazenou dentální hygienu do 18 let zatím pokrývá fluoridový lak a zalití rýh (0,3 až 0,5 mld. Kč). Daň z tabáku a nikotinu roste postupně a její přírůstek jde na podporu těch, kdo chodí na prevenci (Pil4.11, Pil4.12); pozvánky na všechny screeningy zbývá doplnit.",
     dispute:
       "Daně z alkoholu a tabáku fungují na celou populaci, ale jsou politicky nepopulární a dopadají víc na lidi s nízkými příjmy. Automatické pozvánky zvyšují účast, ale i náklady a riziko zbytečné diagnostiky; kde končí prevence a začíná poručnický přístup státu, je otevřená otázka.",
   },

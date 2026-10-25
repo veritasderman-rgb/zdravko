@@ -176,7 +176,7 @@ Pracovní podklad pro resortní tým · 23. 10. 2026
 | Navigace po pozitivním screeningu (Pil4.8 ř. 1109) | pilot ve dvou krajích | NSC zavedlo koordinátory screeningových programů a krajské koordinátory (s. 44–45); plánuje centrální rezervační systém (s. 43, s. 46) a eŽádanku s hodnotou TOKS | Koncepce má navíc | Pilot navigace postavit na infrastruktuře NSC (E, bod 12). |
 | Kapacita kolonoskopie (ř. 342) | Ověřit | výzva na technické vybavení koloskopických pracovišť (s. 45), bez kapacit | Koncepce nemá (čísla) | Viz D2. |
 | Daně z alkoholu a cukru (J8, J9) | 5 mld. Kč ročně | Žádné daňové opatření; tabák a alkohol jen v seznamu priorit primární prevence (s. 24) | Koncepce nemá | Nepsat „stejným směrem jako MZ“. Studie zde jde nad rámec Koncepce a má to říct. |
-| Fond prevence a bonusy (P4; Část VI ř. 1547) | Národní fond prevence 2 mld. Kč; odměnu za prevenci platit jen z fondu prevence | posílení fondů prevence pojišťoven a individuální zdravotní účty (s. 76, s. 78); cílem bylo i „systém bonusů … umožňující individuální účty“ (s. 49) | potvrzuje cíl, liší se nástroj | Viz E, bod 14. |
+| Fond prevence a bonusy (P4; Část VI ř. 1547) | Fond prevence 2 mld. Kč; odměnu za prevenci platit jen z fondu prevence | posílení fondů prevence pojišťoven a individuální zdravotní účty (s. 76, s. 78); cílem bylo i „systém bonusů … umožňující individuální účty“ (s. 49) | potvrzuje cíl, liší se nástroj | Viz E, bod 14. |
 | Zátěž chronickými nemocemi | Studie nemá | téměř 68 % seniorů nad 65 let má aspoň jednu vážnou chronickou nemoc (EHES 2019, s. 20); až 30 % lidí nad 65 let má víc než dvě (s. 35); přes 1 milion diabetiků (s. 22) | Koncepce má navíc | Doplnit do Části I (odvratitelné hospitalizace). |
 
 ### B8. Léky a elektronizace
@@ -212,7 +212,7 @@ Pracovní podklad pro resortní tým · 23. 10. 2026
 | HSPA jako rámec v zákoně (P5 ř. 2251, 2498) | Rada HSPA schvaluje, ÚZIS počítá | HSPA je programový cíl NIKEZ č. 4 (s. 58); MZ chce „výroční zprávy o výkonnosti systému“ (s. 14); resortní referenční statistiky až na úroveň poskytovatelů (s. 56) | potvrzuje směr | Zvážit, zda místo nové Rady HSPA nevyužít Řídicí radu NIKEZ nebo Radu NZIS. |
 | Národní screeningové centrum | Studie nezmiňuje | schváleno vládou v květnu 2025 jako koordinátor screeningů (s. 35); 40 kmenových zaměstnanců (s. 39) | Koncepce má navíc | Doplnit do pilíře 4 (E, bod 12). |
 | Hygienická služba a NIVZ (Část VI ř. 1553; ř. 80) | vládní reforma sloučí 14 KHS, SZÚ a dva zdravotní ústavy (17 institucí) | Národní institut veřejného zdraví „vznikne konsolidací“ SZÚ, obou zdravotních ústavů a Státní hygienické služby jako nástupce 14 KHS (s. 26); Státní hygienická služba jako ústřední orgán (s. 145) | potvrzuje | V Části VI napsat, že vládní předloha převzala záměr Koncepce 2025 (s. 26). Institut má být „odborným nezávislým zázemím pro vznik podkladů pro zdravotní politiku státu“ (s. 26), což podporuje PN studie o hodnocení prevence. |
-| Rada vlády pro veřejné zdraví | Studie nezmiňuje | usnesení vlády č. 602/2024 ze 4. 9. 2024 (s. 25) | Koncepce má navíc | Zmínit u P4 jako místo pro koordinaci Národního fondu prevence. |
+| Rada vlády pro veřejné zdraví | Studie nezmiňuje | usnesení vlády č. 602/2024 ze 4. 9. 2024 (s. 25) | Koncepce má navíc | Zmínit u P4 jako místo pro koordinaci Fondu prevence. |
 | Nemocniční ombudsman (M9.1) | navazuje na zák. 290/2025 Sb. | další rozvoj funkce nemocničního ombudsmana (s. 57) | potvrzuje | Volitelně citovat. |
 
 ### B11. Výzkum
@@ -256,11 +256,11 @@ Legenda ve sloupci „Vztah“: **stejný směr** (studie má výslovně napsat,
 
 **Kde Koncepce něco řeší a studie ne.** Národní screeningové centrum a celý cyklus screeningových programů (kap. II). Kvalita a doporučené postupy přes NIKEZ (kap. III). Léková politika v části výpadků a cenové regulace (kap. VI) je ve studii jen jako brief. Vzdělávání lékařů včetně kmenů a Systému Administrace (kap. VII). Kyberbezpečnost a EHDS (kap. IX). Výzkumné instituce (kap. XI).
 
-**Kde studie jde dál.** Spotřební daně za zdraví (J8, J9) a Národní fond prevence (P4). Zákon o síti lůžkové péče s krajským plánem a kontrolními body (J6, J7). Sesterská složka úhrady a APN s termínem (J2). Triážní údaj a garance termínu (J5). Nový vzorec platby státu podle nákladů péče (J10). Sociální účet dlouhodobé péče (P3).
+**Kde studie jde dál.** Spotřební daně za zdraví (J8, J9) a Fond prevence (P4). Zákon o síti lůžkové péče s krajským plánem a kontrolními body (J6, J7). Sesterská složka úhrady a APN s termínem (J2). Triážní údaj a garance termínu (J5). Nový vzorec platby státu podle nákladů péče (J10). Sociální účet dlouhodobé péče (P3).
 
 **Kde studie jde jinak nebo proti.**
 
-1. **Fondy prevence pojišťoven** (M2.3): Koncepce je posiluje a chce individuální bonusy (s. 76, s. 78); studie je chce přeměnit na fondy rozšířené péče a prevenci přesunout do Národního fondu prevence a týmů.
+1. **Fondy prevence pojišťoven** (M2.3): Koncepce je posiluje a chce individuální bonusy (s. 76, s. 78); studie je chce přeměnit na fondy rozšířené péče a prevenci přesunout do Fondu prevence a týmů.
 2. **Odměna za prevenci pro pojištěnce**: Koncepce cílí na individuální účty a bonusy (s. 49, s. 76); studie v Části VI (ř. 1547) přijímá odměnu jen z fondu prevence a s měřením pokrytí. Není to rozpor, ale studie má říct, že bonusy jako nástroj nepovažuje za hlavní.
 3. **Nezávislost hodnocení**: NIKEZ je součástí řídících struktur MZ (s. 53); studie chce nezávislé hodnocení (M1.2, M4.4). Jde o krok dál, ne proti.
 
@@ -300,7 +300,7 @@ Důvodem je obvykle to, že Koncepce je k 1. 8. 2025 a otázka se týká pozděj
 - **Dětská psychiatrie po krajích** (ř. 954, 2692). Koncepce má jen IROP 110 dětských psychiatrických lůžek celkem (s. 150).
 - **Dojezdy ZZS** (ř. 964, 2018, 2693). Koncepce má jen úvazky záchranářů 19,2–63,1 na 100 tis. obyvatel (s. 111).
 - **Koncepce intenzivní péče (Věstník 4/2026)** (ř. 970, 2694). Pozdější dokument.
-- **Víno, slazené nápoje, minimální cena, Národní fond prevence jako státní fond** (ř. 1045–1060, 1078, 1096, 2698–2703). Koncepce daně nemá.
+- **Víno, slazené nápoje, minimální cena, Fond prevence jako státní fond** (ř. 1045–1060, 1078, 1096, 2698–2703). Koncepce daně nemá.
 - **Proočkovanost proti chřipce 65+** (ř. 1108, 2704), **navigace po screeningu: start a plátce** (ř. 1109, 1112, 2705–2706), **zubní prevence v modelu** (ř. 1114).
 - **Pilot společného rozpočtu, podpora pečujících, dříve vyslovené přání** (ř. 1138, 1152, 1169, 2708–2710). Koncepce má jen KRAPL (s. 149).
 - **Část VI: VeKLEP, tisk 235, zák. 38/2025 Sb., hygienická služba od 1. 1. 2028, sesterská preskripce** (ř. 1547–1554, 1571, 2714–2720). Koncepce dává jen výchozí záměr (NIVZ s. 26; APN s. 121 a 127), ne dnešní stav.
@@ -351,7 +351,7 @@ Důvodem je obvykle to, že Koncepce je k 1. 8. 2025 a otázka se týká pozděj
 
 13. **Brief 1, brief 4 a P5 (ř. 2166–2171, 2251).** Doplnit: „Na hodnocení kvality už od 19. 1. 2023 pracuje NIKEZ, společné pracoviště MZ a ÚZIS; mezi jeho cíle patří indikátory kvality, HSPA, predikce personálních kapacit a hodnocení programů prevence (MZ ČR, Koncepce 2025, s. 53 a 58). Metodiku hodnocení organizačních modelů (M1.1) a rámec HSPA (P5) navrhujeme vést v NIKEZ. Navíc přinášíme nezávislost hodnocení na ministerstvu a zákonné ukotvení.“
 
-14. **Brief 2, M2.3 a Část VI (ř. 2194, 1547).** Výslovně uvést odchylku: „Koncepce MZ 2025 fondy prevence pojišťoven posiluje a chce z nich individuální bonusy (s. 76 a 78). Studie je navrhuje přeměnit na fondy rozšířené péče, protože prevenci financuje Národní fond prevence s evaluací a bonusy pojištěncům mají podle studie nejistý účinek. Jde o vědomou odchylku od směru MZ.“ Pokud resortní tým odchylku nechce, M2.3 vypustit.
+14. **Brief 2, M2.3 a Část VI (ř. 2194, 1547).** Výslovně uvést odchylku: „Koncepce MZ 2025 fondy prevence pojišťoven posiluje a chce z nich individuální bonusy (s. 76 a 78). Studie je navrhuje přeměnit na fondy rozšířené péče, protože prevenci financuje Fond prevence s evaluací a bonusy pojištěncům mají podle studie nejistý účinek. Jde o vědomou odchylku od směru MZ.“ Pokud resortní tým odchylku nechce, M2.3 vypustit.
 
 15. **P1, personální bilance (ř. 2494).** Doplnit: „Bilanci po krajích postavíme na plánovacích modelech MZ z projektu JA HEROES a na cíli MZ zřídit Národní centrum pro plánování a forecasting zdravotnických pracovníků (MZ ČR, Koncepce 2025, s. 113); predikce personálních kapacit je i cílem NIKEZ (s. 58).“ Do Části VI doplnit, že vládní reforma hygienické služby převzala záměr Koncepce (s. 26) a centralizace onkochirurgie navazuje na řízenou koncentraci péče od roku 2023 (s. 77, 82).
 

@@ -103,7 +103,7 @@ export function MoneyFlowsFigure() {
         </section>
         <section aria-label="Toky peněz po reformě" className="border-t border-line pt-5">
           <p className="mb-3 text-[13px] font-bold uppercase tracking-[0.06em] text-muted">Po reformě, plný náběh kolem roku 2038</p>
-          <Canvas id="dg-tp2" W={W} H={H} placed={after} paths={afterPaths} ariaLabel="Toky peněz po reformě: daně za zdraví, fond přeměny, Národní fond prevence a sociální účet jako nové prvky" />
+          <Canvas id="dg-tp2" W={W} H={H} placed={after} paths={afterPaths} ariaLabel="Toky peněz po reformě: daně za zdraví, fond přeměny, Fond prevence a sociální účet jako nové prvky" />
           <NarrowFlows nodes={D.after.nodes} edges={D.after.edges} />
         </section>
         <section aria-label="Kdo zaplatí reformu" data-anim className="rounded-[12px] bg-sand p-3">

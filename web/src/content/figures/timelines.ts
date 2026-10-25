@@ -109,7 +109,7 @@ export const PILLAR_ROWS: PillarRow[] = [
     ],
   },
   {
-    code: "P4", label: "Národní fond prevence", pillar: 4,
+    code: "P4", label: "Fond prevence", pillar: 4,
     short: "2030 → 1. 1. 2031",
     term: "Teze do B1 (6/2028); předložit 2030, účinnost 1. 1. 2031; příjem z daně ze slazených nápojů od 1. 1. 2032",
     src: "ř. 1004, 1080, 2497",
@@ -213,7 +213,7 @@ export const PILLAR_ROWS: PillarRow[] = [
     src: "ř. 1092 a násl., registr Pil4.12",
     items: [
       { t: "mark", at: 2031, kind: "eff", title: "hrazené odvykání kouření z přírůstku daně, od 1. 1. 2031" },
-      { t: "mark", at: 2032, kind: "eff", title: "příspěvek pojišťovny vázaný na preventivní prohlídku, od 1. 1. 2032" },
+      { t: "mark", at: 2032, kind: "eff", title: "pilot nižšího pojistného za aktivní péči o zdraví, ročníky do 40 let, od 1. 1. 2032" },
     ],
   },
   {
@@ -579,7 +579,7 @@ export const LANES: Lane[] = [
         row: 1, step: "10",
         items: [{ t: "bar", from: 2028.5, to: 2030, kind: "prep", label: "věcné záměry 7/2028–12/2029", pos: "r" }],
         when: "7/2028–12/2029",
-        text: "Věcné záměry zákona o primární péči, zákona o síti, finanční novely, daňového zákona a zákona o Národním fondu prevence; teze tří záměrů už k B1.",
+        text: "Věcné záměry zákona o primární péči, zákona o síti, finanční novely, daňového zákona a zákona o Fondu prevence; teze tří záměrů už k B1.",
       },
       {
         row: 2, step: "18, 24",
@@ -609,9 +609,9 @@ export const LANES: Lane[] = [
       },
       {
         row: 1, step: "8",
-        items: [{ t: "mark", at: 2028.45, kind: "step", label: "jedno číslo daní: 5 mld. Kč (do 6/2028)", pos: "r" }],
+        items: [{ t: "mark", at: 2028.45, kind: "step", label: "plánovací hodnota daní: 5 mld. Kč (do 6/2028)", pos: "r" }],
         when: "do 6/2028",
-        text: "Strana přijme jedno číslo daní za zdraví (5 mld. Kč ročně, rozpětí 5–7) a pravidlo dělení: 2 mld. Kč fondu prevence, zbytek platbě státu.",
+        text: "Strana potvrdí plánovací hodnotu daní za zdraví pro rozpočet reformy (5 mld. Kč ročně, rozpětí 5–7) vedle cíle PEER (10–15 mld. Kč) a pravidlo dělení podle PEER: nejméně 40 % Fondu prevence, aspoň 2 mld. Kč, zbytek platbě státu.",
       },
       {
         row: 2, step: "15, 20",
@@ -620,7 +620,7 @@ export const LANES: Lane[] = [
           { t: "mark", at: 2031, kind: "eff" },
         ],
         when: "předložit 1. pol. 2030, účinnost 1. 1. 2031",
-        text: "Vlna 1: nový vzorec platby státu (J10), daň z tichého vína a valorizace (J8; víno poloviční sazbou 2031–2032, plná 2033), zákon o Národním fondu prevence (P4). Úhradová vyhláška 2031: sesterská složka úhrady, platba za funkce, nové výkony.",
+        text: "Vlna 1: nový vzorec platby státu (J10), daň z tichého vína a valorizace (J8; víno poloviční sazbou 2031–2032, plná 2033), zákon o Fondu prevence (P4). Úhradová vyhláška 2031: sesterská složka úhrady, platba za funkce, nové výkony.",
       },
       {
         row: 3, step: "16",

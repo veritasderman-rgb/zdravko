@@ -12,7 +12,7 @@ Termíny a cíle platí pro základní scénář „Vláda 2030“, ve kterém P
 
 **Jak připomínkovat.** Připomínky lze vložit komentářem přímo do dokumentu, nebo poslat e-mailem resortnímu týmu. Ověřit: e-mailová adresa resortního týmu. První kolo připomínek končí 31. 3. 2027. Kulaté stoly proběhnou v roce 2027. Vypořádání bude zveřejněno před bránou B1 (červen 2028).
 
-**Co se změnilo proti verzi 3.** Verze 3.1 opravuje a dokládá čísla a přidává dvě opatření, která ve verzi 3 chyběla: komunitní porodní asistenci jako odpověď na rušení porodnic (Pil2.6, Část III), pravidla pro střet zájmů v komisích a poradních orgánech ministerstva (M4.5, oblast 4) a postupný růst daní z tabáku a nikotinu s podporou těch, kdo chodí na prevenci (Pil4.11 a Pil4.12, pilíř 4; výnos mimo plánovací hodnotu 5 mld. Kč). Ostatní opatření, jejich kódy ani model nákladů nemění. Pro ověření dat jsme použili i dokument MZ ČR, Strategické analýzy potřeb rezortu zdravotnictví 2025 (dále „MZ ČR 2025“), a kde to šlo, číslo dokládáme primárním zdrojem.
+**Co se změnilo proti verzi 3.** Verze 3.1 opravuje a dokládá čísla a přidává dvě opatření, která ve verzi 3 chyběla: komunitní porodní asistenci jako odpověď na rušení porodnic (Pil2.6, Část III), pravidla pro střet zájmů v komisích a poradních orgánech ministerstva (M4.5, oblast 4) a postupný růst daní z tabáku a nikotinu s podporou těch, kdo chodí na prevenci (Pil4.11 a Pil4.12, pilíř 4; výnos mimo plánovací hodnotu 5 mld. Kč). Studie nově výslovně vychází ze schválené Hospodářské strategie PEER: přebírá její nadřazený cíl (+5 let života ve zdraví během jedné generace), pravidlo nejméně 40 % výnosu daní za zdraví pro Fond prevence zdravotních pojišťoven a model zvýhodnění těch, kdo aktivně pečují o své zdraví (Pil4.12); přehled je v oddílu „Z čeho studie vychází“. Ostatní opatření, jejich kódy ani model nákladů nemění. Pro ověření dat jsme použili i dokument MZ ČR, Strategické analýzy potřeb rezortu zdravotnictví 2025 (dále „MZ ČR 2025“), a kde to šlo, číslo dokládáme primárním zdrojem.
 
 - Sestry: místo „přes 30 000 úvazků“ a „1 300 absolventek“ čísla z vládního programu pro nelékařské profese 2026–2037 (nejméně 24 000 úvazků všeobecných sester za 10 až 12 let; 680 absolventů VŠ a 570 VOŠ ročně); 440 sester ročně je asi čtvrtina všeobecných sester ze škol v letech 2026–2037, ne třetina; věk sester doplněn.
 - Lůžka dlouhodobé péče: jeden zdroj čísla 39 000 (Přecechtěl a Hlávka 2025, zdravotní i sociální lůžka) a vedle něj zdravotní část potřeby (dnes chybí 2 až 3 tisíce, do roku 2035 dalších nejméně 8 tisíc); opravena věta o „pětině potřeby“.
@@ -60,20 +60,39 @@ Termíny a cíle platí pro základní scénář „Vláda 2030“, ve kterém P
 
 Autor je členem Správní rady VZP, členem PEER a autorem HSPA Monitoru. Studie navrhuje pilot s VZP a mění složení správních rad, proto čtěte tyto části s tímto vztahem na paměti. Vyhodnocení pilotu zajišťuje nezávislý hodnotitel jmenovaný před startem. Ve Správní radě VZP se autor zdrží hlasování o pilotu a o smlouvách souvisejících s reformou.
 
+### Z čeho studie vychází: Hospodářská strategie PEER
+
+Studie rozpracovává dva dokumenty strany. Manifest reformy českého zdravotnictví (7. 5. 2026) dává třináct oblastí a jejich sliby (Část XI). Hospodářská strategie Pirátské expertní ekonomické rady (PEER), schválený programový dokument strany ze srpna 2026, dává v kapitole 1.4 „Zdraví a soběstačnost přinesou silnější ekonomiku“ cíl, čísla a pravidla, ze kterých studie vychází. Kde se studie a strategie liší v rozsahu nebo načasování, platí strategie jako program strany a studie uvádí, proč s něčím v rozpočtu reformy počítá opatrněji.
+
+| Hospodářská strategie PEER (kap. 1.4) | Kde ve studii | Jak to studie přebírá |
+| --- | --- | --- |
+| Nadřazený cíl: prodloužit délku života ve zdraví o 5 let během jedné generace | Co chceme; Část IX, nadřazený cíl | Převzato jako cíl, ke kterému míří všech pět cílů a 20 ukazatelů |
+| Úhrady lékařům za krátké intervence a nasměrování k programům životního stylu, ne za počet prohlídek | J1 (odměna za výsledky), Pil4.9 | Převzato |
+| Spotřební daň ze slazených nápojů, zdanění tichého vína, úprava daní z alkoholu; výnos 10 až 15 mld. Kč ročně | J8, J9, Pilíř 4 | Převzata všechna tři opatření. Rozpočet reformy plánuje opatrně s 5 mld. Kč (rozpětí 5 až 7) a cíl PEER uvádí vedle; rozdíl není výdajem reformy |
+| Nejméně 40 % výnosu účelově do Fondu prevence zdravotních pojišťoven | P4 | Převzato; zákon navíc stanoví dolní hranici 2 mld. Kč pro roky nižšího výnosu |
+| Přesun péče z lůžek: podíl nemocniční péče na rozpočtu z 46,5 % k průměru EU 36,4 % do roku 2035; regionální sítě nemocnic; kapacity domácí a terénní péče ve stejném čase | J6, J7, Pil2.2; H6 | Převzat směr i podmínka souběžných kapacit; ukazatel PEER sledujeme vedle H6. Kolik z 10 procentních bodů pokryjí opatření studie, zatím nevyčíslujeme. Ověřit: propočet pro verzi 4 |
+| Hodnocení nákladové efektivity pro všechny hrazené intervence, se započtením úspor v sociálním systému | Oblast 1 (M1.1–M1.4) | Převzato, včetně sociálních úspor |
+| Neformální pečující, terénní, asistenční a odlehčovací služby (navýšení financování o 40 až 50 mld. Kč za deset let), deinstitucionalizace, personál sociálních služeb | Pilíř 5, P3, Pil5.4 | Převzat směr; navýšení je výdajem MPSV, krajů a obcí mimo model reformy (21,5 mld. Kč) |
+| Financování dlouhodobé péče: u seniorů prověřit vyšší spoluúčast, pojištění dlouhodobé péče a majetkové testování; u lidí se zdravotním postižením stát a asi 3 % krajského a obecního RUD | P3 | Převzato jako zadání k prověření ve fázi F1; zákon o pojištění dlouhodobé péče jen při rozhodnutí (vlna 4) |
+| Zvýhodnění těch, kdo aktivně pečují o své zdraví: část pojistného navázaná na doložitelné zapojení a zlepšení v čase, ne na razítko z prohlídky; pilotně a povinně pro ročníky do 40 let, s reformou daně z příjmů fyzických osob | Pil4.12 | Převzato |
+| Další peníze přes odvody jsou vyčerpané; změna pojistného jen spolu s úpravou daně z příjmu | Část V | Převzato jako pravidlo: reforma odvody nemění, a pokud se pojistné někdy zvýší, pak jen s nižší daní z příjmu |
+
+Manifest a strategie se rozcházejí v jednom bodě. Manifest chce dnešní fond prevence pojišťoven přeměnit na fond rozšířené péče, strategie posílá výnos daní do Fondu prevence zdravotních pojišťoven. Studie drží obojí: dnešní fondy prevence, plněné ze zisku pojišťoven a bez pravidel, se mění na fondy rozšířené péče (M2.3) a nový Fond prevence zdravotních pojišťoven plní zákonem podíl daní za zdraví podle pravidel strategie (P4).
+
 ## Manažerské shrnutí
 
 Kolem roku 2038 má každý obyvatel svůj tým primární péče se sestrou, která má vlastní pacienty, 8 000 akutních lůžek je přeměněno na následnou a dlouhodobou péči a zdravotní pojištění má stabilní zdroj z daní za zdraví a nového vzorce platby státu. Reforma bude v plném náběhu stát čistě asi 21,5 mld. Kč ročně (rozpětí 15 až 25 mld. Kč, ceny 2026), tedy necelá 4 % dnešních výdajů zdravotního pojištění; první zákony nabývají účinnosti 1. 1. 2031 a 1. 1. 2032 ve scénáři „Vláda 2030“. Roky 2026 až 2029 jsou konzultační: představujeme plán a hledáme pro něj podporu; do voleb chceme mít dohodu s odborníky, hotové věcné záměry zákonů a běžící pilot.
 
 ### Co chceme
 
-**Kolem roku 2038 má každý obyvatel Česka svůj tým primární péče a jmenovitého lékaře, ke specialistovi se dostane podle naléhavosti a na akutním lůžku leží jen tehdy, když ho skutečně potřebuje.** Cíl se rozpadá na pět měřitelných cílů, jeden za každý pilíř; každý má hlavní ukazatel z Části IX. Hodnoty pro rok 2033 jsou data za rok 2032, tedy první rok účinnosti zákona o primární péči.
+**Kolem roku 2038 má každý obyvatel Česka svůj tým primární péče a jmenovitého lékaře, ke specialistovi se dostane podle naléhavosti a na akutním lůžku leží jen tehdy, když ho skutečně potřebuje.** Nad tím stojí cíl z Hospodářské strategie PEER: prodloužit délku života ve zdraví o pět let během jedné generace (dnes 61,2 roku u mužů a 62,4 roku u žen, průměr EU 63,5 a 64,2). Cíl se rozpadá na pět měřitelných cílů, jeden za každý pilíř; každý má hlavní ukazatel z Části IX. Hodnoty pro rok 2033 jsou data za rok 2032, tedy první rok účinnosti zákona o primární péči.
 
 | Cíl | Hlavní ukazatel | Dnes | 2033 | Kolem 2038 |
 | --- | --- | --- | --- | --- |
 | 1. Každý má svůj tým a jmenovitého lékaře | lidé bez registrujícího praktika (H1); týmy a obsazená místa sester (H2); kontinuita, index UPC (H4) | 0 týmů podle standardu; UPC se neměří | v ORP s týmem aspoň o polovinu méně lidí bez praktika; obsazeno aspoň 50 % míst sester; UPC aspoň 0,7 | 520 týmů a asi 4 000 sester navíc; 0 lidí bez praktika v ORP s týmem; obsazeno aspoň 80 % míst |
 | 2. Akutní lůžko jen tam, kde je potřeba | podíl akutní lůžkové péče na výdajích (H6) | 29,7 % (2024); 48 036 akutních lůžek | 28 % | 26 %; 8 000 přeměněných lůžek (ze 48 036 na asi 40 000, ze 4,4 na 3,7 na 1 000 obyvatel) |
 | 3. Ke specialistovi podle naléhavosti | čekání podle triážní kategorie eŽádanky (H3) | neměří se | aspoň 80 % urgentních ve lhůtě | aspoň 90 % ve všech kategoriích |
-| 4. Méně nemocí, kterým lze předejít | odvratitelná úmrtnost (H7) | 107,2 léčitelných úmrtí na 100 000 (EU 86,8) | sledujeme bez cíle; daně za zdraví účinné od 1. 1. 2031 | sledujeme bez cíle; daně za zdraví 5 mld. Kč ročně, z toho 2 mld. Kč Národnímu fondu prevence |
+| 4. Méně nemocí, kterým lze předejít | odvratitelná úmrtnost (H7) | 107,2 léčitelných úmrtí na 100 000 (EU 86,8) | sledujeme bez cíle; daně za zdraví účinné od 1. 1. 2031 | sledujeme bez cíle; daně za zdraví 5 mld. Kč ročně, z toho 2 mld. Kč Fondu prevence |
 | 5. Péče doma, ne na lůžku z nouze | odvratitelné hospitalizace na 100 000 obyvatel (H5) | 592 | 550 | 530 |
 
 Všech pět cílů má jednu společnou podmínku: nesmějí růst přímé platby pacientů. Hlídá ji ukazatel katastrofických výdajů domácností (H8): dnes 6 % domácností, v nejchudší pětině 21 %, a nesmí se zhoršit. Cílové hodnoty jsou návrh k diskusi v konzultaci.
@@ -91,14 +110,14 @@ Mezi schválením této verze 7. 12. 2026 a cílovým stavem kolem roku 2038 le�
 | 5 | Jmenování nezávislého hodnotitele pilotu, zveřejněný protokol a kontrolní ORP | smlouva o hodnocení | ÚZIS s univerzitou; kraj a VZP | do 12/2027 | 4 |
 | 6 | Pozměňovací návrhy k vládním předlohám: reforma v. z. p. 2030 (víceleté smlouvy i pro týmy), novela zák. 325/2021 Sb. (triážní údaj v eŽádance), reforma hygienické služby (prevence v NIVZ) | pozměňovací návrhy poslaneckého klubu | poslanecký klub | 2027–2028 podle projednávání ve Sněmovně | 2 |
 | 7 | Start pilotu ve třech ORP, provoz dva roky | smlouvy z řádku 4 | týmy, VZP, kraj, obce | 1. 1. 2028; provoz 2028–2029 | 4, 5 |
-| 8 | Strana přijme jedno číslo daní za zdraví (5 mld. Kč ročně, rozpětí 5–7) a pravidlo dělení: 2 mld. Kč fondu prevence, zbytek platbě státu | usnesení strany | předsednictvo na návrh RT a PEER | do 6/2028 | 2 |
-| 9 | **Brána B1 „Mandát“:** připomínky vypořádané a zveřejněné; plán je projednaný se všemi 10 klíčovými organizacemi a jejich výhrady jsou zapracované; pilot podepsán (jinak náhradní smluvní model u jedné pojišťovny); jedno číslo daní | veřejné rozhodnutí RT a strany | RT | 6/2028 | 2, 4, 6, 7, 8 |
-| 10 | Věcné záměry: zákon o primární péči (s pracovním zněním a RIA), zákon o síti (s ústavním rozborem), finanční novela (§ 3c zák. 592/1992 Sb., zák. 353/2003 Sb.), zákon o dani ze slazených nápojů, zákon o Národním fondu prevence; stanovisko k SGEI a veřejné podpoře do 6/2029 | věcné záměry, pracovní znění, právní stanoviska | RT a Institut Pi, garanti podle řádku 1 | 7/2028–12/2029; teze tří záměrů už k B1 | 9 |
+| 8 | Strana potvrdí plánovací hodnotu daní za zdraví pro rozpočet reformy (5 mld. Kč ročně, rozpětí 5–7) vedle cíle Hospodářské strategie PEER (10–15 mld. Kč) a pravidlo dělení podle PEER: nejméně 40 % Fondu prevence, nejméně 2 mld. Kč, zbytek platbě státu | usnesení strany | předsednictvo na návrh RT a PEER | do 6/2028 | 2 |
+| 9 | **Brána B1 „Mandát“:** připomínky vypořádané a zveřejněné; plán je projednaný se všemi 10 klíčovými organizacemi a jejich výhrady jsou zapracované; pilot podepsán (jinak náhradní smluvní model u jedné pojišťovny); plánovací hodnota daní potvrzena | veřejné rozhodnutí RT a strany | RT | 6/2028 | 2, 4, 6, 7, 8 |
+| 10 | Věcné záměry: zákon o primární péči (s pracovním zněním a RIA), zákon o síti (s ústavním rozborem), finanční novela (§ 3c zák. 592/1992 Sb., zák. 353/2003 Sb.), zákon o dani ze slazených nápojů, zákon o Fondu prevence; stanovisko k SGEI a veřejné podpoře do 6/2029 | věcné záměry, pracovní znění, právní stanoviska | RT a Institut Pi, garanti podle řádku 1 | 7/2028–12/2029; teze tří záměrů už k B1 | 9 |
 | 11 | Průběžné vyhodnocení pilotu po roce provozu, promítnuté do věcného záměru zákona o primární péči | zpráva hodnotitele | nezávislý hodnotitel | jaro 2029 | 7 |
 | 12 | Volební program 2029 s jádrem J1–J10, ohlášením daně ze slazených nápojů, personální bilancí po krajích a otevřeným modelem nákladů | program strany | strana | do voleb 10/2029 | 9, 10 |
 | 13 | **Brána B2 „Koaliční smlouva“:** jádro v koaliční smlouvě a programovém prohlášení; předlohy vln 1–3 v legislativním plánu vlády 2030 | koaliční smlouva, usnesení vlády | vyjednávací tým, vláda | 12/2029–1/2030 | 10, 12 |
 | 14 | Řízení ve vládě: řídicí výbor (MZ, MPSV, MMR, MF, pojišťovny, kraje, obce, praktici, pacienti), projektová kancelář (0,4 mld. Kč ročně), dva nové týmy legislativního odboru MZ | usnesení vlády, rozhodnutí ministra | vláda, MZ | do 3/2030 | 13 |
-| 15 | **Vlna 1:** nový vzorec platby státu (§ 3c zák. 592/1992 Sb., J10); daň z tichého vína a valorizace daní z lihu a piva (zák. 353/2003 Sb., J8; víno poloviční sazbou 2031–2032, plná 2033); zákon o Národním fondu prevence (P4) | jedna malá a dvě střední předlohy | MF s MZ | předložit 1. pololetí 2030; účinnost 1. 1. 2031 | 13, 14 |
+| 15 | **Vlna 1:** nový vzorec platby státu (§ 3c zák. 592/1992 Sb., J10); daň z tichého vína a valorizace daní z lihu a piva (zák. 353/2003 Sb., J8; víno poloviční sazbou 2031–2032, plná 2033); zákon o Fondu prevence (P4) | jedna malá a dvě střední předlohy | MF s MZ | předložit 1. pololetí 2030; účinnost 1. 1. 2031 | 13, 14 |
 | 16 | Zákon o dani ze slazených nápojů (J9), pásma podle cukru | nový zákon, střední předloha | MF, Celní správa | přijat 2030; účinnost 1. 1. 2032 | 12, 13 |
 | 17 | Závěrečné vyhodnocení pilotu, promítnuté do paragrafového znění vlny 2; od 2030 rozšíření pilotu do dalších regionů | zpráva hodnotitele | nezávislý hodnotitel | 2030 | 7, 11 |
 | 18 | **Vlna 2:** zákon o primární péči (nová hlava zák. 372/2011 Sb. a novela zák. 48/1997 Sb.: standard týmu, víceletá smlouva se všemi pojišťovnami, sesterská složka, registrace do 30 dnů; J1–J4); novela zák. 325/2021 Sb. (J5), pokud triážní údaj neprošel v řádku 6 | velká předloha; malá novela | MZ, tým pro primární péči | předložit 2. pololetí 2030; účinnost 1. 1. 2032 | 10, 13, 14, 17 |
@@ -157,7 +176,7 @@ Reforma bude v plném náběhu kolem roku 2038 stát čistě asi 21,5 mld. Kč r
 
 Rozdíl A proti B (asi 3,8 mld. Kč ročně a 17 až 23 mld. Kč investic) kupuje další profese, budovy, spádovou odpovědnost a schopnost vstoupit tam, kde praxe zanikla: v obcích do 2 000 obyvatel jich v letech 2018 až 2022 zaniklo 428.
 
-**Kdo to zaplatí.** Reformu zaplatí daně za zdraví (5 mld. Kč), státní rozpočet (asi 15,5 mld. Kč, z toho asi 13 mld. Kč vyšší platbou za státní pojištěnce, tedy asi 180 Kč měsíčně na osobu) a obce (asi 1 mld. Kč); 100 Kč měsíčně znamená 7,2 mld. Kč ročně. Daně za zdraví přinesou plánovaně 5 mld. Kč ročně (5 až 7): 2 mld. Kč dostane Národní fond prevence, zbytek zvýší platbu státu do zdravotního pojištění. Odvody z práce se nemění a nesnižují; vyšší odhady výnosu (10 až 17 mld. Kč) jsou horní scénář, který do rozpočtu reformy nepočítáme.
+**Kdo to zaplatí.** Reformu zaplatí daně za zdraví (5 mld. Kč), státní rozpočet (asi 15,5 mld. Kč, z toho asi 13 mld. Kč vyšší platbou za státní pojištěnce, tedy asi 180 Kč měsíčně na osobu) a obce (asi 1 mld. Kč); 100 Kč měsíčně znamená 7,2 mld. Kč ročně. Daně za zdraví přinesou plánovaně 5 mld. Kč ročně (5 až 7): 2 mld. Kč dostane Fond prevence, zbytek zvýší platbu státu do zdravotního pojištění. Odvody z práce se nemění a nesnižují; vyšší odhady výnosu (10 až 17 mld. Kč) jsou horní scénář, který do rozpočtu reformy nepočítáme.
 
 Pokud se dnešní podpora týmových praxí (asi 10 mld. Kč z pojištění do roku 2030 podle implementačního plánu MZ) udrží v úhradové vyhlášce i po roce 2030, lékařská složka ji nahradí a náklad nad plán MZ klesne asi na 19,5 mld. Kč. Model počítá konzervativně plnou částku.
 
@@ -180,8 +199,8 @@ Do voleb v říjnu 2029 uděláme sedm věcí, z nichž žádná nepotřebuje vl
 3. **Podněty do úhrad 2028** (do 30. 6. 2027): sesterská složka u týmových praxí a platba za funkce do dohodovacího řízení; konzultace lékař–lékař, telemonitoring a ultrazvuk u praktika do seznamu výkonů; kompetence sester do vyhl. 55/2011 Sb. Rozhoduje dnešní MZ; v základním scénáři s přijetím nepočítáme.
 4. **Pilot ve třech ORP** (dohoda do 30. 6. 2027, hodnotitel do 12/2027, provoz od 1. 1. 2028): kraj, který se přihlásí, VZP a obce; 100 až 150 tisíc obyvatel, 30 až 50 mil. Kč ročně; průběžné vyhodnocení na jaře 2029. Bez dohody náhradní smluvní model u jedné pojišťovny.
 5. **Pozměňovací návrhy k vládním předlohám** (2027–2028): víceleté smlouvy i pro týmy do reformy v. z. p. 2030, triážní údaj do novely zák. 325/2021 Sb., prevence do reformy hygienické služby. Navazujeme na vládní reformy, ne protinávrhem.
-6. **Brána B1 „Mandát“** (6/2028): plán je projednaný se všemi 10 klíčovými organizacemi a jejich výhrady jsou zapracované, pilot je podepsaný a strana přijala jedno číslo daní za zdraví (5 mld. Kč ročně). Co není projednané nebo zůstalo bez dohody, do volebního programu nejde.
-7. **Věcné záměry a program** (7/2028–12/2029): zákon o primární péči s pracovním zněním a RIA, zákon o síti s ústavním rozborem a stanoviskem k SGEI do 6/2029, finanční novela, daň ze slazených nápojů, zákon o Národním fondu prevence; volební program 2029 s jádrem J1–J10 a text jádra pro koaliční smlouvu (brána B2).
+6. **Brána B1 „Mandát“** (6/2028): plán je projednaný se všemi 10 klíčovými organizacemi a jejich výhrady jsou zapracované, pilot je podepsaný a strana potvrdila plánovací hodnotu daní za zdraví pro rozpočet reformy (5 mld. Kč ročně) vedle cíle PEER (10 až 15 mld. Kč). Co není projednané nebo zůstalo bez dohody, do volebního programu nejde.
+7. **Věcné záměry a program** (7/2028–12/2029): zákon o primární péči s pracovním zněním a RIA, zákon o síti s ústavním rozborem a stanoviskem k SGEI do 6/2029, finanční novela, daň ze slazených nápojů, zákon o Fondu prevence; volební program 2029 s jádrem J1–J10 a text jádra pro koaliční smlouvu (brána B2).
 
 Rozdělení věcných záměrů mezi členy resortního týmu projedná schůzka 9. 11. 2026; příprava běží v resortním týmu s Institutem Pi a poslaneckým klubem.
 
@@ -368,8 +387,8 @@ Každý problém výše má v jádru reformy (J1–J10) nebo v jejích podmínk�
 | Čekací doby se neměří, ke specialistovi se dostane dřív ten, kdo dřív zavolá | eŽádanka není povinná a nenese údaj o naléhavosti | J5 eŽádanka s triážním údajem a měření čekání |
 | Potřeba nejméně 24 000 nových úvazků všeobecných sester za 10–12 let, primární péče bez sester | Stárnutí sester, nízký přísun všeobecných sester, sesterská práce v ordinaci se neplatí | J2; P1 personální bilance po krajích |
 | Do roku 2035 je potřeba asi 39 000 nových zdravotních i sociálních lůžek dlouhodobé a následné péče (z toho zdravotních dnes chybí 2–3 tisíce a do 2035 dalších nejméně 8 tisíc) a 21 000 pečovatelů | Dva resorty a dvojí financování, kapacitu nikdo neplánuje jako celek | J7; P3 sociální účet a sdílené financování sociálně-zdravotní péče; J4 |
-| Schodek pojištění od roku 2023, zůstatek základních fondů 69,9 → 43,2 mld. Kč | Platba státu nesleduje náklady na péči; stárnutí | J10 nový vzorec platby státu; J8 a J9, jejichž výnos nad pevnou část pro Národní fond prevence zvyšuje platbu státu |
-| Alkohol, cukr, obezita; nízký screening tlustého střeva a očkování seniorů | Nízké spotřební daně, nulová sazba na tiché víno, žádná daň ze slazených nápojů; prevence bez stabilního zdroje | J8 daň z tichého vína a valorizace daní z lihu a piva; J9 pásmová daň ze slazených nápojů; P4 Národní fond prevence |
+| Schodek pojištění od roku 2023, zůstatek základních fondů 69,9 → 43,2 mld. Kč | Platba státu nesleduje náklady na péči; stárnutí | J10 nový vzorec platby státu; J8 a J9, jejichž výnos nad pevnou část pro Fond prevence zvyšuje platbu státu |
+| Alkohol, cukr, obezita; nízký screening tlustého střeva a očkování seniorů | Nízké spotřební daně, nulová sazba na tiché víno, žádná daň ze slazených nápojů; prevence bez stabilního zdroje | J8 daň z tichého vína a valorizace daní z lihu a piva; J9 pásmová daň ze slazených nápojů; P4 Fond prevence |
 | Katastrofické výdaje má 21 % domácností nejchudší pětiny | Doplatky na léky a platby u zubaře | Mimo jádro: policy briefy Dostupné léky a Reforma stomatologie (Část XI); ukazatel katastrofických výdajů (Část IX) |
 | Výkonnost systému se hodnotí nahodile a se zpožděním | Chybí závazný rámec hodnocení a data v reálném čase | P5 HSPA jako oficiální rámec hodnocení v zákoně; J5 |
 
@@ -399,7 +418,7 @@ Celostátní data ÚZIS přicházejí se zpožděním jednoho až tří let. Pr�
 
 ### Teorie změny
 
-**Reforma působí přes pět řetězců, které vedou od peněz, lidí a pravidel k delšímu životu ve zdraví; každý má měřitelný mezikrok a všechny stojí na čtyřech předpokladech.** Diagram níže se čte zleva doprava: co do reformy vstupuje, co se dělá, co vznikne, co se změní pro pacienty a co z toho plyne pro celou populaci.
+**Reforma působí přes pět řetězců, které vedou od peněz, lidí a pravidel k delšímu životu ve zdraví (nadřazený cíl z Hospodářské strategie PEER: +5 let během jedné generace); každý má měřitelný mezikrok a všechny stojí na čtyřech předpokladech.** Diagram níže se čte zleva doprava: co do reformy vstupuje, co se dělá, co vznikne, co se změní pro pacienty a co z toho plyne pro celou populaci.
 
 *[Graf/diagram: teorie změny · 5 řetězců, 4 předpoklady — interaktivní verze je ve čtečce na webu]*
 
@@ -477,7 +496,7 @@ Verze 2 srovnávala neférově. Rozdíl mezi variantou bez center a s centry obs
 | Hrazená konzultace lékař s lékařem a zpětná zpráva | ano | ano | ne |
 | Mobilní paliativní týmy | ano | ano | ne |
 | Plán sítě, kapacita dlouhodobé péče a fond přeměny (J6, J7) | ano | ano | ne |
-| Daně za zdraví a Národní fond prevence (J8, J9, P4) | ano | ano | ano |
+| Daně za zdraví a Fond prevence (J8, J9, P4) | ano | ano | ano |
 | Nový vzorec platby státu (J10) | ano | ano | ano |
 | Pomůže tam, kde praktik chybí | ano: obec nebo kraj založí tým | jen kde existuje praxe | ne |
 | Kontinuita lékař a pacient | ohrožena ve velkých týmech; pojistka jmenovitý lékař a UPC | zachována, pojistka stejná | zachována |
@@ -539,7 +558,7 @@ Plné bibliografické údaje všech tří zdrojů uvádí záložka Evidence a z
 - **Neruší nemocnice.** Mění účel části akutních lůžek na následnou, rehabilitační a paliativní péči. Žádné lůžko se nepřemění, dokud kraj neprokáže kapacitu následné a dlouhodobé péče a dojezd záchranné služby (J7).
 - **Neprivatizuje.** Nemocnice ani pojišťovny se neprodávají. Praktici zůstávají soukromí a hodnotu své praxe neztratí; budovy center vlastní obec nebo kraj.
 - **Nikoho nenutí.** Vstup praktika do týmu je dobrovolný; kdo nevstoupí, zůstává u dnešní úhrady. Povinné doporučení ke specialistovi reforma nezavádí.
-- **Nesnižuje odvody z práce z daní za zdraví.** Národní fond prevence dostane pevně 2 mld. Kč ročně, zbytek výnosu zvyšuje platbu státu do veřejného zdravotního pojištění. Tvrzení politické verze 2 o nižších odvodech bylo chybou.
+- **Nesnižuje odvody z práce z daní za zdraví.** Fond prevence dostane nejméně 40 % výnosu, nejméně 2 mld. Kč ročně, zbytek výnosu zvyšuje platbu státu do veřejného zdravotního pojištění. Tvrzení politické verze 2 o nižších odvodech bylo chybou.
 
 ## Část III — Jádro reformy: primární péče a digitální nástroje (pilíře 1 a 3)
 
@@ -1023,7 +1042,7 @@ Davis a kol. (Medical Care 2007, PMID 18007169) popsali Nový Zéland v letech 1
 
 ## Část III — Jádro reformy: prevence, daně za zdraví a péče doma (pilíře 4 a 5)
 
-Daně za zdraví vynesou podle plánu 5 mld. Kč ročně (rozpětí 5–7). Z toho 2 mld. Kč dostane Národní fond prevence a zbytek zvýší platbu státu do veřejného zdravotního pojištění. Péče doma pak stojí na kapacitě mimo zdravotnictví: do roku 2035 musí přibýt asi 39 000 lůžek dlouhodobé a následné péče, zdravotních i sociálních (Přecechtěl a Hlávka 2025), a 21 000 pečovatelů.
+Daně za zdraví vynesou podle plánu 5 mld. Kč ročně (rozpětí 5–7). Z toho 2 mld. Kč dostane Fond prevence a zbytek zvýší platbu státu do veřejného zdravotního pojištění. Péče doma pak stojí na kapacitě mimo zdravotnictví: do roku 2035 musí přibýt asi 39 000 lůžek dlouhodobé a následné péče, zdravotních i sociálních (Přecechtěl a Hlávka 2025), a 21 000 pečovatelů.
 
 Část popisuje dvě opatření jádra (J8, J9), dvě podmínky (P4, P3) a navazující kroky prevence a péče doma. Termíny platí pro základní scénář „Vláda 2030“, tedy pro Piráty ve vládě od přelomu 2029/2030. V doplňkovém scénáři „Dnešní vláda převezme část“ přicházejí v úvahu jen kroky vlny 0 (seznam výkonů, vyhláška, poslanecký návrh), a to o 1 až 2 roky dříve.
 
@@ -1031,13 +1050,13 @@ Daně za zdraví vynesou podle plánu 5 mld. Kč ročně (rozpětí 5–7). Z to
 | --- | --- | --- | --- | --- |
 | J8 | Tiché víno 23,40 Kč/l s poloviční sazbou pro malé vinaře; automatická valorizace lihu a piva | novela zák. 353/2003 Sb. | 2030 | 1. 1. 2031; plná sazba vína 1. 1. 2033 |
 | J9 | Pásmová daň ze slazených nápojů | nový zákon | 2030 | 1. 1. 2032 |
-| P4 | Národní fond prevence | nový zákon | 2030 | 1. 1. 2031 |
+| P4 | Fond prevence | nový zákon | 2030 | 1. 1. 2031 |
 | P3 | Sociální účet a sdílené financování sociálně-zdravotní péče | zák. 108/2006 Sb. a 48/1997 Sb. | vlna 4 | 2033 a později |
 | Pilíř 5 | Delší a samostatná indikace domácí péče sestrou | zák. 48/1997 Sb. | 2030 | 1. 1. 2032 |
 
-### Pilíř 4: jedno číslo daní za zdraví
+### Pilíř 4: daně za zdraví podle Hospodářské strategie PEER
 
-Strana přijme jedno číslo: 5 mld. Kč ročně v plném náběhu, s rozpětím 5 až 7 mld. Kč. Plánovací hodnota je záměrně dolní hranice rozpětí. Postupný růst daní z tabáku a nikotinu (Pil4.11) stojí vedle tohoto čísla jako výhled, do plánovací hodnoty ho nepočítáme. Britská pásmová daň vybrala 327 mil. £ ročně proti plánovaným 500 mil. £, protože výrobci cukr odstranili. Český líh po zvýšení sazby o více než pětinu (10 %, 10 % a 5 % v letech 2024 až 2026) vybral méně než před ním.
+Daně za zdraví jsou opatřeními Hospodářské strategie PEER: spotřební daň ze slazených nápojů, zdanění tichého vína a úprava daní z alkoholu, s očekávaným výnosem 10 až 15 mld. Kč ročně. Pro rozpočet této reformy plánujeme opatrně s 5 mld. Kč ročně v plném náběhu, s rozpětím 5 až 7 mld. Kč. Plánovací hodnota je záměrně dolní hranice: reforma s ní vystačí, i kdyby výnos zklamal. Postupný růst daní z tabáku a nikotinu (Pil4.11) stojí vedle tohoto čísla jako výhled, do plánovací hodnoty ho nepočítáme. Britská pásmová daň vybrala 327 mil. £ ročně proti plánovaným 500 mil. £, protože výrobci cukr odstranili. Český líh po zvýšení sazby o více než pětinu (10 %, 10 % a 5 % v letech 2024 až 2026) vybral méně než před ním.
 
 | Složka | Statický výnos, mld. Kč | Výnos po reakci, mld. Kč | Klíčový předpoklad |
 | --- | --- | --- | --- |
@@ -1046,18 +1065,18 @@ Strana přijme jedno číslo: 5 mld. Kč ročně v plném náběhu, s rozpětím
 | Valorizace lihu a piva | 1–1,5 | 0–1 | líh 2024 až 2026: vyšší sazba, ale inkaso pod úrovní roku 2023 |
 | Součet | 6,8–8,6 | 4,6–7,1, tedy 5–7 | všechny tři kroky současně |
 
-Výnos se počítá jednou. Všechny tři kroky jsou i součástí daňového balíčku PEER (asi +80 mld. Kč čistě), takže v této reformě slouží jako zdroj zdravotnictví a v konsolidaci se musí odečíst.
+Výnos se počítá jednou. Všechny tři kroky jsou součástí daňového balíčku Hospodářské strategie PEER (asi +80 mld. Kč čistě), takže v této reformě slouží jako zdroj zdravotnictví a v konsolidaci se musí odečíst.
 
-Číslo 10 až 15 mld. Kč strana nepřijímá, protože by vyžadovalo čtyři věci naráz: víno zdaněné podle alkoholu, cukernou daň výrazně nad britskou úrovní, malou reakci spotřeby (což popírá zdravotní cíl) a žádnou erozi základu. Vyšší čísla proto vedeme jako horní scénář, který se do rozpočtu reformy nepočítá.
+Cíl PEER 10 až 15 mld. Kč dává plná podoba opatření: víno zdaněné podle obsahu alkoholu, cukerná daň nad britskou úrovní a úprava daní z alkoholu obecně. Rozpočet reformy s ním zatím nepočítá, protože výnos těchto daní klesá s reakcí spotřeby, o kterou zdravotně jde, a s erozí základu; zkušenost s lihem v letech 2024 až 2026 a s britskou cukernou daní to ukazuje. Co výnos přinese nad 5 mld. Kč, rozdělí se podle pravidla PEER: nejméně 40 % Fondu prevence, zbytek platbě státu.
 
 | Zdroj | Mld. Kč ročně | Co předpokládá | Jak s ním nakládáme |
 | --- | --- | --- | --- |
-| Tato studie | 5 (5–7) | sazby běžné v Evropě, víno 23,40 Kč/l, britská pásmová daň, valorizace | jediné číslo, které strana veřejně slibuje |
-| Hospodářská strategie PEER | 10–15 | víno podle alkoholu, cukerná daň nad britskou úrovní, malá reakce spotřeby, žádná eroze základu | horní scénář; do rozpočtu reformy se nepočítá |
+| Tato studie | 5 (5–7) | sazby běžné v Evropě, víno 23,40 Kč/l, britská pásmová daň, valorizace | plánovací hodnota pro rozpočet reformy |
+| Hospodářská strategie PEER | 10–15 | víno podle alkoholu, cukerná daň nad britskou úrovní, úprava daní z alkoholu | program strany a cílová hodnota; rozpočet reformy s ní zatím nepočítá |
 | PAQ Research | 12–17 (alkohol) | pivo a víno zdaněné podle obsahu alkoholu | horní scénář; daň podle gramu alkoholu viz výhled po roce 2033 níže |
-| Strukturální reforma Česka v6 | až asi 15 | valorizace, tiché víno a případně slazené nápoje; součást balíku asi 80 mld. Kč | v6 chápe vázání výnosu jako politické pravidlo; studie váže pevných 2 mld. Kč zákonem |
+| Strukturální reforma Česka v6 | až asi 15 | valorizace, tiché víno a případně slazené nápoje; součást balíku asi 80 mld. Kč | v6 chápe vázání výnosu jako politické pravidlo; studie váže zákonem 40 % výnosu podle PEER, nejméně 2 mld. Kč |
 
-Brána B1 (6/2028) proto vyžaduje, aby strana přijala jedno číslo daní za zdraví. Důvod je praktický: oponent použije vyšší číslo jako slib a nižší jako přiznání. Autor je členem PEER a studie její číslo otevřeně opravuje (viz prohlášení o střetu zájmů).
+Brána B1 (6/2028) proto vyžaduje, aby strana veřejně rozlišovala cíl programu (10 až 15 mld. Kč) a plánovací hodnotu pro rozpočet reformy (5 mld. Kč). Důvod je praktický: jinak oponent použije vyšší číslo jako slib a nižší jako přiznání. Autor je členem PEER (viz prohlášení o střetu zájmů).
 
 Zdravotní účinek je skromnější než výnos. Zdanění vína sníží spotřebu čistého alkoholu o 0,1 až 0,2 l na osobu, tedy o 1 až 2 % z 11,2 l. Větší pokles by vyžadoval minimální cenu a dostupnostní opatření, která přicházejí později; cíl pro spotřebu alkoholu v Části IX proto vychází z tohoto mechanismu, ne z cíle −15 % z verze 2.
 
@@ -1072,7 +1091,7 @@ Tiché víno je od roku 2031 zdaněno sazbou 23,40 Kč/l s dvouletým náběhem 
 | Právní nástroj | Novela zák. 353/2003 Sb. (rozsah M): sazby, nová snížená sazba, valorizace v § 70. Unijní základ: čl. 9a směrnice 92/83/EHS ve znění směrnice (EU) 2020/1151 dovoluje sníženou sazbu pro nezávislé malé producenty do 1 000 hl ročně, nejvýše o 50 % pod národní základní sazbou. Největší část předlohy tvoří režim malých vinařů (daňové sklady, zjednodušená evidence). |
 | Kdo | Předkládá Ministerstvo financí, sazby spravuje Celní správa, zdravotní odůvodnění dodá MZ. Ve fázích F0 a F1 připravuje věcný záměr resortní tým s Institutem Pi a konzultuje ho s vinařskými, pivovarskými a lihovarskými organizacemi. |
 | Kdy (základní scénář) | F0 (11/2026–6/2028): konzultace a podněty. Brána B1 (6/2028): strana přijala číslo 5 mld. Kč. F1 (do 12/2029): věcný záměr a volební program. Předložení 2030 (vlna 1), účinnost 1. 1. 2031; víno s poloviční sazbou 2031–2032, s plnou od 1. 1. 2033. |
-| Na čem závisí | Na vládě s Piráty od přelomu 2029/2030 a na koaliční shodě přes moravský blok napříč stranami. Dále na novém vzorci platby státu (J10), který převede zbytek výnosu do pojištění, a na zákonu o Národním fondu prevence (P4). Ověřit: podíl objemu vína od producentů do 1 000 hl ročně; bez něj nelze vyčíslit náklad poloviční sazby. |
+| Na čem závisí | Na vládě s Piráty od přelomu 2029/2030 a na koaliční shodě přes moravský blok napříč stranami. Dále na novém vzorci platby státu (J10), který převede zbytek výnosu do pojištění, a na zákonu o Fondu prevence (P4). Ověřit: podíl objemu vína od producentů do 1 000 hl ročně; bez něj nelze vyčíslit náklad poloviční sazby. |
 | Rizika a pojistky | (1) Vinaři: dvouletý náběh, poloviční sazba pro malé, jednodušší administrativa a přechodná pomoc. Ověřit: zda odhad 3,3–4,3 mld. Kč počítá malé vinaře jako osvobozené (verze 2), nebo zdaněné. (2) Přeshraniční nákupy: Ověřit sazby tichého vína v Německu, Rakousku, Polsku a na Slovensku; pokles inkasa se nesmí číst jako pokles pití (zkušenost s lihem). (3) TRIS: sazba daně se podle našeho čtení nenotifikuje; notifikaci vyžaduje až zdravotní varování a minimální cena (vlna 4). (4) Veřejná podpora: snížená sazba pro malé vinaře je selektivní výhoda a patří do posouzení veřejné podpory. Ověřit: zda stačí čl. 9a směrnice, nebo je nutné oznámení Komisi. (5) Návrh MF z roku 2023 uváděl tři sazby a osvobození malých vinařů. Ověřit: jak je MF slučovalo se směrnicí; pokud osvobození šlo, studie zbytečně přitvrzuje. |
 
 ### J9: pásmová daň ze slazených nápojů
@@ -1086,8 +1105,8 @@ Daň ze slazených nápojů začne platit 1. 1. 2032 a vynese asi 1,5 mld. Kč r
 | Právní nástroj | Nový zákon o dani ze slazených nápojů (rozsah L, 25–35 paragrafů): pásma, plátce, osvobození, správa Celní správou, určení výnosu. TRIS: pásma podle složení mohou být de facto technickým předpisem, protože fiskální opatření motivuje ke složení výrobku (čl. 1 odst. 1 písm. f) směrnice (EU) 2015/1535); Ověřit právně, standstill je tři měsíce. Veřejná podpora: posouzení osvobození nejmenších výrobců; Ověřit hranici osvobození (britská hranice: 1 mil. litrů ročně). |
 | Kdo | Předkládá Ministerstvo financí, vybírá Celní správa; MZ stanoví zdravotní cíle a evaluaci. O pásmech a době ohlášení jedná s výrobci a dovozci nápojů resortní tým a později vláda (jednání 2030). |
 | Kdy (základní scénář) | Ohlášení ve volebním programu 2029; přijetí zákona 2030 (vlna 1); účinnost 1. 1. 2032. Dvouleté ohlášení (2030–2031) slouží k reformulaci. Evaluace od prvního dne: základní data o prodejích a obsahu cukru se sbírají už před účinností. |
-| Na čem závisí | Na zákoně o Národním fondu prevence (P4), z něhož se financují programy ve školách; na mikrosimulaci dopadu na nízkopříjmové domácnosti hotové před předložením a na kompenzacích mimo daň (například přídavky na děti); dále na kapacitě Celní správy a koaliční shodě. |
-| Rizika a pojistky | (1) Výnos nižší než plán: britský výnos klesl z plánovaných 500 na 327 mil. £, proto plánujeme 1,5 mld. Kč jako klesající. (2) Přeshraniční nákupy: Polsko (od 2021) i Slovensko (od 2025) slazené nápoje zdaňují, motiv nákupu za hranicí je tedy slabý; Ověřit: Německo a Rakousko. (3) Regresivita: daň tvoří větší podíl výdajů chudších domácností, ty ale snižují spotřebu víc (Quiroz-Reyes 2025); pojistkou jsou kompenzace mimo daň a prevence ve školách. (4) Rozpuštění vázání: britský výnos se v obecném rozpočtu rozpustil, proto zákonná částka pro Národní fond prevence. (5) Odpor průmyslu: dvouleté ohlášení, které v Británii umožnilo reformulaci. (6) TRIS a veřejná podpora jsou dvě ze tří řízení vůči Evropské komisi. |
+| Na čem závisí | Na zákoně o Fondu prevence (P4), z něhož se financují programy ve školách; na mikrosimulaci dopadu na nízkopříjmové domácnosti hotové před předložením a na kompenzacích mimo daň (například přídavky na děti); dále na kapacitě Celní správy a koaliční shodě. |
+| Rizika a pojistky | (1) Výnos nižší než plán: britský výnos klesl z plánovaných 500 na 327 mil. £, proto plánujeme 1,5 mld. Kč jako klesající. (2) Přeshraniční nákupy: Polsko (od 2021) i Slovensko (od 2025) slazené nápoje zdaňují, motiv nákupu za hranicí je tedy slabý; Ověřit: Německo a Rakousko. (3) Regresivita: daň tvoří větší podíl výdajů chudších domácností, ty ale snižují spotřebu víc (Quiroz-Reyes 2025); pojistkou jsou kompenzace mimo daň a prevence ve školách. (4) Rozpuštění vázání: britský výnos se v obecném rozpočtu rozpustil, proto zákonná částka pro Fond prevence. (5) Odpor průmyslu: dvouleté ohlášení, které v Británii umožnilo reformulaci. (6) TRIS a veřejná podpora jsou dvě ze tří řízení vůči Evropské komisi. |
 
 ### Pil4.11 a Pil4.12: tabák a nikotin zdaněné víc, prevence odměněná
 
@@ -1095,32 +1114,32 @@ Tabák a nikotin do daní za zdraví patří, jejich výnos ale do čísla 5 mld
 
 - **Co (Pil4.11).** Od roku 2028 automatická valorizace sazeb z tabáku a nikotinu o inflaci a k tomu růst o 5 % ročně nad inflaci, dokud podíl daní na ceně nejprodávanějších cigaret nedosáhne 75 % doporučených WHO (Ověřit: dnešní podíl, odhadem kolem 70 %). Zahřívaný tabák, náplně do elektronických cigaret a nikotinové sáčky se zdaní podle obsahu nikotinu tak, aby se přechod mezi výrobky daňově nevyplácel.
 - **Výnos.** Inkaso daně z tabákových výrobků je asi 60 mld. Kč ročně (Ověřit: inkaso 2024 a 2025 podle Celní správy). Při elasticitě poptávky kolem −0,4 přinese každý rok růstu o 5 % nad inflaci odhadem 1,5 až 2 mld. Kč navíc, s klesající tendencí; po pěti letech asi 6 až 8 mld. Kč ročně nad dnešní úroveň v reálném vyjádření. Ověřit v modelu pro verzi 4. Toto číslo vedeme jako výhled vedle plánovací hodnoty 5 mld. Kč, ne jako její součást.
-- **Kam výnos jde (Pil4.12).** Reálný přírůstek nad úroveň roku 2027 jde zákonem přednostně na podporu zdravého životního stylu těch, kdo chodí na prevenci. (1) Hrazené odvykání kouření včetně léků a poradenství pro každého, kdo se o to pokusí; dnes pojišťovny hradí jen část a jen některým (Ověřit rozsah dnešní úhrady); odhadem 0,5 mld. Kč ročně. (2) Příspěvek pojišťovny na pohyb, výživové poradenství nebo dentální hygienu pro toho, kdo absolvoval preventivní prohlídku a screeningy odpovídající věku; dnešní příspěvky z fondů pojišťoven (Ověřit objem, odhadem 2 až 3 mld. Kč ročně) se tak naváží na prevenci místo plošného rozdávání. (3) Programy pro lidi s prediabetem a nadváhou u nutričního terapeuta týmu (Pil4.10). Podmínkou je účast na prevenci, nikdy výsledek: kdo na prohlídku přijde, podporu dostane bez ohledu na své hodnoty, a nikomu se péče nezdražuje.
-- **Proč obojí.** Zdanění tabáku řadí WHO mezi nejúčinnější opatření vůbec („best buy“); spotřebu snižuje nejvíc u mladých a u lidí s nízkými příjmy, na které ale také nejvíc dopadá finančně. Podpora odvykání a příspěvek za prevenci tento dopad vracejí těm, kdo pro své zdraví něco dělají. Manifest předpokládá obojí: zdanění tabáku jako WHO Best Buy (oblast 8) a fond rozšířené péče s přístupem podmíněným dodržováním preventivních doporučení (oblast 2).
-- **Nástroj a kdy.** Novela zák. 353/2003 Sb. spolu s J8 (vlna 1, předložení 2030, účinnost 1. 1. 2031). Roky 2028 až 2030 dnešní plán nepokrývá, proto v roce 2027 dáme současné vládě podnět, aby ho prodloužila. Vázání přírůstku patří do zákona o Národním fondu prevence (P4), příspěvek za prevenci do pravidel fondů rozšířené péče (vlna 2, s oblastí 2). Ověřit: zda vázání přírůstku jedné daně obstojí v rozpočtových pravidlech stejně jako pevná částka pro fond.
+- **Kam výnos jde (Pil4.12).** Reálný přírůstek nad úroveň roku 2027 jde zákonem přednostně na podporu těch, kdo aktivně pečují o své zdraví, podle Hospodářské strategie PEER. (1) Hrazené odvykání kouření včetně léků a poradenství pro každého, kdo se o to pokusí; dnes pojišťovny hradí jen část a jen některým (Ověřit rozsah dnešní úhrady); odhadem 0,5 mld. Kč ročně. (2) Zvýhodnění na pojistném: pojišťovna může navázat část pojistného na aktivní a doložitelnou péči pojištěnce o vlastní zdraví a nabídnout mu nižší platbu. Neodměňuje razítko z prohlídky, ale širší koš chování: pravidelný pohyb, nekouření, střídmost v alkoholu, práci s hmotností a spánkem a účast v ověřených programech (odvykání kouření, pohybové a nutriční programy). Rozhoduje zapojení a zlepšení v čase, ne aktuální zdravotní stav; preventivní prohlídka je vstupní bod a měření, ne cíl. Kdo se ze zdravotních důvodů zapojit nemůže, zvýhodnění neztrácí. Zavádí se pilotně a povinně pro ročníky do 40 let, spolu s reformou daně z příjmů fyzických osob. Ověřit: právní formu slevy na pojistném a její soulad s rovností pojištěnců. (3) Programy pro lidi s prediabetem a nadváhou u nutričního terapeuta týmu (Pil4.10).
+- **Proč obojí.** Zdanění tabáku řadí WHO mezi nejúčinnější opatření vůbec („best buy“); spotřebu snižuje nejvíc u mladých a u lidí s nízkými příjmy, na které ale také nejvíc dopadá finančně. Podpora odvykání a zvýhodnění na pojistném tento dopad vracejí těm, kdo pro své zdraví něco dělají. Hospodářská strategie PEER zvýhodnění výslovně navrhuje (kap. 1.4, podle nizozemského vzoru) a Manifest předpokládá zdanění tabáku jako WHO Best Buy (oblast 8).
+- **Nástroj a kdy.** Novela zák. 353/2003 Sb. spolu s J8 (vlna 1, předložení 2030, účinnost 1. 1. 2031). Roky 2028 až 2030 dnešní plán nepokrývá, proto v roce 2027 dáme současné vládě podnět, aby ho prodloužila. Vázání přírůstku patří do zákona o Fondu prevence (P4); zvýhodnění na pojistném do novely zák. 592/1992 Sb. spolu s reformou daně z příjmů fyzických osob, pilot pro ročníky do 40 let od 1. 1. 2032. Ověřit: zda vázání přírůstku jedné daně obstojí v rozpočtových pravidlech stejně jako pevná částka pro fond.
 - **Rizika a pojistky.** Nelegální trh a nákupy v Polsku a na Slovensku: růst 5 % ročně je pod tempem let 2024 až 2027 a podíl nelegálních cigaret se sleduje každý rok (Ověřit dnešní odhad); při jeho růstu nad dohodnutou mez se tempo zpomalí. Příspěvek vázaný na prevenci nesmí vyloučit lidi, kteří na prohlídku nemohou: platí i pro prohlídku sestrou týmu doma (J4).
 
-### P4: Národní fond prevence
+### P4: Fond prevence zdravotních pojišťoven
 
-Národní fond prevence dostane pevně 2 mld. Kč ročně, valorizovaných o inflaci, a zbytek výnosu daní za zdraví zvýší platbu státu do pojištění.
+Podle Hospodářské strategie PEER jde nejméně 40 % výnosu daní za zdraví účelově do Fondu prevence zdravotních pojišťoven (dále Fond prevence), nejméně však 2 mld. Kč ročně, valorizovaných o inflaci; zbytek výnosu zvýší platbu státu do pojištění.
 
-*[Graf/diagram: pravidlo rozdělení daní za zdraví · plánovací výnos 5 mld. Kč, horní hranice rozpětí 7 mld. Kč · dva scénáře — interaktivní verze je ve čtečce na webu]*
+*[Graf/diagram: pravidlo rozdělení daní za zdraví · plánovací výnos 5 mld. Kč, horní hranice rozpětí 7 mld. Kč a dolní mez cíle PEER 10 mld. Kč · tři scénáře — interaktivní verze je ve čtečce na webu]*
 
-Pevná částka místo podílu řeší tři rozpory verze 2. Model počítá prevenci za 1,3 mld. Kč, zatímco podíl 40 % dával fondu 2 až 2,8 mld. Kč; rozdíl byl buď neuvedeným výdajem, nebo dvojím započtením. Cukerná daň měla jít z 96 % do fondu a škol, takže z vína by fondu zbývalo méně než 40 %. A klesající výnos cukerné daně by bez pevné částky stahoval prevenci dolů.
+Pravidlo spojuje podíl ze strategie PEER s pevnou dolní hranicí. Podíl 40 % zajistí, že s vyšším výnosem roste i prevence. Dolní hranice 2 mld. Kč chrání prevenci v letech, kdy výnos klesá, což u cukerné daně nastane, jakmile výrobci sníží obsah cukru. Verze 2 počítala jen s podílem, a protože cukerná daň měla jít z 96 % do fondu a škol, nedalo se z ní poznat, kolik prevence skutečně dostane.
 
-Částka 2 mld. Kč kryje prevenci započtenou v modelu (1,3 mld. Kč, viz Část V) a komunitní programy (0,7 mld. Kč); obojí je výdaj modelu. Při výnosu 5 mld. Kč odpovídá 40 %, při 7 mld. Kč 29 %, tedy o 0,8 mld. Kč méně, než požaduje PEER.
+Při plánovací hodnotě 5 mld. Kč dostane Fond prevence 2 mld. Kč, které kryjí prevenci započtenou v modelu (1,3 mld. Kč, viz Část V) a komunitní programy (0,7 mld. Kč). Při výnosu 7 mld. Kč dostane 2,8 mld. Kč a při cíli PEER 10 až 15 mld. Kč 4 až 6 mld. Kč; částku nad 2 mld. Kč model zatím nerozepisuje a rada fondu ji přidělí programům s doloženým účinkem.
 
-Zbytek 3 až 5 mld. Kč nepřijde jako samostatná dotace. Zvyšuje základ platby státu podle nového vzorce (J10, § 3c zák. 592/1992 Sb.), kde 100 Kč měsíčně na státního pojištěnce odpovídá 7,2 mld. Kč ročně; zbytek tedy činí asi 40 až 70 Kč měsíčně. Nesnižuje odvody z práce; opačné tvrzení v politické verzi 2 bylo chybné. Výpočet vzorce včetně automatického růstu platby při vyšší sazbě je v jedné tabulce v Části V.
+Zbytek, 3 mld. Kč při plánovací hodnotě a 4,2 mld. Kč při výnosu 7 mld. Kč, nepřijde jako samostatná dotace. Zvyšuje základ platby státu podle nového vzorce (J10, § 3c zák. 592/1992 Sb.), kde 100 Kč měsíčně na státního pojištěnce odpovídá 7,2 mld. Kč ročně; zbytek tedy činí asi 40 až 60 Kč měsíčně. Nesnižuje odvody z práce; opačné tvrzení v politické verzi 2 bylo chybné. Výpočet vzorce včetně automatického růstu platby při vyšší sazbě je v jedné tabulce v Části V.
 
-| Karta P4 | Národní fond prevence |
+| Karta P4 | Fond prevence zdravotních pojišťoven |
 | --- | --- |
 | Proč | Prevence se dnes financuje nahodile, z fondů pojišťoven a z programů bez evaluace: jde na ni 2,74 % běžných výdajů (OECD 3,2 %), tedy odhadem 18 až 19 mld. Kč. Britské vázání výnosu se po roce rozpustilo v obecném rozpočtu, polské (96,5 % do Národního fondu zdraví) drží. Pevná zákonná částka chrání prevenci i před poklesem výnosu. |
-| Co přesně | Státní fond zřízený zákonem; příjem tvoří pevná částka 2 mld. Kč ročně (valorizovaná) z výnosu daní za zdraví, přednostně i při nižším výnosu. Z fondu se platí navigace po screeningu, očkování, krátká intervence, dostupná adiktologická léčba a pomoc rodinám závislých, fluorid a voda ve školách, programy pro děti s nadváhou a neziskové organizace. Rada fondu rozhoduje o programech a každý rok veřejně vyúčtuje, na co peníze šly. Fondy prevence pojišťoven se přemění na fondy rozšířené péče (vlna 2), aby se dva účely a dva zdroje nemíchaly. |
-| Právní nástroj | Nový zákon o Národním fondu prevence (rozsah M–L, 15–25 paragrafů; vlna 1). Účelové vázání musí obstát vůči zák. 218/2000 Sb. a 23/2017 Sb.; vzorem je zák. 104/2000 Sb. (SFDI). Ověřit: právní forma fondu (státní fond, nebo jiná) a její soulad s rozpočtovými pravidly. |
-| Kdo | Zřizuje stát (MF a MZ), spravuje rada fondu se zástupci MZ, MF, pojišťoven, krajů, SMO ČR, pacientských organizací a odborných společností; složení je předmětem konzultace. Programy hodnotí ÚZIS s univerzitou jako nezávislý hodnotitel reformy. |
-| Kdy (základní scénář) | Konzultace s MF a NRR od fáze F0. Brána B1 (6/2028): strana přijala jedno číslo a pravidlo rozdělení. Předložení 2030 (vlna 1) spolu s J8 a J10, účinnost 1. 1. 2031; příjem z daně ze slazených nápojů od 1. 1. 2032. |
-| Na čem závisí | Na J8, J9 a J10; na souhlasu MF a NRR s pevným vázáním v rozpočtových pravidlech; na tom, že strana přijme jedno číslo (B1); na evaluaci od prvního dne. |
-| Rizika a pojistky | (1) Rozpuštění vázání jako ve Spojeném království: částka je v zákoně a roční vyúčtování je veřejné. (2) Nižší výnos v náběhu: fond má přednost, platba státu z daní za zdraví roste výrazněji až od 2032–2033 (odvozený odhad výnosu: 2031 asi 1,7–3,2 mld. Kč, 2032 asi 3,0–5,0 mld. Kč, od 2033 5–7 mld. Kč). (3) Programy bez účinku: každý má kontrolovanou časovou řadu a po třech letech se rozhoduje o jeho pokračování. (4) PEER požaduje aspoň 40 %; při 7 mld. Kč by to bylo o 0,8 mld. Kč víc, než studie počítá, a tuto částku lze vyčlenit z horního scénáře, ne z plánovací hodnoty. |
+| Co přesně | Fond prevence zdravotních pojišťoven zřízený zákonem podle Hospodářské strategie PEER; příjem tvoří nejméně 40 % výnosu daní za zdraví, nejméně však 2 mld. Kč ročně (valorizovaně), přednostně i při nižším výnosu. Výnos se rozdělí pojišťovnám podle počtu pojištěnců s věkovou váhou jako při přerozdělení; pojišťovny ho vedou odděleně a o programech rozhoduje společná rada podle zákonných pravidel. Z fondu se platí navigace po screeningu, očkování, krátká intervence, dostupná adiktologická léčba a pomoc rodinám závislých, fluorid a voda ve školách, programy pro děti s nadváhou a neziskové organizace. Rada fondu každý rok veřejně vyúčtuje, na co peníze šly, za každou pojišťovnu zvlášť. Dnešní fondy prevence pojišťoven, plněné ze zisku a bez pravidel, se přemění na fondy rozšířené péče (vlna 2, M2.3), aby se dva účely a dva zdroje nemíchaly. |
+| Právní nástroj | Zákon o Fondu prevence zdravotních pojišťoven (rozsah M–L, 15–25 paragrafů; vlna 1) s novelou zák. 280/1992 Sb. a 551/1991 Sb. o fondech pojišťoven. Účelové vázání výnosu daní musí obstát vůči zák. 218/2000 Sb. a 23/2017 Sb. Ověřit: zda vést fond jako zvláštní fond každé pojišťovny se společnými pravidly, nebo jako společný účet ve zdravotním pojištění. |
+| Kdo | Zřizuje stát zákonem (MZ a MF), peníze vedou pojišťovny; o programech rozhoduje společná rada se zástupci MZ, MF, pojišťoven, krajů, SMO ČR, pacientských organizací a odborných společností; složení je předmětem konzultace. Programy hodnotí ÚZIS s univerzitou jako nezávislý hodnotitel reformy. |
+| Kdy (základní scénář) | Konzultace s MF a NRR od fáze F0. Brána B1 (6/2028): strana potvrdila plánovací hodnotu a pravidlo rozdělení podle PEER. Předložení 2030 (vlna 1) spolu s J8 a J10, účinnost 1. 1. 2031; příjem z daně ze slazených nápojů od 1. 1. 2032. |
+| Na čem závisí | Na J8, J9 a J10; na souhlasu MF a NRR s pevným vázáním v rozpočtových pravidlech; na tom, že strana potvrdí plánovací hodnotu a pravidlo rozdělení (B1); na evaluaci od prvního dne. |
+| Rizika a pojistky | (1) Rozpuštění vázání jako ve Spojeném království: částka je v zákoně a roční vyúčtování je veřejné. (2) Nižší výnos v náběhu: fond má přednost, platba státu z daní za zdraví roste výrazněji až od 2032–2033 (odvozený odhad výnosu: 2031 asi 1,7–3,2 mld. Kč, 2032 asi 3,0–5,0 mld. Kč, od 2033 5–7 mld. Kč). (3) Programy bez účinku: každý má kontrolovanou časovou řadu a po třech letech se rozhoduje o jeho pokračování. (4) Pojišťovny použijí fond na marketing místo prevence: zákon vymezí, co se z fondu smí platit, a programy hodnotí ÚZIS s univerzitou. |
 
 ### Minimální cena alkoholu a další regulace bez výnosu
 
@@ -1150,7 +1169,7 @@ Prevenci mimo daně hradíme jen tam, kde má doložený účinek: fluoridový l
 | Navigace po pozitivním screeningu | Sestra týmu do týdne zavolá, objedná a ohlídá. Pilot ve dvou krajích s evaluací. | Dokončení kolonoskopie RR 1,27 (1,10–1,46), osm studií, střední jistota, americká data ze znevýhodněných populací (Gonzalez Mosquera 2026, PMID 42618855). | Hrazený výkon po pilotu. Ověřit: start a financování pilotu. |
 | Krátká intervence u praktika | Hrazený výkon navazující na rizikový screening při preventivní prohlídce (vyhl. 70/2012 Sb. ve znění 403/2025 Sb.). | −20 g alkoholu týdně, tedy asi dvě piva; 69 randomizovaných studií, střední jistota (Kaner 2018, PMID 29476653). Účinek malý, ale levný. | Podnět do seznamu výkonů s cílem 1. 1. 2028. Není náhradou cenových opatření. |
 
-Navigace zvyšuje i poptávku po kolonoskopii, a bez kapacity endoskopie by tedy prodloužila čekání. Pilot proto měří kapacitu v kraji a cíl pro čekání se neslibuje, dokud ji nezměří. Screeningové programy koordinuje Národní screeningové centrum (vládou schváleno v květnu 2025), které zavedlo koordinátory screeningových programů a krajské koordinátory (MZ ČR 2025, s. 35 a 44–45); pilot navigace stavíme na nich. Na kolonoskopii po pozitivním testu dnes dochází jen 60 až 70 % lidí (tamtéž, s. 36). Ověřit: u navigace, očkování a krátké intervence plátce výkonu (pojišťovna úhradou, nebo Národní fond prevence); prevence se v modelu počítá jen jednou.
+Navigace zvyšuje i poptávku po kolonoskopii, a bez kapacity endoskopie by tedy prodloužila čekání. Pilot proto měří kapacitu v kraji a cíl pro čekání se neslibuje, dokud ji nezměří. Screeningové programy koordinuje Národní screeningové centrum (vládou schváleno v květnu 2025), které zavedlo koordinátory screeningových programů a krajské koordinátory (MZ ČR 2025, s. 35 a 44–45); pilot navigace stavíme na nich. Na kolonoskopii po pozitivním testu dnes dochází jen 60 až 70 % lidí (tamtéž, s. 36). Ověřit: u navigace, očkování a krátké intervence plátce výkonu (pojišťovna úhradou, nebo Fond prevence); prevence se v modelu počítá jen jednou.
 
 Zubní prevenci jsme proti Manifestu zužili na to, co má doklady. První verze ocenila hygienu na 0,8 až 1,4 mld. Kč ročně bez jediné citace účinnosti; verze 3 počítá 0,3 až 0,5 mld. Kč. Ověřit: zda je tento náklad součástí prevence 1,3 mld. Kč v modelu (Část V), nebo stojí mimo.
 
@@ -1190,7 +1209,7 @@ Péče doma stojí na pěti krocích a zákon vyžaduje jen jeden z nich: delš�
 | 2. Delší a samostatná indikace domácí péče | Dnes indikuje praktik na tři měsíce, jiný lékař na 14 dnů (§ 22 zák. 48/1997 Sb.). Od 1. 1. 2026 smí sestra se specializovanou způsobilostí v domácí péči indikaci ošetřujícího lékaře upravit nebo doplnit, pokud to lékař v indikaci umožní (MZ ČR 2025, s. 121). Navrhujeme delší lhůtu a z tohoto kroku samostatnou indikaci sestrou se specializací. Úhradová vyhláška 2027 přidává domácí péči 8,5 %. | Zák. 48/1997 Sb. (§ 18, § 22; vlna 2); vyhl. 55/2011 Sb. pro činnosti sester (vlna 0) | Vyhláška 2028 (rozhodne dnešní MZ); zákon 1. 1. 2032 |
 | 3. Mobilní paliativní tým v okrese | Dnes má úhradu přes 40 poskytovatelů; doporučení je jeden tým na 70 až 150 tisíc obyvatel. Model počítá 0,9 mld. Kč ročně jako plnou cenu všech 150 týmů (6 mil. Kč na tým); je to horní mez. | Úhrada pojišťoven, smlouva | Podnět do dohodovacího řízení o úhradách 2028 (do 30. 6. 2027); jinak úhradová vyhláška 2031 |
 | 4. Společný plán péče a koordinátor | Plán týmu, pečovatelské služby a rodiny; koordinátor v týmu. | Hrazený výkon „plánování péče“ (vyhl. 134/1998 Sb.) | Podnět 1. 1. 2028; jinak úhradová vyhláška 2031 |
-| 5. Podpora pečujících rodin | Odlehčovací služby, edukace, kontakt na sestru mimo pracovní dobu, dlouhodobé ošetřovné. | MPSV, kraje, pojišťovny | Ověřit: náklad, nositel a termín |
+| 5. Podpora pečujících rodin | Odlehčovací, terénní a asistenční služby, edukace, kontakt na sestru mimo pracovní dobu, dlouhodobé ošetřovné. Hospodářská strategie PEER počítá s navýšením financování terénních a odlehčovacích služeb o 40 až 50 mld. Kč za deset let a s růstem částečných úvazků ze 7 % na 15 % do roku 2040. | MPSV, kraje, obce, pojišťovny | Navýšení je výdajem MPSV, krajů a obcí mimo model reformy. Ověřit: rozložení po letech a nositel |
 
 Samostatnou indikaci sestrou podporuje přehled přehledů, podle něhož je péče vedená sestrou stejně bezpečná nebo bezpečnější (Paier-Abuzahra 2024, PMID 39529012); úspora nákladů prokázána není (Laurant 2018). Navazujeme na prioritu ministra zdravotnictví, sesterskou preskripci, a návrh podáme jako pozměňovací návrh k vládní předloze.
 
@@ -1280,7 +1299,7 @@ Zákon o primární péči proto může být účinný nejdřív 1. 1. 2032. Ver
 
 Platby týmům stojí v plném náběhu 4,8 až 7,5 mld. Kč ročně, sestry jsou samostatná položka (viz Část V). Proto vlna 1 nabývá účinnosti 1. 1. 2031, rok před zákonem o primární péči: nový vzorec platby státu (§ 3c zák. 592/1992 Sb.), daň z tichého vína a valorizace daní z lihu a piva. Daň ze slazených nápojů je přijata v roce 2030 a účinná od 1. 1. 2032, aby výrobci měli čas změnit receptury.
 
-Daně za zdraví mají plánovací výnos 5 mld. Kč ročně (rozpětí 5–7). Národní fond prevence z nich dostane pevně 2 mld. Kč a zbytek, 3 až 5 mld. Kč, zvyšuje platbu státu do zdravotního pojištění; odvody z práce nesnižuje. Dřív než v roce 2031 to nejde: pevný vyměřovací základ z tisku 235 platí pro rok 2027 a nový vzorec může přijmout až nová vláda.
+Daně za zdraví mají plánovací výnos 5 mld. Kč ročně (rozpětí 5–7). Fond prevence z nich dostane podle pravidla PEER nejméně 40 %, nejméně 2 mld. Kč, a zbytek, 3 až 4,2 mld. Kč, zvyšuje platbu státu do zdravotního pojištění; odvody z práce nesnižuje. Dřív než v roce 2031 to nejde: pevný vyměřovací základ z tisku 235 platí pro rok 2027 a nový vzorec může přijmout až nová vláda.
 
 Druhou podmínkou jsou lidé. Ročně dnes dokončí studium ošetřovatelství asi 680 absolventů vysokých a asi 570 vyšších odborných škol, jen nových všeobecných sester je přitom za 10 až 12 let potřeba nejméně 24 000 úvazků (MZ ČR 2025, s. 112 a 114) a praktiků pro dospělé ubývá 110 až 180 ročně. Bez personální bilance po krajích (P1), rezidenčních míst (P2) a širších kompetencí sester a praktiků (J2, J3) nemají týmy koho zaměstnat.
 
@@ -1308,7 +1327,7 @@ Každé ze 13 rizik níže má předem dohodnutou náhradní cestu, takže selh�
 | Sesterská složka nebude v úhradové vyhlášce 2028 (rozhoduje dnešní MZ) | Sestry v týmech před rokem 2031 | Sestry v pilotu platit dodatkem smlouvy; podnět znovu do dohodovacího řízení; úhradová vyhláška 2031 nové vlády |
 | eŽádanka bez triážního údaje (pozměňovací návrh neprojde) | Měření čekání, měkký gatekeeping, data pro brány | Triážní údaj ve vlně 2 (novela zák. 325/2021 Sb.); do té doby data z registrů pojišťoven a NRZP |
 | Nový vzorec platby státu nebude přijat k 1. 1. 2031 | Peníze na náběh týmů od 2032 | Reforma se zmenší na variantu B; týmy, sestry, prevence, paliativa, konzultace a fond přeměny zůstávají |
-| Daně za zdraví nepřinesou plánovaných 5 mld. Kč | Národní fond prevence a přírůstek platby státu | Fond dostane přednostně své 2 mld. Kč a menší je přírůstek platby státu; veřejně slibujeme jen plánovací hodnotu |
+| Daně za zdraví nepřinesou plánovaných 5 mld. Kč | Fond prevence a přírůstek platby státu | Fond dostane přednostně své 2 mld. Kč a menší je přírůstek platby státu; veřejně slibujeme jen plánovací hodnotu |
 | Do 12/2031 není obsazena polovina míst sester v týmech první vlny (B3) | Centra primární péče | Varianta B: týmy bez center; vše, co na centrech nezávisí, běží dál |
 | Zákon o primární péči se zpozdí | Standard týmu a víceletá smlouva se všemi pojišťovnami | Smlouvy podle § 17 zák. 48/1997 Sb. pokračují; standard týmu ve Věstníku MZ |
 | Zákon o síti se zpozdí nebo neobstojí v ústavním rozboru | Krajské plány sítě a fond přeměny | Dnešní nástroje: výběrová řízení pojišťoven (§ 46 zák. 48/1997 Sb.), NV 307/2012 Sb., minimální objemy ve Věstníku jako u onkochirurgie |
@@ -1328,7 +1347,7 @@ Díry nevznikly chybou jedné instituce. Každá dělá svou práci, ale nikdo n
 
 *[Graf/diagram: organigram · cílový stav kolem 2038 · 4 nové prvky — interaktivní verze je ve čtečce na webu]*
 
-Reforma nestaví nad systém nový řídicí úřad. Mění úlohy těch, kdo už existují: kraj plánuje síť, pojišťovna uzavírá pětiletou smlouvu, stát platí za státní pojištěnce podle vzorce. Nové jsou čtyři prvky: tým sdružené péče, Národní fond prevence, nezávislý hodnotitel a HSPA jako zákonný rámec hodnocení. Každá z šesti děr tak má svého vlastníka.
+Reforma nestaví nad systém nový řídicí úřad. Mění úlohy těch, kdo už existují: kraj plánuje síť, pojišťovna uzavírá pětiletou smlouvu, stát platí za státní pojištěnce podle vzorce. Nové jsou čtyři prvky: tým sdružené péče, Fond prevence, nezávislý hodnotitel a HSPA jako zákonný rámec hodnocení. Každá z šesti děr tak má svého vlastníka.
 
 ### Toky peněz dnes a po reformě
 
@@ -1363,8 +1382,8 @@ Provoz reformy včetně rezervy stojí v roce 2038 asi 22,8 mld. Kč a v roce 20
 | Senior taxi | 0,34 | 0,34 | 205 ORP × 1,5 vozu × 1,1 mil. Kč |
 | Zapisovatel a dálkové sledování | 0,66 | 0,66 | 5 630 praktiků × 2 300 Kč měsíčně + 0,5 mld. Kč na aplikaci a přístroje |
 | Paliativní týmy | 0,90 | 0,90 | 150 týmů × 6 mil. Kč; horní mez, přes 40 poskytovatelů už úhradu má |
-| Prevence z Národního fondu prevence: screening, navigace, očkování, dentální prevence | 1,30 | 1,30 | odhad v2 |
-| Prevence z Národního fondu prevence: komunitní programy | 0,70 | 0,70 | zbytek pevných 2 mld. Kč fondu |
+| Prevence z Fondu prevence: screening, navigace, očkování, dentální prevence | 1,30 | 1,30 | odhad v2 |
+| Prevence z Fondu prevence: komunitní programy | 0,70 | 0,70 | zbytek 2 mld. Kč fondu při plánovací hodnotě |
 | Konzultace lékař–lékař, zpětná zpráva, přímé objednání | 1,50 | 1,50 | 3 mil. žádanek × 300 Kč + 1,5 mil. konzultací × 400 Kč |
 | Koordinace reformy (projektová kancelář, nezávislé hodnocení) | 0,40 | 0,40 | odhad |
 | Fond přeměny: garance příjmu nemocnic | 1,31 | 0 | 4 000 lůžek v tříleté garanci × 1 500 Kč/den × 60 % obložnost |
@@ -1423,7 +1442,7 @@ O výsledku rozhoduje cena a počet personálu: platby týmům, počet sester na
 
 ### Varianty A, B, C
 
-Plná varianta A stojí čistě 21,5 mld. Kč ročně, varianta B bez center 17,8 mld. Kč a minimální varianta C 11,3 mld. Kč. Verze 2 srovnávala neférově: rozdíl mezi variantami obsahoval paliativní týmy, prevenci, konzultace a fond přeměny, které na centrech nezávisí. Ve verzi 3 mají všechny tři varianty stejný společný základ 7,6 mld. Kč: prevence z Národního fondu prevence, paliativní týmy, konzultace a eŽádanka, kompetence praktiků, dálkové sledování, senior taxi, koordinace a fond přeměny.
+Plná varianta A stojí čistě 21,5 mld. Kč ročně, varianta B bez center 17,8 mld. Kč a minimální varianta C 11,3 mld. Kč. Verze 2 srovnávala neférově: rozdíl mezi variantami obsahoval paliativní týmy, prevenci, konzultace a fond přeměny, které na centrech nezávisí. Ve verzi 3 mají všechny tři varianty stejný společný základ 7,6 mld. Kč: prevence z Fondu prevence, paliativní týmy, konzultace a eŽádanka, kompetence praktiků, dálkové sledování, senior taxi, koordinace a fond přeměny.
 
 *[Graf/diagram: model_v3.py · varianty A, B, C v roce 2038 — interaktivní verze je ve čtečce na webu]*
 
@@ -1446,7 +1465,7 @@ Reforma nabíhá jedenáct let: od osmi týmů pilotu v roce 2028 k 520 týmům 
 
 *[Graf/diagram: model_v3.py · náběh 2028–2038, scénář Vláda 2030 — interaktivní verze je ve čtečce na webu]*
 
-Kumulativně stojí náběh 2028–2038 asi 116 mld. Kč. Prevence z Národního fondu prevence nabíhá 2031–2033 s výnosem daní za zdraví, paliativní týmy, senior taxi a konzultace 2031–2034, fond přeměny 2033–2040. Polovina výdajů přijde až po bráně B3 v prosinci 2031, takže svěží data o obsazení míst sester rozhodnou dřív, než se utratí většina peněz.
+Kumulativně stojí náběh 2028–2038 asi 116 mld. Kč. Prevence z Fondu prevence nabíhá 2031–2033 s výnosem daní za zdraví, paliativní týmy, senior taxi a konzultace 2031–2034, fond přeměny 2033–2040. Polovina výdajů přijde až po bráně B3 v prosinci 2031, takže svěží data o obsazení míst sester rozhodnou dřív, než se utratí většina peněz.
 
 ### Investice
 
@@ -1489,7 +1508,7 @@ Nominální částku „96 mld. Kč“ z verze 2 vypouštíme, protože ignorova
 | Zdroj 2038 (mld. Kč) | 1. Bez vyšší sazby | 2. Sazba 13,5 → 14,5 % v rámci daňové reformy |
 | --- | --- | --- |
 | Potřeba celkem (mezera 70,0 + reforma 21,5) | 91,6 | 91,6 |
-| Daně za zdraví → Národní fond prevence | 2,0 | 2,0 |
+| Daně za zdraví → Fond prevence | 2,0 | 2,0 |
 | Daně za zdraví → platba státu do v. z. p. | 3,0 | 3,0 |
 | Obce a kraje přímo (senior taxi, provoz center) | 1,0 | 1,0 |
 | Státní rozpočet přímo (koordinace, fond přeměny, dálkové sledování) | 2,6 | 2,6 |
@@ -1507,11 +1526,11 @@ V roce 2035 vychází platba státu ve variantě 1 na 68,2 mld. Kč (asi 950 Kč
 
 | Rozdělení výnosu (mld. Kč ročně) | Plánovací 5 | Horní hranice 7 |
 | --- | --- | --- |
-| Národní fond prevence (pevně, valorizováno) | 2,0 | 2,0 |
+| Fond prevence (pevně, valorizováno) | 2,0 | 2,0 |
 | Zdravotní pojištění přes platbu státu | 3,0 | 5,0 |
 | Snížení odvodů z práce | 0 | 0 |
 
-Fond kryje přesně položky prevence v modelu (1,3 mld. Kč screening, navigace, očkování a dentální prevence a 0,7 mld. Kč komunitní programy), takže prevence není kryta dvakrát. Vyšší čísla PEER (10 až 15 mld. Kč) a PAQ Research (12 až 17 mld. Kč) předpokládají zdanění vína a piva podle obsahu alkoholu; jsou horním scénářem, do rozpočtu reformy se nepočítají a strana slibuje jen 5 mld. Kč. Daně za zdraví jsou součástí daňového balíčku PEER a nesmějí se počítat dvakrát.
+Fond kryje přesně položky prevence v modelu (1,3 mld. Kč screening, navigace, očkování a dentální prevence a 0,7 mld. Kč komunitní programy), takže prevence není kryta dvakrát. Cíl Hospodářské strategie PEER (10 až 15 mld. Kč) a odhad PAQ Research (12 až 17 mld. Kč) předpokládají zdanění vína a piva podle obsahu alkoholu; rozpočet reformy s nimi zatím nepočítá a plánuje s 5 mld. Kč. Co přinesou navíc, rozdělí se podle pravidla PEER (nejméně 40 % Fondu prevence). Daně za zdraví jsou součástí daňového balíčku PEER a nesmějí se počítat dvakrát. Reforma odvody z práce nemění; podle strategie PEER se pojistné, pokud se někdy zvýší, mění jen spolu s úpravou daně z příjmu, aby celkové zdanění práce nerostlo.
 
 **Rezervy pojišťoven.** Studie používá jednu veličinu: zůstatek základních fondů zdravotního pojištění všech pojišťoven ke konci roku 2025, 43,2 mld. Kč (důvodová zpráva k tisku 235; na začátku roku 2021 69,9 mld. Kč). Jiná čísla měří něco jiného: asi 32 mld. Kč uvádějí kapitoly knihy HSPA podle reportingu pojišťoven (VZP asi 23, zaměstnanecké asi 9) a 45,7 mld. Kč uvádějí odbory jako zůstatky na účtech ke konci srpna 2026. Pro měřítko: měsíční výdaje systému jsou asi 47 mld. Kč.
 
@@ -1593,7 +1612,7 @@ Devět z deseti řádků vede ke konkrétnímu PN nebo podnětu; u tisku 235 už
 | **Sněmovní tisk 235** (platba státu, zák. 592/1992 Sb.) | 2. čtení skončilo 23. 9. 2026; podány PN č. 1796 (základ 17 540 Kč místo 18 362 Kč) a č. 1813; stanovisko výboru je tisk 235/3 (15. 10.); 3. čtení zatím nebylo. | Pevný vyměřovací základ 18 362 Kč od 1. 1. 2027 (platba 2 479 Kč měsíčně, asi +21 mld. Kč); do roku 2029 vypíná automatický vzorec § 3c. | J10 | Peníze na 2027 nezpochybňujeme, vyžadujeme termínovaný plán reforem (stanovisko klubu z 8. 7. 2026). Trvalé pravidlo jinak: vzorec J10. | Nový PN už podat nelze. Ověřit: hlasování klubu o PN č. 1796 a 1813. Pro rok 2028 požadovat v rozpočtu pravidlo místo zmrazení. | 3. čtení podzim 2026; rozpočet 2028 v roce 2027 |
 | **Úhradová vyhláška 2027 a cyklus 2028** | Dohoda ve 12 z 15 segmentů (18. 6. 2026); návrh vyhlášky rozděluje 604,8 mld. Kč; do Sbírky do 31. 10. 2026. | Stanoví hodnotu bodu, úhrady a regulace na rok podle § 17 odst. 5 zák. 48/1997 Sb. | J1, J2, J3, J5 | Využít: vlna 0 projde v tomto cyklu bez zákona. | Podněty do dohodovacího řízení 2028: sesterská složka u týmových praxí, výkony pro praktiky (například USG), telemonitoring, konzultace lékař–lékař; do seznamu výkonů (vyhl. 134/1998 Sb.) přes Pracovní skupinu k SZV. | Podněty do 30. 6. 2027; účinnost 1. 1. 2028 |
 | **Novela zák. 325/2021 Sb.** (povinná eŽádanka) | Návrh MZ ve VeKLEP (č. j. vlády 748/26); verze pro jednání vlády z 30. 9. 2026, vláda ho zatím neprojednala. Ověřit: termín povinnosti (návrh uvádí 1. 7. 2027). | Zavádí povinnou eŽádanku, elektronickou dokumentaci a první fázi EHDS. | J5 | Podpořit a doplnit. | Povinný triážní údaj (urgentní do 2 týdnů, do 6 týdnů, plánované); specialista smí kategorii změnit se zdůvodněním; měření čekání podle kategorie; přímý přístup bez žádanky zůstává; pacienta nesankcionovat. | Sněmovna 2027, po schválení vládou |
-| **Reforma hygienické služby** (zákon o Národním institutu veřejného zdraví) | Vnitřní připomínkové řízení od přelomu 9/10 2026; meziresortní řízení plánováno na 4/2027, vláda 30. 8. 2027. Ověřit: účinnost 1. 1. 2028 (harmonogram je těsný). | Sloučí 14 krajských hygienických stanic, SZÚ a dva zdravotní ústavy (17 institucí) v jeden ústřední orgán podřízený vládě. | P4, P5 | Podpořit sloučení; doplnit hodnocení zdraví. | Pětiletá zpráva o zdraví podle rámce HSPA (P5) a otevřená data; institut vyhodnocuje výdaje Národního fondu prevence (P4). | Připomínky 4/2027; Sněmovna 2027–2028 |
+| **Reforma hygienické služby** (zákon o Národním institutu veřejného zdraví) | Vnitřní připomínkové řízení od přelomu 9/10 2026; meziresortní řízení plánováno na 4/2027, vláda 30. 8. 2027. Ověřit: účinnost 1. 1. 2028 (harmonogram je těsný). | Sloučí 14 krajských hygienických stanic, SZÚ a dva zdravotní ústavy (17 institucí) v jeden ústřední orgán podřízený vládě. | P4, P5 | Podpořit sloučení; doplnit hodnocení zdraví. | Pětiletá zpráva o zdraví podle rámce HSPA (P5) a otevřená data; institut vyhodnocuje výdaje Fondu prevence (P4). | Připomínky 4/2027; Sněmovna 2027–2028 |
 | **Sesterská preskripce** (priorita ministra) | Záměr MZ; paragrafové znění neznáme. Ověřit: předloha a termín. Dnes sestry léky nepředepisují (§ 80 zák. 378/2007 Sb.). | Rozšiřuje kompetence nelékařů (preskripce sester, očkování v lékárnách). | J2, J3, vlna 4 | Podpořit a navázat úhradou. | Kompetence musí mít úhradu: samostatná indikace sestry a platba za sesterskou složku v dohodovacím řízení. Sestra v pokročilé praxi s předepisováním zůstává ve vlně 4 (2033). | Podněty 2027; vyhl. 55/2011 Sb. 2028 |
 | **Konvergence CZ-DRG** | Priorita ministra do voleb 2029: zúžit rozpětí krajských základních sazeb z 1 : 1,7 na 1 : 1,3 do 2031. Druhá veličina: jednotnou základní sazbou se hradí přes 25 % akutní lůžkové péče (2025; 3,4 % v roce 2022; cíl aspoň 30 %; MZ ČR 2025, s. 74, 76 a 82). Ověřit: veřejný dokument MZ s trajektorií rozpětí sazeb. | Sbližuje krajské sazby; status zařízení má být samostatný koeficient. | J6, vlna 4 | Podpořit konvergenci; jinak v dopadu na přeměnu lůžek. | Podnět: spočítat dopad konvergence po krajích spolu s krajským plánem sítě. Základní sazbu zákonem (§ 41a) řešit až ve vlně 4 (2033). | Každý cyklus 2027–2031 |
 | **Zákony 289/2025 a 290/2025 Sb.** | Platí od 1. 1. 2026. | 289/2025: fond obecně prospěšných činností místo rezervního fondu (až 0,5 % pojistného, asi 2,5 mld. Kč), evropské HTA, úhrada očkování přes SÚKL. 290/2025: pohotovosti organizují pojišťovny, nemocniční ombudsman. | P2, P4, vlna 4 | Navázat, nepřepisovat. | Rezidenční místa (P2) hradit z fondu obecně prospěšných činností; HTA řešit rozšířením mandátu SÚKL a ÚZIS; zdravotnického ombudsmana odvodit z nemocničního. | P2 v dohodovacím řízení 2027; ostatní ve vlnách 2 a 4 |
@@ -1638,7 +1657,7 @@ Těchto pět kroků není alternativou k pilotu ani k věcným záměrům zákon
 
 **Reforma vyžaduje čtyři až šest nových zákonů, novely 16 zákonů, šest až sedm podzákonných předpisů a tři řízení vůči Evropské komisi.** Odhadujeme 250 až 350 stran paragrafového znění a zhruba dvakrát tolik důvodových zpráv a dopadových studií (RIA). Stav předpisů je k 20. 10. 2026.
 
-To je víc, než ministerstvo zdravotnictví zvládne za jedno volební období. Proto předlohy řadíme do pěti vln a tam, kde to jde, začínáme smlouvou a vyhláškou, ne zákonem. Novými zákony jsou zákon o síti lůžkové péče, zákon o dani ze slazených nápojů, zákon o Národním fondu prevence a zákon o minimální ceně alkoholu; podmíněně přibude zákon o institutu pro hodnocení zdravotnických technologií (HTA) a zákon o pojištění dlouhodobé péče. Zákon o primární péči je nová hlava zákona 372/2011 Sb. s doprovodnými změnami dalších zákonů.
+To je víc, než ministerstvo zdravotnictví zvládne za jedno volební období. Proto předlohy řadíme do pěti vln a tam, kde to jde, začínáme smlouvou a vyhláškou, ne zákonem. Novými zákony jsou zákon o síti lůžkové péče, zákon o dani ze slazených nápojů, zákon o Fondu prevence a zákon o minimální ceně alkoholu; podmíněně přibude zákon o institutu pro hodnocení zdravotnických technologií (HTA) a zákon o pojištění dlouhodobé péče. Zákon o primární péči je nová hlava zákona 372/2011 Sb. s doprovodnými změnami dalších zákonů.
 
 Vlna 0 (2027–2028) běží z opozice: přes ministerstvo, VZP, dohodovací řízení a pozměňovací návrhy k vládním předlohám. Vlny 1 až 4 předpokládají vládu s Piráty od přelomu 2029/2030 (základní scénář „Vláda 2030“). Převezme-li dnešní vláda část našich návrhů (doplňkový scénář s nízkou pravděpodobností), posune se o jeden až dva roky dopředu jen vlna 0.
 
@@ -1672,14 +1691,14 @@ Zákonná lhůta dohody v úhradovém řízení končí 120 dnů před koncem ro
 
 ### Vlna 1: peníze a daně (předložit 2030, účinnost 1. 1. 2031)
 
-Vlna 1 tvoří jedna malá a tři střední předlohy, které se předkládají v prvním pololetí 2030 a zajišťují zdroje: daně za zdraví s plánovacím výnosem 5 mld. Kč ročně (rozpětí 5–7). Výnos se dělí pevně: 2 mld. Kč (valorizovaně) pro Národní fond prevence, zbytek zvyšuje platbu státu do veřejného zdravotního pojištění a nesnižuje odvody z práce. Toto pravidlo patří přímo do zákona o fondu, ne do ročního rozpočtu.
+Vlna 1 tvoří jedna malá a tři střední předlohy, které se předkládají v prvním pololetí 2030 a zajišťují zdroje: daně za zdraví s plánovacím výnosem 5 mld. Kč ročně (rozpětí 5–7). Výnos se dělí podle pravidla PEER: nejméně 40 %, nejméně 2 mld. Kč (valorizovaně), pro Fond prevence, zbytek zvyšuje platbu státu do veřejného zdravotního pojištění a nesnižuje odvody z práce. Toto pravidlo patří přímo do zákona o fondu, ne do ročního rozpočtu.
 
 | Předpis a ustanovení | Co se mění | Rozsah | Kdo | Předložení | Účinnost | Vazba |
 | --- | --- | --- | --- | --- | --- | --- |
 | Zák. 592/1992 Sb.; § 3c, § 2 | Vzorec platby státu podle nákladů na státní pojištěnce; sazba pojistného (13,5 %) se mění jen v daňové reformě. Navazuje na pevný základ z tisku 235 pro rok 2027 a na návrat vzorce § 3c od 2029 (MZ avizuje zmrazení pro 2028) | S | MF s MZ | 1. pololetí 2030 | 1. 1. 2031 | J10 |
 | Zák. 353/2003 Sb.; daň z vína, § 70 (líh) a sazba piva | Tiché víno 23,40 Kč/l; poloviční sazba pro malé nezávislé vinaře do 1 000 hl (2031–2032, plná sazba 2033); automatická valorizace lihu a piva. Většina textu je správní režim malých vinařů (daňové sklady, zjednodušená evidence). Ověřit: směrnice 92/83/EHS ve znění (EU) 2020/1151 sníženou sazbu pro víno nezná (čl. 5 a 22 se týkají piva a lihu), tedy právní opora a veřejná podpora | M | MF, Celní správa | 2030 | 1. 1. 2031 | J8 |
 | Nový zákon o dani ze slazených nápojů | Pásma podle cukru, plátce, osvobození, správa Celní správou, určení výnosu. Přijat 2030 a ohlášen ve volebním programu 2029, aby výrobci měli dva roky na reformulaci. Posoudit veřejnou podporu u osvobození malých výrobců; Ověřit: kvalifikace daně vzhledem k čl. 401 směrnice 2006/112/ES | M (25–35 §§) | MF, Celní správa | 2030 | 1. 1. 2032 | J9 |
-| Nový zákon o Národním fondu prevence | Státní fond, příjmy z daní za zdraví, rada fondu, roční vyúčtování. Účelové vázání musí obstát vůči zák. 218/2000 Sb. (rozpočtová pravidla) a 23/2017 Sb. (rozpočtová odpovědnost); vzor: zák. 104/2000 Sb. (SFDI) | M (15–25 §§) | MZ, MF | 2030 | 1. 1. 2031 | P4 (J8, J9 jako zdroj) |
+| Nový zákon o Fondu prevence | Státní fond, příjmy z daní za zdraví, rada fondu, roční vyúčtování. Účelové vázání musí obstát vůči zák. 218/2000 Sb. (rozpočtová pravidla) a 23/2017 Sb. (rozpočtová odpovědnost); vzor: zák. 104/2000 Sb. (SFDI) | M (15–25 §§) | MZ, MF | 2030 | 1. 1. 2031 | P4 (J8, J9 jako zdroj) |
 
 Zákon o fondu je účinný dřív než daň ze slazených nápojů, proto fond v letech 2031 až 2032 platí z výnosu daně z vína a valorizace; daň ze slazených nápojů jej doplňuje od 2032.
 
@@ -1805,7 +1824,7 @@ Deset podkladů musí být hotových do brány B2 (12/2029–1/2030), aby je vl�
 | Právní stanovisko k SGEI a veřejné podpoře | studie | doplní RT 9. 11. | 6/2029 | Fond přeměny, garance příjmu, daňové úlevy pro malé vinaře a výrobce; návrh pověřovacího aktu |
 | Finanční novela: platba státu a daně z vína, lihu a piva | S + M | doplní RT 9. 11. | znění a RIA B2 (12/2029) | § 3c a § 2 zák. 592/1992 Sb., zák. 353/2003 Sb.; správní režim malých vinařů; právní oporu snížené sazby ověřit |
 | Zákon o dani ze slazených nápojů | M | doplní RT 9. 11. | znění a RIA B2 (12/2029); ohlášení ve volebním programu 2029 | Pásma podle cukru, osvobození, správa Celní správou |
-| Zákon o Národním fondu prevence | M | doplní RT 9. 11. | teze B1 (6/2028); znění a RIA B2 (12/2029) | Pravidlo dělení výnosu (2 mld. Kč fondu, zbytek platba státu); stanovisko MF k zák. 218/2000 a 23/2017 Sb. do 6/2029 |
+| Zákon o Fondu prevence | M | doplní RT 9. 11. | teze B1 (6/2028); znění a RIA B2 (12/2029) | Pravidlo dělení výnosu (2 mld. Kč fondu, zbytek platba státu); stanovisko MF k zák. 218/2000 a 23/2017 Sb. do 6/2029 |
 | Zdravotnický ombudsman a stížnosti | M | doplní RT 9. 11. | osnova B2 (12/2029); znění připravuje MZ 2030 | Část osmá zák. 372/2011 Sb., zák. 349/1999 Sb.; konzultace s Kanceláří veřejného ochránce práv |
 | Rozšířená péče, ochranný limit a fondy pojišťoven | M | doplní RT 9. 11. | ústavní rozbor 6/2029; osnova B2 (12/2029) | Nález Pl. ÚS 36/11; zák. 48/1997, 551/1991, 280/1992 Sb. |
 | Balíček 3: sestra v pokročilé praxi, DRG zákonem, rozšíření mandátu SÚKL a ÚZIS (HTA) | M | doplní RT 9. 11. | teze po B2 (2030); není podmínkou B2 | Zák. 96/2004, 378/2007, 48/1997 Sb.; koridor DRG navázat na konvergenci 1:1,7 na 1:1,3 do 2031 |
@@ -1923,7 +1942,7 @@ Mapa je pracovní odhad resortního týmu, ne zjištěný postoj: každé umíst
 | 4/2027 | Sestry v primární péči: kompetence a sesterská složka | ČAS, SPL ČR, ČLK, pojišťovny, MZ (pozvat) | podnět do dohodovacího řízení o úhradách 2028 (do 30. 6. 2027) |
 | 5/2027 | Pilot ve třech ORP | kraj, VZP, obce, hodnotitel | dohoda o pilotu do 30. 6. 2027 |
 | 9/2027 | Cesta pacienta a eŽádanka s triážním údajem | ČLK, odborné společnosti, SPL ČR, pacientské organizace | pozměňovací návrh k novele zák. 325/2021 Sb. |
-| 11/2027 | Financování: platba státu a daně za zdraví | MF (pozvat), NRR, pojišťovny, PEER | podklad pro jedno číslo daní za zdraví |
+| 11/2027 | Financování: platba státu a daně za zdraví | MF (pozvat), NRR, pojišťovny, PEER | podklad pro plánovací hodnotu daní za zdraví a pravidlo dělení podle PEER |
 | 2/2028 | Síť lůžkové péče a přeměna | Asociace krajů ČR, AČMN, Asociace krajských nemocnic, odbory, záchranné služby | pravidla krajského plánu sítě |
 | 4/2028 | Dlouhodobá a sociálně-zdravotní péče | APSS ČR, MPSV (pozvat), kraje, SMO ČR | podmínka kapacity před přeměnou lůžek |
 | 5/2028 | Prevence a daně za zdraví | vinaři, pivovary, výrobci nápojů, pacientské organizace | náběh daní a režim malých vinařů |
@@ -1937,7 +1956,7 @@ Mapa je pracovní odhad resortního týmu, ne zjištěný postoj: každé umíst
 - [ ] Smlouva pilotu podepsaná, jinak náhradní smluvní model u jedné pojišťovny
 - [ ] Podněty do dohodovacího řízení o úhradách 2028 podané do 30. 6. 2027
 - [ ] Pozměňovací návrhy k reformě v. z. p. 2030, k novele zák. 325/2021 Sb. a k reformě hygienické služby podané
-- [ ] Strana přijala jedno číslo daní za zdraví: 5 mld. Kč ročně (rozpětí 5–7)
+- [ ] Strana potvrdila plánovací hodnotu daní za zdraví pro rozpočet reformy: 5 mld. Kč ročně (rozpětí 5–7), vedle cíle PEER 10–15 mld. Kč
 
 **Co musí být hotové do brány B2 (prosinec 2029 až leden 2030).**
 
@@ -1992,7 +2011,7 @@ Do konce roku 2029 řídí přípravu resortní tým s Institutem Pi a poslaneck
 
 *[Graf/diagram: řízení reformy · v opozici (F0–F1) a ve vládě (F2–F4) — interaktivní verze je ve čtečce na webu]*
 
-V opozici nese odpovědnost resortní tým: vede konzultace, píše věcné záměry a připravuje pozměňovací návrhy, které podají poslanci. Předsednictvo strany schvaluje to, co strana slibuje veřejně: volební program a jedno číslo daní za zdraví.
+V opozici nese odpovědnost resortní tým: vede konzultace, píše věcné záměry a připravuje pozměňovací návrhy, které podají poslanci. Předsednictvo strany schvaluje to, co strana slibuje veřejně: volební program a plánovací hodnotu daní za zdraví.
 
 Ve vládě se řídicí výbor schází čtvrtletně a doporučuje vládě, co pokračuje, co se upraví a co se zmenší. Projektová kancelář reformy (0,4 mld. Kč ročně) vede registr opatření, rizik a ukazatelů a připravuje podklady pro brány. Nezávislý hodnotitel (ÚZIS s univerzitou) hodnotí každou bránu veřejně a jeho zpráva jde výboru i veřejnosti současně.
 
@@ -2018,19 +2037,27 @@ O přechodu každou branou rozhodují čtyři pravidla, která platí od roku 20
 
 **Kapacita státu je tvrdé omezení.** Ministerstvo zvládne za jedno volební období realisticky dvě velké a čtyři až šest malých nebo středních předloh. Velké předlohy období 2029–2033 jsou dvě: zákon o primární péči a zákon o síti lůžkové péče. Velká předloha trvá od věcného záměru po účinnost 24 až 42 měsíců, proto musí být věcné záměry hotové už při nástupu vlády.
 
-Malé a střední předlohy období jsou nový vzorec platby státu (§ 3c zák. 592/1992 Sb.), novela zák. 353/2003 Sb. (víno a valorizace), zákon o dani ze slazených nápojů jako střední zákon a zákon o Národním fondu prevence. Další dvě místa drží rezerva pro novelu zák. 325/2021 Sb., pokud triážní údaj neprojde pozměňovacím návrhem, a novela zák. 374/2011 Sb. navázaná na síť. Institut pro hodnocení technologií se při nedostatku kapacity nahradí rozšířením mandátu SÚKL a ÚZIS; úplnou mapu předpisů podle vln uvádí Část VII.
+Malé a střední předlohy období jsou nový vzorec platby státu (§ 3c zák. 592/1992 Sb.), novela zák. 353/2003 Sb. (víno a valorizace), zákon o dani ze slazených nápojů jako střední zákon a zákon o Fondu prevence. Další dvě místa drží rezerva pro novelu zák. 325/2021 Sb., pokud triážní údaj neprojde pozměňovacím návrhem, a novela zák. 374/2011 Sb. navázaná na síť. Institut pro hodnocení technologií se při nedostatku kapacity nahradí rozšířením mandátu SÚKL a ÚZIS; úplnou mapu předpisů podle vln uvádí Část VII.
 
 Předpokladem je posílení legislativního odboru MZ o tým pro primární péči a tým pro síť hned v roce 2030. Bez toho vlna 3 sklouzne o rok a zákon o síti nabude účinnosti až v roce 2034 nebo později.
 
 ## Část IX — Ukazatele a vyhodnocení
 
-Reformu hodnotíme dvaceti ukazateli: osmi hlavními, podle kterých rozhoduje brána B4 v roce 2033, a dvanácti doplňkovými, které slouží jako pojistky a vysvětlení. Cíle odvozujeme z mechanismů opatření J1–J10 ve scénáři „Vláda 2030“; kde mechanismus číslo neunese, píšeme „sledujeme bez cíle“.
+Reformu hodnotíme nadřazeným cílem z Hospodářské strategie PEER a dvaceti ukazateli: osmi hlavními, podle kterých rozhoduje brána B4 v roce 2033, a dvanácti doplňkovými, které slouží jako pojistky a vysvětlení. Cíle odvozujeme z mechanismů opatření J1–J10 ve scénáři „Vláda 2030“; kde mechanismus číslo neunese, píšeme „sledujeme bez cíle“.
 
 Cíle jsou posunuté proti verzi 2 o tři roky, protože týmy první vlny začínají 1. 1. 2031 a zákon o primární péči je účinný 1. 1. 2032. Cíl „2033“ znamená hodnotu, kterou hodnotitel uvidí ve zprávě B4 v roce 2033, tedy v řadě případů data za rok 2032. Doplňkový scénář „Dnešní vláda převezme část“ cíle nemění, jen o 1–2 roky předsouvá vlnu 0.
 
 Hlavní slabinou verze 2 bylo zpoždění dat: ÚZIS a Eurostat zveřejňují většinu řad s odstupem 1,5 až 3 roky. Brány B1–B3 proto stojí na registrech pojišťoven, eŽádance a Národním registru zdravotnických pracovníků (NRZP), ne na ročenkách.
 
 Číselné cíle označené „návrh“ jsou výchozí pro konzultaci; upřesní je vyhodnocení pilotu (průběžné po roce provozu, závěrečné 2030) a protokol nezávislého hodnotitele.
+
+### Nadřazený cíl: +5 let života ve zdraví
+
+Hospodářská strategie PEER stanoví cíl prodloužit délku života ve zdraví o pět let během jedné generace. Studie ho přebírá jako cíl, ke kterému míří všech pět cílů reformy. Ukazatel je délka života ve zdraví (Healthy Life Years, Eurostat hlth\_hlye): dnes 61,2 roku u mužů a 62,4 roku u žen, průměr EU 63,5 a 64,2, Švédsko asi 71 a 73 let (podle Hospodářské strategie PEER). Cíl je tedy asi 66 let u mužů a 67 let u žen. Ověřit: rok dat v Eurostatu.
+
+Ukazatel stojí na subjektivním šetření EU-SILC a hýbe se pomalu, proto o branách nerozhoduje. Mezi kroky ho nesou odvratitelná úmrtnost (H7) a doplňkové ukazatele prevence (D5 až D8, D11). Ověřit: průběžnou hodnotu pro rok 2038 dohodnout s PEER a ÚZIS.
+
+Vedle hlavního ukazatele H6 sledujeme i ukazatel strategie PEER, podíl nemocniční péče na výdajích (46,5 % proti 36,4 % v EU podle NERV 2024), s cílem PEER snížit ho o 10 procentních bodů do roku 2035. Studie k němu přispívá přeměnou akutních lůžek (H6), indikačním omezením místo objemových limitů (Pil2.2) a přesunem plánovaných výkonů do jednodenní a ambulantní péče.
 
 ### Osm hlavních ukazatelů
 
@@ -2065,7 +2092,7 @@ Dvanáct doplňkových ukazatelů D1–D12 hlídá přeměnu lůžek a vysvětlu
 | D8 Spotřeba alkoholu | Registrovaná spotřeba čistého alkoholu na osobu 15+ | 11,2 l (2023; OECD 8,5 l; OECD Health at a Glance 2025). Ověřit: hodnota za rok 2024 v OECD Health Statistics (v pracovních podkladech 10,6 l, OECD 8,4 l) | Sledujeme bez cíle | Sledujeme bez cíle | J8 | OECD Health Statistics: asi 1,5 roku |
 | D9 Cukr v prodaných nápojích | Cukr v prodaných nealkoholických nápojích podle pásma sazby | Nově měřit; základ 2031 (rok před účinností) | Základ zveřejněn; sledujeme bez cíle | Sledujeme bez cíle; cíl stanoví hodnotitel po prvním roce účinnosti (směr: Andreyeva 2022, PMID 35648398) | J9 (účinnost 1. 1. 2032) | Ověřit zdroj dat z daňových přiznání; ročně |
 | D10 Úmrtnost na chronická onemocnění játer | Standardizovaná úmrtnost K70, K73–K74 na 100 tis. | 19,5 (2023; EU27 13,7; Eurostat) | Sledujeme bez cíle | Sledujeme bez cíle | J8 nepřímo | Eurostat: asi 2,5 roku |
-| D11 Výdaje na prevenci | Podíl preventivní péče (HC6) na běžných výdajích na zdravotnictví | 2,7 % (v2, OECD SHA; ověřit rok) | 2,9 % | 3,0 % | P4: pevné 2 mld. Kč ročně z daní za zdraví, asi +0,25 procentního bodu (při běžných výdajích kolem 800 mld. Kč; ověřit) | OECD/ČSÚ: 1,5–2 roky |
+| D11 Výdaje na prevenci | Podíl preventivní péče (HC6) na běžných výdajích na zdravotnictví | 2,7 % (v2, OECD SHA; ověřit rok) | 2,9 % | 3,0 % | P4: nejméně 2 mld. Kč ročně (40 % výnosu) z daní za zdraví, asi +0,25 procentního bodu (při běžných výdajích kolem 800 mld. Kč; ověřit) | OECD/ČSÚ: 1,5–2 roky |
 | D12 Podíl úhrad praktikům a týmům | Podíl úhrad pojišťoven na všechny praktiky včetně dětských (001, 002) a platby týmům | 6,4 %, tedy 32,1 mld. Kč (2024, OIS-11-24) | Asi 7,0 % | Asi 7,5 %: platby týmům 4,8–7,5 mld. Kč při úhradách asi 600 mld. Kč dávají +0,8 až +1,25 procentního bodu. Cíl 9 % z v2 vypuštěn | J1, J2 | Pojišťovny čtvrtletně; ÚZIS ročně |
 
 ### Kdo měří a kdy
@@ -2099,7 +2126,7 @@ Každá ze čtyř bran má práh postavený na datech, která existují v době 
 | --- | --- | --- | --- | --- |
 | B1 Mandát (6/2028) | Projednání plánu: SPL ČR, SPLDD ČR, ČAS, ČLK, VZP, SZP ČR, Asociace krajů ČR, SMO ČR, pacientské organizace, odbory | Plán je projednaný se všemi 10 klíčovými organizacemi a jejich výhrady jsou zapracované | Zveřejněné vypořádání výhrad každé z 10 organizací | Co není projednané nebo zůstalo bez dohody, do volebního programu nejde |
 | B1 Mandát (6/2028) | Pilot: kraj, VZP a obce; nezávislý hodnotitel; definice H1–H4 a datové toky | Pilot podepsán, hodnotitel jmenován, definice schváleny hodnotitelem | Smlouva o pilotu, protokol hodnotitele | Náhradní smluvní model u jedné pojišťovny |
-| B1 Mandát (6/2028) | Připomínky a daňový závazek | Připomínky vypořádané a zveřejněné; strana přijala jedno číslo daní za zdraví (5 mld. Kč ročně, rozpětí 5–7) | Zveřejněný dokument o vypořádání, usnesení strany | Zveřejnění s uvedenou výhradou |
+| B1 Mandát (6/2028) | Připomínky a daňový závazek | Připomínky vypořádané a zveřejněné; strana potvrdila plánovací hodnotu daní za zdraví (5 mld. Kč ročně, rozpětí 5–7) vedle cíle PEER | Zveřejněný dokument o vypořádání, usnesení strany | Zveřejnění s uvedenou výhradou |
 | B2 Koaliční smlouva (12/2029–1/2030) | Jádro J1–J10 v koaliční smlouvě a programovém prohlášení; předlohy v legislativním plánu vlády 2030; průběžné vyhodnocení pilotu (H1, H2, H4 v pilotních ORP) | Politická dohoda; v pilotu obsazeno aspoň 50 % míst sester (návrh, stejný práh jako B3) | Texty smlouvy; pilotní data z registrů pojišťoven | Při H2 pod 50 % v pilotu jádro bez center (varianta B) |
 | B3 Lidé a data (12/2031) | H2: obsazená místa sester v týmech první vlny; zákon o primární péči; krajské plány sítě | Aspoň polovina míst sester obsazena; zákon schválen; plány rozpracované | Registry pojišťoven (ne ÚZIS), NRZP; hlasování Sněmovny; usnesení krajů | Varianta B (bez center) |
 | B4 Nezávislé hodnocení (2033) | Zpráva hodnotitele: H1–H6, H8 a pojistky D2, D3, D4 | Pokračovat: H2 aspoň 90 % trajektorie, H5 ≤ 550, H4 ≥ 0,7, H3 aspoň 80 % urgentních, H1 klesající, žádná pojistka porušena. Upravit: 1–2 ukazatele mimo práh nebo pojistka porušena v jednom kraji. Zmenšit: H2 pod 50 %, tři a více ukazatelů mimo práh nebo pojistka porušena ve více krajích | Registry pojišťoven, eŽádanka, NRZP (data za 2032); ÚZIS dodatkem | Rozhodnutí a důvody se zveřejní; pozastavení přeměny v postižených krajích |
@@ -2207,6 +2234,7 @@ Každý brief má stejnou stavbu: cíl, opatření, nástroj, termín, náklad, 
 **Opatření**
 
 - Metodika hodnocení organizačních modelů pod ÚZIS, použitá poprvé na pilotu (D18).
+- Hodnocení započítává dopad na veřejné rozpočty jako celek, včetně úspor a nákladů v sociálním systému, díky propojení dat MZ a MPSV (Hospodářská strategie PEER).
 - Nezávislá instituce pro hodnocení technologií s otevřenými daty a právem pacientů vstoupit do hodnocení; hodnotí léky, výkony, prostředky, digitální nástroje i organizační modely.
 - Standard hrazené péče jako výstup hodnocení, včetně standardu týmů a následné péče, soutěž pojišťoven nad standardem a pravidelná revize.
 - Napojení na evropské společné klinické hodnocení (nařízení 2021/2282, od ledna 2025 pro onkologika), které bude pro Česko povinným vstupem.
@@ -2236,7 +2264,7 @@ Výchozí stav: na doporučených postupech, indikátorech kvality, HSPA, predik
 
 - Zákonné vymezení druhů rozšířené péče, doplatku a ochranného limitu pro zranitelné; hranici stanoví zákon, nikoli vyhláška.
 - Plně hrazená základní varianta, kterou musí poskytovatel nabídnout jako první a bez vlivu na termín.
-- Přeměna fondů prevence pojišťoven (od roku 2026 upraveny zákonem 289/2025 Sb.) na fondy rozšířené péče s možností připojištění; prevenci převezme tým a Národní fond prevence (P4).
+- Přeměna fondů prevence pojišťoven (od roku 2026 upraveny zákonem 289/2025 Sb.) na fondy rozšířené péče s možností připojištění; prevenci převezme tým a Fond prevence (P4).
 - Transparentní ceník a nezávislé posouzení hranice: co je léčebně lepší a přiměřeně nákladné, patří do standardu a nelze to prodávat (oblast 1).
 
 Rozšířenou péčí nikdy nebude kratší čekání, přednostní pořadí, přístup k lékaři, hrazené léky, léčba s lepším výsledkem ani neodkladná péče.
@@ -2247,7 +2275,7 @@ Rozšířenou péčí nikdy nebude kratší čekání, přednostní pořadí, p�
 
 **Náklad.** Nevyčísleno.
 
-**Vazba na jádro.** Nemíchá se s prevencí: tu financuje Národní fond prevence z daní za zdraví (P4), fond rozšířené péče slouží jen službám nad standard.
+**Vazba na jádro.** Nemíchá se s prevencí: tu financuje Fond prevence z daní za zdraví (P4), fond rozšířené péče slouží jen službám nad standard.
 
 **Odchylka od programu 2021.** Opouštíme návrh, že pojišťovna „není vázána výstupy“ hodnocení technologií a že se doplatek platí přímo u poskytovatele. Hranici určí zákon s nezávislým posudkem a kratší čekání se nikdy neprodává; změna je v souladu s nálezem Pl. ÚS 36/11.
 
@@ -2384,7 +2412,7 @@ Zubních lékařů je 76,0 na 100 tisíc obyvatel (Eurostat 2024). Absolventů u
 
 **Termín.** Podněty do dohodovacího řízení (do 30. 6. 2027) a do seznamu výkonů s cílem 1. 1. 2028; šetření 2028 jen pokud je zadá dnešní ministerstvo, jinak 2031. Zákonná úprava prevence do 18 let spolu se zákonem o primární péči: předložit 2030, účinnost 1. 1. 2032.
 
-**Náklad.** Dentální prevence 0,3 až 0,5 mld. Kč ročně při plném pokrytí, kryto z Národního fondu prevence (je součástí prevence 1,3 mld. Kč v modelu, viz Část V). Úhrada kořenových kanálků a sazby mimo velká města: nevyčísleno.
+**Náklad.** Dentální prevence 0,3 až 0,5 mld. Kč ročně při plném pokrytí, kryto z Fondu prevence (je součástí prevence 1,3 mld. Kč v modelu, viz Část V). Úhrada kořenových kanálků a sazby mimo velká města: nevyčísleno.
 
 **Vazba na jádro.** Prevence navazuje na P4 a Pilíř 4; katastrofické výdaje domácností jsou jedním z ukazatelů v Části IX (D14).
 
@@ -2540,7 +2568,7 @@ Evidence odpovídá záložce Evidence; znak † značí stupeň odvozený z tex
 | P1 | Personální bilance po krajích (nábor ze zahraničí, zrychlení aprobací) | Podmínka | Pilíře 1 a 5 | Metodika/Věstník: Zveřejněná bilance (MZ, NRZP, ÚZIS); případně zák. 95/2004 Sb. (ověřit) | 0 (zák. 95/2004 Sb. ověřit) | v rezervě 10 % (2,07 v 2038, společně s P2) | MZ; kraje; ÚZIS; VŠ; odbory | Zveřejnit do B2 (12/2029); měření v bráně B3 (12/2031) | — | H1, H2 | není |
 | P2 | Rezidenční místa (praktici, pediatři) | Podmínka | Pilíř 1 | Rozpočet: Dotační titul MZ; financování z fondu obecně prospěšných činností (zák. 289/2025 Sb.); roční výpočet míst z registru ÚZIS | 0 | v rezervě 10 % (viz P1); model předpokládá +50 atestací ročně od 2033 | MZ; odborné společnosti; ÚZIS | Podnět do dohodovacího řízení 2027 a do rozpočtu 2028; závazně od rozpočtu 2031 | Podnět do rozpočtu 2028 (rozhoduje dnešní vláda) | H1 | není (předpoklad modelu) |
 | P3 | Sociální účet a sdílené financování sociálně-zdravotní péče | Podmínka | Pilíř 5 | Zákon: Novela § 36 zák. 108/2006 Sb., § 17a a § 22b zák. 48/1997 Sb. (M); zákon o pojištění dlouhodobé péče (L) jen při rozhodnutí | 4 | mimo čistý náklad reformy (sociální účet roste o asi 57 ročně do 2035) | MPSV; MZ; pojišťovny; kraje; obce | Věcný záměr do 12/2029; předložit 2033, účinnost 1. 1. 2034; rozhodnutí o pojištění dlouhodobé péče do konce 2031 | — | D3 | není (studie na zakázku APSS) |
-| P4 | Národní fond prevence | Podmínka | Pilíř 4 | Zákon: Nový zákon (M, 15–25 §§), vzor zák. 104/2000 Sb.; soulad se zák. 218/2000 a 23/2017 Sb. | 1 | 2,0 pevně z daní za zdraví (prevence 1,3 + komunitní programy 0,7) | MZ; MF; rada fondu; ÚZIS (hodnocení) | Teze do B1 (6/2028); předložit 2030, účinnost 1. 1. 2031 | — (beze změny) | D5, D6, D7, D11 | není |
+| P4 | Fond prevence zdravotních pojišťoven (nejméně 40 % výnosu daní za zdraví, nejméně 2 mld. Kč) | Podmínka | Pilíř 4 | Zákon: Zákon o Fondu prevence (M–L, 15–25 §§) s novelou zák. 280/1992 a 551/1991 Sb.; soulad se zák. 218/2000 a 23/2017 Sb. | 1 | 2,0 při plánovací hodnotě (prevence 1,3 + komunitní programy 0,7); 40 % výnosu nad ni | MZ; MF; pojišťovny; rada fondu; ÚZIS (hodnocení) | Teze do B1 (6/2028); předložit 2030, účinnost 1. 1. 2031 | — (beze změny) | D5, D6, D7, D11 | není |
 | P5 | HSPA jako oficiální rámec hodnocení v zákoně | Podmínka | všechny pilíře | Zákon: Malá novela zák. 372/2011 Sb. (NZIS, S) | 4 | nevyčísleno | MZ; ÚZIS; Rada HSPA | Předložit 2032, účinnost 1. 1. 2033; PN k hygienické službě 2027–2028 | — | — (rámec všech 20 ukazatelů) | není |
 
 ### Pilíře: doplňková opatření (Pil1.1–Pil5.7)
@@ -2572,7 +2600,7 @@ Evidence odpovídá záložce Evidence; znak † značí stupeň odvozený z tex
 | Pil4.9 | Krátká intervence u praktika | Pilíř (dopl.) | Pilíř 4 | Vyhláška: SZV; vyhl. 70/2012 Sb. ve znění 403/2025 Sb. | 0 | v rámci prevence 1,3 (ověřit) | MZ; pojišťovny; praktici | Úhr. vyhláška nové vlády (2031) | Nejdříve 1. 1. 2028 (cíl podnětu) | D8 | střední† |
 | Pil4.10 | Strava a pohyb (školní stravování, reklama dětem, nutriční terapeut s programem pro prediabetes, Škola podporující zdraví po pilotu) | Pilíř (dopl.) | Pilíř 4 | Vyhláška: Aktualizace vyhl. 107/2005 Sb.; omezení reklamy podle nutričního profilu WHO; pilot v jednom kraji | 0 | nevyčísleno | MZ; SZÚ; školy | Termín v textu neuveden (ověřit); vyhodnocení po třech letech | — | — | střední† |
 | Pil4.11 | Daň z tabáku a nikotinu: valorizace a růst 5 % ročně nad inflaci od 2028 do podílu 75 % na ceně; nikotinové výrobky zdaněné podle obsahu nikotinu | Pilíř (dopl.) | Pilíř 4 | Zákon: Novela zák. 353/2003 Sb. spolu s J8 (vlna 1) | 1 | výnos mimo plánovací hodnotu: odhadem +1,5–2 za každý rok růstu (ověřit) | MF; Celní správa; MZ | Podnět současné vládě 2027; předložení 2030, účinnost 1. 1. 2031 | Prodloužení dnešního plánu od 2028 | — | střední (WHO best buy) |
-| Pil4.12 | Podpora zdravého životního stylu pro ty, kdo chodí na prevenci: hrazené odvykání kouření, příspěvek pojišťovny vázaný na preventivní prohlídku a screeningy, programy pro prediabetes | Pilíř (dopl.) | Pilíř 4 | Zákon: Vázání přírůstku daně z tabáku v zákoně o Národním fondu prevence (P4, vlna 1); pravidla fondů rozšířené péče (vlna 2) | 1 → 2 | odvykání asi 0,5 z přírůstku daně; příspěvky z dnešních fondů pojišťoven (ověřit objem) | MZ; pojišťovny; Národní fond prevence | S P4 od 1. 1. 2031; příspěvek za prevenci od 1. 1. 2032 | — | — | střední |
+| Pil4.12 | Zvýhodnění těch, kdo aktivně pečují o své zdraví (Hospodářská strategie PEER): nižší pojistné za doložitelné zapojení a zlepšení v čase, ne za razítko z prohlídky; hrazené odvykání kouření; pilot povinně pro ročníky do 40 let s reformou DPFO | Pilíř (dopl.) | Pilíř 4 | Zákon: Novela zák. 592/1992 Sb. (zvýhodnění na pojistném) spolu s reformou zák. 586/1992 Sb. (DPFO); vázání přírůstku daně z tabáku v zákoně o Fondu prevence (P4, vlna 1) | 1 → 2 | odvykání asi 0,5 z přírůstku daně; zvýhodnění na pojistném nevyčísleno (ověřit) | MZ; MF; pojišťovny | Odvykání s P4 od 1. 1. 2031; pilot zvýhodnění do 40 let od 1. 1. 2032 | — | — | střední |
 | Pil5.1 | Delší a samostatná indikace domácí péče (sestra se specializací) | Pilíř (dopl.) | Pilíř 5 | Zákon: Zák. 48/1997 Sb. (§ 18, § 22; vlna 2); vyhl. 55/2011 Sb. (vlna 0) | 0 → 2 | nevyčísleno (úhr. vyhláška 2027 přidává domácí péči 8,5 %) | MZ; ČAS; pojišťovny | Zákon předložit 2030, účinnost 1. 1. 2032 | Vyhláška 2028 (rozhodne dnešní MZ) | H5 | silná pro bezpečnost, slabá pro úspory (E5) |
 | Pil5.2 | Mobilní paliativní tým v okrese (jeden na 70–150 tis. obyvatel) | Pilíř (dopl.) | Pilíř 5 | Smlouva/úhrada: Úhrada pojišťoven a smlouva; podnět do dohodovacího řízení 2028 | 0 | 0,90 (horní mez, 150 týmů) | Pojišťovny; kraje; MZ | Úhr. vyhláška 2031; náběh 2031–2034 | Podnět do 30. 6. 2027, platí od 2028 | H5 | silná pro místo úmrtí (E20) |
 | Pil5.3 | Společný plán péče, koordinátor a hrazený výkon plánování péče | Pilíř (dopl.) | Pilíř 5 | Vyhláška: Výkon „plánování péče“ (vyhl. 134/1998 Sb.) | 0 | nevyčísleno | MZ; pojišťovny | Úhr. vyhláška 2031 | Podnět 1. 1. 2028 | H5 | není |
@@ -2704,7 +2732,7 @@ Stav k 21. 10. 2026, po závěrečné redakci: plně vypořádáno je 8 z 10 vý
 
 ### Otevřená ověření
 
-Ve studii zůstává 94 otevřených ověření, stav 23. 10. 2026. Verze 3 jich měla 80 (asi 110 značek „Ověřit“ po sloučení duplicit, stav 21. 10. 2026); verze 3.1 uzavřela ověření zdroje potřeby sester a jejich věku, zúžila ověření k VOŠ, rezidenčním místům, rozpočtu AZV, potřebě lůžek dlouhodobé péče a eŽádance a přidala čtyři nová k číslům, čtyři k novým opatřením Pil2.6 a M4.5 a sedm k daním z tabáku a podpoře prevence (Pil4.11, Pil4.12). Je to pracovní seznam pro resortní tým; odpovědné osoby a termíny navrhujeme rozdělit na schůzi 9. 11. 2026.
+Ve studii zůstává 97 otevřených ověření, stav 25. 10. 2026. Verze 3 jich měla 80 (asi 110 značek „Ověřit“ po sloučení duplicit, stav 21. 10. 2026); verze 3.1 uzavřela ověření zdroje potřeby sester a jejich věku, zúžila ověření k VOŠ, rezidenčním místům, rozpočtu AZV, potřebě lůžek dlouhodobé péče a eŽádance a přidala čtyři nová k číslům, čtyři k novým opatřením Pil2.6 a M4.5 a sedm k daním z tabáku a podpoře prevence (Pil4.11, Pil4.12); sladění se strategií PEER přidalo čtyři (rok dat a průběžný cíl délky života ve zdraví, propočet podílu nemocniční péče, právní forma zvýhodnění na pojistném) a jedno odpadlo s novou podobou Pil4.12 (objem dnešních příspěvků z fondů pojišťoven). Je to pracovní seznam pro resortní tým; odpovědné osoby a termíny navrhujeme rozdělit na schůzi 9. 11. 2026.
 
 **Stav dokumentu**
 
@@ -2749,7 +2777,7 @@ Ve studii zůstává 94 otevřených ověření, stav 23. 10. 2026. Verze 3 jich
 - Sazby tichého vína a daní ze slazených nápojů v Německu, Rakousku, Polsku a na Slovensku.
 - Právní opora snížené sazby pro malé vinaře (čl. 9a směrnice 92/83/EHS, oznámení Komisi, postup MF z roku 2023).
 - Daň ze slazených nápojů: notifikace TRIS, hranice osvobození nejmenších výrobců a kvalifikace podle čl. 401 směrnice 2006/112/ES.
-- Právní forma Národního fondu prevence a soulad s rozpočtovými pravidly.
+- Právní forma Fondu prevence a soulad s rozpočtovými pravidly.
 - Zda lze zmocnění obcí omezit noční prodej alkoholu předložit dřív jako poslanecký návrh.
 - Výchozí proočkovanost proti chřipce 65+ (sezóna, ÚZIS NR-28-02).
 - Start a financování pilotu navigace po pozitivním screeningu.
@@ -2981,14 +3009,15 @@ Podklady z Drivu a Notionu jsou interní a necitovatelné. Každé číslo z nic
 
 | Podklad | Stav | Pravidlo pro v3 |
 | --- | --- | --- |
-| Akční plán HS (PEER, 10/2026) | interní podklad, necitovatelný | Čísla (PEER 10 až 15 mld. Kč u daňí) uvést jen jako horní scénář s odkazem na veřejný výstup PEER |
+| Akční plán HS (PEER, 10/2026) | interní podklad, necitovatelný | Čísla citovat z veřejné Hospodářské strategie PEER (cíl daní za zdraví 10 až 15 mld. Kč) |
 | Strukturalní reforma Česka v6 (9/2026) | interní podklad, necitovatelný | Nepoužívat jako zdroj |
 | Zdravotnictví pro 21. století (5/2026) | interní podklad, necitovatelný | Rozdíl vzhledem k v3 (regulační poplatky se nenavrhují) lze zmínit v textu |
 | Zdravotnictví do hospodářské strategie V1 (5/2026) | interní podklad, necitovatelný | Obsahuje čísla bez zdroje; nepřebírat |
 | Reforma zdravotnictví: Teze a důkazy (2/2026) | interní podklad, necitovatelný | Výstup AI rešerše s průmyslovými a americkými zdroji; využít jen jako seznam stop k primárním zdrojům |
 | Notion: wiki Zdravko 2025–2029 a legislativní hlídka (týden 43/2026) | interní podklad, necitovatelný | Stav legislativy ověřit v e-Sbírce a na webu Sněmovny |
 | Dopis MUDr. Pavla Neňičky (2023) | interní podklad, necitovatelný | Postoj (zachovat PLDD, dětské týmy) převést do konzultace s SPLDD ČR |
-| Manifest reformy českého zdravotnictví (7. 5. 2026); Pirátská hospodářská strategie (PEER); Stanovisko Pirátů k návykovému chování | dokumenty strany | Citovat jen veřejně dostupná znění, jako postoj strany, ne jako důkaz |
+| Pirátská hospodářská strategie (PEER, 8/2026; majak.pirati.cz/documents/647) | schválený program strany | Východisko studie (oddíl „Z čeho studie vychází“); citovat jako program strany, ne jako důkaz |
+| Manifest reformy českého zdravotnictví (7. 5. 2026); Stanovisko Pirátů k návykovému chování | dokumenty strany | Citovat jen veřejně dostupná znění, jako postoj strany, ne jako důkaz |
 | HSPA Monitor a repozitář HSPA | vlastní nástroj autora | Uvádět jako nástroj; hodnoty ověřit v primárních datech (kapitoly se stavem review-pending se v číslech samy rozcházejí) |
 
 ### Co zůstává ověřit před zveřejněním

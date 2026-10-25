@@ -54,7 +54,7 @@ export const CRITICAL_PATH = {
       id: "penize",
       name: "Peníze",
       steps: [
-        { id: "p0", title: "Podněty do úhrad", lines: ["do 30. 6. 2027: sestry, výkony; jedno číslo daní"] },
+        { id: "p0", title: "Podněty do úhrad", lines: ["do 30. 6. 2027: sestry, výkony; plánovací hodnota daní"] },
         { id: "p1", title: "Znění a RIA", lines: ["§ 3c platba státu; víno, líh, pivo; slazené nápoje, fond"] },
         { id: "p2", title: "Vlna 1 účinná", lines: ["1. 1. 2031: vzorec platby státu, víno, fond prevence"] },
         { id: "p3", title: "Peníze na týmy", lines: ["slazené nápoje od 2032; platby týmům asi 6 mld. Kč ročně"] },
@@ -180,7 +180,7 @@ export const LAYERS = {
     P1: "personální bilance po krajích, nábor a aprobace",
     P2: "rezidenční místa pro primární péči",
     P3: "sociální účet, sdílené peníze na pomezí péče",
-    P4: "Národní fond prevence, 2 mld. Kč ročně",
+    P4: "Fond prevence, nejméně 40 % (aspoň 2 mld. Kč)",
     P5: "HSPA v zákoně jako rámec hodnocení",
   } as Record<string, string>,
   /** Deset oblastí Manifestu (tabulka ř. 2149–2158). */
@@ -319,7 +319,7 @@ export const DEPS_MONEY = {
     { id: "j8", code: "J8", title: "Víno a valorizace", kind: "core", lines: ["zák. 353/2003 Sb. · vlna 1", "účinnost 1. 1. 2031"] },
     { id: "j9", code: "J9", title: "Slazené nápoje", kind: "core", lines: ["nový zákon · vlna 1", "přijat 2030, účinný 2032"] },
     { id: "dane", title: "Daně za zdraví", lines: ["plán 5 mld. Kč ročně (5–7)", "odvody z práce se nesnižují"] },
-    { id: "p4", code: "P4", title: "Národní fond prevence", kind: "cond", lines: ["zákon o NFP · vlna 1", "pevně 2 mld. Kč ročně"] },
+    { id: "p4", code: "P4", title: "Fond prevence", kind: "cond", lines: ["zákon o fondu · vlna 1", "nejméně 40 %, aspoň 2 mld. Kč"] },
     { id: "j10", code: "J10", title: "Vzorec platby státu", kind: "core", lines: ["§ 3c zák. 592/1992 Sb. · vlna 1", "účinnost 1. 1. 2031"] },
     { id: "penize", title: "Peníze na týmy", lines: ["kapitace a víceletá platba", "4,8–7,5 mld. Kč ročně"] },
     { id: "p1", code: "P1", title: "Personální bilance", kind: "cond", lines: ["po krajích, nábor ze zahraničí", "a rychlejší aprobace"] },
@@ -463,7 +463,7 @@ export const ORG_2038 = {
       label: "Platba",
       nodes: [
         { id: "zp", title: "Zdravotní pojišťovny", kind: "changed", span: 8, lines: ["pětiletá smlouva s týmy, garantovaný termín", "naplňují krajský plán sítě"] },
-        { id: "nfp", title: "Národní fond prevence", kind: "new", span: 4, lines: ["2 mld. Kč z daní za zdraví", "rada fondu, vyúčtování"], badge: 5 },
+        { id: "nfp", title: "Fond prevence", kind: "new", span: 4, lines: ["40 % daní za zdraví, aspoň 2 mld. Kč", "rada fondu, vyúčtování"], badge: 5 },
       ],
     },
     {
@@ -497,7 +497,7 @@ export const ORG_2038 = {
     },
   ] as OrgLayer[],
   /** Čtyři nové prvky (ř. 1290). */
-  newElements: ["tým sdružené péče", "Národní fond prevence", "nezávislý hodnotitel", "HSPA jako zákonný rámec hodnocení"],
+  newElements: ["tým sdružené péče", "Fond prevence", "nezávislý hodnotitel", "HSPA jako zákonný rámec hodnocení"],
 };
 
 // ---------------------------------------------------------------------------
@@ -538,7 +538,7 @@ export const MONEY_FLOWS = {
       { id: "mpsv", title: "MPSV, kraje, obce a klienti", kind: "same", lines: ["mimo zdravotní pojištění"] },
       { id: "zp", title: "Zdravotní pojišťovny", kind: "changed", lines: ["pětiletá smlouva s týmy", "naplňují krajský plán sítě"] },
       { id: "fond", title: "Fond přeměny", kind: "new", lines: ["investice 5–10 mld. Kč jednorázově", "garance asi 1 mld. Kč, 2033–2040"] },
-      { id: "nfp", title: "Národní fond prevence", kind: "new", lines: ["pevně 2 mld. Kč ročně"] },
+      { id: "nfp", title: "Fond prevence pojišťoven", kind: "new", lines: ["nejméně 40 % daní za zdraví"] },
       { id: "su", title: "Sociální účet", kind: "new", lines: ["sdílené financování", "se zdravotnictvím, vlna 4"] },
       { id: "tymy", title: "Týmy sdružené péče", kind: "new", lines: ["kapitace a víceletá platba", "navíc asi 6 mld. Kč (4,8–7,5)"] },
       { id: "nem", title: "Specialisté a nemocnice", kind: "changed", lines: ["přeměna 8 000 lůžek", "akutní lůžka 26 % úhrad"] },
@@ -572,7 +572,7 @@ export const GOVERNANCE = {
   opposition: {
     heading: "V opozici: fáze F0 a F1, 2026–2029",
     nodes: [
-      { id: "pred", title: "Předsednictvo strany", lines: ["schvaluje volební program a jedno číslo daní"] },
+      { id: "pred", title: "Předsednictvo strany", lines: ["schvaluje volební program a plánovací hodnotu daní"] },
       { id: "klub", title: "Poslanecký klub", lines: ["pozměňovací návrhy k vládním předlohám"] },
       { id: "rt", title: "Resortní tým (RT)", kind: "main", lines: ["vede studii, konzultace a věcné záměry zákonů"] },
       { id: "pi", title: "Institut Pi", lines: ["analýzy, oponentura, podpora věcných záměrů"] },
