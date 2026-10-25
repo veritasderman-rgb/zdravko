@@ -20,7 +20,7 @@ export const MORE_LINKS = [
 ];
 
 // Otevřená otázka 14.3 zadání: PDF studie zatím neexistuje, odkaz vede na čtečku studie.
-const STUDY_PDF_HREF = "/studie";
+const STUDY_PDF_HREF = "/studie.pdf";
 
 /** Značka: kruh forest s domkem a „Zdraví blíž lidem“ v serifu. */
 export function Brand() {
