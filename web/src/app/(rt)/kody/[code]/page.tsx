@@ -51,12 +51,16 @@ export default async function CodePage({ params }: PageProps<"/kody/[code]">) {
         <p className="text-sm text-muted">Zatím žádné.</p>
       ) : (
         <ul className="mt-2 space-y-2">
-          {comments.map(({ c: cm, docSlug, docTitle, headingPath }) => (
+          {comments.map(({ c: cm, docSlug, docTitle, headingPath, currentBlockKey }) => (
             <li key={cm.id} className="rounded-lg border border-line bg-paper p-3 text-sm">
               <div className="flex flex-wrap gap-1 text-[11px]">
                 <span className={`chip ${SEVERITY_CLASS[cm.severity]}`}>{SEVERITY_LABEL[cm.severity]}</span>
                 <span className={`chip border-transparent ${STATUS_CLASS[cm.status]}`}>{STATUS_LABEL[cm.status]}</span>
-                <Link href={`/d/${docSlug}?b=${encodeURIComponent(cm.blockKey)}#${encodeURIComponent(cm.blockKey)}`} className="text-muted underline">{docTitle}{headingPath ? ` › ${headingPath}` : ""}</Link>
+                {currentBlockKey ? (
+                  <Link href={`/d/${docSlug}?b=${encodeURIComponent(currentBlockKey)}#${encodeURIComponent(currentBlockKey)}`} className="text-muted underline">{docTitle}{headingPath ? ` › ${headingPath}` : ""}</Link>
+                ) : (
+                  <Link href={`/d/${docSlug}`} className="text-muted underline">{docTitle}{headingPath ? ` › ${headingPath}` : ""}</Link>
+                )}
               </div>
               <p className="mt-1">{cm.body}</p>
             </li>

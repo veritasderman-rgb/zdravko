@@ -45,20 +45,37 @@ export async function getBlocks(versionId: number) {
   return db.select().from(schema.blocks).where(eq(schema.blocks.versionId, versionId)).orderBy(asc(schema.blocks.ordinal));
 }
 
-export async function getCommentCountsByBlock(documentId: number) {
+/** Počty připomínek podle trvalé kotvy bloku (ne podle polohového klíče, který se mezi verzemi posouvá). */
+export async function getCommentCountsByAnchor(documentId: number) {
   const rows = await db
-    .select({ blockKey: schema.comments.blockKey, n: count(), open: count(dsql`case when ${schema.comments.status} not in ('vyporadana','zverejnena') then 1 end`) })
+    .select({ anchorId: schema.comments.anchorId, n: count(), open: count(dsql`case when ${schema.comments.status} not in ('vyporadana','zverejnena') then 1 end`) })
     .from(schema.comments)
-    .where(and(eq(schema.comments.documentId, documentId), dsql`${schema.comments.parentId} is null`))
-    .groupBy(schema.comments.blockKey);
-  return new Map(rows.map((r) => [r.blockKey, { n: r.n, open: r.open }]));
+    .where(and(eq(schema.comments.documentId, documentId), dsql`${schema.comments.parentId} is null`, dsql`${schema.comments.anchorId} is not null`))
+    .groupBy(schema.comments.anchorId);
+  return new Map(rows.map((r) => [r.anchorId as string, { n: r.n, open: r.open }]));
 }
 
-export async function getCommentsForBlock(documentId: number, blockKey: string) {
+export async function getCommentsForAnchor(documentId: number, anchorId: string) {
   return db
     .select()
     .from(schema.comments)
-    .where(and(eq(schema.comments.documentId, documentId), eq(schema.comments.blockKey, blockKey)))
+    .where(and(eq(schema.comments.documentId, documentId), eq(schema.comments.anchorId, anchorId)))
+    .orderBy(asc(schema.comments.createdAt));
+}
+
+/** Připomínky k textu, který v aktuální verzi už není (kotva bez bloku). */
+export async function getOrphanComments(documentId: number, versionId: number) {
+  return db
+    .select()
+    .from(schema.comments)
+    .where(
+      and(
+        eq(schema.comments.documentId, documentId),
+        dsql`${schema.comments.parentId} is null`,
+        dsql`${schema.comments.anchorId} is not null`,
+        dsql`not exists (select 1 from ${schema.blocks} b where b.version_id = ${versionId} and b.anchor_id = ${schema.comments.anchorId})`,
+      ),
+    )
     .orderBy(asc(schema.comments.createdAt));
 }
 
@@ -87,10 +104,12 @@ export async function listComments(f: CommentFilter) {
       docSlug: schema.documents.slug,
       docTitle: schema.documents.title,
       headingPath: schema.blocks.headingPath,
+      // Polohový klíč téhož textu v aktuální verzi (podle kotvy); null = text v aktuální verzi není.
+      currentBlockKey: dsql<string | null>`(select b.block_key from ${schema.blocks} b join ${schema.documentVersions} v on v.id = b.version_id and v.is_current where v.document_id = ${schema.comments.documentId} and b.anchor_id = ${schema.comments.anchorId} limit 1)`,
     })
     .from(schema.comments)
     .innerJoin(schema.documents, eq(schema.comments.documentId, schema.documents.id))
-    .leftJoin(schema.blocks, and(eq(schema.blocks.versionId, schema.comments.versionId), eq(schema.blocks.blockKey, schema.comments.blockKey)))
+    .leftJoin(schema.blocks, eq(schema.blocks.id, schema.comments.blockId))
     .where(and(...conds))
     .orderBy(desc(schema.comments.createdAt))
     .limit(500);

@@ -7,7 +7,8 @@ import { and, count, eq, gt, sql } from "drizzle-orm";
 import { db, schema } from "@/db";
 import { getSession } from "@/lib/auth";
 import { sealSession, SESSION_COOKIE, sessionCookieOptions } from "@/lib/session";
-import { CODE_RE } from "@/lib/codes";
+import { withPoolDb } from "@/db/pool";
+import { CommentError, createComment, createReply, setCommentStatus, setVerificationStatus } from "@/lib/comments-core";
 import { commentConfirmation, sendMail } from "@/lib/mail";
 
 export type ActionState = { error?: string; ok?: boolean };
@@ -36,57 +37,41 @@ export async function logout() {
   redirect("/vstup");
 }
 
-const KINDS = new Set(["cislo", "vecna", "zneni", "zdroj", "pravni", "otazka", "podpora", "redakcni"]);
-const SEVERITIES = new Set(["zasadni", "doporucujici", "redakcni"]);
+/** Chyby z jádra (validace) ukážeme uživateli, ostatní zalogujeme a vrátíme obecnou zprávu. */
+function failure(e: unknown, fallback: string): ActionState {
+  if (e instanceof CommentError) return { error: e.message };
+  console.error(e);
+  return { error: fallback };
+}
 
 export async function addComment(_prev: ActionState, fd: FormData): Promise<ActionState> {
   const session = await getSession();
   if (!session) return { error: "Přihlášení vypršelo." };
-
-  const documentId = Number(fd.get("documentId"));
-  const versionId = Number(fd.get("versionId"));
-  const blockKey = str(fd, "blockKey", 300);
   const slug = str(fd, "slug", 100);
-  const kind = str(fd, "kind", 20);
-  const severity = str(fd, "severity", 20);
-  const body = str(fd, "body");
-  const proposedText = str(fd, "proposedText");
-  const source = str(fd, "source", 2000);
-  const quote = str(fd, "quote", 2000);
-  const codesRaw = str(fd, "codes", 500);
-  const onBehalf = str(fd, "onBehalf", 20) === "organizace" ? "organizace" : "osoba";
-  const needsVerification = fd.get("needsVerification") === "on";
-
-  if (!documentId || !versionId || !blockKey) return { error: "Chybí vazba na blok dokumentu." };
-  if (!KINDS.has(kind)) return { error: "Vyberte typ připomínky." };
-  if (!SEVERITIES.has(severity)) return { error: "Vyberte závažnost." };
-  if (body.length < 5) return { error: "Napište text připomínky." };
-  if (onBehalf === "organizace" && !session.organization) return { error: "Pro připomínku za organizaci musíte mít organizaci vyplněnou při vstupu." };
-
-  const codes = [...new Set([...codesRaw.matchAll(CODE_RE)].map((m) => m[1]))];
-
-  const [row] = await db
-    .insert(schema.comments)
-    .values({
-      documentId,
-      versionId,
-      blockKey,
-      quote: quote || null,
-      kind: kind as never,
-      severity: severity as never,
-      body,
-      proposedText: proposedText || null,
-      source: source || null,
-      needsVerification,
-      codes,
-      authorName: session.name,
-      organization: session.organization || null,
-      onBehalf,
-    })
-    .returning({ id: schema.comments.id });
-
-  await db.insert(schema.events).values({ entity: "comment", entityId: row.id, action: "created", actor: session.name, payload: { blockKey, kind, severity } });
-
+  try {
+    await withPoolDb((db) =>
+      createComment(db, {
+        documentId: Number(fd.get("documentId")),
+        versionId: Number(fd.get("versionId")),
+        blockKey: str(fd, "blockKey", 300),
+        kind: str(fd, "kind", 20),
+        severity: str(fd, "severity", 20),
+        body: str(fd, "body"),
+        quote: str(fd, "quote", 2000),
+        proposedText: str(fd, "proposedText"),
+        source: str(fd, "source", 2000),
+        needsVerification: fd.get("needsVerification") === "on",
+        codesText: str(fd, "codes", 500),
+        authorName: session.name,
+        organization: session.organization || null,
+        onBehalf: str(fd, "onBehalf", 20) === "organizace" ? "organizace" : "osoba",
+        channel: "rt",
+        actor: session.name,
+      }),
+    );
+  } catch (e) {
+    return failure(e, "Připomínku se nepodařilo uložit. Zkuste to prosím znovu.");
+  }
   revalidatePath(`/d/${slug}`);
   revalidatePath("/pripominky");
   revalidatePath("/rt");
@@ -96,53 +81,39 @@ export async function addComment(_prev: ActionState, fd: FormData): Promise<Acti
 export async function addReply(_prev: ActionState, fd: FormData): Promise<ActionState> {
   const session = await getSession();
   if (!session) return { error: "Přihlášení vypršelo." };
-  const parentId = Number(fd.get("parentId"));
-  const body = str(fd, "body");
   const slug = str(fd, "slug", 100);
-  if (!parentId || body.length < 2) return { error: "Napište odpověď." };
-  const parent = await db.query.comments.findFirst({ where: eq(schema.comments.id, parentId) });
-  if (!parent) return { error: "Připomínka nenalezena." };
-  await db.insert(schema.comments).values({
-    documentId: parent.documentId,
-    versionId: parent.versionId,
-    blockKey: parent.blockKey,
-    kind: "otazka",
-    severity: "redakcni",
-    body,
-    codes: parent.codes,
-    authorName: session.name,
-    organization: session.organization || null,
-    parentId,
-  });
+  try {
+    await withPoolDb((db) => createReply(db, { parentId: Number(fd.get("parentId")), body: str(fd, "body"), authorName: session.name, organization: session.organization || null, actor: session.name }));
+  } catch (e) {
+    return failure(e, "Odpověď se nepodařilo uložit.");
+  }
   revalidatePath(`/d/${slug}`);
   return { ok: true };
 }
 
-const STATUSES = new Set(["nova", "prirazena", "v_reseni", "navrh_vyporadani", "zkontrolovano", "vyporadana", "zverejnena"]);
-
 export async function updateCommentStatus(fd: FormData): Promise<void> {
   const session = await getSession();
   if (!session) return;
-  const id = Number(fd.get("id"));
-  const status = str(fd, "status", 30);
-  const assignee = str(fd, "assignee", 120);
-  const topic = str(fd, "topic", 120);
-  const priorityRaw = str(fd, "priority", 20);
-  const priority = PRIORITIES.has(priorityRaw) ? priorityRaw : undefined;
-  if (!id || !STATUSES.has(status)) return;
-  await db
-    .update(schema.comments)
-    .set({ status: status as never, assignee: assignee || null, topic: topic || null, ...(priority ? { priority } : {}), updatedAt: new Date() })
-    .where(eq(schema.comments.id, id));
-  await db.insert(schema.events).values({ entity: "comment", entityId: id, action: "status", actor: session.name, payload: { status, assignee, topic, priority } });
+  try {
+    await withPoolDb((db) =>
+      setCommentStatus(db, {
+        id: Number(fd.get("id")),
+        status: str(fd, "status", 30),
+        assignee: str(fd, "assignee", 120),
+        topic: str(fd, "topic", 120),
+        priority: str(fd, "priority", 20),
+        actor: session.name,
+      }),
+    );
+  } catch (e) {
+    if (!(e instanceof CommentError)) console.error(e);
+    return;
+  }
   revalidatePath("/pripominky");
   const slug = str(fd, "slug", 100);
   if (slug) revalidatePath(`/d/${slug}`);
 }
 
-const VSTATUS = new Set(["otevreno", "overeno_potvrzeno", "overeno_opraveno", "neoveritelne"]);
-const PRIORITIES = new Set(["nizka", "bezna", "vysoka"]);
-const PUBLIC_KINDS = new Set(["vecna", "cislo", "zneni", "zdroj", "otazka", "podpora"]);
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 /**
@@ -171,7 +142,6 @@ export async function addPublicComment(_prev: ActionState, fd: FormData): Promis
   if (!documentId || !versionId) return { error: "Chybí vazba na dokument. Obnovte prosím stránku." };
   if (name.length < 2) return { error: "Uveďte jméno nebo přezdívku (aspoň dva znaky)." };
   if (!EMAIL_RE.test(email)) return { error: "Zadejte platný e-mail." };
-  if (!PUBLIC_KINDS.has(kind)) return { error: "Vyberte typ připomínky." };
   if (body.length < 10) return { error: "Napište připomínku (aspoň deset znaků)." };
 
   // Omezení na straně serveru: nejvýš 5 připomínek z jednoho e-mailu za 10 minut
@@ -188,43 +158,36 @@ export async function addPublicComment(_prev: ActionState, fd: FormData): Promis
     .where(and(verejnost, gt(schema.comments.createdAt, sql`now() - interval '1 minute'`)));
   if (perMinute >= 30) return { error: "Právě přichází hodně připomínek najednou. Zkuste to prosím za chvíli." };
 
-  const [version] = await db.select({ id: schema.documentVersions.id, documentId: schema.documentVersions.documentId, label: schema.documentVersions.label }).from(schema.documentVersions).where(eq(schema.documentVersions.id, versionId));
-  if (!version || version.documentId !== documentId) return { error: "Verze dokumentu neodpovídá. Obnovte prosím stránku." };
-
-  // Vazba na blok: buď obecná připomínka, nebo existující blok této verze; úryvek bereme
-  // z uloženého textu bloku, ne z formuláře.
-  let quote: string | null = null;
-  if (blockKey !== "obecne") {
-    const [block] = await db.select({ text: schema.blocks.text }).from(schema.blocks).where(and(eq(schema.blocks.versionId, versionId), eq(schema.blocks.blockKey, blockKey)));
-    if (!block) return { error: "Odstavec, ke kterému píšete, v této verzi studie není. Obnovte prosím stránku." };
-    quote = block.text.slice(0, 300);
+  let created: Awaited<ReturnType<typeof createComment>>;
+  try {
+    created = await withPoolDb((db) =>
+      createComment(db, {
+        documentId,
+        versionId,
+        blockKey,
+        kind,
+        severity: "doporucujici",
+        body,
+        authorName: name,
+        email,
+        organization: organization || null,
+        onBehalf: "osoba",
+        channel: "verejnost",
+        priority: "nizka",
+        actor: `verejnost: ${name}`,
+      }),
+    );
+  } catch (e) {
+    return failure(e, "Připomínku se nepodařilo uložit. Zkuste to prosím znovu.");
   }
-
-  const codes = [...new Set([...body.matchAll(CODE_RE)].map((m) => m[1]))];
-  const [row] = await db
-    .insert(schema.comments)
-    .values({
-      documentId,
-      versionId,
-      blockKey,
-      quote,
-      kind: kind as never,
-      severity: "doporucujici",
-      body,
-      codes,
-      authorName: name,
-      email,
-      organization: organization || null,
-      onBehalf: "osoba",
-      channel: "verejnost",
-      priority: "nizka",
-    })
-    .returning({ id: schema.comments.id });
-  await db.insert(schema.events).values({ entity: "comment", entityId: row.id, action: "created", actor: `verejnost: ${name}`, payload: { blockKey, kind, channel: "verejnost" } });
+  const row = { id: created.id };
+  const quote = created.quote;
+  const version = { label: created.target.versionLabel };
+  const anchor = created.target.block?.anchorId;
 
   // Potvrzení e-mailem; když selže, připomínka zůstává uložená.
   const site = process.env.NEXT_PUBLIC_SITE_URL ?? "https://web-b5qk.vercel.app";
-  const studyUrl = blockKey === "obecne" ? `${site}/studie` : `${site}/studie#${encodeURIComponent(blockKey)}`;
+  const studyUrl = anchor ? `${site}/studie#${encodeURIComponent(anchor)}` : `${site}/studie`;
   const mail = commentConfirmation({ name, id: row.id, body, quote: quote || null, studyUrl, versionLabel: version.label });
   const sent = await sendMail({ to: email, ...mail });
   if (sent) await db.insert(schema.events).values({ entity: "comment", entityId: row.id, action: "confirmation_sent", actor: "system", payload: { to: email } });
@@ -239,15 +202,11 @@ export async function addPublicComment(_prev: ActionState, fd: FormData): Promis
 export async function updateVerification(fd: FormData): Promise<void> {
   const session = await getSession();
   if (!session) return;
-  const id = Number(fd.get("id"));
-  const status = str(fd, "status", 30);
-  const assignee = str(fd, "assignee", 120);
-  const note = str(fd, "note", 4000);
-  if (!id || !VSTATUS.has(status)) return;
-  await db
-    .update(schema.verifications)
-    .set({ status: status as never, assignee: assignee || null, note: note || null, updatedAt: new Date() })
-    .where(eq(schema.verifications.id, id));
-  await db.insert(schema.events).values({ entity: "verification", entityId: id, action: "status", actor: session.name, payload: { status, assignee } });
+  try {
+    await withPoolDb((db) => setVerificationStatus(db, { id: Number(fd.get("id")), status: str(fd, "status", 30), assignee: str(fd, "assignee", 120), note: str(fd, "note", 4000), actor: session.name }));
+  } catch (e) {
+    if (!(e instanceof CommentError)) console.error(e);
+    return;
+  }
   revalidatePath("/overit");
 }
