@@ -34,9 +34,9 @@ export function PublicCommentForm({ documentId, versionId, blockKey, quote = "",
   if (state.ok) {
     return (
       <div role="status" className="rounded-card border border-line bg-sage-soft p-5 text-[17px] text-ink">
-        <p className="font-semibold">Děkujeme, připomínku máme.</p>
+        <p className="font-semibold">Děkujeme. Ještě ji prosím potvrďte v e-mailu.</p>
         <p className="mt-1 text-muted">
-          Resortní tým ji projde spolu s ostatními. Vaše jméno ani e-mail nikde nezveřejníme; ve vypořádání uvádíme jen názvy organizací.
+          Poslali jsme vám odkaz. Připomínka se k resortnímu týmu dostane, až na něj kliknete; odkaz platí 7 dní. Když e-mail nepřijde, zkontrolujte i nevyžádanou poštu.
         </p>
         {onDone && (
           <button type="button" onClick={onDone} className="mt-4 inline-flex min-h-11 items-center rounded-full border-2 border-forest px-5 font-bold text-forest hover:bg-sage-soft">
@@ -104,8 +104,11 @@ export function PublicCommentForm({ documentId, versionId, blockKey, quote = "",
       </div>
 
       <p id={`${idp}-pozn`} className="text-[15px] text-muted">
-        Jméno si můžete zvolit jakékoli. E-mail potřebujeme, abychom se mohli zeptat na podrobnosti; nikde ho nezveřejníme a nikomu nepředáme.
-        Připomínky od veřejnosti vyřizujeme po připomínkách odborných organizací.
+        Jméno si můžete zvolit jakékoli. Na e-mail pošleme odkaz k potvrzení připomínky a případně se zeptáme na podrobnosti; nikde ho nezveřejníme a nikomu
+        nepředáme. Připomínky od veřejnosti vyřizujeme po připomínkách odborných organizací.{" "}
+        <a href="/ochrana-udaju" className="underline">
+          Jak s údaji zacházíme
+        </a>
       </p>
 
       {state.error && (

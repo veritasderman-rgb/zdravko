@@ -103,6 +103,7 @@ export function SiteFooter() {
           label="Poctivě"
           links={[
             { href: "/otazky#stret-zajmu", label: "Střet zájmů autora" },
+            { href: "/ochrana-udaju", label: "Ochrana osobních údajů" },
             { href: "/studie", label: "Zdroje dat" },
             { href: "/vstup", label: "Přihlášení pro tým" },
           ]}

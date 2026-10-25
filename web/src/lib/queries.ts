@@ -1,6 +1,9 @@
 import "server-only";
-import { and, asc, count, desc, eq, inArray, sql as dsql } from "drizzle-orm";
+import { and, asc, count, desc, eq, inArray, isNotNull, isNull, sql as dsql } from "drizzle-orm";
 import { db, schema } from "@/db";
+
+/** Veřejná připomínka čekající na potvrzení e-mailem se týmu nepočítá ani neukazuje. */
+const confirmed = isNull(schema.comments.verifyTokenHash);
 
 export async function listDocumentsWithStats() {
   const docs = await db.select().from(schema.documents).orderBy(asc(schema.documents.sort));
@@ -17,6 +20,7 @@ export async function listDocumentsWithStats() {
   const commentCounts = await db
     .select({ documentId: schema.comments.documentId, n: count(), open: count(dsql`case when ${schema.comments.status} not in ('vyporadana','zverejnena') then 1 end`) })
     .from(schema.comments)
+    .where(confirmed)
     .groupBy(schema.comments.documentId);
   const verifyCounts = await db
     .select({ documentId: schema.verifications.documentId, n: count(), open: count(dsql`case when ${schema.verifications.status} = 'otevreno' then 1 end`) })
@@ -50,7 +54,7 @@ export async function getCommentCountsByAnchor(documentId: number) {
   const rows = await db
     .select({ anchorId: schema.comments.anchorId, n: count(), open: count(dsql`case when ${schema.comments.status} not in ('vyporadana','zverejnena') then 1 end`) })
     .from(schema.comments)
-    .where(and(eq(schema.comments.documentId, documentId), dsql`${schema.comments.parentId} is null`, dsql`${schema.comments.anchorId} is not null`))
+    .where(and(eq(schema.comments.documentId, documentId), confirmed, dsql`${schema.comments.parentId} is null`, dsql`${schema.comments.anchorId} is not null`))
     .groupBy(schema.comments.anchorId);
   return new Map(rows.map((r) => [r.anchorId as string, { n: r.n, open: r.open }]));
 }
@@ -59,7 +63,7 @@ export async function getCommentsForAnchor(documentId: number, anchorId: string)
   return db
     .select()
     .from(schema.comments)
-    .where(and(eq(schema.comments.documentId, documentId), eq(schema.comments.anchorId, anchorId)))
+    .where(and(eq(schema.comments.documentId, documentId), eq(schema.comments.anchorId, anchorId), confirmed))
     .orderBy(asc(schema.comments.createdAt));
 }
 
@@ -71,6 +75,7 @@ export async function getOrphanComments(documentId: number, versionId: number) {
     .where(
       and(
         eq(schema.comments.documentId, documentId),
+        confirmed,
         dsql`${schema.comments.parentId} is null`,
         dsql`${schema.comments.anchorId} is not null`,
         dsql`not exists (select 1 from ${schema.blocks} b where b.version_id = ${versionId} and b.anchor_id = ${schema.comments.anchorId})`,
@@ -87,10 +92,12 @@ export interface CommentFilter {
   code?: string;
   q?: string;
   channel?: string;
+  /** "ceka" = jen veřejné připomínky čekající na potvrzení e-mailem; jinak jen potvrzené. */
+  overeni?: string;
 }
 
 export async function listComments(f: CommentFilter) {
-  const conds = [dsql`${schema.comments.parentId} is null`];
+  const conds = [dsql`${schema.comments.parentId} is null`, f.overeni === "ceka" ? isNotNull(schema.comments.verifyTokenHash) : confirmed];
   if (f.doc) conds.push(eq(schema.documents.slug, f.doc));
   if (f.status) conds.push(eq(schema.comments.status, f.status as never));
   if (f.severity) conds.push(eq(schema.comments.severity, f.severity as never));
@@ -115,9 +122,15 @@ export async function listComments(f: CommentFilter) {
     .limit(500);
 }
 
+/** Počet veřejných připomínek, které čekají na potvrzení e-mailem. */
+export async function countPendingVerification() {
+  const [{ n }] = await db.select({ n: count() }).from(schema.comments).where(isNotNull(schema.comments.verifyTokenHash));
+  return n;
+}
+
 export async function commentStats() {
-  const byStatus = await db.select({ status: schema.comments.status, n: count() }).from(schema.comments).where(dsql`${schema.comments.parentId} is null`).groupBy(schema.comments.status);
-  const bySeverity = await db.select({ severity: schema.comments.severity, n: count() }).from(schema.comments).where(dsql`${schema.comments.parentId} is null`).groupBy(schema.comments.severity);
+  const byStatus = await db.select({ status: schema.comments.status, n: count() }).from(schema.comments).where(and(confirmed, dsql`${schema.comments.parentId} is null`)).groupBy(schema.comments.status);
+  const bySeverity = await db.select({ severity: schema.comments.severity, n: count() }).from(schema.comments).where(and(confirmed, dsql`${schema.comments.parentId} is null`)).groupBy(schema.comments.severity);
   return { byStatus, bySeverity };
 }
 
@@ -148,7 +161,7 @@ export async function listCodesWithCounts() {
     select c.code as code, count(*)::int as n
     from ${schema.comments} k
     cross join lateral unnest(k.codes) as c(code)
-    where k.parent_id is null
+    where k.parent_id is null and k.verify_token_hash is null
     group by c.code`)).rows as { code: string; n: number }[];
   const blockCounts = new Map(blockRows.map((r) => [r.code, r.n]));
   const commentCounts = new Map(commentRows.map((r) => [r.code, r.n]));

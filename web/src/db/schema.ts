@@ -207,6 +207,11 @@ export const comments = pgTable(
     assignee: text("assignee"),
     topic: text("topic"), // téma vypořádání (pilíř / opatření / průřez)
     parentId: integer("parent_id"),
+    // Veřejná připomínka čeká na potvrzení e-mailem, dokud tu je hash tokenu z odkazu.
+    // Týmu se ukáže až po potvrzení; nepotvrzená se po 7 dnech maže.
+    verifyTokenHash: text("verify_token_hash"),
+    // Jméno a e-mail odstraněné (na žádost nebo po uplynutí lhůty uchování).
+    anonymizedAt: timestamp("anonymized_at", { withTimezone: true }),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
     updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
   },
@@ -214,7 +219,22 @@ export const comments = pgTable(
     index("comments_block_idx").on(t.documentId, t.blockKey),
     index("comments_anchor_idx").on(t.documentId, t.anchorId),
     index("comments_status_idx").on(t.status),
+    index("comments_email_idx").on(t.email),
+    uniqueIndex("comments_verify_token_idx").on(t.verifyTokenHash),
   ],
+);
+
+// Záznamy pro omezení počtu odeslání (veřejné připomínky, žádosti o údaje).
+// Klíč je HMAC adresy IP nebo e-mailu, ne adresa sama; záznamy se mažou po 30 dnech.
+export const rateHits = pgTable(
+  "rate_hits",
+  {
+    id: serial("id").primaryKey(),
+    scope: text("scope").notNull(),
+    keyHash: text("key_hash").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("rate_hits_key_idx").on(t.scope, t.keyHash, t.createdAt)],
 );
 
 export const resolutions = pgTable("resolutions", {

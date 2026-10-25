@@ -41,30 +41,68 @@ function esc(s: string): string {
   return s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c] ?? c);
 }
 
-/** Potvrzení veřejné připomínky ke studii. */
-export function commentConfirmation(p: { name: string; id: number; body: string; quote?: string | null; studyUrl: string; versionLabel: string }) {
-  const subject = `Vaše připomínka ke studii Zdraví blíž lidem (č. ${p.id})`;
+const SIGN = "Zdraví blíž lidem";
+
+const pocet = (n: number) => (n === 1 ? "jednu připomínku" : n >= 2 && n <= 4 ? `${n} připomínky` : `${n} připomínek`);
+
+/**
+ * Žádost o potvrzení veřejné připomínky. Do fronty týmu se připomínka dostane až po
+ * kliknutí na odkaz; nepotvrzená se po {days} dnech smaže.
+ */
+export function commentVerification(p: { name: string; id: number; body: string; quote?: string | null; confirmUrl: string; studyUrl: string; versionLabel: string; days: number; privacyUrl: string }) {
+  const subject = `Potvrďte prosím svou připomínku ke studii Zdraví blíž lidem (č. ${p.id})`;
   const quoteText = p.quote ? `\nK místu: „${p.quote}“\n` : "\n";
   const text = `Dobrý den,
 
 děkujeme za připomínku ke konzultační verzi studie Zdraví blíž lidem (${p.versionLabel}). Evidujeme ji pod číslem ${p.id}.
+
+Potvrďte ji prosím na této adrese, jinak ji tým neuvidí:
+${p.confirmUrl}
+
+Odkaz platí ${p.days} dní. Pokud jste připomínku neposílali vy, nic nedělejte: nepotvrzenou připomínku i s e-mailem smažeme.
 ${quoteText}
 Vaše připomínka:
 ${p.body}
 
 Co bude dál: resortní tým prochází připomínky po částech studie. Připomínky odborných organizací vyřizujeme přednostně, připomínky veřejnosti po nich. Když budeme potřebovat upřesnění, ozveme se na tento e-mail. Vaše jméno ani e-mail nikde nezveřejňujeme; ve veřejném vypořádání uvádíme jen názvy organizací.
 
+Jak s údaji zacházíme a jak si je stáhnout nebo smazat: ${p.privacyUrl}
 Studie: ${p.studyUrl}
 
-Zdraví blíž lidem
+${SIGN}
 `;
   const html = `<p>Dobrý den,</p>
 <p>děkujeme za připomínku ke konzultační verzi studie <strong>Zdraví blíž lidem</strong> (${esc(p.versionLabel)}). Evidujeme ji pod číslem <strong>${p.id}</strong>.</p>
+<p><strong>Potvrďte ji prosím, jinak ji tým neuvidí:</strong></p>
+<p><a href="${esc(p.confirmUrl)}" style="display:inline-block;background:#9a5a12;color:#fff;padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:bold">Potvrdit připomínku</a></p>
+<p style="color:#52594F">Odkaz platí ${p.days} dní. Pokud jste připomínku neposílali vy, nic nedělejte: nepotvrzenou připomínku i s e-mailem smažeme.</p>
 ${p.quote ? `<p style="color:#52594F">K místu: <em>„${esc(p.quote)}“</em></p>` : ""}
 <p><strong>Vaše připomínka:</strong></p>
 <blockquote style="border-left:3px solid #CFC5B3;margin:0;padding:4px 12px;white-space:pre-wrap">${esc(p.body)}</blockquote>
 <p><strong>Co bude dál.</strong> Resortní tým prochází připomínky po částech studie. Připomínky odborných organizací vyřizujeme přednostně, připomínky veřejnosti po nich. Když budeme potřebovat upřesnění, ozveme se na tento e-mail. Vaše jméno ani e-mail nikde nezveřejňujeme; ve veřejném vypořádání uvádíme jen názvy organizací.</p>
-<p>Studie: <a href="${esc(p.studyUrl)}">${esc(p.studyUrl)}</a></p>
-<p>Zdraví blíž lidem</p>`;
+<p><a href="${esc(p.privacyUrl)}">Jak s údaji zacházíme a jak si je stáhnout nebo smazat</a> · <a href="${esc(p.studyUrl)}">Studie</a></p>
+<p>${SIGN}</p>`;
+  return { subject, text, html };
+}
+
+/** Odkaz na vlastní údaje (náhled, stažení, výmaz). */
+export function dataAccessMail(p: { url: string; hours: number; count: number }) {
+  const subject = "Vaše údaje u konzultace studie Zdraví blíž lidem";
+  const text = `Dobrý den,
+
+o odkaz na své údaje jste požádali na webu studie Zdraví blíž lidem. Evidujeme od vás ${pocet(p.count)}.
+
+Na této adrese si údaje prohlédnete, stáhnete a můžete je smazat:
+${p.url}
+
+Odkaz platí ${p.hours} hodin. Pokud jste o něj nežádali, e-mail ignorujte; bez odkazu se k údajům nikdo nedostane.
+
+${SIGN}
+`;
+  const html = `<p>Dobrý den,</p>
+<p>o odkaz na své údaje jste požádali na webu studie Zdraví blíž lidem. Evidujeme od vás ${pocet(p.count)}.</p>
+<p><a href="${esc(p.url)}" style="display:inline-block;background:#1f4a3d;color:#fff;padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:bold">Zobrazit moje údaje</a></p>
+<p style="color:#52594F">Odkaz platí ${p.hours} hodin. Pokud jste o něj nežádali, e-mail ignorujte; bez odkazu se k údajům nikdo nedostane.</p>
+<p>${SIGN}</p>`;
   return { subject, text, html };
 }

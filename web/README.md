@@ -18,6 +18,9 @@ Statické stránky z obsahu studie v3, politické verze a prezentace, data v `sr
 | `/otazky` | osm častých otázek, střet zájmů |
 | `/studie` | plné znění odborné studie ke čtení, bez připomínek (z databáze, obnova po 5 minutách) |
 | `/slovnicek` | slovníček pojmů |
+| `/ochrana-udaju` | jak zacházíme s osobními údaji, lhůty uchování, žádost o odkaz na vlastní údaje |
+| `/ochrana-udaju/sprava?t=…` | náhled, stažení (JSON) a výmaz vlastních údajů z odkazu v e-mailu |
+| `/potvrdit?t=…` | potvrzení veřejné připomínky tlačítkem z odkazu v e-mailu |
 
 Texty jsou psané v první osobě množného čísla bez odborných výrazů; kde se jim nejde vyhnout, vysvětluje je slovníček. Grafy jsou v Recharts podle zásad dataviz (validovaná paleta, jedna osa, tenké pruhy, tabulková varianta u každého grafu).
 
@@ -74,9 +77,28 @@ pnpm db:push       # přidá sloupce anchor_id, block_id, block_text, block_hash
 pnpm db:anchors    # doplní kotvy do všech verzí a naváže na ně existující připomínky; vypíše kontrolu
 ```
 
+**Veřejné připomínky a osobní údaje** (`src/lib/privacy-core.ts`, stránka `/ochrana-udaju`):
+
+- Veřejná připomínka se uloží jako čekající (`comments.verify_token_hash`) a autorovi přijde odkaz k potvrzení.
+  Potvrzuje se tlačítkem na stránce `/potvrdit`, ne samotným otevřením odkazu, aby ji nepotvrdila kontrola pošty.
+  Do fronty týmu, počtů ve čtečce a exportu se dostane až po potvrzení; čekající ukáže `/pripominky?overeni=ceka`.
+  Když se potvrzovací e-mail nepodaří odeslat, připomínka se smaže a autor dostane chybu.
+- Omezení: z jedné adresy IP 5 připomínek za 10 minut a 20 za den, z jednoho e-mailu 5 za 10 minut, celkem 30 za
+  minutu; nejvýš tři odkazy v textu; stejný text ze stejného e-mailu za 24 hodin se neuloží podruhé. Tabulka
+  `rate_hits` drží jen HMAC adresy IP nebo e-mailu (klíč `PRIVACY_SECRET`, jinak `SESSION_SECRET`).
+- Lhůty: nepotvrzená připomínka 7 dní, záznamy limitů 30 dní, jméno a e-mail veřejné připomínky 24 měsíců.
+  Maže je denně `/cron/retence` (`vercel.json`, potřebuje `CRON_SECRET`), ručně `pnpm gdpr:retence`.
+- Export a výmaz: autor si na `/ochrana-udaju` nechá poslat podepsaný odkaz platný 24 hodin. Výmaz smaže nepotvrzené
+  připomínky celé, u ostatních odstraní jméno, e-mail, organizaci a text a vyčistí auditní záznamy; ve vypořádání
+  zůstane číslo, místo ve studii a stav.
+
+Nasazení: nejdřív `pnpm db:push` (přidá `comments.verify_token_hash`, `comments.anonymized_at` a tabulku `rate_hits`;
+starý kód nové sloupce ignoruje), pak sloučit kód a ve Vercelu nastavit `CRON_SECRET`.
+
 **Testy a kontroly.** `pnpm test` spouští testy nad PGlite (Postgres v paměti), bez sdílené databáze: přiřazení
 kotev, migraci připomínek ze studie v3 na v3.1 na skutečných souborech, doplnění kotev do starých dat, validaci
-a transakce zápisů a export bez osobních údajů. GitHub Actions (`.github/workflows/ci.yml`) pouští u každého PR
+a transakce zápisů, export bez osobních údajů, limity, potvrzení e-mailem, odkaz na vlastní údaje, výmaz a lhůty
+uchování. GitHub Actions (`.github/workflows/ci.yml`) pouští u každého PR
 lint, typecheck, testy a build.
 
 ## Struktura
@@ -86,9 +108,11 @@ lint, typecheck, testy a build.
 | `scripts/import.ts` | import Markdownu; logika v `src/lib/importer.ts` (bloky, kotvy, mapování verzí, „Ověřit“, registr kódů) |
 | `scripts/anchors-backfill.ts` | jednorázové doplnění kotev do starých verzí a navázání existujících připomínek |
 | `src/lib/comments-core.ts` | zápisy připomínek: společná validace a transakce s auditem |
+| `src/lib/privacy-core.ts`, `src/app/udaje-actions.ts` | limity, potvrzení e-mailem, export, výmaz a lhůty uchování osobních údajů |
+| `src/app/cron/retence`, `scripts/retence.ts` | denní a ruční mazání podle lhůt |
 | `tests/` | testy (Vitest + PGlite) |
 | `src/content/figures/vazby.ts` | mapa vazeb opatření v čase, organigramy pilířů, matice vlivů; `pnpm check:vazby` hlídá, že vazba „bez A nejde B“ nemíří proti času a že organigramy obsahují všechna opatření registru |
-| `src/db/schema.ts` | tabulky: documents, document_versions, blocks, codes, comments, resolutions, verifications, events |
+| `src/db/schema.ts` | tabulky: documents, document_versions, blocks, codes, comments, resolutions, verifications, events, rate_hits |
 | `src/lib/codes.ts` | regulární výraz a pomocníci pro kódy J/P/Pil/M/H/D/R/B |
 | `src/lib/session.ts`, `src/proxy.ts` | podepsaná cookie a ochrana všech stránek kromě `/vstup` |
 | `src/app/(web)` | veřejný web; `src/components/charts` grafy a kalkulačky; `src/components/web` navigace a prvky |
