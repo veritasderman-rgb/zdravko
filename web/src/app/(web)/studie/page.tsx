@@ -87,7 +87,7 @@ export default async function StudiePage() {
       <StudyReader outline={<Outline headings={headings} slug="studie" counts={empty} current={null} basePath="" />} headingKeys={headings.map((h) => h.blockKey)}>
         <StudySearch scope="#studie-text" />
         <PublicComments documentId={doc.id} versionId={version.id}>
-          <article id="studie-text" className="prose-block study-text max-w-[70ch] text-[19px] leading-[1.6] text-ink">
+          <article id="studie-text" className="prose-block study-text max-w-[70ch] text-[19px] leading-[1.6] text-ink [&_a]:[overflow-wrap:anywhere]">
             {blocks.map((b) => (
               <BlockView key={b.blockKey} block={b} slug="studie" selected={false} query={{ kod: null, s: null }} readOnly commentable />
             ))}

@@ -20,7 +20,7 @@ export function StudyFigureSlot({ desc, compact = false }: { desc: string; compa
         {DEPENDENCY_FIGURE_IDS.has(fig.id) && (
           <>
             {" "}
-            <a href={`/studie/zavislosti#${fig.id}`} className="whitespace-nowrap font-semibold text-forest underline print:hidden">
+            <a href={`/studie/zavislosti#${fig.id}`} className="font-semibold text-forest underline print:hidden">
               Všechny grafy závislostí na jedné stránce
             </a>
           </>
