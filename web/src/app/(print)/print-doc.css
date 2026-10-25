@@ -146,3 +146,12 @@
   border: 0 !important;
   border-radius: 0 !important;
 }
+
+/* Sdílený print.css zakazuje dělení tabulek (hodí se pro krátké tabulky webu);
+   v dokumentu se dlouhé tabulky dělit musí, jinak nechávají prázdné strany. */
+@media print {
+  .print-doc table {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+}
