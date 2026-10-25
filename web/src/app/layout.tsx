@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Source_Sans_3, Source_Serif_4 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
-import "./globals.css";
-
+// Písma jsou v projektu (Fontsource), build je nestahuje z Google Fonts.
 // Patkové titulky (Source Serif 4), bezpatkový text (Source Sans 3), kódy opatření (Geist Mono).
-// Proměnné se v globals.css skládají do --font-serif a --font-sans (utility font-serif, font-sans).
-const serif = Source_Serif_4({
-  variable: "--font-serif-src",
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "600", "700"],
-  style: ["normal", "italic"],
-});
-const sans = Source_Sans_3({ variable: "--font-sans-src", subsets: ["latin", "latin-ext"], weight: ["400", "600", "700"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin", "latin-ext"] });
+// Názvy rodin skládá globals.css do --font-serif a --font-sans (utility font-serif, font-sans).
+import "@fontsource-variable/source-serif-4/wght.css";
+import "@fontsource-variable/source-serif-4/wght-italic.css";
+import "@fontsource-variable/source-sans-3/wght.css";
+import "@fontsource-variable/geist-mono/wght.css";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: { default: "Zdraví blíž lidem", template: "%s · Zdraví blíž lidem" },
@@ -21,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="cs" className={`${serif.variable} ${sans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html lang="cs" className="h-full antialiased">
       <body className="flex min-h-full flex-col">
         <a
           href="#obsah"

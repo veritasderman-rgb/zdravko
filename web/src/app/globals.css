@@ -14,8 +14,10 @@
   --accent-soft: #dce8e0;
   --paper: #fbf8f2;
 
-  /* Písma: proměnné z next/font (layout.tsx) se skládají do celých stacků.
-     --font-serif-src a --font-sans-src nastavuje next/font na <html>. */
+  /* Písma: rodiny z Fontsource (layout.tsx) se skládají do celých stacků. */
+  --font-serif-src: "Source Serif 4 Variable";
+  --font-sans-src: "Source Sans 3 Variable";
+  --font-geist-mono: "Geist Mono Variable";
   --font-serif: var(--font-serif-src), Georgia, serif;
   --font-sans: var(--font-sans-src), "Segoe UI", system-ui, sans-serif;
 }
