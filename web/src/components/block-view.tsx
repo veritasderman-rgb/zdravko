@@ -97,6 +97,8 @@ export function BlockView({ block, slug, count, selected, query, readOnly = fals
 
   return (
     <div id={block.blockKey} data-selected={selected} className={`block-row group relative -mx-2 scroll-mt-16 rounded px-2 py-1.5 ${readOnly ? "" : "hover:bg-paper"}`}>
+      {/* Trvalá kotva: odkaz #kotva vede na tentýž text i v dalších verzích (polohový klíč se může posunout). */}
+      {block.anchorId && <span id={block.anchorId} aria-hidden className="pointer-events-none absolute -top-16 left-0 block h-0 w-0" />}
       <div className="flex items-start gap-2">
         <div className="min-w-0 flex-1">{content}</div>
         {!readOnly && <Link

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { requireSession } from "@/lib/auth";
-import { getBlocks, getCommentCountsByBlock, getCommentsForBlock, getDocumentBySlug, getCodesMap } from "@/lib/queries";
+import { getBlocks, getCommentCountsByAnchor, getCommentsForAnchor, getDocumentBySlug, getCodesMap, getOrphanComments } from "@/lib/queries";
 import { Outline } from "@/components/outline";
 import { BlockView } from "@/components/block-view";
 import { CommentPanel } from "@/components/comment-panel";
@@ -27,13 +27,17 @@ export default async function DocumentPage({ params, searchParams }: PageProps<"
   if (!found) notFound();
   const { doc, version } = found;
 
-  const [blocks, counts, selectedComments] = await Promise.all([
-    getBlocks(version.id),
-    getCommentCountsByBlock(doc.id),
-    selected ? getCommentsForBlock(doc.id, selected) : Promise.resolve([]),
-  ]);
+  const [blocks, anchorCounts, orphans] = await Promise.all([getBlocks(version.id), getCommentCountsByAnchor(doc.id), getOrphanComments(doc.id, version.id)]);
 
+  // Výběr v URL je polohový klíč aktuální verze; připomínky se ale hledají podle kotvy bloku.
   const selectedBlock = selected ? blocks.find((b) => b.blockKey === selected) ?? null : null;
+  const selectedComments = selectedBlock?.anchorId ? await getCommentsForAnchor(doc.id, selectedBlock.anchorId) : [];
+  // Počty pro osnovu a bloky podle polohového klíče aktuální verze
+  const counts = new Map<string, { n: number; open: number }>();
+  for (const b of blocks) {
+    const c = b.anchorId ? anchorCounts.get(b.anchorId) : undefined;
+    if (c) counts.set(b.blockKey, c);
+  }
   // Kódy pro předvyplnění: z bloku, jinak z nadpisu jeho sekce (např. „J2 · Sesterská složka…“)
   const sectionHeading = selectedBlock ? blocks.find((b) => b.kind === "heading" && b.sectionKey === selectedBlock.sectionKey) : null;
   const defaultCodes = selectedBlock?.codes.length ? selectedBlock.codes : sectionHeading?.codes ?? [];
@@ -91,7 +95,7 @@ export default async function DocumentPage({ params, searchParams }: PageProps<"
       </main>
 
       <aside className="border-l border-line bg-paper px-4 py-4 lg:sticky lg:top-[45px] lg:max-h-[calc(100vh-45px)] lg:overflow-y-auto">
-        <CommentPanel doc={doc} version={version} block={selectedBlock} comments={selectedComments} session={session} codeLabels={codeLabels} slug={slug} defaultCodes={defaultCodes} />
+        <CommentPanel doc={doc} version={version} block={selectedBlock} comments={selectedComments} orphans={orphans} session={session} codeLabels={codeLabels} slug={slug} defaultCodes={defaultCodes} />
       </aside>
     </div>
   );

@@ -9,9 +9,11 @@
     "lint": "eslint",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "next typegen && tsc --noEmit",
     "import:docs": "tsx scripts/import.ts",
-    "pdf": "node scripts/pdf.mjs"
+    "pdf": "node scripts/pdf.mjs",
+    "test": "vitest run",
+    "db:anchors": "tsx scripts/anchors-backfill.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.2.0",
@@ -27,20 +29,24 @@
     "remark-gfm": "^4.0.1",
     "remark-parse": "^11.0.0",
     "tsx": "^4.23.15",
-    "unified": "^11.0.5"
+    "unified": "^11.0.5",
+    "ws": "8.18.3"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "0.3.7",
     "@tailwindcss/turbopack": "^4",
     "@types/mdast": "^4.0.4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/ws": "8.18.1",
     "drizzle-kit": "^0.31.11",
     "eslint": "^9",
     "eslint-config-next": "16.4.2",
     "playwright-core": "^1.64.1",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "3.2.4"
   },
   "packageManager": "pnpm@10.28.0"
 }

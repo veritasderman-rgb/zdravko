@@ -11,7 +11,39 @@ type Comment = typeof schema.comments.$inferSelect;
 type Doc = typeof schema.documents.$inferSelect;
 type Version = typeof schema.documentVersions.$inferSelect;
 
-export function CommentPanel({ doc, version, block, comments, session, codeLabels, slug, defaultCodes }: { doc: Doc; version: Version; block: Block | null; comments: Comment[]; session: Session; codeLabels: Map<string, string | null>; slug: string; defaultCodes: string[] }) {
+/** Text bloku v době podání, když se od té doby změnil. */
+function ChangedText({ c, current }: { c: Comment; current: Block }) {
+  if (!c.blockHash || !c.blockText || c.blockHash === current.textHash) return null;
+  return (
+    <details className="mb-1 rounded border border-amber-300 bg-amber-50/60 px-2 py-1 text-xs text-amber-950">
+      <summary className="cursor-pointer font-semibold">Text odstavce se od podání připomínky změnil</summary>
+      <p className="mt-1 whitespace-pre-wrap text-stone-700">Původně: {c.blockText.length > 800 ? c.blockText.slice(0, 800) + "…" : c.blockText}</p>
+    </details>
+  );
+}
+
+function Orphans({ orphans }: { orphans: Comment[] }) {
+  if (!orphans.length) return null;
+  return (
+    <section className="mt-4 rounded-lg border border-amber-300 bg-amber-50/50 p-3 text-xs" aria-label="Připomínky k odstraněnému textu">
+      <h3 className="mb-1 text-sm font-semibold text-amber-950">Připomínky k textu, který v této verzi není ({orphans.length})</h3>
+      <p className="mb-2 text-stone-700">Odstavec, ke kterému připomínka vznikla, byl odstraněn nebo přepsán tak, že ho import nepřiřadil. Připomínka zůstává v evidenci i s původním textem.</p>
+      <ul className="space-y-2">
+        {orphans.map((c) => (
+          <li key={c.id} className="rounded border border-line bg-paper p-2">
+            <div className="mb-1 text-stone-600">„{(c.blockText ?? c.quote ?? "").slice(0, 300)}{(c.blockText ?? "").length > 300 ? "…" : ""}“</div>
+            <p className="whitespace-pre-wrap text-stone-900">{c.body.length > 400 ? c.body.slice(0, 400) + "…" : c.body}</p>
+            <div className="mt-1 text-[11px] text-muted">
+              #{c.id} · {STATUS_LABEL[c.status]} · {fmtDate(c.createdAt)}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+export function CommentPanel({ doc, version, block, comments, orphans = [], session, codeLabels, slug, defaultCodes }: { doc: Doc; version: Version; block: Block | null; comments: Comment[]; orphans?: Comment[]; session: Session; codeLabels: Map<string, string | null>; slug: string; defaultCodes: string[] }) {
   if (!block) {
     return (
       <div className="text-sm text-muted">
@@ -20,6 +52,7 @@ export function CommentPanel({ doc, version, block, comments, session, codeLabel
         <p className="mt-3">
           Doporučení studie: jedna věc, jeden komentář; návrh nového znění a zdroj; neověřený údaj označte „Ověřit“.
         </p>
+        <Orphans orphans={orphans} />
       </div>
     );
   }
@@ -65,6 +98,7 @@ export function CommentPanel({ doc, version, block, comments, session, codeLabel
                   <Link key={k} href={`/kody/${k}`} className="code-ref">{k}</Link>
                 ))}
               </div>
+              <ChangedText c={c} current={block} />
               {c.quote && <div className="mb-1 border-l-2 border-line pl-2 text-xs italic text-muted">„{c.quote}“</div>}
               <p className="whitespace-pre-wrap">{renderInline(c.body, { linkCodes: true })}</p>
               {c.proposedText && (

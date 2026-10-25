@@ -58,7 +58,7 @@ export default async function CommentsPage({ searchParams }: PageProps<"/pripomi
       </form>
 
       <ul className="mt-4 space-y-3">
-        {rows.map(({ c, docSlug, docTitle, headingPath }) => (
+        {rows.map(({ c, docSlug, docTitle, headingPath, currentBlockKey }) => (
           <li key={c.id} className="rounded-lg border border-line bg-paper p-4 text-sm">
             <div className="flex flex-wrap items-center gap-1 text-[11px]">
               <span className="font-mono text-muted">#{c.id}</span>
@@ -75,10 +75,14 @@ export default async function CommentsPage({ searchParams }: PageProps<"/pripomi
             <div className="mt-1 text-xs text-muted">
               {c.blockKey === "obecne" ? (
                 <span>{docTitle} › obecná připomínka</span>
-              ) : (
-                <Link href={`/d/${docSlug}?b=${encodeURIComponent(c.blockKey)}#${encodeURIComponent(c.blockKey)}`} className="underline">
+              ) : currentBlockKey ? (
+                <Link href={`/d/${docSlug}?b=${encodeURIComponent(currentBlockKey)}#${encodeURIComponent(currentBlockKey)}`} className="underline">
                   {docTitle}{headingPath ? ` › ${headingPath}` : ""}
                 </Link>
+              ) : (
+                <span>
+                  {docTitle}{headingPath ? ` › ${headingPath}` : ""} · <span className="text-amber-800">text v aktuální verzi není</span>
+                </span>
               )}
             </div>
             {c.quote && <div className="mt-1 border-l-2 border-line pl-2 text-xs italic text-muted">„{c.quote}“</div>}

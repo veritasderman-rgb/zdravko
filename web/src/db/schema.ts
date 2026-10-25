@@ -5,6 +5,7 @@ import {
   jsonb,
   pgEnum,
   pgTable,
+  real,
   serial,
   text,
   timestamp,
@@ -62,7 +63,13 @@ export const blocks = pgTable(
     documentId: integer("document_id")
       .notNull()
       .references(() => documents.id),
-    blockKey: text("block_key").notNull(), // stabilní klíč: sekce#druhN
+    // Polohový klíč `sekce#druhN`: slouží jen pro odkazy v URL a v rámci jedné verze.
+    // Mezi verzemi se posouvá (vložený odstavec přečísluje následující), proto se na něj
+    // připomínky nevážou.
+    blockKey: text("block_key").notNull(),
+    // Trvalá kotva bloku: import ji přenese na odpovídající blok další verze podle shody
+    // textu (viz src/lib/anchors.ts). Na ni se vážou připomínky.
+    anchorId: text("anchor_id"),
     ordinal: integer("ordinal").notNull(),
     kind: blockKind("kind").notNull(),
     level: integer("level"), // úroveň nadpisu
@@ -79,7 +86,34 @@ export const blocks = pgTable(
     uniqueIndex("blocks_version_key_idx").on(t.versionId, t.blockKey),
     index("blocks_document_idx").on(t.documentId),
     index("blocks_section_idx").on(t.versionId, t.sectionKey),
+    index("blocks_anchor_idx").on(t.versionId, t.anchorId),
   ],
+);
+
+/**
+ * Mapování bloků mezi po sobě jdoucími verzemi: co se s blokem stalo.
+ * exact = stejný text; moved = stejný text v jiné sekci; similar = upravený text;
+ * new = blok v nové verzi nemá předchůdce; removed = blok v nové verzi chybí.
+ */
+export const blockLineage = pgTable(
+  "block_lineage",
+  {
+    id: serial("id").primaryKey(),
+    documentId: integer("document_id")
+      .notNull()
+      .references(() => documents.id),
+    fromVersionId: integer("from_version_id").references(() => documentVersions.id),
+    toVersionId: integer("to_version_id")
+      .notNull()
+      .references(() => documentVersions.id),
+    anchorId: text("anchor_id").notNull(),
+    fromBlockId: integer("from_block_id").references(() => blocks.id),
+    toBlockId: integer("to_block_id").references(() => blocks.id),
+    method: text("method").notNull(), // exact | moved | similar | new | removed
+    similarity: real("similarity"),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("block_lineage_to_idx").on(t.toVersionId), index("block_lineage_anchor_idx").on(t.documentId, t.anchorId)],
 );
 
 // Registr kódů: opatření J/P/Pil/M, ukazatele H/D, rizika R, brány B.
@@ -147,8 +181,14 @@ export const comments = pgTable(
     versionId: integer("version_id")
       .notNull()
       .references(() => documentVersions.id),
-    blockKey: text("block_key").notNull(),
-    quote: text("quote"), // označený úryvek, přežije přečíslování bloků
+    blockKey: text("block_key").notNull(), // polohový klíč v době podání ("obecne" = ke studii jako celku)
+    // Trvalá vazba: kotva bloku, konkrétní blok verze, ke které připomínka vznikla,
+    // a text bloku v tu chvíli. Podle hashe čtečka pozná, že se text od podání změnil.
+    anchorId: text("anchor_id"),
+    blockId: integer("block_id").references(() => blocks.id),
+    blockText: text("block_text"),
+    blockHash: text("block_hash"),
+    quote: text("quote"), // úryvek, ke kterému připomínka míří (vždy část textu bloku)
     kind: commentKind("kind").notNull(),
     severity: commentSeverity("severity").notNull().default("doporucujici"),
     body: text("body").notNull(),
@@ -172,6 +212,7 @@ export const comments = pgTable(
   },
   (t) => [
     index("comments_block_idx").on(t.documentId, t.blockKey),
+    index("comments_anchor_idx").on(t.documentId, t.anchorId),
     index("comments_status_idx").on(t.status),
   ],
 );

@@ -57,17 +57,36 @@ pnpm import:docs             # naimportuje studii do bloků (jen při změně; -
 pnpm dev
 ```
 
-Po změně Markdownu stačí znovu `pnpm import:docs`: dokument dostane novou verzi, bloky se znovu vytvoří a položky
-„Ověřit“ si drží stav podle textu. **Známé omezení MVP:** připomínka je navázaná na klíč bloku (sekce + pořadí
-v sekci). Vložení odstavce do sekce proto posune klíče následujících bloků a připomínky k nim ukazují jinam. Před
-první novou verzí (v3.1) je třeba doplnit mapování starý blok → nový blok (shoda textu v sekci, pak podobnost,
-zbytek ručně) a připomínky na něj přepsat; návrh je v `docs/navrh-konzultacni-platformy.md`, oddíl 3.1.
+Po změně Markdownu stačí znovu `pnpm import:docs`: dokument dostane novou verzi a „Ověřit“ si drží stav podle textu.
+
+**Kotvy připomínek.** Polohový klíč bloku (`sekce#p3`) slouží jen pro odkazy v rámci jedné verze, protože vložený
+odstavec přečísluje následující. Připomínky se proto vážou na trvalou kotvu bloku (`blocks.anchor_id`). Import ji
+přenese na odpovídající blok nové verze podle obsahu: nejdřív přesná shoda textu, pak podobnost slov, ostatní
+bloky dostanou novou kotvu (`src/lib/anchors.ts`). Co se s kterým blokem stalo (stejný, upravený, přesunutý, nový,
+odstraněný), zapisuje tabulka `block_lineage`. Připomínka si navíc ukládá blok a jeho text v době podání, takže
+čtečka pozná, že se text od podání změnil, a připomínky k odstraněnému textu ukáže zvlášť. Celý import verze
+běží v jedné transakci; když cokoli selže, zůstane aktuální předchozí verze.
+
+**Migrace starých dat na kotvy** (jednou, před nasazením kódu s kotvami):
+
+```bash
+pnpm db:push       # přidá sloupce anchor_id, block_id, block_text, block_hash a tabulku block_lineage
+pnpm db:anchors    # doplní kotvy do všech verzí a naváže na ně existující připomínky; vypíše kontrolu
+```
+
+**Testy a kontroly.** `pnpm test` spouští testy nad PGlite (Postgres v paměti), bez sdílené databáze: přiřazení
+kotev, migraci připomínek ze studie v3 na v3.1 na skutečných souborech, doplnění kotev do starých dat, validaci
+a transakce zápisů a export bez osobních údajů. GitHub Actions (`.github/workflows/ci.yml`) pouští u každého PR
+lint, typecheck, testy a build.
 
 ## Struktura
 
 | Cesta | Co |
 | --- | --- |
-| `scripts/import.ts` | import Markdownu: bloky, kódy, „Ověřit“, registr kódů z tabulek |
+| `scripts/import.ts` | import Markdownu; logika v `src/lib/importer.ts` (bloky, kotvy, mapování verzí, „Ověřit“, registr kódů) |
+| `scripts/anchors-backfill.ts` | jednorázové doplnění kotev do starých verzí a navázání existujících připomínek |
+| `src/lib/comments-core.ts` | zápisy připomínek: společná validace a transakce s auditem |
+| `tests/` | testy (Vitest + PGlite) |
 | `src/db/schema.ts` | tabulky: documents, document_versions, blocks, codes, comments, resolutions, verifications, events |
 | `src/lib/codes.ts` | regulární výraz a pomocníci pro kódy J/P/Pil/M/H/D/R/B |
 | `src/lib/session.ts`, `src/proxy.ts` | podepsaná cookie a ochrana všech stránek kromě `/vstup` |
