@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { requireSession } from "@/lib/auth";
-import { listComments, listDocumentsWithStats } from "@/lib/queries";
+import { countPendingVerification, listComments, listDocumentsWithStats } from "@/lib/queries";
 import { CHANNEL_LABEL, KIND_LABEL, PRIORITY_CLASS, PRIORITY_LABEL, SEVERITY_CLASS, SEVERITY_LABEL, STATUS_CLASS, STATUS_LABEL, fmtDate } from "@/lib/labels";
 import { updateCommentStatus } from "@/app/actions";
 
@@ -14,8 +14,8 @@ function one(v: string | string[] | undefined) {
 export default async function CommentsPage({ searchParams }: PageProps<"/pripominky">) {
   await requireSession();
   const sp = await searchParams;
-  const filter = { doc: one(sp.doc), status: one(sp.status), severity: one(sp.severity), kind: one(sp.kind), code: one(sp.code), q: one(sp.q), channel: one(sp.channel) };
-  const [rows, docs] = await Promise.all([listComments(filter), listDocumentsWithStats()]);
+  const filter = { doc: one(sp.doc), status: one(sp.status), severity: one(sp.severity), kind: one(sp.kind), code: one(sp.code), q: one(sp.q), channel: one(sp.channel), overeni: one(sp.overeni) };
+  const [rows, docs, pending] = await Promise.all([listComments(filter), listDocumentsWithStats(), countPendingVerification()]);
 
   const exportHref = `/api/export/pripominky?${new URLSearchParams(Object.entries(filter).filter(([, v]) => v) as [string, string][]).toString()}`;
 
@@ -29,7 +29,22 @@ export default async function CommentsPage({ searchParams }: PageProps<"/pripomi
         <a href={exportHref} className="btn btn-ghost">Export CSV</a>
       </div>
 
+      {filter.overeni === "ceka" ? (
+        <p className="mt-3 rounded-lg border border-amber-300 bg-amber-50 p-3 text-sm text-amber-900">
+          Veřejné připomínky, které autor ještě nepotvrdil odkazem z e-mailu. Do fronty se dostanou po potvrzení; nepotvrzené se po 7 dnech smažou.{" "}
+          <Link href="/pripominky" className="underline">Zpět na potvrzené</Link>
+        </p>
+      ) : (
+        pending > 0 && (
+          <p className="mt-3 text-sm text-muted">
+            {pending} veřejných připomínek čeká na potvrzení e-mailem.{" "}
+            <Link href="/pripominky?overeni=ceka" className="underline">Zobrazit</Link>
+          </p>
+        )
+      )}
+
       <form className="mt-4 grid grid-cols-2 gap-2 rounded-lg border border-line bg-paper p-3 text-sm md:grid-cols-7">
+        {filter.overeni && <input type="hidden" name="overeni" value={filter.overeni} />}
         <select name="doc" defaultValue={filter.doc ?? ""}>
           <option value="">Všechny dokumenty</option>
           {docs.map((d) => <option key={d.slug} value={d.slug}>{d.title}</option>)}

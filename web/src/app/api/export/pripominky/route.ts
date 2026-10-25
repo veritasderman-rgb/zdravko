@@ -10,7 +10,7 @@ export async function GET(req: NextRequest) {
   if (!session) return new NextResponse("Unauthorized", { status: 401 });
   const sp = req.nextUrl.searchParams;
   const g = (k: string) => sp.get(k) || undefined;
-  const rows = await listComments({ doc: g("doc"), status: g("status"), severity: g("severity"), kind: g("kind"), code: g("code"), q: g("q"), channel: g("channel") });
+  const rows = await listComments({ doc: g("doc"), status: g("status"), severity: g("severity"), kind: g("kind"), code: g("code"), q: g("q"), channel: g("channel"), overeni: g("overeni") });
   const publicMode = sp.get("verejne") === "1";
 
   const body = commentsCsv(rows, publicMode);

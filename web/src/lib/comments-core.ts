@@ -85,6 +85,8 @@ export type NewComment = {
   email?: string | null;
   channel: "rt" | "verejnost";
   priority?: (typeof PRIORITIES)[number];
+  /** Hash tokenu z potvrzovacího e-mailu; připomínka do potvrzení čeká mimo frontu týmu. */
+  verifyTokenHash?: string | null;
   actor: string;
 };
 
@@ -127,6 +129,7 @@ export async function createComment(db: AnyDb, c: NewComment): Promise<CreatedCo
         email: c.email ?? null,
         channel: c.channel,
         priority: c.priority ?? (c.channel === "verejnost" ? "nizka" : "bezna"),
+        verifyTokenHash: c.verifyTokenHash ?? null,
       })
       .returning({ id: schema.comments.id });
     await tx.insert(schema.events).values({
