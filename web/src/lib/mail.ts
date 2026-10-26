@@ -125,3 +125,26 @@ ${SIGN}
 <p>${SIGN}</p>`;
   return { subject, text, html };
 }
+
+/** Potvrzení odběru novinek (dvojité potvrzení: do seznamu jde e-mail až po kliknutí). */
+export function newsletterConfirmMail(p: { url: string; hours: number; privacyUrl: string }) {
+  const subject = "Potvrďte prosím odběr novinek Zdraví blíž lidem";
+  const text = `Dobrý den,
+
+na webu Zdraví blíž lidem jste se přihlásili k odběru novinek o tom, jak pokračuje plán reformy zdravotnictví. Odběr prosím potvrďte na této adrese:
+${p.url}
+
+Odkaz platí ${p.hours} hodin. Pokud jste se nepřihlašovali vy, e-mail ignorujte; bez potvrzení vás do seznamu nepřidáme.
+
+Odběr můžete kdykoli zrušit odkazem v každém e-mailu. Jak s údaji zacházíme: ${p.privacyUrl}
+
+${SIGN}
+`;
+  const html = `<p>Dobrý den,</p>
+<p>na webu Zdraví blíž lidem jste se přihlásili k odběru novinek o tom, jak pokračuje plán reformy zdravotnictví.</p>
+<p><a href="${esc(p.url)}" style="display:inline-block;background:#1f4a3d;color:#fff;padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:bold">Potvrdit odběr</a></p>
+<p style="color:#52594F">Odkaz platí ${p.hours} hodin. Pokud jste se nepřihlašovali vy, e-mail ignorujte; bez potvrzení vás do seznamu nepřidáme.</p>
+<p style="color:#52594F">Odběr můžete kdykoli zrušit odkazem v každém e-mailu. <a href="${esc(p.privacyUrl)}">Jak s údaji zacházíme</a></p>
+<p>${SIGN}</p>`;
+  return { subject, text, html };
+}

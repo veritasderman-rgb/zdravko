@@ -1,0 +1,306 @@
+<!doctype html>
+<!--
+  Scény vysvětlujícího videa. Stránku otevírá scripts/render-video.mjs, předá jí časy slov
+  komentáře (setup) a snímek po snímku volá render(t). Každá scéna odpovídá jednomu odstavci
+  komentáře, prvky se objevují podle toho, kdy zazní jejich slovo.
+-->
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: SourceSerif; src: url(../node_modules/@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-normal.woff2) format("woff2"); font-weight: 200 900; }
+  @font-face { font-family: SourceSerif; src: url(../node_modules/@fontsource-variable/source-serif-4/files/source-serif-4-latin-ext-wght-normal.woff2) format("woff2"); font-weight: 200 900; unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+  @font-face { font-family: SourceSans; src: url(../node_modules/@fontsource-variable/source-sans-3/files/source-sans-3-latin-wght-normal.woff2) format("woff2"); font-weight: 200 900; }
+  @font-face { font-family: SourceSans; src: url(../node_modules/@fontsource-variable/source-sans-3/files/source-sans-3-latin-ext-wght-normal.woff2) format("woff2"); font-weight: 200 900; unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+  :root {
+    --sand: #f3eee4; --paper: #fbf8f2; --ink: #1c2321; --ink-2: #3c4340; --muted: #52594f;
+    --line: #ddd5c6; --line-strong: #cfc5b3; --forest: #1f4a3d; --forest-deep: #143229;
+    --sage: #a9c4b5; --sage-soft: #dce8e0; --honey: #f2d29b; --blue: #2A78D6; --orange: #EB6834;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1280px; height: 720px; overflow: hidden; background: var(--sand); }
+  body { font-family: SourceSans, sans-serif; color: var(--ink); font-size: 26px; }
+  .scene { position: absolute; inset: 0; padding: 92px 96px 150px; opacity: 0; display: flex; flex-direction: column; }
+  .brand { position: absolute; left: 96px; top: 36px; display: flex; align-items: center; gap: 12px; font-family: SourceSerif; font-weight: 600; font-size: 22px; color: var(--ink); z-index: 5; }
+  .brand.dark { color: var(--sand); }
+  .eyebrow { font-weight: 700; font-size: 20px; letter-spacing: .1em; text-transform: uppercase; color: var(--forest); }
+  .h { font-family: SourceSerif; font-weight: 600; letter-spacing: -0.015em; line-height: 1.1; }
+  .src { position: absolute; right: 96px; top: 42px; font-size: 17px; color: var(--muted); }
+  .a { will-change: opacity, transform; }
+  .row { display: flex; gap: 48px; }
+  .pill { border: 2px solid var(--line-strong); background: var(--paper); border-radius: 999px; padding: 12px 26px; font-weight: 600; }
+  .card { background: var(--paper); border: 1px solid var(--line); border-radius: 18px; }
+</style>
+</head>
+<body>
+<div class="brand" id="brand">
+  <svg width="38" height="38" viewBox="0 0 38 38"><circle cx="19" cy="19" r="19" fill="#1f4a3d"/><path d="M10 20 L19 12 L28 20 M13 18 V27 H25 V18" fill="none" stroke="#f3eee4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="19" cy="22" r="2.4" fill="#f2d29b"/></svg>
+  <span>Zdraví blíž lidem</span>
+</div>
+
+<!-- 1. Demografie -->
+<section class="scene" id="s1">
+  <div class="src a" data-at="w:dvě">Zdroj: ÚZIS</div>
+  <div class="eyebrow a" data-at="start">Lidé nad 85 let v Česku</div>
+  <div class="row" style="flex:1; align-items:flex-end; gap:80px; margin-top:24px">
+    <div style="display:flex; align-items:flex-end; gap:56px; height:100%">
+      <div style="display:flex; flex-direction:column; align-items:center; gap:12px; justify-content:flex-end; height:100%">
+        <div class="h a" data-at="w:dvě" style="font-size:44px; color:var(--forest)">200 tisíc</div>
+        <div id="bar2024" style="width:150px; background:var(--sage); border-radius:10px 10px 0 0; height:0"></div>
+        <div style="font-weight:700; font-size:24px; color:var(--muted)">2024</div>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:12px; justify-content:flex-end; height:100%">
+        <div class="h a" data-at="w:půl" style="font-size:44px; color:var(--forest)">509 tisíc</div>
+        <div id="bar2050" style="width:150px; background:var(--forest); border-radius:10px 10px 0 0; height:0"></div>
+        <div style="font-weight:700; font-size:24px; color:var(--muted)">2050</div>
+      </div>
+    </div>
+    <div style="flex:1; align-self:center; display:flex; flex-direction:column; gap:22px; padding-bottom:30px">
+      <div class="h a" data-at="w:To" style="font-size:40px; color:var(--muted)">To není názor.</div>
+      <div class="h a" data-at="w:Ti" style="font-size:58px">Ti lidé už se narodili.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Kam jdou peníze -->
+<section class="scene" id="s2">
+  <div class="src a" data-at="start">Zdroj: ÚZIS, platby pojišťoven 2024</div>
+  <div class="h a" data-at="start" style="font-size:46px">Ze 100 Kč, které zaplatí pojišťovny</div>
+  <div class="row" style="margin-top:34px; align-items:center; gap:64px">
+    <div id="grid" style="display:grid; grid-template-columns:repeat(10, 34px); gap:7px"></div>
+    <div style="display:flex; flex-direction:column; gap:34px">
+      <div class="a" data-at="w:třicet" style="display:flex; gap:18px; align-items:baseline">
+        <span class="h" style="font-size:64px; color:var(--blue)">29,70 Kč</span>
+        <span style="font-size:28px; color:var(--ink-2)">akutní lůžka<br>v&nbsp;nemocnicích</span>
+      </div>
+      <div class="a" data-at="w:praktikům" style="display:flex; gap:18px; align-items:baseline">
+        <span class="h" style="font-size:64px; color:var(--orange)">4,30 Kč</span>
+        <span style="font-size:28px; color:var(--ink-2)">praktici<br>pro dospělé</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Studie a hlavní myšlenka -->
+<section class="scene" id="s3" style="justify-content:center">
+  <div class="eyebrow a" data-at="start">Plán reformy zdravotnictví · verze 3.1 ke konzultaci</div>
+  <div class="h a" data-at="start" style="font-size:40px; color:var(--muted); margin-top:14px">Studie Zdraví blíž lidem</div>
+  <div class="h a" data-at="w:Každý" style="font-size:60px; margin-top:30px; max-width:1088px; line-height:1.08">
+    Každý člověk má mít svého lékaře a&nbsp;svou sestru <span id="hl" style="background:linear-gradient(transparent 62%, var(--honey) 62%); background-size:0% 100%; background-repeat:no-repeat">blízko domova.</span>
+  </div>
+</section>
+
+<!-- 4. Tým primární péče -->
+<section class="scene" id="s4">
+  <div class="eyebrow a" data-at="start">Svůj lékař a svoje sestra</div>
+  <svg width="1088" height="460" viewBox="0 0 1088 460" style="margin-top:6px">
+    <g class="a" data-at="w:týmů">
+      <line x1="544" y1="230" x2="250" y2="110" stroke="#cfc5b3" stroke-width="3"/>
+      <line x1="544" y1="230" x2="250" y2="350" stroke="#cfc5b3" stroke-width="3"/>
+    </g>
+    <g class="a" data-at="w:přijede"><line x1="544" y1="230" x2="740" y2="110" stroke="#1f4a3d" stroke-width="3" stroke-dasharray="10 9"/></g>
+    <g class="a" data-at="w:odvoz"><line x1="544" y1="230" x2="740" y2="350" stroke="#1f4a3d" stroke-width="3" stroke-dasharray="10 9"/></g>
+    <g class="a" data-at="w:Praktici">
+      <circle cx="544" cy="230" r="112" fill="#1f4a3d"/>
+      <text x="544" y="222" text-anchor="middle" fill="#f3eee4" font-family="SourceSerif" font-weight="600" font-size="30">Tým</text>
+      <text x="544" y="256" text-anchor="middle" fill="#a9c4b5" font-family="SourceSans" font-size="21">10–25 tisíc lidí</text>
+    </g>
+    <g class="a" data-at="w:spojit">
+      <circle cx="210" cy="110" r="62" fill="#fbf8f2" stroke="#cfc5b3" stroke-width="2"/>
+      <text x="210" y="118" text-anchor="middle" font-family="SourceSans" font-weight="700" font-size="24" fill="#1c2321">praktici</text>
+    </g>
+    <g class="a" data-at="w:sestrami.">
+      <circle cx="210" cy="350" r="62" fill="#dce8e0" stroke="#a9c4b5" stroke-width="2"/>
+      <text x="210" y="344" text-anchor="middle" font-family="SourceSans" font-weight="700" font-size="24" fill="#1c2321">víc sester</text>
+      <g fill="#1f4a3d"><circle cx="186" cy="372" r="7"/><circle cx="210" cy="372" r="7"/><circle cx="234" cy="372" r="7"/></g>
+    </g>
+    <g class="a" data-at="w:domů">
+      <rect x="740" y="50" width="300" height="120" rx="18" fill="#fbf8f2" stroke="#cfc5b3" stroke-width="2"/>
+      <path d="M784 112 L806 92 L828 112 M790 108 V130 H822 V108" fill="none" stroke="#1f4a3d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="846" y="108" font-family="SourceSans" font-weight="700" font-size="24" fill="#1c2321">sestra</text>
+      <text x="846" y="136" font-family="SourceSans" font-size="22" fill="#52594f">přijede domů</text>
+    </g>
+    <g class="a" data-at="w:odvoz">
+      <rect x="740" y="290" width="300" height="120" rx="18" fill="#fbf8f2" stroke="#cfc5b3" stroke-width="2"/>
+      <g fill="none" stroke="#1f4a3d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M780 360 h52 v-14 l-10 -16 h-32 l-10 16 z"/><circle cx="792" cy="364" r="5" fill="#1f4a3d"/><circle cx="820" cy="364" r="5" fill="#1f4a3d"/></g>
+      <text x="846" y="346" font-family="SourceSans" font-weight="700" font-size="24" fill="#1c2321">odvoz k lékaři</text>
+      <text x="846" y="374" font-family="SourceSans" font-size="22" fill="#52594f">zajistí obec</text>
+    </g>
+  </svg>
+</section>
+
+<!-- 5. Naléhavost -->
+<section class="scene" id="s5">
+  <div class="eyebrow a" data-at="start">Ke specialistovi podle toho, jak to spěchá</div>
+  <div class="row" style="margin-top:34px; align-items:center; gap:56px">
+    <div class="card a" data-at="w:Lékař" style="width:560px; padding:30px 34px; display:flex; flex-direction:column; gap:20px">
+      <div style="font-size:20px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--muted)">Elektronická žádanka</div>
+      <div class="opt" data-at="w:dvou"><span class="box"></span>do 2 týdnů</div>
+      <div class="opt" data-at="w:šesti"><span class="box"></span>do 6 týdnů</div>
+      <div class="opt" data-at="w:plánovaně."><span class="box"></span>plánované</div>
+    </div>
+    <div class="a" data-at="w:pojišťovna" style="display:flex; flex-direction:column; gap:16px; max-width:420px">
+      <div style="width:84px; height:84px; border-radius:50%; background:var(--forest); display:grid; place-items:center">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#f2d29b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+      </div>
+      <div class="h" style="font-size:48px">Pojišťovna ručí za termín.</div>
+    </div>
+  </div>
+  <style>
+    .opt { display:flex; align-items:center; gap:18px; font-size:32px; font-weight:600; padding:14px 18px; border-radius:12px; border:2px solid var(--line); }
+    .opt .box { width:34px; height:34px; border-radius:8px; border:3px solid var(--line-strong); flex:none; position:relative; }
+    .opt.on { border-color: var(--forest); background: var(--sage-soft); }
+    .opt.on .box { border-color: var(--forest); background: var(--forest); }
+    .opt.on .box::after { content:""; position:absolute; left:8px; top:2px; width:9px; height:17px; border:solid var(--honey); border-width:0 4px 4px 0; transform:rotate(45deg); }
+  </style>
+</section>
+
+<!-- 6. Nemocnice -->
+<section class="scene" id="s6">
+  <div class="h a" data-at="start" style="font-size:54px">Nemocnice se neruší, mění se.</div>
+  <div class="a" data-at="w:Okresní" style="margin-top:12px; font-size:28px; color:var(--ink-2)">Okresní nemocnice dostane jistou roli blízko domova:</div>
+  <div style="display:flex; gap:22px; margin-top:40px" id="beds"></div>
+  <div style="display:flex; gap:22px; margin-top:22px">
+    <div class="pill a" data-at="w:doléčení,">doléčení</div>
+    <div class="pill a" data-at="w:rehabilitaci">rehabilitace</div>
+    <div class="pill a" data-at="w:jednodenní">jednodenní chirurgie</div>
+  </div>
+  <div class="a" data-at="w:jednodenní" data-delay="1" style="margin-top:26px; font-size:22px; color:var(--muted)">8 000 lůžek změní účel do roku 2038. Náročné zákroky tam, kde je dělají často a&nbsp;dobře.</div>
+</section>
+
+<!-- 7. Prevence a konec života doma -->
+<section class="scene" id="s7">
+  <div class="row" style="gap:40px; align-items:stretch; margin-top:40px">
+    <div class="card a" data-at="start" style="flex:1; padding:40px; display:flex; flex-direction:column; gap:14px">
+      <div class="eyebrow">Prevence se stálými penězi</div>
+      <div class="h" style="font-size:76px; color:var(--forest)">5 mld. Kč</div>
+      <div style="font-size:26px; color:var(--ink-2)">ročně z&nbsp;daní z&nbsp;tichého vína a&nbsp;slazených nápojů, nejméně 40 % na prevenci</div>
+    </div>
+    <div class="card a" data-at="w:okrese" style="flex:1; padding:40px; display:flex; flex-direction:column; gap:14px; background:var(--sage-soft); border-color:var(--sage)">
+      <div class="eyebrow">Konec života doma</div>
+      <div class="h" style="font-size:44px">Mobilní paliativní tým v&nbsp;každém okrese</div>
+      <div style="font-size:26px; color:var(--ink-2)">Domov jako možnost, nikoli povinnost.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Po krocích -->
+<section class="scene" id="s8">
+  <div class="h a" data-at="start" style="font-size:54px">Po krocích, s pojistkami</div>
+  <div style="position:relative; margin-top:70px; height:260px">
+    <div id="axis" style="position:absolute; left:0; top:28px; height:4px; background:var(--forest); width:0"></div>
+    <div class="step a" data-at="w:krocích." style="left:0"><b>2026–27</b>Konzultace a kulaté stoly</div>
+    <div class="step a hlstep" data-at="w:zkouška" style="left:272px"><b>2028–29</b>Zkouška ve&nbsp;3 regionech</div>
+    <div class="step a" data-at="w:regionech" style="left:544px"><b>2032</b>Zákon o primární péči</div>
+    <div class="step a" data-at="w:rozhoduje" style="left:816px"><b>2038</b>520 týmů, 4 000 sester navíc</div>
+  </div>
+  <div class="a" data-at="w:dat." style="font-size:30px; font-weight:700; color:var(--forest)">Rozhoduje se podle dat. Když selže jedna část, zastaví se jen ta část.</div>
+  <style>
+    .step { position:absolute; top:0; width:250px; padding-top:62px; font-size:24px; color:var(--ink-2); line-height:1.3; }
+    .step::before { content:""; position:absolute; left:0; top:16px; width:28px; height:28px; border-radius:50%; background:var(--sand); border:4px solid var(--forest); }
+    .step b { display:block; font-family:SourceSerif; font-size:36px; color:var(--ink); margin-bottom:4px; }
+    .hlstep::before { background: var(--honey); }
+  </style>
+</section>
+
+<!-- 9. Výzva -->
+<section class="scene" id="s9" style="background:var(--forest-deep); color:var(--sand); justify-content:center">
+  <div class="h a" data-at="start" style="font-size:66px">Studie je ke konzultaci, ne hotová.</div>
+  <div class="a" data-at="w:Přečtěte" style="font-size:32px; color:var(--sage); margin-top:22px">Přečtěte si ji a&nbsp;napište, co je špatně, přímo k&nbsp;odstavci.</div>
+  <div class="h a" data-at="w:zdraví" style="font-size:80px; color:var(--honey); margin-top:52px">zdraviblizlidem.cz</div>
+</section>
+
+<script>
+  const ease = (x) => (x <= 0 ? 0 : x >= 1 ? 1 : 1 - Math.pow(1 - x, 3));
+  const SCENES = [
+    ["s1", "Lidí"], ["s2", "Přitom"], ["s3", "Studie"], ["s4", "Praktici"], ["s5", "Ke"],
+    ["s6", "Nemocnice"], ["s7", "Prevence"], ["s8", "Všechno"], ["s9", "Studie"],
+  ];
+  let W = [], bounds = [], items = [];
+
+  // Čas slova ve scéně: první výskyt textu od začátku scény.
+  function wordAt(text, from) {
+    const w = W.find((x) => x[1] >= from - 0.01 && x[0] === text);
+    if (!w) throw new Error("slovo nenalezeno: " + text);
+    return w[1];
+  }
+
+  window.setup = (words, lead, total) => {
+    W = words.map(([t, s, e]) => [t, s + lead, e + lead]);
+    // Začátek scény: první slovo odstavce; hranice uprostřed pauzy mezi odstavci.
+    let from = 0;
+    const starts = SCENES.map(([, first], i) => { const t = i === 0 ? lead : wordAt(first, from + 0.5); from = t; return t; });
+    bounds = starts.map((s, i) => {
+      const prevEnd = i === 0 ? 0 : W.filter((w) => w[1] < s).at(-1)[2];
+      const begin = i === 0 ? 0 : (prevEnd + s) / 2;
+      return { id: SCENES[i][0], speech: s, begin };
+    });
+    bounds.forEach((b, i) => (b.end = i + 1 < bounds.length ? bounds[i + 1].begin : total));
+    items = [];
+    for (const b of bounds) {
+      const el = document.getElementById(b.id);
+      el.querySelectorAll("[data-at]").forEach((n) => {
+        const at = n.dataset.at;
+        const t = at === "start" ? b.speech - 0.2 : wordAt(at.slice(2), b.speech) - 0.15;
+        items.push({ n, t: t + Number(n.dataset.delay || 0), opt: n.classList.contains("opt") });
+      });
+      b.el = el;
+    }
+    // Mřížka 100 Kč a lůžka.
+    const grid = document.getElementById("grid");
+    for (let i = 0; i < 100; i++) grid.insertAdjacentHTML("beforeend", '<div style="position:relative;width:34px;height:34px;border-radius:5px;background:#e6dfd1;overflow:hidden"><i style="position:absolute;inset:0 auto 0 0;width:0"></i></div>');
+    const beds = document.getElementById("beds");
+    for (let i = 0; i < 10; i++) beds.insertAdjacentHTML("beforeend", '<div class="bed" style="width:86px;height:58px;border-radius:12px;background:#fbf8f2;border:2px solid #cfc5b3;display:grid;place-items:center"><svg width="46" height="28" viewBox="0 0 46 28" fill="none" stroke="#3c4340" stroke-width="3" stroke-linecap="round"><path d="M3 4v22M3 18h40v8M3 14h12a5 5 0 0 1 5 5M20 14h18a5 5 0 0 1 5 5"/></svg></div>');
+    window.__ready = true;
+  };
+
+  window.render = (t) => {
+    for (const b of bounds) {
+      const fadeIn = b.begin === 0 ? 1 : ease((t - b.begin) / 0.45);
+      const fadeOut = 1 - ease((t - b.end) / 0.45);
+      b.el.style.opacity = Math.min(fadeIn, fadeOut);
+    }
+    const dark = t >= bounds[8].begin + 0.2;
+    document.getElementById("brand").classList.toggle("dark", dark);
+    for (const { n, t: at, opt } of items) {
+      const p = ease((t - at) / 0.55);
+      if (opt) { n.classList.toggle("on", t >= at); continue; }
+      n.style.opacity = p;
+      n.style.transform = `translateY(${(1 - p) * 18}px)`;
+    }
+    const s = (id) => bounds.find((b) => b.id === id);
+    // 1: sloupce
+    const k1 = wordAt("dvě", s("s1").speech), k2 = wordAt("půl", s("s1").speech);
+    document.getElementById("bar2024").style.height = ease((t - k1 + 0.3) / 0.9) * (200 / 509) * 300 + "px";
+    document.getElementById("bar2050").style.height = ease((t - k2 + 0.6) / 1.2) * 300 + "px";
+    // 2: mřížka, 29,70 Kč modře, 4,30 Kč oranžově
+    const kb = wordAt("třicet", s("s2").speech) - 0.6, ko = wordAt("praktikům", s("s2").speech) - 0.2;
+    const blue = Math.max(0, Math.min(29.7, ((t - kb) / 1.6) * 29.7));
+    const orange = Math.max(0, Math.min(4.3, ((t - ko) / 0.8) * 4.3));
+    // Políčko = 1 Kč; 30. políčko je ze 70 % modré a z 30 % oranžové.
+    const filled = blue + (blue >= 29.7 ? orange : 0);
+    document.querySelectorAll("#grid i").forEach((cell, i) => {
+      const fill = Math.max(0, Math.min(1, filled - i));
+      const b = Math.max(0, Math.min(1, blue - i));
+      const split = fill > 0 ? (b / fill) * 100 : 100;
+      cell.style.width = fill * 100 + "%";
+      cell.style.background = `linear-gradient(90deg, #2A78D6 ${split}%, #EB6834 ${split}%)`;
+    });
+    // 3: zvýraznění „blízko domova“
+    const kh = wordAt("blízko", s("s3").speech);
+    document.getElementById("hl").style.backgroundSize = ease((t - kh) / 0.8) * 100 + "% 100%";
+    // 6: lůžka mění účel
+    const kr = wordAt("doléčení,", s("s6").speech);
+    document.querySelectorAll(".bed").forEach((bed, i) => {
+      const on = t >= kr + 0.25 * (i % 5) && i % 2 === 1;
+      bed.style.background = on ? "#dce8e0" : "#fbf8f2";
+      bed.style.borderColor = on ? "#1f4a3d" : "#cfc5b3";
+    });
+    // 8: osa
+    const ka = wordAt("krocích.", s("s8").speech);
+    document.getElementById("axis").style.width = ease((t - ka) / 3.5) * 1066 + "px";
+  };
+</script>
+</body>
+</html>

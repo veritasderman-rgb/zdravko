@@ -8,8 +8,8 @@ import "@fontsource-variable/source-serif-4/wght-italic.css";
 import "@fontsource-variable/source-sans-3/wght.css";
 import "@fontsource-variable/geist-mono/wght.css";
 import "./globals.css";
+import { SITE } from "@/lib/site";
 
-const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://web-b5qk.vercel.app";
 const DESCRIPTION = "Plán reformy zdravotnictví ke konzultaci: každý má svůj tým lékaře a sestry, nemocnice mění roli, prevence má stálé peníze.";
 
 export const metadata: Metadata = {

@@ -1,4 +1,5 @@
 import "server-only";
+import { SITE } from "./site";
 
 /** Tajemství pro HMAC adres IP a odkazy na vlastní údaje; bez PRIVACY_SECRET se použije SESSION_SECRET. */
 export function privacySecret(): string {
@@ -8,7 +9,7 @@ export function privacySecret(): string {
 }
 
 export function siteUrl(): string {
-  return process.env.NEXT_PUBLIC_SITE_URL ?? "https://web-b5qk.vercel.app";
+  return SITE;
 }
 
 /** Kontakt správce pro dotazy k osobním údajům (stránka /ochrana-udaju). */

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button, Container } from "./ui";
 import { SiteNavClient } from "./site-nav-client";
+import { NewsletterForm } from "./newsletter-form";
 
 /** Pět hlavních položek navigace (hlavička i patička). */
 export const SITE_LINKS = [
@@ -108,6 +109,15 @@ export function SiteFooter() {
             { href: "/vstup", label: "Přihlášení pro tým" },
           ]}
         />
+      </Container>
+      <Container className="border-t border-on-dark-muted/30 pb-10 pt-8 sm:pb-14">
+        <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] lg:items-start lg:gap-10">
+          <div>
+            <h2 className="font-serif text-[21px] font-semibold text-on-dark sm:text-2xl">Novinky e-mailem</h2>
+            <p className="mt-1 text-on-dark-muted">Nová verze studie, kulaté stoly, vypořádání připomínek.</p>
+          </div>
+          <NewsletterForm dark />
+        </div>
       </Container>
     </footer>
   );

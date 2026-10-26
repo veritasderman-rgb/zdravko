@@ -1,6 +1,7 @@
 import { getBlocks, getDocumentBySlug } from "@/lib/queries";
 import { META } from "@/content/reforma";
 import { BlockView } from "@/components/block-view";
+import { SITE } from "@/lib/site";
 
 /**
  * Tisková podoba studie: zdroj pro public/studie.pdf (web/scripts/pdf.mjs).
@@ -14,7 +15,6 @@ export const metadata = {
 };
 
 const VERSION_DATE = META.subtitle.split(" · ").pop() ?? "";
-const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://web-b5qk.vercel.app";
 
 function Note() {
   return (
