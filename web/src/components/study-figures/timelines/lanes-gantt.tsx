@@ -76,7 +76,7 @@ export function LanesGantt() {
         ]}
       />
       <p className="mt-3 text-[14px] leading-snug text-ink-2">
-        PN je pozměňovací návrh poslaneckého klubu. Účinnost podnětů z 30. 6. 2027 už od 1. 1. 2028 závisí na dnešním ministerstvu a v základním scénáři se s ní nepočítá; první vyhláška nové vlády platí od 1. 1. 2031. Přesná data krajských voleb 2028 a voleb 2029 jsou orientační.
+        PN je pozměňovací návrh poslaneckého klubu. Účinnost podnětů podaných do 31. 1. 2027 už od 1. 1. 2028 závisí na dnešním ministerstvu a v základním scénáři se s ní nepočítá; první vyhláška nové vlády platí od 1. 1. 2031. Přesná data krajských voleb 2028 a voleb 2029 jsou orientační.
       </p>
 
       <TextVersion

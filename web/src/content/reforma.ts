@@ -254,7 +254,7 @@ export const GATES = [
 export const MILESTONES = [
   { at: 2026.93, label: "Schválení verze 3 ke konzultaci", detail: "7. 12. 2026" },
   { at: 2027.25, label: "Konec prvního kola připomínek", detail: "31. 3. 2027" },
-  { at: 2027.5, label: "Dohoda o zkoušce, návrhy do úhrad na rok 2028", detail: "30. 6. 2027" },
+  { at: 2027.5, label: "Dohoda o zkoušce a o úhradách na rok 2028", detail: "30. 6. 2027" },
   { at: 2028, label: "Start zkoušky ve třech regionech", detail: "1. 1. 2028" },
   { at: 2029.8, label: "Volby do Sněmovny", detail: "říjen 2029" },
   { at: 2031, label: "Nová platba státu, daně a fond prevence platí", detail: "1. 1. 2031" },
@@ -272,8 +272,8 @@ export const RULES = [
 
 export const STEPS_2029 = [
   { title: "Konzultace verze 3", when: "od prosince 2026", text: "Resortní tým schválí verzi 3 k veřejné konzultaci 7. 12. 2026. První kolo připomínek končí 31. 3. 2027. Následuje devět kulatých stolů. Jak jsme s každou připomínkou naložili, zveřejníme před červnem 2028." },
+  { title: "Návrhy do pravidel úhrad", when: "do 31. 1. 2027", text: "Navrhneme, aby pojišťovny už od roku 2028 platily sestry v týmových ordinacích, ultrazvuk u praktika, sledování pacientů na dálku a konzultaci lékaře s lékařem. Dohoda o úhradách se uzavírá do 30. 6. 2027, rozhodne dnešní ministerstvo." },
   { title: "Zkouška ve třech regionech", when: "2028 a 2029", text: "Město, venkov a region bez lékařů v jednom kraji, dohromady 100 až 150 tisíc lidí, 30 až 50 mil. Kč ročně. Ověříme, jestli lékaři do týmů vstoupí, jestli se najdou sestry a kolik to stojí." },
-  { title: "Návrhy do pravidel úhrad", when: "do 30. 6. 2027", text: "Navrhneme, aby pojišťovny už od roku 2028 platily sestry v týmových ordinacích, ultrazvuk u praktika, sledování pacientů na dálku a konzultaci lékaře s lékařem. Rozhodne dnešní ministerstvo." },
   { title: "Návrhy ke vládním zákonům", when: "2027 a 2028", text: "Vláda právě otevírá stejné zákony, které potřebujeme. Navrhneme do nich víceleté smlouvy pro týmy a údaj o naléhavosti v elektronické žádance. Na vládní návrhy tak navážeme." },
   { title: "Poslanecké návrhy", when: "2028 a 2029", text: "Jednodušší „dříve vyslovené přání“ s registrem. Dobrovolné zveřejňování počtu lidí bez praktika po regionech." },
   { title: "Podklady zákonů", when: "7/2028 až 12/2029", text: "Zákon o primární péči, zákon o síti nemocnic, nová platba státu, daňové zákony a zákon o Fondu prevence. Bez hotových podkladů při nástupu vlády nemůže zákon platit od roku 2032." },
@@ -455,7 +455,7 @@ export const GLOSSARY = [
   { term: "Elektronická žádanka (eŽádanka)", text: "Elektronický poukaz na vyšetření u specialisty. Navrhujeme, aby v ní lékař povinně uvedl, jak to spěchá: do 2 týdnů, do 6 týdnů, nebo plánované." },
   { term: "Akutní lůžko", text: "Lůžko pro nemocné, kteří potřebují operaci nebo intenzivní léčbu. Česko jich má 48 036, obsazená jsou z 56 %." },
   { term: "Následná péče", text: "Doléčení a rehabilitace po nemoci nebo operaci, dlouhodobá péče a péče na konci života. Těchto lůžek je málo a jsou obsazená z 85 %." },
-  { term: "Obložnost", text: "Jak velká část lůžek je obsazená. Nad 85 % se podle výzkumů zvyšuje úmrtnost, proto se při této obsazenosti akutních lůžek přeměna v kraji zastaví." },
+  { term: "Obložnost", text: "Jak velká část lůžek je obsazená. Obsazenost nad 85 % je podle výzkumů spojena s vyšší úmrtností, proto se při této obsazenosti akutních lůžek přeměna v kraji zastaví." },
   { term: "Zbytečná (odvratitelná) hospitalizace", text: "Pobyt v nemocnici, kterému by předešla dobrá péče mimo nemocnici: včasná kontrola, sestra, která zavolá, návštěva doma. Hlavní ukazatel reformy." },
   { term: "Platba státu za státní pojištěnce", text: "Stát platí zdravotní pojištění za děti, důchodce, studenty a další, asi 6 milionů lidí. Dnes je to 2 188 Kč měsíčně na osobu. Navrhujeme nový vzorec, který sleduje skutečné náklady na jejich péči." },
   { term: "Daně za zdraví", text: "Daň z tichého vína, daň ze slazených nápojů a každoroční zvyšování daně z lihu a piva s inflací. Výnos 5 mld. Kč ročně jde na prevenci a do zdravotního pojištění." },

@@ -54,7 +54,7 @@ export const CRITICAL_PATH = {
       id: "penize",
       name: "Peníze",
       steps: [
-        { id: "p0", title: "Podněty do úhrad", lines: ["do 30. 6. 2027: sestry, výkony; plánovací hodnota daní"] },
+        { id: "p0", title: "Podněty do úhrad", lines: ["do 31. 1. 2027: sestry, výkony; plánovací hodnota daní"] },
         { id: "p1", title: "Znění a RIA", lines: ["§ 3c platba státu; víno, líh, pivo; slazené nápoje, fond"] },
         { id: "p2", title: "Vlna 1 účinná", lines: ["1. 1. 2031: vzorec platby státu, víno, fond prevence"] },
         { id: "p3", title: "Peníze na týmy", lines: ["slazené nápoje od 2032; platby týmům asi 6 mld. Kč ročně"] },

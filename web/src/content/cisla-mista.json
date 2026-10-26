@@ -138,10 +138,6 @@
     "heading": "Kolik to stojí a kdo to zaplatí"
    },
    {
-    "line": 183,
-    "heading": "Kolik to stojí a kdo to zaplatí"
-   },
-   {
     "line": 1080,
     "heading": "Pilíř 4: daně za zdraví podle Hospodářské strategie PEER"
    },
@@ -598,6 +594,10 @@
     "heading": "Co reforma nedělá a co ji nejvíc ohrožuje"
    },
    {
+    "line": 1190,
+    "heading": "Pilíř 5: sociální účet a pomezí zdravotní a sociální péče (P3)"
+   },
+   {
     "line": 1386,
     "heading": "Část V – Peníze a lidé"
    },
@@ -612,6 +612,10 @@
    {
     "line": 1532,
     "heading": "Odkud peníze"
+   },
+   {
+    "line": 1592,
+    "heading": "Lidé"
    }
   ]
  },
@@ -696,7 +700,7 @@
     "heading": "Otevřená ověření"
    },
    {
-    "line": 3050,
+    "line": 3048,
     "heading": "Co zůstává ověřit před zveřejněním"
    }
   ]
@@ -980,6 +984,10 @@
     "heading": "Co všechno se musí stát"
    },
    {
+    "line": 183,
+    "heading": "Kolik to stojí a kdo to zaplatí"
+   },
+   {
     "line": 206,
     "heading": "Co děláme do voleb 2029"
    },
@@ -1008,7 +1016,7 @@
     "heading": "Konzultační fáze 2026–2029"
    },
    {
-    "line": 3034,
+    "line": 3032,
     "heading": "Vlastní podklady strany"
    }
   ]
@@ -1588,7 +1596,7 @@
     "heading": "Deset výhrad verdiktu"
    },
    {
-    "line": 2948,
+    "line": 2946,
     "heading": "Datové zdroje"
    }
   ]
@@ -1605,6 +1613,10 @@
    }
   ],
   "studie": [
+   {
+    "line": 19,
+    "heading": "Stav dokumentu a jak ho číst"
+   },
    {
     "line": 29,
     "heading": "Stav dokumentu a jak ho číst"
@@ -1892,7 +1904,7 @@
     "heading": "Dvacet oprav"
    },
    {
-    "line": 2940,
+    "line": 2938,
     "heading": "Datové zdroje"
    }
   ]
@@ -2056,7 +2068,7 @@
     "heading": "Dvanáct doplňkových ukazatelů"
    },
    {
-    "line": 2909,
+    "line": 2907,
     "heading": "Pilíř 2: lůžka, centralizace, obložnost"
    }
   ]
@@ -2273,7 +2285,7 @@
     "heading": "Jádro a podmínky (J1–J10, P1–P5)"
    },
    {
-    "line": 2946,
+    "line": 2944,
     "heading": "Datové zdroje"
    }
   ]
@@ -2327,7 +2339,7 @@
     "heading": "Jádro a podmínky (J1–J10, P1–P5)"
    },
    {
-    "line": 2945,
+    "line": 2943,
     "heading": "Datové zdroje"
    }
   ]
@@ -2403,7 +2415,7 @@
     "heading": "Osm hlavních ukazatelů"
    },
    {
-    "line": 2849,
+    "line": 2847,
     "heading": "Otevřená ověření"
    }
   ]
