@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { flushSync } from "react-dom";
 
 /**
  * Vykreslí obsah, až se blíží zornému poli (s předstihem), a do té doby drží místo.
  * Veřejná studie má přes třicet grafů; kdyby se všechny vykreslily a oživily najednou,
- * stránka by na telefonu několik sekund nereagovala. Před tiskem se vykreslí vše.
+ * stránka by na telefonu několik sekund nereagovala. Před tiskem se vykreslí vše (synchronně).
  */
 // Jakmile čtenář sám posune stránkou, cíl odkazu (#kotva) už nedorovnáváme.
 let userScrolled = false;
@@ -36,7 +37,8 @@ export function LazyMount({ children, minHeight = 420 }: { children: ReactNode; 
       { rootMargin: "1200px 0px" },
     );
     io.observe(el);
-    const print = () => setShow(true);
+    // Prohlížeč rozvrhne tisk hned po události; graf musí být v DOM ještě před návratem.
+    const print = () => flushSync(() => setShow(true));
     window.addEventListener("beforeprint", print);
     return () => {
       io.disconnect();
