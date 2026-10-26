@@ -52,7 +52,7 @@ export function HealthTaxSplitFigure() {
     <ChartFrame
       title="Prevence dostane nejméně 40 % výnosu daní za zdraví, vždy aspoň 2 mld. Kč; zbytek zvýší platbu státu do pojištění"
       subtitle="Rozdělení ročního výnosu daní za zdraví v plném náběhu, mld. Kč: plánovací výnos 5 mld. Kč, horní hranice rozpětí 7 mld. Kč a dolní mez cíle PEER 10 mld. Kč"
-      source="Studie v3.1, Část III (pilíř 4 a P4) a Hospodářská strategie PEER, kap. 1.4; 100 Kč měsíčně na státního pojištěnce odpovídá 7,2 mld. Kč ročně (6,0 mil. státních pojištěnců)"
+      source="Studie v3.2, Část III (pilíř 4 a P4) a Hospodářská strategie PEER, kap. 1.4; 100 Kč měsíčně na státního pojištěnce odpovídá 7,2 mld. Kč ročně (6,0 mil. státních pojištěnců)"
       table={
         <DataTable
           header={["Scénář", "Výnos (mld. Kč)", "Fond prevence", "Platba státu do pojištění", "Navíc na státního pojištěnce"]}

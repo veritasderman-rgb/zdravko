@@ -12,7 +12,7 @@ import { StudySearch } from "@/components/web/study-search";
 // při každém požadavku, takže build nepotřebuje DATABASE_URL a nová verze studie se
 // objeví bez nového buildu.
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Odborná studie", description: "Plné znění konzultační verze 3.1 studie Zdraví blíž lidem ke čtení." };
+export const metadata = { title: "Odborná studie", description: "Plné znění konzultační verze 3.2 studie Zdraví blíž lidem ke čtení." };
 
 /** Datum verze ke konzultaci (META.subtitle končí datem). */
 const VERSION_DATE = META.subtitle.split(" · ").pop() ?? "";

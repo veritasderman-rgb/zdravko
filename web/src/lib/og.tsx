@@ -57,7 +57,7 @@ export async function ogImage({ eyebrow, title }: { eyebrow: string; title: stri
           <div style={{ fontFamily: SERIF, fontSize: size, lineHeight: 1.08, color: C.ink, letterSpacing: -1 }}>{title}</div>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: `2px solid ${C.line}`, paddingTop: 22, fontSize: 24, color: C.muted }}>
-          <div>Plán reformy zdravotnictví · verze 3.1 ke konzultaci</div>
+          <div>Plán reformy zdravotnictví · verze 3.2 ke konzultaci</div>
           <div style={{ fontWeight: 700, color: C.forest }}>Připomínky vítány</div>
         </div>
       </div>

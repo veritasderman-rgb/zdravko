@@ -1,5 +1,5 @@
 /**
- * Vazby mezi opatřeními studie v3.1 (01-studie-zdravi-bliz-lidem-v3.1.md).
+ * Vazby mezi opatřeními studie v3.2 (01-studie-zdravi-bliz-lidem-v3.2.md).
  *
  * Tři pohledy na totéž:
  *  1. MAPA: opatření jádra, podmínky, brány a klíčové zákony na časové ose po pásech.

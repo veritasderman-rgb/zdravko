@@ -20,7 +20,7 @@ const ROOT = path.resolve(__dirname, "../..");
 
 // Připomínkuje se jen odborná studie; ostatní dokumenty slouží jako zdroj pro veřejný web.
 const DOCS: { slug: string; title: string; kind: string; file: string; label: string }[] = [
-  { slug: "studie", title: "Zdraví blíž lidem — studie v3.1", kind: "studie", file: "01-studie-zdravi-bliz-lidem-v3.1.md", label: "v3.1 (23. 10. 2026)" },
+  { slug: "studie", title: "Zdraví blíž lidem — studie v3.2", kind: "studie", file: "01-studie-zdravi-bliz-lidem-v3.2.md", label: "v3.2 (26. 10. 2026)" },
 ];
 
 const GATES: Record<string, string> = {
