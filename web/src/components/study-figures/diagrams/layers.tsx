@@ -86,7 +86,7 @@ export function LayersFigure() {
             </ul>
           </div>
           <div>
-            <p className="font-semibold text-ink">Doprovod: deset oblastí Manifestu jako policy briefy (souběžně, nezávisle na jádru)</p>
+            <p className="font-semibold text-ink">Doprovod: deset oblastí Manifestu jako stručné podklady (souběžně, nezávisle na jádru)</p>
             <ol className="list-decimal pl-5">
               {AREAS.map((a) => (
                 <li key={a.n}>
@@ -112,7 +112,7 @@ export function LayersFigure() {
           ))}
         </Band>
         <Connector text="souběžně, nezávisle na jádru" dashed />
-        <Band title="Doprovod: deset oblastí Manifestu" note={`policy briefy, ${ACC_TOTAL} opatření (Část XI)`} cls="border border-line-strong bg-sand">
+        <Band title="Doprovod: deset oblastí Manifestu" note={`stručné podklady, ${ACC_TOTAL} opatření (Část XI)`} cls="border border-line-strong bg-sand">
           {AREAS.map((a, k) => (
             <Card key={a.n} code={`Oblast ${a.n}`} text={a.name} sub={`${a.items.length} opatření`} kind="acc" i={15 + k} />
           ))}

@@ -7,7 +7,7 @@
  *
  * Pro každé číslo hledá:
  *  - odkazy v kódu (n("id"), fmt("id"), CISLA.id),
- *  - textové zápisy z pole `forms` ve zdrojích webu a ve studii v3.1.
+ *  - textové zápisy z pole `forms` ve zdrojích webu a ve studii v3.2.
  * Chyba je, když číslu chybí povinné údaje, když se žádný jeho zápis neobjeví ve studii
  * (studie a web se rozešly), nebo když je uložený seznam míst zastaralý.
  */
@@ -17,7 +17,7 @@ import { CISLA, SOURCES, type Cislo } from "../src/content/cisla";
 
 const WEB = path.resolve(__dirname, "..");
 const ROOT = path.resolve(WEB, "..");
-const STUDY = path.join(ROOT, "01-studie-zdravi-bliz-lidem-v3.1.md");
+const STUDY = path.join(ROOT, "01-studie-zdravi-bliz-lidem-v3.2.md");
 const OUT = path.join(WEB, "src/content/cisla-mista.json");
 const SKIP = new Set(["src/content/cisla.ts", "src/content/cisla-mista.json"]);
 

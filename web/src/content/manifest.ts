@@ -2,7 +2,7 @@
  * Manifest reformy českého zdravotnictví (7. 5. 2026) a jeho rozpracování ve studii „Zdraví blíž lidem“ v3.
  *
  * Zdroje: Manifest (07-manifest-reformy-2026-05-07.md, Příloha B), registr opatření studie
- * (registr.json), Část XI studie (deset briefů doprovodu) a Část III (jádro J1–J10, podmínky P1–P5).
+ * (registr.json), Část XI studie (deset stručných podkladů doprovodu) a Část III (jádro J1–J10, podmínky P1–P5).
  *
  * Jazyk: píšeme „my“, krátké věty, bez žargonu. Kódy opatření (J, P, Pil, M) odpovídají registru.
  * Termíny „Rok N“ jsou roky od nástupu vlády; ve studii je Rok 1 = 2030 (základní scénář „Vláda 2030“).
@@ -26,7 +26,7 @@ export const MANIFEST = {
 };
 
 export const MANIFEST_NOTE =
-  "Manifest je politický dokument autorů z 7. 5. 2026 a říká, co se má změnit a proč. Studie „Zdraví blíž lidem“ z něj vychází a rozpracovává ho do opatření, nástrojů, termínů a peněz. Tři oblasti (pomezí zdravotní a sociální péče, prevence a data) tvoří nosnou část plánu, deset dalších jsou doplňková opatření s vlastním krátkým briefem. Co z Manifestu ještě není rozpracované do kroků, uvádíme u každé oblasti.";
+  "Manifest je politický dokument autorů z 7. 5. 2026 a říká, co se má změnit a proč. Studie „Zdraví blíž lidem“ z něj vychází a rozpracovává ho do opatření, nástrojů, termínů a peněz. Tři oblasti (pomezí zdravotní a sociální péče, prevence a data) tvoří nosnou část plánu, deset dalších jsou doplňková opatření s vlastním stručným podkladem. Co z Manifestu ještě není rozpracované do kroků, uvádíme u každé oblasti.";
 
 /** Zkrácená verze pro perex stránky. */
 export const MANIFEST_NOTE_SHORT = "Studie z Manifestu vychází; co ještě není rozpracované do kroků, uvádíme u každé oblasti.";
@@ -36,7 +36,7 @@ export type ManifestArea = {
   slug: string;
   title: string; // název z Manifestu, zkrácený max. 4 slova
   promise: string; // co Manifest slibuje, 1–2 věty srozumitelně
-  layer: "jadro" | "doprovod"; // jádro = studie to rozpracovala do jádra (oblasti 6, 8, 10), doprovod = brief v Části XI
+  layer: "jadro" | "doprovod"; // jádro = studie to rozpracovala do jádra (oblasti 6, 8, 10), doprovod = stručný podklad v Části XI
   studyArea?: string;
   measures: { code: string; label: string; when: string }[];
   manifestSteps: { year: string; text: string }[];
@@ -173,7 +173,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     promise:
       "Každá nová úhrada a každý nový model péče projde nezávislým hodnocením přínosu a nákladů. Z výsledku vznikne standard péče, který platí pro všechny pojištěnce, a část úhrady se naváže na zlepšení výsledků.",
     layer: "doprovod",
-    studyArea: "Oblast 1 (brief Části XI), J1, Pilíř 2",
+    studyArea: "Oblast 1 (podklad v Části XI), J1, Pilíř 2",
     measures: pick(["M1.1", "M1.2", "M1.3", "M1.4", "J1", "Pil2.2"]),
     manifestSteps: [
       { year: "Rok 1", text: "Audit úhradového systému a návrh bonusu za výsledky pro tři pilotní diagnózy (infarkt, mrtvice, sepse)." },
@@ -197,7 +197,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     promise:
       "Kdo chce péči nad rámec standardu, nemusí nic řešit pod stolem: rozdíl mezi standardem a nadstandardem se platí otevřeně. Pacient před zákrokem ví, jak dlouho se kde čeká, a má jistotu, že se ke specialistovi dostane včas.",
     layer: "doprovod",
-    studyArea: "Oblast 2 (brief Části XI), J5",
+    studyArea: "Oblast 2 (podklad v Části XI), J5",
     measures: pick(["M2.1", "M2.2", "M2.3", "M2.4", "J5", "M3.1", "M4.2"]),
     manifestSteps: [
       { year: "Rok 1", text: "Trestnost neformálních plateb a anonymní kanál, kam je pacienti mohou oznámit." },
@@ -221,7 +221,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     promise:
       "Pojištěnec má hlas ve správě své pojišťovny a pojišťovna eviduje, zda se mu péče skutečně poskytla. Pacient dostane navigátora pro vážné nemoci a přístup ke svým zdravotním datům.",
     layer: "doprovod",
-    studyArea: "Oblast 3 (brief Části XI), J5, Pilíř 3",
+    studyArea: "Oblast 3 (podklad v Části XI), J5, Pilíř 3",
     measures: pick(["M3.1", "M3.2", "M3.3", "M3.4", "J5", "Pil3.3", "Pil4.8", "Pil5.3"]),
     manifestSteps: [
       { year: "Rok 1", text: "Zákon o vlastnictví zdravotních dat pacientem." },
@@ -245,7 +245,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     promise:
       "Anonymizovaná data o nemocnicích a ordinacích budou otevřená, aktuální a použitelná pro každého. Pacient před zákrokem uvidí čekací dobu, kvalitu péče i vzdálenost, lékař volné kapacity. Komise, které ministerstvu radí o úhradách, přístrojích a dotacích, budou bez střetu zájmů, nebo aspoň zcela průhledné (doplněno do Manifestu 23. 10. 2026).",
     layer: "doprovod",
-    studyArea: "Oblast 4 (brief Části XI), P5",
+    studyArea: "Oblast 4 (podklad v Části XI), P5",
     measures: pick(["M4.1", "M4.2", "M4.3", "M4.4", "M4.5", "P5", "Pil3.3"]),
     manifestSteps: [
       { year: "Rok 1", text: "Zákonná povinnost otevřených dat od ÚZIS včetně rozhraní pro programy; rámec HSPA jako oficiální měřítko." },
@@ -268,7 +268,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     promise:
       "Pacient předem ví doplatek, lék je dostupný i při výpadcích a lékárník dělá víc než výdej. Drahé léky na vzácné nemoci mají vlastní pravidla a fond.",
     layer: "doprovod",
-    studyArea: "Oblast 5 (brief Části XI)",
+    studyArea: "Oblast 5 (podklad v Části XI)",
     measures: pick(["M5.1", "M5.2", "M5.3", "M5.4"]),
     manifestSteps: [
       { year: "Rok 1", text: "Novela zákona o léčivech (léky s omezenou dostupností) a evropský zákon o kritických lécích do českého práva." },
@@ -318,7 +318,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     promise:
       "Chceme víc akademických klinických studií, které chrání pacienty a nechávají přidanou hodnotu v Česku. Pomoct má program Agentury pro zdravotnický výzkum, rychlé mikrogranty a veřejné vyhodnocování dopadů.",
     layer: "doprovod",
-    studyArea: "Oblast 6 (brief Části XI), J1 (pilot jako studie)",
+    studyArea: "Oblast 6 (podklad v Části XI), J1 (pilot jako studie)",
     measures: pick(["M6.1", "M6.2", "M6.3", "M6.4"]),
     manifestSteps: [
       { year: "Rok 1", text: "Centrální etická komise a plné provedení evropského nařízení o klinických hodnoceních." },
@@ -370,7 +370,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     promise:
       "Základní zubní péče bude plně hrazená a zubaři budou mít důvod zůstat ve veřejném systému i mimo velká města. Děti dostanou hrazenou prevenci a větší roli dostanou dentální hygienistky.",
     layer: "doprovod",
-    studyArea: "Oblast 7 (brief Části XI), Pilíř 4",
+    studyArea: "Oblast 7 (podklad v Části XI), Pilíř 4",
     measures: pick(["M7.1", "M7.2", "M7.3", "M7.4", "M7.5", "Pil4.6"]),
     manifestSteps: [
       { year: "Rok 1", text: "Zákon o hrazené dentální hygieně do 18 let." },
@@ -419,7 +419,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     promise:
       "Lékaři se budou vzdělávat rychleji a s jasnými pravidly, sestry dostanou víc kompetencí a lepší podmínky. Chceme víc lidí, kteří zůstanou v oboru a v regionech.",
     layer: "doprovod",
-    studyArea: "Oblast 8 (brief Části XI), J2, P1, P2",
+    studyArea: "Oblast 8 (podklad v Části XI), J2, P1, P2",
     measures: pick(["M8.1", "M8.2", "M8.3", "M8.4", "M8.5", "J2", "P1", "P2", "Pil5.1"]),
     manifestSteps: [
       { year: "Rok 1", text: "Novela zákona o nelékařských povoláních: sesterská preskripce a širší kompetence." },
@@ -444,7 +444,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     promise:
       "Stížnost pacienta se vyřídí rychle a má váhu. Chceme zdravotnického ombudsmana, který vyšetřuje a jehož doporučení nezůstane bez odpovědi, a porodnice i nemocnice, které respektují práva pacientů. Než se porodnice zavře, musí být v okolí porodní asistentky, které se o ženu postarají doma i v porodnici (doplněno do Manifestu 23. 10. 2026).",
     layer: "doprovod",
-    studyArea: "Oblast 9 (brief Části XI)",
+    studyArea: "Oblast 9 (podklad v Části XI)",
     measures: pick(["M9.1", "M9.2", "M9.3", "M9.4", "M9.5", "Pil2.6"]),
     manifestSteps: [
       { year: "Rok 1", text: "Nemocniční ombudsman v každé nemocnici (zákon 290/2025 Sb., od 1. 7. 2026)." },
@@ -471,7 +471,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     promise:
       "Psychoterapie bude zdravotní služba s jasnou kvalifikací a úhradou. Centra duševního zdraví dostanou širší týmy a stabilní peníze a péče se přesune z lůžek blíž k lidem.",
     layer: "doprovod",
-    studyArea: "Oblast 10 (brief Části XI), J1, P3",
+    studyArea: "Oblast 10 (podklad v Části XI), J1, P3",
     measures: pick(["M10.1", "M10.2", "M10.3", "M10.4", "M10.5", "J1"]),
     manifestSteps: [
       { year: "Rok 1", text: "Zákon o psychoterapii: definice profese, výcvikové standardy, úhrada." },

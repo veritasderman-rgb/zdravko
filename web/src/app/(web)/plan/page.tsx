@@ -156,7 +156,7 @@ export default function PlanPage() {
           <div className="rounded-card border border-line bg-sand p-5 sm:p-6">
             <Chip variant="topic">Doplňková opatření</Chip>
             <p className="mt-3 text-base text-ink-2 sm:text-[17px]">
-              Doplňková opatření jsou zbylých deset oblastí. Každá má ve studii krátký brief s vlastním tempem a kódy <CodeRef code="M" link={false} /> (od M1.1 do M10.5). Když se jedno zdrží, nosná část jede dál, a naopak.
+              Doplňková opatření jsou zbylých deset oblastí. Každá má ve studii stručný podklad s vlastním tempem a kódy <CodeRef code="M" link={false} /> (od M1.1 do M10.5). Když se jedno zdrží, nosná část jede dál, a naopak.
             </p>
           </div>
           <div className="rounded-card border border-line bg-sand p-5 sm:p-6">
