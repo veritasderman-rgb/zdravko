@@ -296,8 +296,7 @@ export async function addProposal(_prev: ActionState, fd: FormData): Promise<Act
   }
   const title = String(a.title);
   const email = String(a.email).toLowerCase();
-  const spam = spamReason(`${a.problem}\n${a.description}\n${a.benefit}\n${a.sources ?? ""}`);
-  if (spam) return { error: spam.replace("Připomínka obsahuje", "Návrh obsahuje") };
+  // Počet odkazů hlídá stepErrors po polích (zdroje nejvýš 5, ostatní texty nejvýš 2), stejně jako formulář.
 
   const body = `Návrh nového opatření: ${title}\n\nProblém: ${String(a.problem).slice(0, 1200)}\n\nCo navrhuje: ${String(a.description).slice(0, 2000)}`;
   const proposedText = proposalMarkdown(a, (c) => REGISTRY_LABEL.get(c));

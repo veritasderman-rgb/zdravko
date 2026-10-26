@@ -187,6 +187,9 @@ export async function exportPersonalData(db: AnyDb, email: string) {
       quote: c.quote,
       kind: c.kind,
       body: c.body,
+      // Návrh opatření z průvodce: celé odpovědi a zdroje (u připomínky prázdné).
+      proposal: c.proposedText,
+      sources: c.source,
       name: c.authorName,
       organization: c.organization,
       status: c.status,

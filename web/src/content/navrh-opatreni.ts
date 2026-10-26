@@ -20,6 +20,8 @@ export type Field = {
   /** Nejmenší počet znaků u textu. */
   min?: number;
   max: number;
+  /** Nejvýš tolik odkazů v textu (výchozí 2; zdroje mají vlastní limit). */
+  maxLinks?: number;
   /** Pole se ukáže, jen když jiné pole má jednu z hodnot. */
   showIf?: { field: string; values: string[] };
 };
@@ -389,6 +391,7 @@ export const STEPS: Step[] = [
         hint: "Odkazy na studie, data, zprávy nebo zákony, každý na nový řádek. Nejvýš pět odkazů.",
         type: "textarea",
         max: 3000,
+        maxLinks: 5,
       },
     ],
   },
@@ -452,6 +455,9 @@ export function isVisible(f: Field, a: Answers): boolean {
 }
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+/** Odkazy v textu počítá stejně jako ochrana veřejných připomínek (privacy-core). */
+const LINK_RE = /(https?:\/\/|www\.)\S+/gi;
+const DEFAULT_MAX_LINKS = 2;
 const text = (v: unknown) => (typeof v === "string" ? v.trim() : "");
 const list = (v: unknown) => (Array.isArray(v) ? v.filter((x): x is string => typeof x === "string") : []);
 
@@ -476,6 +482,9 @@ export function fieldErrors(f: Field, a: Answers, codes?: ReadonlySet<string>): 
   if (f.min && s.length < f.min) return `Napište prosím víc (aspoň ${f.min} znaků, teď ${s.length}).`;
   if (s.length > f.max) return `Text je příliš dlouhý (nejvýš ${f.max} znaků).`;
   if (f.type === "email" && !EMAIL_RE.test(s)) return "Zadejte platný e-mail.";
+  const links = (s.match(LINK_RE) ?? []).length;
+  const maxLinks = f.maxLinks ?? DEFAULT_MAX_LINKS;
+  if (links > maxLinks) return f.id === "sources" ? `Uveďte nejvýš ${maxLinks} odkazů.` : `Nejvýš ${maxLinks} odkazy; další zdroje uveďte v kroku „Z čeho vycházíte“.`;
   return null;
 }
 

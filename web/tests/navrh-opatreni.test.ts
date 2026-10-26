@@ -58,6 +58,14 @@ describe("průvodce návrhem opatření", () => {
     expect(stepErrors(kdy, { wave: "zitra" }, codes).wave).toBe("Neplatná volba.");
   });
 
+  it("zdroje smí mít pět odkazů, ostatní texty dva", () => {
+    const dukazy = STEPS.find((s) => s.id === "dukazy")!;
+    const links = (n: number) => Array.from({ length: n }, (_, i) => `https://example.cz/${i}`).join("\n");
+    expect(stepErrors(dukazy, { sources: links(5) }, codes)).toEqual({});
+    expect(stepErrors(dukazy, { sources: links(6) }, codes).sources).toMatch(/nejvýš 5/);
+    expect(stepErrors(dukazy, { examples: links(3) }, codes).examples).toMatch(/Nejvýš 2 odkazy/);
+  });
+
   it("cleanAnswers zahodí neznámá a skrytá pole", () => {
     const a = cleanAnswers({ ...complete, relation: "nove", hack: "<script>", pilotNote: "  ", organization: "Firma" });
     expect(a.hack).toBeUndefined();
