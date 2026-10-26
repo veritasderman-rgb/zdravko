@@ -59,7 +59,8 @@ pnpm users:list
   z nadpisu sekce), za sebe / za organizaci. Odpovědi ve vlákně.
 - **Seznam připomínek** s filtry (dokument, stav, závažnost, typ, kód, text), změna stavu, garant a téma vypořádání,
   **export CSV** (`?verejne=1` skryje jména osob, zůstává jen organizace).
-- **Registr „Ověřit“**: 100 míst vytěžených ze studie, stav, kdo ověří, výsledek.
+- **Registr „Ověřit“**: 100 míst vytěžených ze studie, stav, kdo ověří, výsledek. U každé položky je předpřipravené,
+  co k ní má HSPA Monitor (registr `src/content/overeni-hspa.json`, viz níže).
 - **Registr kódů** J1–J10, P1–P5, Pil, M, H1–H8, D1–D12, R1–R19, B1–B4 (132 kódů) s popisem z registru opatření,
   výskyty v textu, připomínkami a filtrem dokumentu podle kódu (`/d/studie?kod=J2`).
 - **Přístup** osobním účtem s rolí, přihlášení odkazem z e-mailu (podepsaná cookie). Jména osob se nikdy
@@ -132,6 +133,7 @@ lint, typecheck, testy a build.
 | `src/lib/privacy-core.ts`, `src/app/udaje-actions.ts` | limity, potvrzení e-mailem, export, výmaz a lhůty uchování osobních údajů |
 | `src/app/cron/retence`, `scripts/retence.ts` | denní a ruční mazání podle lhůt |
 | `tests/` | testy (Vitest + PGlite) |
+| `src/content/overeni-hspa.json`, `src/content/overeni-hspa.ts` | registr ověření studie proti HSPA Monitoru (skorezdravotnictvi.cz): 1 000+ míst studie (položky „Ověřit“, faktická tvrzení, ukazatele H1–H8 a D1–D12, čísla z `cisla.ts`) s tím, co k nim HSPA má (indikátor, článek, registrované tvrzení) a verdiktem potvrzuje / upřesňuje / rozpor / má téma / nemá; čtečka u bloku ukáže štítek a odkazy, `/cisla` a `/overit` totéž u čísel a položek Ověřit. Čitelná verze je `../docs/overeni-hspa.md`. `pnpm check:overeni` hlídá, že každý záznam sedí na blok studie a každé „Ověřit“ má záznam; běží v CI |
 | `src/content/figures/vazby.ts` | mapa vazeb opatření v čase, organigramy pilířů, matice vlivů; `pnpm check:vazby` hlídá, že vazba „bez A nejde B“ nemíří proti času a že organigramy obsahují všechna opatření registru |
 | `src/db/schema.ts` | tabulky: documents, document_versions, blocks, codes, comments, resolutions, verifications, events, rate_hits, users, login_tokens |
 | `src/lib/codes.ts` | regulární výraz a pomocníci pro kódy J/P/Pil/M/H/D/R/B |

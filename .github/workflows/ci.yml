@@ -35,6 +35,8 @@ jobs:
         run: pnpm check:cisla
       - name: Vazby opatření (žádná vazba proti času, organigramy úplné)
         run: pnpm check:vazby
+      - name: Registr ověření HSPA (každý záznam sedí na blok studie, každé „Ověřit“ má záznam)
+        run: pnpm check:overeni
       - name: Testy (PGlite, bez sdílené databáze)
         run: pnpm test
       - name: Build

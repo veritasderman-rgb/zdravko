@@ -4,6 +4,8 @@ import { can } from "@/lib/roles";
 import { listVerifications } from "@/lib/queries";
 import { VERIFICATION_LABEL } from "@/lib/labels";
 import { updateVerification } from "@/app/actions";
+import { HspaEvidence } from "@/components/hspa-evidence";
+import { OVERENI, forVerification } from "@/content/overeni-hspa";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Ověřit" };
@@ -29,6 +31,7 @@ export default async function VerifyPage({ searchParams }: PageProps<"/overit">)
           <h1 className="text-2xl font-semibold tracking-tight">Otevřená ověření</h1>
           <p className="text-sm text-muted">
             Místa označená ve studii slovem „Ověřit“. Kdo má přístup ke zdroji, údaj ověří, zapíše výsledek a stav. Rozdělení osob a termínů je na schůzce 9. 11. 2026.
+            U každé položky je předpřipravené, co k ní má HSPA Monitor (stav k {OVERENI.generated_at}, podrobně v <code>docs/overeni-hspa.md</code>): hodnota, rok a primární zdroj, ke kterému se má dojít. HSPA je nástroj autorů, ověření v primárním zdroji nenahrazuje.
           </p>
         </div>
         <form className="flex items-center gap-2 text-sm">
@@ -45,7 +48,9 @@ export default async function VerifyPage({ searchParams }: PageProps<"/overit">)
         <section key={group} className="mt-6">
           <h2 className="text-sm font-semibold text-muted">{group}</h2>
           <ul className="mt-2 divide-y divide-line rounded-lg border border-line bg-paper">
-            {items.map(({ v, docSlug }) => (
+            {items.map(({ v, docSlug }) => {
+              const hspa = forVerification(v.text);
+              return (
               <li key={v.id} className="px-4 py-3 text-sm">
                 <div className="flex flex-wrap items-start gap-2">
                   <span className={`chip mt-0.5 ${v.status === "otevreno" ? "border-amber-300 bg-amber-50 text-amber-900" : v.status === "neoveritelne" ? "border-rose-200 bg-rose-50 text-rose-900" : "border-emerald-200 bg-emerald-50 text-emerald-900"}`}>
@@ -58,6 +63,12 @@ export default async function VerifyPage({ searchParams }: PageProps<"/overit">)
                     </Link>
                   </p>
                 </div>
+                {hspa && (
+                  <div className="mt-1 text-xs text-muted">
+                    <HspaEvidence records={[hspa]} dense className="!mt-0 !opacity-100" />
+                    {hspa.verdict !== "rozpor" && <p className="mt-0.5">{hspa.note}</p>}
+                  </div>
+                )}
                 {editable ? (
                 <form action={updateVerification} className="mt-2 grid grid-cols-1 gap-2 text-xs md:grid-cols-[180px_160px_1fr_auto]">
                   <input type="hidden" name="id" value={v.id} />
@@ -77,7 +88,8 @@ export default async function VerifyPage({ searchParams }: PageProps<"/overit">)
                   )
                 )}
               </li>
-            ))}
+              );
+            })}
           </ul>
         </section>
       ))}

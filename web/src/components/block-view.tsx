@@ -5,6 +5,8 @@ import { Chip } from "@/components/web/ui";
 import { StudyFigureSlot } from "@/components/study-figures/slot";
 import { PLACEHOLDER_RE, findFigure } from "@/components/study-figures/registry";
 import { STUDY_FIGURES } from "@/components/study-figures";
+import { HspaEvidence } from "@/components/hspa-evidence";
+import { forBlock } from "@/content/overeni-hspa";
 
 type Block = typeof schema.blocks.$inferSelect;
 
@@ -26,6 +28,8 @@ export function BlockView({ block, slug, count, selected, query, readOnly = fals
   const href = hrefFor(slug, block.blockKey, query);
   const body = stripBlockMarker(block.md, block.kind);
   const inline = (t: string) => renderInline(t, readOnly ? { codeHref: () => null } : {});
+  // Doložení v HSPA Monitoru: záznamy registru ověření, které sedí na tento blok (cesta nadpisů + úryvek).
+  const evidence = block.kind === "heading" ? [] : forBlock(block.headingPath, block.text);
 
   let content: React.ReactNode;
   switch (block.kind) {
@@ -134,6 +138,7 @@ export function BlockView({ block, slug, count, selected, query, readOnly = fals
           </div>
         )
       )}
+      {evidence.length > 0 && <HspaEvidence records={evidence} dense={!readOnly} />}
     </div>
   );
 }

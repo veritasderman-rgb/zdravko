@@ -1,6 +1,8 @@
 import { CISLA, KIND_LABEL, KIND_NOTE, SOURCES, TOPICS, fmtRange, type Cislo, type CisloId, type Kind, type Source } from "@/content/cisla";
 import mista from "@/content/cisla-mista.json";
 import { Chip, PageHero, Section } from "@/components/web/ui";
+import { HspaEvidence } from "@/components/hspa-evidence";
+import { OVERENI, forCislo } from "@/content/overeni-hspa";
 
 export const metadata = {
   title: "Čísla a zdroje",
@@ -27,6 +29,7 @@ function Row({ id }: { id: CisloId }) {
   const src: Source = SOURCES[x.source];
   const range = fmtRange(id);
   const headings = [...new Set((PLACES[id]?.studie ?? []).map((s) => s.heading).filter(Boolean))];
+  const hspa = forCislo(id);
   return (
     <li className="cislo-row grid gap-x-6 gap-y-2 border-t border-line py-5 md:grid-cols-[minmax(0,15rem)_1fr]">
       <div>
@@ -73,6 +76,13 @@ function Row({ id }: { id: CisloId }) {
             <Chip variant="verify">Ověřujeme: {x.verify}</Chip>
           </div>
         )}
+        {hspa.length > 0 && (
+          <div className="mt-2 text-[15px] leading-snug text-ink-2">
+            <span className="font-semibold text-ink">HSPA Monitor: </span>
+            <HspaEvidence records={hspa} className="!mt-1" />
+            {hspa[0].verdict !== "rozpor" && <p className="mt-1 text-muted">{hspa[0].note}</p>}
+          </div>
+        )}
       </div>
     </li>
   );
@@ -86,7 +96,7 @@ export default function CislaPage() {
       <PageHero
         eyebrow="Čísla a zdroje"
         title="Odkud je každé číslo a co přesně znamená"
-        lead={`Na jednom místě je ${ids.length} čísel, o která se plán opírá: zdroj, rok, definice a rozpětí. U každého je i druh. Údaj je změřená hodnota, výhled je předpověď jiné instituce a scénářový výpočet je výsledek našeho modelu za daných předpokladů. Těch je ${scenarios}.`}
+        lead={`Na jednom místě je ${ids.length} čísel, o která se plán opírá: zdroj, rok, definice a rozpětí. U každého je i druh. Údaj je změřená hodnota, výhled je předpověď jiné instituce a scénářový výpočet je výsledek našeho modelu za daných předpokladů. Těch je ${scenarios}. U každého čísla je i to, co k němu má HSPA Monitor (skorezdravotnictvi.cz, stav k ${OVERENI.generated_at}): shoda, novější hodnota, nebo rozpor. Je to nástroj autorů studie, proto slouží jen jako pomůcka k ověření v primárním zdroji, ne jako hodnocení reformy.`}
       />
       <Section id="druhy" tone="paper" eyebrow="Jak číst druhy čísel" title="Údaj, výhled, scénář, cíl, pravidlo">
         <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
