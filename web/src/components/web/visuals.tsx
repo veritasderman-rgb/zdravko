@@ -46,7 +46,7 @@ export function TriageLanes() {
           </div>
         </div>
       ))}
-      <p className="text-[16px] leading-relaxed text-muted">Naléhavost určí lékař, ne úřad ani pojišťovna. Bez žádanky lze jít dál. Kdo lhůtu nedodrží, je poskytovatel, pacient nikdy.</p>
+      <p className="text-[16px] leading-relaxed text-muted">Naléhavost určí ošetřující lékař. Bez žádanky lze jít ke specialistovi dál. Když se lhůta nedodrží, nikdy to neodnese pacient.</p>
     </div>
   );
 }

@@ -24,7 +24,7 @@ export function ActorMapFigure() {
       ]}
       textVersion={
         <>
-          <p>Umístění je pracovní odhad resortního týmu, ne zjištěný postoj; první jednání v roce 2027 ho ověří a mapa se překreslí.</p>
+          <p>Umístění je pracovní odhad resortního týmu. Skutečné postoje ověří první jednání v roce 2027 a mapa se pak překreslí.</p>
           {ORDER.map((q) => (
             <div key={q}>
               <p className="font-semibold text-ink">{D.quadrants[q]}</p>

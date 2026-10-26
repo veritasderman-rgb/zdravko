@@ -21,7 +21,7 @@ function Note() {
     <div className="doc-note">
       <p className="m-0 font-bold">Čte se vám to lépe jako PDF? Tady je celá studie.</p>
       <p className="mb-0 mt-2">
-        Připomínky nám ale prosím pošlete souhrnně, ne jako poznámky vepsané do PDF. Nejlepší cesta je formulář na webu{" "}
+        Připomínky nám ale prosím nevpisujte do PDF, pošlete je souhrnně. Nejlepší cesta je formulář na webu{" "}
         <strong>{SITE}/studie</strong>: u každého odstavce je tlačítko „Připomínka“ a dole na stránce formulář pro připomínku ke studii jako celku. Stačí jméno a e-mail; nic z toho nezveřejňujeme. Pokud píšete za organizaci, pošlete jednu souhrnnou připomínku s odkazem na část a odstavec studie.
       </p>
       <p className="mb-0 mt-2">

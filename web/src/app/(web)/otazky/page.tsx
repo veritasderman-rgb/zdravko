@@ -13,7 +13,7 @@ export default function OtazkyPage() {
       <PageHero
         eyebrow="Otázky"
         title="Osm otázek, které slyšíme nejčastěji"
-        lead="Odpovědi se opírají o čísla studie, a ne o přání. Pojmy vysvětluje slovníček."
+        lead="Odpovědi se opírají o čísla ze studie. Pojmy vysvětluje slovníček."
         aside={
           <nav aria-label="Témata otázek">
             <ul className="flex flex-wrap gap-2">
@@ -58,7 +58,7 @@ export default function OtazkyPage() {
         </div>
 
         <p className="mt-10 max-w-[44em] text-[19px] leading-relaxed text-ink-2">
-          Dnešní stav nefunguje a každý rok čekání ho zhoršuje. Tento plán je začátek rozhovoru, a ne poslední slovo. Do voleb chceme mít dohodu s odborníky, hotové podklady zákonů a běžící zkoušku ve třech regionech. Pak budeme mít právo říct, že jsme připraveni.
+          Dnešní stav nefunguje a každý rok čekání ho zhoršuje. Tímto plánem rozhovor teprve začíná. Do voleb chceme mít dohodu s odborníky, hotové podklady zákonů a běžící zkoušku ve třech regionech. Pak budeme mít právo říct, že jsme připraveni.
         </p>
         <p className="mt-4 text-[18px] text-ink-2">
           Pojmy vysvětluje <TextLink href="/slovnicek">slovníček</TextLink>.

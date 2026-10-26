@@ -89,7 +89,7 @@ export default function ProcPage() {
       >
         <div className="mb-10 grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-start">
           <div className="flex flex-col gap-4">
-            <p className="text-balance font-serif text-[26px] font-semibold leading-[1.2] text-ink sm:text-[30px]">Peníze tečou tam, kde jsou postele, a ne tam, kde jsou lidé nejvíc nemocní.</p>
+            <p className="text-balance font-serif text-[26px] font-semibold leading-[1.2] text-ink sm:text-[30px]">Peníze dnes jdou hlavně za nemocničními lůžky. Na péči tam, kde lidé žijí, jich zbývá málo.</p>
             <p className="text-[18px] leading-relaxed text-ink-2">Hodně věcí funguje a zachováme je: pojištění hradí 85 % výdajů na zdraví a jen půl procenta lidí říká, že se k potřebné péči nedostalo. Těžiště systému je ale v nemocnicích. A na to naráží stárnutí: lidí nad 85 let bude v roce 2050 půl milionu, dnes je jich 200 tisíc.</p>
           </div>
           <HeroAside />
@@ -139,7 +139,7 @@ export default function ProcPage() {
 
       <Section
         tone="paper"
-        eyebrow="Péče doma místo lůžka z nouze"
+        eyebrow="Zbytečné hospitalizace"
         title="Zbytečných hospitalizací máme o čtvrtinu víc než vyspělé země"
         lead="Zbytečná hospitalizace je taková, které by předešla dobrá péče mimo nemocnici: včasná kontrola dlouhodobě nemocného, sestra, která zavolá, návštěva doma. Je to hlavní číslo, podle kterého se reforma bude v roce 2033 hodnotit."
       >
@@ -163,12 +163,12 @@ export default function ProcPage() {
         </div>
         <div className="mt-8 max-w-[52em]">
           <Callout title="Říkáme to otevřeně" tone="sage">
-            Nedostatek sester je nejslabší místo plánu. Proto pojišťovna platí jen obsazené místo a plat je jako v nemocnici, ale bez nočních služeb. Kdyby do konce roku 2031 přišla jen polovina potřebných sester, nové budovy se stavět nebudou a reforma poběží v menším rozsahu. Nezastaví se.
+            Nedostatek sester je nejslabší místo plánu. Proto pojišťovna platí jen obsazené místo a plat je jako v nemocnici, ale bez nočních služeb. Kdyby do konce roku 2031 přišla jen polovina potřebných sester, nové budovy se stavět nebudou a reforma poběží v menším rozsahu, ale nezastaví se.
           </Callout>
         </div>
       </Section>
 
-      <Section eyebrow="Prevence místo oprav" title="Kam systém lidi aktivně zve, tam prevence funguje">
+      <Section eyebrow="Prevence" title="Kam systém lidi aktivně zve, tam prevence funguje">
         <Facts items={PREVENTION_FACTS} />
       </Section>
 

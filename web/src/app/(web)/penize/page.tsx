@@ -24,7 +24,7 @@ export default function PenizePage() {
       <PageHero
         eyebrow="Peníze"
         title="Asi 21,5 miliardy ročně navíc. Necelá 4 % toho, co zdravotnictví stojí dnes."
-        lead="Řekneme to na rovinu: péče zdraží i bez nás, protože stárneme. Tuhle reformu neděláme, abychom ušetřili. Děláme ji proto, aby za peníze, které do zdravotnictví tak jako tak půjdou, bylo víc péče tam, kde dnes chybí. Říkáme rozpětí 15 až 25 miliard, protože jedno přesné číslo by bylo předstírání."
+        lead="Řekneme to na rovinu: péče zdraží i bez nás, protože stárneme. Úspora není cílem reformy. Chceme, aby za peníze, které do zdravotnictví tak jako tak půjdou, bylo víc péče tam, kde dnes chybí. Říkáme rozpětí 15 až 25 miliard, protože jedno přesné číslo by bylo předstírání."
         aside={
           <BigNumber
             value="21,5 mld. Kč"
@@ -88,8 +88,8 @@ export default function PenizePage() {
             <StackedBar rows={FUNDING.rows} groups={FUND_GROUPS} total={total} />
           </ChartFrame>
           <div className="flex flex-col gap-5">
-            <Callout title="Vyšší platba státu nejsou nové peníze">
-              Je to přesun ze státního rozpočtu do zdravotního pojištění. Aby stát mohl platit víc za děti, důchodce a studenty, musí peníze jinde přibýt, nebo ubýt. Tuhle volbu nezametáme pod koberec: patří do volebního programu 2029.
+            <Callout title="Vyšší platba státu je přesun peněz">
+              Peníze se přesunou ze státního rozpočtu do zdravotního pojištění. Aby stát mohl platit víc za děti, důchodce a studenty, musí peníze jinde přibýt, nebo ubýt. Tuhle volbu nezametáme pod koberec: patří do volebního programu 2029.
             </Callout>
             <Callout title="Tabák a nikotin: víc, ale postupně">
               Daně z tabáku a nikotinu porostou každý rok o 5 % nad inflaci, bez skoků; nikotinové sáčky a e-cigarety se zdaní podle obsahu nikotinu. Dnešní plán zvyšování končí rokem 2027; navrhneme současné vládě, aby ho od roku 2028 prodloužila, a v našem scénáři to platí zákonem od roku 2031. Do 5 mld. Kč tyhle peníze nepočítáme, protože cílem je méně kouření. Co z nich přibude, jde těm, kdo o své zdraví aktivně pečují: hrazené odvykání a nižší pojistné za doložitelný pohyb, nekouření a účast v ověřených programech, podle programu strany.
@@ -105,7 +105,7 @@ export default function PenizePage() {
         id="kalkulacky"
         eyebrow="Přepočítejte si to"
         title="Tři kalkulačky nad čísly studie"
-        lead="Vzorce jsou převzaté z ekonomického modelu studie. Výsledky jsou scénáře s uvedenými předpoklady, a ne přesná předpověď."
+        lead="Vzorce jsou převzaté z ekonomického modelu studie. Výsledky jsou orientační scénáře s uvedenými předpoklady."
       >
         <div className="grid gap-6 lg:grid-cols-2">
           <StatePaymentCalculator />

@@ -121,7 +121,7 @@ const SHORT: Record<string, { label: string; when: string }> = {
   "M4.1": { label: "Otevřená anonymizovaná data na úrovni poskytovatele", when: "od 2027" },
   "M4.2": { label: "Informace pro pacienta před zákrokem a volné kapacity v reálném čase", when: "od 2027" },
   "M4.3": { label: "Rámec HSPA jako oficiální měřítko v zákoně (viz P5)", when: "platí od 1. 1. 2033" },
-  "M4.4": { label: "Reformu hodnotí ÚZIS s univerzitou, a ne autoři studie", when: "jmenovat do konce 2027, zpráva 2033" },
+  "M4.4": { label: "Reformu nezávisle hodnotí ÚZIS s univerzitou", when: "jmenovat do konce 2027, zpráva 2033" },
   "M4.5": { label: "Střet zájmů v komisích ministerstva: veřejná prohlášení o zájmech, vyloučení z hlasování, veřejné zápisy", when: "podnět 2027, příkaz ministra 2030, zákon 2033 a později" },
   "M5.1": { label: "Seznam základních léků se zajištěnou dostupností a pravidla pro výpadky", when: "bez zákona kdykoli, zákon 2032–2033" },
   "M5.2": { label: "Online srovnávač doplatků", when: "termín zatím není" },
@@ -393,7 +393,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     slug: "data",
     title: "Data ve službách pacienta",
     promise:
-      "Elektronizace má lékařům a pacientům ulehčit, a ne jim přidat papírování. Lékař uvidí aktuální záznam a volné kapacity, pacient se přihlásí bankovní identitou a uvidí, kdo se na jeho data díval.",
+      "Elektronizace má lékařům a pacientům ulehčit práci a ubrat papírování. Lékař uvidí aktuální záznam a volné kapacity, pacient se přihlásí bankovní identitou a uvidí, kdo se na jeho data díval.",
     layer: "jadro",
     studyArea: "Pilíř 3 (digitální nástroje), J5",
     measures: pick(["J5", "Pil3.1", "Pil3.2", "Pil3.3", "M4.1", "M4.2"]),
@@ -410,7 +410,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     inspiration: "Estonsko má od roku 2008 národní elektronické zdravotnictví, dánský portál sundhed.dk funguje od roku 2003 a finská Kanta spojuje osobní záznam, e-recept a archiv vyšetření.",
     gaps: "Jednotné datové standardy (FHIR) zbývá rozpracovat; Pilíř 3 zatím navazuje na portál pacienta, který ministerstvo spustilo v lednu 2026, a na evropský prostor pro zdravotní data (EHDS).",
     dispute:
-      "Lékaři se bojí, že sdílení dat poslouží ke kontrole, a ne k péči. Rychlé zavedení navíc stojí proti ochraně citlivých dat a kybernetické bezpečnosti: ransomware už české nemocnice vyřadil.",
+      "Lékaři se bojí, že sdílená data se budou používat hlavně k jejich kontrole. Rychlé zavedení navíc stojí proti ochraně citlivých dat a kybernetické bezpečnosti: ransomware už české nemocnice vyřadil.",
   },
   {
     n: 11,
@@ -442,7 +442,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
     slug: "prava-pacientu",
     title: "Práva pacientů",
     promise:
-      "Stížnost pacienta se vyřídí rychle a má váhu. Chceme zdravotnického ombudsmana, který vyšetřuje a jehož doporučení nezůstane bez odpovědi, a porodnice i nemocnice, které respektují práva pacientů. Místo pouhého rušení porodnic chceme porodní asistentky, které se o ženu postarají doma i v porodnici (doplněno do Manifestu 23. 10. 2026).",
+      "Stížnost pacienta se vyřídí rychle a má váhu. Chceme zdravotnického ombudsmana, který vyšetřuje a jehož doporučení nezůstane bez odpovědi, a porodnice i nemocnice, které respektují práva pacientů. Než se porodnice zavře, musí být v okolí porodní asistentky, které se o ženu postarají doma i v porodnici (doplněno do Manifestu 23. 10. 2026).",
     layer: "doprovod",
     studyArea: "Oblast 9 (brief Části XI)",
     measures: pick(["M9.1", "M9.2", "M9.3", "M9.4", "M9.5", "Pil2.6"]),
@@ -456,7 +456,7 @@ export const MANIFEST_AREAS: ManifestArea[] = [
       { year: "Rok 5+", text: "Odškodnění bez prokazování viny podle skandinávského vzoru." },
     ],
     facts: [
-      { value: "38 dnů", label: "trvalo ve skutečnosti vyřízení stížnosti místo zákonných 30", compare: "u lhůty 90 dnů to bylo 172 dnů (údaj ze studie)" },
+      { value: "38 dnů", label: "ve skutečnosti trvalo vyřízení stížnosti, zákon přitom dává 30", compare: "u lhůty 90 dnů to bylo 172 dnů (údaj ze studie)" },
     ],
     inspiration: "Švédsko a Norsko mají ombudsmana pro pacienty, Dánsko a Švédsko odškodnění bez prokazování viny, Británie síť Healthwatch a Nizozemsko inspekci, která zveřejňuje výsledky po pracovištích.",
     gaps:
