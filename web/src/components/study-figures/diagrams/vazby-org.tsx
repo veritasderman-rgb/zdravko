@@ -227,7 +227,7 @@ export function VazbyMatrixFigure() {
       ]}
       textVersion={textVersion}
     >
-      <div className="vazby-scroll -mx-1 overflow-x-auto px-1">
+      <div className="vazby-scroll -mx-1 overflow-x-auto px-1" tabIndex={0} role="region" aria-label="Matice vlivů, na úzké obrazovce se posouvá do stran">
         <table className="vazby-matrix w-full min-w-[860px] table-fixed border-collapse text-[14px]">
           {/* Pevné šířky: název opatření 34 %, osm ukazatelů po 7 %, doplňkové 10 %; drží se i v tisku. */}
           <colgroup>

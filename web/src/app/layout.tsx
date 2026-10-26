@@ -9,9 +9,16 @@ import "@fontsource-variable/source-sans-3/wght.css";
 import "@fontsource-variable/geist-mono/wght.css";
 import "./globals.css";
 
+const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://web-b5qk.vercel.app";
+const DESCRIPTION = "Plán reformy zdravotnictví ke konzultaci: každý má svůj tým lékaře a sestry, nemocnice mění roli, prevence má stálé peníze.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE),
   title: { default: "Zdraví blíž lidem", template: "%s · Zdraví blíž lidem" },
-  description: "Plán reformy zdravotnictví ke konzultaci: každý má svůj tým lékaře a sestry, nemocnice mění roli, prevence má stálé peníze.",
+  description: DESCRIPTION,
+  // Náhledový obrázek dodává opengraph-image.tsx u každé stránky (src/lib/og.tsx).
+  openGraph: { siteName: "Zdraví blíž lidem", locale: "cs_CZ", type: "website", description: DESCRIPTION },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -176,6 +176,10 @@ table.doc-table th {
   background: #eae3d6;
   font-weight: 600;
 }
+table.doc-table th.doc-row-head {
+  background: transparent;
+  text-align: left;
+}
 
 /* Formuláře interní části. Vstupy komponent veřejného webu mají data-ui a styl si nesou samy. */
 input:not([data-ui]),
