@@ -28,8 +28,8 @@ export default function HomePage() {
         <Container className="grid items-center gap-3 lg:grid-cols-2 lg:gap-12">
           <div className="flex flex-col items-start">
             <Eyebrow>
-              <span className="sm:hidden">Plán reformy · verze 3.1 ke konzultaci</span>
-              <span className="hidden sm:inline">Plán reformy zdravotnictví · verze 3.1 ke konzultaci</span>
+              <span className="sm:hidden">Plán reformy · verze 3.2 ke konzultaci</span>
+              <span className="hidden sm:inline">Plán reformy zdravotnictví · verze 3.2 ke konzultaci</span>
             </Eyebrow>
             <h1 className="mt-3.5 text-balance font-serif text-[38px] font-semibold leading-[1.08] tracking-[-0.02em] sm:mt-5 sm:text-[52px] lg:text-[62px] lg:leading-[1.04]">
               Každý člověk má mít svého lékaře a svou sestru blízko domova.

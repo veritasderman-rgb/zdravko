@@ -1,5 +1,5 @@
 /**
- * Obsah veřejného webu. Čísla pocházejí ze studie „Zdraví blíž lidem“ v3.1 (23. 10. 2026),
+ * Obsah veřejného webu. Čísla pocházejí ze studie „Zdraví blíž lidem“ v3.2 (26. 10. 2026),
  * z politické verze 3 a z prezentace „Co chceme a proč“. Částky jsou v mld. Kč ročně,
  * ceny roku 2026, pokud není uvedeno jinak.
  *
@@ -14,7 +14,7 @@ import { MODEL_NOTE, n } from "@/content/cisla";
 
 export const META = {
   title: "Zdraví blíž lidem",
-  subtitle: "Plán reformy zdravotnictví · verze 3.1 ke konzultaci · 23. 10. 2026",
+  subtitle: "Plán reformy zdravotnictví · verze 3.2 ke konzultaci · 26. 10. 2026",
   author: "Josef Pavlovic, resortní tým Zdravotnictví",
   claim: "Představujeme plán a hledáme pro něj podporu.",
   deadline: "31. 3. 2027",

@@ -51,7 +51,7 @@ export default function ProKohoPage() {
               ))}
             </ul>
             <p className="text-[17px] leading-relaxed text-ink-2">
-              S každou z těchto deseti organizací plán projednáme dřív, než půjde do Sněmovny. Chceme znát jejich výhrady a zapracovat je do verze 3.1.
+              S každou z těchto deseti organizací plán projednáme dřív, než půjde do Sněmovny. Chceme znát jejich výhrady a zapracovat je do další verze plánu.
             </p>
           </div>
         }
