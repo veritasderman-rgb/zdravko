@@ -17,8 +17,8 @@
 | Položky „Ověřit“ | 226 | 9 | 52 | 0 | 59 | 106 |
 | Ukazatele Části IX | 21 | 11 | 6 | 0 | 3 | 1 |
 | Čísla webu (cisla.ts) | 49 | 21 | 4 | 0 | 16 | 8 |
-| Faktická tvrzení | 841 | 374 | 96 | 0 | 268 | 103 |
-| **Celkem** | **1137** | 415 | 158 | 0 | 346 | 218 |
+| Faktická tvrzení | 841 | 373 | 96 | 1 | 268 | 103 |
+| **Celkem** | **1137** | 414 | 158 | 1 | 346 | 218 |
 
 Pokrytí HSPA: prolinkováno 229 z 334 publikovaných článků a 101 z 243 indikátorů. Zbytek se studie netýká (seznam s důvodem v části G).
 
@@ -28,6 +28,7 @@ Seřazeno podle řádku studie. „ř.“ je řádek v `01-studie-zdravi-bliz-li
 
 | ř. | Kde | Studie | HSPA | Poznámka |
 |---|---|---|---|---|
+| 2429 | 7. Stomatologie | Švédsko (bezplatná péče pro děti a mladé, od roku 2025 do 19 let; HSPA Monitor uvádí starší hranici 23 let) | [Průvodce reformou českého zdravotnictví. Třináct oblastí, kde dává sm…](https://skorezdravotnictvi.cz/clanek-manifest-reforma-zdravotnictvi.html) | Opraveno 2026-10-26: studie se vrací k „od roku 2025 do 19 let“. Socialstyrelsen potvrzuje, že Švédsko hranici bezplatné zubní péče snížilo z 23 na 19 let od ledna 2025; článek HSPA (Manifest) nese starší hodnotu 23 let bez roku a je třeba ho opravit v repu hspa. Jediný rozpor, kde je zdrojem chyby HSPA Monitor. Oprav… |
 
 ## C. Ukazatele Části IX (nadřazený cíl, H1–H8, D1–D12)
 
@@ -1699,7 +1700,7 @@ Faktická tvrzení studie, ke kterým HSPA má článek nebo indikátor. Tvrzen�
 
 ### Část XI — Deset oblastí Manifestu: policy briefy
 
-86 tvrzení: 37 potvrzuje, 14 upřesňuje, 0 rozpor, 30 částečně, 5 bez opory.
+86 tvrzení: 36 potvrzuje, 14 upřesňuje, 1 rozpor, 30 částečně, 5 bez opory.
 
 #### 1. Hodnocení účelnosti a standard péče
 
@@ -1788,7 +1789,7 @@ Faktická tvrzení studie, ke kterým HSPA má článek nebo indikátor. Tvrzen�
 | 2429 | Zubních lékařů je 78 na 100 tisíc obyvatel (ÚZIS NRZP 2024; OECD 71, EU 74; HSPA Monitor), v Karlovarském kraji jen 61. | **potvrzuje** | [ind. Stomatologové (zubní lékaři) / 1 000 obyvatel](https://skorezdravotnictvi.cz/indicator.html?id=stomatologove_per_1000) 0.78 / 1 000 (2024, ÚZIS · NRZP; seed) | Opraveno 2026-10-26 podle HSPA Monitoru (dříve: „Zubních lékařů je 76,0 na 100 tisíc obyvatel (Eurostat 2024).“). HSPA indikátor: 0,78 stomatologa na 1 000 obyvatel, tj. 78 na 100 tisíc (2024; zdroj ÚZIS NRZP), benchmar… |
 | 2429 | Absolventů ubývá: 296 v roce 2022 a 268 v roce 2024 (2,5 na 100 tisíc proti 3,7 v EU). | HSPA nemá | — | HSPA indikátor absolventů stomatologie nesleduje (jen absolventi všeobecného lékařství 16,3/100 tis. a ošetřovatelství 38,76/100 tis.). Údaj je nutné ověřit u Eurostatu. |
 | 2429 | Na stomatologii šlo 19,3 mld. Kč, tedy 3,8 % úhrad. | **potvrzuje** | [Kam plyne 508 miliard. Co o struktuře českého zdravotnictví říkají do…](https://skorezdravotnictvi.cz/clanek-financovani-segmenty-2026.html) | Přesná shoda: ambulantní stomatologie (podsegment 1.1 ZPP) 19,3 mld. Kč = 3,8 % úhrad v roce 2024 (ÚZIS OIS-11-24). HSPA upozorňuje, že číslo se často zaměňuje se segmentem 3 (lázně a ozdravovny, 4,6 mld. Kč). |
-| 2429 | Švédsko (bezplatná péče pro děti a mladé do 23 let; HSPA Monitor) | **potvrzuje** | [Průvodce reformou českého zdravotnictví. Třináct oblastí, kde dává sm…](https://skorezdravotnictvi.cz/clanek-manifest-reforma-zdravotnictvi.html) | Opraveno 2026-10-26 podle HSPA Monitoru (dříve: „Švédsko (bezplatná péče pro děti a mladé, od roku 2025 do 19 let), Dánsko, Norsko, německý Bonusheft.“). HSPA Manifest uvádí věkovou hranici bezplatné péče ve Švédsku do … |
+| 2429 | Švédsko (bezplatná péče pro děti a mladé, od roku 2025 do 19 let; HSPA Monitor uvádí starší hranici 23 let) | **rozpor** | [Průvodce reformou českého zdravotnictví. Třináct oblastí, kde dává sm…](https://skorezdravotnictvi.cz/clanek-manifest-reforma-zdravotnictvi.html) | Opraveno 2026-10-26: studie se vrací k „od roku 2025 do 19 let“. Socialstyrelsen potvrzuje, že Švédsko hranici bezplatné zubní péče snížilo z 23 na 19 let od ledna 2025; článek HSPA (Manifest) nese starší hodnotu 23 let… |
 | 2429 | Zubních lékařů je 78 na 100 tisíc obyvatel (ÚZIS NRZP 2024; OECD 71, EU 74; HSPA Monitor), v Karlovarském kraji jen 61. | **upřesňuje** | [Zuby na příjem: proč v Česku odkládá zubaře pětkrát víc chudých než b…](https://skorezdravotnictvi.cz/clanek-nesplnena-potreba-zubni-pece.html); [ind. Stomatologové (zubní lékaři) / 1 000 obyvatel](https://skorezdravotnictvi.cz/indicator.html?id=stomatologove_per_1000) 0.78 / 1 000 (2024, ÚZIS · NRZP; seed) | Opraveno 2026-10-26 podle HSPA Monitoru (dříve: „Zubních lékařů je 76,0 na 100 tisíc obyvatel (Eurostat 2024).“). Studie: 76,0 na 100 tis. (Eurostat), HSPA: 0,78 na 1 000, tj. 78 na 100 tis. (ÚZIS NRZP 2024; OECD 0,71, … |
 
 #### 8. Vzdělání a podmínky personálu

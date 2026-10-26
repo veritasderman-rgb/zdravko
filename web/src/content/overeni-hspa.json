@@ -15,9 +15,10 @@
   },
   "by_verdict": {
    "hspa_nema": 218,
-   "potvrzuje": 415,
+   "potvrzuje": 414,
    "castecne": 346,
-   "upresnuje": 158
+   "upresnuje": 158,
+   "rozpor": 1
   },
   "hspa_articles_linked": 229,
   "hspa_articles_published": 334,
@@ -25882,7 +25883,7 @@
    "line": 2429,
    "part": "Část XI — Deset oblastí Manifestu: policy briefy",
    "section": "7. Stomatologie",
-   "study_text": "Švédsko (bezplatná péče pro děti a mladé do 23 let; HSPA Monitor)",
+   "study_text": "Švédsko (bezplatná péče pro děti a mladé, od roku 2025 do 19 let; HSPA Monitor uvádí starší hranici 23 let)",
    "hspa": [
     {
      "kind": "article",
@@ -25892,8 +25893,8 @@
      "url": "https://skorezdravotnictvi.cz/clanek-manifest-reforma-zdravotnictvi.html"
     }
    ],
-   "verdict": "potvrzuje",
-   "note": "Opraveno 2026-10-26 podle HSPA Monitoru (dříve: „Švédsko (bezplatná péče pro děti a mladé, od roku 2025 do 19 let), Dánsko, Norsko, německý Bonusheft.“). HSPA Manifest uvádí věkovou hranici bezplatné péče ve Švédsku do 23 let, studie „od roku 2025 do 19 let\". Rozpor může odrážet změnu či odlišné období; HSPA zdroj ani rok nespecifikuje, nutno ověřit u švédského Folktandvården/Socialstyrelsen. Dánsko, Norsko a německý Bonusheft HSPA zmiňuje (Německo každoroční preventivní prohlídka) jen obecně.",
+   "verdict": "rozpor",
+   "note": "Opraveno 2026-10-26: studie se vrací k „od roku 2025 do 19 let“. Socialstyrelsen potvrzuje, že Švédsko hranici bezplatné zubní péče snížilo z 23 na 19 let od ledna 2025; článek HSPA (Manifest) nese starší hodnotu 23 let bez roku a je třeba ho opravit v repu hspa. Jediný rozpor, kde je zdrojem chyby HSPA Monitor. Opraveno 2026-10-26 podle HSPA Monitoru (dříve: „Švédsko (bezplatná péče pro děti a mladé, od roku 2025 do 19 let), Dánsko, Norsko, německý Bonusheft.“). HSPA Manifest uvádí věkovou hranici bezplatné péče ve Švédsku do 23 let, studie „od roku 2025 do 19 let\". Rozpor může odrážet změnu či odlišné období; HSPA zdroj ani rok nespecifikuje, nutno ověřit u švédského Folktandvården/Socialstyrelsen. Dánsko, Norsko a německý Bonusheft HSPA zmiňuje (Německo každoroční preventivní prohlídka) jen obecně.",
    "headingPath": "Zdraví blíž lidem › Část XI — Deset oblastí Manifestu: policy briefy › 7. Stomatologie",
    "id": "o0862",
    "fixed": "2026-10-26"
