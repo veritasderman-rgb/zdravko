@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
+import { SITE } from "@/lib/site";
 
-const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://web-b5qk.vercel.app";
 
 /** Veřejné stránky pro vyhledávače; interní část (čtečka týmu, připomínky, registry) sem nepatří. */
 const PAGES: [path: string, priority: number][] = [

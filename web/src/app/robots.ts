@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
+import { SITE } from "@/lib/site";
 
-const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://web-b5qk.vercel.app";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
       // Interní část a jednorázové odkazy z e-mailů do vyhledávačů nepatří.
-      disallow: ["/rt", "/d/", "/pripominky", "/overit", "/kody", "/lide", "/vstup", "/api/", "/cron/", "/potvrdit", "/ochrana-udaju/sprava", "/ochrana-udaju/export", "/studie/tisk"],
+      disallow: ["/rt", "/d/", "/pripominky", "/overit", "/kody", "/lide", "/vstup", "/api/", "/cron/", "/potvrdit", "/novinky/potvrdit", "/ochrana-udaju/sprava", "/ochrana-udaju/export", "/studie/tisk"],
     },
     sitemap: `${SITE}/sitemap.xml`,
   };

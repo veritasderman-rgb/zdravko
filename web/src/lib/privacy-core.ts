@@ -129,18 +129,22 @@ export async function dropUnverified(db: AnyDb, id: number): Promise<void> {
 // ---------- Odkaz na vlastní údaje (export a výmaz) ----------
 
 /** Podepsaný token s e-mailem a platností; nic se kvůli němu neukládá. */
-export function signDataToken(secret: string, email: string, now = Date.now()): string {
-  const body = Buffer.from(JSON.stringify({ e: email, x: Math.floor(now / 1000) + DATA_LINK_HOURS * 3600 })).toString("base64url");
-  const sig = createHmac("sha256", secret).update(`udaje.${body}`).digest("base64url");
+/**
+ * Podepsaný token s e-mailem, účelem a platností; nic se kvůli němu neukládá.
+ * Účel je součástí podpisu, takže odkaz pro jeden účel nejde použít pro jiný.
+ */
+export function signToken(secret: string, purpose: string, email: string, hours: number, now = Date.now()): string {
+  const body = Buffer.from(JSON.stringify({ e: email, x: Math.floor(now / 1000) + hours * 3600 })).toString("base64url");
+  const sig = createHmac("sha256", secret).update(`${purpose}.${body}`).digest("base64url");
   return `${body}.${sig}`;
 }
 
-/** E-mail z platného tokenu, jinak null. */
-export function openDataToken(secret: string, token: string | undefined, now = Date.now()): string | null {
+/** E-mail z platného tokenu daného účelu, jinak null. */
+export function openToken(secret: string, purpose: string, token: string | undefined, now = Date.now()): string | null {
   if (!token) return null;
   const [body, sig] = token.split(".");
   if (!body || !sig) return null;
-  const expected = createHmac("sha256", secret).update(`udaje.${body}`).digest();
+  const expected = createHmac("sha256", secret).update(`${purpose}.${body}`).digest();
   const given = Buffer.from(sig, "base64url");
   if (given.length !== expected.length || !timingSafeEqual(given, expected)) return null;
   try {
@@ -151,6 +155,10 @@ export function openDataToken(secret: string, token: string | undefined, now = D
     return null;
   }
 }
+
+/** Odkaz na vlastní údaje (export a výmaz). */
+export const signDataToken = (secret: string, email: string, now = Date.now()) => signToken(secret, "udaje", email, DATA_LINK_HOURS, now);
+export const openDataToken = (secret: string, token: string | undefined, now = Date.now()) => openToken(secret, "udaje", token, now);
 
 /** Všechny připomínky s daným e-mailem, jak je evidujeme (pro náhled a stažení). */
 export async function exportPersonalData(db: AnyDb, email: string) {

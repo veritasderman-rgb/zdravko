@@ -114,6 +114,13 @@ pnpm db:anchors    # doplní kotvy do všech verzí a naváže na ně existujíc
   připomínky celé, u ostatních odstraní jméno, e-mail, organizaci a text a vyčistí auditní záznamy; ve vypořádání
   zůstane číslo, místo ve studii a stav.
 
+**Odběr novinek** (`src/lib/brevo.ts`, `src/app/novinky-actions.ts`): formulář na úvodní stránce a v patičce pošle
+podepsaný odkaz platný 48 hodin; kontakt jde do Brevo až po potvrzení tlačítkem na `/novinky/potvrdit`. Web e-mail
+sám neukládá, drží jen otisk pro limity (10 přihlášek z adresy IP za hodinu, 3 na e-mail za den). Seznam
+„Zdraví blíž lidem — novinky“ ve složce „Zdraví blíž lidem“ najde podle názvu, nebo ho při prvním potvrzení založí;
+potřebuje `BREVO_API_KEY`, číslo seznamu lze pevně dát `BREVO_LIST_ID`. Odhlášení obstarává Brevo odkazem v každé
+rozesílce.
+
 Nasazení změn schématu: vždy nejdřív `pnpm db:push` (přidávají se jen sloupce a tabulky, starý kód je ignoruje),
 pak sloučit kód. Mazání podle lhůt potřebuje ve Vercelu `CRON_SECRET`.
 

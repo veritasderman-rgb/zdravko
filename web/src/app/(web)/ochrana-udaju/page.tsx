@@ -64,6 +64,19 @@ export default function PrivacyPage() {
         <p className="mt-6 max-w-[44em] text-[17px] text-muted">Mazání podle těchto lhůt běží automaticky každý den.</p>
       </Section>
 
+      <Section id="novinky" title="Odběr novinek">
+        <div className="flex max-w-[44em] flex-col gap-4">
+          <p className={P}>
+            K odběru novinek potřebujeme jen e-mail. Do seznamu ho přidáme až poté, co odběr potvrdíte odkazem, který vám pošleme; do té doby ho
+            nikde neukládáme. Seznam vede služba Brevo (Sendinblue SAS, Francie), přes kterou novinky rozesíláme.
+          </p>
+          <p className={P}>
+            E-mail držíme, dokud odběr nezrušíte. Odhlásit se můžete odkazem v každé zprávě; pak ho ze seznamu odstraníme. Novinky posíláme jen
+            o důležitých krocích: nová verze studie, kulaté stoly, vypořádání připomínek.
+          </p>
+        </div>
+      </Section>
+
       <Section id="moje-udaje" tone="paper" title="Stáhnout nebo smazat moje údaje" lead={`Zadejte e-mail, ze kterého jste připomínkovali. Pošleme na něj odkaz, kde si údaje prohlédnete, stáhnete a můžete je smazat. Odkaz platí ${DATA_LINK_HOURS} hodin.`}>
         <DataRequestForm />
       </Section>

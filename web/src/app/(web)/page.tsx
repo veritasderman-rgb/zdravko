@@ -4,6 +4,7 @@ import { HomeWineCalculator } from "@/components/web/home-wine-calculator";
 import { HomeVisit } from "@/components/web/illustrations";
 import { ManifestStrip } from "@/components/web/manifest-strip";
 import { Button, Callout, Container, Eyebrow, NextStep, Section, TextLink } from "@/components/web/ui";
+import { NewsletterForm } from "@/components/web/newsletter-form";
 
 // Barvy waffle a obarvených čísel ve výroku (stejné jako SERIES[0], SERIES[1] a ON_DARK v charts/theme.ts).
 const BLUE = "#2A78D6";
@@ -226,7 +227,17 @@ export default function HomePage() {
         <p className="mt-4 max-w-[52em] text-[16px] text-muted sm:text-[17px]">Připomínky odborných organizací vyřizujeme přednostně, připomínky veřejnosti po nich. Ve vypořádání uvádíme jen názvy organizací, nikdy jména lidí.</p>
       </Section>
 
-      {/* 11. Další krok */}
+      {/* 11. Novinky e-mailem */}
+      <Section
+        id="novinky"
+        eyebrow="Novinky e-mailem"
+        title="Chcete vědět, jak to pokračuje?"
+        lead="Připomínkovat nemusíte. Pošleme vám zprávu, když vyjde nová verze studie, začnou kulaté stoly nebo zveřejníme vypořádání připomínek."
+      >
+        <NewsletterForm />
+      </Section>
+
+      {/* 12. Další krok */}
       <NextStep
         title="Co se změní pro vás a vaše blízké"
         text="Pět změn a devět situací, dnes a po reformě. Čtení na pět minut."
