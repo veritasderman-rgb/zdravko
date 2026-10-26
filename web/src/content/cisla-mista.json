@@ -1235,7 +1235,7 @@
   "web": [
    {
     "file": "src/app/(web)/page.tsx",
-    "line": 159
+    "line": 165
    },
    {
     "file": "src/components/charts/calculators.tsx",
@@ -1631,7 +1631,7 @@
   "web": [
    {
     "file": "src/app/(web)/page.tsx",
-    "line": 19
+    "line": 20
    },
    {
     "file": "src/app/(web)/proc/page.tsx",
@@ -2460,6 +2460,10 @@
    {
     "file": "src/content/reforma.ts",
     "line": 424
+   },
+   {
+    "file": "src/content/video.ts",
+    "line": 14
    }
   ],
   "studie": [

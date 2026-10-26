@@ -121,6 +121,14 @@ sám neukládá, drží jen otisk pro limity (10 přihlášek z adresy IP za hod
 potřebuje `BREVO_API_KEY`, číslo seznamu lze pevně dát `BREVO_LIST_ID`. Odhlášení obstarává Brevo odkazem v každé
 rozesílce.
 
+**Vysvětlující video** (úvodní stránka, `#video`): 87 s, scény ve stylu webu, ženský komentář (ElevenLabs, hlas
+Aneta), titulky a celý text pod videem. Text komentáře po větách je v `src/content/video.ts` (zároveň titulky a textová
+verze), scény ve `video/sceny.html` (jedna scéna na odstavec, prvky se objevují podle času slov), nahrávka a časy slov
+ve `video/narrace.mp3` a `video/narrace-slova.json`. `pnpm video:render` (potřebuje ffmpeg a Playwright s Chromiem)
+vyrobí `public/video/vysvetleni.mp4`, `.vtt` a náhled `.jpg`; `--jen-nahled` přegeneruje jen náhled. Při změně
+textu je potřeba nová nahrávka a její přepis s časy slov (ElevenLabs Scribe) do `narrace-slova.json`; počet vět
+v nahrávce musí sedět s `video.ts`, jinak render skončí chybou.
+
 Nasazení změn schématu: vždy nejdřív `pnpm db:push` (přidávají se jen sloupce a tabulky, starý kód je ignoruje),
 pak sloučit kód. Mazání podle lhůt potřebuje ve Vercelu `CRON_SECRET`.
 

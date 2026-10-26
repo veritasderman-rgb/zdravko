@@ -16,6 +16,7 @@
     "db:anchors": "tsx scripts/anchors-backfill.ts",
     "check:cisla": "tsx scripts/check-cisla.ts",
     "check:vazby": "tsx scripts/check-vazby.ts",
+    "video:render": "tsx scripts/render-video.ts",
     "check:overeni": "tsx scripts/check-overeni.ts",
     "gdpr:retence": "tsx scripts/retence.ts",
     "users:add": "tsx scripts/users.ts add",
