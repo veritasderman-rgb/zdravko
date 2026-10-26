@@ -24,7 +24,26 @@ function hrefFor(slug: string, key: string, query: { kod: string | null; s: stri
  * Veřejná čtečka má větší čtecí typografii (serifové nadpisy, text 19 px); interní čtečka
  * zachovává dnešní hustotu a jen přebírá tokeny. Chování (id bloků, data-selected, odkazy) je stejné.
  */
-export function BlockView({ block, slug, count, selected, query, readOnly = false, commentable = false }: { block: Block; slug: string; count?: { n: number; open: number }; selected: boolean; query: { kod: string | null; s: string | null }; readOnly?: boolean; commentable?: boolean }) {
+export function BlockView({
+  block,
+  slug,
+  count,
+  selected,
+  query,
+  readOnly = false,
+  commentable = false,
+  lazyFigures = false,
+}: {
+  block: Block;
+  slug: string;
+  count?: { n: number; open: number };
+  selected: boolean;
+  query: { kod: string | null; s: string | null };
+  readOnly?: boolean;
+  commentable?: boolean;
+  /** Grafy vykreslit až u zorného pole (veřejná čtečka; ne tisk, ne čtečka týmu). */
+  lazyFigures?: boolean;
+}) {
   const href = hrefFor(slug, block.blockKey, query);
   const body = stripBlockMarker(block.md, block.kind);
   const inline = (t: string) => renderInline(t, readOnly ? { codeHref: () => null } : {});
@@ -59,6 +78,8 @@ export function BlockView({ block, slug, count, selected, query, readOnly = fals
     }
     case "table": {
       const meta = block.meta as { header: string[]; rows: string[][] } | null;
+      // Prázdný levý horní roh (srovnání variant): první sloupec jsou nadpisy řádků.
+      const rowHeads = !!meta && !meta.header[0]?.trim();
       content = meta ? (
         <div
           className={readOnly ? "doc-table-box my-2 overflow-x-auto rounded-card border border-line bg-paper text-[16px]" : "overflow-x-auto"}
@@ -66,11 +87,21 @@ export function BlockView({ block, slug, count, selected, query, readOnly = fals
         >
           <table className="doc-table">
             <thead>
-              <tr>{meta.header.map((h, i) => <th key={i}>{inline(h)}</th>)}</tr>
+              <tr>{meta.header.map((h, i) => (i === 0 && rowHeads ? <td key={i} /> : <th key={i} scope="col">{inline(h)}</th>))}</tr>
             </thead>
             <tbody>
               {meta.rows.map((r, i) => (
-                <tr key={i}>{r.map((c, j) => <td key={j}>{inline(c)}</td>)}</tr>
+                <tr key={i}>
+                  {r.map((c, j) =>
+                    j === 0 && rowHeads ? (
+                      <th key={j} scope="row" className="doc-row-head">
+                        {inline(c)}
+                      </th>
+                    ) : (
+                      <td key={j}>{inline(c)}</td>
+                    ),
+                  )}
+                </tr>
               ))}
             </tbody>
           </table>
@@ -92,7 +123,7 @@ export function BlockView({ block, slug, count, selected, query, readOnly = fals
     default: {
       const ph = body.match(PLACEHOLDER_RE);
       if (ph && findFigure(STUDY_FIGURES, ph[1])) {
-        content = <StudyFigureSlot desc={ph[1]} compact={!readOnly} />;
+        content = <StudyFigureSlot desc={ph[1]} compact={!readOnly} lazy={lazyFigures} />;
       } else {
         content = <p>{inline(body)}</p>;
       }
@@ -118,8 +149,8 @@ export function BlockView({ block, slug, count, selected, query, readOnly = fals
             type="button"
             data-comment-for={block.blockKey}
             data-comment-quote={block.text.slice(0, 300)}
-            aria-label="Napsat připomínku k tomuto místu"
-            className="mt-1 shrink-0 rounded-full border border-line-strong px-2.5 py-0.5 text-[13px] font-semibold text-muted opacity-50 transition-opacity hover:bg-sage-soft hover:text-forest hover:opacity-100 focus-visible:opacity-100 group-hover:opacity-100"
+            aria-label="Připomínka k tomuto místu"
+            className="mt-1 shrink-0 rounded-full border border-line px-2.5 py-0.5 text-[13px] font-semibold text-muted transition-colors hover:border-line-strong hover:bg-sage-soft hover:text-forest group-hover:border-line-strong"
           >
             Připomínka
           </button>

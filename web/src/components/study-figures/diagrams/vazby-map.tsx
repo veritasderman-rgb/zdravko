@@ -187,7 +187,7 @@ export function VazbyMapFigure() {
       legend={LEGEND}
       textVersion={textVersion}
     >
-      <div className="vazby-scroll -mx-1 overflow-x-auto px-1 pb-2" tabIndex={0} aria-label="Mapa vazeb, posouvá se do stran">
+      <div className="vazby-scroll -mx-1 overflow-x-auto px-1 pb-2" tabIndex={0} role="region" aria-label="Mapa vazeb, posouvá se do stran">
         <div className="vazby-canvas relative" style={{ width: W, height: H }} role="figure" aria-label="Mapa vazeb mezi opatřeními">
           {/* Mřížka: pásy, sloupce, opozice a vláda */}
           <svg className="absolute inset-0" width={W} height={H} aria-hidden focusable="false">

@@ -118,7 +118,7 @@ export function StudySearch({ scope }: { scope: string }) {
             onFocus={() => setOpen(true)}
             placeholder="slovo, číslo nebo kód opatření, např. porodní asistentka, 24 000, J1"
             autoComplete="off"
-            aria-controls={`${listId}-list`}
+            aria-controls={open && hits.length > 0 ? `${listId}-list` : undefined}
             aria-describedby={`${listId}-count`}
             className="w-full rounded-[10px] border border-line-strong bg-sand px-3.5 py-2.5 text-[17px] text-ink"
             data-ui
