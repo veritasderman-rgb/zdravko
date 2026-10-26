@@ -7,7 +7,7 @@ import type { PGlite } from "@electric-sql/pglite";
 import * as schema from "@/db/schema";
 import type { AnyDb } from "@/db/pool";
 import { importDocumentVersion } from "@/lib/importer";
-import { CommentError, createComment, createReply, setCommentStatus, setVerificationStatus, type NewComment } from "@/lib/comments-core";
+import { CommentError, PROPOSAL, createComment, createReply, setCommentStatus, setVerificationStatus, type NewComment } from "@/lib/comments-core";
 import { commentsCsv } from "@/lib/export";
 import { idSeq, testDb } from "./helpers/db";
 
@@ -49,6 +49,27 @@ beforeAll(async () => {
 
 beforeEach(async () => {
   await client.exec("drop trigger if exists fail_events on events; delete from events where entity <> 'import'; delete from comments;");
+});
+
+describe("návrh nového opatření", () => {
+  it("uloží se ke studii bez bloku, s celým návrhem a kódy navázaných opatření", async () => {
+    const r = await createComment(db, {
+      ...base(),
+      blockKey: PROPOSAL,
+      kind: "zneni",
+      body: "Návrh nového opatření: Sdílená sestra pro malé obce",
+      proposedText: "# Návrh nového opatření: Sdílená sestra pro malé obce",
+      codesText: "J2 J4",
+      channel: "verejnost",
+      email: "navrh@example.cz",
+    });
+    const [c] = await db.select().from(schema.comments).where(eq(schema.comments.id, r.id));
+    expect(c.blockKey).toBe(PROPOSAL);
+    expect(c.blockId).toBeNull();
+    expect(c.quote).toBeNull();
+    expect(c.proposedText).toContain("Sdílená sestra");
+    expect(c.codes).toEqual(["J2", "J4"]);
+  });
 });
 
 describe("validace", () => {

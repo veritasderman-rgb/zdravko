@@ -20,6 +20,8 @@ export const PRIORITIES = ["nizka", "bezna", "vysoka"] as const;
 export const VSTATUSES = ["otevreno", "overeno_potvrzeno", "overeno_opraveno", "neoveritelne"] as const;
 
 export const GENERAL = "obecne";
+/** Návrh nového opatření (průvodce na /studie/navrhnout-opatreni); jako obecná připomínka nemá blok. */
+export const PROPOSAL = "navrh-opatreni";
 const QUOTE_MAX = 300;
 
 type Kind = (typeof KINDS)[number];
@@ -50,7 +52,7 @@ export async function resolveTarget(db: AnyDb, input: { documentId: number; vers
     .from(schema.documentVersions)
     .where(eq(schema.documentVersions.id, versionId));
   if (!version || version.documentId !== documentId) throw new CommentError("Verze dokumentu neodpovídá. Obnovte prosím stránku.");
-  if (blockKey === GENERAL) return { documentId, versionId, versionLabel: version.label, blockKey, block: null };
+  if (blockKey === GENERAL || blockKey === PROPOSAL) return { documentId, versionId, versionLabel: version.label, blockKey, block: null };
   const [block] = await db
     .select({ id: schema.blocks.id, anchorId: schema.blocks.anchorId, text: schema.blocks.text, textHash: schema.blocks.textHash })
     .from(schema.blocks)

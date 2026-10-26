@@ -101,6 +101,9 @@ export default async function StudiePage() {
               <Button href="#pripominka" variant="secondary">
                 Napsat připomínku
               </Button>
+              <Button href="/studie/navrhnout-opatreni" variant="secondary">
+                Navrhnout opatření
+              </Button>
               <Button href="/studie/zavislosti" variant="secondary">
                 Grafy závislostí
               </Button>
@@ -138,6 +141,19 @@ export default async function StudiePage() {
                 </ol>
               </div>
             ))}
+            <div className="flex flex-col gap-3">
+              <h3 className="text-[15px] font-bold uppercase tracking-[0.06em] text-forest">Vaše návrhy</h3>
+              <Link
+                href="/studie/navrhnout-opatreni"
+                className="flex flex-col gap-2 rounded-card border-2 border-forest bg-sage-soft p-5 hover:bg-paper md:max-w-[calc(50%-0.375rem)]"
+              >
+                <span className="font-serif text-[21px] font-semibold leading-snug text-ink">Navrhnout nové opatření</span>
+                <span className="text-[16px] leading-relaxed text-ink-2">
+                  Chybí v plánu něco důležitého? Průvodce vás provede otázkami: problém, co se má změnit, čím to zavést, kdy, na co to navazuje, kolik to stojí a jak poznáme, že to funguje.
+                </span>
+                <span className="mt-auto text-[15px] font-semibold text-forest">Začít návrh →</span>
+              </Link>
+            </div>
           </div>
         </Container>
       </section>
@@ -151,7 +167,11 @@ export default async function StudiePage() {
                 Obecná připomínka ke studii
               </h2>
               <p className="text-[17px] text-muted sm:text-lg">
-                K jednotlivým odstavcům pište přes tlačítko „Připomínka“ v textu kapitoly. Sem patří to, co se týká studie jako celku: co chybí, co je špatně postavené, co byste udělali jinak.
+                K jednotlivým odstavcům pište přes tlačítko „Připomínka“ v textu kapitoly. Sem patří to, co se týká studie jako celku: co je špatně postavené nebo co byste udělali jinak. Celé nové opatření navrhněte raději{" "}
+                <Link href="/studie/navrhnout-opatreni" className="underline">
+                  přes průvodce
+                </Link>
+                .
               </p>
               <p className="text-[17px] text-muted sm:text-lg">
                 Stačí jakékoli jméno a e-mail. Nic z toho nezveřejňujeme; ve vypořádání uvádíme jen názvy organizací. Připomínky odborných organizací vyřizujeme přednostně, veřejné po nich.

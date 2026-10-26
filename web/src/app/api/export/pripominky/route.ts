@@ -12,7 +12,7 @@ export async function GET(req: NextRequest) {
   if (!can(session.role, "export")) return new NextResponse("Export smí autor a koordinátor.", { status: 403 });
   const sp = req.nextUrl.searchParams;
   const g = (k: string) => sp.get(k) || undefined;
-  const rows = await listComments({ doc: g("doc"), status: g("status"), severity: g("severity"), kind: g("kind"), code: g("code"), q: g("q"), channel: g("channel"), overeni: g("overeni") });
+  const rows = await listComments({ doc: g("doc"), status: g("status"), severity: g("severity"), kind: g("kind"), code: g("code"), q: g("q"), channel: g("channel"), overeni: g("overeni"), navrh: g("navrh") });
   const publicMode = sp.get("verejne") === "1";
 
   const body = commentsCsv(rows, publicMode);

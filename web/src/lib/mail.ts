@@ -85,6 +85,44 @@ ${p.quote ? `<p style="color:#52594F">K místu: <em>„${esc(p.quote)}“</em></
   return { subject, text, html };
 }
 
+/** Potvrzení návrhu nového opatření; v e-mailu je celý návrh, aby si ho autor mohl uschovat. */
+export function proposalVerification(p: { name: string; id: number; title: string; summary: string; confirmUrl: string; proposalUrl: string; versionLabel: string; days: number; privacyUrl: string }) {
+  const subject = `Potvrďte prosím svůj návrh opatření pro studii Zdraví blíž lidem (č. ${p.id})`;
+  const after =
+    "Co bude dál: resortní tým návrh posoudí stejně jako opatření studie (problém, nástroj, termín, návaznosti, náklady a důkazy). Když bude potřeba něco upřesnit, ozveme se na tento e-mail. O výsledku vás budeme informovat; návrhy, které převezmeme, se objeví v další verzi studie. Vaše jméno ani e-mail nikde nezveřejňujeme; ve veřejném vypořádání uvádíme jen názvy organizací.";
+  const text = `Dobrý den,
+
+děkujeme za návrh nového opatření „${p.title}“ ke konzultační verzi studie Zdraví blíž lidem (${p.versionLabel}). Evidujeme ho pod číslem ${p.id}.
+
+Potvrďte ho prosím na této adrese, jinak ho tým neuvidí:
+${p.confirmUrl}
+
+Odkaz platí ${p.days} dní. Pokud jste návrh neposílali vy, nic nedělejte: nepotvrzený návrh i s e-mailem smažeme.
+
+${after}
+
+Váš návrh:
+
+${p.summary}
+
+Jak s údaji zacházíme a jak si je stáhnout nebo smazat: ${p.privacyUrl}
+Navrhnout další opatření: ${p.proposalUrl}
+
+${SIGN}
+`;
+  const html = `<p>Dobrý den,</p>
+<p>děkujeme za návrh nového opatření <strong>„${esc(p.title)}“</strong> ke konzultační verzi studie <strong>Zdraví blíž lidem</strong> (${esc(p.versionLabel)}). Evidujeme ho pod číslem <strong>${p.id}</strong>.</p>
+<p><strong>Potvrďte ho prosím, jinak ho tým neuvidí:</strong></p>
+<p><a href="${esc(p.confirmUrl)}" style="display:inline-block;background:#9a5a12;color:#fff;padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:bold">Potvrdit návrh</a></p>
+<p style="color:#52594F">Odkaz platí ${p.days} dní. Pokud jste návrh neposílali vy, nic nedělejte: nepotvrzený návrh i s e-mailem smažeme.</p>
+<p>${esc(after)}</p>
+<p><strong>Váš návrh:</strong></p>
+<blockquote style="border-left:3px solid #CFC5B3;margin:0;padding:4px 12px;white-space:pre-wrap">${esc(p.summary)}</blockquote>
+<p><a href="${esc(p.privacyUrl)}">Jak s údaji zacházíme a jak si je stáhnout nebo smazat</a> · <a href="${esc(p.proposalUrl)}">Navrhnout další opatření</a></p>
+<p>${SIGN}</p>`;
+  return { subject, text, html };
+}
+
 /** Odkaz na vlastní údaje (náhled, stažení, výmaz). */
 export function dataAccessMail(p: { url: string; hours: number; count: number }) {
   const subject = "Vaše údaje u konzultace studie Zdraví blíž lidem";

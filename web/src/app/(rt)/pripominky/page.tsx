@@ -4,6 +4,7 @@ import { can, statusTargets } from "@/lib/roles";
 import { countPendingVerification, listComments, listDocumentsWithStats } from "@/lib/queries";
 import { CHANNEL_LABEL, KIND_LABEL, PRIORITY_CLASS, PRIORITY_LABEL, SEVERITY_CLASS, SEVERITY_LABEL, STATUS_CLASS, STATUS_LABEL, fmtDate } from "@/lib/labels";
 import { updateCommentStatus } from "@/app/actions";
+import { PROPOSAL } from "@/lib/comments-core";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Připomínky" };
@@ -17,7 +18,7 @@ export default async function CommentsPage({ searchParams }: PageProps<"/pripomi
   const triage = can(session.role, "triage");
   const targets = statusTargets(session.role);
   const sp = await searchParams;
-  const filter = { doc: one(sp.doc), status: one(sp.status), severity: one(sp.severity), kind: one(sp.kind), code: one(sp.code), q: one(sp.q), channel: one(sp.channel), overeni: one(sp.overeni) };
+  const filter = { doc: one(sp.doc), status: one(sp.status), severity: one(sp.severity), kind: one(sp.kind), code: one(sp.code), q: one(sp.q), channel: one(sp.channel), overeni: one(sp.overeni), navrh: one(sp.navrh) };
   const [rows, docs, pending] = await Promise.all([listComments(filter), listDocumentsWithStats(), countPendingVerification()]);
 
   const exportHref = `/api/export/pripominky?${new URLSearchParams(Object.entries(filter).filter(([, v]) => v) as [string, string][]).toString()}`;
@@ -46,7 +47,7 @@ export default async function CommentsPage({ searchParams }: PageProps<"/pripomi
         )
       )}
 
-      <form className="mt-4 grid grid-cols-2 gap-2 rounded-lg border border-line bg-paper p-3 text-sm md:grid-cols-7">
+      <form className="mt-4 grid grid-cols-2 gap-2 rounded-lg border border-line bg-paper p-3 text-sm md:grid-cols-8">
         {filter.overeni && <input type="hidden" name="overeni" value={filter.overeni} />}
         <select name="doc" defaultValue={filter.doc ?? ""}>
           <option value="">Všechny dokumenty</option>
@@ -67,6 +68,11 @@ export default async function CommentsPage({ searchParams }: PageProps<"/pripomi
         <select name="channel" defaultValue={filter.channel ?? ""}>
           <option value="">Tým i veřejnost</option>
           {Object.entries(CHANNEL_LABEL).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
+        </select>
+        <select name="navrh" defaultValue={filter.navrh ?? ""}>
+          <option value="">Připomínky i návrhy opatření</option>
+          <option value="navrhy">Jen návrhy nových opatření</option>
+          <option value="bez">Bez návrhů opatření</option>
         </select>
         <input name="code" defaultValue={filter.code ?? ""} placeholder="Kód (J2, H5…)" />
         <div className="flex gap-2">
@@ -93,6 +99,8 @@ export default async function CommentsPage({ searchParams }: PageProps<"/pripomi
             <div className="mt-1 text-xs text-muted">
               {c.blockKey === "obecne" ? (
                 <span>{docTitle} › obecná připomínka</span>
+              ) : c.blockKey === PROPOSAL ? (
+                <span className="font-semibold text-forest">{docTitle} › návrh nového opatření</span>
               ) : currentBlockKey ? (
                 <Link href={`/d/${docSlug}?b=${encodeURIComponent(currentBlockKey)}#${encodeURIComponent(currentBlockKey)}`} className="underline">
                   {docTitle}{headingPath ? ` › ${headingPath}` : ""}
@@ -105,7 +113,15 @@ export default async function CommentsPage({ searchParams }: PageProps<"/pripomi
             </div>
             {c.quote && <div className="mt-1 border-l-2 border-line pl-2 text-xs italic text-muted">„{c.quote}“</div>}
             <p className="mt-1 whitespace-pre-wrap">{c.body}</p>
-            {c.proposedText && <p className="mt-1 rounded bg-emerald-50 p-2 text-xs whitespace-pre-wrap"><b>Návrh znění:</b> {c.proposedText}</p>}
+            {c.proposedText &&
+              (c.blockKey === PROPOSAL ? (
+                <details className="mt-1 rounded bg-emerald-50 p-2 text-xs">
+                  <summary className="cursor-pointer font-semibold">Celý návrh opatření (odpovědi z průvodce)</summary>
+                  <div className="mt-2 whitespace-pre-wrap">{c.proposedText}</div>
+                </details>
+              ) : (
+                <p className="mt-1 rounded bg-emerald-50 p-2 text-xs whitespace-pre-wrap"><b>Návrh znění:</b> {c.proposedText}</p>
+              ))}
             {c.source && <p className="mt-1 text-xs text-muted">Zdroj: {c.source}</p>}
             <div className="mt-2 flex flex-wrap items-center justify-between gap-2 text-[11px] text-muted">
               <span>{c.authorName}{c.organization ? ` · ${c.organization}` : ""}{c.email && can(session.role, "seeEmails") ? ` · ${c.email}` : ""} · {fmtDate(c.createdAt)}</span>

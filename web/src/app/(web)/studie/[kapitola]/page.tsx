@@ -131,6 +131,10 @@ export default async function ChapterPage({ params }: PageProps<"/studie/[kapito
             <Link href="/studie#pripominka" className="underline hover:text-forest">
               na úvodní stránce studie
             </Link>
+            . Chybí tu nějaké opatření?{" "}
+            <Link href="/studie/navrhnout-opatreni" className="underline hover:text-forest">
+              Navrhněte nové
+            </Link>
             .
           </p>
         </div>

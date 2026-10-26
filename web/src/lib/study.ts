@@ -40,7 +40,7 @@ const SHORT: [prefix: string, slug: string][] = [
 ];
 
 /** Adresy, které pod /studie patří jiným stránkám. */
-const RESERVED = new Set(["zavislosti", "tisk", "kotva"]);
+const RESERVED = new Set(["zavislosti", "tisk", "kotva", "navrhnout-opatreni"]);
 
 /** Adresa kapitoly z klíče sekce jejího nadpisu. */
 export function chapterSlug(sectionKey: string): string {
