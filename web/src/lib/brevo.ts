@@ -21,13 +21,23 @@ export function brevo(apiKey: string, fetchImpl: Fetch = fetch) {
     return (res.status === 204 ? {} : await res.json()) as T;
   }
 
+  /** Všechny položky stránkovaného výpisu (seznamy, složky) po 50. */
+  async function all(path: string, key: "lists" | "folders"): Promise<{ id: number; name: string }[]> {
+    const out: { id: number; name: string }[] = [];
+    for (let offset = 0; ; offset += 50) {
+      const page = (await call<Record<string, { id: number; name: string }[] | undefined>>(`${path}?limit=50&offset=${offset}`))[key] ?? [];
+      out.push(...page);
+      if (page.length < 50) return out;
+    }
+  }
+
   /** Číslo seznamu novinek: najde ho podle názvu, jinak založí složku i seznam. */
   async function ensureList(): Promise<number> {
-    const { lists = [] } = await call<{ lists?: { id: number; name: string }[] }>("/contacts/lists?limit=50&offset=0&sort=desc");
-    const found = lists.find((l) => l.name === LIST_NAME);
+    const found = (await all("/contacts/lists", "lists")).find((l) => l.name === LIST_NAME);
     if (found) return found.id;
-    const { folders = [] } = await call<{ folders?: { id: number; name: string }[] }>("/contacts/folders?limit=50&offset=0");
-    const folderId = folders.find((f) => f.name === FOLDER_NAME)?.id ?? (await call<{ id: number }>("/contacts/folders", { method: "POST", body: { name: FOLDER_NAME } })).id;
+    const folderId =
+      (await all("/contacts/folders", "folders")).find((f) => f.name === FOLDER_NAME)?.id ??
+      (await call<{ id: number }>("/contacts/folders", { method: "POST", body: { name: FOLDER_NAME } })).id;
     return (await call<{ id: number }>("/contacts/lists", { method: "POST", body: { name: LIST_NAME, folderId } })).id;
   }
 

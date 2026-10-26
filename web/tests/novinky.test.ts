@@ -31,8 +31,14 @@ function fakeFetch(state: { lists: { id: number; name: string }[]; folders: { id
     const body = init?.body ? JSON.parse(String(init.body)) : undefined;
     calls.push({ method, path, body });
     const json = (status: number, data: unknown) => new Response(JSON.stringify(data), { status, headers: { "content-type": "application/json" } });
-    if (method === "GET" && path.startsWith("/contacts/lists")) return json(200, { lists: state.lists });
-    if (method === "GET" && path.startsWith("/contacts/folders")) return json(200, { folders: state.folders });
+    // Brevo stránkuje po `limit` od `offset`.
+    const page = <T,>(items: T[]) => {
+      const q = new URL(url).searchParams;
+      const offset = Number(q.get("offset") ?? 0);
+      return items.slice(offset, offset + Number(q.get("limit") ?? 10));
+    };
+    if (method === "GET" && path.startsWith("/contacts/lists")) return json(200, { lists: page(state.lists) });
+    if (method === "GET" && path.startsWith("/contacts/folders")) return json(200, { folders: page(state.folders) });
     if (method === "POST" && path === "/contacts/folders") return json(201, { id: 41 });
     if (method === "POST" && path === "/contacts/lists") return json(201, { id: 42 });
     if (method === "POST" && path === "/contacts") return new Response(null, { status: 204 });
@@ -46,6 +52,18 @@ describe("Brevo", () => {
     const f = fakeFetch({ lists: [{ id: 6, name: "Jiný" }, { id: 11, name: LIST_NAME }], folders: [] });
     expect(await brevo("k", f.impl).ensureList()).toBe(11);
     expect(f.calls.filter((c) => c.method === "POST")).toEqual([]);
+  });
+
+  it("hledá i za první stránkou výpisu", async () => {
+    const lists = Array.from({ length: 120 }, (_, i) => ({ id: 1000 + i, name: `Seznam ${i}` }));
+    lists[87] = { id: 77, name: LIST_NAME };
+    const f = fakeFetch({ lists, folders: [] });
+    expect(await brevo("k", f.impl).ensureList()).toBe(77);
+    expect(f.calls.filter((c) => c.method === "POST")).toEqual([]);
+    const folders = Array.from({ length: 60 }, (_, i) => ({ id: 500 + i, name: i === 55 ? FOLDER_NAME : `Složka ${i}` }));
+    const g = fakeFetch({ lists: lists.slice(0, 50), folders });
+    await brevo("k", g.impl).ensureList();
+    expect(g.calls.filter((c) => c.method === "POST")).toEqual([{ method: "POST", path: "/contacts/lists", body: { name: LIST_NAME, folderId: 555 } }]);
   });
 
   it("chybějící seznam založí do existující složky", async () => {
