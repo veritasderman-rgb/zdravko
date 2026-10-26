@@ -20,6 +20,7 @@ export const MORE_LINKS = [
   { href: "/otazky", label: "Otázky" },
   { href: "/slovnicek", label: "Slovníček" },
   { href: "/studie", label: "Studie" },
+  { href: "/hledat", label: "Hledat" },
 ];
 
 // Otevřená otázka 14.3 zadání: PDF studie zatím neexistuje, odkaz vede na čtečku studie.
@@ -46,10 +47,23 @@ export function SiteNav() {
       <Container className="flex min-h-16 items-center justify-between gap-4 min-[900px]:min-h-[84px] min-[900px]:gap-6">
         <Brand />
         <SiteNavClient links={SITE_LINKS} more={MORE_LINKS} brand={<Brand />} />
-        <div className="hidden xl:block">
-          <Button href="/studie" variant="secondary" className="min-h-12! whitespace-nowrap px-[22px]! text-[17px]!">
-            Číst a připomínkovat studii
-          </Button>
+        <div className="flex items-center gap-3">
+          <Link
+            href="/hledat"
+            aria-label="Hledat na webu a ve studii"
+            title="Hledat"
+            className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-line-strong text-forest hover:border-forest hover:bg-sage-soft"
+          >
+            <svg aria-hidden width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
+          </Link>
+          <div className="hidden xl:block">
+            <Button href="/studie" variant="secondary" className="min-h-12! whitespace-nowrap px-[22px]! text-[17px]!">
+              Připomínkovat studii
+            </Button>
+          </div>
         </div>
       </Container>
     </header>
@@ -105,7 +119,7 @@ export function SiteFooter() {
           links={[
             { href: "/otazky#stret-zajmu", label: "Střet zájmů autora" },
             { href: "/ochrana-udaju", label: "Ochrana osobních údajů" },
-            { href: "/studie", label: "Zdroje dat" },
+            { href: "/studie/priloha-c-evidence-a-zdroje", label: "Zdroje dat" },
             { href: "/vstup", label: "Přihlášení pro tým" },
           ]}
         />

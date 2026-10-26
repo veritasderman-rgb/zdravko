@@ -8,8 +8,9 @@ import { OccupancyMeters } from "@/components/charts/meters";
 import { SERIES, csNumber } from "@/components/charts/theme";
 import { Callout, NextStep, PageHero, Section } from "@/components/web/ui";
 import { BigNumber, Waffle } from "@/components/web/blocks";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = { title: "Proč měnit" };
+export const metadata = pageMeta("/proc");
 
 /** Čísla, která vyprávějí: serifové číslo a jedna věta, oddělené linkou (ne mřížka malých karet). */
 function Facts({ items }: { items: { value: string; label: string }[] }) {

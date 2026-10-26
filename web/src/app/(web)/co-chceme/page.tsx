@@ -5,8 +5,9 @@ import { FearFact, PatientJourney } from "@/components/web/blocks";
 import { EReferral, HealthCentre, HomeVisit, SeniorTaxi } from "@/components/web/illustrations";
 import { BedWaffle, TeamOrganigram, TriageLanes } from "@/components/web/visuals";
 import { TaxSplitCalculator } from "@/components/charts/calculators";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = { title: "Co chceme" };
+export const metadata = pageMeta("/co-chceme");
 
 function Figure({ children, caption }: { children: ReactNode; caption: string }) {
   return (

@@ -2,17 +2,27 @@ import { CONFLICT, FAQ } from "@/content/reforma";
 import { Callout, NextStep, PageHero, Section, TextLink } from "@/components/web/ui";
 import { slug } from "../_lib/slug";
 import { CopyLinkButton, OpenFromHash } from "./faq-tools";
+import { JsonLd } from "@/components/json-ld";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = { title: "Časté otázky" };
+export const metadata = pageMeta("/otazky");
 
 const ITEMS = FAQ.map((f) => ({ ...f, id: slug(f.q) }));
+
+const FAQ_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  inLanguage: "cs",
+  mainEntity: ITEMS.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+};
 
 export default function OtazkyPage() {
   return (
     <>
+      <JsonLd data={FAQ_LD} />
       <PageHero
         eyebrow="Otázky"
-        title="Osm otázek, které slyšíme nejčastěji"
+        title="Otázky, které slyšíme nejčastěji"
         lead="Odpovědi se opírají o čísla ze studie. Pojmy vysvětluje slovníček."
         aside={
           <nav aria-label="Témata otázek">

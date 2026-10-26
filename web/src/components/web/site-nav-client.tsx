@@ -18,7 +18,7 @@ function isActive(pathname: string, href: string) {
 }
 
 const DESKTOP_LINK =
-  "inline-flex min-h-11 items-center rounded-full px-2.5 text-lg font-semibold text-ink no-underline decoration-2 underline-offset-[7px] hover:underline xl:px-3.5";
+  "inline-flex min-h-11 items-center rounded-full px-2.5 text-lg font-semibold text-ink no-underline decoration-2 underline-offset-[7px] hover:underline xl:px-3.5 whitespace-nowrap";
 
 export function SiteNavClient({ links, more, brand }: { links: NavLink[]; more: NavLink[]; brand: ReactNode }) {
   const pathname = usePathname() ?? "/";

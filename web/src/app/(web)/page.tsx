@@ -6,6 +6,24 @@ import { ManifestStrip } from "@/components/web/manifest-strip";
 import { Button, Callout, Container, Eyebrow, NextStep, Section, TextLink } from "@/components/web/ui";
 import { ExplainerVideo } from "@/components/web/explainer-video";
 import { NewsletterForm } from "@/components/web/newsletter-form";
+import { JsonLd } from "@/components/json-ld";
+import { PUBLISHER, SITE_NAME, absUrl, pageMeta } from "@/lib/seo";
+
+export const metadata = pageMeta("/", { title: { absolute: "Zdraví blíž lidem: plán reformy zdravotnictví" } });
+
+const SITE_LD = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${absUrl("/")}/#web`,
+    name: SITE_NAME,
+    url: absUrl("/"),
+    inLanguage: "cs",
+    publisher: { "@id": PUBLISHER["@id"] },
+    potentialAction: { "@type": "SearchAction", target: `${absUrl("/hledat")}?q={hledany_vyraz}`, "query-input": "required name=hledany_vyraz" },
+  },
+  { "@context": "https://schema.org", ...PUBLISHER },
+];
 
 // Barvy waffle a obarvených čísel ve výroku (stejné jako SERIES[0], SERIES[1] a ON_DARK v charts/theme.ts).
 const BLUE = "#2A78D6";
@@ -23,6 +41,7 @@ const GP_FUTURE = GP_DECLINE.title.split(": ")[1] ?? "";
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={SITE_LD} />
       {/* 1. Hero */}
       <section className="pb-6 pt-8 sm:pb-14 sm:pt-16">
         <Container className="grid items-center gap-3 lg:grid-cols-2 lg:gap-12">

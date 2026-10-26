@@ -245,7 +245,7 @@ export async function addPublicComment(_prev: ActionState, fd: FormData): Promis
     body,
     quote: created.quote || null,
     confirmUrl: `${site}/potvrdit?t=${encodeURIComponent(token)}`,
-    studyUrl: anchor ? `${site}/studie#${encodeURIComponent(anchor)}` : `${site}/studie`,
+    studyUrl: anchor ? `${site}/studie/kotva?k=${encodeURIComponent(anchor)}` : `${site}/studie`,
     versionLabel: created.target.versionLabel,
     days: RETENTION.unverifiedDays,
     privacyUrl: `${site}/ochrana-udaju`,

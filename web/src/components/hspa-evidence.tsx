@@ -14,12 +14,12 @@ export function HspaEvidence({ records, dense = false, max = 3, className = "" }
   const note = contradiction?.note ?? (links.length === 0 ? records[0].note : null);
   const text = dense ? "text-[11px]" : "text-[14px]";
   return (
-    <div className={`${dense ? "mt-1 opacity-80 group-hover:opacity-100" : "mt-2"} flex flex-wrap items-start gap-x-2 gap-y-1 ${text} leading-5 text-muted ${className}`}>
+    <div className={`${dense ? "mt-1 opacity-80 group-hover:opacity-100" : "mt-2"} flex flex-wrap items-center gap-x-3 gap-y-0 ${text} leading-5 text-muted ${className}`}>
       <span className={`inline-flex items-center whitespace-nowrap rounded-full border px-2 font-semibold ${VERDICT_CLASS[verdict]}`} title="HSPA Monitor (skorezdravotnictvi.cz), pomůcka k ověření; není zdrojem hodnocení reformy">
         {VERDICT_LABEL[verdict]}
       </span>
       {links.map((l) => (
-        <a key={l.url} href={l.url} target="_blank" rel="noopener noreferrer" className="underline decoration-line-strong underline-offset-2 hover:text-ink">
+        <a key={l.url} href={l.url} target="_blank" rel="noopener noreferrer" className={`underline decoration-line-strong underline-offset-2 hover:text-ink ${dense ? "" : "inline-flex min-h-8 items-center"}`}>
           {l.kind === "indicator" ? `Indikátor: ${l.label}` : l.label}
         </a>
       ))}

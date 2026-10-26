@@ -3,7 +3,7 @@
   "web": [
    {
     "file": "src/app/(web)/jak/page.tsx",
-    "line": 223
+    "line": 224
    },
    {
     "file": "src/app/(web)/penize/opengraph-image.tsx",
@@ -11,11 +11,11 @@
    },
    {
     "file": "src/app/(web)/penize/page.tsx",
-    "line": 26
+    "line": 27
    },
    {
     "file": "src/app/(web)/penize/page.tsx",
-    "line": 30
+    "line": 31
    },
    {
     "file": "src/components/study-figures/charts/model.tsx",
@@ -76,6 +76,10 @@
    {
     "file": "src/content/reforma.ts",
     "line": 464
+   },
+   {
+    "file": "src/content/stranky.ts",
+    "line": 24
    }
   ],
   "studie": [
@@ -709,7 +713,7 @@
   "web": [
    {
     "file": "src/app/(web)/penize/page.tsx",
-    "line": 95
+    "line": 96
    },
    {
     "file": "src/components/charts/calculators.tsx",
@@ -1243,7 +1247,7 @@
   "web": [
    {
     "file": "src/app/(web)/page.tsx",
-    "line": 165
+    "line": 184
    },
    {
     "file": "src/components/charts/calculators.tsx",
@@ -1518,10 +1522,6 @@
  "nursesNeed": {
   "web": [
    {
-    "file": "src/components/web/study-search.tsx",
-    "line": 119
-   },
-   {
     "file": "src/content/reforma.ts",
     "line": 86
    },
@@ -1647,11 +1647,11 @@
   "web": [
    {
     "file": "src/app/(web)/page.tsx",
-    "line": 20
+    "line": 38
    },
    {
     "file": "src/app/(web)/proc/page.tsx",
-    "line": 123
+    "line": 124
    },
    {
     "file": "src/components/study-figures/charts/problem.tsx",
@@ -1705,7 +1705,7 @@
   "web": [
    {
     "file": "src/app/(web)/proc/page.tsx",
-    "line": 123
+    "line": 124
    },
    {
     "file": "src/components/charts/gp-decline-chart.tsx",
@@ -2039,7 +2039,7 @@
   "web": [
    {
     "file": "src/app/(web)/proc/page.tsx",
-    "line": 88
+    "line": 89
    },
    {
     "file": "src/content/reforma.ts",
@@ -2120,11 +2120,11 @@
   "web": [
    {
     "file": "src/app/(web)/proc/page.tsx",
-    "line": 32
+    "line": 33
    },
    {
     "file": "src/app/(web)/proc/page.tsx",
-    "line": 40
+    "line": 41
    },
    {
     "file": "src/content/figures/charts.ts",
@@ -2194,11 +2194,11 @@
   "web": [
    {
     "file": "src/app/(web)/proc/page.tsx",
-    "line": 32
+    "line": 33
    },
    {
     "file": "src/app/(web)/proc/page.tsx",
-    "line": 41
+    "line": 42
    },
    {
     "file": "src/content/figures/charts.ts",
@@ -2463,7 +2463,7 @@
   "web": [
    {
     "file": "src/app/(web)/proc/page.tsx",
-    "line": 93
+    "line": 94
    },
    {
     "file": "src/content/reforma.ts",

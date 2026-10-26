@@ -9,8 +9,9 @@ import { Callout, NextStep, PageHero, Section, TextLink } from "@/components/web
 import { BigNumber } from "@/components/web/blocks";
 import { MoneyFlow } from "@/components/web/visuals";
 import { MODEL_NOTE } from "@/content/cisla";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = { title: "Peníze" };
+export const metadata = pageMeta("/penize");
 
 const sum = (xs: { value: number }[]) => xs.reduce((a, r) => a + r.value, 0);
 

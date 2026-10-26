@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/site";
-
+import { loadStudy } from "@/lib/study-data";
 
 /** Veřejné stránky pro vyhledávače; interní část (čtečka týmu, připomínky, registry) sem nepatří. */
 const PAGES: [path: string, priority: number][] = [
@@ -20,6 +20,18 @@ const PAGES: [path: string, priority: number][] = [
   ["/ochrana-udaju", 0.3],
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  return PAGES.map(([path, priority]) => ({ url: `${SITE}${path === "/" ? "" : path}`, changeFrequency: "weekly", priority }));
+// Kapitoly studie se čtou z databáze; seznam se obnovuje jednou za hodinu.
+export const revalidate = 3600;
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const pages: MetadataRoute.Sitemap = PAGES.map(([path, priority]) => ({ url: `${SITE}${path === "/" ? "" : path}`, changeFrequency: "weekly", priority }));
+  try {
+    const study = await loadStudy();
+    const lastModified = study?.version.importedAt;
+    for (const c of study?.chapters ?? []) pages.push({ url: `${SITE}/studie/${c.slug}`, changeFrequency: "weekly", priority: 0.7, lastModified });
+  } catch (e) {
+    // Bez databáze zůstanou v sitemap aspoň stálé stránky.
+    console.error("Sitemap: kapitoly studie nejsou dostupné", e);
+  }
+  return pages;
 }

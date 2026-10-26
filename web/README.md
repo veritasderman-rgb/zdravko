@@ -15,8 +15,11 @@ Statické stránky z obsahu studie v3, politické verze a prezentace, data v `sr
 | `/jak` | interaktivní harmonogram s branami, čtyři pravidla, varianty A/B/C, kroky do voleb 2029, ukazatele, rizika |
 | `/penize` | struktura nákladů 2038, kdo platí, tři kalkulačky (platba státu, rozdělení daní, kolik zaplatím), deset čísel |
 | `/pro-koho` | co nabízíme a potřebujeme od 12 skupin, kulaté stoly |
-| `/otazky` | osm častých otázek, střet zájmů |
-| `/studie` | plné znění odborné studie ke čtení, bez připomínek (z databáze, obnova po 5 minutách) |
+| `/otazky` | časté otázky, střet zájmů |
+| `/studie` | úvod studie, přehled kapitol a obecná připomínka (z databáze, obnova po 5 minutách) |
+| `/studie/[kapitola]` | kapitola studie (18 kapitol) s připomínkami a odkazem na každý odstavec; adresy kapitol v `src/lib/study.ts` |
+| `/studie/kotva?k=…` | přesměruje trvalou kotvu odstavce do jeho kapitoly (odkazy z e-mailů, starší odkazy `/studie#…`) |
+| `/hledat` | hledání na webu a ve studii bez ohledu na diakritiku; data z `/hledat/data` (obnova po 5 minutách) |
 | `/slovnicek` | slovníček pojmů |
 | `/ochrana-udaju` | jak zacházíme s osobními údaji, lhůty uchování, žádost o odkaz na vlastní údaje |
 | `/ochrana-udaju/sprava?t=…` | náhled, stažení (JSON) a výmaz vlastních údajů z odkazu v e-mailu |
@@ -165,3 +168,7 @@ lint, typecheck, testy a build.
 Vypořádání s odůvodněním a kontrolou oponenta (tabulka `resolutions` už existuje), témata a garantství
 navázaná na účty, otázky pro RT, registr závazných čísel, interaktivní grafy, kalkulačky
 (nejdřív platba státu a daně za zdraví), veřejná část.
+
+### Vyhledávače
+
+Titulky a popisy veřejných stránek jsou v `src/content/stranky.ts`, metadata skládá `src/lib/seo.ts` (kanonická adresa, náhled pro sdílení). Strukturovaná data (schema.org) má úvod (web a vydavatel), `/otazky` (časté otázky), `/slovnicek` (pojmy), `/studie` (zpráva s kapitolami) a každá kapitola (článek a drobečková navigace). Ověření webu v Google Search Console a v Seznam Webmaster zapne proměnná `GOOGLE_SITE_VERIFICATION`, resp. `SEZNAM_SITE_VERIFICATION` na Vercelu (jen hodnota `content` z ověřovací značky).
