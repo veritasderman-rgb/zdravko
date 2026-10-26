@@ -5,20 +5,19 @@ import { STUDY_FIGURES } from "@/components/study-figures";
 import { PLACEHOLDER_RE, captionOf, findFigure } from "@/components/study-figures/registry";
 import { DEPENDENCY_FIGURES } from "@/content/figures/zavislosti";
 import { renderInline, stripBlockMarker } from "@/lib/md";
+import { pageMeta } from "@/lib/seo";
 
 // Místo obrázku ve studii, nadpis a okolní odstavce se berou z aktuální verze v databázi,
 // takže odkazy sedí i po importu nové verze.
 export const dynamic = "force-dynamic";
-export const metadata = {
-  title: "Grafy závislostí",
-  description: "Všechny grafy závislostí ze studie na jedné stránce: kritická cesta, co na co navazuje, mapa vazeb, organigramy a matice vlivů. Každý vede na své místo ve studii.",
-};
+export const metadata = pageMeta("/studie/zavislosti");
 
 type Block = Awaited<ReturnType<typeof getBlocks>>[number];
 type Place = { anchor: string; heading: string; caption: string; before: Block | null; after: Block | null };
 
-const codeHref = (code: string) => `/studie?q=${encodeURIComponent(code)}`;
-const studyHref = (anchor: string) => `/studie#${encodeURIComponent(anchor)}`;
+const codeHref = (code: string) => `/hledat?jen=studie&q=${encodeURIComponent(code)}`;
+// Kotva vede přes /studie/kotva do kapitoly, ve které odstavec je.
+const studyHref = (anchor: string) => `/studie/kotva?k=${encodeURIComponent(anchor)}`;
 
 const BY_ID = new Map(DEPENDENCY_FIGURES.map((f) => [f.id, f]));
 
@@ -133,7 +132,7 @@ export default async function ZavislostiPage() {
                     Otevřít graf ve studii
                   </Link>
                 ) : (
-                  <Link href={`/studie?q=${encodeURIComponent(f.short)}`} className="font-semibold text-forest underline">
+                  <Link href={`/hledat?jen=studie&q=${encodeURIComponent(f.short)}`} className="font-semibold text-forest underline">
                     Hledat ve studii
                   </Link>
                 )}

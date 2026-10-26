@@ -156,8 +156,11 @@ body {
   background: #f6e9c8;
   box-shadow: inset 3px 0 0 #6b4a00;
 }
-.block-row[data-search-hit="true"] {
-  box-shadow: inset 3px 0 0 var(--forest);
+/* Odstavec, na který vede odkaz (klíč bloku nebo trvalá kotva v adrese). */
+.block-row:target,
+.block-row:has(> span:target) {
+  box-shadow: inset 3px 0 0 var(--color-forest);
+  background: var(--color-sage-soft);
 }
 
 table.doc-table {

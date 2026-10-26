@@ -52,7 +52,7 @@ function OrgCard({ code, root = false }: { code: string; root?: boolean }) {
   const meta = [waveText(r.wave), shortTerm(r.termBase)].filter(Boolean).join(" · ");
   return (
     <a
-      href={`/studie?q=${encodeURIComponent(code)}`}
+      href={`/hledat?jen=studie&q=${encodeURIComponent(code)}`}
       className={`org-card block rounded-[10px] px-3 py-2 text-ink no-underline transition-shadow hover:shadow-md ${cls} ${root ? "min-h-[84px]" : ""}`}
       title={r.label}
     >

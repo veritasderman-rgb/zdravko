@@ -8,8 +8,9 @@ import {
   type ManifestArea,
 } from "@/content/manifest";
 import { Callout, Chip, CodeRef, NextStep, PageHero, Section, TextLink } from "@/components/web/ui";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = { title: "13 oblastí" };
+export const metadata = pageMeta("/plan");
 
 const LAYER_LABEL = { jadro: "nosná část plánu", doprovod: "doplňkové opatření" } as const;
 

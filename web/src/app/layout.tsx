@@ -9,8 +9,9 @@ import "@fontsource-variable/source-sans-3/wght.css";
 import "@fontsource-variable/geist-mono/wght.css";
 import "./globals.css";
 import { SITE } from "@/lib/site";
+import { STRANKY } from "@/content/stranky";
 
-const DESCRIPTION = "Plán reformy zdravotnictví ke konzultaci: každý má svůj tým lékaře a sestry, nemocnice mění roli, prevence má stálé peníze.";
+const DESCRIPTION = STRANKY["/"].description;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
@@ -19,6 +20,11 @@ export const metadata: Metadata = {
   // Náhledový obrázek dodává opengraph-image.tsx u každé stránky (src/lib/og.tsx).
   openGraph: { siteName: "Zdraví blíž lidem", locale: "cs_CZ", type: "website", description: DESCRIPTION },
   twitter: { card: "summary_large_image" },
+  // Ověření vlastnictví webu v Google Search Console a v Seznam Webmaster (kódy z prostředí Vercelu).
+  verification: {
+    ...(process.env.GOOGLE_SITE_VERIFICATION ? { google: process.env.GOOGLE_SITE_VERIFICATION } : {}),
+    ...(process.env.SEZNAM_SITE_VERIFICATION ? { other: { "seznam-wmt": process.env.SEZNAM_SITE_VERIFICATION } } : {}),
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -10,6 +10,10 @@ import { forBlock } from "@/content/overeni-hspa";
 
 type Block = typeof schema.blocks.$inferSelect;
 
+/** Tlačítka u odstavce: viditelně 36 px, plocha pro prst 44 px (pseudoprvek přesahuje nahoru i dolů). */
+const ACTION =
+  "relative inline-flex h-9 items-center rounded-full border border-line text-[14px] font-semibold text-muted transition-colors before:absolute before:-inset-y-1 before:inset-x-0 before:content-[''] hover:border-line-strong hover:bg-sage-soft hover:text-forest group-hover:border-line-strong";
+
 function hrefFor(slug: string, key: string, query: { kod: string | null; s: string | null }) {
   const p = new URLSearchParams();
   p.set("b", key);
@@ -33,6 +37,7 @@ export function BlockView({
   readOnly = false,
   commentable = false,
   lazyFigures = false,
+  headingBase,
 }: {
   block: Block;
   slug: string;
@@ -43,6 +48,11 @@ export function BlockView({
   commentable?: boolean;
   /** Grafy vykreslit až u zorného pole (veřejná čtečka; ne tisk, ne čtečka týmu). */
   lazyFigures?: boolean;
+  /**
+   * Úroveň nadpisu kapitoly na veřejné stránce kapitoly (nadpis kapitoly je h1 stránky). Nadpisy
+   * uvnitř kapitoly se pak vykreslí jako skutečné h2–h6; bez ní zůstávají role="heading".
+   */
+  headingBase?: number;
 }) {
   const href = hrefFor(slug, block.blockKey, query);
   const body = stripBlockMarker(block.md, block.kind);
@@ -69,11 +79,16 @@ export function BlockView({
             : lvl === 3
               ? "mt-6 font-serif text-base font-semibold"
               : "mt-4 text-sm font-semibold";
-      content = (
-        <div className={cls} role="heading" aria-level={Math.min(lvl + 1, 6)}>
-          {inline(body)}
-        </div>
-      );
+      if (headingBase !== undefined) {
+        const Tag = `h${Math.min(Math.max(lvl - headingBase + 1, 2), 6)}` as "h2";
+        content = <Tag className={cls}>{inline(body)}</Tag>;
+      } else {
+        content = (
+          <div className={cls} role="heading" aria-level={Math.min(lvl + 1, 6)}>
+            {inline(body)}
+          </div>
+        );
+      }
       break;
     }
     case "table": {
@@ -145,15 +160,33 @@ export function BlockView({
           {count?.n ? `💬 ${count.n}` : "💬"}
         </Link>}
         {readOnly && commentable && block.kind !== "heading" && (
-          <button
-            type="button"
-            data-comment-for={block.blockKey}
-            data-comment-quote={block.text.slice(0, 300)}
-            aria-label="Připomínka k tomuto místu"
-            className="mt-1 shrink-0 rounded-full border border-line px-2.5 py-0.5 text-[13px] font-semibold text-muted transition-colors hover:border-line-strong hover:bg-sage-soft hover:text-forest group-hover:border-line-strong"
-          >
-            Připomínka
-          </button>
+          <div className="mt-0.5 flex shrink-0 flex-col items-end gap-1.5 sm:flex-row sm:items-start">
+            <button
+              type="button"
+              data-copy-link={block.anchorId ?? block.blockKey}
+              aria-label="Zkopírovat odkaz na toto místo"
+              title="Zkopírovat odkaz na toto místo"
+              className={`${ACTION} w-9 justify-center px-0 opacity-70 group-hover:opacity-100 focus-visible:opacity-100`}
+            >
+              <svg aria-hidden width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7" />
+                <path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              data-comment-for={block.blockKey}
+              data-comment-quote={block.text.slice(0, 300)}
+              aria-label="Připomínka k tomuto místu"
+              className={`${ACTION} w-9 justify-center sm:w-auto sm:px-3`}
+            >
+              {/* Na mobilu jen ikona, aby tlačítka neubírala šířku textu. */}
+              <svg aria-hidden width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="sm:hidden">
+                <path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z" />
+              </svg>
+              <span className="hidden sm:inline">Připomínka</span>
+            </button>
+          </div>
         )}
       </div>
       {(block.hasVerify || block.codes.length > 0) && (

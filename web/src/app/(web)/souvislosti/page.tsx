@@ -1,11 +1,9 @@
 import { NextStep, PageHero, Section } from "@/components/web/ui";
 import { VazbyMapFigure } from "@/components/study-figures/diagrams/vazby-map";
 import { VazbyMatrixFigure, VazbyOrgFigure } from "@/components/study-figures/diagrams/vazby-org";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
-  title: "Jak to do sebe zapadá",
-  description: "Mapa vazeb, organigramy pilířů a matice vlivů: co na co v reformě navazuje a co se kde ovlivňuje.",
-};
+export const metadata = pageMeta("/souvislosti");
 
 export default function SouvislostiPage() {
   return (

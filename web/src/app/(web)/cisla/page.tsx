@@ -3,11 +3,9 @@ import mista from "@/content/cisla-mista.json";
 import { Chip, PageHero, Section } from "@/components/web/ui";
 import { HspaEvidence } from "@/components/hspa-evidence";
 import { OVERENI, forCislo } from "@/content/overeni-hspa";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
-  title: "Čísla a zdroje",
-  description: "Každé číslo webu se zdrojem, rokem, definicí, rozpětím a druhem: údaj, výhled, scénářový výpočet, cíl, nebo pravidlo.",
-};
+export const metadata = pageMeta("/cisla");
 
 type Places = Record<string, { web: { file: string; line: number }[]; studie: { line: number; heading: string }[] }>;
 const PLACES = mista as Places;
@@ -31,7 +29,7 @@ function Row({ id }: { id: CisloId }) {
   const headings = [...new Set((PLACES[id]?.studie ?? []).map((s) => s.heading).filter(Boolean))];
   const hspa = forCislo(id);
   return (
-    <li className="cislo-row grid gap-x-6 gap-y-2 border-t border-line py-5 md:grid-cols-[minmax(0,15rem)_1fr]">
+    <li id={id} className="cislo-row grid scroll-mt-6 gap-x-6 gap-y-2 border-t border-line py-5 md:grid-cols-[minmax(0,15rem)_1fr]">
       <div>
         <p className="font-serif text-[30px] font-semibold leading-none tracking-[-0.01em] text-forest tabular-nums">{fmtValue(x)}</p>
         <p className="mt-1 text-[15px] leading-snug text-ink-2">{x.unit}</p>
@@ -64,7 +62,7 @@ function Row({ id }: { id: CisloId }) {
               <dd>
                 {headings.slice(0, 4).join(" · ")}
                 {headings.length > 4 ? ` a dalších ${headings.length - 4}` : ""}{" "}
-                <a href={`/studie?q=${encodeURIComponent(x.forms[0])}`} className="whitespace-nowrap underline">
+                <a href={`/hledat?jen=studie&q=${encodeURIComponent(x.forms[0])}`} className="whitespace-nowrap underline">
                   najít ve studii
                 </a>
               </dd>

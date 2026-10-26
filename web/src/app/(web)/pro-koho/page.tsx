@@ -2,8 +2,9 @@ import { KEY_SUBJECTS, META, ROUND_TABLES, STAKEHOLDERS } from "@/content/reform
 import { Chip, NextStep, PageHero, Section } from "@/components/web/ui";
 import { HealthCentre } from "@/components/web/illustrations";
 import { slug } from "../_lib/slug";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = { title: "Pro koho" };
+export const metadata = pageMeta("/pro-koho");
 
 type Stakeholder = (typeof STAKEHOLDERS)[number];
 

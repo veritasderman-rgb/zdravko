@@ -2,8 +2,10 @@ import { GLOSSARY } from "@/content/reforma";
 import { NextStep, PageHero, Section } from "@/components/web/ui";
 import { slug } from "../_lib/slug";
 import { BackStep } from "./back-step";
+import { JsonLd } from "@/components/json-ld";
+import { absUrl, pageMeta } from "@/lib/seo";
 
-export const metadata = { title: "Slovníček pojmů" };
+export const metadata = pageMeta("/slovnicek");
 
 const TERMS = [...GLOSSARY].sort((a, b) => a.term.localeCompare(b.term, "cs"));
 const LETTERS = TERMS.reduce<{ letter: string; items: typeof TERMS }[]>((acc, g) => {
@@ -15,9 +17,19 @@ const LETTERS = TERMS.reduce<{ letter: string; items: typeof TERMS }[]>((acc, g)
 }, []);
 const letterId = (l: string) => `pismeno-${slug(l) || l}`;
 
+const TERMS_LD = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  name: "Slovníček pojmů reformy Zdraví blíž lidem",
+  url: absUrl("/slovnicek"),
+  inLanguage: "cs",
+  hasDefinedTerm: TERMS.map((t) => ({ "@type": "DefinedTerm", name: t.term, description: t.text, url: `${absUrl("/slovnicek")}#${slug(t.term)}` })),
+};
+
 export default function SlovnicekPage() {
   return (
     <>
+      <JsonLd data={TERMS_LD} />
       <PageHero eyebrow="Slovníček" title="Pojmy, které v plánu potkáte" lead="Snažíme se psát bez odborných výrazů. Tam, kde se jim nevyhneme, je tady vysvětlujeme." />
 
       <Section id="pojmy" tone="paper" title="Od primární péče po rozpočtovou radu">

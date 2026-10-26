@@ -7,8 +7,9 @@ import { csNumber } from "@/components/charts/theme";
 import { CodeRef, NextStep, PageHero, Section, TextLink } from "@/components/web/ui";
 import { ChainsDiagram } from "@/components/web/visuals";
 import { MODEL_NOTE } from "@/content/cisla";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = { title: "Jak a kdy" };
+export const metadata = pageMeta("/jak");
 
 const yearsOf = (from: number, to: number) => {
   const a = Math.floor(from);

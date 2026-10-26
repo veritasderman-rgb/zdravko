@@ -355,7 +355,7 @@ function Panel({ selected, onPick }: { selected: MapNode | null; onPick: (id: st
       </div>
       {selected.code && !/^B\d$/.test(selected.code) && (
         <p className="mt-3 text-[15px]">
-          <a href={`/studie?q=${encodeURIComponent(selected.code)}`} className="font-semibold text-forest underline">
+          <a href={`/hledat?jen=studie&q=${encodeURIComponent(selected.code)}`} className="font-semibold text-forest underline">
             Najít {selected.code} ve studii
           </a>
         </p>

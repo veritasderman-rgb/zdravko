@@ -2,11 +2,9 @@ import { PageHero, Section } from "@/components/web/ui";
 import { DataRequestForm } from "@/components/web/privacy-forms";
 import { DATA_LINK_HOURS, RETENTION } from "@/lib/privacy-core";
 import { privacyContact } from "@/lib/privacy";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
-  title: "Ochrana osobních údajů",
-  description: "Jaké údaje ukládáme u připomínek ke studii, proč, jak dlouho a jak si je stáhnout nebo smazat.",
-};
+export const metadata = pageMeta("/ochrana-udaju");
 
 const P = "text-[18px] leading-relaxed text-ink";
 
