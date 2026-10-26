@@ -42,12 +42,12 @@ export type Source = { title: string; detail?: string; url?: string };
 export const SOURCES = {
   uzisUhrady: { title: "ÚZIS ČR, NZIP", detail: "datový souhrn OIS-11-24, náklady zdravotních pojišťoven podle segmentů" },
   uzisLuzka: { title: "ÚZIS ČR, NRHZS", detail: "datový souhrn OIS-11-28, lůžkový fond a obložnost", url: "https://www.nzip.cz/data/2378-luzkovy-fond-akutni-nasledna-dlouhodoba-pece-datovy-souhrn" },
-  uzisNrzp: { title: "ÚZIS ČR, NRZP a NRHZS", detail: "praktičtí lékaři pro dospělé, stav k 31. 3. 2023" },
+  uzisNrzp: { title: "ÚZIS ČR, NRZP a NRHZS", detail: "praktičtí lékaři pro dospělé; počet k 1. 1. 2026, věková struktura k 31. 12. 2024 (ověřeno v HSPA Monitoru)" },
   uzisProjekce: { title: "ÚZIS ČR", detail: "projekce obyvatel podle věku a predikce příspěvku na péči (OIS-13-01)" },
   oecdHag: { title: "OECD", detail: "Health at a Glance 2025, odvratitelné hospitalizace (ACSC), data 2021/2022" },
-  oecdHealth: { title: "OECD", detail: "Health Statistics; spotřeba alkoholu, screening" },
+  oecdHealth: { title: "OECD", detail: "Health Statistics; spotřeba alkoholu, screening, absolventi ošetřovatelství (ověřeno v HSPA Monitoru)" },
   eurostatMort: { title: "Eurostat", detail: "hlth_cd_apr, léčitelná a preventabilní úmrtnost do 75 let" },
-  eurostatHly: { title: "Eurostat", detail: "hlth_hlye, délka života ve zdraví (Healthy Life Years); hodnoty podle Hospodářské strategie PEER" },
+  eurostatHly: { title: "Eurostat", detail: "hlth_hlye, délka života ve zdraví (Healthy Life Years), rok 2024, obě pohlaví (ověřeno v HSPA Monitoru)" },
   nrr: { title: "Národní rozpočtová rada", detail: "Zpráva o dlouhodobé udržitelnosti veřejných financí 2026, tab. D.1; přepočet studie na ceny 2026" },
   tisk235: { title: "Poslanecká sněmovna", detail: "sněmovní tisk 235, důvodová zpráva (hospodaření pojišťoven, platba státu)" },
   vladniProgram: { title: "Vláda ČR", detail: "program pro nelékařské zdravotnické profese 2026–2037" },
@@ -183,7 +183,7 @@ export const CISLA = c({
   },
   insurersReserves: {
     value: 43.2, unit: "mld. Kč", year: "konec 2025", topic: "penize", kind: "udaj", source: "tisk235",
-    definition: "Zůstatek základních fondů všech sedmi pojišťoven (na začátku roku 2021 69,9 mld. Kč).", forms: ["43,2 mld. Kč"],
+    definition: "Zůstatky na účtech všech sedmi pojišťoven (na začátku roku 2021 69,9 mld. Kč); v základních fondech z toho bylo k 30. 4. 2026 jen 27,7 mld. Kč.", forms: ["43,2 mld. Kč"],
   },
 
   // --- Daně za zdraví ---------------------------------------------------------
@@ -224,13 +224,13 @@ export const CISLA = c({
     definition: "Kolik nových všeobecných sester systém potřebuje za 10 až 12 let bez ohledu na reformu.", forms: ["24 000 úvazků", "24 000"],
   },
   nursesGrads: {
-    value: 1250, unit: "absolventek ročně", year: "dnes", topic: "lide", kind: "udaj", source: "mz2025",
-    sourceDetail: "s. 112 a 114: asi 680 z vysokých a 570 z vyšších odborných škol",
-    definition: "Kolik všeobecných sester ročně dokončí studium (VŠ a VOŠ dohromady).", forms: ["680", "570"],
+    value: 1750, unit: "absolventek ročně", year: "2024", topic: "lide", kind: "udaj", source: "oecdHealth",
+    sourceDetail: "16,1 plně kvalifikovaných všeobecných sester na 100 tisíc obyvatel; podklady MZ ČR 2025 (s. 112 a 114) uváděly 680 z VŠ a 570 z VOŠ",
+    definition: "Kolik plně kvalifikovaných všeobecných sester ročně dokončí studium (VŠ a VOŠ dohromady); méně než polovina průměru OECD.", forms: ["1 750"],
   },
   gpCount: {
     value: 5500, unit: "praktiků pro dospělé", year: "2026", topic: "lide", kind: "udaj", source: "uzisNrzp",
-    definition: "Praktičtí lékaři pro dospělé; ročně jich ubývá 110 až 180 a 43,6 % je starších 60 let.", forms: ["5 500"],
+    definition: "Praktičtí lékaři pro dospělé; ročně jich ubývá 110 až 180 a asi třetina je starší 60 let (ÚZIS k 31. 12. 2024).", forms: ["5 500"],
   },
   gpLossPerYear: {
     value: 145, range: [110, 180], rangeOnly: true, unit: "praktiků ročně", year: "2026–2035", topic: "lide", kind: "projekce", source: "uzisNrzp",
@@ -296,14 +296,10 @@ export const CISLA = c({
     value: 107.2, unit: "úmrtí na 100 000", year: "2023", topic: "zdravi", kind: "udaj", source: "eurostatMort",
     definition: "Léčitelná úmrtnost do 75 let, standardizovaná; průměr EU27 86,8.", forms: ["107,2"],
   },
-  hlyMen: {
-    value: 61.2, unit: "let ve zdraví (muži)", year: "poslední dostupná data", topic: "zdravi", kind: "udaj", source: "eurostatHly",
-    definition: "Délka života ve zdraví při narození, muži; průměr EU 63,5. Cíl Hospodářské strategie PEER: o pět let víc během jedné generace.",
-    verify: "Rok dat v Eurostatu.", forms: ["61,2"],
-  },
-  hlyWomen: {
-    value: 62.4, unit: "let ve zdraví (ženy)", year: "poslední dostupná data", topic: "zdravi", kind: "udaj", source: "eurostatHly",
-    definition: "Délka života ve zdraví při narození, ženy; průměr EU 64,2.", verify: "Rok dat v Eurostatu.", forms: ["62,4"],
+  hly: {
+    value: 62.4, unit: "let ve zdraví (obě pohlaví)", year: "2024", topic: "zdravi", kind: "udaj", source: "eurostatHly",
+    definition: "Délka života ve zdraví při narození, obě pohlaví; průměr EU27 65,2, Švédsko 67,5 (po zlomu řady 2021). Cíl Hospodářské strategie PEER: o pět let víc během jedné generace, tedy asi 67 let.",
+    forms: ["62,4"],
   },
   over85: {
     value: 200000, unit: "lidí nad 85 let", year: "2024 (2050: 509 tisíc)", topic: "zdravi", kind: "projekce", source: "uzisProjekce", inStudy: false,

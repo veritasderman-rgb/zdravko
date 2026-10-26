@@ -270,7 +270,7 @@ export function GpP2Figure() {
             </span>{" "}
             praktiků. V roce 2035 bez P2 {csNumber(rows.find((r) => r.year === 2035)!.low, 0)} až {csNumber(rows.find((r) => r.year === 2035)!.high, 0)}.
           </p>
-          <Note>Úbytek nahrazují hlavně sestry v týmech, nové výkony praktiků a sdílené zastupování. Rezidenční místa P2 musí potvrdit ministerstvo a odborné společnosti. Téměř polovina (43,6 %) praktiků je starší 60 let, odchody se tedy mohou zrychlit a dolní mez klesnout.</Note>
+          <Note>Úbytek nahrazují hlavně sestry v týmech, nové výkony praktiků a sdílené zastupování. Rezidenční místa P2 musí potvrdit ministerstvo a odborné společnosti. Asi třetina praktiků je starší 60 let (ÚZIS k 31. 12. 2024), odchody se tedy mohou zrychlit a dolní mez klesnout.</Note>
         </div>
       </Reveal>
     </ChartFrame>

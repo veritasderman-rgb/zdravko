@@ -44,7 +44,7 @@ export const SPENDING_SHARE = {
 
 export const GP_DECLINE = {
   title: "Praktických lékařů pro dospělé ubývá: v roce 2035 jich bude 3 900 až 4 500 místo dnešních 5 500",
-  source: "ÚZIS, NRZP a NRHZS, stav k 31. 3. 2023; ročně ubude 110 až 180 lékařů, téměř polovina (43,6 %) je starší 60 let",
+  source: "ÚZIS, NRZP a NRHZS; počet k 1. 1. 2026, věk k 31. 12. 2024 (ověřeno v HSPA Monitoru); ročně ubude 110 až 180 lékařů, asi třetina je starší 60 let",
   points: Array.from({ length: 10 }, (_, i) => {
     const year = 2026 + i;
     return { year, low: n("gpCount") - 180 * i, high: n("gpCount") - 110 * i };
@@ -84,7 +84,7 @@ export const GAP = {
 
 export const NURSES = {
   title: "Sester chybí už dnes: jen všeobecných sester je do 12 let potřeba nejméně 24 000 nových úvazků",
-  source: "MZ ČR 2025 a vládní program pro nelékařské zdravotnické profese 2026 až 2037. Ve zdravotnictví pracuje asi 83 tisíc sester, 3 tisíce chybí, přes 12 tisíc je starších 60 let. Ročně vystuduje asi 680 sester na vysokých a 570 na vyšších odborných školách",
+  source: "MZ ČR 2025 a vládní program pro nelékařské zdravotnické profese 2026 až 2037. Ve zdravotnictví pracuje asi 83 tisíc sester, 3 tisíce chybí, přes 12 tisíc je starších 60 let. Ročně promuje asi 1 750 plně kvalifikovaných všeobecných sester (OECD 2024, ověřeno v HSPA Monitoru); za 10 až 12 let je potřeba přes 30 000 úvazků sester, z toho 24 000 všeobecných",
   rows: [
     { label: "Kolik nových všeobecných sester je ročně potřeba (24 000 za 12 let)", value: Math.round(n("nursesNeed") / 12) },
     { label: "Kolik všeobecných sester ročně vystuduje (VŠ a VOŠ)", value: n("nursesGrads") },
