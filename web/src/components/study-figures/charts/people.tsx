@@ -13,7 +13,7 @@ import { HBars, Legend, Note } from "./primitives";
 export function NursesFigure() {
   const e = NURSES_EXTRA;
   const [needRow, gradsRow, reformRow] = NURSES.rows;
-  const grads = gradsRow.value; // 680 VŠ + 570 VOŠ
+  const grads = gradsRow.value; // OECD 2024: 16,1 na 100 tisíc obyvatel (HSPA Monitor)
   const needLow = Math.round(e.replacementMin / e.yearsHigh);
   const needHigh = Math.round(e.replacementMin / e.yearsLow);
   const shareOfGrads = (v: number) => Math.round((v / e.gradsProgramPerYear) * 100);
@@ -22,13 +22,13 @@ export function NursesFigure() {
     <ChartFrame
       title={`Reforma potřebuje v průměru ${n(reformRow.value)} sester ročně, asi čtvrtinu absolventek, které mají vyjít ze škol do roku 2037; ve vrcholu ${e.reformPeakYear} asi třetinu`}
       subtitle={`Všeobecné sestry za rok. Potřeba náhrady: nejméně ${n(e.replacementMin)} úvazků za ${e.yearsLow} až ${e.yearsHigh} let. Studie v3 pracovala s ${n(e.v3Replacement)} úvazky do roku 2037 a ${n(e.v3Grads)} absolventkami ročně; čísla jsme opravili podle vládního programu.`}
-      source="Vládní program pro nelékařské zdravotnické profese 2026–2037 a MZ ČR 2025 (potřeba a absolventky); ekonomický model studie v3 (potřeba reformy)"
+      source="Vládní program pro nelékařské zdravotnické profese 2026–2037 (potřeba) a OECD Health Statistics 2024 přes HSPA Monitor (absolventky); ekonomický model studie v3 (potřeba reformy)"
       table={
         <DataTable
           header={["Ukazatel", "Sester ročně", "Podíl z absolventek"]}
           rows={[
             [needRow.label, `${n(needLow)} až ${n(needHigh)}`, "—"],
-            [`${gradsRow.label}: ${e.gradsUni} VŠ a ${e.gradsCollege} VOŠ`, n(grads), "100 %"],
+            [`${gradsRow.label}: OECD 2024, 16,1 na 100 tisíc obyvatel`, n(grads), "100 %"],
             [`Reforma navíc v letech 2032–2037 (vrchol ${e.reformPeakYear}: ${e.reformPeak})`, `${n(e.reformLow)} až ${n(e.reformHigh)}`, `${shareOfGrads(e.reformLow)} až ${shareOfGrads(e.reformHigh)} %`],
             [reformRow.label, n(reformRow.value), `${shareOfGrads(reformRow.value)} %`],
           ]}
@@ -50,7 +50,7 @@ export function NursesFigure() {
             fmt={(t) => n(t)}
             rows={[
               { label: `Potřeba nových všeobecných sester (${n(e.replacementMin)} úvazků za ${e.yearsLow} až ${e.yearsHigh} let)`, value: needLow, whisker: needHigh, color: MUTED_MARK, text: `${n(needLow)}–${n(needHigh)}`, title: `Potřeba: ${n(needLow)} až ${n(needHigh)} ročně` },
-              { label: `Absolventky VŠ (${e.gradsUni}) a VOŠ (${e.gradsCollege})`, value: grads, color: MUTED_MARK, text: n(grads), title: `Absolventky: ${n(grads)} ročně` },
+              { label: `Absolventky všeobecného ošetřovatelství (OECD 2024)`, value: grads, color: MUTED_MARK, text: n(grads), title: `Absolventky: ${n(grads)} ročně` },
               {
                 label: `Reforma navíc 2032–2037, vrchol ${e.reformPeak} v roce ${e.reformPeakYear}`,
                 value: e.reformLow,

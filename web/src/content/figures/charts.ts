@@ -66,7 +66,7 @@ export const LTC_BEDS = {
 // ---------------------------------------------------------------------------
 export const INSURANCE_BALANCE = {
   plan2026: { revenue: 555.8, spending: 570.8, deficit: n("insurersDeficit2026") },
-  /** Zůstatek základních fondů všech sedmi pojišťoven, mld. Kč (důvodová zpráva k tisku 235). */
+  /** Zůstatky na účtech všech sedmi pojišťoven, mld. Kč (důvodová zpráva k tisku 235; HSPA Monitor). */
   funds: [
     { label: "Začátek roku 2021", value: 69.9 },
     { label: "Konec roku 2025", value: n("insurersReserves") },
@@ -174,8 +174,6 @@ export const NURSES_EXTRA = {
   replacementMin: 24000,
   yearsLow: 10,
   yearsHigh: 12,
-  gradsUni: 680,
-  gradsCollege: 570,
   /** Průměrný roční výstup programu 2026–2037: 11 078 všeobecných sester z VŠ a asi 11 000 z VOŠ za 12 let (studie v3.1, Část V). */
   gradsProgramPerYear: 1840,
   /** Reforma přidává v letech 2032–2037 450 až 600 sester ročně, vrchol 595 v roce 2034 (ř. 1483). */

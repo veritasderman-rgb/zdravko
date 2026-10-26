@@ -267,8 +267,8 @@ export function InsuranceBalanceFigure() {
   const b = niceTicks(0, d.funds[0].value, 4);
   return (
     <ChartFrame
-      title="Pojištění je ve schodku a zůstatek fondů klesl pod jeden měsíc výdajů"
-      subtitle="Vlevo zdravotně pojistné plány na rok 2026, vpravo zůstatek základních fondů všech sedmi pojišťoven; mld. Kč"
+      title="Pojištění je ve schodku a zůstatky na účtech pojišťoven klesly pod jeden měsíc výdajů"
+      subtitle="Vlevo zdravotně pojistné plány na rok 2026, vpravo zůstatky na účtech všech sedmi pojišťoven; mld. Kč"
       source="Zdravotně pojistné plány pojišťoven a jejich hodnocení MZ; rok 2026 = schválené plány (sněmovní tisk 280/0). Zůstatek fondů: důvodová zpráva k tisku 235."
       table={
         <DataTable
@@ -277,7 +277,7 @@ export function InsuranceBalanceFigure() {
             ["Příjmy 2026 (plán)", csNumber(d.plan2026.revenue)],
             ["Výdaje 2026 (plán)", csNumber(d.plan2026.spending)],
             ["Schodek 2026 (plán)", csNumber(d.plan2026.deficit)],
-            ...d.funds.map((f) => [`Zůstatek základních fondů, ${f.label.toLowerCase()}`, csNumber(f.value)]),
+            ...d.funds.map((f) => [`Zůstatky na účtech, ${f.label.toLowerCase()}`, csNumber(f.value)]),
             ["Měsíční výdaje systému (pro měřítko)", `asi ${csNumber(d.monthlySpending, 0)}`],
           ]}
         />
@@ -302,7 +302,7 @@ export function InsuranceBalanceFigure() {
             </p>
           </div>
           <div>
-            <PanelTitle>Zůstatek základních fondů</PanelTitle>
+            <PanelTitle>Zůstatky na účtech pojišťoven</PanelTitle>
             <HBars
               start={3}
               lo={b.lo}
