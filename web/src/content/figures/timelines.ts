@@ -351,7 +351,7 @@ export const GOV_ROWS: TwoTrackRow[] = [
     steps: [
       { when: "do 31. 10. 2026", text: "Návrh vyhlášky rozděluje 604,8 mld. Kč; do Sbírky (dohoda ve 12 z 15 segmentů z 18. 6. 2026)." },
       { when: "1. 1. 2027", text: "Vyhláška 2027 platí." },
-      { when: "1. 1. 2028", text: "Účinnost vyhlášky 2028 (podněty do dohodovacího řízení se podávají do 30. 6. 2027)." },
+      { when: "1. 1. 2028", text: "Účinnost vyhlášky 2028 (podněty do dohodovacího řízení se podávají do 31. 1. 2027, dohoda do 30. 6. 2027)." },
     ],
   },
   {
@@ -395,11 +395,11 @@ export const PLAN_ROWS: TwoTrackRow[] = [
   {
     label: "Podněty a pozměňovací návrhy", h: 62, src: "ř. 77, 80, 1547–1556",
     items: [
-      { t: "mark", at: 2027.5, kind: "eff", label: "podněty do úhrad 2028: do 30. 6. 2027", pos: "a" },
+      { t: "mark", at: 2027.5, kind: "eff", label: "úhrady 2028: dohoda do 30. 6. 2027", pos: "a" },
       { t: "bar", from: 2027, to: 2029, kind: "prep", label: "pozměňovací návrhy 2027–2028", pos: "b" },
     ],
     steps: [
-      { when: "do 30. 6. 2027", text: "Podněty do dohodovacího řízení o úhradách 2028 a do seznamu výkonů." },
+      { when: "do 31. 1. 2027", text: "Podněty do dohodovacího řízení o úhradách 2028 (dohoda do 30. 6. 2027) a do seznamu výkonů." },
       { when: "2027–2028", text: "Pozměňovací návrhy k reformě v. z. p. 2030, novele zák. 325/2021 Sb. a reformě hygienické služby (podle projednávání ve Sněmovně)." },
     ],
   },
@@ -447,7 +447,7 @@ export const PHASE_DETAIL = [
     items: [
       "konzultace verze 3, kulaté stoly, memoranda o podpoře",
       "pozměňovací návrhy k reformě v. z. p. 2030, novele zák. 325/2021 Sb. a reformě hygienické služby",
-      "podněty do dohodovacího řízení o úhradách 2028 (do 30. 6. 2027) a do seznamu výkonů",
+      "podněty do dohodovacího řízení o úhradách 2028 (do 31. 1. 2027, dohoda do 30. 6. 2027) a do seznamu výkonů",
       "dohoda o pilotu (kraj, VZP, obce)",
     ],
   },
@@ -603,8 +603,8 @@ export const LANES: Lane[] = [
     events: [
       {
         row: 0, step: "3",
-        items: [{ t: "mark", at: 2027.5, kind: "step", label: "podněty do úhrad 2028: do 30. 6. 2027", pos: "r" }],
-        when: "podat do 30. 6. 2027",
+        items: [{ t: "mark", at: 2027.5, kind: "step", label: "úhrady 2028: dohoda do 30. 6. 2027", pos: "r" }],
+        when: "podat do 31. 1. 2027, dohoda do 30. 6. 2027",
         text: "Podněty do dohodovacího řízení o úhradách 2028 a do seznamu výkonů. Účinnost 1. 1. 2028 jen při vůli dnešního MZ, jinak 1. 1. 2031.",
       },
       {
