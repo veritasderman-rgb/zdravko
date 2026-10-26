@@ -45,7 +45,7 @@ export type DiagramSource = { lines: string; note?: string };
 export const CRITICAL_PATH = {
   source: { lines: "ř. 71–123 (tabulka 29 kroků ř. 73–103, text ř. 107–123)" } as DiagramSource,
   title: "Pilot před zákonem, peníze před týmy, kapacita před přeměnou lůžek",
-  subtitle: "Tři řetězce a čtyři brány · základní scénář Vláda 2030 · pořadí, nikoli měřítko",
+  subtitle: "Tři řetězce a čtyři brány · základní scénář Vláda 2030 · pořadí kroků bez časového měřítka",
   periods: ["2027–6/2028", "7/2028–2029", "2030–2031", "2032", "2033–2038"],
   /** Brány leží mezi obdobími: B1 za 1. obdobím, B2 za 2. atd. (ř. 83, 87, 97, 101). */
   gateDates: { B1: "6/2028", B2: "12/2029–1/2030", B3: "12/2031", B4: "2033" } as Record<string, string>,
@@ -123,7 +123,7 @@ export const THEORY_OF_CHANGE = {
     },
     {
       name: "eŽádanka → termín včas",
-      evidence: "nízká; jde o nástroj měření, nikoli léčby",
+      evidence: "nízká; jde o nástroj na měření čekání, léčbu sám nezlepší",
       activity: { id: "a3", title: "eŽádanka", lines: ["triážní údaj, měření čekání"], codes: ["J5"] },
       output: { id: "o3", title: "Data o čekání", lines: ["po kategoriích a krajích, veřejně"] },
       outcome: { id: "r3", title: "Termín včas", lines: ["v lhůtě podle kategorie žádanky"] },

@@ -62,7 +62,7 @@ export default function JakPage() {
         </ChartFrame>
       </Section>
 
-      <Section eyebrow="Co na co navazuje" title="Tři řetězce v pevném pořadí" lead="Nejdřív peníze, pak lidé, pak lůžka. Kdo některý článek přeskočí, reformu nezrychlí, jen ji rozbije.">
+      <Section eyebrow="Co na co navazuje" title="Tři řetězce v pevném pořadí" lead="Nejdřív peníze, pak lidé, pak lůžka. Kdo některý článek přeskočí, reformu rozbije.">
         <ChainsDiagram />
         <p className="mt-6 text-[17px]">
           <TextLink href="/souvislosti" arrow>
@@ -71,7 +71,7 @@ export default function JakPage() {
         </p>
       </Section>
 
-      <Section tone="paper" eyebrow="Čtyři pravidla" title="Platí od roku 2026 do roku 2038, ať vládne kdokoli" lead="Reforma kvůli jednomu neúspěchu nekončí. Část, která nefunguje, ano.">
+      <Section tone="paper" eyebrow="Čtyři pravidla" title="Platí od roku 2026 do roku 2038, ať vládne kdokoli" lead="Když jedna část selže, zastaví se jen ona a zbytek reformy pokračuje.">
         <ol className="grid gap-x-12 md:grid-cols-2">
           {RULES.map((r, i) => (
             <li key={r.title} className="flex gap-5 border-t border-line-strong py-7">
@@ -149,7 +149,7 @@ export default function JakPage() {
         <p className="mt-8 max-w-[44em] text-[18px] leading-relaxed text-ink-2">{VARIANTS.note}</p>
       </Section>
 
-      <Section tone="paper" eyebrow="Do voleb 2029" title="Opoziční roky nejsou čekárna" lead="Sedm věcí, které uděláme bez vládní většiny. Co se nepovede, řekneme v červnu 2028 veřejně.">
+      <Section tone="paper" eyebrow="Do voleb 2029" title="Co uděláme ještě v opozici" lead="Sedm věcí, které uděláme bez vládní většiny. Co se nepovede, řekneme v červnu 2028 veřejně.">
         <ol className="grid gap-x-12 md:grid-cols-2">
           {STEPS_2029.map((s, i) => (
             <li key={s.title} className="flex gap-5 border-t border-line-strong py-6">
@@ -169,7 +169,7 @@ export default function JakPage() {
         id="ukazatele"
         eyebrow="Jak poznáte, že to funguje"
         title="Osm čísel, podle kterých se bude reforma hodnotit"
-        lead="Měří je státní statistický ústav ÚZIS s univerzitou, a ne my. Cílové hodnoty jsou návrh k diskusi. Předchozí verze měla cíle, které model neunesl, a my jsme je snížili nebo škrtli."
+        lead="Nezávisle je měří státní statistický ústav ÚZIS spolu s univerzitou. Cílové hodnoty jsou návrh k diskusi. Předchozí verze měla cíle, které model neunesl, a my jsme je snížili nebo škrtli."
       >
         <div className="rounded-card border border-line bg-paper p-2 md:p-4">
           <DataTable

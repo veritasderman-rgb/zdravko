@@ -278,7 +278,7 @@ export function VariantsFigure() {
               </li>
             ))}
           </ul>
-          <Note>{VARIANTS.note} Varianta B je záložní plán: když brána B3 v prosinci 2031 nebude splněna, reforma pokračuje jako B, ne od nuly.</Note>
+          <Note>{VARIANTS.note} Varianta B je záložní plán: když brána B3 v prosinci 2031 nebude splněna, reforma pokračuje ve variantě B a nic se nezačíná znovu.</Note>
         </div>
       </Reveal>
     </ChartFrame>
@@ -313,7 +313,7 @@ export function MoneyFlowFigure() {
             </li>
           ))}
         </ul>
-        <Note>Přes vyšší platbu za státní pojištěnce jde 13 mld. Kč, tedy asi 180 Kč měsíčně na osobu. Není to nový zdroj, ale přesun ze státního rozpočtu.</Note>
+        <Note>Přes vyšší platbu za státní pojištěnce jde 13 mld. Kč, tedy asi 180 Kč měsíčně na osobu. Peníze se přesouvají ze státního rozpočtu.</Note>
       </Reveal>
     </ChartFrame>
   );

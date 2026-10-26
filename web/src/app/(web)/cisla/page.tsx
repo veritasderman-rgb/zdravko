@@ -96,7 +96,7 @@ export default function CislaPage() {
       <PageHero
         eyebrow="Čísla a zdroje"
         title="Odkud je každé číslo a co přesně znamená"
-        lead={`Na jednom místě je ${ids.length} čísel, o která se plán opírá: zdroj, rok, definice a rozpětí. U každého je i druh. Údaj je změřená hodnota, výhled je předpověď jiné instituce a scénářový výpočet je výsledek našeho modelu za daných předpokladů. Těch je ${scenarios}. U každého čísla je i to, co k němu má HSPA Monitor (skorezdravotnictvi.cz, stav k ${OVERENI.generated_at}): shoda, novější hodnota, nebo rozpor. Je to nástroj autorů studie, proto slouží jen jako pomůcka k ověření v primárním zdroji, ne jako hodnocení reformy.`}
+        lead={`Na jednom místě je ${ids.length} čísel, o která se plán opírá: zdroj, rok, definice a rozpětí. U každého je i druh. Údaj je změřená hodnota, výhled je předpověď jiné instituce a scénářový výpočet je výsledek našeho modelu za daných předpokladů. Těch je ${scenarios}. U každého čísla je i to, co k němu má HSPA Monitor (skorezdravotnictvi.cz, stav k ${OVERENI.generated_at}): shoda, novější hodnota, nebo rozpor. Je to nástroj autorů studie, proto slouží jen jako pomůcka k ověření v primárním zdroji a reformu nehodnotí.`}
       />
       <Section id="druhy" tone="paper" eyebrow="Jak číst druhy čísel" title="Údaj, výhled, scénář, cíl, pravidlo">
         <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

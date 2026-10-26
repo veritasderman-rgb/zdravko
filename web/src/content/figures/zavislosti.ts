@@ -33,7 +33,7 @@ export const DEPENDENCY_FIGURES: DependencyFigure[] = [
   {
     id: "kriticka-cesta",
     short: "Kritická cesta",
-    what: "Tři řetězce, peníze, primární péče a síť lůžek, a čtyři brány mezi nimi. Ukazuje pořadí kroků, ne jejich délku.",
+    what: "Tři řetězce, peníze, primární péče a síť lůžek, a čtyři brány mezi nimi. Ukazuje pořadí kroků, jejich délka není v měřítku.",
     codes: [],
     context: { before: true, after: true },
   },

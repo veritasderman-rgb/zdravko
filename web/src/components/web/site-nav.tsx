@@ -77,7 +77,7 @@ function FooterNav({ id, label, links }: { id: string; label: string; links: { h
   );
 }
 
-/** Patička na forest-deep: značka a autor, Stránky, Studie, Poctivě. */
+/** Patička na forest-deep: značka a k čemu plán je, Stránky, Studie, Poctivě. */
 export function SiteFooter() {
   return (
     <footer className="tone-dark bg-forest-deep text-on-dark">
@@ -85,7 +85,7 @@ export function SiteFooter() {
         <div className="flex flex-col gap-3">
           <p className="font-serif text-[21px] font-semibold text-on-dark sm:text-2xl">Zdraví blíž lidem</p>
           <p className="text-on-dark-muted">Plán reformy zdravotnictví, verze 3.1 ke konzultaci, 23. 10. 2026</p>
-          <p className="text-on-dark-muted">Připravil Josef Pavlovic, resortní tým Zdravotnictví. Je to návrh k diskusi, ne program strany.</p>
+          <p className="text-on-dark-muted">Je to návrh k diskuzi, nikoliv hotový program. Hledáme politickou shodu, aby tento plán přežil tři volební období.</p>
         </div>
         <FooterNav id="paticka-stranky" label="Stránky" links={SITE_LINKS} />
         <FooterNav

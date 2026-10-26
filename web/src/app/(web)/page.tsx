@@ -203,7 +203,7 @@ export default function HomePage() {
       </section>
 
       {/* 10. Komentovat studii */}
-      <Section tone="paper" eyebrow="Komentovat studii" title="Řekněte nám, co je špatně" lead="Studie je ke konzultaci, ne hotová. Když víte o chybě v čísle, lepším zdroji nebo o něčem, co chybí, napište to k odstavci přímo ve studii. Stačí jakékoli jméno a e-mail, nic z toho nezveřejňujeme.">
+      <Section tone="paper" eyebrow="Komentovat studii" title="Řekněte nám, co je špatně" lead="Studie je návrh ke konzultaci a ještě se bude měnit. Když víte o chybě v čísle, lepším zdroji nebo o něčem, co chybí, napište to k odstavci přímo ve studii. Stačí jakékoli jméno a e-mail, nic z toho nezveřejňujeme.">
         <form action="/studie" method="get" role="search" className="flex max-w-[52em] flex-col gap-3 sm:flex-row sm:items-end">
           <div className="min-w-0 flex-1">
             <label htmlFor="hledat-studii" className="mb-1 block text-[15px] font-semibold text-ink">

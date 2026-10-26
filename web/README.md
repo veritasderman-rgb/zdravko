@@ -121,7 +121,7 @@ sám neukládá, drží jen otisk pro limity (10 přihlášek z adresy IP za hod
 potřebuje `BREVO_API_KEY`, číslo seznamu lze pevně dát `BREVO_LIST_ID`. Odhlášení obstarává Brevo odkazem v každé
 rozesílce.
 
-**Vysvětlující video** (úvodní stránka, `#video`): 87 s, scény ve stylu webu, ženský komentář (ElevenLabs, hlas
+**Vysvětlující video** (úvodní stránka, `#video`): 85 s, scény ve stylu webu, ženský komentář (ElevenLabs, hlas
 Aneta), titulky a celý text pod videem. Text komentáře po větách je v `src/content/video.ts` (zároveň titulky a textová
 verze), scény ve `video/sceny.html` (jedna scéna na odstavec, prvky se objevují podle času slov), nahrávka a časy slov
 ve `video/narrace.mp3` a `video/narrace-slova.json`. `pnpm video:render` (potřebuje ffmpeg a Playwright s Chromiem)

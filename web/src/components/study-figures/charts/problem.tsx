@@ -187,7 +187,7 @@ export function AvoidableGapFigure() {
               strong: r.chronic,
             }))}
           />
-          <Note>U kardiovaskulárních nemocí uvádí studie jen rozdíl (+48 %), ne absolutní hodnoty. Česká akutní kardiologie přitom nezaostává; odstup vzniká v soustavné péči.</Note>
+          <Note>U kardiovaskulárních nemocí uvádí studie jen rozdíl (+48 %) bez absolutních hodnot. Česká akutní kardiologie přitom nezaostává; odstup vzniká v soustavné péči.</Note>
         </div>
       </Reveal>
     </ChartFrame>

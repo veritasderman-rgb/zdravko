@@ -118,7 +118,7 @@ export function AcuteBedsFigure() {
             </ResponsiveContainer>
           </div>
           <Note>
-            Trajektorie je plánovací, ne prognóza: tempo v každém kraji určí krajský plán a pojistky (stop při obložnosti nad 85 %). Plán počítá od základu {csNumber(base, 0)} lůžek z roku 2024; předběžný pokles v roce 2025 by jen zmenšil počet lůžek, které zbývá přeměnit. V letech 2010 až 2013 ubylo {csNumber(d.lesson.acuteLost, 0)} akutních lůžek, ale lůžek následné a dlouhodobé péče přibylo jen {d.lesson.followUpAdded}. To se nesmí opakovat.
+            Křivka ukazuje plán, skutečný vývoj se může lišit: tempo v každém kraji určí krajský plán a pojistky (stop při obložnosti nad 85 %). Plán počítá od základu {csNumber(base, 0)} lůžek z roku 2024; předběžný pokles v roce 2025 by jen zmenšil počet lůžek, které zbývá přeměnit. V letech 2010 až 2013 ubylo {csNumber(d.lesson.acuteLost, 0)} akutních lůžek, ale lůžek následné a dlouhodobé péče přibylo jen {d.lesson.followUpAdded}. To se nesmí opakovat.
           </Note>
         </div>
       </Reveal>

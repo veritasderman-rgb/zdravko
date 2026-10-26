@@ -57,7 +57,7 @@ export default function ProKohoPage() {
         }
       />
 
-      <Section id="skupiny" tone="paper" eyebrow="Co nabízíme a co potřebujeme" title="Každému něco konkrétního, od každého něco konkrétního">
+      <Section id="skupiny" tone="paper" eyebrow="Co nabízíme a co potřebujeme" title="Co komu nabízíme a co od koho potřebujeme">
         <nav aria-label="Skupiny" className="mb-8">
           <ul className="flex flex-wrap gap-x-5 gap-y-2 text-[17px]">
             {STAKEHOLDERS.map((s) => (
@@ -89,7 +89,7 @@ export default function ProKohoPage() {
               ))}
             </ol>
             <p className="mt-8 max-w-[44em] text-[19px] leading-relaxed text-ink-2">
-              Jak se zapojit: první kolo připomínek končí 31. 3. 2027. Ke každé připomínce napíšeme, jak jsme s ní naložili, a zveřejníme to. Nehledáme potlesk, hledáme slabá místa dřív, než je najde praxe.
+              Jak se zapojit: první kolo připomínek končí 31. 3. 2027. Ke každé připomínce napíšeme, jak jsme s ní naložili, a zveřejníme to. Chceme najít slabá místa dřív, než je najde praxe.
             </p>
           </div>
           <figure className="flex flex-col gap-2.5">
