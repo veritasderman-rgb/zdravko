@@ -1,5 +1,5 @@
 import { KEY_SUBJECTS, META, ROUND_TABLES, STAKEHOLDERS } from "@/content/reforma";
-import { Chip, NextStep, PageHero, Section } from "@/components/web/ui";
+import { Button, Chip, NextStep, PageHero, Section } from "@/components/web/ui";
 import { HealthCentre } from "@/components/web/illustrations";
 import { slug } from "../_lib/slug";
 import { pageMeta } from "@/lib/seo";
@@ -77,21 +77,37 @@ export default function ProKohoPage() {
         </div>
       </Section>
 
-      <Section id="kulate-stoly" eyebrow="Kulaté stoly" title="Devět setkání, z každého jeden veřejný výstup">
+      <Section
+        id="kulate-stoly"
+        eyebrow="Kulaté stoly"
+        title="Devět setkání, z každého jeden veřejný výstup"
+        lead="Měsíce jsou orientační. Přesné termíny a místa zatím nejsou; kdo se přihlásí, dostane pozvánku jako první."
+      >
         <div className="grid items-start gap-12 lg:grid-cols-[3fr_2fr]">
           <div>
             <ol className="border-l-2 border-forest">
               {ROUND_TABLES.map((t) => (
                 <li key={t.when} className="relative flex flex-col gap-0.5 py-3 pl-6 sm:flex-row sm:items-baseline sm:gap-5">
                   <span aria-hidden className="absolute -left-[7px] top-[22px] h-3 w-3 rounded-full border-2 border-sand bg-forest" />
-                  <span className="w-24 shrink-0 font-serif text-[22px] font-semibold tabular-nums text-forest">{t.when}</span>
+                  <span className="w-24 shrink-0 font-serif text-[22px] font-semibold tabular-nums text-forest">
+                    <span className="sr-only">orientačně </span>
+                    {t.when}
+                  </span>
                   <span className="text-[18px] text-ink">{t.topic}</span>
                 </li>
               ))}
             </ol>
             <p className="mt-8 max-w-[44em] text-[19px] leading-relaxed text-ink-2">
-              Jak se zapojit: první kolo připomínek končí 31. 3. 2027. Ke každé připomínce napíšeme, jak jsme s ní naložili, a zveřejníme to. Chceme najít slabá místa dřív, než je najde praxe.
+              Jak se zapojit: první kolo připomínek končí {META.deadline}. Ke každé připomínce napíšeme, jak jsme s ní naložili, a zveřejníme to. Chceme najít slabá místa dřív, než je najde praxe.
             </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button href="/zapojte-se#kulate-stoly" variant="secondary" icon="arrow">
+                Přihlásit se ke kulatému stolu
+              </Button>
+              <Button href="/zapojte-se#organizace" variant="secondary">
+                Ozvat se za organizaci
+              </Button>
+            </div>
           </div>
           <figure className="flex flex-col gap-2.5">
             <HealthCentre />
@@ -100,7 +116,7 @@ export default function ProKohoPage() {
         </div>
       </Section>
 
-      <NextStep title="Nejčastější otázky" text="Osm otázek, které slyšíme nejčastěji, a odpovědi opřené o čísla studie." href="/otazky" label="Otázky" />
+      <NextStep title="Nejčastější otázky" text="Na co se lidé ptají nejčastěji, s odpověďmi opřenými o čísla studie." href="/otazky" label="Otázky" />
     </>
   );
 }

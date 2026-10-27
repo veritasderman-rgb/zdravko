@@ -44,8 +44,8 @@ export default function PrivacyPage() {
             e-maily.
           </p>
           <p className={P}>
-            Údaje nikomu nepředáváme. Technicky je zpracovávají poskytovatelé, na kterých web běží: Vercel (provoz webu), Neon (databáze v Evropské unii)
-            a Resend (odesílání e-mailů).
+            Údaje nikomu nepředáváme. Technicky je zpracovávají poskytovatelé, na kterých web běží: Vercel (provoz webu), Neon (databáze v Evropské unii),
+            Resend (odesílání e-mailů) a u odběru novinek a kulatých stolů Brevo (seznamy kontaktů).
           </p>
         </div>
       </Section>
@@ -71,6 +71,29 @@ export default function PrivacyPage() {
           <p className={P}>
             E-mail držíme, dokud odběr nezrušíte. Odhlásit se můžete odkazem v každé zprávě; pak ho ze seznamu odstraníme. Novinky posíláme jen
             o důležitých krocích: nová verze studie, kulaté stoly, vypořádání připomínek.
+          </p>
+        </div>
+      </Section>
+
+      <Section id="zapojeni" title="Kulaté stoly a zprávy od organizací">
+        <div className="flex max-w-[44em] flex-col gap-4">
+          <p className={P}>
+            U přihlášky ke kulatým stolům ukládáme e-mail, jméno, nepovinně organizaci a roli, vybraná témata, co chcete (zprávu o termínu, nebo účast)
+            a poznámku. U zprávy za organizaci název organizace, jméno, e-mail, nepovinně funkci, s čím se ozýváte, zprávu a to, zda smíme název organizace
+            uvést mezi podporovateli.
+          </p>
+          <p className={P}>
+            Údaje uložíme až poté, co přihlášku potvrdíte odkazem z e-mailu; do té doby jsou jen v zašifrovaném odkazu a nikde je neukládáme. Po potvrzení je
+            vede služba Brevo (Sendinblue SAS, Francie), přes kterou posíláme pozvánky. Každé téma kulatého stolu má vlastní seznam, takže pozvánku dostanete
+            jen k tématům, která jste vybrali. Zprávu za organizaci navíc dostane e-mailem autor studie.
+          </p>
+          <p className={P}>
+            Údaje potřebujeme, abychom vás mohli pozvat a ozvat se vám; zpracováváme je z oprávněného zájmu na vedení veřejné konzultace. Nikde je
+            nezveřejňujeme. Název organizace uvedeme mezi podporovateli jen se souhlasem a po odsouhlasení znění, jména lidí nikdy.
+          </p>
+          <p className={P}>
+            Údaje držíme do konce kulatých stolů, nejdéle do konce roku 2028, pak seznamy smažeme. Odhlásit se můžete dřív odkazem v každém e-mailu
+            nebo napsat na adresu níže.
           </p>
         </div>
       </Section>

@@ -2,6 +2,7 @@
 
 import { useActionState, useEffect, useRef, useState } from "react";
 import { addPublicComment, type ActionState } from "@/app/actions";
+import { trackEvent } from "@/lib/analytics";
 
 /** Typy připomínek nabízené veřejnosti (podmnožina interních). */
 const PUBLIC_KINDS: [string, string][] = [
@@ -28,8 +29,10 @@ export function PublicCommentForm({ documentId, versionId, blockKey, quote = "",
   const idp = blockKey.replace(/[^a-z0-9]/gi, "") || "obecne";
 
   useEffect(() => {
-    if (state.ok) formRef.current?.reset();
-  }, [state.ok]);
+    if (!state.ok) return;
+    formRef.current?.reset();
+    trackEvent("Připomínka odeslána", { misto: blockKey === "obecne" ? "studie jako celek" : "odstavec" });
+  }, [state.ok, blockKey]);
 
   if (state.ok) {
     return (

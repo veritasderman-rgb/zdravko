@@ -1,10 +1,17 @@
 /**
- * Odběr novinek přes Brevo (HTTP API v3, bez knihovny). Seznam kontaktů si web najde
- * nebo založí sám podle názvu, takže stačí API klíč; číslo seznamu lze pevně dát
- * proměnnou BREVO_LIST_ID. Kontakt se přidává až po potvrzení odkazem z e-mailu.
+ * Kontakty v Brevo (HTTP API v3, bez knihovny): odběr novinek, zájem o kulaté stoly a zprávy
+ * od organizací. Seznamy i vlastní atributy kontaktu si web najde nebo založí sám podle názvu,
+ * takže stačí API klíč; číslo seznamu novinek lze pevně dát proměnnou BREVO_LIST_ID.
+ * Kontakt se přidává až po potvrzení odkazem z e-mailu.
  */
 export const LIST_NAME = "Zdraví blíž lidem — novinky";
 export const FOLDER_NAME = "Zdraví blíž lidem";
+/** Seznam pro jeden kulatý stůl: až bude termín, pozvánka jde právě jemu. */
+export const roundTableList = (topic: string) => `Zdraví blíž lidem — kulatý stůl: ${topic}`;
+export const ORG_LIST_NAME = "Zdraví blíž lidem — organizace";
+/** Vlastní textové atributy kontaktu (předpona ZBL, aby se nepletly s výchozími atributy účtu). */
+export const ATTRIBUTES = ["ZBL_JMENO", "ZBL_ORGANIZACE", "ZBL_ROLE", "ZBL_ZAJEM", "ZBL_KULATE_STOLY", "ZBL_ZADOST", "ZBL_ZPRAVA", "ZBL_ZVEREJNIT"] as const;
+export type Attribute = (typeof ATTRIBUTES)[number];
 
 type Fetch = typeof fetch;
 
@@ -31,20 +38,46 @@ export function brevo(apiKey: string, fetchImpl: Fetch = fetch) {
     }
   }
 
+  /** Čísla seznamů podle názvů: chybějící založí (i se složkou, když chybí). */
+  async function ensureLists(names: string[]): Promise<number[]> {
+    const lists = await all("/contacts/lists", "lists");
+    let folderId: number | null = null;
+    const ids: number[] = [];
+    for (const name of names) {
+      const found = lists.find((l) => l.name === name);
+      if (found) {
+        ids.push(found.id);
+        continue;
+      }
+      folderId ??=
+        (await all("/contacts/folders", "folders")).find((f) => f.name === FOLDER_NAME)?.id ??
+        (await call<{ id: number }>("/contacts/folders", { method: "POST", body: { name: FOLDER_NAME } })).id;
+      const id = (await call<{ id: number }>("/contacts/lists", { method: "POST", body: { name, folderId } })).id;
+      lists.push({ id, name });
+      ids.push(id);
+    }
+    return ids;
+  }
+
   /** Číslo seznamu novinek: najde ho podle názvu, jinak založí složku i seznam. */
   async function ensureList(): Promise<number> {
-    const found = (await all("/contacts/lists", "lists")).find((l) => l.name === LIST_NAME);
-    if (found) return found.id;
-    const folderId =
-      (await all("/contacts/folders", "folders")).find((f) => f.name === FOLDER_NAME)?.id ??
-      (await call<{ id: number }>("/contacts/folders", { method: "POST", body: { name: FOLDER_NAME } })).id;
-    return (await call<{ id: number }>("/contacts/lists", { method: "POST", body: { name: LIST_NAME, folderId } })).id;
+    return (await ensureLists([LIST_NAME]))[0];
   }
 
-  /** Přidá potvrzený e-mail do seznamu; existující kontakt jen doplní o seznam. */
-  async function subscribe(email: string, listId: number): Promise<void> {
-    await call("/contacts", { method: "POST", body: { email, listIds: [listId], updateEnabled: true } });
+  /** Založí chybějící vlastní atributy kontaktu (text). */
+  async function ensureAttributes(): Promise<void> {
+    const have = new Set((await call<{ attributes?: { name: string }[] }>("/contacts/attributes")).attributes?.map((a) => a.name) ?? []);
+    for (const name of ATTRIBUTES) {
+      if (!have.has(name)) await call(`/contacts/attributes/normal/${name}`, { method: "POST", body: { type: "text" } });
+    }
   }
 
-  return { ensureList, subscribe };
+  /** Přidá potvrzený e-mail do seznamů; existující kontakt jen doplní o seznamy a atributy. */
+  async function subscribe(email: string, listIds: number | number[], attributes?: Partial<Record<Attribute, string>>): Promise<void> {
+    const body: Record<string, unknown> = { email, listIds: Array.isArray(listIds) ? listIds : [listIds], updateEnabled: true };
+    if (attributes && Object.keys(attributes).length) body.attributes = attributes;
+    await call("/contacts", { method: "POST", body });
+  }
+
+  return { ensureList, ensureLists, ensureAttributes, subscribe };
 }

@@ -186,3 +186,32 @@ ${SIGN}
 <p>${SIGN}</p>`;
   return { subject, text, html };
 }
+
+/** Žádost o potvrzení přihlášky ke kulatým stolům nebo zprávy za organizaci; do Brevo jde až po kliknutí. */
+export function signupConfirmMail(p: { kind: "stoly" | "org"; url: string; hours: number; privacyUrl: string; summary: string[] }) {
+  const what = p.kind === "stoly" ? "přihlášku ke kulatým stolům" : "zprávu za organizaci";
+  const subject = p.kind === "stoly" ? "Potvrďte prosím přihlášku ke kulatým stolům Zdraví blíž lidem" : "Potvrďte prosím zprávu za organizaci pro Zdraví blíž lidem";
+  const text = `Dobrý den,
+
+na webu Zdraví blíž lidem jste nám poslali ${what}:
+
+${p.summary.map((l) => `- ${l}`).join("\n")}
+
+Potvrďte ji prosím na této adrese:
+${p.url}
+
+Odkaz platí ${p.hours} hodin. Pokud jste formulář nevyplňovali vy, e-mail ignorujte; bez potvrzení nic neuložíme.
+
+Jak s údaji zacházíme: ${p.privacyUrl}
+
+${SIGN}
+`;
+  const html = `<p>Dobrý den,</p>
+<p>na webu Zdraví blíž lidem jste nám poslali ${what}:</p>
+<ul>${p.summary.map((l) => `<li>${esc(l)}</li>`).join("")}</ul>
+<p><a href="${esc(p.url)}" style="display:inline-block;background:#1f4a3d;color:#fff;padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:bold">Potvrdit</a></p>
+<p style="color:#52594F">Odkaz platí ${p.hours} hodin. Pokud jste formulář nevyplňovali vy, e-mail ignorujte; bez potvrzení nic neuložíme.</p>
+<p style="color:#52594F"><a href="${esc(p.privacyUrl)}">Jak s údaji zacházíme</a></p>
+<p>${SIGN}</p>`;
+  return { subject, text, html };
+}

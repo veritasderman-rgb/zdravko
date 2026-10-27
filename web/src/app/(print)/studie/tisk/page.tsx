@@ -46,7 +46,7 @@ export default async function StudiePrintPage() {
 
   return (
     <div className="doc-page">
-      <section className="doc-cover" aria-label="Titulní strana">
+      <section className="doc-cover" aria-label="Titulní strana" data-pdf-footer={`Zdraví blíž lidem · studie, konzultační verze ${version.label.match(/\d+(?:\.\d+)+/)?.[0] ?? version.label}`}>
         <div>
           <p className="m-0 text-[11pt] uppercase tracking-[0.08em]">Studie reformy zdravotnictví · konzultační verze</p>
           <h1 className="mb-0 mt-6 text-[34pt] font-semibold leading-[1.05]">{doc.title.replace(/\s*—\s*studie.*$/i, "")}</h1>

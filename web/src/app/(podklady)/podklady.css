@@ -1,0 +1,55 @@
+/*
+ * Listy podkladů pro média. Rozměr listu dává třída (.sheet-a4, .sheet-slide); @page stejného
+ * rozměru vkládá každá stránka sama (PageSize), takže PDF má jeden list na stranu bez okrajů.
+ */
+.podklady {
+  background: #d9d3c7;
+  padding: 24px 0;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.podklady .sheet {
+  position: relative;
+  margin: 0 auto 24px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 0.15);
+  break-after: page;
+}
+
+.podklady .sheet:last-child {
+  break-after: auto;
+}
+
+.podklady .sheet-a4 {
+  width: 210mm;
+  height: 297mm;
+  padding: 14mm 15mm 12mm;
+}
+
+.podklady .sheet-slide {
+  width: 13.333in;
+  height: 7.5in;
+  padding: 0.55in 0.7in;
+}
+
+.podklady .qr svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media print {
+  .podklady {
+    background: #fff;
+    padding: 0;
+  }
+
+  .podklady .sheet {
+    margin: 0;
+    box-shadow: none;
+  }
+}

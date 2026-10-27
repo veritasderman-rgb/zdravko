@@ -46,6 +46,14 @@
     "line": 519
    },
    {
+    "file": "src/content/podklady.ts",
+    "line": 15
+   },
+   {
+    "file": "src/content/podklady.ts",
+    "line": 51
+   },
+   {
     "file": "src/content/reforma.ts",
     "line": 24
    },
@@ -580,6 +588,14 @@
  "insuranceGap2038": {
   "web": [
    {
+    "file": "src/content/podklady.ts",
+    "line": 39
+   },
+   {
+    "file": "src/content/podklady.ts",
+    "line": 41
+   },
+   {
     "file": "src/content/reforma.ts",
     "line": 80
    },
@@ -766,6 +782,10 @@
    {
     "file": "src/content/figures/timelines.ts",
     "line": 614
+   },
+   {
+    "file": "src/content/podklady.ts",
+    "line": 54
    },
    {
     "file": "src/content/reforma.ts",
@@ -1092,6 +1112,10 @@
     "line": 432
    },
    {
+    "file": "src/content/podklady.ts",
+    "line": 54
+   },
+   {
     "file": "src/content/reforma.ts",
     "line": 27
    },
@@ -1340,6 +1364,10 @@
     "line": 716
    },
    {
+    "file": "src/content/podklady.ts",
+    "line": 52
+   },
+   {
     "file": "src/content/reforma.ts",
     "line": 25
    },
@@ -1428,6 +1456,10 @@
    {
     "file": "src/content/figures/timelines.ts",
     "line": 716
+   },
+   {
+    "file": "src/content/podklady.ts",
+    "line": 52
    },
    {
     "file": "src/content/reforma.ts",
@@ -1666,6 +1698,14 @@
     "line": 195
    },
    {
+    "file": "src/content/podklady.ts",
+    "line": 27
+   },
+   {
+    "file": "src/content/podklady.ts",
+    "line": 29
+   },
+   {
     "file": "src/content/reforma.ts",
     "line": 46
    },
@@ -1766,6 +1806,10 @@
  "childrenWithoutGp": {
   "web": [
    {
+    "file": "src/content/podklady.ts",
+    "line": 29
+   },
+   {
     "file": "src/content/reforma.ts",
     "line": 133
    },
@@ -1783,6 +1827,10 @@
  },
  "ruralPractices": {
   "web": [
+   {
+    "file": "src/content/podklady.ts",
+    "line": 29
+   },
    {
     "file": "src/content/reforma.ts",
     "line": 135
@@ -1960,6 +2008,10 @@
     "line": 507
    },
    {
+    "file": "src/content/podklady.ts",
+    "line": 53
+   },
+   {
     "file": "src/content/reforma.ts",
     "line": 26
    },
@@ -2042,6 +2094,10 @@
     "line": 89
    },
    {
+    "file": "src/content/podklady.ts",
+    "line": 35
+   },
+   {
     "file": "src/content/reforma.ts",
     "line": 55
    },
@@ -2101,6 +2157,10 @@
  "followUpLtcOccupancy": {
   "web": [
    {
+    "file": "src/content/podklady.ts",
+    "line": 35
+   },
+   {
     "file": "src/content/reforma.ts",
     "line": 59
    }
@@ -2141,6 +2201,14 @@
    {
     "file": "src/content/figures/timelines.ts",
     "line": 485
+   },
+   {
+    "file": "src/content/podklady.ts",
+    "line": 33
+   },
+   {
+    "file": "src/content/podklady.ts",
+    "line": 35
    },
    {
     "file": "src/content/reforma.ts",
@@ -2203,6 +2271,14 @@
    {
     "file": "src/content/figures/charts.ts",
     "line": 24
+   },
+   {
+    "file": "src/content/podklady.ts",
+    "line": 33
+   },
+   {
+    "file": "src/content/podklady.ts",
+    "line": 35
    },
    {
     "file": "src/content/reforma.ts",
@@ -2464,6 +2540,14 @@
    {
     "file": "src/app/(web)/proc/page.tsx",
     "line": 94
+   },
+   {
+    "file": "src/content/podklady.ts",
+    "line": 21
+   },
+   {
+    "file": "src/content/podklady.ts",
+    "line": 23
    },
    {
     "file": "src/content/reforma.ts",

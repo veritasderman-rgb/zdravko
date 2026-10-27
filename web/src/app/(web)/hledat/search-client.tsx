@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import type { SearchEntry } from "@/lib/search-index";
+import { trackEvent } from "@/lib/analytics";
 
 type Data = { study: boolean; entries: SearchEntry[] };
 
@@ -138,6 +139,19 @@ export function SearchClient() {
   const web = onlyStudy ? [] : hits.filter((h) => h.e.k !== "studie");
   const study = hits.filter((h) => h.e.k === "studie");
   const total = web.length + study.length;
+
+  // Dotazy bez výsledku ukazují, co lidé na webu hledají a nenajdou. Měří se až po chvíli bez psaní.
+  const reported = useRef("");
+  const noHits = !!data && tokens.length > 0 && total === 0;
+  useEffect(() => {
+    const dotaz = q.trim().toLowerCase().slice(0, 60);
+    if (!noHits || dotaz === reported.current) return;
+    const t = window.setTimeout(() => {
+      reported.current = dotaz;
+      trackEvent("Hledání bez výsledků", { dotaz, kde: onlyStudy ? "studie" : "web" });
+    }, 1500);
+    return () => window.clearTimeout(t);
+  }, [noHits, q, onlyStudy]);
 
   return (
     <div className="mt-8 flex flex-col gap-8">

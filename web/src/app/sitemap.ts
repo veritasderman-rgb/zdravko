@@ -11,6 +11,8 @@ const PAGES: [path: string, priority: number][] = [
   ["/jak", 0.8],
   ["/penize", 0.8],
   ["/pro-koho", 0.7],
+  ["/zapojte-se", 0.7],
+  ["/pro-media", 0.6],
   ["/souvislosti", 0.7],
   ["/studie/zavislosti", 0.7],
   ["/studie/navrhnout-opatreni", 0.7],
