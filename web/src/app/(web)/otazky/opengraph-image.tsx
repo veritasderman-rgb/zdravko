@@ -1,7 +1,7 @@
 import { OG_CONTENT_TYPE, OG_SIZE, ogImage } from "@/lib/og";
 
 const EYEBROW = "Otázky";
-const TITLE = "Osm otázek, které slyšíme nejčastěji";
+const TITLE = "Otázky, které slyšíme nejčastěji";
 
 export const alt = TITLE;
 export const size = OG_SIZE;

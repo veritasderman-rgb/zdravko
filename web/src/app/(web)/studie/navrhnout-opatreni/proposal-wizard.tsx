@@ -2,6 +2,7 @@
 
 import { useActionState, useEffect, useId, useMemo, useRef, useState } from "react";
 import { addProposal, type ActionState } from "@/app/actions";
+import { trackEvent } from "@/lib/analytics";
 import { STEPS, answerText, isVisible, stepErrors, type Answers, type Field } from "@/content/navrh-opatreni";
 
 type Measure = { code: string; label: string; area: string };
@@ -280,6 +281,7 @@ export function ProposalWizard({ documentId, versionId, measures }: { documentId
 
   useEffect(() => {
     if (!state.ok) return;
+    trackEvent("Návrh opatření odeslán");
     try {
       localStorage.removeItem(DRAFT_KEY);
     } catch {

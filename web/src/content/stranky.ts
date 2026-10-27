@@ -59,9 +59,17 @@ export const STRANKY = {
     title: "Slovníček pojmů",
     description: "Srozumitelné vysvětlení pojmů z plánu reformy zdravotnictví: primární péče, tým sdružené péče, obložnost, eŽádanka, daně za zdraví, Fond prevence a další.",
   },
+  "/zapojte-se": {
+    title: "Zapojte se do konzultace",
+    description: "Jak se zapojit do konzultace plánu reformy zdravotnictví: připomínka ke studii, návrh opatření, přihláška ke kulatým stolům a setkání za organizaci.",
+  },
+  "/pro-media": {
+    title: "Pro média",
+    description: "Podklady pro novináře k plánu reformy zdravotnictví: handout na dvě strany, prezentace a celá studie v PDF, hlavní čísla se zdroji a kontakt.",
+  },
   "/ochrana-udaju": {
     title: "Ochrana osobních údajů",
-    description: "Jaké údaje ukládáme u připomínek ke studii, proč, jak dlouho a jak si je stáhnout nebo smazat.",
+    description: "Jaké údaje ukládáme u připomínek, přihlášek ke kulatým stolům a odběru novinek, proč, jak dlouho a jak si je stáhnout nebo smazat.",
   },
 } as const;
 

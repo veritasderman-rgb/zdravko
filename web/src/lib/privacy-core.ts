@@ -4,7 +4,7 @@
  * Funkce dostávají databázi zvenku (produkce: WebSocket pool, testy: PGlite);
  * tajemství pro HMAC se předává parametrem, takže jdou testovat bez prostředí.
  */
-import { createHash, createHmac, randomBytes, timingSafeEqual } from "node:crypto";
+import { createCipheriv, createDecipheriv, createHash, createHmac, randomBytes, timingSafeEqual } from "node:crypto";
 import { and, asc, eq, gt, inArray, isNotNull, isNull, lt, sql } from "drizzle-orm";
 import * as schema from "@/db/schema";
 import type { AnyDb } from "@/db/pool";
@@ -157,6 +157,37 @@ export function openToken(secret: string, purpose: string, token: string | undef
 }
 
 /** Odkaz na vlastní údaje (export a výmaz). */
+/**
+ * Zapečetěný token: data jsou zašifrovaná (AES-256-GCM) klíčem odvozeným z tajemství a účelu,
+ * takže přihláška s jménem a zprávou není v adrese ani v záznamech serveru čitelná a nedá se
+ * podvrhnout. Nic se kvůli němu neukládá.
+ */
+export function sealToken(secret: string, purpose: string, data: unknown, hours: number, now = Date.now()): string {
+  const key = createHash("sha256").update(`zapecetit.${purpose}.${secret}`).digest();
+  const iv = randomBytes(12);
+  const cipher = createCipheriv("aes-256-gcm", key, iv);
+  const enc = Buffer.concat([cipher.update(JSON.stringify({ d: data, x: Math.floor(now / 1000) + hours * 3600 }), "utf8"), cipher.final()]);
+  return Buffer.concat([iv, cipher.getAuthTag(), enc]).toString("base64url");
+}
+
+/** Data z platného zapečetěného tokenu daného účelu, jinak null. */
+export function openSealed<T>(secret: string, purpose: string, token: string | undefined, now = Date.now()): T | null {
+  if (!token) return null;
+  try {
+    const raw = Buffer.from(token, "base64url");
+    if (raw.length < 29) return null;
+    const key = createHash("sha256").update(`zapecetit.${purpose}.${secret}`).digest();
+    const decipher = createDecipheriv("aes-256-gcm", key, raw.subarray(0, 12));
+    decipher.setAuthTag(raw.subarray(12, 28));
+    const plain = Buffer.concat([decipher.update(raw.subarray(28)), decipher.final()]).toString("utf8");
+    const out = JSON.parse(plain) as { d?: T; x?: number };
+    if (out.d === undefined || !out.x || out.x * 1000 < now) return null;
+    return out.d;
+  } catch {
+    return null;
+  }
+}
+
 export const signDataToken = (secret: string, email: string, now = Date.now()) => signToken(secret, "udaje", email, DATA_LINK_HOURS, now);
 export const openDataToken = (secret: string, token: string | undefined, now = Date.now()) => openToken(secret, "udaje", token, now);
 

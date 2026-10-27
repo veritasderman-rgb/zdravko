@@ -1,8 +1,9 @@
 "use client";
 
-import { useActionState, useId } from "react";
+import { useActionState, useEffect, useId } from "react";
 import type { ActionState } from "@/app/actions";
 import { confirmNewsletter, subscribeNewsletter } from "@/app/novinky-actions";
+import { trackEvent } from "@/lib/analytics";
 
 /**
  * Přihlášení k odběru novinek. Světlá varianta na stránce, tmavá v patičce.
@@ -12,6 +13,9 @@ export function NewsletterForm({ dark = false }: { dark?: boolean }) {
   const [state, action, pending] = useActionState<ActionState, FormData>(subscribeNewsletter, {});
   const id = useId();
   const muted = dark ? "text-on-dark-muted" : "text-muted";
+  useEffect(() => {
+    if (state.ok) trackEvent("Novinky: přihláška", { misto: dark ? "patička" : "stránka" });
+  }, [state.ok, dark]);
   if (state.ok) {
     return (
       <p role="status" className={`text-[17px] ${dark ? "text-on-dark" : "text-ink"}`}>
@@ -64,6 +68,9 @@ export function NewsletterForm({ dark = false }: { dark?: boolean }) {
 /** Potvrzení odběru tlačítkem (samotné otevření odkazu nic neudělá). */
 export function ConfirmNewsletterForm({ token }: { token: string }) {
   const [state, action, pending] = useActionState<ActionState, FormData>(confirmNewsletter, {});
+  useEffect(() => {
+    if (state.ok) trackEvent("Potvrzeno", { co: "novinky" });
+  }, [state.ok]);
   if (state.ok) {
     return (
       <div role="status" className="rounded-card border border-line bg-sage-soft p-5 text-[17px] text-ink">

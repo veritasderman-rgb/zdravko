@@ -21,6 +21,8 @@ export const MORE_LINKS = [
   { href: "/slovnicek", label: "Slovníček" },
   { href: "/studie", label: "Studie" },
   { href: "/studie/navrhnout-opatreni", label: "Navrhnout opatření" },
+  { href: "/zapojte-se", label: "Zapojte se" },
+  { href: "/pro-media", label: "Pro média" },
   { href: "/hledat", label: "Hledat" },
 ];
 
@@ -102,7 +104,15 @@ export function SiteFooter() {
           <p className="text-on-dark-muted">Plán reformy zdravotnictví, verze 3.2 ke konzultaci, 26. 10. 2026</p>
           <p className="text-on-dark-muted">Je to návrh k diskuzi, nikoliv hotový program. Hledáme politickou shodu, aby tento plán přežil tři volební období.</p>
         </div>
-        <FooterNav id="paticka-stranky" label="Stránky" links={SITE_LINKS} />
+        <FooterNav
+          id="paticka-stranky"
+          label="Stránky"
+          links={[
+            ...SITE_LINKS,
+            { href: "/zapojte-se", label: "Zapojte se" },
+            { href: "/pro-media", label: "Pro média" },
+          ]}
+        />
         <FooterNav
           id="paticka-studie"
           label="Studie"

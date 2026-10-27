@@ -16,3 +16,8 @@ export function siteUrl(): string {
 export function privacyContact(): string {
   return process.env.PRIVACY_CONTACT ?? "pripominky@josefpavlovic.cz";
 }
+
+/** Kontakt pro novináře (stránka /pro-media); bez PRESS_CONTACT stejný jako kontakt správce údajů. */
+export function pressContact(): string {
+  return process.env.PRESS_CONTACT || privacyContact();
+}
