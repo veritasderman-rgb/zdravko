@@ -43,6 +43,11 @@ export function StudyToc({ chapters, current, sections }: { chapters: Chapter[];
             </li>
           );
         })}
+        <li className="mt-2 border-t border-line pt-2">
+          <Link href="/studie/navrhnout-opatreni" className="block rounded px-2 py-1.5 font-semibold text-forest hover:bg-sage-soft">
+            Navrhnout nové opatření
+          </Link>
+        </li>
       </ol>
     </nav>
   );

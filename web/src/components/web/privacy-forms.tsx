@@ -29,7 +29,7 @@ function Done({ title, children }: { title: string; children: React.ReactNode })
 export function ConfirmCommentForm({ token }: { token: string }) {
   const [state, action, pending] = useActionState<ActionState, FormData>(confirmPublicComment, {});
   if (state.ok) {
-    return <Done title="Hotovo, připomínka je potvrzená.">Resortní tým ji projde spolu s ostatními. Když budeme potřebovat upřesnění, ozveme se na váš e-mail.</Done>;
+    return <Done title="Hotovo, máme to potvrzené.">Resortní tým připomínku nebo návrh projde spolu s ostatními. Když budeme potřebovat upřesnění, ozveme se na váš e-mail.</Done>;
   }
   return (
     <form action={action} className="flex flex-col gap-4">
@@ -37,7 +37,7 @@ export function ConfirmCommentForm({ token }: { token: string }) {
       <Alert text={state.error} />
       <div>
         <button type="submit" disabled={pending} className={PRIMARY}>
-          {pending ? "Potvrzujeme…" : "Potvrdit připomínku"}
+          {pending ? "Potvrzujeme…" : "Potvrdit"}
         </button>
       </div>
     </form>

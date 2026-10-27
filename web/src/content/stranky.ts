@@ -39,6 +39,10 @@ export const STRANKY = {
     title: "Odborná studie",
     description: "Plné znění studie reformy zdravotnictví, verze 3.2 ke konzultaci, po kapitolách: primární péče, nemocnice, prevence, peníze, zákony a harmonogram.",
   },
+  "/studie/navrhnout-opatreni": {
+    title: "Navrhnout nové opatření",
+    description: "Chybí v plánu reformy zdravotnictví něco důležitého? Průvodce vás provede návrhem nového opatření: problém, řešení, termín, návaznosti, náklady a přínos.",
+  },
   "/studie/zavislosti": {
     title: "Grafy závislostí",
     description: "Všechny grafy závislostí ze studie na jedné stránce: kritická cesta, co na co navazuje, mapa vazeb, organigramy a matice vlivů. Každý vede na své místo ve studii.",

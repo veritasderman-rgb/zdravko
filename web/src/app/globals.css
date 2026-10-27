@@ -43,6 +43,8 @@
   --color-sage-soft: #dce8e0;
   --color-on-dark: #f3eee4;
   --color-on-dark-muted: #c9d9cf;
+  /* Chyby ve formulářích (kontrast na sand i paper nad 7 : 1). */
+  --color-danger: #9b2c1a;
   /* action: JEN výplň primárního tlačítka (Button variant="primary"). */
   --color-action: #9a5a12;
   --color-action-hover: #7d4810;

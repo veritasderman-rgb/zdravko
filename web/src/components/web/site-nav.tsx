@@ -20,6 +20,7 @@ export const MORE_LINKS = [
   { href: "/otazky", label: "Otázky" },
   { href: "/slovnicek", label: "Slovníček" },
   { href: "/studie", label: "Studie" },
+  { href: "/studie/navrhnout-opatreni", label: "Navrhnout opatření" },
   { href: "/hledat", label: "Hledat" },
 ];
 
@@ -108,6 +109,7 @@ export function SiteFooter() {
           links={[
             { href: "/studie", label: "Číst studii" },
             { href: "/studie#pripominka", label: "Napsat připomínku" },
+            { href: "/studie/navrhnout-opatreni", label: "Navrhnout nové opatření" },
             { href: STUDY_PDF_HREF, label: "Stáhnout PDF" },
             { href: "/otazky", label: "Otázky" },
             { href: "/slovnicek", label: "Slovníček" },

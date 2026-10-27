@@ -8,8 +8,10 @@ import { db, schema } from "@/db";
 import { getSession } from "@/lib/auth";
 import { sealSession, SESSION_COOKIE, sessionCookieOptions } from "@/lib/session";
 import { withPoolDb } from "@/db/pool";
-import { CommentError, createComment, createReply, setCommentStatus, setVerificationStatus } from "@/lib/comments-core";
-import { commentVerification, loginMail, sendMail } from "@/lib/mail";
+import { CommentError, PROPOSAL, createComment, createReply, setCommentStatus, setVerificationStatus, type NewComment } from "@/lib/comments-core";
+import { commentVerification, loginMail, proposalVerification, sendMail } from "@/lib/mail";
+import { STEPS, cleanAnswers, proposalCodes, proposalMarkdown, stepErrors } from "@/content/navrh-opatreni";
+import { REGISTRY_CODES, REGISTRY_LABEL } from "@/content/registr";
 import { LOGIN_LINK_MINUTES, consumeLoginToken, createLoginToken } from "@/lib/accounts-core";
 import { RETENTION, clientIp, confirmComment, dropUnverified, hitLimit, isDuplicate, keyHash, newVerifyToken, spamReason } from "@/lib/privacy-core";
 import { privacySecret, siteUrl } from "@/lib/privacy";
@@ -156,39 +158,28 @@ export async function updateCommentStatus(fd: FormData): Promise<void> {
   if (slug) revalidatePath(`/d/${slug}`);
 }
 
-/**
- * Veřejná připomínka bez přihlášení: libovolné jméno a e-mail (nikdy se nezveřejňují).
- * Uloží se jako čekající na potvrzení; týmu se ukáže, až autor klikne na odkaz z e-mailu.
- */
-export async function addPublicComment(_prev: ActionState, fd: FormData): Promise<ActionState> {
-  // Past na roboty a příliš rychlé odeslání. Čas otevření formuláře musí být přítomný,
-  // ne starší než den a aspoň 2,5 s před odesláním.
+/** Past na roboty a příliš rychlé odeslání: čas otevření formuláře musí být přítomný, ne starší než den a aspoň 2,5 s před odesláním. */
+function botCheck(fd: FormData): ActionState | null {
   if (str(fd, "website", 200)) return { ok: true };
   const ts = Number(fd.get("ts"));
   const age = Date.now() - ts;
   if (!Number.isFinite(ts) || ts <= 0 || age < 2500 || age > 24 * 60 * 60 * 1000) {
     return { error: "Formulář byl odeslán příliš rychle nebo vypršel. Obnovte prosím stránku a zkuste to znovu." };
   }
+  return null;
+}
 
-  const documentId = Number(fd.get("documentId"));
-  const versionId = Number(fd.get("versionId"));
-  const blockKey = str(fd, "blockKey", 300) || "obecne";
-  const name = str(fd, "name", 80);
-  const email = str(fd, "email", 200).toLowerCase();
-  const organization = str(fd, "organization", 200);
-  const kind = str(fd, "kind", 20);
-  const body = str(fd, "body", 5000);
+type PublicInput = Omit<NewComment, "channel" | "priority" | "verifyTokenHash" | "actor" | "severity"> & { email: string };
 
-  if (!documentId || !versionId) return { error: "Chybí vazba na dokument. Obnovte prosím stránku." };
-  if (name.length < 2) return { error: "Uveďte jméno nebo přezdívku (aspoň dva znaky)." };
-  if (!EMAIL_RE.test(email)) return { error: "Zadejte platný e-mail." };
-  if (body.length < 10) return { error: "Napište připomínku (aspoň deset znaků)." };
-  const spam = spamReason(body);
-  if (spam) return { error: spam };
-
-  // Omezení na straně serveru: z jedné adresy IP nejvýš 5 připomínek za 10 minut a 20 za den,
-  // z jednoho e-mailu nejvýš 5 za 10 minut, celkem nejvýš 30 veřejných připomínek za minutu.
+/**
+ * Společná cesta veřejné připomínky i návrhu opatření: omezení počtu odeslání, kontrola duplicity,
+ * uložení s čekáním na potvrzení a potvrzovací e-mail. Bez odeslaného e-mailu se záznam smaže.
+ */
+async function storePublic(input: PublicInput, mail: (c: { id: number; token: string; created: Awaited<ReturnType<typeof createComment>> }) => { subject: string; text: string; html: string }): Promise<ActionState> {
+  // Omezení na straně serveru: z jedné adresy IP nejvýš 5 odeslání za 10 minut a 20 za den,
+  // z jednoho e-mailu nejvýš 5 za 10 minut, celkem nejvýš 30 veřejných odeslání za minutu.
   // Adresu IP ani e-mail v záznamech limitů neukládáme, jen jejich HMAC.
+  const { email } = input;
   const secret = privacySecret();
   const ip = clientIp(await headers());
   const verejnost = eq(schema.comments.channel, "verejnost");
@@ -203,31 +194,15 @@ export async function addPublicComment(_prev: ActionState, fd: FormData): Promis
     .where(and(verejnost, gt(schema.comments.createdAt, sql`now() - interval '1 minute'`)));
   if (perMinute >= 30) return { error: "Právě přichází hodně připomínek najednou. Zkuste to prosím za chvíli." };
 
-  const site = siteUrl();
   let created: Awaited<ReturnType<typeof createComment>>;
   let token: string;
   try {
     const result = await withPoolDb(async (pdb) => {
       if (!(await hitLimit(pdb, "pripominka-ip", keyHash(secret, ip), [{ windowS: 600, max: 5 }, { windowS: 86400, max: 20 }]))) return "limit" as const;
       // Stejný text ze stejného e-mailu podruhé neukládáme (dvojí odeslání, opakované vložení).
-      if (await isDuplicate(pdb, email, body)) return "duplicate" as const;
+      if (await isDuplicate(pdb, email, input.body)) return "duplicate" as const;
       const t = newVerifyToken();
-      const c = await createComment(pdb, {
-        documentId,
-        versionId,
-        blockKey,
-        kind,
-        severity: "doporucujici",
-        body,
-        authorName: name,
-        email,
-        organization: organization || null,
-        onBehalf: "osoba",
-        channel: "verejnost",
-        priority: "nizka",
-        verifyTokenHash: t.hash,
-        actor: "verejnost",
-      });
+      const c = await createComment(pdb, { ...input, severity: "doporucujici", channel: "verejnost", priority: "nizka", verifyTokenHash: t.hash, actor: "verejnost" });
       return { c, token: t.token };
     });
     if (result === "limit") return { error: "Z vaší sítě přišlo v poslední době hodně připomínek. Zkuste to prosím později." };
@@ -235,29 +210,125 @@ export async function addPublicComment(_prev: ActionState, fd: FormData): Promis
     created = result.c;
     token = result.token;
   } catch (e) {
-    return failure(e, "Připomínku se nepodařilo uložit. Zkuste to prosím znovu.");
+    return failure(e, "Odeslání se nepodařilo uložit. Zkuste to prosím znovu.");
   }
 
-  const anchor = created.target.block?.anchorId;
-  const mail = commentVerification({
-    name,
-    id: created.id,
-    body,
-    quote: created.quote || null,
-    confirmUrl: `${site}/potvrdit?t=${encodeURIComponent(token)}`,
-    studyUrl: anchor ? `${site}/studie/kotva?k=${encodeURIComponent(anchor)}` : `${site}/studie`,
-    versionLabel: created.target.versionLabel,
-    days: RETENTION.unverifiedDays,
-    privacyUrl: `${site}/ochrana-udaju`,
-  });
-  const sent = await sendMail({ to: email, ...mail });
+  const sent = await sendMail({ to: email, ...mail({ id: created.id, token, created }) });
   if (!sent) {
-    // Bez e-mailu by připomínku nešlo potvrdit; smažeme ji, ať ji lze poslat znovu bez duplicity.
+    // Bez e-mailu by záznam nešlo potvrdit; smažeme ho, ať jde poslat znovu bez duplicity.
     await withPoolDb((pdb) => dropUnverified(pdb, created.id));
     return { error: "Potvrzovací e-mail se nepodařilo odeslat. Zkontrolujte prosím adresu, nebo to zkuste za chvíli znovu." };
   }
   await db.insert(schema.events).values({ entity: "comment", entityId: created.id, action: "verification_sent", actor: "system", payload: {} });
   return { ok: true };
+}
+
+/**
+ * Veřejná připomínka bez přihlášení: libovolné jméno a e-mail (nikdy se nezveřejňují).
+ * Uloží se jako čekající na potvrzení; týmu se ukáže, až autor klikne na odkaz z e-mailu.
+ */
+export async function addPublicComment(_prev: ActionState, fd: FormData): Promise<ActionState> {
+  const bot = botCheck(fd);
+  if (bot) return bot;
+
+  const documentId = Number(fd.get("documentId"));
+  const versionId = Number(fd.get("versionId"));
+  const blockKey = str(fd, "blockKey", 300) || "obecne";
+  const name = str(fd, "name", 80);
+  const email = str(fd, "email", 200).toLowerCase();
+  const organization = str(fd, "organization", 200);
+  const kind = str(fd, "kind", 20);
+  const body = str(fd, "body", 5000);
+
+  if (!documentId || !versionId) return { error: "Chybí vazba na dokument. Obnovte prosím stránku." };
+  if (blockKey === PROPOSAL) return { error: "Návrh nového opatření pošlete přes formulář na stránce Navrhnout opatření." };
+  if (name.length < 2) return { error: "Uveďte jméno nebo přezdívku (aspoň dva znaky)." };
+  if (!EMAIL_RE.test(email)) return { error: "Zadejte platný e-mail." };
+  if (body.length < 10) return { error: "Napište připomínku (aspoň deset znaků)." };
+  const spam = spamReason(body);
+  if (spam) return { error: spam };
+
+  const site = siteUrl();
+  return storePublic({ documentId, versionId, blockKey, kind, body, authorName: name, email, organization: organization || null, onBehalf: "osoba" }, ({ id, token, created }) => {
+    const anchor = created.target.block?.anchorId;
+    return commentVerification({
+      name,
+      id,
+      body,
+      quote: created.quote || null,
+      confirmUrl: `${site}/potvrdit?t=${encodeURIComponent(token)}`,
+      studyUrl: anchor ? `${site}/studie/kotva?k=${encodeURIComponent(anchor)}` : `${site}/studie`,
+      versionLabel: created.target.versionLabel,
+      days: RETENTION.unverifiedDays,
+      privacyUrl: `${site}/ochrana-udaju`,
+    });
+  });
+}
+
+/**
+ * Návrh nového opatření z průvodce na /studie/navrhnout-opatreni. Odpovědi přijdou jako JSON,
+ * server je očistí a zkontroluje podle stejné definice otázek jako formulář. Ukládá se jako
+ * veřejná připomínka ke studii s klíčem „navrh-opatreni“: shrnutí v textu, celý návrh
+ * v „návrhu znění“, zdroje zvlášť a kódy navázaných opatření pro filtr v interní části.
+ */
+export async function addProposal(_prev: ActionState, fd: FormData): Promise<ActionState> {
+  const bot = botCheck(fd);
+  if (bot) return bot;
+
+  const documentId = Number(fd.get("documentId"));
+  const versionId = Number(fd.get("versionId"));
+  if (!documentId || !versionId) return { error: "Chybí vazba na studii. Obnovte prosím stránku." };
+  let raw: unknown;
+  try {
+    raw = JSON.parse(str(fd, "answers", 60000) || "{}");
+  } catch {
+    return { error: "Odpovědi se nepodařilo přečíst. Obnovte prosím stránku a zkuste to znovu." };
+  }
+  const a = cleanAnswers(raw);
+  const codes = new Set(REGISTRY_CODES);
+  for (const step of STEPS) {
+    const errors = stepErrors(step, a, codes);
+    const first = Object.entries(errors)[0];
+    if (first) {
+      const f = step.fields.find((x) => x.id === first[0]);
+      return { error: `${step.title}: ${f?.label ?? first[0]} ${first[1]}` };
+    }
+  }
+  const title = String(a.title);
+  const email = String(a.email).toLowerCase();
+  // Počet odkazů hlídá stepErrors po polích (zdroje nejvýš 5, ostatní texty nejvýš 2), stejně jako formulář.
+
+  const body = `Návrh nového opatření: ${title}\n\nProblém: ${String(a.problem).slice(0, 1200)}\n\nCo navrhuje: ${String(a.description).slice(0, 2000)}`;
+  const proposedText = proposalMarkdown(a, (c) => REGISTRY_LABEL.get(c));
+  const site = siteUrl();
+  return storePublic(
+    {
+      documentId,
+      versionId,
+      blockKey: PROPOSAL,
+      kind: "zneni",
+      body,
+      proposedText,
+      source: typeof a.sources === "string" ? a.sources : null,
+      codesText: proposalCodes(a).join(" "),
+      authorName: String(a.name),
+      email,
+      organization: a.onBehalf === "organizace" ? String(a.organization) : null,
+      onBehalf: a.onBehalf === "organizace" ? "organizace" : "osoba",
+    },
+    ({ id, token, created }) =>
+      proposalVerification({
+        name: String(a.name),
+        id,
+        title,
+        summary: proposedText,
+        confirmUrl: `${site}/potvrdit?t=${encodeURIComponent(token)}`,
+        proposalUrl: `${site}/studie/navrhnout-opatreni`,
+        versionLabel: created.target.versionLabel,
+        days: RETENTION.unverifiedDays,
+        privacyUrl: `${site}/ochrana-udaju`,
+      }),
+  );
 }
 
 /** Potvrzení veřejné připomínky tlačítkem na stránce /potvrdit (ne samotným otevřením odkazu). */
@@ -272,7 +343,7 @@ export async function confirmPublicComment(_prev: ActionState, fd: FormData): Pr
   if (!row) return { error: "Odkaz neplatí. Připomínka už je potvrzená, nebo odkaz vypršel (platí 7 dní)." };
   const site = siteUrl();
   const notify = process.env.COMMENT_NOTIFY_TO;
-  if (notify) await sendMail({ to: notify, subject: `Nová veřejná připomínka č. ${row.id}`, text: `${row.name}${row.organization ? ` (${row.organization})` : ""}\n\n${row.quote ? `K místu: „${row.quote}“\n\n` : ""}${row.body}\n\n${site}/pripominky?channel=verejnost` });
+  if (notify) await sendMail({ to: notify, subject: `${row.body.startsWith("Návrh nového opatření:") ? "Nový návrh opatření" : "Nová veřejná připomínka"} č. ${row.id}`, text: `${row.name}${row.organization ? ` (${row.organization})` : ""}\n\n${row.quote ? `K místu: „${row.quote}“\n\n` : ""}${row.body}\n\n${site}/pripominky?channel=verejnost` });
   revalidatePath("/pripominky");
   revalidatePath("/rt");
   return { ok: true };

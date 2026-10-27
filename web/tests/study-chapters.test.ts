@@ -30,7 +30,7 @@ describe("kapitoly studie", () => {
   it("adresy kapitol jsou jedinečné a nekolidují s jinými stránkami", () => {
     const slugs = chapters.map((c) => c.slug);
     expect(new Set(slugs).size).toBe(slugs.length);
-    for (const s of ["zavislosti", "tisk", "kotva"]) expect(slugs).not.toContain(s);
+    for (const s of ["zavislosti", "tisk", "kotva", "navrhnout-opatreni"]) expect(slugs).not.toContain(s);
     expect(chapterSlug("zdravi-bliz-lidem/cast-i-vychozi-stav-proc-menit")).toBe("cast-i-vychozi-stav");
     expect(chapterSlug("zdravi-bliz-lidem/cast-ii-logika-reformy")).toBe("cast-ii-logika-reformy");
     expect(chapterSlug("zdravi-bliz-lidem/cast-iii-jadro-reformy-sit-luzkove-pece-pilir-2")).toBe("cast-iii-sit-luzkove-pece");

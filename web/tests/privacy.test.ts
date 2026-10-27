@@ -8,7 +8,7 @@ import type { PGlite } from "@electric-sql/pglite";
 import * as schema from "@/db/schema";
 import type { AnyDb } from "@/db/pool";
 import { importDocumentVersion } from "@/lib/importer";
-import { createComment, type NewComment } from "@/lib/comments-core";
+import { PROPOSAL, createComment, type NewComment } from "@/lib/comments-core";
 import {
   ANONYMIZED_NAME,
   ERASED_BODY,
@@ -186,6 +186,12 @@ describe("odkaz na vlastní údaje", () => {
     expect(data.comments).toHaveLength(1);
     expect(data.comments[0]).toMatchObject({ id: mine.id, name: "Jana Tajná", organization: "Spolek pacientů", confirmed: true });
     expect(data.comments[0].resolution[0].outcome).toBe("akceptovano");
+  });
+
+  it("export obsahuje i celý návrh opatření a zdroje", async () => {
+    await createComment(db, pub({ blockKey: PROPOSAL, kind: "zneni", body: "Návrh nového opatření: Sdílená sestra", proposedText: "# Návrh nového opatření: Sdílená sestra\n\n## Kdy by mělo platit", source: "https://example.cz/studie" }));
+    const data = await exportPersonalData(db, EMAIL);
+    expect(data.comments[0]).toMatchObject({ proposal: expect.stringContaining("## Kdy by mělo platit"), sources: "https://example.cz/studie" });
   });
 });
 

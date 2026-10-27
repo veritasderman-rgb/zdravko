@@ -52,6 +52,12 @@ export default async function MyDataPage({ searchParams }: PageProps<"/ochrana-u
                 </p>
                 {c.quote && <p className="mt-2 text-[16px] italic text-ink-2">K místu: „{c.quote}“</p>}
                 <p className="mt-2 whitespace-pre-wrap">{c.body}</p>
+                {c.proposal && (
+                  <details className="mt-2">
+                    <summary className="cursor-pointer font-semibold text-forest">Celý návrh opatření</summary>
+                    <p className="mt-2 whitespace-pre-wrap text-[16px]">{c.proposal}</p>
+                  </details>
+                )}
                 <p className="mt-2 text-[15px] text-muted">
                   Podepsáno: {c.name}
                   {c.organization ? `, ${c.organization}` : ""}

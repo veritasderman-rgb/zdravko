@@ -18,6 +18,7 @@ Statické stránky z obsahu studie v3, politické verze a prezentace, data v `sr
 | `/otazky` | časté otázky, střet zájmů |
 | `/studie` | úvod studie, přehled kapitol a obecná připomínka (z databáze, obnova po 5 minutách) |
 | `/studie/[kapitola]` | kapitola studie (18 kapitol) s připomínkami a odkazem na každý odstavec; adresy kapitol v `src/lib/study.ts` |
+| `/studie/navrhnout-opatreni` | průvodce návrhem nového opatření (otázky v `src/content/navrh-opatreni.ts`); návrh se ukládá jako veřejná připomínka s klíčem `navrh-opatreni`, po potvrzení e-mailem ho tým najde v `/pripominky` (filtr „Jen návrhy nových opatření“) |
 | `/studie/kotva?k=…` | přesměruje trvalou kotvu odstavce do jeho kapitoly (odkazy z e-mailů, starší odkazy `/studie#…`) |
 | `/hledat` | hledání na webu a ve studii bez ohledu na diakritiku; data z `/hledat/data` (obnova po 5 minutách) |
 | `/slovnicek` | slovníček pojmů |
