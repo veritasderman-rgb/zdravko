@@ -1,6 +1,6 @@
 # Zadání pro implementaci: vizuální směr B „Vysvětlující příběh“
 
-*Verze 1, 23. 10. 2026. Navazuje na [`zadani-pro-designera.md`](zadani-pro-designera.md). Rozhoduje Josef Pavlovic za resortní tým.*
+*Verze 1, 23. 10. 2026. Navazuje na [`zadani-pro-designera.md`](docs/zadani-pro-designera.md). Rozhoduje Josef Pavlovic za resortní tým.*
 
 **Referenční návrh:** plátno „Zdraví blíž lidem – vizuální směry webu“ v Claude (https://claude.ai/artifact/Rpo2JbxdhsH8Y6X3qTc7sz, přístup nasdílí Josef). Implementuje se **spodní řada, směr B**: `B · Úvod – desktop`, `B · Úvod – mobil 390`, `B · Tokeny a komponenty`. Horní řada (směr A) je vyřazená, slouží jen pro srovnání.
 

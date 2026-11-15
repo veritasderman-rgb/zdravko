@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { CODE_RE } from "./codes";
+import { parseLinkDestination } from "./md-link";
 
 /**
  * Minimalistické vykreslení inline markdownu (tučné, kurzíva, kód, odkazy)
@@ -8,7 +9,7 @@ import { CODE_RE } from "./codes";
  */
 export function renderInline(src: string, opts: { linkCodes?: boolean; codeHref?: (code: string) => string | null } = {}): ReactNode[] {
   const out: ReactNode[] = [];
-  const re = /(\*\*([^*]+)\*\*)|(\*([^*]+)\*)|(`([^`]+)`)|(\[([^\]]+)\]\(([^)]+)\))/g;
+  const re = /(\*\*([^*]+)\*\*)|(\*([^*]+)\*)|(`([^`]+)`)|(\[([^\]]+)\]\()/g;
   let last = 0;
   let m: RegExpExecArray | null;
   let k = 0;
@@ -41,13 +42,21 @@ export function renderInline(src: string, opts: { linkCodes?: boolean; codeHref?
     if (m[1]) out.push(<strong key={k++}>{renderInline(m[2], opts)}</strong>);
     else if (m[3]) out.push(<em key={k++}>{renderInline(m[4], opts)}</em>);
     else if (m[5]) out.push(<code key={k++}>{m[6]}</code>);
-    else if (m[7])
-      out.push(
-        <a key={k++} href={m[9]} target="_blank" rel="noreferrer" className="underline">
-          {m[8]}
-        </a>,
-      );
-    last = m.index + m[0].length;
+    else if (m[7]) {
+      const dest = parseLinkDestination(src, m.index + m[0].length);
+      if (!dest) {
+        // „[text](“ bez platného cíle není odkaz — zůstane jako text.
+        pushText(m[0]);
+      } else {
+        out.push(
+          <a key={k++} href={dest.href} target="_blank" rel="noreferrer" className="underline">
+            {m[8]}
+          </a>,
+        );
+        re.lastIndex = dest.end;
+      }
+    }
+    last = re.lastIndex;
   }
   pushText(src.slice(last));
   return out;

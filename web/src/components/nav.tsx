@@ -3,17 +3,20 @@ import { getSession } from "@/lib/auth";
 import { logout } from "@/app/actions";
 import { ROLE_LABEL, can } from "@/lib/roles";
 
-/** Navigace interní části pro resortní tým. */
+/**
+ * Navigace interní části pro resortní tým.
+ * Řádek se smí zalomit: bez toho na telefonu vytlačil jméno a odhlášení mimo obrazovku.
+ */
 export async function Nav() {
   const session = await getSession();
   return (
     <header className="border-b border-line bg-paper">
-      <div className="mx-auto flex max-w-[1400px] items-center gap-5 px-4 py-2 text-sm">
+      <div className="mx-auto flex max-w-[1400px] flex-wrap items-center gap-x-5 gap-y-2 px-4 py-2 text-sm">
         <Link href="/rt" className="font-semibold tracking-tight">
           Zdraví blíž lidem <span className="text-muted font-normal">· připomínky k v3</span>
         </Link>
         {session && (
-          <nav className="flex items-center gap-4 text-muted">
+          <nav className="flex flex-wrap items-center gap-x-4 gap-y-1 text-muted">
             <Link href="/d/studie" className="hover:text-foreground">Studie</Link>
             <Link href="/pripominky" className="hover:text-foreground">Připomínky</Link>
             <Link href="/overit" className="hover:text-foreground">Ověřit</Link>
@@ -22,7 +25,7 @@ export async function Nav() {
             <Link href="/" className="hover:text-foreground">Veřejný web</Link>
           </nav>
         )}
-        <div className="ml-auto flex items-center gap-3 text-muted">
+        <div className="ml-auto flex min-w-0 flex-wrap items-center justify-end gap-x-3 gap-y-1 text-muted">
           {session ? (
             <>
               <span>
