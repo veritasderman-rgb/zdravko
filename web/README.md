@@ -63,9 +63,9 @@ pnpm users:list
   z nadpisu sekce), za sebe / za organizaci. Odpovědi ve vlákně.
 - **Seznam připomínek** s filtry (dokument, stav, závažnost, typ, kód, text), změna stavu, garant a téma vypořádání,
   **export CSV** (`?verejne=1` skryje jména osob, zůstává jen organizace).
-- **Registr „Ověřit“**: 100 míst vytěžených ze studie, stav, kdo ověří, výsledek. U každé položky je předpřipravené,
+- **Registr „Ověřit“**: 107 míst vytěžených ze studie, stav, kdo ověří, výsledek. U každé položky je předpřipravené,
   co k ní má HSPA Monitor (registr `src/content/overeni-hspa.json`, viz níže).
-- **Registr kódů** J1–J10, P1–P5, Pil, M, H1–H8, D1–D12, R1–R19, B1–B4 (132 kódů) s popisem z registru opatření,
+- **Registr kódů** J1–J10, P1–P5, Pil, M, H1–H8, D1–D12, R1–R19, B1–B4 (136 kódů) s popisem z registru opatření,
   výskyty v textu, připomínkami a filtrem dokumentu podle kódu (`/d/studie?kod=J2`).
 - **Přístup** osobním účtem s rolí, přihlášení odkazem z e-mailu (podepsaná cookie). Jména osob se nikdy
   nezveřejňují, do veřejného vypořádání jde jen organizace.
